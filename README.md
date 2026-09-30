@@ -10,7 +10,7 @@ en/          英文基础词库：候选词表、词频、词形列表
 custom/      人工维护的自定义数据
   words.txt          中文词条，并入全拼词表
   translations.txt   候选窗翻译覆盖
-  english.txt        英文词条（目前没有构建读取）
+  english.txt        英文词条，并入英文词表
   names.txt          人名（目前没有构建读取）
 packs/       用户按需导入的专业词库，不进入默认词库
 scripts/     维护脚本
@@ -32,19 +32,21 @@ scripts/     维护脚本
 | `en/oaldpe_words.txt` | 一个词形 | 从 oaldpe.mdx 提取的词形列表 |
 | `custom/words.txt` | `词<TAB>全拼<TAB>权重` | 全拼音节用 `'` 分隔，如 `未来可期	wei'lai'ke'qi	5000`。只收已发布词库里没有的词（同词同拼音），见下方的贡献规则 |
 | `custom/translations.txt` | `源词<TAB>译文` | 优先于 ECDICT；源词含汉字为中译英，否则为英译中；`#` 开头为注释，同一源词后写覆盖先写 |
-| `custom/english.txt` | `编码<TAB>显示词<TAB>权重` | |
+| `custom/english.txt` | `编码<TAB>显示词<TAB>权重` | 编码是输入的小写字母，显示词是上屏的写法，同一编码可以有多个显示词。有 Google 词频的词按词频排序，没有的按这里的权重，但排不过任何有词频的词 |
 | `custom/names.txt` | 一个人名 | |
 
 `cn/`、`en/` 下各文件的上游、许可与已知问题见 [NOTICE.md](NOTICE.md)。
 
 ## 贡献
 
-- **官网提交**：在 [msime.app](https://msime.app) 的词条提交页填写，条目会追加到本仓库一个滚动的 Pull Request。
-- **直接提 Pull Request**：往 `custom/words.txt` 末尾追加行即可，不要改动、删除或重排已有的行。
+- **官网提交**：在 [msime.app](https://msime.app) 的词条提交页填写中文词语（人名也按词语提交）、英文单词或候选窗翻译，条目会追加到本仓库一个滚动的 Pull Request。
+- **直接提 Pull Request**：往 `custom/words.txt`、`custom/translations.txt` 或 `custom/english.txt` 末尾追加行即可，不要改动、删除或重排已有的行。
 
 **权重**：新词条的权重必须落在 `custom/words.txt` 现有条目的范围内，目前是 1 到 10000，超出范围 CI 会拒绝。历史条目大多写着占位的 `1`；想让一个词在整句里更容易胜出，就参照基础词库里同量级的真实词取值（例如 `扛不住` 是 2430），不要凭感觉填一个极大值。这个范围由 CI 按文件现有内容计算，普通 Pull Request 无法放宽；确实需要时先开 Issue，由维护者单独审核调整。已经在发布词库里的词（同词同拼音）会被 CI 拒绝，不能靠在这里再写一行来调高它的权重。
 
-每个改动 `custom/words.txt` 的 Pull Request 都会由 CI 用词库构建器的同一套规则检查：只能追加、格式与拼音合法、权重在现有范围内、不与本次改动、现有词表或已发布词库重复。结果以评论写在 Pull Request 里。维护者再人工审核内容（包括敏感词）后合入。
+`custom/english.txt` 的权重同样要落在文件现有的范围内，目前只有 `1`。
+
+每个改动 `custom/words.txt`、`custom/translations.txt` 或 `custom/english.txt` 的 Pull Request 都会由 CI 用词库构建器的同一套规则检查：只能追加、格式合法（词语还要拼音合法）、词语与英文的权重在文件现有范围内、不与本次改动、所在文件或已发布词库（`msime.db`、`english.db`）重复。翻译可以给已有的源词换一个译文，后写的生效；完全相同的一行会被拒绝。结果以评论写在 Pull Request 里。维护者再人工审核内容（包括敏感词）后合入。
 
 候选窗翻译的修正写到 `custom/translations.txt`，不要去改 ECDICT。`cn/`、`en/` 下的基础词库来自第三方，不在里面加新词；只有确认的错误才修改，并在提交说明里写清依据。
 
@@ -55,7 +57,7 @@ scripts/     维护脚本
 3. msime 在 `resources/dictionary-sources.lock.json` 里把引用升到新版本的附件（每个文件的 URL、大小与 SHA-256 一起更新），用 `msime-dict-build` 构建并发布 `dict-v*` 词库。
 4. 各平台升级各自锁定的词库版本，下一个版本随之带上新词库。
 
-只合入本仓库而不走完后面几步，用户拿到的仍是旧词库。发版依据提交标题：合并词条 Pull Request 时用 squash，并把标题写成 `feat(words): …`（修正写成 `fix(...)`），否则 release-please 不会为它发版。
+只合入本仓库而不走完后面几步，用户拿到的仍是旧词库。发版依据提交标题：合并词条 Pull Request 时用 squash，并把标题写成 `feat(...)`（如官网滚动 Pull Request 的 `feat(custom): …`；修正写成 `fix(...)`），否则 release-please 不会为它发版。
 
 ## 专业词库
 

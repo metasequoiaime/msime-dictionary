@@ -1,15 +1,18 @@
 name: Check words
 on:
   pull_request:
-    paths: [custom/words.txt, .github/workflows/check-words.yml]
+    paths: [custom/words.txt, custom/translations.txt, custom/english.txt, .github/workflows/check-words.yml]
 permissions: {contents: read, pull-requests: write}
 concurrency: {group: "check-words-${{ github.event.pull_request.number }}", cancel-in-progress: true}
 env:
-  # The msime commit whose msime-dict-build checks the file: the same parser and validation the dictionary build uses, so an entry that passes here builds. Move it when msime changes check-words or the custom word format.
-  MSIME_COMMIT: dfd405ae2207d378e4b4739ab475671007972db5
+  # The msime commit whose msime-dict-build checks the files: the same parsers and validation the dictionary build uses, so an entry that passes here builds. Move it when msime changes check-words or a custom file format.
+  MSIME_COMMIT: 434d8da644553e098368dcf739ba5113881cdc48
   # The shipped quanpin tables an addition must not repeat, pinned as msime's resources/desktop-dictionary.lock.json pins them.
   MSIME_DB_URL: https://github.com/metasequoiaime/msime-engine/releases/download/dict-v2.0.1/msime.db
   MSIME_DB_SHA256: 960d0491458bf3c5b4f199c5f5705353e1ecb6506eafbae5e8e1474d70232894
+  # The shipped English words an english.txt addition must not repeat, from the same release.
+  ENGLISH_DB_URL: https://github.com/metasequoiaime/msime-engine/releases/download/dict-v2.0.1/english.db
+  ENGLISH_DB_SHA256: 83f8c2fe7a33f9797392cd914056cc97fc6e62480c2d787e17019ce6daddba8a
 jobs:
   check:
     runs-on: ubuntu-24.04
@@ -23,25 +26,37 @@ jobs:
       - name: Build msime-dict-build
         working-directory: msime
         run: cargo build --release --locked -p msime-dict-builder --bin msime-dict-build
-      - name: Fetch the shipped msime.db
+      - name: Fetch the shipped msime.db and english.db
         run: |
           curl -fsSL --retry 3 -o "$RUNNER_TEMP/msime.db" "$MSIME_DB_URL"
           echo "$MSIME_DB_SHA256  $RUNNER_TEMP/msime.db" | sha256sum -c -
-      # Additions only: an edit, deletion or reordering of an existing line is rejected, and every added line must parse, fit the existing weight range, and repeat nothing in this change, in words.txt or in the shipped tables.
-      - name: Check custom/words.txt
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/english.db" "$ENGLISH_DB_URL"
+          echo "$ENGLISH_DB_SHA256  $RUNNER_TEMP/english.db" | sha256sum -c -
+      # Additions only, in each of words.txt, translations.txt and english.txt: an edit, deletion or reordering of an existing line is rejected, and every added line must parse as the build parses it and repeat nothing in this change, in its file or in the shipped dictionary. Words and English lines must also fit their file's existing weight range; a translation may give an existing source a new gloss, since the later line wins.
+      - name: Check the custom files
         id: check
         env: {BASE_SHA: "${{ github.event.pull_request.base.sha }}"}
         run: |
-          # Only the pull request that first adds custom/words.txt has a base without it; there is nothing to append to, so that run is skipped rather than treating every line as an addition.
-          if ! git cat-file -e "$BASE_SHA:custom/words.txt" 2>/dev/null; then
-            echo "::notice::custom/words.txt does not exist on the base commit; skipping the additions check."
+          # A file that does not exist on the base commit has nothing to append to, so it is left out rather than treating every line as an addition.
+          args=()
+          add() {
+            if ! git cat-file -e "$BASE_SHA:custom/$1" 2>/dev/null; then
+              echo "::notice::custom/$1 does not exist on the base commit; skipping its additions check."
+              return
+            fi
+            git show "$BASE_SHA:custom/$1" > "$RUNNER_TEMP/base-$1"
+            args+=("$2" "$RUNNER_TEMP/base-$1" "$3" "custom/$1")
+          }
+          add words.txt --base --head
+          add translations.txt --translations-base --translations-head
+          add english.txt --english-base --english-head
+          if [ ${#args[@]} -eq 0 ]; then
             echo "status=0" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git show "$BASE_SHA:custom/words.txt" > "$RUNNER_TEMP/base-words.txt"
           set +e
-          msime/target/release/msime-dict-build check-words --base "$RUNNER_TEMP/base-words.txt" --head custom/words.txt \
-            --msime-db "$RUNNER_TEMP/msime.db" --json "$RUNNER_TEMP/report.json" --markdown "$RUNNER_TEMP/summary.md"
+          msime/target/release/msime-dict-build check-words "${args[@]}" \
+            --msime-db "$RUNNER_TEMP/msime.db" --english-db "$RUNNER_TEMP/english.db" --json "$RUNNER_TEMP/report.json" --markdown "$RUNNER_TEMP/summary.md"
           status=$?
           set -e
           echo "status=$status" >> "$GITHUB_OUTPUT"
