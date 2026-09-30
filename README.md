@@ -1,116 +1,79 @@
-> **本仓库已迁移并归档 / This repository has moved and is archived.**
->
-> 当前源码与后续维护位于 [MSIME-Engine 的 `dictionary/`](https://github.com/metasequoiaime/MSIME-Engine/tree/main/dictionary)。
-> 请在 [MSIME-Engine](https://github.com/metasequoiaime/MSIME-Engine) 提交 Issue 和 Pull Request。
-> 完整提交历史已保留在 Engine 中；本仓库保留历史代码、标签与已有 Release，供旧版本追溯和下载。
-> 迁移来源见 [consolidation-sources.json](https://github.com/metasequoiaime/MSIME-Engine/blob/main/docs/consolidation-sources.json)。
->
-> 以下为归档前的历史说明，当前构建与使用方式请以 Engine 中的文档为准。
+# 水杉输入法词库
 
-# 介绍
+水杉输入法词库的源数据只在这个仓库维护：拼音、五笔与英文的基础词库，人工维护的自定义词条和候选窗翻译，以及用户按需导入的专业词库。这里只放文本数据，不放构建脚本；词库由 [msime](https://github.com/metasequoiaime/msime) 的构建器按固定提交取用这里的文件，构建成各平台共用的 `dict-v*` 词库发布。
 
-## 初始词库的来源
+## 目录
 
-以下是 5 个中文词库。
-
-- `BaseDict.txt` 词库来自[这里](https://github.com/wuhgit/CustomPinyinDictionary)，取的是 `2023-09-28(No.82)` 这个版本，条目目前有 `1415159` 个条目。
-- `BaseDictIce.txt` 词库来自[这里](https://github.com/iDvel/rime-ice)
-- `SampleIMESimplifiedQuanPin.txt` 词库来自[这里](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/IME/cpp/SampleIME/Dictionary)。
-
-上面三个都是原封不动搬过来的。
-
-- `SingleChars.txt` 来自[这里](https://github.com/iDvel/rime-ice)。但是，经过了我的处理，把一些原来不对的拼音，比如，绿(lv)给使用这个[仓库](https://github.com/mozillazg/pinyin-data/blob/master/pinyin.txt)中的数据纠正了过来，保留了原有的雾凇的 8105 简体常用字的同时，对新加入的没有权重的字作了去重，去重的逻辑是把在 8105 中存在的条目给去掉。
-- `FanyExtDict.txt` 我自己根据上面的基础添加的一些不与上面的词库重复的一些条目的词库。
-- `Wubi86.txt` 来自这个 Rime 的一个[词库](https://github.com/KyleBing/rime-wubi86-jidian)。
-
-以下是 1 个英文词库。
-
-- BaseDictIceEn.txt 词库来自[这里](https://github.com/iDvel/rime-ice)
-
-## 构建词库
-
-`build_all.py` 把 `makecikudb/` 下各目录的分步脚本按正确顺序串起来，一次产出全部四个发布产物。各脚本本身仍是权威，单独执行的用法不变。
-
-```bash
-python -m pip install -r requirements.txt
-python build_all.py --clean --fetch-references
-python tools/verify_dictionaries.py
+```
+cn/          中文基础词库：全拼词条、单字、五笔 86、单字白名单
+en/          英文基础词库：候选词表、词频、词形列表
+custom/      人工维护的自定义数据
+  words.txt          中文词条，并入全拼词表
+  translations.txt   候选窗翻译覆盖
+  english.txt        英文词条（目前没有构建读取）
+  names.txt          人名（目前没有构建读取）
+packs/       用户按需导入的专业词库，不进入默认词库
+scripts/     维护脚本
 ```
 
-`requirements.txt` 只装出货构建需要的东西，跨平台可用。`makecikudb/` 下那些一次性辅助脚本另有依赖，在 `requirements-tools.txt` 里（其中 `pywin32` 带平台标记，非 Windows 上会自动跳过）。
+## 格式
 
-产物写到 `out/`，同时生成 `out/SHA256SUMS.txt`：
+所有文件都是 UTF-8 文本。字段大多用制表符分隔，`en/BaseDictIceEn.txt` 用空格分隔；`cn/BaseDictIceV1.txt` 与 `cn/SingleCharsAllV1.txt` 开头有 `#` 注释行。`cn/` 与 `en/` 下的部分文件使用 CRLF 换行，下游按 SHA-256 锁定每个文件，所以**不要转换换行符或重新排版**，仓库的 `.gitattributes` 已关闭换行转换。
 
-| 产物 | 内容 |
-|---|---|
-| `msime.db` | 全拼分表、86 五笔、快捷短语、日语词表 |
-| `english.db` | 英文候选词表，以及 ECDICT 双向释义表 |
-| `others.db` | emoji、颜文字、符号目录 |
-| `dict_japanese.dat` | 日语整句解码用的只读 Viterbi 模型 |
-| `mozc_dictionary_oss_README.txt` | Mozc 词典的 IPAdic / ICOT / 冲绳授权声明，**必须随 `dict_japanese.dat` 一起分发** |
+| 文件 | 每行 | 说明 |
+| --- | --- | --- |
+| `cn/BaseDictIceV1.txt` | `词<TAB>全拼<TAB>权重` | 雾凇拼音（rime-ice）的短语词库，经本项目修正 |
+| `cn/BaseDictAllV1Part1.txt`、`cn/BaseDictAllV1Part2.txt` | `词<TAB>全拼<TAB>权重` | CustomPinyinDictionary 与雾凇合并去重后的全量词库，因 GitHub 单文件大小限制拆成两部分 |
+| `cn/SingleCharsAllV1.txt` | `字<TAB>全拼<TAB>权重` | 雾凇的 8105 个常用字，补充 Unicode 中其余较常见的字，读音以 pinyin-data 校正 |
+| `cn/Wubi86.txt` | `词<TAB>五笔编码<TAB>权重` | 86 版五笔，来自 rime-wubi86-jidian |
+| `cn/SingleCharWhitelist.txt` | 一个字 | 完整构建时用来过滤单字条目 |
+| `en/BaseDictIceEn.txt` | `编码 显示词` | 雾凇的英文词库 |
+| `en/google_count_1_w.txt` | `词<TAB>次数` | Google 1/3 million 英文词频 |
+| `en/oaldpe_words.txt` | 一个词形 | 从 oaldpe.mdx 提取的词形列表 |
+| `custom/words.txt` | `词<TAB>全拼<TAB>权重` | 全拼音节用 `'` 分隔，如 `未来可期	wei'lai'ke'qi	5000`。已有同词同拼音时只会调高权重 |
+| `custom/translations.txt` | `源词<TAB>译文` | 优先于 ECDICT；源词含汉字为中译英，否则为英译中；`#` 开头为注释，同一源词后写覆盖先写 |
+| `custom/english.txt` | `编码<TAB>显示词<TAB>权重` | |
+| `custom/names.txt` | 一个人名 | |
 
-`--fetch-references` 会把两个外部数据源按固定 revision clone 到仓库同级的 `ReferenceProjects/`：ECDICT 提供候选窗释义，rime-jp_sela 提供日语词表。不加这个参数时，依赖它们的 stage 会被跳过而不是报错；发布构建请配合 `--require-all` 让缺失直接失败。日语整句模型的 Mozc 原始数据由脚本自己下载。
+`cn/`、`en/` 下各文件的上游、许可与已知问题见 [NOTICE.md](NOTICE.md)。
 
-常用参数：
+## 贡献
 
-```bash
-python build_all.py --list                    # 列出全部 stage
-python build_all.py --only quanpin wubi       # 只跑指定 stage
-python build_all.py --skip english-glosses    # 跳过指定 stage
+- **官网提交**：在 [msime.app](https://msime.app) 的词条提交页填写，条目会追加到本仓库一个滚动的 Pull Request。
+- **直接提 Pull Request**：往 `custom/words.txt` 末尾追加行即可，不要改动、删除或重排已有的行。
+
+**权重只升不降**：词条已经在基础词库里而且权重更高时保留基础词库的值。`custom/words.txt` 里的历史条目大多写着占位的 `1`。需要让一个词在整句里胜出，就把权重写到同量级的真实词附近（`扛不住` 是 2430，`客气` 是 75460），不要凭感觉填一个极大值。
+
+每个改动 `custom/words.txt` 的 Pull Request 都会由 CI 用词库构建器的同一套规则检查：只能追加、格式与拼音合法、权重在现有范围内、不与本次改动、现有词表或已发布词库重复。结果以评论写在 Pull Request 里。维护者再人工审核内容（包括敏感词）后合入。
+
+候选窗翻译的修正写到 `custom/translations.txt`，不要去改 ECDICT。`cn/`、`en/` 下的基础词库来自第三方，不在里面加新词；只有确认的错误才修改，并在提交说明里写清依据。
+
+## 怎样进入输入法
+
+1. 改动合入本仓库。
+2. msime 在 `resources/dictionary-sources.lock.json` 里把本仓库的固定提交升到新版本（每个文件的 URL、大小与 SHA-256 一起更新），用 `msime-dict-build` 构建并发布 `dict-v*` 词库。
+3. 各平台升级各自锁定的词库版本，下一个版本随之带上新词库。
+
+只合入本仓库而不走完后两步，用户拿到的仍是旧词库。
+
+## 专业词库
+
+| 词库 | 内容 |
+| --- | --- |
+| [`packs/unreal_houdini`](packs/unreal_houdini) | Unreal Engine、Houdini 和 Houdini Engine for Unreal |
+
+专业词库不会进入所有人的候选列表，用户在设置里导入后才作为用户词条生效，所以垂直领域的短缩写（`SOP`、`TOP`、`PCG`）不会干扰普通输入。检查格式、拼音、重复项和翻译覆盖率（拼音与重复项对照 `cn/` 下的基础词库）：
+
+```sh
+python3 scripts/validate_packs.py
 ```
 
-`tools/verify_dictionaries.py` 校验每张发布表存在且行数不低于下限，用来拦住「stage 跑成功但表是空的」这种情况。GitHub Actions 的 `Build dictionaries` workflow 每次 push 和 PR 都会跑完整构建加校验；手动触发并勾选 `publish` 时，会把四个产物和校验和发布成一个 `dict-YYYY.MM.DD` 的 release，供 `MSIME-Windows` 的安装包发布流程下载。
+## 历史
 
-## 说明
-
-词库的 txt 文件打开时最好使用思源系列的字体或者花园明朝应该也可以，因为有些生僻的汉字在 Windows 下的很多字体是不支持的。
-
-对于从别的仓库搜集来的词库，我不会在其中添加新的条目，但是，如果发现有错误的地方，会作相应的修改。
-
-我自己添加的条目会放到 FanyExtDict.txt 中。
-
-候选窗中英翻译的补丁不要改 ECDICT 大词库，写到 `MetasequoiaImeCustomDict/translations.txt`。
-
-### cn 目录
-
-- BaseDictIceV1.txt 经过我处理的 BaseDictIce.txt 的修改版。
-- BaseDictV1.txt 经过我处理的 BaseDict.txt 修改版。
-- BaseDictAllV1Part1.txt 和 BaseDictAllV1Part2 这两个合起来就是我把上面那两个去重的结果
-- 53013_single.txt 这个是我对所有 unicode 现在支持的汉字
-
-### en 目录
-
-- `google_count_1_w.txt`: <https://www.norvig.com/ngrams/count_1w.txt>，谷歌的 1/3 million 词库。
-- `oaldpe_words.txt`: oaldpe.mdx 中提取出来的单词列表。
-
-## 额外说明
-
-由于 Github 的单个文件的限制，我将 ./cn/BaseDictV1.txt 拆成了两个文件，分别是，
-
-- ./cn/BaseDictAllV1Part1.txt
-- ./cn/BaseDictAllV1Part2.txt
-
-然后，逐个解释每个词库的来源/里面到底装的是什么东西，
-
-- 53013_single.txt: 汉字的单字，来自 unicode 的文档
-- BaseDictAllV1Part1.txt: 把上面所说的百万词库和雾凇的短语词库结合在一起，然后去重，拆分出来的 part1
-- BaseDictAllV1Part2.txt: 把上面所说的百万词库和雾凇的短语词库结合在一起，然后去重，拆分出来的 part2
-- BaseDictIceV1.txt: 雾凇词库
-- BaseDictV1.txt: 这是上面所说的百万词库(https://github.com/wuhgit/CustomPinyinDictionary)
-- HelpCode.txt: 辅助码，规则主要参考小鹤的形码
-- phrases.txt: 自造短语
-- SingleCharsAllV1.txt: 结合了雾凇词库中的单字，然后补充了 uniocde 中的剩下几万个比较常见的字，虽然国家规范常用字只有 8000 个左右
-
----
-
-感谢：
-
-- <https://github.com/iDvel/rime-ice>
-- <https://github.com/wuhgit/CustomPinyinDictionary>
-- <https://github.com/aoguai/rime_kaomoji_dict>
+- 本仓库最初名为 MSIME-Dict（现为 msime-dictionary，旧名称会自动重定向），保存词库源数据和 Python 构建脚本，自定义词条在独立的 MSIME-CustomDict（后改名 msime-customdict）中，以子模块引入。
+- 2026-09-05，词库源数据和构建脚本并入 MSIME-Engine 的 `dictionary/`，自定义词条也并入其 `dictionary/custom/`，本仓库停止维护。
+- MSIME-Engine 被 msime 的 Rust 引擎和构建器取代后，词库源数据于 2026-09-30 回到这里，同时并入 msime-customdict，本仓库成为唯一的词库源数据仓库。回迁是直接复制文件内容，没有导入历史：`cn/`、`en/` 取自 msime-engine [`e92a9c7c64e262f30218ca9aaad5f40d0b18cf89`](https://github.com/metasequoiaime/msime-engine/tree/e92a9c7c64e262f30218ca9aaad5f40d0b18cf89/dictionary) 的 `dictionary/`，`custom/`、`packs/`、`scripts/validate_packs.py` 取自 msime-customdict [`b075c8e3e71ab48b3c048c229289275b0d42b6d0`](https://github.com/metasequoiaime/msime-customdict/tree/b075c8e3e71ab48b3c048c229289275b0d42b6d0)，两边的历史仍可在源仓库中查阅（msime-engine 已归档，msime-customdict 在下游切换到本仓库后归档）。Python 构建流程、emoji、颜文字、符号与快捷短语没有迁回，后四者现在在 msime 的 `resources/dictionary-sources/`。
 
 ## 许可
 
-本仓库**不对外提供统一的开源许可**：其中绝大部分词库并非本项目的作品，给整个仓库挂一份 LICENSE 等于替上游作者重新授权。逐项的来源与上游条款见 [NOTICE.md](NOTICE.md)，使用或再分发前请以对应上游的条款为准。
-
-`makecikudb/` 下由本项目编写的构建脚本以 GPL-3.0 提供，见 [makecikudb/LICENSE](makecikudb/LICENSE)。
+本仓库**不对外提供统一的开源许可**：其中绝大部分词库并非本项目的作品，给整个仓库挂一份 LICENSE 等于替上游作者重新授权。逐项的来源与上游条款见 [NOTICE.md](NOTICE.md)，使用或再分发前请以对应上游的条款为准。本项目自建的部分（`custom/`、`packs/`、`scripts/`）以 GPL-3.0 提供。
