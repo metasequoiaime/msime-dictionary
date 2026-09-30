@@ -1,7 +1,7 @@
 name: Check words
 on:
   pull_request:
-    paths: [data/words.txt, .github/workflows/check-words.yml]
+    paths: [custom/words.txt, .github/workflows/check-words.yml]
 permissions: {contents: read, pull-requests: write}
 concurrency: {group: "check-words-${{ github.event.pull_request.number }}", cancel-in-progress: true}
 env:
@@ -28,16 +28,19 @@ jobs:
           curl -fsSL --retry 3 -o "$RUNNER_TEMP/msime.db" "$MSIME_DB_URL"
           echo "$MSIME_DB_SHA256  $RUNNER_TEMP/msime.db" | sha256sum -c -
       # Additions only: an edit, deletion or reordering of an existing line is rejected, and every added line must parse, fit the existing weight range, and repeat nothing in this change, in words.txt or in the shipped tables.
-      - name: Check words.txt
+      - name: Check custom/words.txt
         id: check
         env: {BASE_SHA: "${{ github.event.pull_request.base.sha }}"}
         run: |
-          # A base from before the move into data/ still keeps the file at the repository root.
-          base_path=data/words.txt
-          git cat-file -e "$BASE_SHA:$base_path" 2>/dev/null || base_path=words.txt
-          git show "$BASE_SHA:$base_path" > "$RUNNER_TEMP/base-words.txt"
+          # Only the pull request that first adds custom/words.txt has a base without it; there is nothing to append to, so that run is skipped rather than treating every line as an addition.
+          if ! git cat-file -e "$BASE_SHA:custom/words.txt" 2>/dev/null; then
+            echo "::notice::custom/words.txt does not exist on the base commit; skipping the additions check."
+            echo "status=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git show "$BASE_SHA:custom/words.txt" > "$RUNNER_TEMP/base-words.txt"
           set +e
-          msime/target/release/msime-dict-build check-words --base "$RUNNER_TEMP/base-words.txt" --head data/words.txt \
+          msime/target/release/msime-dict-build check-words --base "$RUNNER_TEMP/base-words.txt" --head custom/words.txt \
             --msime-db "$RUNNER_TEMP/msime.db" --json "$RUNNER_TEMP/report.json" --markdown "$RUNNER_TEMP/summary.md"
           status=$?
           set -e

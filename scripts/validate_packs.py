@@ -1,9 +1,6 @@
 """Validate importable professional dictionary packs.
 
-The checks mirror the Settings dictionary import rules closely enough to catch
-bad pull requests before users discover them at import time.  When this repo is
-checked out as the MetasequoiaImeDict submodule, the validator also checks each
-Chinese character pronunciation and detects entries already present upstream.
+The checks mirror the Settings dictionary import rules closely enough to catch bad pull requests before users discover them at import time. The validator also checks each Chinese character pronunciation against cn/SingleCharsAllV1.txt, detects entries already present in the base dictionary under cn/, and checks the format of custom/translations.txt.
 """
 
 from __future__ import annotations
@@ -16,7 +13,7 @@ import sys
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 PACKS_ROOT = REPOSITORY_ROOT / "packs"
-PARENT_DICTIONARY_ROOT = REPOSITORY_ROOT.parent
+BASE_DICTIONARY_ROOT = REPOSITORY_ROOT / "cn"
 HAN_RE = re.compile(r"[\u4e00-\u9fff]")
 PINYIN_RE = re.compile(r"[a-z]+(?:'[a-z]+)*")
 ENGLISH_KEY_RE = re.compile(r"[a-z]+(?:[-'][a-z]+)*")
@@ -36,7 +33,7 @@ def data_lines(path: Path, *, comments: bool) -> list[tuple[int, str]]:
 
 
 def load_character_pronunciations() -> dict[str, set[str]]:
-    source = PARENT_DICTIONARY_ROOT / "cn" / "SingleCharsAllV1.txt"
+    source = BASE_DICTIONARY_ROOT / "SingleCharsAllV1.txt"
     pronunciations: dict[str, set[str]] = defaultdict(set)
     if not source.exists():
         return pronunciations
@@ -133,7 +130,7 @@ def validate_translations(path: Path) -> tuple[list[str], set[str]]:
 def find_base_overlaps(entries: set[tuple[str, str]]) -> set[tuple[str, str]]:
     overlaps: set[tuple[str, str]] = set()
     for filename in ("BaseDictAllV1Part1.txt", "BaseDictAllV1Part2.txt"):
-        source = PARENT_DICTIONARY_ROOT / "cn" / filename
+        source = BASE_DICTIONARY_ROOT / filename
         if not source.exists():
             continue
         for _, line in data_lines(source, comments=True):
@@ -185,11 +182,11 @@ def main() -> int:
         return 1
     pronunciations = load_character_pronunciations()
     errors: list[str] = []
-    root_translations = REPOSITORY_ROOT / "data" / "translations.txt"
+    root_translations = REPOSITORY_ROOT / "custom" / "translations.txt"
     if root_translations.exists():
         root_errors, root_sources = validate_translations(root_translations)
         errors.extend(root_errors)
-        print(f"root translations: {len(root_sources)} entries")
+        print(f"custom translations: {len(root_sources)} entries")
     packs = sorted(path for path in PACKS_ROOT.iterdir() if path.is_dir())
     if not packs:
         print(f"No packs found in {PACKS_ROOT}", file=sys.stderr)
