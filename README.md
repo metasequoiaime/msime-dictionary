@@ -30,7 +30,7 @@ scripts/     维护脚本
 | `en/BaseDictIceEn.txt` | `编码 显示词` | 雾凇的英文词库 |
 | `en/google_count_1_w.txt` | `词<TAB>次数` | Google 1/3 million 英文词频 |
 | `en/oaldpe_words.txt` | 一个词形 | 从 oaldpe.mdx 提取的词形列表 |
-| `custom/words.txt` | `词<TAB>全拼<TAB>权重` | 全拼音节用 `'` 分隔，如 `未来可期	wei'lai'ke'qi	5000`。已有同词同拼音时只会调高权重 |
+| `custom/words.txt` | `词<TAB>全拼<TAB>权重` | 全拼音节用 `'` 分隔，如 `未来可期	wei'lai'ke'qi	5000`。只收已发布词库里没有的词（同词同拼音），见下方的贡献规则 |
 | `custom/translations.txt` | `源词<TAB>译文` | 优先于 ECDICT；源词含汉字为中译英，否则为英译中；`#` 开头为注释，同一源词后写覆盖先写 |
 | `custom/english.txt` | `编码<TAB>显示词<TAB>权重` | |
 | `custom/names.txt` | 一个人名 | |
@@ -42,7 +42,7 @@ scripts/     维护脚本
 - **官网提交**：在 [msime.app](https://msime.app) 的词条提交页填写，条目会追加到本仓库一个滚动的 Pull Request。
 - **直接提 Pull Request**：往 `custom/words.txt` 末尾追加行即可，不要改动、删除或重排已有的行。
 
-**权重只升不降**：词条已经在基础词库里而且权重更高时保留基础词库的值。`custom/words.txt` 里的历史条目大多写着占位的 `1`。需要让一个词在整句里胜出，就把权重写到同量级的真实词附近（`扛不住` 是 2430，`客气` 是 75460），不要凭感觉填一个极大值。
+**权重**：新词条的权重必须落在 `custom/words.txt` 现有条目的范围内，目前是 1 到 10000，超出范围 CI 会拒绝。历史条目大多写着占位的 `1`；想让一个词在整句里更容易胜出，就参照基础词库里同量级的真实词取值（例如 `扛不住` 是 2430），不要凭感觉填一个极大值。这个范围由 CI 按文件现有内容计算，普通 Pull Request 无法放宽；确实需要时先开 Issue，由维护者单独审核调整。已经在发布词库里的词（同词同拼音）会被 CI 拒绝，不能靠在这里再写一行来调高它的权重。
 
 每个改动 `custom/words.txt` 的 Pull Request 都会由 CI 用词库构建器的同一套规则检查：只能追加、格式与拼音合法、权重在现有范围内、不与本次改动、现有词表或已发布词库重复。结果以评论写在 Pull Request 里。维护者再人工审核内容（包括敏感词）后合入。
 
