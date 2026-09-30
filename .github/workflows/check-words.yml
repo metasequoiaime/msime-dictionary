@@ -6,7 +6,7 @@ permissions: {contents: read, pull-requests: write}
 concurrency: {group: "check-words-${{ github.event.pull_request.number }}", cancel-in-progress: true}
 env:
   # The msime commit whose msime-dict-build checks the file: the same parser and validation the dictionary build uses, so an entry that passes here builds. Move it when msime changes check-words or the custom word format.
-  MSIME_COMMIT: 0eb33f087c36722fec9927d7b76a4b1ae9a8b33b
+  MSIME_COMMIT: dfd405ae2207d378e4b4739ab475671007972db5
   # The shipped quanpin tables an addition must not repeat, pinned as msime's resources/desktop-dictionary.lock.json pins them.
   MSIME_DB_URL: https://github.com/metasequoiaime/msime-engine/releases/download/dict-v2.0.1/msime.db
   MSIME_DB_SHA256: 960d0491458bf3c5b4f199c5f5705353e1ecb6506eafbae5e8e1474d70232894
