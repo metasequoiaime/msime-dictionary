@@ -2,7 +2,7 @@
 
 组织级约定和跨仓边界以 [组织 AGENTS.md](https://github.com/metasequoiaime/.github/blob/main/AGENTS.md) 为准。本文件补充本仓的数据与验证规则。
 
-本仓只放词库源数据：`cn/`、`en/` 下的基础词库，`custom/` 下的人工维护数据，`packs/` 下的专业词库。这里没有构建脚本，也不产出词库；msime 的 `crates/dict-builder`（`msime-dict-build`）按 msime `resources/dictionary-sources.lock.json` 固定的提交下载这里的文件，校验大小与 SHA-256 后构建并发布 `dict-v*`。不要把构建脚本、生成的数据库或其他产物加回本仓。
+本仓只放词库源数据：`cn/`、`en/` 下的基础词库，`custom/` 下的人工维护数据，`packs/` 下的专业词库。这里没有构建脚本，也不产出词库；本仓以 `sources-vX.Y.Z` release 发布数据（附件是 `cn/`、`en/`、`custom/` 下的文件与 `SHA256SUMS.txt`，由 `.github/workflows/release.yml` 上传），msime 的 `crates/dict-builder`（`msime-dict-build`）按 msime `resources/dictionary-sources.lock.json` 固定的版本附件下载，校验大小与 SHA-256 后构建并发布 `dict-v*`。已发布的版本不可修改。不要把构建脚本、生成的数据库或其他产物加回本仓。
 
 ## 文件是逐字节锁定的
 

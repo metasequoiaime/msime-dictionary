@@ -51,10 +51,11 @@ scripts/     维护脚本
 ## 怎样进入输入法
 
 1. 改动合入本仓库。
-2. msime 在 `resources/dictionary-sources.lock.json` 里把本仓库的固定提交升到新版本（每个文件的 URL、大小与 SHA-256 一起更新），用 `msime-dict-build` 构建并发布 `dict-v*` 词库。
-3. 各平台升级各自锁定的词库版本，下一个版本随之带上新词库。
+2. 本仓发布 `sources-vX.Y.Z` 版本：release-please 按合入的 conventional commits 维护一个发版 Pull Request，合并它就会打标签，把 `cn/`、`en/`、`custom/` 下的每个文件和 `SHA256SUMS.txt` 作为附件上传并发布。已发布的版本不再修改，数据有误就发新版本。
+3. msime 在 `resources/dictionary-sources.lock.json` 里把引用升到新版本的附件（每个文件的 URL、大小与 SHA-256 一起更新），用 `msime-dict-build` 构建并发布 `dict-v*` 词库。
+4. 各平台升级各自锁定的词库版本，下一个版本随之带上新词库。
 
-只合入本仓库而不走完后两步，用户拿到的仍是旧词库。
+只合入本仓库而不走完后面几步，用户拿到的仍是旧词库。发版依据提交标题：合并词条 Pull Request 时用 squash，并把标题写成 `feat(words): …`（修正写成 `fix(...)`），否则 release-please 不会为它发版。
 
 ## 专业词库
 

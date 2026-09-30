@@ -1,0 +1,64 @@
+name: Release
+
+# A push to main refreshes release-please's pull request. Merging that pull request creates a draft release tagged sources-vX.Y.Z; the assets job then uploads every file under cn/, en/ and custom/ with SHA256SUMS.txt and publishes the release. msime pins these assets by URL, size and SHA-256 in resources/dictionary-sources.lock.json, so a published release must never change: fix data in a new release instead.
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    name: Release pull request
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      # The organization token, not GITHUB_TOKEN, so the release pull request it opens runs the repository's checks.
+      - id: release
+        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5
+        with:
+          target-branch: main
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
+
+  assets:
+    name: Upload and publish
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created == 'true' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ needs.release-please.outputs.tag_name }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.release-please.outputs.tag_name }}
+          persist-credentials: false
+      - name: Collect assets
+        run: |
+          set -euo pipefail
+          mkdir "$RUNNER_TEMP/assets"
+          # Assets are uploaded flat, so two data files may not share a name across directories.
+          dupes="$(find cn en custom -type f -printf '%f\n' | sort | uniq -d)"
+          if [[ -n "$dupes" ]]; then
+            echo "::error::duplicate asset names: $dupes"
+            exit 1
+          fi
+          find cn en custom -type f -exec cp {} "$RUNNER_TEMP/assets/" \;
+          (cd "$RUNNER_TEMP/assets" && sha256sum -- * > SHA256SUMS.txt)
+          cat "$RUNNER_TEMP/assets/SHA256SUMS.txt"
+      - name: Upload and publish
+        run: |
+          set -euo pipefail
+          gh release upload "$TAG" "$RUNNER_TEMP"/assets/* --repo "$GITHUB_REPOSITORY"
+          gh release edit "$TAG" --draft=false --latest --repo "$GITHUB_REPOSITORY"
