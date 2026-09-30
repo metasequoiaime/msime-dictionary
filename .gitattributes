@@ -1,0 +1,2 @@
+# Data files are pinned downstream by SHA-256 and some use CRLF line endings; store every file byte for byte.
+* -text
