@@ -13,7 +13,7 @@
 
 ## 自定义词条
 
-- `custom/words.txt` **只追加**：新词条写在文件末尾，不修改、删除或重排已有的行。check-words 会拒绝任何非追加的改动。
+- `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` **只追加**：新行写在文件末尾，不修改、删除或重排已有的行。check-words 会拒绝任何非追加的改动。
 - 格式是 `词<TAB>全拼<TAB>权重`，全拼音节用 `'` 分隔，权重落在文件现有的范围内；不要为了让一个词靠前填一个极大值。
 - 候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。
 
@@ -31,7 +31,7 @@
 python3 scripts/validate_packs.py
 ```
 
-它检查专业词库的格式、拼音（对照 `cn/SingleCharsAllV1.txt`）、与基础词库的重复项、翻译覆盖率，以及 `custom/translations.txt` 的格式。`custom/words.txt` 的追加规则由 check-words workflow 用固定版本的 `msime-dict-build check-words` 检查，需要 Rust 工具链，本地一般不跑。
+它检查专业词库的格式、拼音（对照 `cn/SingleCharsAllV1.txt`）、与基础词库的重复项、翻译覆盖率，以及 `custom/translations.txt` 的格式。这三个文件的追加规则由 check-words workflow 用固定版本的 `msime-dict-build check-words` 检查，需要 Rust 工具链，本地一般不跑。
 
 ## 隐私
 
