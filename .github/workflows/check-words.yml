@@ -46,12 +46,14 @@ jobs:
           set -e
           echo "status=$status" >> "$GITHUB_OUTPUT"
           if [ -f "$RUNNER_TEMP/summary.md" ]; then cat "$RUNNER_TEMP/summary.md" >> "$GITHUB_STEP_SUMMARY"; fi
-      # One comment per pull request, updated on every push, so a rolling submission PR shows the current verdict. A pull request from a fork gets a read-only token and no comment; the job summary above carries the same text.
+      # One comment per pull request, updated on every push, so a rolling submission PR shows the current verdict. A pull request from a fork gets a read-only token and no comment; the job summary above carries the same text. The summary is in RUNNER_TEMP, which hashFiles() cannot see (it only matches under GITHUB_WORKSPACE), so the shell tests for it.
       - name: Comment the result
-        if: ${{ always() && steps.check.outputs.status != '' && hashFiles(format('{0}/summary.md', runner.temp)) != '' }}
+        if: ${{ always() && steps.check.outputs.status != '' }}
         continue-on-error: true
         env: {GH_TOKEN: "${{ github.token }}", PR: "${{ github.event.pull_request.number }}"}
-        run: gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body-file "$RUNNER_TEMP/summary.md" --edit-last --create-if-none
+        run: |
+          [ -f "$RUNNER_TEMP/summary.md" ] || exit 0
+          gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body-file "$RUNNER_TEMP/summary.md" --edit-last --create-if-none
       - name: Fail on rejected entries
         if: ${{ steps.check.outputs.status != '0' }}
         env: {STATUS: "${{ steps.check.outputs.status }}"}
