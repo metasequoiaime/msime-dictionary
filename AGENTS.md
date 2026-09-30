@@ -1,70 +1,37 @@
-# AGENTS.md — MSIME-Dict
+# AGENTS.md — msime-dictionary
 
-组织级约定和跨仓边界以 [组织 AGENTS.md](https://github.com/metasequoiaime/.github/blob/main/AGENTS.md) 为准。本文件补充本仓的实现、数据和验证规则。
+组织级约定和跨仓边界以 [组织 AGENTS.md](https://github.com/metasequoiaime/.github/blob/main/AGENTS.md) 为准。本文件补充本仓的数据与验证规则。
 
-本仓是词库数据与构建脚本：源数据是 `cn/`、`en/`、`emoji/`、`kaomoji/`、`symbols/`、`mix/` 下的文本，产物是四个二进制数据文件。引擎只读取产物，不解析这里的源数据。
+本仓只放词库源数据：`cn/`、`en/` 下的基础词库，`custom/` 下的人工维护数据，`packs/` 下的专业词库。这里没有构建脚本，也不产出词库；msime 的 `crates/dict-builder`（`msime-dict-build`）按 msime `resources/dictionary-sources.lock.json` 固定的提交下载这里的文件，校验大小与 SHA-256 后构建并发布 `dict-v*`。不要把构建脚本、生成的数据库或其他产物加回本仓。
 
-## 构建
+## 文件是逐字节锁定的
 
-```bash
-python -m pip install -r requirements.txt
-git submodule update --init
-python build_profile.py --profile desktop --fetch-references
-python build_profile.py --profile desktop --verify
+下游按提交和 SHA-256 锁定每个文件，所以：
+
+- 不做全量格式化，不转换编码或换行符，不排序、不去重、不补结尾换行。`cn/`、`en/` 下有 CRLF 文件，`.gitattributes` 的 `* -text` 让 Git 原样保存；不要删掉它，也不要在本地用 `core.autocrlf` 之类的设置绕过。
+- 路径就是契约。改名或移动文件要同时改 msime 的锁文件与构建器，并在 PR 里互相链接；下游没有跟上之前不要合入。
+
+## 自定义词条
+
+- `custom/words.txt` **只追加**：新词条写在文件末尾，不修改、删除或重排已有的行。check-words 会拒绝任何非追加的改动。
+- 格式是 `词<TAB>全拼<TAB>权重`，全拼音节用 `'` 分隔，权重落在文件现有的范围内；不要为了让一个词靠前填一个极大值。
+- 候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。
+
+## 基础词库
+
+`cn/`、`en/` 下的文件来自第三方（见 `NOTICE.md`）。不在里面加新词；只有经过确认的错误才修改，并且：
+
+- 提交说明写清修了什么、依据是什么（上游提交、对照数据或复现方式）；
+- 来源或许可有变化时同一次改动更新 `NOTICE.md`；
+- 新增的第三方数据先确认再分发许可并写进 `NOTICE.md`，没有明确许可的数据会被 msime 构建器的 `licensing.rs` 挡在发布产物之外，要在那里同步登记。
+
+## 验证
+
+```sh
+python3 scripts/validate_packs.py
 ```
 
-`build_all.py` 把 `makecikudb/` 下各目录的分步脚本按正确顺序串成 11 个 stage，全量 clean build 大约 20 秒。**各分步脚本仍是权威**，编排器只是按顺序调用它们，单独执行的用法不变。
-
-产物写到 `out/`（已 gitignore，**不要提交构建产物**）：
-
-| 产物 | 内容 |
-|---|---|
-| `msime.db` | 全拼分表、86 五笔、快捷短语、日语词表 |
-| `english.db` | 英文候选词表与 ECDICT 双向释义表 |
-| `others.db` | emoji、颜文字、符号目录 |
-| `dict_japanese.dat` | 日语整句解码的只读 Viterbi 模型 |
-| `mozc_dictionary_oss_README.txt` | Mozc 授权声明，**必须随模型一起分发** |
-
-## 加了 stage 要同时改三处
-
-新增或改动产物时，`build_all.py` 的 `STAGES`、`SHIPPING_ARTIFACTS`、以及 `tools/verify_dictionaries.py` 的检查项要一起改，workflow 上传和发布的文件列表也要跟上。少改一处的典型后果是：stage 跑成功、产物没进 release、下游安装包缺文件，而且没有任何环节报错。
-
-`tools/verify_dictionaries.py` 的行数下限刻意设得远低于当前值，日常增删词条不会触发，它拦的是「表空了」这类事故。
-
-## 全拼分表命名（跨仓硬约定）
-
-`msime.db` 按音节数加首音节首字母分表，1–7 音节是 `tbl_{N}_{首字母}`，≥8 音节是 `tbl_others_{首字母}`。
-
-**权威定义在固定 Engine 子模块的 `contracts/dictionary/format.json`**。本仓通过 `dictionary_format.py` 加载其 Python API，建表、插入、索引共用该 API；查询、设置页写入与用户词库回放使用同源 C++ 定义。禁止在建库脚本复制命名规则。
-
-**禁止对 ≥8 音节拼出 `tbl_8_*`**，建库脚本不会创建这些表。
-
-## 外部数据
-
-两个 stage 读仓外数据，`--fetch-references` 会按固定 revision clone 到仓库同级的 `ReferenceProjects/`：
-
-- `skywind3000/ECDICT` — 候选窗中英释义的来源
-- `Selaube/rime-jp_sela` — 日语词表
-
-**revision 是刻意固定的**，为的是同一个 commit 重建能得到相同的词库。升级时通过 `sources-lock.json` 连同 Mozc revision 一起当作有意的数据变更来评审，不要顺手跟到最新。
-
-不加 `--fetch-references` 时依赖它们的 stage 会被跳过而不是报错，方便本地做部分构建；发布构建用 `--require-all` 让缺失直接失败。
-
-日语整句模型的 Mozc 原始数据由 `build_sentence_model.py --download` 自己拉。**它的 `README.txt` 含 IPAdic / ICOT / 冲绳授权声明，发布二进制模型时必须一并分发**，`japanese-model` stage 会把它复制成 `out/mozc_dictionary_oss_README.txt`。
-
-## 步骤顺序以脚本自己的说明为准
-
-各目录的执行顺序不统一，编排器逐个遵循各自的声明，不要强行统一：
-
-- `makecikudb/quanpindb/makedb/multi_table_has_jp/` 的三个脚本 docstring 写了编号，是**建表 → 插数据 → 建索引**
-- 同目录的 `README.md` 却写成建表 → 建索引 → 插数据，**与脚本自己的编号矛盾**，编排器按 docstring 走，因为对空表先建索引只会拖慢插入
-- `wubi86db/` 和 `mixdb/` 的顺序在文件名编号里（`01`、`02`、`03`、`04`）
-
-## 发布
-
-CI 每次 push 和 PR 都跑完整构建加校验。手动触发 `Build dictionaries` 并勾选 `publish` 时，会把产物和 `SHA256SUMS.txt` 发成 `dict-YYYY.MM.DD` 的 release，供 MSIME-Windows 的安装包发布流程下载并校验。
-
-**词库改了要先发一个新的 `dict-*` release，Windows 端的下一个安装包版本才会带上。** 只合进 main 不发 release 的话，用户拿到的还是旧词库。
+它检查专业词库的格式、拼音（对照 `cn/SingleCharsAllV1.txt`）、与基础词库的重复项、翻译覆盖率，以及 `custom/translations.txt` 的格式。`custom/words.txt` 的追加规则由 check-words workflow 用固定版本的 `msime-dict-build check-words` 检查，需要 Rust 工具链，本地一般不跑。
 
 ## 隐私
 
@@ -72,4 +39,4 @@ CI 每次 push 和 PR 都跑完整构建加校验。手动触发 `Build dictiona
 
 ## 提交
 
-提交信息用 `type(scope): 摘要`。不要添加 `Co-Authored-By`、`Generated with` 或其他 AI 生成标记。
+只暂存本次改动的显式路径，不用 `git add -A` / `git add .`。提交信息用 `type(scope): 摘要`。不要添加 `Co-Authored-By`、`Generated with` 或其他 AI 生成标记。
