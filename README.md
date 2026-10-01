@@ -5,7 +5,7 @@
 ## 目录
 
 ```
-cn/          中文基础词库：全拼词条、单字、五笔 86、单字白名单
+cn/          中文基础词库：全拼词条、单字、五笔 86、五笔 98、单字白名单
 en/          英文基础词库：候选词表、词频、词形列表
 custom/      人工维护的自定义数据
   words.txt          中文词条，并入全拼词表
@@ -18,7 +18,7 @@ scripts/     维护脚本
 
 ## 格式
 
-所有文件都是 UTF-8 文本。字段大多用制表符分隔，`en/BaseDictIceEn.txt` 用空格分隔；`cn/BaseDictIceV1.txt` 与 `cn/SingleCharsAllV1.txt` 开头有 `#` 注释行。`cn/` 与 `en/` 下的部分文件使用 CRLF 换行，下游按 SHA-256 锁定每个文件，所以**不要转换换行符或重新排版**，仓库的 `.gitattributes` 已关闭换行转换。
+除 `cn/Wubi98.txt` 外，所有文件都是 UTF-8 文本；`cn/Wubi98.txt` 原样保留上游的 UTF-16LE（带 BOM）与 CRLF，便于按上游提交逐字节核对。字段大多用制表符分隔，`en/BaseDictIceEn.txt` 用空格分隔；`cn/BaseDictIceV1.txt` 与 `cn/SingleCharsAllV1.txt` 开头有 `#` 注释行。`cn/` 与 `en/` 下的部分文件使用 CRLF 换行，下游按 SHA-256 锁定每个文件，所以**不要转换换行符或重新排版**，仓库的 `.gitattributes` 已关闭换行转换。
 
 | 文件 | 每行 | 说明 |
 | --- | --- | --- |
@@ -26,6 +26,7 @@ scripts/     维护脚本
 | `cn/BaseDictAllV1Part1.txt`、`cn/BaseDictAllV1Part2.txt` | `词<TAB>全拼<TAB>权重` | CustomPinyinDictionary 与雾凇合并去重后的全量词库，因 GitHub 单文件大小限制拆成两部分 |
 | `cn/SingleCharsAllV1.txt` | `字<TAB>全拼<TAB>权重` | 雾凇的 8105 个常用字，补充 Unicode 中其余较常见的字，读音以 pinyin-data 校正 |
 | `cn/Wubi86.txt` | `词<TAB>五笔编码<TAB>权重` | 86 版五笔，来自 rime-wubi86-jidian |
+| `cn/Wubi98.txt` | `词<TAB>五笔编码` | 98 版五笔含词表，来自 98五笔小组；没有权重，同一编码内按行序排列 |
 | `cn/SingleCharWhitelist.txt` | 一个字 | 完整构建时用来过滤单字条目 |
 | `en/BaseDictIceEn.txt` | `编码 显示词` | 雾凇的英文词库 |
 | `en/google_count_1_w.txt` | `词<TAB>次数` | Google 1/3 million 英文词频 |
