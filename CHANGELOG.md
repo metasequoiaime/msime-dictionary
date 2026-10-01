@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.0.0...sources-v1.1.0) (2026-10-01)
+
+
+### Features
+
+* **cn:** add the 98 wubi table from the 98 wubi group ([#27](https://github.com/metasequoiaime/msime-dictionary/issues/27)) ([54bc4a0](https://github.com/metasequoiaime/msime-dictionary/commit/54bc4a024c8718f8263a82de154a6178e7bcfebc))
+
 ## 1.0.0 (2026-09-30)
 
 
