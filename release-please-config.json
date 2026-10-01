@@ -13,7 +13,7 @@
       "draft": true,
       "force-tag-creation": true,
       "pull-request-header": "This PR prepares the next release of the dictionary source data.",
-      "pull-request-footer": "Merging it tags the release and uploads every file under cn/, en/ and custom/ plus SHA256SUMS.txt as release assets, then publishes the release. msime pins those assets in resources/dictionary-sources.lock.json."
+      "pull-request-footer": "Merging it tags the release and uploads every file under cn/, en/, yue/, tw/ and custom/ plus SHA256SUMS.txt as release assets, then publishes the release. msime pins those assets in resources/dictionary-sources.lock.json."
     }
   }
 }
