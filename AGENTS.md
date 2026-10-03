@@ -27,7 +27,7 @@
 
 ## 粤拼、注音、笔画、日文与韩文词库
 
-`yue/` 是 [rime/rime-cantonese](https://github.com/rime/rime-cantonese) 的 `jyut6ping3.chars.dict.yaml`、`jyut6ping3.words.dict.yaml`、`essay-cantonese.txt`，`tw/` 是 [chewing/libchewing-data](https://github.com/chewing/libchewing-data) 的 `dict/chewing/tsi.csv`、`dict/chewing/word.csv`，`stroke/` 是 [rime/rime-stroke](https://github.com/rime/rime-stroke) 的 `stroke.dict.yaml`，`ja/` 是 [google/mozc](https://github.com/google/mozc) 的 OSS 日文词库文件，`ko/` 是 [libhangul/libhangul](https://github.com/libhangul/libhangul) 的 `hanja.txt`，都与 `NOTICE.md` 记录的上游提交逐字节一致。
+`yue/` 是 [rime/rime-cantonese](https://github.com/rime/rime-cantonese) 的 `jyut6ping3.chars.dict.yaml`、`jyut6ping3.words.dict.yaml`、`essay-cantonese.txt`，`tw/tsi.csv`、`tw/word.csv` 是 [chewing/libchewing-data](https://github.com/chewing/libchewing-data) 的原样文件，`tw/McBopomofoSupplement.txt` 是 [openvanilla/McBopomofo](https://github.com/openvanilla/McBopomofo) 的固定补充源转换文件，`stroke/` 是 [rime/rime-stroke](https://github.com/rime/rime-stroke) 的 `stroke.dict.yaml`，`ja/` 是 [google/mozc](https://github.com/google/mozc) 的 OSS 日文词库文件，`ko/` 是 [libhangul/libhangul](https://github.com/libhangul/libhangul) 的 `hanja.txt`，来源和许可见 `NOTICE.md`。
 
 - 不在本仓修改这些文件，也不加词；错误报给上游。
 - 更新时把整份文件换成上游新提交的版本，同一次改动更新 `NOTICE.md` 里的提交；msime 那边要同步改锁文件里的对应上游引用和 `resources/licenses/` 下对应许可证文件写明的提交，并在 PR 里互相链接。

@@ -44,6 +44,7 @@ scripts/     维护脚本
 | `yue/essay-cantonese.txt` | `字或词<TAB>次数` | rime-cantonese 的字词频，用作排序权重 |
 | `tw/tsi.csv` | `词,词频,注音` | libchewing-data 的内建词库（也含单字），音节之间用空格分隔 |
 | `tw/word.csv` | `字,频率,注音` | libchewing-data 的内建字库，每个字的每个读音一行，频率都是 0 |
+| `tw/McBopomofoSupplement.txt` | `词,0,注音` | McBopomofo 的多字词补充表；相对 `tsi.csv` 去重，原表没有频率所以补充项权重为 0 |
 | `stroke/stroke.dict.yaml` | `字<TAB>笔顺码` | rime-stroke 的笔顺表，笔顺码由 `h` 横、`s` 竖、`p` 撇、`n` 点、`z` 折组成；一个字可以有多行（大陆与台湾笔顺不同时） |
 | `ja/mozc/dictionary00.txt` … `dictionary09.txt` | `读音<TAB>左上下文<TAB>右上下文<TAB>代价<TAB>词语...` | Mozc OSS 日文词库分片 |
 | `ja/mozc/id.def` | `编号<TAB>标签` | Mozc OSS 日文词库的上下文编号表 |

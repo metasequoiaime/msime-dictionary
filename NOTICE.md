@@ -37,6 +37,7 @@
 | --- | --- | --- |
 | `yue/jyut6ping3.chars.dict.yaml`、`yue/jyut6ping3.words.dict.yaml`、`yue/essay-cantonese.txt` | [rime/rime-cantonese](https://github.com/rime/rime-cantonese)，提交 `ac277184f161f297c2031b497588975234019f9d` 的同名文件 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | `tw/tsi.csv`、`tw/word.csv` | [chewing/libchewing-data](https://github.com/chewing/libchewing-data)，提交 `c44e81aef24b06f1509f19e1be54c99812d0c43f` 的 `dict/chewing/tsi.csv`、`dict/chewing/word.csv` | [LGPL-2.1-or-later](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) |
+| `tw/McBopomofoSupplement.txt` | [openvanilla/McBopomofo](https://github.com/openvanilla/McBopomofo)，提交 `be6564acad6c4d3265c34a2e1a872d80f9db6068` 的 `Source/Data/BPMFMappings.txt`，转换为本仓 CSV 格式并排除 `tsi.csv` 已有组合 | BSD（上游说明多字词表源自 BSD 授权的 libtabe，并含修改） |
 | `stroke/stroke.dict.yaml` | [rime/rime-stroke](https://github.com/rime/rime-stroke)，提交 `1e8fff9b9494ddec23b0cbc526bcfd8171a6fd48` 的 `stroke.dict.yaml` | [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.html) |
 
 这六个文件与上游固定提交逐字节一致（UTF-8、LF），没有改编码、换行或内容：
