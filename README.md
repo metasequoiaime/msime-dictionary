@@ -32,6 +32,7 @@ scripts/     维护脚本
 | `cn/SingleCharsAllV1.txt` | `字<TAB>全拼<TAB>权重` | 雾凇的 8105 个常用字，补充 Unicode 中其余较常见的字，读音以 pinyin-data 校正 |
 | `cn/Wubi86.txt` | `词<TAB>五笔编码<TAB>权重` | 86 版五笔，来自 rime-wubi86-jidian |
 | `cn/Wubi98.txt` | `词<TAB>五笔编码` | 98 版五笔含词表，来自 98五笔小组；没有权重，同一编码内按行序排列 |
+| `cn/Wubi98Fcitx.txt` | `五笔编码 空格 词` | Fcitx5 table-extra 的完整 98 五笔补充表；构建时与 `Wubi98.txt` 去重合并 |
 | `cn/SingleCharWhitelist.txt` | 一个字 | 完整构建时用来过滤单字条目 |
 | `en/BaseDictIceEn.txt` | `编码 显示词` | 雾凇的英文词库 |
 | `en/google_count_1_w.txt` | `词<TAB>次数` | Google 1/3 million 英文词频 |
