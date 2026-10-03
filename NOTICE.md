@@ -33,17 +33,17 @@
 
 | 文件 | 上游 | 上游许可 |
 | --- | --- | --- |
-| `yue/jyut6ping3.chars.dict.yaml`、`yue/jyut6ping3.words.dict.yaml`、`yue/essay-cantonese.txt` | [rime/rime-cantonese](https://github.com/rime/rime-cantonese)，提交 `259f0e48bba840c3a2e0d117539e96937f3d89bc` 的同名文件 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `yue/jyut6ping3.chars.dict.yaml`、`yue/jyut6ping3.words.dict.yaml`、`yue/essay-cantonese.txt` | [rime/rime-cantonese](https://github.com/rime/rime-cantonese)，提交 `ac277184f161f297c2031b497588975234019f9d` 的同名文件 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | `tw/tsi.csv`、`tw/word.csv` | [chewing/libchewing-data](https://github.com/chewing/libchewing-data)，提交 `c44e81aef24b06f1509f19e1be54c99812d0c43f` 的 `dict/chewing/tsi.csv`、`dict/chewing/word.csv` | [LGPL-2.1-or-later](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) |
 | `stroke/stroke.dict.yaml` | [rime/rime-stroke](https://github.com/rime/rime-stroke)，提交 `1e8fff9b9494ddec23b0cbc526bcfd8171a6fd48` 的 `stroke.dict.yaml` | [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.html) |
 
-这六个文件与上游固定提交逐字节一致（UTF-8、LF），没有改编码、换行或内容，SHA-256 与 msime 此前直接从上游下载时锁定的值相同：
+这六个文件与上游固定提交逐字节一致（UTF-8、LF），没有改编码、换行或内容：
 
 | 文件 | SHA-256 |
 | --- | --- |
-| `yue/jyut6ping3.chars.dict.yaml` | `9b053a594c80eae76545bcdd83239884a49b1ba48b89ca0ab9e8daac79f33013` |
-| `yue/jyut6ping3.words.dict.yaml` | `54d174ad2bb997e4a678b7b076b84e4dc5914481b32467cdea3b43e88b7d5474` |
-| `yue/essay-cantonese.txt` | `d08836175f598219f43c2f2f9e12e12711212dbefe08d57b2eddb7a9d9f22a5d` |
+| `yue/jyut6ping3.chars.dict.yaml` | `d5c06066ae160bcba5d4340b6424f845e1a3f86caab7e67e5b1725e01458afc6` |
+| `yue/jyut6ping3.words.dict.yaml` | `436ec7b5b0b1d320f5bea72ab009e36dcccb0ae75c2dea0c55810a33c8ee1abb` |
+| `yue/essay-cantonese.txt` | `12caf53435ad0e1aaaa6a323fe2f3f3aba73046a111989e5e3e3ccc9a79fca3d` |
 | `tw/tsi.csv` | `c889a1ac3ae1901b3f8f62748bc41b958f010bf995f7f88dbaf9e3494f341428` |
 | `tw/word.csv` | `da55b8e599c1389bc486453554f3410cf9c621d0ffff0ce38855698d26b3892a` |
 | `stroke/stroke.dict.yaml` | `b3e93dce89c185f45c3d6e189b86b3a8626913352cc85e1094c786579a665791` |
