@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.0](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.1.0...sources-v1.2.0) (2026-10-03)
+
+
+### Features
+
+* **custom:** add 1 word ([#30](https://github.com/metasequoiaime/msime-dictionary/issues/30)) ([3a13da0](https://github.com/metasequoiaime/msime-dictionary/commit/3a13da03d5a5d67d100b2f3a8621a63e9d057d20))
+* **custom:** add 1 word ([#32](https://github.com/metasequoiaime/msime-dictionary/issues/32)) ([9785b0a](https://github.com/metasequoiaime/msime-dictionary/commit/9785b0a25265c7ff8ff22e5a521d4538ba0b697c))
+* **custom:** add 2 words ([#26](https://github.com/metasequoiaime/msime-dictionary/issues/26)) ([3ee205d](https://github.com/metasequoiaime/msime-dictionary/commit/3ee205d868dd4d0010324cdd5554bd323f63a6e4))
+* **sources:** add the Cantonese, Zhuyin and Stroke source data ([#31](https://github.com/metasequoiaime/msime-dictionary/issues/31)) ([d59ec87](https://github.com/metasequoiaime/msime-dictionary/commit/d59ec874be0e51b54d929b01ccd8e1096628458b))
+
 ## [1.1.0](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.0.0...sources-v1.1.0) (2026-10-01)
 
 
