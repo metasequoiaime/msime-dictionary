@@ -6,7 +6,7 @@
 
 ```
 cn/          中文基础词库：全拼词条、单字、五笔 86、五笔 98、单字白名单
-en/          英文基础词库：候选词表、词频、词形列表
+en/          英文基础词库：候选词表、rime-ice 补充词条、词频、词形列表
 yue/         粤拼方案的词库：单字、词语、字词频（rime-cantonese 原样）
 tw/          注音方案的词库：词语、单字（libchewing-data 原样）
 stroke/      笔画方案的笔顺码表（rime-stroke 原样）
@@ -35,7 +35,8 @@ scripts/     维护脚本
 | `cn/Wubi98.txt` | `词<TAB>五笔编码` | 98 版五笔含词表，来自 98五笔小组；没有权重，同一编码内按行序排列 |
 | `cn/Wubi98Fcitx.txt` | `五笔编码 空格 词` | Fcitx5 table-extra 的完整 98 五笔补充表；构建时与 `Wubi98.txt` 去重合并 |
 | `cn/SingleCharWhitelist.txt` | 一个字 | 完整构建时用来过滤单字条目 |
-| `en/BaseDictIceEn.txt` | `编码 显示词` | 雾凇的英文词库 |
+| `en/BaseDictIceEn.txt` | `编码 显示词` | 雾凇的英文主词库 |
+| `en/RimeIceEnglishSupplementV1.txt` | `显示词<TAB>编码` | rime-ice 新提交中相对 `BaseDictIceEn.txt` 新增的纯 ASCII 英文词条，构建时并入英文词表 |
 | `en/google_count_1_w.txt` | `词<TAB>次数` | Google 1/3 million 英文词频 |
 | `en/oaldpe_words.txt` | 一个词形 | 从 oaldpe.mdx 提取的词形列表 |
 | `yue/jyut6ping3.chars.dict.yaml` | `字<TAB>粤拼[<TAB>百分比]` | rime-cantonese 的单字表，粤拼带声调数字；第三列是同一个字各读音的使用比例，可省略 |

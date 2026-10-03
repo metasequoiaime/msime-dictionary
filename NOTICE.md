@@ -27,6 +27,7 @@
 | 文件 | 上游 | 上游许可 |
 | --- | --- | --- |
 | `en/BaseDictIceEn.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice) | GPL-3.0 |
+| `en/RimeIceEnglishSupplementV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，提交 `3aea6d3694fb3d94ec663641f021f788822897ad` 的 `en_dicts/en.dict.yaml` 与 `en_ext.dict.yaml` 中相对 `BaseDictIceEn.txt` 新增的纯 ASCII 单词 | GPL-3.0 |
 | `en/google_count_1_w.txt` | [Google 1/3 million 词频表](https://www.norvig.com/ngrams/count_1w.txt) | 以来源页面说明为准 |
 | `en/oaldpe_words.txt` | 自 oaldpe.mdx 提取的词形列表 | 权利归词典出版方 |
 
