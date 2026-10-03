@@ -53,6 +53,15 @@ rime-stroke 的上游仓库以 LGPL-3.0 发布（`LICENSE`）。`AUTHORS` 列出
 
 msime 用 `msime-dict-build languages` 把它们构建成 `cantonese.db`、`zhuyin.db`、`stroke.db`，以 msime 的 `langdict-v*` 发布；随产物分发的署名、改动说明与许可证全文在 msime 的 `resources/licenses/rime-cantonese-CC-BY-4.0.txt`、`resources/licenses/libchewing-data-LGPL-2.1.txt`、`resources/licenses/rime-stroke-LGPL-3.0.txt`，换上游提交时这些文件要一起改。`stroke.db` 的排序权重取自 `cn/SingleCharsAllV1.txt`。
 
+## 日文与韩文词库
+
+| 文件 | 上游 | 上游许可 |
+| --- | --- | --- |
+| `ja/mozc/dictionary00.txt` … `dictionary09.txt`、`ja/mozc/id.def`、`ja/mozc/connection_single_column.txt`、`ja/mozc/README.txt` | [google/mozc](https://github.com/google/mozc)，提交 `9fbd649bea4c5e99cd8ad5e487213b26a953a376` 的 `src/data/dictionary_oss/` 文件 | 以随附的 `README.txt` 为准（IPADIC、ICOT 与冲绳方言数据分别附带其上游条款） |
+| `ko/hanja.txt` | [libhangul/libhangul](https://github.com/libhangul/libhangul)，提交 `717409ce61524bb3d8426060a384822f21354c62` 的 `data/hanja/hanja.txt` | BSD-3-Clause |
+
+`ja/mozc/` 与 `ko/hanja.txt` 均逐字节保留上游文件。`msime-dict-build` 从 `ja/mozc/` 构建 `dict_japanese.dat`，从 `ko/hanja.txt` 生成引擎内嵌的韩文 Hanja 表；日文词库发布时必须同时分发 `ja/mozc/README.txt`，韩文数据的 BSD-3-Clause 文本见 msime 的 `resources/licenses/libhangul-hanja-BSD-3-Clause.txt`。更新任一上游提交时，需同步更新 msime 的锁文件、构建器路径和对应的许可证说明。
+
 ## 下游影响
 
 由 `cn/BaseDictAllV1Part1.txt` 与 `cn/BaseDictAllV1Part2.txt` 构建出的 `msime.db` 同时包含 rime-ice（GPL-3.0）与 CustomPinyinDictionary（未声明许可）的内容。使用该数据库的前端本身以 GPL-3.0 分发，与 rime-ice 兼容，但**必须保留对 rime-ice 的署名**。
