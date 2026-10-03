@@ -7,6 +7,7 @@
 | 文件 | 上游 | 上游许可 |
 | --- | --- | --- |
 | `cn/BaseDictIceV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，对照提交 `9e66b0729083b37d217312294f6d516c8d7234be`（见下） | GPL-3.0 |
+| `cn/RimeIceSupplementV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，提交 `3aea6d3694fb3d94ec663641f021f788822897ad` 的 `cn_dicts/base.dict.yaml`、`ext.dict.yaml`、`8105.dict.yaml`、`others.dict.yaml`，排除 `BaseDictIceV1.txt` 已有的同词同音行 | GPL-3.0 |
 | `cn/BaseDictAllV1Part1.txt`、`cn/BaseDictAllV1Part2.txt` | [wuhgit/CustomPinyinDictionary](https://github.com/wuhgit/CustomPinyinDictionary)（`2023-09-28(No.82)` 版）与 rime-ice 合并去重 | GPL-3.0 与**未声明**的混合 |
 | `cn/SingleCharsAllV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，读音以 [mozillazg/pinyin-data](https://github.com/mozillazg/pinyin-data) 校正 | GPL-3.0 + MIT |
 | `cn/Wubi86.txt` | [KyleBing/rime-wubi86-jidian](https://github.com/KyleBing/rime-wubi86-jidian) | Apache-2.0 |

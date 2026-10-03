@@ -28,6 +28,7 @@ scripts/     维护脚本
 | 文件 | 每行 | 说明 |
 | --- | --- | --- |
 | `cn/BaseDictIceV1.txt` | `词<TAB>全拼<TAB>权重` | 雾凇拼音（rime-ice）的短语词库，经本项目修正 |
+| `cn/RimeIceSupplementV1.txt` | `词<TAB>全拼<TAB>权重` | rime-ice 新提交中相对 `BaseDictIceV1.txt` 新增的开源词条，构建时并入全拼 |
 | `cn/BaseDictAllV1Part1.txt`、`cn/BaseDictAllV1Part2.txt` | `词<TAB>全拼<TAB>权重` | CustomPinyinDictionary 与雾凇合并去重后的全量词库，因 GitHub 单文件大小限制拆成两部分 |
 | `cn/SingleCharsAllV1.txt` | `字<TAB>全拼<TAB>权重` | 雾凇的 8105 个常用字，补充 Unicode 中其余较常见的字，读音以 pinyin-data 校正 |
 | `cn/Wubi86.txt` | `词<TAB>五笔编码<TAB>权重` | 86 版五笔，来自 rime-wubi86-jidian |
