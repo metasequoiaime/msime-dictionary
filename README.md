@@ -1,12 +1,15 @@
 # 水杉输入法词库
 
-水杉输入法词库的源数据只在这个仓库维护：拼音、五笔与英文的基础词库，人工维护的自定义词条和候选窗翻译，以及用户按需导入的专业词库。这里只放文本数据，不放构建脚本；词库由 [msime](https://github.com/metasequoiaime/msime) 的构建器按固定提交取用这里的文件，构建成各平台共用的 `dict-v*` 词库发布。
+水杉输入法词库的源数据只在这个仓库维护：拼音、五笔与英文的基础词库，粤拼、注音与笔画方案的词库，人工维护的自定义词条和候选窗翻译，以及用户按需导入的专业词库。这里只放文本数据，不放构建脚本；词库由 [msime](https://github.com/metasequoiaime/msime) 的构建器按固定提交取用这里的文件，构建成各平台共用的 `dict-v*` 词库发布，粤拼、注音与笔画的数据另外构建成 `cantonese.db`、`zhuyin.db`、`stroke.db`，以 msime 的 `langdict-v*` 发布。
 
 ## 目录
 
 ```
 cn/          中文基础词库：全拼词条、单字、五笔 86、五笔 98、单字白名单
 en/          英文基础词库：候选词表、词频、词形列表
+yue/         粤拼方案的词库：单字、词语、字词频（rime-cantonese 原样）
+tw/          注音方案的词库：词语、单字（libchewing-data 原样）
+stroke/      笔画方案的笔顺码表（rime-stroke 原样）
 custom/      人工维护的自定义数据
   words.txt          中文词条，并入全拼词表
   translations.txt   候选窗翻译覆盖
@@ -18,7 +21,7 @@ scripts/     维护脚本
 
 ## 格式
 
-除 `cn/Wubi98.txt` 外，所有文件都是 UTF-8 文本；`cn/Wubi98.txt` 原样保留上游的 UTF-16LE（带 BOM）与 CRLF，便于按上游提交逐字节核对。字段大多用制表符分隔，`en/BaseDictIceEn.txt` 用空格分隔；`cn/BaseDictIceV1.txt` 与 `cn/SingleCharsAllV1.txt` 开头有 `#` 注释行。`cn/` 与 `en/` 下的部分文件使用 CRLF 换行，下游按 SHA-256 锁定每个文件，所以**不要转换换行符或重新排版**，仓库的 `.gitattributes` 已关闭换行转换。
+除 `cn/Wubi98.txt` 外，所有文件都是 UTF-8 文本；`cn/Wubi98.txt` 原样保留上游的 UTF-16LE（带 BOM）与 CRLF，便于按上游提交逐字节核对。字段大多用制表符分隔，`en/BaseDictIceEn.txt` 用空格分隔，`tw/` 下的两个 CSV 用逗号分隔；`cn/BaseDictIceV1.txt` 与 `cn/SingleCharsAllV1.txt` 开头有 `#` 注释行，`yue/` 下的两个 `.dict.yaml` 开头是 Rime 的 YAML 文件头（到 `...` 一行为止），`tw/` 下的 CSV 开头是 `# dc:` 元数据行，`stroke/stroke.dict.yaml` 同样以 Rime 的 YAML 文件头开头。`yue/`、`tw/`、`stroke/` 下的文件与上游固定提交逐字节一致（UTF-8、LF）。`cn/` 与 `en/` 下的部分文件使用 CRLF 换行，下游按 SHA-256 锁定每个文件，所以**不要转换换行符或重新排版**，仓库的 `.gitattributes` 已关闭换行转换。
 
 | 文件 | 每行 | 说明 |
 | --- | --- | --- |
@@ -31,12 +34,18 @@ scripts/     维护脚本
 | `en/BaseDictIceEn.txt` | `编码 显示词` | 雾凇的英文词库 |
 | `en/google_count_1_w.txt` | `词<TAB>次数` | Google 1/3 million 英文词频 |
 | `en/oaldpe_words.txt` | 一个词形 | 从 oaldpe.mdx 提取的词形列表 |
+| `yue/jyut6ping3.chars.dict.yaml` | `字<TAB>粤拼[<TAB>百分比]` | rime-cantonese 的单字表，粤拼带声调数字；第三列是同一个字各读音的使用比例，可省略 |
+| `yue/jyut6ping3.words.dict.yaml` | `词<TAB>粤拼` | rime-cantonese 的词语表，音节用空格分隔，带声调数字 |
+| `yue/essay-cantonese.txt` | `字或词<TAB>次数` | rime-cantonese 的字词频，用作排序权重 |
+| `tw/tsi.csv` | `词,词频,注音` | libchewing-data 的内建词库（也含单字），音节之间用空格分隔 |
+| `tw/word.csv` | `字,频率,注音` | libchewing-data 的内建字库，每个字的每个读音一行，频率都是 0 |
+| `stroke/stroke.dict.yaml` | `字<TAB>笔顺码` | rime-stroke 的笔顺表，笔顺码由 `h` 横、`s` 竖、`p` 撇、`n` 点、`z` 折组成；一个字可以有多行（大陆与台湾笔顺不同时） |
 | `custom/words.txt` | `词<TAB>全拼<TAB>权重` | 全拼音节用 `'` 分隔，如 `未来可期	wei'lai'ke'qi	5000`。只收已发布词库里没有的词（同词同拼音），见下方的贡献规则 |
 | `custom/translations.txt` | `源词<TAB>译文` | 优先于 ECDICT；源词含汉字为中译英，否则为英译中；`#` 开头为注释，同一源词后写覆盖先写 |
 | `custom/english.txt` | `编码<TAB>显示词<TAB>权重` | 编码是输入的小写字母，显示词是上屏的写法，同一编码可以有多个显示词。有 Google 词频的词按词频排序，没有的按这里的权重，但排不过任何有词频的词 |
 | `custom/names.txt` | 一个人名 | |
 
-`cn/`、`en/` 下各文件的上游、许可与已知问题见 [NOTICE.md](NOTICE.md)。
+`cn/`、`en/`、`yue/`、`tw/`、`stroke/` 下各文件的上游、许可与已知问题见 [NOTICE.md](NOTICE.md)。
 
 ## 贡献
 
@@ -49,13 +58,13 @@ scripts/     维护脚本
 
 每个改动 `custom/words.txt`、`custom/translations.txt` 或 `custom/english.txt` 的 Pull Request 都会由 CI 用词库构建器的同一套规则检查：只能追加、格式合法（词语还要拼音合法）、词语与英文的权重在文件现有范围内、不与本次改动、所在文件或已发布词库（`msime.db`、`english.db`）重复。翻译可以给已有的源词换一个译文，后写的生效；完全相同的一行会被拒绝。结果以评论写在 Pull Request 里。维护者再人工审核内容（包括敏感词）后合入。
 
-候选窗翻译的修正写到 `custom/translations.txt`，不要去改 ECDICT。`cn/`、`en/` 下的基础词库来自第三方，不在里面加新词；只有确认的错误才修改，并在提交说明里写清依据。
+候选窗翻译的修正写到 `custom/translations.txt`，不要去改 ECDICT。`cn/`、`en/` 下的基础词库来自第三方，不在里面加新词；只有确认的错误才修改，并在提交说明里写清依据。`yue/`、`tw/`、`stroke/` 下的文件是上游的原样副本，不在本仓修改，错误报给上游，更新时整份换成上游新提交的文件。
 
 ## 怎样进入输入法
 
 1. 改动合入本仓库。
-2. 本仓发布 `sources-vX.Y.Z` 版本：release-please 按合入的 conventional commits 维护一个发版 Pull Request，合并它就会打标签，把 `cn/`、`en/`、`custom/` 下的每个文件和 `SHA256SUMS.txt` 作为附件上传并发布。已发布的版本不再修改，数据有误就发新版本。
-3. msime 在 `resources/dictionary-sources.lock.json` 里把引用升到新版本的附件（每个文件的 URL、大小与 SHA-256 一起更新），用 `msime-dict-build` 构建并发布 `dict-v*` 词库。
+2. 本仓发布 `sources-vX.Y.Z` 版本：release-please 按合入的 conventional commits 维护一个发版 Pull Request，合并它就会打标签，把 `cn/`、`en/`、`yue/`、`tw/`、`stroke/`、`custom/` 下的每个文件和 `SHA256SUMS.txt` 作为附件上传并发布。已发布的版本不再修改，数据有误就发新版本。
+3. msime 在 `resources/dictionary-sources.lock.json` 里把引用升到新版本的附件（每个文件的 URL、大小与 SHA-256 一起更新），用 `msime-dict-build` 构建并发布 `dict-v*` 词库；`yue/`、`tw/`、`stroke/` 由 `msime-dict-build languages` 构建成 `cantonese.db`、`zhuyin.db`、`stroke.db`，以 `langdict-v*` 发布。
 4. 各平台升级各自锁定的词库版本，下一个版本随之带上新词库。
 
 只合入本仓库而不走完后面几步，用户拿到的仍是旧词库。发版依据提交标题：合并词条 Pull Request 时用 squash，并把标题写成 `feat(...)`（如官网滚动 Pull Request 的 `feat(custom): …`；修正写成 `fix(...)`），否则 release-please 不会为它发版。
