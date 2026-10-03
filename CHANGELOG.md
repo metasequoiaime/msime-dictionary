@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.2.0...sources-v1.3.0) (2026-10-03)
+
+
+### Features
+
+* **custom:** add 1 word ([#33](https://github.com/metasequoiaime/msime-dictionary/issues/33)) ([a2360e7](https://github.com/metasequoiaime/msime-dictionary/commit/a2360e7a4aacd883557952ac64ba5c02840d105c))
+
 ## [1.2.0](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.1.0...sources-v1.2.0) (2026-10-03)
 
 
