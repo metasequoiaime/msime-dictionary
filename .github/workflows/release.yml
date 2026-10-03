@@ -1,6 +1,6 @@
 name: Release
 
-# A push to main refreshes release-please's pull request. Merging that pull request creates a draft release tagged sources-vX.Y.Z; the assets job then uploads every file under cn/, en/, yue/, tw/ and custom/ with SHA256SUMS.txt and publishes the release. msime pins these assets by URL, size and SHA-256 in resources/dictionary-sources.lock.json, so a published release must never change: fix data in a new release instead.
+# A push to main refreshes release-please's pull request. Merging that pull request creates a draft release tagged sources-vX.Y.Z; the assets job then uploads every file under cn/, en/, yue/, tw/, stroke/ and custom/ with SHA256SUMS.txt and publishes the release. msime pins these assets by URL, size and SHA-256 in resources/dictionary-sources.lock.json, so a published release must never change: fix data in a new release instead.
 on:
   push:
     branches: [main]
@@ -49,12 +49,12 @@ jobs:
           set -euo pipefail
           mkdir "$RUNNER_TEMP/assets"
           # Assets are uploaded flat, so two data files may not share a name across directories.
-          dupes="$(find cn en yue tw custom -type f -printf '%f\n' | sort | uniq -d)"
+          dupes="$(find cn en yue tw stroke custom -type f -printf '%f\n' | sort | uniq -d)"
           if [[ -n "$dupes" ]]; then
             echo "::error::duplicate asset names: $dupes"
             exit 1
           fi
-          find cn en yue tw custom -type f -exec cp {} "$RUNNER_TEMP/assets/" \;
+          find cn en yue tw stroke custom -type f -exec cp {} "$RUNNER_TEMP/assets/" \;
           (cd "$RUNNER_TEMP/assets" && sha256sum -- * > SHA256SUMS.txt)
           cat "$RUNNER_TEMP/assets/SHA256SUMS.txt"
       - name: Upload and publish
