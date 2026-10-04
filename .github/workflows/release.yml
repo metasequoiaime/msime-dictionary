@@ -1,6 +1,6 @@
 name: Release
 
-# 推送到 main 会刷新 release-please 的发版 Pull Request；合并后创建 sources-vX.Y.Z 草稿发布，assets 任务把 cn/、en/、yue/、tw/、stroke/、ja/、ko/ 和 custom/ 下的文件连同 SHA256SUMS.txt 上传并发布。msime 在 resources/dictionary-sources.lock.json 中按 URL、大小和 SHA-256 固定这些附件，已发布版本不可修改，数据修正应发布新版本。
+# 推送到 main 会刷新 release-please 的发版 Pull Request；合并后创建 sources-vX.Y.Z 草稿发布，assets 任务把 cn/、en/、yue/、tw/、stroke/、ja/、ko/ 和 custom/ 下的文件连同 SHA256SUMS.txt 上传并发布。所有 Release 标题统一使用完整 tag（例如 sources-v1.6.0、dict-v2.0.3、langdict-v1.2.1）。msime 在 resources/dictionary-sources.lock.json 中按 URL、大小和 SHA-256 固定这些附件，已发布版本不可修改，数据修正应发布新版本。
 on:
   push:
     branches: [main]
@@ -61,4 +61,4 @@ jobs:
         run: |
           set -euo pipefail
           gh release upload "$TAG" "$RUNNER_TEMP"/assets/* --repo "$GITHUB_REPOSITORY"
-          gh release edit "$TAG" --draft=false --latest --repo "$GITHUB_REPOSITORY"
+          gh release edit "$TAG" --title "$TAG" --draft=false --latest --repo "$GITHUB_REPOSITORY"
