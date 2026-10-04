@@ -7,12 +7,12 @@ concurrency: {group: "check-words-${{ github.event.pull_request.number }}", canc
 env:
   # The msime commit whose msime-dict-build checks the files: the same parsers and validation the dictionary build uses, so an entry that passes here builds. Move it when msime changes check-words or a custom file format.
   MSIME_COMMIT: 434d8da644553e098368dcf739ba5113881cdc48
-  # The shipped quanpin tables an addition must not repeat, pinned as msime's resources/desktop-dictionary.lock.json pins them.
-  MSIME_DB_URL: https://github.com/metasequoiaime/msime-engine/releases/download/dict-v2.0.1/msime.db
-  MSIME_DB_SHA256: 960d0491458bf3c5b4f199c5f5705353e1ecb6506eafbae5e8e1474d70232894
-  # The shipped English words an english.txt addition must not repeat, from the same release.
-  ENGLISH_DB_URL: https://github.com/metasequoiaime/msime-engine/releases/download/dict-v2.0.1/english.db
-  ENGLISH_DB_SHA256: 83f8c2fe7a33f9797392cd914056cc97fc6e62480c2d787e17019ce6daddba8a
+  # The shipped quanpin tables a words.txt addition must not repeat: msime-pinyin.db from this repository's latest dict-v release, built from sources/pinyin/ and custom/words.txt. Move it and its hash to each new dict-v release.
+  MSIME_DB_URL: https://github.com/metasequoiaime/msime-dictionary/releases/download/dict-v2.0.5/msime-pinyin.db
+  MSIME_DB_SHA256: bdabb6717a95695ed380534d093e21394d7a889c19513ea377b35c665867382c
+  # The shipped English words an english.txt addition must not repeat: msime-english.db from the same release.
+  ENGLISH_DB_URL: https://github.com/metasequoiaime/msime-dictionary/releases/download/dict-v2.0.5/msime-english.db
+  ENGLISH_DB_SHA256: a370fb2b38351ed5e86688507afb0e9c095edebb29db40411c02a198a466b92e
 jobs:
   check:
     runs-on: ubuntu-24.04
@@ -26,12 +26,26 @@ jobs:
       - name: Build msime-dict-build
         working-directory: msime
         run: cargo build --release --locked -p msime-dict-builder --bin msime-dict-build
-      - name: Fetch the shipped msime.db and english.db
+      - name: Fetch the shipped msime-pinyin.db and msime-english.db
         run: |
-          curl -fsSL --retry 3 -o "$RUNNER_TEMP/msime.db" "$MSIME_DB_URL"
-          echo "$MSIME_DB_SHA256  $RUNNER_TEMP/msime.db" | sha256sum -c -
-          curl -fsSL --retry 3 -o "$RUNNER_TEMP/english.db" "$ENGLISH_DB_URL"
-          echo "$ENGLISH_DB_SHA256  $RUNNER_TEMP/english.db" | sha256sum -c -
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/msime-pinyin.db" "$MSIME_DB_URL"
+          echo "$MSIME_DB_SHA256  $RUNNER_TEMP/msime-pinyin.db" | sha256sum -c -
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/msime-english.db" "$ENGLISH_DB_URL"
+          echo "$ENGLISH_DB_SHA256  $RUNNER_TEMP/msime-english.db" | sha256sum -c -
+      # Nothing moves the two URLs above when a new dict-v release is published, so warn when they lag the latest one: words that only that release ships would pass unchecked. A failed lookup only skips the warning.
+      - name: Warn if the shipped dictionaries are not the latest dict-v release
+        continue-on-error: true
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          pinned=${MSIME_DB_URL#*/releases/download/}; pinned=${pinned%%/*}
+          english=${ENGLISH_DB_URL#*/releases/download/}; english=${english%%/*}
+          latest=$(gh release list --repo "$GITHUB_REPOSITORY" --exclude-drafts --exclude-pre-releases --limit 100 --json tagName --jq '[.[].tagName | select(startswith("dict-v"))][0]')
+          if [ "$english" != "$pinned" ]; then
+            echo "::warning file=.github/workflows/check-words.yml::MSIME_DB_URL is pinned to $pinned but ENGLISH_DB_URL to $english; both should name the same dict-v release."
+          fi
+          if [ -n "$latest" ] && [ "$latest" != "$pinned" ]; then
+            echo "::warning file=.github/workflows/check-words.yml::check-words compares against $pinned, but the latest dict-v release is $latest. Move MSIME_DB_URL, ENGLISH_DB_URL and their SHA-256 to $latest so words it ships are caught as duplicates."
+          fi
       # Additions only, in each of words.txt, translations.txt and english.txt: an edit, deletion or reordering of an existing line is rejected, and every added line must parse as the build parses it and repeat nothing in this change, in its file or in the shipped dictionary. Words and English lines must also fit their file's existing weight range; a translation may give an existing source a new gloss, since the later line wins.
       - name: Check the custom files
         id: check
@@ -56,7 +70,7 @@ jobs:
           fi
           set +e
           msime/target/release/msime-dict-build check-words "${args[@]}" \
-            --msime-db "$RUNNER_TEMP/msime.db" --english-db "$RUNNER_TEMP/english.db" --json "$RUNNER_TEMP/report.json" --markdown "$RUNNER_TEMP/summary.md"
+            --msime-db "$RUNNER_TEMP/msime-pinyin.db" --english-db "$RUNNER_TEMP/msime-english.db" --json "$RUNNER_TEMP/report.json" --markdown "$RUNNER_TEMP/summary.md"
           status=$?
           set -e
           echo "status=$status" >> "$GITHUB_OUTPUT"

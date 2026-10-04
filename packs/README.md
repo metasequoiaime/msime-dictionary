@@ -6,6 +6,8 @@
 
 | 目录 | 名称 | 中文候选 | 英文候选 | 翻译 |
 | --- | --- | ---: | ---: | ---: |
+| [`ai_ml`](ai_ml/) | 机器学习与大模型专业词库 | 600 | 169 | 768 |
+| [`programming`](programming/) | 编程开发专业词库 | 731 | 186 | 916 |
 | [`unreal_houdini`](unreal_houdini/) | Unreal Engine 与 Houdini 专业词库 | 116 | 115 | 236 |
 
 条目数取自 `python3 scripts/validate_packs.py` 的输出。
@@ -41,12 +43,12 @@
 | 3 | `packs/` 下的词库总数不超过 40（msime.app 每次最多读取 40 个目录，多出的不会列出） | 脚本 |
 | 4 | 每个 `.txt` 不超过 2 MiB（超过的 msime.app 仍列出，但不统计条目数） | 脚本 |
 | 5 | 字段格式正确；中文词语的汉字数等于拼音音节数；同一文件内没有重复的候选 | 脚本 |
-| 6 | 汉字出现在 `pinyin/SingleCharsAllV1.txt` 或 `pinyin/RimeIceSupplementV1.txt` 的单字行里时，读音是其中列出的读音之一；两张表都没有的字脚本不检查，由第 10 项人工核对 | 脚本 |
-| 7 | 中文候选不与发布词库重复：`(词语, 全拼)` 不出现在 `pinyin/BaseDictIceV1.txt`、`pinyin/RimeIceSupplementV1.txt`、`custom/words.txt` 中。与 `unlicensed/BaseDictAllV1Part1.txt`、`Part2.txt` 重复的只作提示，因为发布构建不使用这两个文件 | 脚本 |
+| 6 | 汉字出现在 `sources/pinyin/single-chars.txt` 或 `sources/pinyin/rime-ice-supplement.txt` 的单字行里时，读音是其中列出的读音之一；两张表都没有的字脚本不检查，由第 10 项人工核对 | 脚本 |
+| 7 | 中文候选不与发布词库重复：`(词语, 全拼)` 不出现在 `sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`custom/words.txt` 中。与 `sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt` 重复的只作提示，因为发布构建不使用这两个文件 | 脚本 |
 | 8 | 权重：`quanpin.txt` 在 1 到 10000 之间（与 `custom/words.txt` 的范围一致）；`english.txt` 必须写权重，在 1 到 10 之间（`custom/english.txt` 现用 1，`unreal_houdini` 现用 10） | 脚本 |
 | 9 | 每个中文词语和英文显示内容都有翻译；`translations.txt` 内同一源词只出现一次 | 脚本 |
 | 10 | 读音逐条人工核对，多音字在 README 里列出 | 人工 |
-| 11 | README 列出每条术语依据的官方或权威文档及访问日期，只记录术语和短释义，不复制定义正文 | 人工 |
+| 11 | README 按术语分组列出所依据的文档及访问日期；没有官方中文出处、按通行说法收录的术语在 README 里单独成节并注明这一点，可以点名其中的代表性术语，再说明分组文档没有覆盖的其余条目都归入这一节；不复制定义正文 | 人工 |
 | 12 | 有歧义的短缩写只留在专业词库里，不同步到 `custom/translations.txt`（参照 `unreal_houdini` 的做法） | 人工 |
 | 13 | 只收领域里实际会输入的词，不收句子和定义；人名只收公共人物；不出现真实可拨的手机号或真实地址 | 人工 |
 | 14 | 规模在 100 到 2000 条之间 | 人工 |
