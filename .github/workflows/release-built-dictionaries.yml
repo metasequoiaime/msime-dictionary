@@ -115,7 +115,7 @@ jobs:
             tag="dict-v${VERSION}"
             (cd dist && sha256sum -c SHA256SUMS.txt)
             jq -r --arg ref "$MSIME_REF" '"Built by msime-dict-build from metasequoiaime/msime \($ref).\n\nCustom dictionary: \(.custom_dictionary_repository) \(.custom_dictionary_commit).\n\nPinned inputs: resources/dictionary-sources.lock.json at that msime revision. Checksums: SHA256SUMS.txt."' dist/dictionary-manifest.json > notes.md
-            gh release create "$tag" dist/msime-pinyin.db dist/msime-wubi.db dist/msime-english.db dist/others.db dist/msime-japanese.dat dist/bigram.bin dist/trigram.bin dist/mozc_dictionary_oss_README.txt dist/dictionary-manifest.json dist/SHA256SUMS.txt --target "$GITHUB_SHA" --title "Dictionary ${VERSION}" --notes-file notes.md --latest=false
+            gh release create "$tag" dist/msime-pinyin.db dist/msime-wubi.db dist/msime-english.db dist/others.db dist/msime-japanese.dat dist/bigram.bin dist/trigram.bin dist/mozc_dictionary_oss_README.txt dist/dictionary-manifest.json dist/SHA256SUMS.txt --target main --title "Dictionary ${VERSION}" --notes-file notes.md --latest=false
           else
             tag="langdict-v${VERSION}"
             (cd dist && sha256sum -c language-dictionaries-SHA256SUMS)
