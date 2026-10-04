@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.6.0](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.5.0...sources-v1.6.0) (2026-10-04)
+
+
+### Features
+
+* **release:** 统一构建词库文件命名 ([#41](https://github.com/metasequoiaime/msime-dictionary/issues/41)) ([cf00e7c](https://github.com/metasequoiaime/msime-dictionary/commit/cf00e7cf43872d9dc77234cabe6b48d90ae0587c))
+
+
+### Bug Fixes
+
+* **release:** 为发布任务检出仓库 ([#45](https://github.com/metasequoiaime/msime-dictionary/issues/45)) ([b3f5011](https://github.com/metasequoiaime/msime-dictionary/commit/b3f50110077b5bf712bf9ad718a4c08fd4275c14))
+* **release:** 指向远端主分支创建词库发布 ([#44](https://github.com/metasequoiaime/msime-dictionary/issues/44)) ([12a117f](https://github.com/metasequoiaime/msime-dictionary/commit/12a117f8ead582971304e53e6e4b620c5ea0dbf4))
+
 ## [1.5.0](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.4.0...sources-v1.5.0) (2026-10-04)
 
 
