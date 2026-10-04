@@ -47,6 +47,8 @@ env:
     msime-zhuyin.db
     msime-stroke.db
     msime-mozc_dictionary_oss_README.txt
+    msime-mozc_LICENSE.txt
+    msime-scowl_Copyright.txt
     msime-rime_cantonese_LICENSE.txt
     msime-libchewing_data_LICENSE.txt
     msime-rime_stroke_LICENSE.txt
@@ -204,26 +206,28 @@ jobs:
             cat <<'EOF'
           ## 文件说明
 
-          msime 客户端不跟随最新版本，而是按 msime 仓库里锁文件固定的 URL、大小与 SHA-256 下载：`resources/desktop-dictionary.lock.json` 固定主词库与模型、日文词库及其说明和 manifest，`resources/language-dictionaries.lock.json` 固定粤拼、注音、笔画词库及其许可证。许可证与说明文件必须和对应的数据文件一起再分发。
+          msime 客户端不跟随最新版本，而是按 msime 仓库里锁文件固定的 URL、大小与 SHA-256 下载：`resources/desktop-dictionary.lock.json` 固定主词库与模型、日文词库及其说明和 manifest（`msime-mozc_LICENSE.txt` 与 `msime-scowl_Copyright.txt` 是新增的声明文件，msime 升级桌面词库锁时登记），`resources/language-dictionaries.lock.json` 固定粤拼、注音、笔画词库及其许可证。许可证与说明文件必须和对应的数据文件一起再分发。
 
           | 文件 | 用途 | 谁使用 |
           | --- | --- | --- |
-          | `msime-pinyin.db` | 普通话拼音主词库：全拼词表（rime-ice 及其补充表、行政区划地名补充表、`custom/words.txt`），以及快捷短语表 | 客户端下载（桌面词库锁） |
+          | `msime-pinyin.db` | 普通话拼音主词库：全拼词表（rime-ice 及其补充表、行政区划地名补充表、`custom/words.txt`，构建时按 msime `resources/dictionary-sources/pinyin-reading-corrections.txt` 删去已知的错误读音），以及快捷短语表 | 客户端下载（桌面词库锁） |
           | `msime-wubi.db` | 五笔 86 与五笔 98 码表（98 合入 Fcitx5 补充表） | 客户端下载（桌面词库锁） |
-          | `msime-english.db` | 英文单词表（含 `custom/english.txt`），以及由 ECDICT 生成、经 `custom/translations.txt` 修正的英汉与汉英释义 | 客户端下载（桌面词库锁） |
+          | `msime-english.db` | 英文单词表（rime-ice 英文词表及其补充表、SCOWL 60 级补充词表 `sources/english/scowl-words.txt`、`custom/english.txt`），以及由 ECDICT 生成、经 `custom/translations.txt` 修正的英汉与汉英释义（SCOWL 补充的词只有英汉释义）；库内 `source_notices` 表存 SCOWL 的版权声明 | 客户端下载（桌面词库锁） |
           | `msime-others.db` | 表情（含拼音关键词）、颜文字和符号表，数据来自 msime 仓库 | 客户端下载（桌面词库锁） |
-          | `msime-japanese.dat` | 由 Mozc OSS 词典生成的日文转换模型（`MSJPDT1` 格式） | 客户端下载（桌面词库锁；macOS 在启用日文时按需下载） |
+          | `msime-japanese.dat` | 由 Mozc OSS 词典生成的日文转换模型（`MSJPDT1` 格式），与 Mozc 自己的构建一致：基础词典先按 `dictionary_filter.tsv` 过滤，再加入 `aux_dictionary.tsv`、`places.tsv`、`words.tsv` 的补充词 | 客户端下载（桌面词库锁；macOS 在启用日文时按需下载） |
           | `msime-bigram.bin` | 二元语言模型，由固定的中文维基语料按拼音词表统计，用于整句候选的上下文评分 | 客户端下载（桌面词库锁） |
           | `msime-trigram.bin` | 三元语言模型，与二元模型一起参与整句候选排序 | 客户端下载（桌面词库锁） |
-          | `msime-cantonese.db` | 粤拼方案词库：rime-cantonese 的音节、单字与词语，按其语料词频排序 | 客户端按需下载（语言词库锁） |
-          | `msime-zhuyin.db` | 注音方案词库：libchewing-data 的单字与词语，加 McBopomofo 补充表 | 客户端按需下载（语言词库锁） |
+          | `msime-cantonese.db` | 粤拼方案词库：rime-cantonese 的音节、单字与词语，按其 essay 词频排序；essay 没收的词按香港粤语语料库（HKCanCor）的词频 `sources/cantonese/hkcancor-word-counts.txt` 加权 | 客户端按需下载（语言词库锁） |
+          | `msime-zhuyin.db` | 注音方案词库：libchewing-data 的单字与词语，加 McBopomofo 补充表；`tsi.csv` 没计数的词语按 McBopomofo `phrase.occ` 的出现次数加权 | 客户端按需下载（语言词库锁） |
           | `msime-stroke.db` | 笔画方案词库：rime-stroke 的笔画编码，按拼音单字表的字频排序 | 客户端按需下载（语言词库锁） |
           | `msime-mozc_dictionary_oss_README.txt` | Mozc 词典的来源与许可说明（IPAdic、ICOT、冲绳词典），分发 `msime-japanese.dat` 时必须一并分发 | 随 `msime-japanese.dat` 下载 |
-          | `msime-rime_cantonese_LICENSE.txt` | rime-cantonese 数据的许可证（CC BY 4.0），随 `msime-cantonese.db` 分发 | 随语言词库下载 |
-          | `msime-libchewing_data_LICENSE.txt` | libchewing-data 数据的许可证（LGPL-2.1），随 `msime-zhuyin.db` 分发 | 随语言词库下载 |
+          | `msime-mozc_LICENSE.txt` | Mozc 仓库根目录的 `LICENSE`（`sources/japanese/LICENSE` 原文）：Google 三条款 BSD 版权声明与免责声明，以及词典数据的 NAIST/ICOT 条款与冲绳辞书的公有领域声明，分发 `msime-japanese.dat` 时必须一并分发 | 随 `msime-japanese.dat` 分发（msime 桌面词库锁尚未登记，升级时加入） |
+          | `msime-scowl_Copyright.txt` | 英文词库所用 SCOWL 词表的版权与许可声明（msime `resources/licenses/scowl-aspell6-en-Copyright.txt` 原文，与 `msime-english.db` 的 `source_notices` 表逐字节相同），分发 `msime-english.db` 时必须一并分发 | 随 `msime-english.db` 分发（msime 桌面词库锁尚未登记，升级时加入） |
+          | `msime-rime_cantonese_LICENSE.txt` | rime-cantonese 数据的许可证（CC BY 4.0），并附 HKCanCor 词频所需的署名与引用（同为 CC BY 4.0），随 `msime-cantonese.db` 分发 | 随语言词库下载 |
+          | `msime-libchewing_data_LICENSE.txt` | libchewing-data 数据的许可证（LGPL-2.1），并附 McBopomofo 补充表的 BSD 说明与 `phrase.occ` 所需的 McBopomofo MIT 许可全文，随 `msime-zhuyin.db` 分发 | 随语言词库下载 |
           | `msime-rime_stroke_LICENSE.txt` | rime-stroke 数据的许可证（LGPL-3.0），随 `msime-stroke.db` 分发 | 随语言词库下载 |
-          | `msime-dictionary-manifest.json` | 机器可读的发布清单：`profile`、`format_version` 与 `engine_compatibility`（词库格式与日文模型格式）、`source`（msime 构建器提交，`dirty` 必须为 `false`）、`custom_dictionary_commit`（本仓源数据提交）、`references` 与 `mozc_revision`（固定的上游引用）、`features`、`licensing`（排除了哪些无再分发授权的输入）、`files`（8 个主产物的大小与 SHA-256，不含语言词库） | 客户端下载（桌面词库锁），设置页显示其中的 `profile` 与 `source.commit` |
-          | `msime-SHA256SUMS.txt` | `sha256sum -c` 格式的校验和：8 个主产物（拼音、五笔、英文、其他、日文模型、二元、三元模型、Mozc 说明）和 manifest | 人工或脚本校验，客户端不下载 |
+          | `msime-dictionary-manifest.json` | 机器可读的发布清单：`profile`、`format_version` 与 `engine_compatibility`（词库格式与日文模型格式）、`source`（msime 构建器提交，`dirty` 必须为 `false`）、`custom_dictionary_commit`（本仓源数据提交）、`references` 与 `mozc_revision`（固定的上游引用）、`features`、`licensing`（排除了哪些无再分发授权的输入）、`files`（10 个主产物的大小与 SHA-256，不含语言词库） | 客户端下载（桌面词库锁），设置页显示其中的 `profile` 与 `source.commit` |
+          | `msime-SHA256SUMS.txt` | `sha256sum -c` 格式的校验和：10 个主产物（拼音、五笔、英文、其他、日文模型、二元、三元模型、Mozc 说明、Mozc LICENSE、SCOWL 版权声明）和 manifest | 人工或脚本校验，客户端不下载 |
           | `msime-language-dictionaries-SHA256SUMS` | `sha256sum -c` 格式的校验和：粤拼、注音、笔画三个词库和它们的三个许可证 | 人工或脚本校验，客户端不下载 |
 
           下载后校验：在放附件的目录里运行 `sha256sum -c msime-SHA256SUMS.txt` 和 `sha256sum -c msime-language-dictionaries-SHA256SUMS`。

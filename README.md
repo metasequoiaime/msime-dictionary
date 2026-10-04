@@ -134,7 +134,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `validate-packs.yml` | Pull Request 改动 `packs/`、`custom/translations.txt`、`custom/words.txt`、它对照的 `sources/pinyin/`、`sources/unlicensed/` 文件、脚本或该 workflow | 运行 `python3 scripts/validate_packs.py`，见[专业词库](#专业词库) |
 | `quality.yml` | 推送到 `main`、Pull Request、merge queue、手动 | actionlint 校验 workflow 与其中的 shell；Pull Request 上另做依赖审查（high 及以上失败） |
 | `codeql.yml` | 每天定时 | CodeQL 分析 GitHub Actions workflow |
-| `release-built-dictionaries.yml` | 推送到 `main` 且改动了 `sources/` 或 `custom/`；手动（可只构建不发布） | 用这次推送的提交构建 17 个附件，自动加修订号发布 `dict-v*` Release，说明列出源数据变更和每个附件的用途，见[发布](#发布) |
+| `release-built-dictionaries.yml` | 推送到 `main` 且改动了 `sources/` 或 `custom/`；手动（可只构建不发布） | 用这次推送的提交构建 19 个附件，自动加修订号发布 `dict-v*` Release，说明列出源数据变更和每个附件的用途，见[发布](#发布) |
 
 从 fork 发来的 Pull Request 拿到的是只读 token，check-words 不会发评论；同样的结果在该次运行的 job summary 里。维护者在 CI 之外再人工审核内容（包括敏感词）。
 
@@ -166,7 +166,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 合入 `main` 的推送只要改动了 `sources/` 或 `custom/`，`release-built-dictionaries.yml` 就自动用这次推送的提交构建并发布一个新的 `dict-v*` Release，不需要先去 msime 改锁文件。只改 `packs/`、文档或 workflow 的合入不触发发布。
 
 1. 版本号：在现有最高的 `dict-vX.Y.Z` 上加一个修订号（`dict-v2.0.6` 之后是 `dict-v2.0.7`）；算出的标签已经存在时失败，已发布的版本不可修改。发布的运行共用一个 concurrency 组，不会两次合入抢同一个版本号；GitHub 每组只保留一个排队的运行，短时间内连续合入时排在中间的运行会被取消，由最新的那次发布，它的说明列出自上一版以来的全部源数据提交。
-2. 构建：检出这次推送的提交，用 msime `develop` 的 `msime-dict-build` 和 `msime-dict-build languages`，以 `--dictionary <检出目录>` 直接读取检出里的 `sources/` 与 `custom/`。workflow 检查 17 个附件齐全、两份校验和匹配、manifest 的 `licensing.includes_unlicensed_inputs` 与 `source.dirty` 都是 `false`，并且 `custom_dictionary_commit` 等于这次推送的提交。
+2. 构建：检出这次推送的提交，用 msime `develop` 的 `msime-dict-build` 和 `msime-dict-build languages`，以 `--dictionary <检出目录>` 直接读取检出里的 `sources/` 与 `custom/`。workflow 检查 19 个附件齐全、两份校验和匹配、manifest 的 `licensing.includes_unlicensed_inputs` 与 `source.dirty` 都是 `false`，并且 `custom_dictionary_commit` 等于这次推送的提交。
 3. 发布：`dict-vX.Y.Z` 标签打在这次推送的提交上，Release 标为 latest。Release 说明写明源数据提交、msime 构建器的分支和实际使用的提交、触发方式、自上一版以来改动 `sources/` 或 `custom/` 的提交（比较基点是上一版 manifest 的 `custom_dictionary_commit`，读不到时退回上一版的标签），以及下表每个附件的用途和谁使用它。
 4. msime 各平台在 `resources/desktop-dictionary.lock.json` 和 `resources/language-dictionaries.lock.json` 里升级到新版本的 URL、大小和 SHA-256，下一个客户端版本随之带上新词库；check-words 的比对库在运行时自动取最新版本，不需要改。
 
@@ -174,7 +174,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 msime `resources/dictionary-sources.lock.json` 里固定的本仓提交与各文件的大小和 SHA-256，现在只用于 msime 自己的可复现构建（不传 `--dictionary` 运行 `msime-dict-build` 时按它下载源文件），发布不再依赖它。要在 msime 里复现某个版本，把它升级到该版本 manifest 的 `custom_dictionary_commit`。
 
-过渡说明：本仓 #53（`sources/` 布局）已经合入 `main`，但按 `sources/` 布局读取本仓文件的构建器在 msime PR #3513（分支 `fix/dictionary-release-latest`）上，`--dictionary` 参数也还在 msime 那边并行开发，都没有进入 develop。所以本 workflow 应在 #3513（含 `--dictionary`）进入 develop 之后再合入；在那之前推送触发的自动发布会在构建步骤失败。本 workflow 只改 `.github/`，它合入时不触发发布，第一次自动发布是之后下一次改动 `sources/` 或 `custom/` 的合入；#53 的数据已经由旧 workflow 从 `134c358`（用 #3513 分支的构建器 `42256e7`）发布为 `dict-v2.0.6`，所以合入后不需要补发；确有需要时从 `main` 手动运行并打开 `publish`，版本号会在 `dict-v2.0.6` 上继续加一。
+过渡说明：本仓 #53（`sources/` 布局）已经合入 `main`，但按 `sources/` 布局读取本仓文件的构建器在 msime PR #3513（分支 `fix/dictionary-release-latest`）上，`--dictionary` 参数也还在 msime 那边并行开发，都没有进入 develop。本 workflow 还要求第二轮词库补全产出的 `msime-mozc_LICENSE.txt` 与 `msime-scowl_Copyright.txt`：构建器那边的改动（英文 SCOWL、读音纠错、日文 Mozc 补充、粤拼与注音权重，以及这两个声明文件）要并进 #3513，本仓对应的源数据（含 `sources/japanese/LICENSE`、`sources/english/scowl-words.txt`）也要先合入 `main`。所以本 workflow 应在 #3513（含 `--dictionary` 和第二轮构建器改动）进入 develop、第二轮源数据合入 `main` 之后再合入；在那之前推送触发的自动发布会在构建步骤失败。本 workflow 只改 `.github/`，它合入时不触发发布，第一次自动发布是之后下一次改动 `sources/` 或 `custom/` 的合入；#53 的数据已经由旧 workflow 从 `134c358`（用 #3513 分支的构建器 `42256e7`）发布为 `dict-v2.0.6`，所以合入后不需要补发；确有需要时从 `main` 手动运行并打开 `publish`，版本号会在 `dict-v2.0.6` 上继续加一。
 
 **某个改动进了哪个版本**：每个 Release 的 manifest（`msime-dictionary-manifest.json`）的 `custom_dictionary_commit` 是构建实际读取的本仓提交，Release 说明开头也写着它。由本 workflow 自动发布的版本，标签就打在这个提交上；`dict-v2.0.6` 及更早的版本是用旧 workflow 手动发布的，标签打在发布时的 `main` 上，不一定是读取的源数据（例如 `dict-v2.0.5` 的标签指向 `a4b790c`，而构建读取的是 `5926261`，之后合入的 `5bc9c77`（#42）不在其中）。所以统一按 manifest 判断一个提交是否已发布：
 
@@ -183,26 +183,28 @@ commit=$(gh release download dict-v2.0.5 -R metasequoiaime/msime-dictionary -p m
 git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 ```
 
-`dict-v*` Release 的 17 个附件：
+`dict-v*` Release 的 19 个附件（顺序与 workflow 的 `RELEASE_ASSETS` 一致）：
 
 | 附件 | 内容 |
 | --- | --- |
-| `msime-pinyin.db` | 普通话拼音主词库，以及快捷短语表 |
+| `msime-pinyin.db` | 普通话拼音主词库，以及快捷短语表；构建时按 msime 的读音纠错表删去已知的错误读音 |
 | `msime-wubi.db` | 五笔 86 与五笔 98 的编码数据 |
-| `msime-english.db` | 英文单词与中英双向释义 |
+| `msime-english.db` | 英文单词（含 SCOWL 60 级补充词表）与中英双向释义，库内附 SCOWL 版权声明 |
 | `msime-others.db` | 表情、颜文字和符号（数据来自 msime 仓库） |
-| `msime-japanese.dat` | 基于 Mozc 开源词典生成的日文词库 |
+| `msime-japanese.dat` | 基于 Mozc 开源词典生成的日文词库，含 Mozc 的过滤表与 aux、地名、补充词表 |
 | `msime-bigram.bin` | 二元语言模型，用于整句候选的上下文评分 |
 | `msime-trigram.bin` | 三元语言模型，与二元模型一起参与整句候选排序 |
-| `msime-mozc_dictionary_oss_README.txt` | 日文词库的来源与许可证说明，分发 `msime-japanese.dat` 时必须一并保留 |
-| `msime-cantonese.db` | 粤拼方案的音节、单字和词语词库 |
-| `msime-zhuyin.db` | 注音方案的音节、单字和词语词库 |
+| `msime-cantonese.db` | 粤拼方案的音节、单字和词语词库，essay 没收的词按 HKCanCor 词频加权 |
+| `msime-zhuyin.db` | 注音方案的音节、单字和词语词库，`tsi.csv` 没计数的词语按 McBopomofo `phrase.occ` 加权 |
 | `msime-stroke.db` | 笔画方案的编码与候选词库 |
-| `msime-rime_cantonese_LICENSE.txt` | 粤拼词库所用 rime-cantonese 数据的许可证 |
-| `msime-libchewing_data_LICENSE.txt` | 注音词库所用 libchewing-data 数据的许可证 |
+| `msime-mozc_dictionary_oss_README.txt` | 日文词库的来源与许可证说明，分发 `msime-japanese.dat` 时必须一并保留 |
+| `msime-mozc_LICENSE.txt` | Mozc 仓库根目录的 `LICENSE`（`sources/japanese/LICENSE` 原文），含 README 里没有的 Google 三条款 BSD 版权声明与免责声明，分发 `msime-japanese.dat` 时必须一并保留 |
+| `msime-scowl_Copyright.txt` | 英文词库所用 SCOWL 词表的版权与许可声明（msime `resources/licenses/scowl-aspell6-en-Copyright.txt` 原文），分发 `msime-english.db` 时必须一并保留 |
+| `msime-rime_cantonese_LICENSE.txt` | 粤拼词库所用 rime-cantonese 数据的许可证，并附 HKCanCor 的署名与引用 |
+| `msime-libchewing_data_LICENSE.txt` | 注音词库所用 libchewing-data 数据的许可证，并附 McBopomofo 补充表的 BSD 说明与 `phrase.occ` 的 MIT 许可全文 |
 | `msime-rime_stroke_LICENSE.txt` | 笔画词库所用 rime-stroke 数据的许可证 |
-| `msime-dictionary-manifest.json` | 机器可读的发布清单：格式兼容性、构建来源提交、上游引用、功能列表、主产物的大小与 SHA-256、许可检查结果 |
-| `msime-SHA256SUMS.txt` | 主词库、模型、日文许可证说明和 manifest 的 SHA-256 |
+| `msime-dictionary-manifest.json` | 机器可读的发布清单：格式兼容性、构建来源提交、上游引用、功能列表、10 个主产物的大小与 SHA-256、许可检查结果 |
+| `msime-SHA256SUMS.txt` | 10 个主产物（主词库、模型、日文说明与 LICENSE、SCOWL 版权声明）和 manifest 的 SHA-256 |
 | `msime-language-dictionaries-SHA256SUMS` | 语言词库及其许可证文本的 SHA-256 |
 
 ## 文件格式
