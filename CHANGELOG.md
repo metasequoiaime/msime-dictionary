@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.4.0...sources-v1.5.0) (2026-10-04)
+
+
+### Features
+
+* **release:** 在词库仓库发布构建产物 ([#39](https://github.com/metasequoiaime/msime-dictionary/issues/39)) ([ed6801a](https://github.com/metasequoiaime/msime-dictionary/commit/ed6801ac0ec68af791e054cf4adb9f071f263d52))
+
 ## [1.4.0](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.3.0...sources-v1.4.0) (2026-10-04)
 
 
