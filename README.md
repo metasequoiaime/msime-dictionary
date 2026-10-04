@@ -105,7 +105,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/japanese/dictionary_filter.tsv` | 主命令 JapaneseModel，按 Mozc `gen_filtered_dictionary.py` 删去基础词库中完全匹配的行 | `msime-japanese.dat` | 进入 |
 | `sources/japanese/aux_dictionary.tsv`、`places.tsv`、`words.tsv` | 主命令 JapaneseModel，按 Mozc `gen_aux_dictionary.py --strict` 生成补充词条：aux 行复制基准词条的上下文 ID 与代价再加偏移，词表行按词性取同词性词条代价的中位数，基础词库已有的跳过 | `msime-japanese.dat` | 进入 |
 | `sources/japanese/README.txt` | 主命令 JapaneseModel，原样复制 | `msime-mozc_dictionary_oss_README.txt` | 进入 |
-| `sources/japanese/LICENSE` | 原样复制 | `msime-mozc_LICENSE.txt` | 进入 |
+| `sources/japanese/LICENSE` | 主命令 JapaneseModel，原样复制 | `msime-mozc_LICENSE.txt` | 进入 |
 | `sources/korean/hanja.txt` | `msime-dict-build hanja`，发布 workflow 不运行 | msime 源码里的 `crates/engine/src/korean/hanja.tsv`，由引擎用 `include_str!` 内嵌 | 不是 Release 附件 |
 | `custom/names.txt` | 无 | — | 没有消费方：锁文件没有收录，官网投稿也不写它 |
 | `packs/` | 不进入构建 | msime.app 按本仓 `main` 读取并列出（官网缓存约一小时），用户在设置里导入 | 不进入 Release |
@@ -190,28 +190,28 @@ commit=$(gh release download dict-v2.0.5 -R metasequoiaime/msime-dictionary -p m
 git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 ```
 
-`dict-v*` Release 的 17 个附件：
+`dict-v*` Release 的 19 个附件：
 
 | 附件 | 内容 |
 | --- | --- |
-| `msime-pinyin.db` | 普通话拼音主词库，以及快捷短语表 |
+| `msime-pinyin.db` | 普通话拼音主词库，以及快捷短语表；构建时按 msime 的读音纠错表删去已知的错误读音 |
 | `msime-wubi.db` | 五笔 86 与五笔 98 的编码数据 |
-| `msime-english.db` | 英文单词与中英双向释义 |
+| `msime-english.db` | 英文单词（含 SCOWL 60 级补充词表）与中英双向释义，库内附 SCOWL 版权声明 |
 | `msime-others.db` | 表情、颜文字和符号（数据来自 msime 仓库） |
-| `msime-japanese.dat` | 基于 Mozc 开源词典生成的日文词库 |
+| `msime-japanese.dat` | 基于 Mozc 开源词典生成的日文词库，含 Mozc 的过滤表与 aux、地名、补充词表 |
 | `msime-bigram.bin` | 二元语言模型，用于整句候选的上下文评分 |
 | `msime-trigram.bin` | 三元语言模型，与二元模型一起参与整句候选排序 |
+| `msime-cantonese.db` | 粤拼方案的音节、单字和词语词库，essay 没收的词按 HKCanCor 词频加权 |
+| `msime-zhuyin.db` | 注音方案的音节、单字和词语词库，`tsi.csv` 没计数的词语按 McBopomofo `phrase.occ` 加权 |
+| `msime-stroke.db` | 笔画方案的编码与候选词库 |
 | `msime-mozc_dictionary_oss_README.txt` | 日文词库的来源与许可证说明，分发 `msime-japanese.dat` 时必须一并保留 |
 | `msime-mozc_LICENSE.txt` | Mozc 仓库根目录的 `LICENSE`（`sources/japanese/LICENSE` 原文），含 README 里没有的 Google 三条款 BSD 版权声明与免责声明，分发 `msime-japanese.dat` 时必须一并保留 |
-| `msime-scowl_Copyright.txt` | 英文词库所用 SCOWL 词表的版权与许可声明（msime `resources/licenses/scowl-aspell6-en-Copyright.txt` 原文），分发 `msime-english.db` 时必须一并保留；构建所用的 msime 提交没有这份文件时不附 |
-| `msime-cantonese.db` | 粤拼方案的音节、单字和词语词库 |
-| `msime-zhuyin.db` | 注音方案的音节、单字和词语词库 |
-| `msime-stroke.db` | 笔画方案的编码与候选词库 |
-| `msime-rime_cantonese_LICENSE.txt` | 粤拼词库所用 rime-cantonese 数据的许可证 |
-| `msime-libchewing_data_LICENSE.txt` | 注音词库所用 libchewing-data 数据的许可证 |
+| `msime-scowl_Copyright.txt` | 英文词库所用 SCOWL 词表的版权与许可声明（msime `resources/licenses/scowl-aspell6-en-Copyright.txt` 原文），分发 `msime-english.db` 时必须一并保留 |
+| `msime-rime_cantonese_LICENSE.txt` | 粤拼词库所用 rime-cantonese 数据的许可证，并附 HKCanCor 的署名与引用 |
+| `msime-libchewing_data_LICENSE.txt` | 注音词库所用 libchewing-data 数据的许可证，并附 McBopomofo 补充表的 BSD 说明与 `phrase.occ` 的 MIT 许可全文 |
 | `msime-rime_stroke_LICENSE.txt` | 笔画词库所用 rime-stroke 数据的许可证 |
-| `msime-dictionary-manifest.json` | 机器可读的发布清单：格式兼容性、构建来源提交、上游引用、功能列表、主产物的大小与 SHA-256、许可检查结果 |
-| `msime-SHA256SUMS.txt` | 主词库、模型、日文许可证说明和 manifest 的 SHA-256 |
+| `msime-dictionary-manifest.json` | 机器可读的发布清单：格式兼容性、构建来源提交、上游引用、功能列表、10 个主产物的大小与 SHA-256、许可检查结果 |
+| `msime-SHA256SUMS.txt` | 10 个主产物（主词库、模型、日文说明与 LICENSE、SCOWL 版权声明）和 manifest 的 SHA-256 |
 | `msime-language-dictionaries-SHA256SUMS` | 语言词库及其许可证文本的 SHA-256 |
 
 ## 文件格式
