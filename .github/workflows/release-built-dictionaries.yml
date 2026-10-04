@@ -1,7 +1,7 @@
 name: Release built dictionaries
 
 # 生成词库属于本仓库的发布边界：msime-dictionary 保存源数据，也发布由 msime 构建器生成的数据库。
-# msime 仓库只消费这里的 sources-v、dict-v 和 langdict-v 附件，不再创建词库 Release。
+# 源文件保存在本仓库的 Git 提交中；本 workflow 只发布构建后的 dict-v 和 langdict-v 词库附件。
 on:
   workflow_dispatch:
     inputs:
