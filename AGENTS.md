@@ -11,7 +11,7 @@
 下游按提交和 SHA-256 锁定每个文件，所以：
 
 - 不做全量格式化，不转换编码或换行符，不排序、不去重、不补结尾换行。`pinyin/`、`wubi/`、`english/`、`unlicensed/` 下有 CRLF 文件，`wubi/Wubi98.txt` 是 UTF-16LE；`japanese/`、`korean/` 等上游原样文件也按字节锁定，`.gitattributes` 的 `* -text` 让 Git 原样保存；不要删掉它，也不要在本地用 `core.autocrlf` 之类的设置绕过。
-- 路径就是契约。改名或移动文件要同时改 msime 的锁文件与构建器，并在 PR 里互相链接；下游没有跟上之前不要合入。`custom/` 与 `packs/` 不要移动：msime-web 和 msime-cloud 不经锁文件，直接按 `main` 读写这两个目录。
+- 路径就是契约。msime 按提交锁定本仓文件，锁定旧提交的构建不受本仓改名或移动影响；但 msime 下次把锁文件升级到新提交时，必须同时改锁文件里的路径和构建器里的常量。所以改名或移动文件时，先备好 msime 那边的 PR（构建器与测试改动，锁文件先指向本仓 PR 分支上的提交验证），本仓合入后再把锁文件改指 `main` 上的合入提交，两边 PR 互相链接。`custom/` 与 `packs/` 不要移动：msime-web 和 msime-cloud 不经锁文件，直接按 `main` 读写这两个目录。
 
 ## 自定义词条
 
