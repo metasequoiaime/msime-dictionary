@@ -74,11 +74,11 @@ scripts/     维护脚本
 ## 怎样进入输入法
 
 1. 改动合入本仓库。
-2. 本仓发布 `sources-vX.Y.Z` 版本：release-please 按合入的 conventional commits 维护一个发版 Pull Request，合并它就会打标签，把 `cn/`、`en/`、`yue/`、`tw/`、`stroke/`、`ja/`、`ko/`、`custom/` 下的每个文件和 `SHA256SUMS.txt` 作为附件上传并发布。已发布的版本不再修改，数据有误就发新版本。
-3. msime 在 `resources/dictionary-sources.lock.json` 里把引用升到新版本的附件（每个文件的 URL、大小与 SHA-256 一起更新）；本仓库的 `release-built-dictionaries.yml` 用固定的 `msime-dict-build` 提交构建并发布 `dict-v*` 词库；`yue/`、`tw/`、`stroke/` 由 `msime-dict-build languages` 构建成 `cantonese.db`、`zhuyin.db`、`stroke.db`，以本仓库的 `langdict-v*` 发布。
+2. msime 在 `resources/dictionary-sources.lock.json` 里固定本仓库的提交、文件 URL、大小与 SHA-256；构建器直接读取该提交中的源文件，不把源文本重复上传到 Release。
+3. 本仓库的 `release-built-dictionaries.yml` 用固定的 `msime-dict-build` 提交构建并发布 `dict-v*` 词库；`yue/`、`tw/`、`stroke/` 由 `msime-dict-build languages` 构建成 `cantonese.db`、`zhuyin.db`、`stroke.db`，以本仓库的 `langdict-v*` 发布。Release 只包含数据库、模型和校验文件。
 4. 各平台升级各自锁定的词库版本，下一个版本随之带上新词库。
 
-只合入本仓库而不走完后面几步，用户拿到的仍是旧词库。发版依据提交标题：合并词条 Pull Request 时用 squash，并把标题写成 `feat(...)`（如官网滚动 Pull Request 的 `feat(custom): …`；修正写成 `fix(...)`），否则 release-please 不会为它发版。
+只合入本仓库而不重新构建并发布，用户拿到的仍是旧词库。合并词条 Pull Request 时用 squash，并把标题写成 `feat(...)`（如官网滚动 Pull Request 的 `feat(custom): …`；修正写成 `fix(...)`），便于追踪源数据变更。
 
 ## 专业词库
 
