@@ -137,5 +137,5 @@ jobs:
           - \`msime-language-dictionaries-SHA256SUMS\`：语言词库及其许可证文本的 SHA-256 校验和。
           
           上述来源由 \`resources/dictionary-sources.lock.json\` 固定；两份校验和文件可用于下载后完整性验证。
-EOF
+          EOF
           gh release create "$tag" dist/msime-pinyin.db dist/msime-wubi.db dist/msime-english.db dist/msime-others.db dist/msime-japanese.dat dist/msime-cantonese.db dist/msime-zhuyin.db dist/msime-stroke.db dist/msime-bigram.bin dist/msime-trigram.bin dist/msime-mozc_dictionary_oss_README.txt dist/msime-rime_cantonese_LICENSE.txt dist/msime-libchewing_data_LICENSE.txt dist/msime-rime_stroke_LICENSE.txt dist/msime-dictionary-manifest.json dist/msime-SHA256SUMS.txt dist/msime-language-dictionaries-SHA256SUMS --target main --title "$tag" --notes-file notes.md --latest=false
