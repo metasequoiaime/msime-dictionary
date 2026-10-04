@@ -6,49 +6,49 @@
 
 | 文件 | 上游 | 上游许可 |
 | --- | --- | --- |
-| `cn/BaseDictIceV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，对照提交 `9e66b0729083b37d217312294f6d516c8d7234be`（见下） | GPL-3.0 |
-| `cn/RimeIceSupplementV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，提交 `3aea6d3694fb3d94ec663641f021f788822897ad` 的 `cn_dicts/base.dict.yaml`、`ext.dict.yaml`、`8105.dict.yaml`、`others.dict.yaml`，排除 `BaseDictIceV1.txt` 已有的同词同音行 | GPL-3.0 |
-| `cn/BaseDictAllV1Part1.txt`、`cn/BaseDictAllV1Part2.txt` | [wuhgit/CustomPinyinDictionary](https://github.com/wuhgit/CustomPinyinDictionary)（`2023-09-28(No.82)` 版）与 rime-ice 合并去重 | GPL-3.0 与**未声明**的混合 |
-| `cn/SingleCharsAllV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，读音以 [mozillazg/pinyin-data](https://github.com/mozillazg/pinyin-data) 校正 | GPL-3.0 + MIT |
-| `cn/Wubi86.txt` | [KyleBing/rime-wubi86-jidian](https://github.com/KyleBing/rime-wubi86-jidian) | Apache-2.0 |
-| `cn/Wubi86.txt` 新增词条来源 | [rime/rime-wubi](https://github.com/rime/rime-wubi)，提交 `152a0d3f3efe40cae216d1e3b338242446848d07` | LGPL-3.0 |
-| `cn/Wubi98.txt` | [yanhuacuo/98wubi-tables](https://github.com/yanhuacuo/98wubi-tables)（98五笔小组），提交 `6b8b6fb9d3c34e0d5e3b17211e1f1c100e7eb697` 的 `98五笔含词表-【单义】.txt`（见下） | Unlicense |
-| `cn/Wubi98Fcitx.txt` | [fcitx/fcitx5-table-extra](https://github.com/fcitx/fcitx5-table-extra)，提交 `dbc7154a7f0b9fc04313160ae8066ed4d8cbc446` 的 `tables/wubi98.txt` | GPL-3.0-or-later（随仓库的 `LICENSES/GPL-3.0-or-later.txt`） |
-| `cn/SingleCharWhitelist.txt` | **待确认**，见下方「待解决」 | **待确认** |
+| `pinyin/BaseDictIceV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，对照提交 `9e66b0729083b37d217312294f6d516c8d7234be`（见下） | GPL-3.0 |
+| `pinyin/RimeIceSupplementV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，提交 `3aea6d3694fb3d94ec663641f021f788822897ad` 的 `cn_dicts/base.dict.yaml`、`ext.dict.yaml`、`8105.dict.yaml`、`others.dict.yaml`，排除 `BaseDictIceV1.txt` 已有的同词同音行 | GPL-3.0 |
+| `unlicensed/BaseDictAllV1Part1.txt`、`unlicensed/BaseDictAllV1Part2.txt` | [wuhgit/CustomPinyinDictionary](https://github.com/wuhgit/CustomPinyinDictionary)（`2023-09-28(No.82)` 版）与 rime-ice 合并去重 | GPL-3.0 与**未声明**的混合 |
+| `pinyin/SingleCharsAllV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，读音以 [mozillazg/pinyin-data](https://github.com/mozillazg/pinyin-data) 校正 | GPL-3.0 + MIT |
+| `wubi/Wubi86.txt` | [KyleBing/rime-wubi86-jidian](https://github.com/KyleBing/rime-wubi86-jidian) | Apache-2.0 |
+| `wubi/Wubi86.txt` 新增词条来源 | [rime/rime-wubi](https://github.com/rime/rime-wubi)，提交 `152a0d3f3efe40cae216d1e3b338242446848d07` | LGPL-3.0 |
+| `wubi/Wubi98.txt` | [yanhuacuo/98wubi-tables](https://github.com/yanhuacuo/98wubi-tables)（98五笔小组），提交 `6b8b6fb9d3c34e0d5e3b17211e1f1c100e7eb697` 的 `98五笔含词表-【单义】.txt`（见下） | Unlicense |
+| `wubi/Wubi98Fcitx.txt` | [fcitx/fcitx5-table-extra](https://github.com/fcitx/fcitx5-table-extra)，提交 `dbc7154a7f0b9fc04313160ae8066ed4d8cbc446` 的 `tables/wubi98.txt` | GPL-3.0-or-later（随仓库的 `LICENSES/GPL-3.0-or-later.txt`） |
+| `unlicensed/SingleCharWhitelist.txt` | **待确认**，见下方「待解决」 | **待确认** |
 
-`cn/BaseDictIceV1.txt` 的上游提交是后来补记的：此前它是唯一没有被记录提交的中文词库来源，没有办法判断树里那份是从哪个版本导出的。按 rime-ice `9e66b0729083b37d217312294f6d516c8d7234be` 比对，它的前身 `BaseDictIce.txt` 有 28185 条上游不存在的词条，另有 8328 条权重与上游不同。多出来的条目里既有上游没收的真词（地名、品牌），也有语料切分留下的碎片（例如「米高」「钟的」「之事」）。已确认的碎片在 msime-engine 的 `67fd083` 中从 `cn/BaseDictIceV1.txt` 与 `cn/BaseDictAllV1Part1.txt` 删除，本仓库的这两个文件与 msime-engine `e92a9c7c64e262f30218ca9aaad5f40d0b18cf89` 的 `dictionary/cn/` 逐字节一致。这份文件的真实来源仍然没有查清，所以不要把它描述成「原样搬运」。
+`pinyin/BaseDictIceV1.txt` 的上游提交是后来补记的：此前它是唯一没有被记录提交的中文词库来源，没有办法判断树里那份是从哪个版本导出的。按 rime-ice `9e66b0729083b37d217312294f6d516c8d7234be` 比对，它的前身 `BaseDictIce.txt` 有 28185 条上游不存在的词条，另有 8328 条权重与上游不同。多出来的条目里既有上游没收的真词（地名、品牌），也有语料切分留下的碎片（例如「米高」「钟的」「之事」）。已确认的碎片在 msime-engine 的 `67fd083` 中从当时的 `cn/BaseDictIceV1.txt` 与 `cn/BaseDictAllV1Part1.txt`（即现在的 `pinyin/BaseDictIceV1.txt` 与 `unlicensed/BaseDictAllV1Part1.txt`）删除，本仓库的这两个文件与 msime-engine `e92a9c7c64e262f30218ca9aaad5f40d0b18cf89` 的 `dictionary/cn/` 逐字节一致。这份文件的真实来源仍然没有查清，所以不要把它描述成「原样搬运」。
 
-`cn/Wubi98Fcitx.txt` 保留 Fcitx5 table-extra 的 UTF-8 原始表格式（表头、规则和数据区），构建器只读取数据区的 `编码 空格 词` 行，并与 98 五笔主表按“编码、词语”去重。该表补足主表没有的合法开源候选，例如 `ukuy` 的“冲凉”，同时保留 Fcitx 表中的完整候选集合，不把单个词条作为特殊补丁。
+`wubi/Wubi98Fcitx.txt` 保留 Fcitx5 table-extra 的 UTF-8 原始表格式（表头、规则和数据区），构建器只读取数据区的 `编码 空格 词` 行，并与 98 五笔主表按“编码、词语”去重。该表补足主表没有的合法开源候选，例如 `ukuy` 的“冲凉”，同时保留 Fcitx 表中的完整候选集合，不把单个词条作为特殊补丁。
 
-`cn/Wubi98.txt` 与上游文件逐字节一致（SHA-256 `1b5a4c22eddae08d8e0e6aa8f926f92d45d6cdaa591e5cee0e8aad29271da1cc`，UTF-16LE 带 BOM、CRLF），没有改编码或换行。权利声明来自数据作者本人：上游仓库在 2024-01-20 的提交 `4dbcaa65` 加入 Unlicense，此前同一作者在 2021 年把这份表贡献给 [fcitx/fcitx5-table-extra](https://github.com/fcitx/fcitx5-table-extra)（`tables/wubi98.txt`，GPL-3.0-or-later 包内分发，Debian main 收录）。两份表 112584 条里只有 4 条不同，差异来自上游 2024-06-25 的拆分校正（`72a36bae`）。上游没有记录 GB2312/GBK 部分的单字编码与简码是怎样生成的，只能说它们依照 98 版五笔的编码规范；这里如实记下，不把它描述成独立生成。界面上称“98 五笔”，不使用“王码”“五笔字型”等商标。
+`wubi/Wubi98.txt` 与上游文件逐字节一致（SHA-256 `1b5a4c22eddae08d8e0e6aa8f926f92d45d6cdaa591e5cee0e8aad29271da1cc`，UTF-16LE 带 BOM、CRLF），没有改编码或换行。权利声明来自数据作者本人：上游仓库在 2024-01-20 的提交 `4dbcaa65` 加入 Unlicense，此前同一作者在 2021 年把这份表贡献给 [fcitx/fcitx5-table-extra](https://github.com/fcitx/fcitx5-table-extra)（`tables/wubi98.txt`，GPL-3.0-or-later 包内分发，Debian main 收录）。两份表 112584 条里只有 4 条不同，差异来自上游 2024-06-25 的拆分校正（`72a36bae`）。上游没有记录 GB2312/GBK 部分的单字编码与简码是怎样生成的，只能说它们依照 98 版五笔的编码规范；这里如实记下，不把它描述成独立生成。界面上称“98 五笔”，不使用“王码”“五笔字型”等商标。
 
 ## 英文词库
 
 | 文件 | 上游 | 上游许可 |
 | --- | --- | --- |
-| `en/BaseDictIceEn.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice) | GPL-3.0 |
-| `en/RimeIceEnglishSupplementV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，提交 `3aea6d3694fb3d94ec663641f021f788822897ad` 的 `en_dicts/en.dict.yaml` 与 `en_ext.dict.yaml` 中相对 `BaseDictIceEn.txt` 新增的纯 ASCII 单词 | GPL-3.0 |
-| `en/google_count_1_w.txt` | [Google 1/3 million 词频表](https://www.norvig.com/ngrams/count_1w.txt) | 以来源页面说明为准 |
-| `en/oaldpe_words.txt` | 自 oaldpe.mdx 提取的词形列表 | 权利归词典出版方 |
+| `english/BaseDictIceEn.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice) | GPL-3.0 |
+| `english/RimeIceEnglishSupplementV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，提交 `3aea6d3694fb3d94ec663641f021f788822897ad` 的 `en_dicts/en.dict.yaml` 与 `en_ext.dict.yaml` 中相对 `BaseDictIceEn.txt` 新增的纯 ASCII 单词 | GPL-3.0 |
+| `english/google_count_1_w.txt` | [Google 1/3 million 词频表](https://www.norvig.com/ngrams/count_1w.txt) | 以来源页面说明为准 |
+| `unlicensed/oaldpe_words.txt` | 自 oaldpe.mdx 提取的词形列表 | 权利归词典出版方 |
 
 ## 粤拼、注音与笔画词库
 
 | 文件 | 上游 | 上游许可 |
 | --- | --- | --- |
-| `yue/jyut6ping3.chars.dict.yaml`、`yue/jyut6ping3.words.dict.yaml`、`yue/essay-cantonese.txt` | [rime/rime-cantonese](https://github.com/rime/rime-cantonese)，提交 `ac277184f161f297c2031b497588975234019f9d` 的同名文件 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| `tw/tsi.csv`、`tw/word.csv` | [chewing/libchewing-data](https://github.com/chewing/libchewing-data)，提交 `c44e81aef24b06f1509f19e1be54c99812d0c43f` 的 `dict/chewing/tsi.csv`、`dict/chewing/word.csv` | [LGPL-2.1-or-later](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) |
-| `tw/McBopomofoSupplement.txt` | [openvanilla/McBopomofo](https://github.com/openvanilla/McBopomofo)，提交 `be6564acad6c4d3265c34a2e1a872d80f9db6068` 的 `Source/Data/BPMFMappings.txt`，转换为本仓 CSV 格式并排除 `tsi.csv` 已有组合 | BSD（上游说明多字词表源自 BSD 授权的 libtabe，并含修改） |
+| `cantonese/jyut6ping3.chars.dict.yaml`、`cantonese/jyut6ping3.words.dict.yaml`、`cantonese/essay-cantonese.txt` | [rime/rime-cantonese](https://github.com/rime/rime-cantonese)，提交 `ac277184f161f297c2031b497588975234019f9d` 的同名文件 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `zhuyin/tsi.csv`、`zhuyin/word.csv` | [chewing/libchewing-data](https://github.com/chewing/libchewing-data)，提交 `c44e81aef24b06f1509f19e1be54c99812d0c43f` 的 `dict/chewing/tsi.csv`、`dict/chewing/word.csv` | [LGPL-2.1-or-later](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) |
+| `zhuyin/McBopomofoSupplement.txt` | [openvanilla/McBopomofo](https://github.com/openvanilla/McBopomofo)，提交 `be6564acad6c4d3265c34a2e1a872d80f9db6068` 的 `Source/Data/BPMFMappings.txt`，转换为本仓 CSV 格式并排除 `tsi.csv` 已有组合 | BSD（上游说明多字词表源自 BSD 授权的 libtabe，并含修改） |
 | `stroke/stroke.dict.yaml` | [rime/rime-stroke](https://github.com/rime/rime-stroke)，提交 `1e8fff9b9494ddec23b0cbc526bcfd8171a6fd48` 的 `stroke.dict.yaml` | [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.html) |
 
 这六个文件与上游固定提交逐字节一致（UTF-8、LF），没有改编码、换行或内容：
 
 | 文件 | SHA-256 |
 | --- | --- |
-| `yue/jyut6ping3.chars.dict.yaml` | `d5c06066ae160bcba5d4340b6424f845e1a3f86caab7e67e5b1725e01458afc6` |
-| `yue/jyut6ping3.words.dict.yaml` | `436ec7b5b0b1d320f5bea72ab009e36dcccb0ae75c2dea0c55810a33c8ee1abb` |
-| `yue/essay-cantonese.txt` | `12caf53435ad0e1aaaa6a323fe2f3f3aba73046a111989e5e3e3ccc9a79fca3d` |
-| `tw/tsi.csv` | `c889a1ac3ae1901b3f8f62748bc41b958f010bf995f7f88dbaf9e3494f341428` |
-| `tw/word.csv` | `da55b8e599c1389bc486453554f3410cf9c621d0ffff0ce38855698d26b3892a` |
+| `cantonese/jyut6ping3.chars.dict.yaml` | `d5c06066ae160bcba5d4340b6424f845e1a3f86caab7e67e5b1725e01458afc6` |
+| `cantonese/jyut6ping3.words.dict.yaml` | `436ec7b5b0b1d320f5bea72ab009e36dcccb0ae75c2dea0c55810a33c8ee1abb` |
+| `cantonese/essay-cantonese.txt` | `12caf53435ad0e1aaaa6a323fe2f3f3aba73046a111989e5e3e3ccc9a79fca3d` |
+| `zhuyin/tsi.csv` | `c889a1ac3ae1901b3f8f62748bc41b958f010bf995f7f88dbaf9e3494f341428` |
+| `zhuyin/word.csv` | `da55b8e599c1389bc486453554f3410cf9c621d0ffff0ce38855698d26b3892a` |
 | `stroke/stroke.dict.yaml` | `b3e93dce89c185f45c3d6e189b86b3a8626913352cc85e1094c786579a665791` |
 
 rime-cantonese 由粤语计算语言学基础建设组（[CanCLID](https://github.com/CanCLID)）开发和维护，按其 README，主体部分以 CC BY 4.0 发布（上游仓库的 `LICENSE-CC-BY`），拼写是香港语言学学会（LSHK）的[粤拼](https://www.lshk.org/jyutping)方案。上游另有按 ODbL 1.0 发布的 `jyut6ping3.maps.dict.yaml`，以及 `jyut6ping3.phrase.dict.yaml`、`jyut6ping3.lettered.dict.yaml`，这三个文件不收入本仓。
@@ -57,20 +57,20 @@ libchewing-data 的两个文件在文件头声明 `dc:rights,Copyright (c) 2025 
 
 rime-stroke 的上游仓库以 LGPL-3.0 发布（`LICENSE`）。`AUTHORS` 列出的作者是四季的風、雪齋、Kunki Chou 与宋天，并写明前三位的数据是依 CNS11643 全字库的授权声明（http://www.cns11643.gov.tw/AIDB/copyright.do）以 LGPL 再分发的。CNS11643 全字库网站以《政府資料開放授權條款－第1版》授权（见其[全字库授权](https://www.cns11643.gov.tw/pageView.jsp?ID=59)页），要求利用其资料时注明来源：數位發展部，CNS11643中文標準交換碼全字庫網站，https://www.cns11643.gov.tw 。按 `stroke.dict.yaml` 的文件头：主码表源自 CNS11643 中文标准交换码全字库网站（http://www.cns11643.gov.tw），由 Kunki Chou 整理；附码表源自北大中文论坛，由孙海峰、徐孟罗、唐捺之、谢振斌整理；至扩展 J 区的超集扩充数据来自宋天；Rime 输入方案由四季的風、雪齋、Kunki Chou 制作。
 
-msime 用 `msime-dict-build languages` 把它们构建成 `cantonese.db`、`zhuyin.db`、`stroke.db`，与桌面词库一起放在本仓库的 `dict-v*` Release；随产物分发的署名、改动说明与许可证全文在 msime 的 `resources/licenses/rime-cantonese-CC-BY-4.0.txt`、`resources/licenses/libchewing-data-LGPL-2.1.txt`、`resources/licenses/rime-stroke-LGPL-3.0.txt`，换上游提交时这些文件要一起改。`stroke.db` 的排序权重取自 `cn/SingleCharsAllV1.txt`。
+msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`、`msime-zhuyin.db`、`msime-stroke.db`，与桌面词库一起放在本仓库的 `dict-v*` Release；随产物分发的署名、改动说明与许可证全文在 msime 的 `resources/licenses/rime-cantonese-CC-BY-4.0.txt`、`resources/licenses/libchewing-data-LGPL-2.1.txt`、`resources/licenses/rime-stroke-LGPL-3.0.txt`，换上游提交时这些文件要一起改。`msime-stroke.db` 的排序权重取自 `pinyin/SingleCharsAllV1.txt`。
 
 ## 日文与韩文词库
 
 | 文件 | 上游 | 上游许可 |
 | --- | --- | --- |
-| `ja/mozc/dictionary00.txt` … `dictionary09.txt`、`ja/mozc/id.def`、`ja/mozc/connection_single_column.txt`、`ja/mozc/README.txt` | [google/mozc](https://github.com/google/mozc)，提交 `9fbd649bea4c5e99cd8ad5e487213b26a953a376` 的 `src/data/dictionary_oss/` 文件 | 以随附的 `README.txt` 为准（IPADIC、ICOT 与冲绳方言数据分别附带其上游条款） |
-| `ko/hanja.txt` | [libhangul/libhangul](https://github.com/libhangul/libhangul)，提交 `717409ce61524bb3d8426060a384822f21354c62` 的 `data/hanja/hanja.txt` | BSD-3-Clause |
+| `japanese/dictionary00.txt` … `dictionary09.txt`、`japanese/id.def`、`japanese/connection_single_column.txt`、`japanese/README.txt` | [google/mozc](https://github.com/google/mozc)，提交 `9fbd649bea4c5e99cd8ad5e487213b26a953a376` 的 `src/data/dictionary_oss/` 文件 | 以随附的 `README.txt` 为准（IPADIC、ICOT 与冲绳方言数据分别附带其上游条款） |
+| `korean/hanja.txt` | [libhangul/libhangul](https://github.com/libhangul/libhangul)，提交 `717409ce61524bb3d8426060a384822f21354c62` 的 `data/hanja/hanja.txt` | BSD-3-Clause |
 
-`ja/mozc/` 与 `ko/hanja.txt` 均逐字节保留上游文件。`msime-dict-build` 从 `ja/mozc/` 构建 `dict_japanese.dat`，从 `ko/hanja.txt` 生成引擎内嵌的韩文 Hanja 表；日文词库发布时必须同时分发 `ja/mozc/README.txt`，韩文数据的 BSD-3-Clause 文本见 msime 的 `resources/licenses/libhangul-hanja-BSD-3-Clause.txt`。更新任一上游提交时，需同步更新 msime 的锁文件、构建器路径和对应的许可证说明。
+`japanese/` 与 `korean/hanja.txt` 均逐字节保留上游文件。`msime-dict-build` 从 `japanese/` 构建 `msime-japanese.dat`，从 `korean/hanja.txt` 生成引擎内嵌的韩文 Hanja 表；日文词库发布时必须同时分发 `japanese/README.txt`，韩文数据的 BSD-3-Clause 文本见 msime 的 `resources/licenses/libhangul-hanja-BSD-3-Clause.txt`。更新任一上游提交时，需同步更新 msime 的锁文件、构建器路径和对应的许可证说明。
 
 ## 下游影响
 
-由 `cn/BaseDictAllV1Part1.txt` 与 `cn/BaseDictAllV1Part2.txt` 构建出的 `msime.db` 同时包含 rime-ice（GPL-3.0）与 CustomPinyinDictionary（未声明许可）的内容。使用该数据库的前端本身以 GPL-3.0 分发，与 rime-ice 兼容，但**必须保留对 rime-ice 的署名**。
+发布构建的拼音词库 `msime-pinyin.db` 由 `pinyin/SingleCharsAllV1.txt`、`pinyin/BaseDictIceV1.txt`、`pinyin/RimeIceSupplementV1.txt` 与 `custom/words.txt` 构建，另含 msime 仓库自带的 `resources/dictionary-sources/mix/quick_phrases.txt` 快捷短语；`unlicensed/BaseDictAllV1Part1.txt`、`Part2.txt`（含 CustomPinyinDictionary 的内容）不进入发布构建，见下方「发布构建不包含这些条目」。只有用 `--include-unlicensed` 做的本地完整构建才会读入 Part1/2。中文数据主体来自 rime-ice（GPL-3.0），使用该数据库的前端本身以 GPL-3.0 分发，与 rime-ice 兼容，但**必须保留对 rime-ice 的署名**。
 
 词库由 [msime](https://github.com/metasequoiaime/msime) 的 Rust 构建器 `crates/dict-builder`（`msime-dict-build`）构建并以本仓库的 `dict-v*` release 发布（数据库按 `msime-<内容>` 命名），随产物送到用户手上的署名在 msime 的 `resources/licenses/` 与 [MSIME-Windows](https://github.com/metasequoiaime/MSIME-Windows) 的 `THIRD_PARTY_NOTICES.txt` 里。改动本文件的来源表时，这些文件要一起改。
 
@@ -78,9 +78,9 @@ msime 用 `msime-dict-build languages` 把它们构建成 `cantonese.db`、`zhuy
 
 以下部分目前没有明确的再分发授权，需要与上游作者确认后才能补上：
 
-- [wuhgit/CustomPinyinDictionary](https://github.com/wuhgit/CustomPinyinDictionary) 未声明任何许可，而它是 `cn/BaseDictAllV1Part1.txt`、`Part2.txt` 的主体。
-- `cn/SingleCharWhitelist.txt` 的来源没有记录。完整构建用它过滤单字条目，所以需要补上来源；在补上之前不要假定它可以再分发。
-- `en/oaldpe_words.txt` 提取自商业词典。词典本体 `en/oaldpe.mdx` 曾经也在本仓中，现已移除——构建只需要提取好的词形列表，不需要词典本体。提取脚本 `makecikudb/englishdb/extract_oaldpe_headwords.py` 已随旧的 Python 构建流程删除，需要时从 git 历史取回，自备 `.mdx` 作为参数运行。**注意移除只影响当前版本，词典本体仍留在 git 历史中。**改写历史会让所有 fork、clone 以及下游锁定的 commit 全部失效，因此暂不改写；是否改写单独决策。
+- [wuhgit/CustomPinyinDictionary](https://github.com/wuhgit/CustomPinyinDictionary) 是 `unlicensed/BaseDictAllV1Part1.txt`、`Part2.txt` 的主体。上游在 2026-09-30 的提交 `cf17f96af885cb818c2fad87184f383a52482351`（“Add License”）加入了 CC-BY-SA-4.0 许可，但本仓用的 `2023-09-28(No.82)` 快照早于这次加许可，许可是否覆盖这份快照没有确认，所以仍按未声明许可处理，继续排除在发布构建之外。
+- `unlicensed/SingleCharWhitelist.txt` 的来源没有记录。完整构建用它过滤单字条目，所以需要补上来源；在补上之前不要假定它可以再分发。
+- `unlicensed/oaldpe_words.txt` 提取自商业词典。词典本体曾以 `en/oaldpe.mdx` 放在本仓中，现已移除——构建只需要提取好的词形列表，不需要词典本体。提取脚本 `makecikudb/englishdb/extract_oaldpe_headwords.py` 已随旧的 Python 构建流程删除，需要时从 git 历史取回，自备 `.mdx` 作为参数运行。**注意移除只影响当前版本，词典本体仍留在 git 历史中。**改写历史会让所有 fork、clone 以及下游锁定的 commit 全部失效，因此暂不改写；是否改写单独决策。
 
 ### 发布构建不包含这些条目
 
@@ -88,13 +88,21 @@ msime 用 `msime-dict-build languages` 把它们构建成 `cantonese.db`、`zhuy
 
 | 排除的输入 | 替代 | 后果 |
 | --- | --- | --- |
-| `cn/BaseDictAllV1Part1.txt`、`Part2.txt` | `cn/BaseDictIceV1.txt`（rime-ice，GPL-3.0） | 中文词库召回下降；rime-ice 是合并前的子集，构建不会失败 |
-| `cn/SingleCharWhitelist.txt` | 无 | 不做过滤，`SingleCharsAllV1.txt` 里的单字全部收入 |
-| `en/oaldpe_words.txt` | 无 | 英文词表只来自 `BaseDictIceEn.txt` |
+| `unlicensed/BaseDictAllV1Part1.txt`、`Part2.txt` | `pinyin/BaseDictIceV1.txt`（rime-ice，GPL-3.0） | 中文词库召回下降；rime-ice 是合并前的子集，构建不会失败 |
+| `unlicensed/SingleCharWhitelist.txt` | 无 | 不做过滤，`SingleCharsAllV1.txt` 里的单字全部收入 |
+| `unlicensed/oaldpe_words.txt` | 无 | 英文词表来自 `BaseDictIceEn.txt`、`english/RimeIceEnglishSupplementV1.txt` 与 `custom/english.txt`，`english/google_count_1_w.txt` 提供词频 |
 
 想构建完整词库（本地开发、评估召回率）用 `--include-unlicensed`，或设环境变量 `MSIME_DICT_INCLUDE_UNLICENSED=1`。**这样构建出来的产物不要附到 release 上。**
 
 拿到上游的书面再分发许可之后，把对应条目从 `licensing.rs` 的 `UNLICENSED_INPUTS` 里移出，并在同一次改动里更新本文件。
+
+### 上游状态与已知数据问题
+
+以下各项不涉及再分发授权，记录在这里供更新上游或重新生成补充表时处理：
+
+- [chewing/libchewing-data](https://github.com/chewing/libchewing-data) 的 GitHub 仓库已归档，仓库描述是 “Migrated to Codeberg”。`zhuyin/tsi.csv`、`zhuyin/word.csv` 仍按上面记录的 GitHub 提交锁定；Codeberg 上是否有更新的数据没有核实，换上游地址前要先核对。
+- `pinyin/RimeIceSupplementV1.txt` 生成时只排除了 `BaseDictIceV1.txt` 已有的同词同音行，没有对照 `pinyin/SingleCharsAllV1.txt`：它的 8757 行单字中有 8740 对（字,拼音）与 `SingleCharsAllV1.txt` 重合，其中 725 对权重不同。msime 构建器把拼音词表逐行直接插入、不去重，这些单字在 `msime-pinyin.db` 里会出现两行。对候选排序的影响没有在引擎里测过。
+- `pinyin/RimeIceSupplementV1.txt` 沿用了 rime-ice `base.dict.yaml` 的容错读音，权重与正读相同，例如 `血型 xie'xing 94145`（正读 `血型 xue'xing 94145` 在 `pinyin/BaseDictIceV1.txt`）。这是上游的行为，不是转换错误；是否在补充表里排除容错读音尚未决定。
 
 ## 本项目自建部分
 
