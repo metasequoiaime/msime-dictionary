@@ -1,141 +1,292 @@
 name: Release built dictionaries
 
 # 生成词库属于本仓库的发布边界：msime-dictionary 保存源数据，也发布由 msime 构建器生成的数据库。
-# 源文件保存在本仓库的 Git 提交中；本 workflow 一次构建并发布完整的 dict-v 词库 Release。
+# 每次推送到 main 且改动了 sources/ 或 custom/，本 workflow 就用这次推送的提交构建并发布一个新的 dict-vX.Y.Z Release；手动运行用于重建（换 msime 构建器版本）或只构建不发布的试跑。
 on:
+  push:
+    branches: [main]
+    paths:
+      - "sources/**"
+      - "custom/**"
   workflow_dispatch:
     inputs:
       version:
-        description: "发布版本号（例如 3.0.0；生成 dict-vX.Y.Z 标签）"
-        required: true
+        description: "发布版本号 X.Y.Z（生成 dict-vX.Y.Z 标签）；留空则在现有最高的 dict-v 版本上加一个修订号"
+        required: false
+        default: ""
         type: string
       msime_ref:
         description: "用于构建的 msime 分支、标签或提交"
-        required: true
+        required: false
         default: develop
         type: string
       publish:
-        description: "发布 GitHub Release；关闭时只上传 workflow artifact"
+        description: "发布 GitHub Release（只能从 main 运行）；关闭时只上传 workflow artifact 和说明预览"
         required: false
         default: false
         type: boolean
 
-permissions:
-  contents: write
+permissions: {}
 
+# Runs that publish share one group so two runs cannot claim the same version. GitHub keeps at most one pending run per group and a newly queued run cancels the pending one: a burst of merges is released by the newest pending run, whose notes list every source change since the previous release, but a publishing manual run that is still pending is also cancelled by a later push (and replaces a pending push run), so its version and msime_ref inputs are lost. Dry runs get their own group and never block a release.
 concurrency:
-  group: release-built-dictionaries
+  group: ${{ (github.event_name == 'push' || inputs.publish) && 'release-built-dictionaries' || format('release-built-dictionaries-dry-run-{0}', github.run_id) }}
   cancel-in-progress: false
+
+env:
+  # Every asset of a dict-v release, in upload order. The build requires each one, the notes step requires a row for each one, and the publish job uploads exactly this list.
+  RELEASE_ASSETS: >-
+    msime-pinyin.db
+    msime-wubi.db
+    msime-english.db
+    msime-others.db
+    msime-japanese.dat
+    msime-bigram.bin
+    msime-trigram.bin
+    msime-cantonese.db
+    msime-zhuyin.db
+    msime-stroke.db
+    msime-mozc_dictionary_oss_README.txt
+    msime-rime_cantonese_LICENSE.txt
+    msime-libchewing_data_LICENSE.txt
+    msime-rime_stroke_LICENSE.txt
+    msime-dictionary-manifest.json
+    msime-SHA256SUMS.txt
+    msime-language-dictionaries-SHA256SUMS
 
 jobs:
   build:
     runs-on: ubuntu-24.04
     timeout-minutes: 120
+    permissions:
+      contents: read
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      latest: ${{ steps.version.outputs.latest }}
+      publish: ${{ steps.version.outputs.publish }}
     steps:
+      # Full history without blobs: the notes need the previous release's source commit and the commits since it, the build only needs the files at github.sha.
       - name: Checkout dictionary sources
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: ${{ github.sha }}
+          path: dictionary
+          fetch-depth: 0
+          filter: blob:none
           persist-credentials: false
+      - name: Resolve version
+        id: version
+        env:
+          REQUESTED: ${{ inputs.version }}
+          PUBLISH_INPUT: ${{ inputs.publish }}
+        run: |
+          set -euo pipefail
+          # Versions of the existing dict-vX.Y.Z tags on the remote, lowest first.
+          existing="$(git ls-remote --tags --refs "https://github.com/${GITHUB_REPOSITORY}.git" 'dict-v*' | sed 's|.*refs/tags/dict-v||' | awk '/^[0-9]+\.[0-9]+\.[0-9]+$/' | sort -t. -k1,1n -k2,2n -k3,3n)"
+          highest="$(printf '%s\n' "$existing" | tail -n 1)"
+          if [[ -n "$REQUESTED" ]]; then
+            version="$REQUESTED"
+          else
+            [[ -n "$highest" ]] || { echo "no existing dict-vX.Y.Z tag to bump; pass version" >&2; exit 1; }
+            IFS=. read -r major minor patch <<< "$highest"
+            version="${major}.${minor}.$((patch + 1))"
+          fi
+          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "version must be X.Y.Z, got '$version'" >&2; exit 1; }
+          if printf '%s\n' "$existing" | grep -qxF "$version"; then
+            echo "dict-v${version} already exists; released versions are immutable" >&2
+            exit 1
+          fi
+          # The previous release is the highest existing version below this one; this release is the latest only when it is above every existing one.
+          previous="$(printf '%s\n' "$existing" "$version" | awk 'NF' | sort -t. -k1,1n -k2,2n -k3,3n | grep -xF -B1 "$version" | head -n 1)"
+          [[ "$previous" == "$version" ]] && previous=""
+          latest=false
+          [[ "$(printf '%s\n' "$existing" "$version" | awk 'NF' | sort -t. -k1,1n -k2,2n -k3,3n | tail -n 1)" == "$version" ]] && latest=true
+          publish=false
+          if [[ "$GITHUB_EVENT_NAME" == push || "$PUBLISH_INPUT" == true ]]; then
+            publish=true
+            [[ "$GITHUB_REF" == refs/heads/main ]] || { echo "releases are published only from main, not $GITHUB_REF" >&2; exit 1; }
+          fi
+          {
+            echo "version=$version"
+            echo "previous=${previous:+dict-v$previous}"
+            echo "latest=$latest"
+            echo "publish=$publish"
+          } >> "$GITHUB_OUTPUT"
+          echo "dict-v${version} (previous: ${previous:-none}, latest: $latest, publish: $publish)"
       - name: Checkout msime builder
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: metasequoiaime/msime
-          ref: ${{ inputs.msime_ref }}
+          ref: ${{ inputs.msime_ref || 'develop' }}
           path: msime
           persist-credentials: false
-      - name: Validate version
-        env:
-          REQUESTED: ${{ inputs.version }}
-        run: |
-          [[ "$REQUESTED" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "version must be X.Y.Z, got '$REQUESTED'" >&2; exit 1; }
       - name: Install Rust
         working-directory: msime
         run: rustup toolchain install
       - name: Build msime-dict-build
         run: cargo build --manifest-path msime/Cargo.toml --release --locked -p msime-dict-builder
       - name: Build all dictionaries
+        id: build
+        env:
+          SOURCE_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
           cache="$RUNNER_TEMP/dictionary-sources"
           out="$RUNNER_TEMP/dictionary-release"
-          msime/target/release/msime-dict-build --repository msime --cache "$cache" --out "$out"
-          msime/target/release/msime-dict-build languages --repository msime --cache "$cache" --out "$out"
-          for name in msime-pinyin.db msime-wubi.db msime-english.db msime-others.db msime-japanese.dat msime-bigram.bin msime-trigram.bin msime-mozc_dictionary_oss_README.txt msime-dictionary-manifest.json msime-SHA256SUMS.txt msime-cantonese.db msime-zhuyin.db msime-rime_cantonese_LICENSE.txt msime-libchewing_data_LICENSE.txt msime-language-dictionaries-SHA256SUMS; do
+          dictionary="$GITHUB_WORKSPACE/dictionary"
+          msime/target/release/msime-dict-build --repository msime --dictionary "$dictionary" --cache "$cache" --out "$out"
+          msime/target/release/msime-dict-build languages --repository msime --dictionary "$dictionary" --cache "$cache" --out "$out"
+          for name in $RELEASE_ASSETS; do
             [[ -s "$out/$name" ]] || { echo "missing $out/$name" >&2; exit 1; }
           done
-          if [[ -e "$out/msime-stroke.db" || -e "$out/msime-rime_stroke_LICENSE.txt" ]]; then
-            for name in msime-stroke.db msime-rime_stroke_LICENSE.txt; do [[ -s "$out/$name" ]] || exit 1; done
-          fi
           (cd "$out" && sha256sum -c msime-SHA256SUMS.txt && sha256sum -c msime-language-dictionaries-SHA256SUMS)
-          jq -e '.licensing.includes_unlicensed_inputs == false and .source.dirty == false' "$out/msime-dictionary-manifest.json" >/dev/null
-          artifact="msime-dictionary-${{ inputs.version }}"
-          echo "artifact=$artifact" >> "$GITHUB_OUTPUT"
-        id: build
+          jq -e --arg sha "$SOURCE_SHA" '.licensing.includes_unlicensed_inputs == false and .source.dirty == false and .custom_dictionary_commit == $sha' "$out/msime-dictionary-manifest.json" >/dev/null || {
+            echo "manifest check failed: expected unlicensed inputs excluded, a clean builder and custom_dictionary_commit $SOURCE_SHA" >&2
+            jq '{licensing, source, custom_dictionary_commit}' "$out/msime-dictionary-manifest.json" >&2
+            exit 1
+          }
+          echo "msime_commit=$(git -C msime rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Write release notes
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          PREVIOUS_TAG: ${{ steps.version.outputs.previous }}
+          SOURCE_SHA: ${{ github.sha }}
+          MSIME_REF: ${{ inputs.msime_ref || 'develop' }}
+          MSIME_COMMIT: ${{ steps.build.outputs.msime_commit }}
+          ACTOR: ${{ github.actor }}
+          GH_TOKEN: ${{ github.token }}
+          NOTES: ${{ runner.temp }}/release-notes/notes.md
+        run: |
+          set -euo pipefail
+          mkdir -p "$(dirname "$NOTES")"
+          server="${GITHUB_SERVER_URL:-https://github.com}"
+          repo_url="${server}/${GITHUB_REPOSITORY}"
+          msime_url="${server}/metasequoiaime/msime"
+          case "$GITHUB_EVENT_NAME" in
+            push) trigger="推送到 \`main\`（${ACTOR}）" ;;
+            workflow_dispatch) trigger="手动运行（${ACTOR}）" ;;
+            *) trigger="$GITHUB_EVENT_NAME（${ACTOR}）" ;;
+          esac
+          # Compare against the source commit the previous release was actually built from (its manifest's custom_dictionary_commit); tags of manually published releases up to dict-v2.0.5 point at a later main than the data they contain. Fall back to the tag when that release has no readable manifest or the commit is not an ancestor of this one.
+          base=""
+          base_desc=""
+          if [[ -n "$PREVIOUS_TAG" ]]; then
+            previous_commit="$(gh release download "$PREVIOUS_TAG" --repo "$GITHUB_REPOSITORY" --pattern msime-dictionary-manifest.json --output - 2>/dev/null | jq -r '.custom_dictionary_commit // empty' 2>/dev/null || true)"
+            if [[ "$previous_commit" =~ ^[0-9a-f]{40}$ ]] && git -C dictionary merge-base --is-ancestor "$previous_commit" "$SOURCE_SHA" 2>/dev/null; then
+              base="$previous_commit"
+              # shellcheck disable=SC2016
+              base_desc="$(printf '[`%s`](%s/releases/tag/%s) 实际构建的源数据提交 [`%s`](%s/commit/%s)（取自它的 `msime-dictionary-manifest.json`）' "$PREVIOUS_TAG" "$repo_url" "$PREVIOUS_TAG" "${base:0:7}" "$repo_url" "$base")"
+            else
+              base="$PREVIOUS_TAG"
+              # shellcheck disable=SC2016
+              base_desc="$(printf '[`%s`](%s/releases/tag/%s) 的标签指向的提交（读不到它 manifest 里的源数据提交，或该提交不是本次提交的祖先）' "$PREVIOUS_TAG" "$repo_url" "$PREVIOUS_TAG")"
+            fi
+          fi
+          # The single-quoted printf formats and the quoted heredoc hold Markdown code spans; their backticks are literal on purpose.
+          # shellcheck disable=SC2016
+          {
+            printf '## dict-v%s\n\n' "$VERSION"
+            printf -- '- 词库源数据：[`%s`](%s/commit/%s)（本仓 `sources/` 与 `custom/`，也是这个标签指向的提交）\n' "${SOURCE_SHA:0:7}" "$repo_url" "$SOURCE_SHA"
+            printf -- '- 构建器：`metasequoiaime/msime` 的 `%s`，即提交 [`%s`](%s/commit/%s)\n' "$MSIME_REF" "${MSIME_COMMIT:0:9}" "$msime_url" "$MSIME_COMMIT"
+            printf -- '- 触发：%s，[workflow 运行](%s/actions/runs/%s)\n\n' "$trigger" "$repo_url" "$GITHUB_RUN_ID"
+            printf '## 源数据变更\n\n'
+            if [[ -z "$PREVIOUS_TAG" ]]; then
+              printf '没有更早的 `dict-v` 版本可比较。\n\n'
+            else
+              printf '比较基点：%s\n\n' "$base_desc"
+              changes="$(git -C dictionary log --no-merges --format="- [\`%h\`](${repo_url}/commit/%H) %s" "${base}..${SOURCE_SHA}" -- sources custom)"
+              if [[ -n "$changes" ]]; then
+                printf '此后改动 `sources/` 或 `custom/` 的提交：\n\n%s\n\n' "$changes"
+              else
+                printf '此后 `sources/` 与 `custom/` 没有变化，本版本是用同一份源数据重新构建的。\n\n'
+              fi
+            fi
+            cat <<'EOF'
+          ## 文件说明
+
+          msime 客户端不跟随最新版本，而是按 msime 仓库里锁文件固定的 URL、大小与 SHA-256 下载：`resources/desktop-dictionary.lock.json` 固定主词库与模型、日文词库及其说明和 manifest，`resources/language-dictionaries.lock.json` 固定粤拼、注音、笔画词库及其许可证。许可证与说明文件必须和对应的数据文件一起再分发。
+
+          | 文件 | 用途 | 谁使用 |
+          | --- | --- | --- |
+          | `msime-pinyin.db` | 普通话拼音主词库：全拼词表（rime-ice 及其补充表、行政区划地名补充表、`custom/words.txt`），以及快捷短语表 | 客户端下载（桌面词库锁） |
+          | `msime-wubi.db` | 五笔 86 与五笔 98 码表（98 合入 Fcitx5 补充表） | 客户端下载（桌面词库锁） |
+          | `msime-english.db` | 英文单词表（含 `custom/english.txt`），以及由 ECDICT 生成、经 `custom/translations.txt` 修正的英汉与汉英释义 | 客户端下载（桌面词库锁） |
+          | `msime-others.db` | 表情（含拼音关键词）、颜文字和符号表，数据来自 msime 仓库 | 客户端下载（桌面词库锁） |
+          | `msime-japanese.dat` | 由 Mozc OSS 词典生成的日文转换模型（`MSJPDT1` 格式） | 客户端下载（桌面词库锁；macOS 在启用日文时按需下载） |
+          | `msime-bigram.bin` | 二元语言模型，由固定的中文维基语料按拼音词表统计，用于整句候选的上下文评分 | 客户端下载（桌面词库锁） |
+          | `msime-trigram.bin` | 三元语言模型，与二元模型一起参与整句候选排序 | 客户端下载（桌面词库锁） |
+          | `msime-cantonese.db` | 粤拼方案词库：rime-cantonese 的音节、单字与词语，按其语料词频排序 | 客户端按需下载（语言词库锁） |
+          | `msime-zhuyin.db` | 注音方案词库：libchewing-data 的单字与词语，加 McBopomofo 补充表 | 客户端按需下载（语言词库锁） |
+          | `msime-stroke.db` | 笔画方案词库：rime-stroke 的笔画编码，按拼音单字表的字频排序 | 客户端按需下载（语言词库锁） |
+          | `msime-mozc_dictionary_oss_README.txt` | Mozc 词典的来源与许可说明（IPAdic、ICOT、冲绳词典），分发 `msime-japanese.dat` 时必须一并分发 | 随 `msime-japanese.dat` 下载 |
+          | `msime-rime_cantonese_LICENSE.txt` | rime-cantonese 数据的许可证（CC BY 4.0），随 `msime-cantonese.db` 分发 | 随语言词库下载 |
+          | `msime-libchewing_data_LICENSE.txt` | libchewing-data 数据的许可证（LGPL-2.1），随 `msime-zhuyin.db` 分发 | 随语言词库下载 |
+          | `msime-rime_stroke_LICENSE.txt` | rime-stroke 数据的许可证（LGPL-3.0），随 `msime-stroke.db` 分发 | 随语言词库下载 |
+          | `msime-dictionary-manifest.json` | 机器可读的发布清单：`profile`、`format_version` 与 `engine_compatibility`（词库格式与日文模型格式）、`source`（msime 构建器提交，`dirty` 必须为 `false`）、`custom_dictionary_commit`（本仓源数据提交）、`references` 与 `mozc_revision`（固定的上游引用）、`features`、`licensing`（排除了哪些无再分发授权的输入）、`files`（8 个主产物的大小与 SHA-256，不含语言词库） | 客户端下载（桌面词库锁），设置页显示其中的 `profile` 与 `source.commit` |
+          | `msime-SHA256SUMS.txt` | `sha256sum -c` 格式的校验和：8 个主产物（拼音、五笔、英文、其他、日文模型、二元、三元模型、Mozc 说明）和 manifest | 人工或脚本校验，客户端不下载 |
+          | `msime-language-dictionaries-SHA256SUMS` | `sha256sum -c` 格式的校验和：粤拼、注音、笔画三个词库和它们的三个许可证 | 人工或脚本校验，客户端不下载 |
+
+          下载后校验：在放附件的目录里运行 `sha256sum -c msime-SHA256SUMS.txt` 和 `sha256sum -c msime-language-dictionaries-SHA256SUMS`。
+          EOF
+          } > "$NOTES"
+          # Every release asset has exactly one row in the file table, and the table lists nothing else.
+          # shellcheck disable=SC2016
+          listed="$(grep -oE '^\| `[^`]+` \|' "$NOTES" | sed -E 's/^\| `([^`]+)` \|$/\1/' | sort)"
+          read -r -a assets <<< "$RELEASE_ASSETS"
+          expected="$(printf '%s\n' "${assets[@]}" | sort)"
+          if [[ "$listed" != "$expected" ]]; then
+            echo "release notes file table does not match RELEASE_ASSETS" >&2
+            diff <(printf '%s\n' "$expected") <(printf '%s\n' "$listed") >&2 || true
+            exit 1
+          fi
+          cat "$NOTES" >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: ${{ steps.build.outputs.artifact }}
+          name: msime-dictionary-${{ steps.version.outputs.version }}
           path: ${{ runner.temp }}/dictionary-release/
           if-no-files-found: error
-    outputs:
-      artifact: ${{ steps.build.outputs.artifact }}
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: release-notes-${{ steps.version.outputs.version }}
+          path: ${{ runner.temp }}/release-notes/notes.md
+          if-no-files-found: error
 
   publish:
     needs: build
-    if: ${{ inputs.publish }}
+    if: ${{ needs.build.outputs.publish == 'true' }}
     runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
     steps:
-      - name: Checkout repository for release target
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
-          name: ${{ needs.build.outputs.artifact }}
+          name: msime-dictionary-${{ needs.build.outputs.version }}
           path: dist
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: release-notes-${{ needs.build.outputs.version }}
+          path: notes
       - name: Publish dictionary release
         env:
           GH_TOKEN: ${{ github.token }}
-          VERSION: ${{ inputs.version }}
-          MSIME_REF: ${{ inputs.msime_ref }}
+          VERSION: ${{ needs.build.outputs.version }}
+          LATEST: ${{ needs.build.outputs.latest }}
+          SOURCE_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
           tag="dict-v${VERSION}"
           (cd dist && sha256sum -c msime-SHA256SUMS.txt && sha256sum -c msime-language-dictionaries-SHA256SUMS)
-          custom_dictionary_repository="$(jq -r '.custom_dictionary_repository' dist/msime-dictionary-manifest.json)"
-          custom_dictionary_commit="$(jq -r '.custom_dictionary_commit' dist/msime-dictionary-manifest.json)"
-          cat > notes.md <<EOF
-          本版本由 \`msime-dict-build\` 与 \`msime-dict-build languages\` 构建，使用 \`metasequoiaime/msime\` 的 \`${MSIME_REF}\`。
-          
-          自定义词典来自 \`${custom_dictionary_repository}\` 提交 \`${custom_dictionary_commit}\`。
-          
-          ## 文件说明
-          
-          ### 主词库与模型
-          
-          - \`msime-pinyin.db\`：普通话拼音主词库，提供拼音输入的词条与候选，也包含快捷短语。
-          - \`msime-wubi.db\`：五笔输入词库，包含五笔 86 与五笔 98 的编码数据。
-          - \`msime-english.db\`：英文单词与释义数据，供英文输入和候选使用。
-          - \`msime-others.db\`：其他内置数据：表情、颜文字和符号。
-          - \`msime-japanese.dat\`：基于 Mozc 开源词典生成的日文词库。
-          - \`msime-bigram.bin\`：二元语言模型表，用于整句候选的上下文评分。
-          - \`msime-trigram.bin\`：三元语言模型表，与二元模型一起参与整句候选排序。
-          - \`msime-mozc_dictionary_oss_README.txt\`：日文词库所需的来源与许可证说明，分发 \`msime-japanese.dat\` 时必须一并保留。
-          
-          ### 语言词库
-          
-          - \`msime-cantonese.db\`：粤拼输入方案的音节、单字和词语词库。
-          - \`msime-zhuyin.db\`：大千注音输入方案的音节、单字和词语词库。
-          - \`msime-stroke.db\`：笔画输入方案的编码与候选词库。
-          - \`msime-rime_cantonese_LICENSE.txt\`：粤拼词库所用 \`rime-cantonese\` 数据的许可证文本。
-          - \`msime-libchewing_data_LICENSE.txt\`：注音词库所用 \`libchewing-data\` 数据的许可证文本。
-          - \`msime-rime_stroke_LICENSE.txt\`：笔画词库所用 \`rime-stroke\` 数据的许可证文本。
-          
-          ### 清单与校验
-          
-          - \`msime-dictionary-manifest.json\`：机器可读的发布清单，记录资源格式兼容性、构建来源提交、上游引用、功能列表、各文件大小与 SHA-256，以及授权检查结果。
-          - \`msime-SHA256SUMS.txt\`：主词库、模型、日文许可证说明和主清单的 SHA-256 校验和。
-          - \`msime-language-dictionaries-SHA256SUMS\`：语言词库及其许可证文本的 SHA-256 校验和。
-          
-          上述来源由 \`resources/dictionary-sources.lock.json\` 固定；两份校验和文件可用于下载后完整性验证。
-          EOF
-          gh release create "$tag" dist/msime-pinyin.db dist/msime-wubi.db dist/msime-english.db dist/msime-others.db dist/msime-japanese.dat dist/msime-cantonese.db dist/msime-zhuyin.db dist/msime-stroke.db dist/msime-bigram.bin dist/msime-trigram.bin dist/msime-mozc_dictionary_oss_README.txt dist/msime-rime_cantonese_LICENSE.txt dist/msime-libchewing_data_LICENSE.txt dist/msime-rime_stroke_LICENSE.txt dist/msime-dictionary-manifest.json dist/msime-SHA256SUMS.txt dist/msime-language-dictionaries-SHA256SUMS --target main --title "$tag" --notes-file notes.md --latest=false
+          # gh release create reuses an existing tag and ignores --target, so refuse a tag that appeared after the build resolved the version.
+          status=0
+          git ls-remote --exit-code --tags "https://github.com/${GITHUB_REPOSITORY}.git" "refs/tags/${tag}" >/dev/null || status=$?
+          case "$status" in
+            2) ;;
+            0) echo "${tag} already exists" >&2; exit 1 ;;
+            *) echo "git ls-remote failed with status $status" >&2; exit 1 ;;
+          esac
+          assets=()
+          for name in $RELEASE_ASSETS; do
+            assets+=("dist/$name")
+          done
+          gh release create "$tag" "${assets[@]}" --repo "$GITHUB_REPOSITORY" --target "$SOURCE_SHA" --title "$tag" --notes-file notes/notes.md --latest="$LATEST"
