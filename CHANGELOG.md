@@ -1,5 +1,7 @@
 # Changelog
 
+本文件已停止更新。它由 release-please 生成，release-please 及其配置与 `.github/workflows/release.yml` 已在 #48（`a583b11`）删除；下面各条对应的 `sources-v*` Release 和远端标签都已不存在，标题里的 compare 链接因此失效。之后的变更见各 `dict-v*` Release 的说明与 `git log`。以下内容保留作历史记录。
+
 ## [1.6.1](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.6.0...sources-v1.6.1) (2026-10-04)
 
 

@@ -57,7 +57,7 @@ libchewing-data 的两个文件在文件头声明 `dc:rights,Copyright (c) 2025 
 
 rime-stroke 的上游仓库以 LGPL-3.0 发布（`LICENSE`）。`AUTHORS` 列出的作者是四季的風、雪齋、Kunki Chou 与宋天，并写明前三位的数据是依 CNS11643 全字库的授权声明（http://www.cns11643.gov.tw/AIDB/copyright.do）以 LGPL 再分发的。CNS11643 全字库网站以《政府資料開放授權條款－第1版》授权（见其[全字库授权](https://www.cns11643.gov.tw/pageView.jsp?ID=59)页），要求利用其资料时注明来源：數位發展部，CNS11643中文標準交換碼全字庫網站，https://www.cns11643.gov.tw 。按 `stroke.dict.yaml` 的文件头：主码表源自 CNS11643 中文标准交换码全字库网站（http://www.cns11643.gov.tw），由 Kunki Chou 整理；附码表源自北大中文论坛，由孙海峰、徐孟罗、唐捺之、谢振斌整理；至扩展 J 区的超集扩充数据来自宋天；Rime 输入方案由四季的風、雪齋、Kunki Chou 制作。
 
-msime 用 `msime-dict-build languages` 把它们构建成 `cantonese.db`、`zhuyin.db`、`stroke.db`，与桌面词库一起放在本仓库的 `dict-v*` Release；随产物分发的署名、改动说明与许可证全文在 msime 的 `resources/licenses/rime-cantonese-CC-BY-4.0.txt`、`resources/licenses/libchewing-data-LGPL-2.1.txt`、`resources/licenses/rime-stroke-LGPL-3.0.txt`，换上游提交时这些文件要一起改。`stroke.db` 的排序权重取自 `cn/SingleCharsAllV1.txt`。
+msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`、`msime-zhuyin.db`、`msime-stroke.db`，与桌面词库一起放在本仓库的 `dict-v*` Release；随产物分发的署名、改动说明与许可证全文在 msime 的 `resources/licenses/rime-cantonese-CC-BY-4.0.txt`、`resources/licenses/libchewing-data-LGPL-2.1.txt`、`resources/licenses/rime-stroke-LGPL-3.0.txt`，换上游提交时这些文件要一起改。`msime-stroke.db` 的排序权重取自 `cn/SingleCharsAllV1.txt`。
 
 ## 日文与韩文词库
 
@@ -66,11 +66,11 @@ msime 用 `msime-dict-build languages` 把它们构建成 `cantonese.db`、`zhuy
 | `ja/mozc/dictionary00.txt` … `dictionary09.txt`、`ja/mozc/id.def`、`ja/mozc/connection_single_column.txt`、`ja/mozc/README.txt` | [google/mozc](https://github.com/google/mozc)，提交 `9fbd649bea4c5e99cd8ad5e487213b26a953a376` 的 `src/data/dictionary_oss/` 文件 | 以随附的 `README.txt` 为准（IPADIC、ICOT 与冲绳方言数据分别附带其上游条款） |
 | `ko/hanja.txt` | [libhangul/libhangul](https://github.com/libhangul/libhangul)，提交 `717409ce61524bb3d8426060a384822f21354c62` 的 `data/hanja/hanja.txt` | BSD-3-Clause |
 
-`ja/mozc/` 与 `ko/hanja.txt` 均逐字节保留上游文件。`msime-dict-build` 从 `ja/mozc/` 构建 `dict_japanese.dat`，从 `ko/hanja.txt` 生成引擎内嵌的韩文 Hanja 表；日文词库发布时必须同时分发 `ja/mozc/README.txt`，韩文数据的 BSD-3-Clause 文本见 msime 的 `resources/licenses/libhangul-hanja-BSD-3-Clause.txt`。更新任一上游提交时，需同步更新 msime 的锁文件、构建器路径和对应的许可证说明。
+`ja/mozc/` 与 `ko/hanja.txt` 均逐字节保留上游文件。`msime-dict-build` 从 `ja/mozc/` 构建 `msime-japanese.dat`，从 `ko/hanja.txt` 生成引擎内嵌的韩文 Hanja 表；日文词库发布时必须同时分发 `ja/mozc/README.txt`，韩文数据的 BSD-3-Clause 文本见 msime 的 `resources/licenses/libhangul-hanja-BSD-3-Clause.txt`。更新任一上游提交时，需同步更新 msime 的锁文件、构建器路径和对应的许可证说明。
 
 ## 下游影响
 
-由 `cn/BaseDictAllV1Part1.txt` 与 `cn/BaseDictAllV1Part2.txt` 构建出的 `msime.db` 同时包含 rime-ice（GPL-3.0）与 CustomPinyinDictionary（未声明许可）的内容。使用该数据库的前端本身以 GPL-3.0 分发，与 rime-ice 兼容，但**必须保留对 rime-ice 的署名**。
+发布构建的拼音词库 `msime-pinyin.db` 由 `cn/SingleCharsAllV1.txt`、`cn/BaseDictIceV1.txt`、`cn/RimeIceSupplementV1.txt` 与 `custom/words.txt` 构建，另含 msime 仓库自带的 `resources/dictionary-sources/mix/quick_phrases.txt` 快捷短语；`cn/BaseDictAllV1Part1.txt`、`Part2.txt`（含 CustomPinyinDictionary 的内容）不进入发布构建，见下方「发布构建不包含这些条目」。只有用 `--include-unlicensed` 做的本地完整构建才会读入 Part1/2。中文数据主体来自 rime-ice（GPL-3.0），使用该数据库的前端本身以 GPL-3.0 分发，与 rime-ice 兼容，但**必须保留对 rime-ice 的署名**。
 
 词库由 [msime](https://github.com/metasequoiaime/msime) 的 Rust 构建器 `crates/dict-builder`（`msime-dict-build`）构建并以本仓库的 `dict-v*` release 发布（数据库按 `msime-<内容>` 命名），随产物送到用户手上的署名在 msime 的 `resources/licenses/` 与 [MSIME-Windows](https://github.com/metasequoiaime/MSIME-Windows) 的 `THIRD_PARTY_NOTICES.txt` 里。改动本文件的来源表时，这些文件要一起改。
 
@@ -78,7 +78,7 @@ msime 用 `msime-dict-build languages` 把它们构建成 `cantonese.db`、`zhuy
 
 以下部分目前没有明确的再分发授权，需要与上游作者确认后才能补上：
 
-- [wuhgit/CustomPinyinDictionary](https://github.com/wuhgit/CustomPinyinDictionary) 未声明任何许可，而它是 `cn/BaseDictAllV1Part1.txt`、`Part2.txt` 的主体。
+- [wuhgit/CustomPinyinDictionary](https://github.com/wuhgit/CustomPinyinDictionary) 是 `cn/BaseDictAllV1Part1.txt`、`Part2.txt` 的主体。上游在 2026-09-30 的提交 `cf17f96af885cb818c2fad87184f383a52482351`（“Add License”）加入了 CC-BY-SA-4.0 许可，但本仓用的 `2023-09-28(No.82)` 快照早于这次加许可，许可是否覆盖这份快照没有确认，所以仍按未声明许可处理，继续排除在发布构建之外。
 - `cn/SingleCharWhitelist.txt` 的来源没有记录。完整构建用它过滤单字条目，所以需要补上来源；在补上之前不要假定它可以再分发。
 - `en/oaldpe_words.txt` 提取自商业词典。词典本体 `en/oaldpe.mdx` 曾经也在本仓中，现已移除——构建只需要提取好的词形列表，不需要词典本体。提取脚本 `makecikudb/englishdb/extract_oaldpe_headwords.py` 已随旧的 Python 构建流程删除，需要时从 git 历史取回，自备 `.mdx` 作为参数运行。**注意移除只影响当前版本，词典本体仍留在 git 历史中。**改写历史会让所有 fork、clone 以及下游锁定的 commit 全部失效，因此暂不改写；是否改写单独决策。
 
@@ -90,11 +90,19 @@ msime 用 `msime-dict-build languages` 把它们构建成 `cantonese.db`、`zhuy
 | --- | --- | --- |
 | `cn/BaseDictAllV1Part1.txt`、`Part2.txt` | `cn/BaseDictIceV1.txt`（rime-ice，GPL-3.0） | 中文词库召回下降；rime-ice 是合并前的子集，构建不会失败 |
 | `cn/SingleCharWhitelist.txt` | 无 | 不做过滤，`SingleCharsAllV1.txt` 里的单字全部收入 |
-| `en/oaldpe_words.txt` | 无 | 英文词表只来自 `BaseDictIceEn.txt` |
+| `en/oaldpe_words.txt` | 无 | 英文词表来自 `BaseDictIceEn.txt`、`en/RimeIceEnglishSupplementV1.txt` 与 `custom/english.txt`，`en/google_count_1_w.txt` 提供词频 |
 
 想构建完整词库（本地开发、评估召回率）用 `--include-unlicensed`，或设环境变量 `MSIME_DICT_INCLUDE_UNLICENSED=1`。**这样构建出来的产物不要附到 release 上。**
 
 拿到上游的书面再分发许可之后，把对应条目从 `licensing.rs` 的 `UNLICENSED_INPUTS` 里移出，并在同一次改动里更新本文件。
+
+### 上游状态与已知数据问题
+
+以下各项不涉及再分发授权，记录在这里供更新上游或重新生成补充表时处理：
+
+- [chewing/libchewing-data](https://github.com/chewing/libchewing-data) 的 GitHub 仓库已归档，仓库描述是 “Migrated to Codeberg”。`tw/tsi.csv`、`tw/word.csv` 仍按上面记录的 GitHub 提交锁定；Codeberg 上是否有更新的数据没有核实，换上游地址前要先核对。
+- `cn/RimeIceSupplementV1.txt` 生成时只排除了 `BaseDictIceV1.txt` 已有的同词同音行，没有对照 `cn/SingleCharsAllV1.txt`：它的 8757 行单字中有 8740 对（字,拼音）与 `SingleCharsAllV1.txt` 重合，其中 725 对权重不同。msime 构建器把拼音词表逐行直接插入、不去重，这些单字在 `msime-pinyin.db` 里会出现两行。对候选排序的影响没有在引擎里测过。
+- `cn/RimeIceSupplementV1.txt` 沿用了 rime-ice `base.dict.yaml` 的容错读音，权重与正读相同，例如 `血型 xie'xing 94145`（正读 `血型 xue'xing 94145` 在 `cn/BaseDictIceV1.txt`）。这是上游的行为，不是转换错误；是否在补充表里排除容错读音尚未决定。
 
 ## 本项目自建部分
 

@@ -112,10 +112,10 @@ jobs:
           
           ### 主词库与模型
           
-          - \`msime-pinyin.db\`：普通话拼音主词库，提供拼音输入的词条与候选。
+          - \`msime-pinyin.db\`：普通话拼音主词库，提供拼音输入的词条与候选，也包含快捷短语。
           - \`msime-wubi.db\`：五笔输入词库，包含五笔 86 与五笔 98 的编码数据。
           - \`msime-english.db\`：英文单词与释义数据，供英文输入和候选使用。
-          - \`msime-others.db\`：其他内置数据，包括快捷短语、表情、颜文字和符号等。
+          - \`msime-others.db\`：其他内置数据：表情、颜文字和符号。
           - \`msime-japanese.dat\`：基于 Mozc 开源词典生成的日文词库。
           - \`msime-bigram.bin\`：二元语言模型表，用于整句候选的上下文评分。
           - \`msime-trigram.bin\`：三元语言模型表，与二元模型一起参与整句候选排序。
