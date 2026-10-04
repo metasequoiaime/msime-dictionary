@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.6.0...sources-v1.6.1) (2026-10-04)
+
+
+### Bug Fixes
+
+* **release:** 统一词库发布标题格式 ([#46](https://github.com/metasequoiaime/msime-dictionary/issues/46)) ([468a840](https://github.com/metasequoiaime/msime-dictionary/commit/468a840b41c6af8439b84364cf3f34caa169e950))
+
 ## [1.6.0](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.5.0...sources-v1.6.0) (2026-10-04)
 
 
