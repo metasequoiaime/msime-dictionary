@@ -133,7 +133,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 **权重**：新词条的权重必须落在所在文件现有条目的范围内，CI 按文件当前内容计算这个范围。`custom/words.txt` 目前是 1 到 10000，大多数历史条目写的是 `1`。想让一个词在整句里更容易胜出，就参照基础词库里同量级的真实词取值（例如 `扛不住` 在 `sources/pinyin/rime-ice.txt` 里是 2430），不要为了靠前填一个极大值。`custom/english.txt` 目前只有 `1`：有 Google 词频的英文词按词频排序，没有词频的才用这里的权重，而且排在所有有词频的词之后。这个范围普通 Pull Request 无法放宽，确实需要时先开 Issue。
 
-**重复**：已经在发布词库里的词（同词同拼音）不应再写进 `custom/words.txt`，check-words 会拒绝它在比对库里找到的重复。比对库是本仓最新一次 `dict-v` release（当前是 `dict-v2.0.5`）的 `msime-pinyin.db` 和 `msime-english.db`，在 `check-words.yml` 里按 URL 和 SHA-256 固定，所以已经发布的源数据（包括 `sources/pinyin/rime-ice-supplement.txt`、`sources/english/rime-ice-en-supplement.txt`）里的词都会被拦下；每发布一个新的 `dict-v` 版本，都要把这两个 URL 和哈希改到新版本，否则新版本才加入的词拦不住。发布流程不会自动改它们；check-words 每次运行会比对固定的版本和最新的 `dict-v` release，落后时在运行里给出 warning，但不会因此失败。`custom/words.txt` 现有的 9 行（刘汝佳、断连、堪堪、判空、属于是、云风、扛把子、推流、合入）与发布输入里的词重复，其中扛把子（100 → 10000）、推流（689 → 3855）、合入（100 → 3855）三行抬高了已发布词的权重，另外 6 行的权重不高于已有值（5 行更低，断连相等），不起作用。按只追加规则这些行保留不删。
+**重复**：已经在发布词库里的词（同词同拼音）不应再写进 `custom/words.txt`，check-words 会拒绝它在比对库里找到的重复。比对库是 check-words 运行时找到的本仓最新一次 `dict-v` release 的 `msime-pinyin.db` 和 `msime-english.db`，按该 release 自带的 `msime-SHA256SUMS.txt` 校验，所以已经发布的源数据（包括 `sources/pinyin/rime-ice-supplement.txt`、`sources/english/rime-ice-en-supplement.txt`）里的词都会被拦下，每次发版后自动跟上，不需要改 workflow。`custom/words.txt` 现有的 9 行（刘汝佳、断连、堪堪、判空、属于是、云风、扛把子、推流、合入）与发布输入里的词重复，其中扛把子（100 → 10000）、推流（689 → 3855）、合入（100 → 3855）三行抬高了已发布词的权重，另外 6 行的权重不高于已有值（5 行更低，断连相等），不起作用。按只追加规则这些行保留不删。
 
 ### CI
 
@@ -141,11 +141,11 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 | workflow | 触发 | 检查什么 |
 | --- | --- | --- |
-| `check-words.yml` | Pull Request 改动 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` | 用 msime 固定提交（`MSIME_COMMIT`）的 `msime-dict-build check-words`，即构建所用的解析器：只能追加；每行能按构建的规则解析（词语的全拼须是 `'` 分隔的小写字母并能映射到全拼表）；词语和英文的权重在文件现有范围内；不与本次改动、所在文件或比对库重复（比对库是 `check-words.yml` 固定的最新 `dict-v` release 的 `msime-pinyin.db` 和 `msime-english.db`，随每次 `dict-v` 发布更新，落后于最新 `dict-v` 时给出 warning）。翻译可以给已有源词换一个译文，完全相同的一行算重复。结果写成 Pull Request 评论 |
+| `check-words.yml` | Pull Request 改动 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` | 用 msime 固定提交（`MSIME_COMMIT`）的 `msime-dict-build check-words`，即构建所用的解析器：只能追加；每行能按构建的规则解析（词语的全拼须是 `'` 分隔的小写字母并能映射到全拼表）；词语和英文的权重在文件现有范围内；不与本次改动、所在文件或比对库重复（比对库是运行时找到的最新 `dict-v` release 的 `msime-pinyin.db` 和 `msime-english.db`，按该 release 的 `msime-SHA256SUMS.txt` 校验）。翻译可以给已有源词换一个译文，完全相同的一行算重复。结果写成 Pull Request 评论 |
 | `validate-packs.yml` | Pull Request 改动 `packs/`、`custom/translations.txt`、`custom/words.txt`、它对照的 `sources/pinyin/`、`sources/unlicensed/` 文件、脚本或该 workflow | 运行 `python3 scripts/validate_packs.py`，见[专业词库](#专业词库) |
 | `quality.yml` | 推送到 `main`、Pull Request、merge queue、手动 | actionlint 校验 workflow 与其中的 shell；Pull Request 上另做依赖审查（high 及以上失败） |
 | `codeql.yml` | 每天定时 | CodeQL 分析 GitHub Actions workflow |
-| `release-built-dictionaries.yml` | 手动 | 构建并发布 `dict-v*`，见[发布](#发布) |
+| `release-built-dictionaries.yml` | 推送到 `main` 且改动了 `sources/` 或 `custom/`；手动（可只构建不发布） | 用这次推送的提交构建 19 个附件，自动加修订号发布 `dict-v*` Release，说明列出源数据变更和每个附件的用途，见[发布](#发布) |
 
 从 fork 发来的 Pull Request 拿到的是只读 token，check-words 不会发评论；同样的结果在该次运行的 job summary 里。维护者在 CI 之外再人工审核内容（包括敏感词）。
 
@@ -174,16 +174,20 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 ## 发布
 
-改动合入本仓不会自动进入输入法，需要重新构建并发布一个 `dict-v*` Release：
+合入 `main` 的推送只要改动了 `sources/` 或 `custom/`，`release-built-dictionaries.yml` 就自动用这次推送的提交构建并发布一个新的 `dict-v*` Release，不需要先去 msime 改锁文件。只改 `packs/`、文档或 workflow 的合入不触发发布。
 
-1. 改动合入本仓 `main`。
-2. 有人在 msime 的 `resources/dictionary-sources.lock.json` 里把本仓的提交换成新的提交：`references.msime-dictionary.commit`，以及所有指向本仓的 `raw.githubusercontent.com/metasequoiaime/msime-dictionary/<提交>/…` URL 都统一换成新提交；内容变了的文件同时更新 `size` 和 `sha256`，没变的文件这两项不变。这一步是对 msime 的提交，第 3 步的 `msime_ref` 要指向包含新锁文件的提交。
-3. 在本仓手动运行 `release-built-dictionaries.yml`：`version` 填 `X.Y.Z`（生成 `dict-vX.Y.Z`），`msime_ref` 填包含新锁文件的 msime 分支或提交；`publish` 默认关闭，只上传 workflow artifact，确认后打开再跑一次才会创建 Release。workflow 会检查主产物和粤拼、注音产物都存在（笔画词库和它的许可证只在生成时检查）、两份校验和匹配、manifest 的 `licensing.includes_unlicensed_inputs` 与 `source.dirty` 都是 `false`。
-4. 各平台在自己的锁文件里升级到新的 `dict-v*` 版本，下一个版本随之带上新词库。
+1. 版本号：在现有最高的 `dict-vX.Y.Z` 上加一个修订号（`dict-v2.0.6` 之后是 `dict-v2.0.7`）；算出的标签已经存在时失败，已发布的版本不可修改。发布的运行共用一个 concurrency 组，不会两次合入抢同一个版本号；GitHub 每组只保留一个排队的运行，短时间内连续合入时排在中间的运行会被取消，由最新的那次发布，它的说明列出自上一版以来的全部源数据提交。
+2. 构建：检出这次推送的提交，用 msime `develop` 的 `msime-dict-build` 和 `msime-dict-build languages`，以 `--dictionary <检出目录>` 直接读取检出里的 `sources/` 与 `custom/`。workflow 检查 19 个附件齐全、两份校验和匹配、manifest 的 `licensing.includes_unlicensed_inputs` 与 `source.dirty` 都是 `false`，并且 `custom_dictionary_commit` 等于这次推送的提交。
+3. 发布：`dict-vX.Y.Z` 标签打在这次推送的提交上，Release 标为 latest。Release 说明写明源数据提交、msime 构建器的分支和实际使用的提交、触发方式、自上一版以来改动 `sources/` 或 `custom/` 的提交（比较基点是上一版 manifest 的 `custom_dictionary_commit`，读不到时退回上一版的标签），以及下表每个附件的用途和谁使用它。
+4. msime 各平台在 `resources/desktop-dictionary.lock.json` 和 `resources/language-dictionaries.lock.json` 里升级到新版本的 URL、大小和 SHA-256，下一个客户端版本随之带上新词库；check-words 的比对库在运行时自动取最新版本，不需要改。
 
-过渡说明：按提交读取本仓文件的锁文件和构建器目前只在 msime PR #3513（分支 `fix/dictionary-release-latest`，尚未合入）上；msime develop 的锁文件仍指向 #48 删除的 `sources-v*` 附件，develop 的 `resources/desktop-dictionary.lock.json` 也仍指向 msime 仓库的旧词库文件，所以 #3513 合入之前，第 3 步的 `msime_ref` 填 `fix/dictionary-release-latest`，第 4 步的桌面端锁文件升级也要等它合入。
+手动运行（Actions 里的 Release built dictionaries → Run workflow）用于用新的构建器重建同一份源数据，或者只构建不发布的试跑：`version` 留空即自动加修订号，也可以填 `X.Y.Z`；`msime_ref` 默认 `develop`；`publish` 默认关闭，此时只把附件和说明预览上传为 workflow artifact，说明也写进 job summary。打开 `publish` 只能从 `main` 运行；手动指定的版本低于现有最高版本时，Release 不标为 latest。打开 `publish` 的手动运行和推送触发的发布共用一个 concurrency 组，组里只保留一个排队的运行，后来的会取消先排队的：手动发布还在排队时有新的合入推送，手动那次会被取消，改由推送的运行按默认参数（`develop`、自动版本号）发布；反过来手动运行也会取代排队中的推送运行（源数据不丢，只是换成手动指定的参数）。所以手动发布前先在 Actions 里确认没有排队中的发布运行，触发后确认它没有被取消。
 
-**某个改动进了哪个版本**：每个 Release 的 manifest（`msime-dictionary-manifest.json`）的 `custom_dictionary_commit` 是构建实际读取的本仓提交，Release 说明里也写着这个提交。`dict-v*` 标签本身由 `--target main` 打在发布时的 `main` 上，不代表读取的源数据：例如 `dict-v2.0.5` 的标签指向 `a4b790c`，而构建读取的是 `5926261`，之后合入的 `5bc9c77`（#42）不在其中。判断一个提交是否已发布：
+msime `resources/dictionary-sources.lock.json` 里固定的本仓提交与各文件的大小和 SHA-256，现在只用于 msime 自己的可复现构建（不传 `--dictionary` 运行 `msime-dict-build` 时按它下载源文件），发布不再依赖它。要在 msime 里复现某个版本，把它升级到该版本 manifest 的 `custom_dictionary_commit`。
+
+过渡说明：本仓 #53（`sources/` 布局）已经合入 `main`，但按 `sources/` 布局读取本仓文件的构建器在 msime PR #3513（分支 `fix/dictionary-release-latest`）上，`--dictionary` 参数也还在 msime 那边并行开发，都没有进入 develop。本 workflow 还要求第二轮词库补全产出的 `msime-mozc_LICENSE.txt` 与 `msime-scowl_Copyright.txt`，所以构建器那边的改动（英文 SCOWL、读音纠错、日文 Mozc 补充、粤拼与注音权重，以及这两个声明文件）要并进 #3513。合入顺序是：先让 #3513（含 `--dictionary` 和第二轮构建器改动）进入 develop；再合入本 workflow，它只改 `.github/` 和文档，合入时不触发发布；最后合入第二轮源数据（`feat/dictionary-round2`，含 `sources/japanese/LICENSE`、`sources/english/scowl-words.txt`），这次推送就是第一次自动发布，带全部 19 个附件。第二轮源数据不要先于本 workflow 合入：`main` 上的旧 workflow 只上传固定的 17 个附件，没有 `msime-mozc_LICENSE.txt` 和 `msime-scowl_Copyright.txt`，在那段时间里用第二轮构建器手动发版，`msime-english.db` 带着 SCOWL 的词、`msime-japanese.dat` 带着 Mozc 补充词，却缺少它们必须一起分发的声明。本 workflow 合入后、第二轮源数据合入前，不要再合入别的改动 `sources/` 或 `custom/` 的提交，否则那次推送会在第二轮源文件还不在 `main` 上时用 develop 的构建器发布；两步最好紧接着做。#53 的数据已经由旧 workflow 从 `134c358`（用 #3513 分支的构建器 `42256e7`）发布为 `dict-v2.0.6`，所以不需要补发；确有需要时从 `main` 手动运行并打开 `publish`，版本号会在已有最高的 `dict-v` 上继续加一。
+
+**某个改动进了哪个版本**：每个 Release 的 manifest（`msime-dictionary-manifest.json`）的 `custom_dictionary_commit` 是构建实际读取的本仓提交，Release 说明开头也写着它。由本 workflow 自动发布的版本，标签就打在这个提交上；`dict-v2.0.6` 及更早的版本是用旧 workflow 手动发布的，标签打在发布时的 `main` 上，不一定是读取的源数据（例如 `dict-v2.0.5` 的标签指向 `a4b790c`，而构建读取的是 `5926261`，之后合入的 `5bc9c77`（#42）不在其中）。所以统一按 manifest 判断一个提交是否已发布：
 
 ```sh
 commit=$(gh release download dict-v2.0.5 -R metasequoiaime/msime-dictionary -p msime-dictionary-manifest.json -O - | jq -r .custom_dictionary_commit)
