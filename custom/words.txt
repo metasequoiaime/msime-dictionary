@@ -344,3 +344,15 @@
 盛年不重来	sheng'nian'bu'chong'lai	12
 只缘妖雾又重来	zhi'yuan'yao'wu'you'chong'lai	12
 反调试	fan'tiao'shi	380
+何日更重游	he'ri'geng'chong'you	23
+弃妾已去难重回	qi'qie'yi'qu'nan'chong'hui	1
+飞镜又重磨	fei'jing'you'chong'mo	3
+两重心字罗衣	liang'chong'xin'zi'luo'yi	1
+九重泉底龙知无	jiu'chong'quan'di'long'zhi'wu	1
+重楼翠阜出霜晓	chong'lou'cui'fu'chu'shuang'xiao	2
+行内元素	hang'nei'yuan'su	2611
+代码行数	dai'ma'hang'shu	1897
+单行注释	dan'hang'zhu'shi	4459
+用品行业	yong'pin'hang'ye	2470
+文旅行业	wen'lv'hang'ye	100
+直销行业服务网点设立管理办法	zhi'xiao'hang'ye'fu'wu'wang'dian'she'li'guan'li'ban'fa	48
