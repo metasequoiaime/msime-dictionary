@@ -9,10 +9,11 @@ on:
         description: "发布版本号（例如 3.0.0；生成 dict-vX.Y.Z 标签）"
         required: true
         type: string
+      # 默认值固定到 metasequoiaime/msime#3513 的提交：只有它的构建器从本仓库的固定提交读取源文件并输出 msime- 前缀的产物；develop 仍读取已删除的 sources-v Release 附件，输出旧文件名。该 PR 合入 develop 后再把默认值改回 develop。
       msime_ref:
         description: "用于构建的 msime 分支、标签或提交"
         required: true
-        default: develop
+        default: 755337f5c7563148f5ac1bf584fb7d38fd3e44b8
         type: string
       publish:
         description: "发布 GitHub Release；关闭时只上传 workflow artifact"
