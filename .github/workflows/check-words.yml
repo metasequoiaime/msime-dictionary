@@ -7,7 +7,7 @@ concurrency: {group: "check-words-${{ github.event.pull_request.number }}", canc
 env:
   # The msime commit whose msime-dict-build checks the files: the same parsers and validation the dictionary build uses, so an entry that passes here builds. Move it when msime changes check-words or a custom file format.
   MSIME_COMMIT: 434d8da644553e098368dcf739ba5113881cdc48
-  # The shipped quanpin tables a words.txt addition must not repeat: msime-pinyin.db from this repository's latest dict-v release, built from pinyin/ and custom/words.txt. Move it and its hash to each new dict-v release.
+  # The shipped quanpin tables a words.txt addition must not repeat: msime-pinyin.db from this repository's latest dict-v release, built from sources/pinyin/ and custom/words.txt. Move it and its hash to each new dict-v release.
   MSIME_DB_URL: https://github.com/metasequoiaime/msime-dictionary/releases/download/dict-v2.0.5/msime-pinyin.db
   MSIME_DB_SHA256: bdabb6717a95695ed380534d093e21394d7a889c19513ea377b35c665867382c
   # The shipped English words an english.txt addition must not repeat: msime-english.db from the same release.

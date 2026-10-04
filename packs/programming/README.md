@@ -17,7 +17,7 @@
 
 - 只收录开发者实际会输入的术语、模式名、工程实践名和产品名，不收句子和定义。
 - 中文术语优先采用下方官方中文文档的译法；同一概念有两种通行说法时两种都收，例如“可复现构建”“可重现构建”、“特性分支”“功能分支”、“优雅停机”“优雅关闭”；主词库已有其中一种时只补另一种，例如主词库已有“命名空间”，本词库补 Kubernetes 文档用的“名字空间”。
-- 发布拼音词库（`pinyin/BaseDictIceV1.txt`、`pinyin/RimeIceSupplementV1.txt`、`custom/words.txt`）里已有的词语不重复收录，即使读音不同；例如“变基”“拣选”“暂存区”“编译器”“闭包”“协程”“幂等”“灰度发布”已在主词库中。
+- 发布拼音词库（`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`custom/words.txt`）里已有的词语不重复收录，即使读音不同；例如“变基”“拣选”“暂存区”“编译器”“闭包”“协程”“幂等”“灰度发布”已在主词库中。
 - 中文权重统一为 10000，英文权重统一为 10，与 `unreal_houdini` 一致。
 - 英文候选只收有固定官方大小写或写法的名称和缩写，例如 `GitHub`、`PostgreSQL`、`gRPC`、`WebAssembly`、`macOS`；全小写的官方名（如 `npm`、`pnpm`、`webpack`、`etcd`）不收，因为与输入键相同。
 - 英文输入键只接受小写字母、连字符和撇号，含数字或符号的显示内容挂在去掉这些字符的输入键下：`http` 对应 `HTTP/2`、`HTTP/3`，`ipv` 对应 `IPv4`、`IPv6`，`utf` 对应 `UTF-8`，`sha` 对应 `SHA-256`，`cpp` 对应 `C++`，`csharp` 对应 `C#`，`golang` 对应 `Go`；`wasm` 与 `webassembly` 都对应 `WebAssembly`。
@@ -25,7 +25,7 @@
 
 ## 多音字
 
-以下多音字已逐条核对，读音以 `pinyin/SingleCharsAllV1.txt` 中列出的读音为准：
+以下多音字已逐条核对，读音以 `sources/pinyin/single-chars.txt` 中列出的读音为准：
 
 - 行：表示“行、列”时读 hang（行内评论、行级锁、行式存储、行覆盖率、缓存行）；表示“运行、施行”时读 xing（运行时多态、测试运行器、行为驱动开发、最小可行产品）。
 - 调：调用、调度、回调读 diao（尾调用、回调地狱、任务调度器）；协调读 tiao（协调算法）。
@@ -53,7 +53,9 @@
 
 ## 核对来源
 
-以下官方文档访问于 2026-10-04，只用于确认术语译法，不复制定义正文：
+按术语分组列出所依据的文档，括号内是该文档覆盖的术语。只记录术语和译法，不复制定义正文。
+
+### 官方中文文档（访问于 2026-10-04）
 
 - [Pro Git 中文版：Git 分支 - 变基](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA)（变基、快进合并、三方合并、远程分支、主题分支、合并提交）
 - [Pro Git 中文版：Git 工具 - 贮藏与清理](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E8%B4%AE%E8%97%8F%E4%B8%8E%E6%B8%85%E7%90%86)（贮藏、工作目录、暂存、未跟踪文件）
@@ -66,7 +68,9 @@
 - [MDN：服务器发送事件](https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events)（服务器发送事件）
 - [React 中文文档：hydrateRoot](https://zh-hans.react.dev/reference/react-dom/client/hydrateRoot)（服务端渲染、客户端渲染；React 中文文档把 hydration 译作“激活”，本词库按社区通行说法收“水合”系列）
 
-以下文档同样访问于 2026-10-04，用于确认对应分组里的概念和英文原名；其中中文页面同时确认中文译法：
+### 其他文档（访问于 2026-10-04）
+
+用于确认对应分组里的概念和英文原名；其中中文页面同时确认中文译法：
 
 - [Apache Flink 中文文档：数据源和接收器的容错保证](https://nightlies.apache.org/flink/flink-docs-stable/zh/docs/connectors/datastream/guarantees/)（精确一次、至少一次、至多一次）
 - [MySQL 8.0 参考手册：InnoDB Locking](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html)（数据库分组的锁类型：间隙锁 gap lock、临键锁 next-key lock、记录锁、意向锁、插入意向锁）
@@ -75,4 +79,6 @@
 - [Alistair Cockburn：Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/)（六边形架构、端口与适配器）
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)（安全分组的漏洞类别）
 
-上面两组来源没有逐条覆盖的条目（例如湖仓一体、流批一体、同城双活、夜间构建）采用国内开发者的通行说法，没有找到官方中文出处；英文候选的大小写取自对应项目官网的名称写法。
+### 无官方中文出处的术语
+
+以下术语是领域里的通行说法，没有找到官方中文出处，按通行说法收录：湖仓一体、流批一体、同城双活、夜间构建，以及上面各组文档没有逐条覆盖的其余条目。英文候选的大小写取自对应项目官网的名称写法。

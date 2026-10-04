@@ -16,7 +16,7 @@
 ## 收录原则
 
 - 只收录机器学习、深度学习和大模型工程里实际会输入的术语，不收句子和定义。
-- 不收已在发布拼音词库（`pinyin/BaseDictIceV1.txt`、`pinyin/RimeIceSupplementV1.txt`、`custom/words.txt`）中出现的词，不论读音是否相同；例如“过拟合”“微调”“量化”“剪枝”“幻觉”“对齐”“词元”“嵌入”“推理”“反向传播”“损失函数”“梯度下降”“归一化”“强化学习”都已在发布词库中。
+- 不收已在发布拼音词库（`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`custom/words.txt`）中出现的词，不论读音是否相同；例如“过拟合”“微调”“量化”“剪枝”“幻觉”“对齐”“词元”“嵌入”“推理”“反向传播”“损失函数”“梯度下降”“归一化”“强化学习”都已在发布词库中。
 - “大模型”“大语言模型”“通用人工智能”“文生图”“文生视频”“图像生成”“视频生成”“文本生成”“多轮对话”“具身智能”“智能体”“提示词”“提示工程”等已进入大众用语的词留给通用词库，本包不收。“风格迁移”“文本转语音”“世界模型”保留，它们在新闻里出现得少，主要出现在论文、模型文档和工程讨论里。
 - 不收组合短语和不完整的修饰语，例如“千亿参数”“批维度”“神经符号”。“每秒浮点运算次数”是 `FLOPS` 的中文全称，作为术语保留；运算总量 `FLOPs` 是另一个量，两者在英文候选里分开收录。
 - “递归神经网络”严格指树结构的 Recursive Neural Network，中文资料里也常被当作循环神经网络（RNN）的别名，释义里注明了这一点。
@@ -52,7 +52,9 @@
 
 ## 核对来源
 
-以下资料访问于 2026-10-04，用于核对术语写法和译名，只记录术语，不复制定义：
+按术语分组列出所依据的文档，冒号后是该文档覆盖的术语。只记录术语和译法，不复制定义正文。
+
+### 文档（访问于 2026-10-04）
 
 - [Google 机器学习术语表（简体中文）](https://developers.google.com/machine-learning/glossary?hl=zh-cn)：欠拟合、过拟合、上下文窗口、思维链提示、检索增强生成、梯度裁剪、损失曲线、困惑度、指令调优、批次大小、学习速率等译名。
 - [《动手学深度学习》中文版](https://zh.d2l.ai/)：暂退法、词元、批量规范化、注意力汇聚、注意力评分函数、多头注意力、自注意力和位置编码、束搜索、微调等译名。
@@ -74,4 +76,6 @@
 - 论文题目或论文中的术语写法（[arXiv](https://arxiv.org/)）：Rotary Position Embedding（2104.09864）、Root Mean Square Layer Normalization（1910.07467）、Grouped-Query Attention（2305.13245）、Multi-Query Attention（1911.02150）、Low-Rank Adaptation（2106.09685）、Data Distillation（1712.04440）、Dataset Distillation（1811.10959）。
 - 英文候选的官方写法，取自各项目官方仓库或官网：[Qwen](https://github.com/QwenLM/Qwen3)、[DeepSeek](https://github.com/deepseek-ai/DeepSeek-V3)、[Llama](https://github.com/meta-llama/llama-models)、[Mistral 与 Mixtral](https://github.com/mistralai/mistral-inference)、[Gemma](https://github.com/google-deepmind/gemma)、[ChatGLM](https://github.com/zai-org/ChatGLM-6B)、[Mamba](https://github.com/state-spaces/mamba)、[Ollama](https://github.com/ollama/ollama)、[SGLang](https://github.com/sgl-project/sglang)、[llama.cpp](https://github.com/ggml-org/llama.cpp)、[LangChain](https://github.com/langchain-ai/langchain)、[LangGraph](https://github.com/langchain-ai/langgraph)、[LlamaIndex](https://github.com/run-llama/llama_index)、[Faiss](https://github.com/facebookresearch/faiss)、[Milvus](https://github.com/milvus-io/milvus)、[Qdrant](https://github.com/qdrant/qdrant)、[Weaviate](https://github.com/weaviate/weaviate)、[pgvector](https://github.com/pgvector/pgvector)、[MLflow](https://github.com/mlflow/mlflow)、[XGBoost](https://github.com/dmlc/xgboost)、[LightGBM](https://github.com/lightgbm-org/LightGBM)、[CatBoost](https://github.com/catboost/catboost)、[MMLU](https://huggingface.co/datasets/cais/mmlu)、[HumanEval](https://github.com/openai/human-eval)、[SWE-bench](https://github.com/SWE-bench/SWE-bench)、[ROCm](https://github.com/ROCm/ROCm)、[NVLink](https://www.nvidia.com/en-us/data-center/nvlink/)、[InfiniBand](https://www.infinibandta.org/)、[MLX](https://github.com/ml-explore/mlx)、[Core ML](https://github.com/apple/coremltools)。
 
-上面没有点名的其余术语按通行写法收录，没有逐条对应到单一来源；术语在线没有逐条查询。
+### 无官方中文出处的术语
+
+上面各组文档没有点名的其余条目是领域里的通行说法，没有找到官方中文出处，按通行说法收录，没有逐条对应到单一来源。术语在线没有逐条查询，所以上面的译名也没有经过它的规范名核对。

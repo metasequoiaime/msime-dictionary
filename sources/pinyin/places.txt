@@ -1,8 +1,8 @@
-# 行政区划地名补充表，由 msime 仓库 crates/dict-builder/src/places_supplement.rs 的 `msime-dict-build places-supplement --cache <dir> --out pinyin/PlacesSupplementV1.txt` 生成，生成器所在的提交就是在 resources/dictionary-sources.lock.json 里固定本文件的 msime 提交；不要手工编辑。
+# 行政区划地名补充表，由 msime 仓库 crates/dict-builder/src/places_supplement.rs 的 `msime-dict-build places-supplement --cache <dir> --out sources/pinyin/places.txt` 生成，生成器所在的提交就是在 resources/dictionary-sources.lock.json 里固定本文件的 msime 提交；不要手工编辑。
 # 上游：https://github.com/modood/Administrative-divisions-of-China 提交 c49d495b40ac73eb1a66f6eeae5f8fd10696f035 的 dist/provinces.csv、dist/cities.csv、dist/areas.csv（WTFPL）。
 # 收录：省级、地级、县级区划的全称，以及去掉行政后缀（省、自治区、市、自治州、地区、盟、区、县、旗、自治县、自治旗、特区、林区（只用于神农架林区）、矿区）和民族名后至少两个汉字的简称；名称以左、右、前、后、中、合、左翼、右翼结尾的旗与自治县不取简称。排除区划代码末两位为 71–79 的功能区，名称含 开发区、经济技术、高新、新区、管理区、示范区、实验区、委员会、海域 的单位（其中含 新区 的正式区划如 浦东新区 也一并排除；清新区 是 清新+区，保留），泛名 城关、新华、和平、城区、郊区、矿区、东区、西区、城东、城西、城北、城厢、北关，以及读音有争议、找不到权威出处的 称多、称多县。
-# 读音：msime places.rs 的 READINGS 加逐字拼音，简称取全称读音的前几个音节。在 pinyin/SingleCharsAllV1.txt 里有多个读音或没有收录的字，必须落在对照集合里同音的至少两字片段中，或是按固定读音（区 qu、县 xian、市 shi 等）读出的全称行政后缀，否则整词不收；音节不在该字读音之列的不收；对照集合里已有同词异音的不收（不论是否也有同音行），例外是除全称行政后缀外整词读音都来自 READINGS 里两字及以上的条目、且对照集合也有这个读音的词（六合 lu'he、宕昌 tan'chang）。
-# 去重与权重：对照集合是 pinyin/BaseDictIceV1.txt（SHA-256 d364637b9e27bb9b1c325971a4fa587e371ee3f98807b407744da345b876d4ec）、pinyin/RimeIceSupplementV1.txt（SHA-256 aa382455a3e6127fba26ee69db1155b77b6be2b960cf538688beff59606cb07d）；字音表是 pinyin/SingleCharsAllV1.txt（SHA-256 18d133c146ba3a398e915721f0b1603af37fff76864e40a89cb1bb5b0c3906fc）。权重下限由生成器从对照集合算出：省级、地级取同层同形（全称或简称）在对照集合里权重大于 10 的已有词的权重中位数，县级取 pinyin/BaseDictIceV1.txt 全部行权重的中位数；本次为 省级全称 244485，省级简称 500279，地级全称 13095，地级简称 31460，县级全称 100，县级简称 100。一个词出现在多个层级时取最高的下限。只写出对照集合里没有、或权重不超过 10 且低于下限的词，权重写下限；对照集合里权重已大于 10 的词保留原权重，不抬升；构建的 places-supplement 阶段在 custom/words.txt 之前按只升不降并入：没有的插入，更低的调高到这里的权重，更高的不变。
+# 读音：msime places.rs 的 READINGS 加逐字拼音，简称取全称读音的前几个音节。在 sources/pinyin/single-chars.txt 里有多个读音或没有收录的字，必须落在对照集合里同音的至少两字片段中，或是按固定读音（区 qu、县 xian、市 shi 等）读出的全称行政后缀，否则整词不收；音节不在该字读音之列的不收；对照集合里已有同词异音的不收（不论是否也有同音行），例外是除全称行政后缀外整词读音都来自 READINGS 里两字及以上的条目、且对照集合也有这个读音的词（六合 lu'he、宕昌 tan'chang）。
+# 去重与权重：对照集合是 sources/pinyin/rime-ice.txt（SHA-256 d364637b9e27bb9b1c325971a4fa587e371ee3f98807b407744da345b876d4ec）、sources/pinyin/rime-ice-supplement.txt（SHA-256 aa382455a3e6127fba26ee69db1155b77b6be2b960cf538688beff59606cb07d）；字音表是 sources/pinyin/single-chars.txt（SHA-256 18d133c146ba3a398e915721f0b1603af37fff76864e40a89cb1bb5b0c3906fc）。权重下限由生成器从对照集合算出：省级、地级取同层同形（全称或简称）在对照集合里权重大于 10 的已有词的权重中位数，县级取 sources/pinyin/rime-ice.txt 全部行权重的中位数；本次为 省级全称 244485，省级简称 500279，地级全称 13095，地级简称 31460，县级全称 100，县级简称 100。一个词出现在多个层级时取最高的下限。只写出对照集合里没有、或权重不超过 10 且低于下限的词，权重写下限；对照集合里权重已大于 10 的词保留原权重，不抬升。下限不抢常用词的首位：常用线取 sources/pinyin/rime-ice.txt 全部行权重的第 90 百分位（本次为 9685），对照集合里同一全拼的其他词最高权重超过常用线时，权重降到比它低 1（不超过下限），降后不高于已有权重的词不写出；比较时跳过权重为占位值的词，占位值是 rime-ice.txt 里权重超过常用线的行中被超过 1% 的行共用的单个权重值（本次为 9999），这类词不触发封顶，由同一全拼下其余非占位权重的最高者决定；构建的 places-supplement 阶段在 custom/words.txt 之前按只升不降并入：没有的插入，更低的调高到这里的权重，更高的不变。
 丁青	ding'qing	100
 七星关区	qi'xing'guan'qu	100
 万全区	wan'quan'qu	100
@@ -368,7 +368,7 @@
 崇信	chong'xin	100
 崇川	chong'chuan	100
 崇州	chong'zhou	100
-崇左	chong'zuo	31460
+崇左	chong'zuo	17274
 崇明区	chong'ming'qu	100
 崇礼	chong'li	100
 崇礼区	chong'li'qu	100
@@ -564,7 +564,7 @@
 柳江区	liu'jiang'qu	100
 柴桑	chai'sang	100
 柴桑区	chai'sang'qu	100
-株洲	zhu'zhou	31460
+株洲	zhu'zhou	14799
 栾城区	luan'cheng'qu	100
 桂东	gui'dong	100
 桂平	gui'ping	100
@@ -622,7 +622,7 @@
 江永	jiang'yong	100
 江达	jiang'da	100
 江都	jiang'du	100
-江门	jiang'men	31460
+江门	jiang'men	10939
 江阳	jiang'yang	100
 池州	chi'zhou	31460
 汤原	tang'yuan	100
@@ -775,7 +775,7 @@
 白河	bai'he	100
 皋兰	gao'lan	100
 盂县	yu'xian	100
-盐城	yan'cheng	31460
+盐城	yan'cheng	29804
 盐源	yan'yuan	100
 监利	jian'li	100
 监利市	jian'li'shi	100
@@ -939,14 +939,14 @@
 辰溪	chen'xi	100
 边坝	bian'ba	100
 辽中区	liao'zhong'qu	100
-辽源	liao'yuan	31460
-辽阳	liao'yang	31460
+辽源	liao'yuan	10679
+辽阳	liao'yang	28269
 达孜	da'zi	100
 达孜区	da'zi'qu	100
 迁西	qian'xi	100
 迎泽	ying'ze	100
 连江	lian'jiang	100
-迪庆	di'qing	31460
+迪庆	di'qing	11504
 通川	tong'chuan	100
 通许	tong'xu	100
 遂昌	sui'chang	100
