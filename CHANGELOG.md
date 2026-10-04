@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.3.0...sources-v1.4.0) (2026-10-04)
+
+
+### Features
+
+* **sources:** 扩充并归档各语言词库源 ([18c9248](https://github.com/metasequoiaime/msime-dictionary/commit/18c9248e1f9b3b5cf9db6c46048cae9411b1366c))
+
 ## [1.3.0](https://github.com/metasequoiaime/msime-dictionary/compare/sources-v1.2.0...sources-v1.3.0) (2026-10-03)
 
 
