@@ -1,6 +1,6 @@
 """Validate importable professional dictionary packs.
 
-The checks mirror the Settings dictionary import rules closely enough to catch bad pull requests before users discover them at import time. The validator also checks each Chinese character pronunciation against cn/SingleCharsAllV1.txt and the single-character lines of cn/RimeIceSupplementV1.txt, rejects entries the released pinyin dictionary already ships (cn/BaseDictIceV1.txt, cn/RimeIceSupplementV1.txt and custom/words.txt, the inputs msime-dict-build uses for msime-pinyin.db), enforces the pack directory name, weight ranges, pack count and file size limits the project and the msime.app pack list rely on, and checks the format of custom/translations.txt.
+The checks mirror the Settings dictionary import rules closely enough to catch bad pull requests before users discover them at import time. The validator also checks each Chinese character pronunciation against pinyin/SingleCharsAllV1.txt and the single-character lines of pinyin/RimeIceSupplementV1.txt, rejects entries the released pinyin dictionary already ships (pinyin/BaseDictIceV1.txt, pinyin/RimeIceSupplementV1.txt and custom/words.txt, the inputs msime-dict-build uses for msime-pinyin.db), enforces the pack directory name, weight ranges, pack count and file size limits the project and the msime.app pack list rely on, and checks the format of custom/translations.txt.
 """
 
 from __future__ import annotations
@@ -13,21 +13,22 @@ import sys
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 PACKS_ROOT = REPOSITORY_ROOT / "packs"
-BASE_DICTIONARY_ROOT = REPOSITORY_ROOT / "cn"
-# The pinyin inputs of the released msime-pinyin.db, besides cn/SingleCharsAllV1.txt (msime-dict-build main.rs, Stage::Quanpin and Stage::CustomWords). A pack entry already in one of them is a duplicate.
+PINYIN_ROOT = REPOSITORY_ROOT / "pinyin"
+UNLICENSED_ROOT = REPOSITORY_ROOT / "unlicensed"
+# The pinyin inputs of the released msime-pinyin.db, besides pinyin/SingleCharsAllV1.txt (msime-dict-build main.rs, Stage::Quanpin and Stage::CustomWords). A pack entry already in one of them is a duplicate.
 SHIPPED_PINYIN_SOURCES = (
-    REPOSITORY_ROOT / "cn" / "BaseDictIceV1.txt",
-    REPOSITORY_ROOT / "cn" / "RimeIceSupplementV1.txt",
+    PINYIN_ROOT / "BaseDictIceV1.txt",
+    PINYIN_ROOT / "RimeIceSupplementV1.txt",
     REPOSITORY_ROOT / "custom" / "words.txt",
 )
 # Excluded from releases for licensing (msime-dict-build licensing.rs); an overlap with them is reported as a note only.
 UNRELEASED_PINYIN_SOURCES = (
-    BASE_DICTIONARY_ROOT / "BaseDictAllV1Part1.txt",
-    BASE_DICTIONARY_ROOT / "BaseDictAllV1Part2.txt",
+    UNLICENSED_ROOT / "BaseDictAllV1Part1.txt",
+    UNLICENSED_ROOT / "BaseDictAllV1Part2.txt",
 )
 # Single-character readings: the character table plus the single-character lines of the rime-ice supplement, which carry readings the table lacks (for example 宕 tan).
-SINGLE_CHARACTER_SOURCE = BASE_DICTIONARY_ROOT / "SingleCharsAllV1.txt"
-SUPPLEMENT_SOURCE = BASE_DICTIONARY_ROOT / "RimeIceSupplementV1.txt"
+SINGLE_CHARACTER_SOURCE = PINYIN_ROOT / "SingleCharsAllV1.txt"
+SUPPLEMENT_SOURCE = PINYIN_ROOT / "RimeIceSupplementV1.txt"
 # CJK Unified Ideographs, Extension A to I, and the CJK Compatibility Ideographs blocks, as assigned in Unicode 16.0 (checked against Python 3.14 unicodedata). Python's re has no \p{Unified_Ideograph}, so the ranges are spelled out.
 HAN_RE = re.compile(
     "["

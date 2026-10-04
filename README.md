@@ -9,38 +9,40 @@
 ## 目录
 
 ```
-cn/                               中文基础词库
+pinyin/                           拼音词库 -> msime-pinyin.db
   BaseDictIceV1.txt                 雾凇拼音（rime-ice）的全拼词条，经本项目修正
   RimeIceSupplementV1.txt           rime-ice 新提交中相对 BaseDictIceV1.txt 新增的词条（本项目生成的补充表）
-  BaseDictAllV1Part1.txt            CustomPinyinDictionary 与雾凇合并的全量词库（第 1 部分，发布构建不用）
-  BaseDictAllV1Part2.txt            同上（第 2 部分，发布构建不用）
-  SingleCharsAllV1.txt              单字读音与字频
-  SingleCharWhitelist.txt           单字白名单（发布构建不用）
+  SingleCharsAllV1.txt              单字读音与字频（笔画词库的权重也取自它）
+wubi/                             五笔词库 -> msime-wubi.db
   Wubi86.txt                        86 版五笔
   Wubi98.txt                        98 版五笔（UTF-16LE）
   Wubi98Fcitx.txt                   Fcitx5 table-extra 的 98 五笔补充表
-en/                               英文基础词库
+english/                          英文词库 -> msime-english.db
   BaseDictIceEn.txt                 雾凇的英文词表
   RimeIceEnglishSupplementV1.txt    rime-ice 新提交中相对 BaseDictIceEn.txt 新增的纯 ASCII 单词（本项目生成的补充表）
   google_count_1_w.txt              Google 英文词频
-  oaldpe_words.txt                  从 oaldpe.mdx 提取的词形列表（发布构建不用）
-yue/                              粤拼方案（rime-cantonese 原样）
+cantonese/                        粤拼方案（rime-cantonese 原样）-> msime-cantonese.db
   jyut6ping3.chars.dict.yaml
   jyut6ping3.words.dict.yaml
   essay-cantonese.txt
-tw/                               注音方案
+zhuyin/                           注音方案 -> msime-zhuyin.db
   tsi.csv                           libchewing-data 原样
   word.csv                          libchewing-data 原样
   McBopomofoSupplement.txt          由 McBopomofo 数据转换而来（本项目转换，不是原样）
-stroke/                           笔画方案
-  stroke.dict.yaml                  rime-stroke 原样
-ja/mozc/                          日文方案（Mozc OSS 词库原样）
+stroke/                           笔画方案（rime-stroke 原样）-> msime-stroke.db
+  stroke.dict.yaml
+japanese/                         日文方案（Mozc OSS 词库原样）-> msime-japanese.dat
   dictionary00.txt … dictionary09.txt
   id.def
   connection_single_column.txt
   README.txt
-ko/                               韩文方案
-  hanja.txt                         libhangul 原样
+korean/                           韩文方案（libhangul 原样）-> msime 引擎内嵌的 Hanja 表
+  hanja.txt
+unlicensed/                       没有再分发授权的文件，发布构建不使用，只供 --include-unlicensed 的本地完整构建
+  BaseDictAllV1Part1.txt            CustomPinyinDictionary 与雾凇合并的全量词库（第 1 部分）
+  BaseDictAllV1Part2.txt            同上（第 2 部分）
+  SingleCharWhitelist.txt           单字白名单，来源没有记录
+  oaldpe_words.txt                  从 oaldpe.mdx 提取的英文词形列表
 custom/                           人工维护的数据（只追加）
   words.txt                         中文词条
   translations.txt                  候选窗翻译
@@ -67,25 +69,25 @@ CHANGELOG.md                      已冻结，只作历史记录
 
 | 源文件 | 读取它的构建阶段 | 产物 | 发布状态 |
 | --- | --- | --- | --- |
-| `cn/SingleCharsAllV1.txt` | 主命令 Quanpin；languages 的笔画词库用它的字频 | `msime-pinyin.db`；`msime-stroke.db` 的权重 | 进入 |
-| `cn/BaseDictIceV1.txt` | 主命令 Quanpin | `msime-pinyin.db` | 进入 |
-| `cn/RimeIceSupplementV1.txt` | 主命令 Quanpin | `msime-pinyin.db` | 进入 |
+| `pinyin/SingleCharsAllV1.txt` | 主命令 Quanpin；languages 的笔画词库用它的字频 | `msime-pinyin.db`；`msime-stroke.db` 的权重 | 进入 |
+| `pinyin/BaseDictIceV1.txt` | 主命令 Quanpin | `msime-pinyin.db` | 进入 |
+| `pinyin/RimeIceSupplementV1.txt` | 主命令 Quanpin | `msime-pinyin.db` | 进入 |
 | `custom/words.txt` | 主命令 CustomWords：没有的词插入，已有且权重更低的调高到这里的权重，已有且权重更高的不变 | `msime-pinyin.db` | 进入 |
-| `cn/BaseDictAllV1Part1.txt`、`cn/BaseDictAllV1Part2.txt` | 只在 `--include-unlicensed` 的完整构建中读取 | — | 被 `licensing.rs` 排除：合并自 CustomPinyinDictionary，该快照没有声明许可；发布构建改用 `BaseDictIceV1.txt` |
-| `cn/SingleCharWhitelist.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：来源没有记录 |
-| `cn/Wubi86.txt` | 主命令 Wubi | `msime-wubi.db` 的 `wubi86` 表 | 进入 |
-| `cn/Wubi98.txt`、`cn/Wubi98Fcitx.txt` | 主命令 Wubi98：以主表为准，补充表中重复的（编码、词语）去掉 | `msime-wubi.db` 的 `wubi98` 表 | 进入 |
-| `en/BaseDictIceEn.txt`、`en/RimeIceEnglishSupplementV1.txt` | 主命令 English，只保留全部由 ASCII 字母组成的显示词 | `msime-english.db` | 进入 |
-| `en/google_count_1_w.txt` | 主命令 English，作为排序权重 | `msime-english.db` | 进入 |
+| `unlicensed/BaseDictAllV1Part1.txt`、`unlicensed/BaseDictAllV1Part2.txt` | 只在 `--include-unlicensed` 的完整构建中读取 | — | 被 `licensing.rs` 排除：合并自 CustomPinyinDictionary，该快照没有声明许可；发布构建改用 `BaseDictIceV1.txt` |
+| `unlicensed/SingleCharWhitelist.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：来源没有记录 |
+| `wubi/Wubi86.txt` | 主命令 Wubi | `msime-wubi.db` 的 `wubi86` 表 | 进入 |
+| `wubi/Wubi98.txt`、`wubi/Wubi98Fcitx.txt` | 主命令 Wubi98：以主表为准，补充表中重复的（编码、词语）去掉 | `msime-wubi.db` 的 `wubi98` 表 | 进入 |
+| `english/BaseDictIceEn.txt`、`english/RimeIceEnglishSupplementV1.txt` | 主命令 English，只保留全部由 ASCII 字母组成的显示词 | `msime-english.db` | 进入 |
+| `english/google_count_1_w.txt` | 主命令 English，作为排序权重 | `msime-english.db` | 进入 |
 | `custom/english.txt` | 主命令 English | `msime-english.db` | 进入 |
-| `en/oaldpe_words.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：提取自商业词典 |
+| `unlicensed/oaldpe_words.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：提取自商业词典 |
 | `custom/translations.txt` | 主命令 CustomTranslations，覆盖由 ECDICT 生成的释义 | `msime-english.db` | 进入 |
-| `yue/` 下 3 个文件 | languages | `msime-cantonese.db` | 进入 |
-| `tw/` 下 3 个文件 | languages | `msime-zhuyin.db` | 进入 |
+| `cantonese/` 下 3 个文件 | languages | `msime-cantonese.db` | 进入 |
+| `zhuyin/` 下 3 个文件 | languages | `msime-zhuyin.db` | 进入 |
 | `stroke/stroke.dict.yaml` | languages | `msime-stroke.db` | 进入 |
-| `ja/mozc/dictionary00.txt` … `dictionary09.txt`、`id.def`、`connection_single_column.txt` | 主命令 JapaneseModel | `msime-japanese.dat` | 进入 |
-| `ja/mozc/README.txt` | 主命令 JapaneseModel，原样复制 | `msime-mozc_dictionary_oss_README.txt` | 进入 |
-| `ko/hanja.txt` | `msime-dict-build hanja`，发布 workflow 不运行 | msime 源码里的 `crates/engine/src/korean/hanja.tsv`，由引擎用 `include_str!` 内嵌 | 不是 Release 附件 |
+| `japanese/dictionary00.txt` … `dictionary09.txt`、`id.def`、`connection_single_column.txt` | 主命令 JapaneseModel | `msime-japanese.dat` | 进入 |
+| `japanese/README.txt` | 主命令 JapaneseModel，原样复制 | `msime-mozc_dictionary_oss_README.txt` | 进入 |
+| `korean/hanja.txt` | `msime-dict-build hanja`，发布 workflow 不运行 | msime 源码里的 `crates/engine/src/korean/hanja.tsv`，由引擎用 `include_str!` 内嵌 | 不是 Release 附件 |
 | `custom/names.txt` | 无 | — | 没有消费方：锁文件没有收录，官网投稿也不写它 |
 | `packs/` | 不进入构建 | msime.app 按本仓 `main` 读取并列出（官网缓存约一小时），用户在设置里导入 | 不进入 Release |
 
@@ -110,9 +112,9 @@ CHANGELOG.md                      已冻结，只作历史记录
 | `custom/translations.txt` | `源词<TAB>译文` | 源词含 U+3400 及以上的字符（汉字）时是中译英，否则是英译中；`#` 开头是注释。同一源词写了多行时，构建取最后一行 |
 | `custom/english.txt` | `编码<TAB>显示词<TAB>权重` | 编码是输入的小写字母，显示词是上屏的写法，同一编码可以有多个显示词 |
 
-**权重**：新词条的权重必须落在所在文件现有条目的范围内，CI 按文件当前内容计算这个范围。`custom/words.txt` 目前是 1 到 10000，大多数历史条目写的是 `1`。想让一个词在整句里更容易胜出，就参照基础词库里同量级的真实词取值（例如 `扛不住` 在 `cn/BaseDictIceV1.txt` 里是 2430），不要为了靠前填一个极大值。`custom/english.txt` 目前只有 `1`：有 Google 词频的英文词按词频排序，没有词频的才用这里的权重，而且排在所有有词频的词之后。这个范围普通 Pull Request 无法放宽，确实需要时先开 Issue。
+**权重**：新词条的权重必须落在所在文件现有条目的范围内，CI 按文件当前内容计算这个范围。`custom/words.txt` 目前是 1 到 10000，大多数历史条目写的是 `1`。想让一个词在整句里更容易胜出，就参照基础词库里同量级的真实词取值（例如 `扛不住` 在 `pinyin/BaseDictIceV1.txt` 里是 2430），不要为了靠前填一个极大值。`custom/english.txt` 目前只有 `1`：有 Google 词频的英文词按词频排序，没有词频的才用这里的权重，而且排在所有有词频的词之后。这个范围普通 Pull Request 无法放宽，确实需要时先开 Issue。
 
-**重复**：已经在发布词库里的词（同词同拼音）不应再写进 `custom/words.txt`，check-words 会拒绝它在比对库里找到的重复。但目前它比对的是已归档的 msime-engine `dict-v2.0.1` 的 `msime.db` 和 `english.db`，不是当前的 `msime-pinyin.db` 和 `msime-english.db`，所以之后加入的源数据（例如 `cn/RimeIceSupplementV1.txt`）里的词它拦不住。`custom/words.txt` 现有的 9 行（刘汝佳、断连、堪堪、判空、属于是、云风、扛把子、推流、合入）与发布输入里的词重复，其中扛把子（100 → 10000）、推流（689 → 3855）、合入（100 → 3855）三行抬高了已发布词的权重，另外 6 行的权重不高于已有值（5 行更低，断连相等），不起作用。按只追加规则这些行保留不删。
+**重复**：已经在发布词库里的词（同词同拼音）不应再写进 `custom/words.txt`，check-words 会拒绝它在比对库里找到的重复。但目前它比对的是已归档的 msime-engine `dict-v2.0.1` 的 `msime.db` 和 `english.db`，不是当前的 `msime-pinyin.db` 和 `msime-english.db`，所以之后加入的源数据（例如 `pinyin/RimeIceSupplementV1.txt`）里的词它拦不住。`custom/words.txt` 现有的 9 行（刘汝佳、断连、堪堪、判空、属于是、云风、扛把子、推流、合入）与发布输入里的词重复，其中扛把子（100 → 10000）、推流（689 → 3855）、合入（100 → 3855）三行抬高了已发布词的权重，另外 6 行的权重不高于已有值（5 行更低，断连相等），不起作用。按只追加规则这些行保留不删。
 
 ### CI
 
@@ -121,7 +123,7 @@ CHANGELOG.md                      已冻结，只作历史记录
 | workflow | 触发 | 检查什么 |
 | --- | --- | --- |
 | `check-words.yml` | Pull Request 改动 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` | 用 msime 固定提交（`MSIME_COMMIT`）的 `msime-dict-build check-words`，即构建所用的解析器：只能追加；每行能按构建的规则解析（词语的全拼须是 `'` 分隔的小写字母并能映射到全拼表）；词语和英文的权重在文件现有范围内；不与本次改动、所在文件或比对库重复。翻译可以给已有源词换一个译文，完全相同的一行算重复。结果写成 Pull Request 评论 |
-| `validate-packs.yml` | Pull Request 改动 `packs/`、`custom/translations.txt`、`custom/words.txt`、它对照的 `cn/` 文件、脚本或该 workflow | 运行 `python3 scripts/validate_packs.py`，见[专业词库](#专业词库) |
+| `validate-packs.yml` | Pull Request 改动 `packs/`、`custom/translations.txt`、`custom/words.txt`、它对照的 `pinyin/` 文件、脚本或该 workflow | 运行 `python3 scripts/validate_packs.py`，见[专业词库](#专业词库) |
 | `quality.yml` | 推送到 `main`、Pull Request、merge queue、手动 | actionlint 校验 workflow 与其中的 shell；Pull Request 上另做依赖审查（high 及以上失败） |
 | `codeql.yml` | 每天定时 | CodeQL 分析 GitHub Actions workflow |
 | `release-built-dictionaries.yml` | 手动 | 构建并发布 `dict-v*`，见[发布](#发布) |
@@ -130,7 +132,7 @@ CHANGELOG.md                      已冻结，只作历史记录
 
 本地能跑的是 `python3 scripts/validate_packs.py`，只用 Python 标准库。check-words 需要 Rust 工具链和 msime 检出，本地一般不跑；要跑的话照 `check-words.yml` 的步骤，在 `MSIME_COMMIT` 上构建 `msime-dict-build` 后运行 `check-words`。
 
-`cn/`、`en/` 下的基础词库来自第三方，不在里面加新词，候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。`yue/`、`tw/`、`stroke/`、`ja/`、`ko/` 下的上游文件不在本仓修改，错误报给上游。具体约束见 [AGENTS.md](AGENTS.md)。
+`pinyin/`、`wubi/`、`english/` 下的基础词库来自第三方，不在里面加新词，候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。`cantonese/`、`zhuyin/`、`stroke/`、`japanese/`、`korean/` 下的上游文件不在本仓修改，错误报给上游。具体约束见 [AGENTS.md](AGENTS.md)。
 
 ## 专业词库
 
@@ -143,10 +145,10 @@ CHANGELOG.md                      已冻结，只作历史记录
 `python3 scripts/validate_packs.py` 检查：
 
 - `packs/` 下每个目录名只用小写字母、数字和下划线，目录不超过 40 个（官网最多列出 40 个），每个目录都有 `quanpin.txt`、`english.txt`、`translations.txt`、`README.md`，单个词表不超过 2 MiB（超过时官网不统计条数）。
-- `quanpin.txt` 每行 `词<TAB>全拼<TAB>权重`：汉字个数与音节数一致（CJK 基本区、扩展区和兼容区的汉字都算），字出现在 `cn/SingleCharsAllV1.txt` 或 `cn/RimeIceSupplementV1.txt` 的单字行里时，读音必须是其中列出的读音之一（两张表都没有的字不检查，由人工核对），权重在 1 到 10000 之间，同一词库内不重复。
+- `quanpin.txt` 每行 `词<TAB>全拼<TAB>权重`：汉字个数与音节数一致（CJK 基本区、扩展区和兼容区的汉字都算），字出现在 `pinyin/SingleCharsAllV1.txt` 或 `pinyin/RimeIceSupplementV1.txt` 的单字行里时，读音必须是其中列出的读音之一（两张表都没有的字不检查，由人工核对），权重在 1 到 10000 之间，同一词库内不重复。
 - `english.txt` 每行 `编码<TAB>显示词<TAB>权重`：编码由小写字母组成，可含连字符和撇号，权重必填且在 1 到 10 之间，同一词库内不重复。
 - 每个中文候选和英文候选在该词库的 `translations.txt` 里都有翻译，词库的翻译每个源词只写一行。
-- 候选不能已经在发布的拼音词库输入里，即 `cn/BaseDictIceV1.txt`、`cn/RimeIceSupplementV1.txt`、`custom/words.txt`；与 `cn/BaseDictAllV1Part1.txt`、`Part2.txt` 重复只打印提示，因为这两份不进入发布。
+- 候选不能已经在发布的拼音词库输入里，即 `pinyin/BaseDictIceV1.txt`、`pinyin/RimeIceSupplementV1.txt`、`custom/words.txt`；与 `unlicensed/BaseDictAllV1Part1.txt`、`Part2.txt` 重复只打印提示，因为这两份不进入发布。
 - `custom/translations.txt` 的格式：同一源词后面的行可以覆盖前面的译文，但源词和译文完全相同的行算重复。
 
 ## 发布
@@ -191,35 +193,35 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 
 ## 文件格式
 
-除 `cn/Wubi98.txt` 外都是 UTF-8 无 BOM。“结尾换行”指文件最后一行之后是否有换行符。
+除 `wubi/Wubi98.txt` 外都是 UTF-8 无 BOM。“结尾换行”指文件最后一行之后是否有换行符。
 
 | 文件 | 编码 | 换行 | 文件头 | 每行 | 结尾换行 |
 | --- | --- | --- | --- | --- | --- |
-| `cn/BaseDictIceV1.txt` | UTF-8 | CRLF | 1 行 `#` 注释 | `词<TAB>全拼<TAB>权重`，全拼音节用 `'` 分隔 | 有 |
-| `cn/RimeIceSupplementV1.txt` | UTF-8 | LF | 1 行 `#` 注释（上游提交与生成方式） | `词<TAB>全拼<TAB>权重`，也含单字行 | 有 |
-| `cn/BaseDictAllV1Part1.txt` | UTF-8 | LF | 无 | `词<TAB>全拼<TAB>权重` | 有 |
-| `cn/BaseDictAllV1Part2.txt` | UTF-8 | CRLF | 无 | `词<TAB>全拼<TAB>权重`，权重都是 1；与 Part1 是因 GitHub 单文件大小限制拆开的同一份词库 | 有 |
-| `cn/SingleCharsAllV1.txt` | UTF-8 | CRLF | 1 行 `#` 注释 | `字<TAB>全拼<TAB>权重` | 有 |
-| `cn/SingleCharWhitelist.txt` | UTF-8 | LF | 无 | 一个字 | 有 |
-| `cn/Wubi86.txt` | UTF-8 | 混合：第 1–89271 行 LF，第 89272 行起 CRLF | 无 | `词<TAB>五笔编码<TAB>权重`；第 3835、51162、73916、78885 行多一个第 4 列 | 有 |
-| `cn/Wubi98.txt` | UTF-16LE，带 BOM | CRLF | 无 | `词<TAB>五笔编码`，没有权重，同一编码内按行序排列 | 有（UTF-16LE 的 CRLF） |
-| `cn/Wubi98Fcitx.txt` | UTF-8 | LF | 第 1–8 行是 Fcitx 码表头：`KeyCode=`、`Length=`、`Pinyin=`、`[Rule]` 及规则、`[Data]` | `五笔编码 词`，空格分隔 | 有 |
-| `en/BaseDictIceEn.txt` | UTF-8 | CRLF | 无；正文中有 1777 行被 `#` 注释掉的条目和 16 个空行 | `显示词 编码 [权重]`，空格分隔；显示词本身可含空格（如 `Dish Network DishNetwork`），51 行带权重 | 有 |
-| `en/RimeIceEnglishSupplementV1.txt` | UTF-8 | LF | 3 行 `#` 注释 | `显示词<TAB>编码` | 有 |
-| `en/google_count_1_w.txt` | UTF-8 | LF | 无 | `词<TAB>次数` | 无 |
-| `en/oaldpe_words.txt` | UTF-8 | LF | 无 | 一个小写词形 | 有 |
-| `yue/jyut6ping3.chars.dict.yaml` | UTF-8 | LF | Rime YAML 头，到第 12 行 `...` 为止 | `字<TAB>粤拼[<TAB>百分比]`，粤拼带声调数字，第 3 列是该字各读音的使用比例，可省略 | 有 |
-| `yue/jyut6ping3.words.dict.yaml` | UTF-8 | LF | Rime YAML 头，到第 12 行 `...` 为止 | `词<TAB>粤拼`，音节用空格分隔 | 有 |
-| `yue/essay-cantonese.txt` | UTF-8 | LF | 无 | `字或词<TAB>次数` | 有 |
-| `tw/tsi.csv` | UTF-8 | LF | 4 行 `# dc:` 元数据 | `词,词频,注音`，音节用空格分隔 | 有 |
-| `tw/word.csv` | UTF-8 | LF | 4 行 `# dc:` 元数据 | `字,频率,注音`，频率都是 0 | 有 |
-| `tw/McBopomofoSupplement.txt` | UTF-8 | LF | 2 行 `#` 中文注释（来源提交与转换方式） | `词,0,注音`，逗号分隔，相对 `tsi.csv` 去重 | 有 |
+| `pinyin/BaseDictIceV1.txt` | UTF-8 | CRLF | 1 行 `#` 注释 | `词<TAB>全拼<TAB>权重`，全拼音节用 `'` 分隔 | 有 |
+| `pinyin/RimeIceSupplementV1.txt` | UTF-8 | LF | 1 行 `#` 注释（上游提交与生成方式） | `词<TAB>全拼<TAB>权重`，也含单字行 | 有 |
+| `unlicensed/BaseDictAllV1Part1.txt` | UTF-8 | LF | 无 | `词<TAB>全拼<TAB>权重` | 有 |
+| `unlicensed/BaseDictAllV1Part2.txt` | UTF-8 | CRLF | 无 | `词<TAB>全拼<TAB>权重`，权重都是 1；与 Part1 是因 GitHub 单文件大小限制拆开的同一份词库 | 有 |
+| `pinyin/SingleCharsAllV1.txt` | UTF-8 | CRLF | 1 行 `#` 注释 | `字<TAB>全拼<TAB>权重` | 有 |
+| `unlicensed/SingleCharWhitelist.txt` | UTF-8 | LF | 无 | 一个字 | 有 |
+| `wubi/Wubi86.txt` | UTF-8 | 混合：第 1–89271 行 LF，第 89272 行起 CRLF | 无 | `词<TAB>五笔编码<TAB>权重`；第 3835、51162、73916、78885 行多一个第 4 列 | 有 |
+| `wubi/Wubi98.txt` | UTF-16LE，带 BOM | CRLF | 无 | `词<TAB>五笔编码`，没有权重，同一编码内按行序排列 | 有（UTF-16LE 的 CRLF） |
+| `wubi/Wubi98Fcitx.txt` | UTF-8 | LF | 第 1–8 行是 Fcitx 码表头：`KeyCode=`、`Length=`、`Pinyin=`、`[Rule]` 及规则、`[Data]` | `五笔编码 词`，空格分隔 | 有 |
+| `english/BaseDictIceEn.txt` | UTF-8 | CRLF | 无；正文中有 1777 行被 `#` 注释掉的条目和 16 个空行 | `显示词 编码 [权重]`，空格分隔；显示词本身可含空格（如 `Dish Network DishNetwork`），51 行带权重 | 有 |
+| `english/RimeIceEnglishSupplementV1.txt` | UTF-8 | LF | 3 行 `#` 注释 | `显示词<TAB>编码` | 有 |
+| `english/google_count_1_w.txt` | UTF-8 | LF | 无 | `词<TAB>次数` | 无 |
+| `unlicensed/oaldpe_words.txt` | UTF-8 | LF | 无 | 一个小写词形 | 有 |
+| `cantonese/jyut6ping3.chars.dict.yaml` | UTF-8 | LF | Rime YAML 头，到第 12 行 `...` 为止 | `字<TAB>粤拼[<TAB>百分比]`，粤拼带声调数字，第 3 列是该字各读音的使用比例，可省略 | 有 |
+| `cantonese/jyut6ping3.words.dict.yaml` | UTF-8 | LF | Rime YAML 头，到第 12 行 `...` 为止 | `词<TAB>粤拼`，音节用空格分隔 | 有 |
+| `cantonese/essay-cantonese.txt` | UTF-8 | LF | 无 | `字或词<TAB>次数` | 有 |
+| `zhuyin/tsi.csv` | UTF-8 | LF | 4 行 `# dc:` 元数据 | `词,词频,注音`，音节用空格分隔 | 有 |
+| `zhuyin/word.csv` | UTF-8 | LF | 4 行 `# dc:` 元数据 | `字,频率,注音`，频率都是 0 | 有 |
+| `zhuyin/McBopomofoSupplement.txt` | UTF-8 | LF | 2 行 `#` 中文注释（来源提交与转换方式） | `词,0,注音`，逗号分隔，相对 `tsi.csv` 去重 | 有 |
 | `stroke/stroke.dict.yaml` | UTF-8 | LF | Rime YAML 头，到第 24 行 `...` 为止 | `字<TAB>笔顺码`，笔顺码由 `h` 横、`s` 竖、`p` 撇、`n` 点、`z` 折组成；一个字可以有多行 | 有 |
-| `ja/mozc/dictionary00.txt` … `dictionary09.txt` | UTF-8 | LF | 无 | `读音<TAB>左上下文<TAB>右上下文<TAB>代价<TAB>词语`；`dictionary09.txt` 有 62 行带第 6 列 `SPELLING_CORRECTION` | 有 |
-| `ja/mozc/id.def` | UTF-8 | LF | 无 | `编号 标签`，空格分隔，标签内部用逗号分隔（如 `0 BOS/EOS,*,*,*,*,*,*`），共 2672 行 | 有 |
-| `ja/mozc/connection_single_column.txt` | UTF-8 | LF | 第 1 行 `2672` 是矩阵维度 | 之后每行一个连接代价，共 2672² = 7139584 行 | 有 |
-| `ja/mozc/README.txt` | UTF-8 | LF | — | 上游说明，含许可与署名要求 | 有 |
-| `ko/hanja.txt` | UTF-8 | LF | 26 行 `#` 注释（BSD 许可） | `韩文音节:汉字:训音` | 有 |
+| `japanese/dictionary00.txt` … `dictionary09.txt` | UTF-8 | LF | 无 | `读音<TAB>左上下文<TAB>右上下文<TAB>代价<TAB>词语`；`dictionary09.txt` 有 62 行带第 6 列 `SPELLING_CORRECTION` | 有 |
+| `japanese/id.def` | UTF-8 | LF | 无 | `编号 标签`，空格分隔，标签内部用逗号分隔（如 `0 BOS/EOS,*,*,*,*,*,*`），共 2672 行 | 有 |
+| `japanese/connection_single_column.txt` | UTF-8 | LF | 第 1 行 `2672` 是矩阵维度 | 之后每行一个连接代价，共 2672² = 7139584 行 | 有 |
+| `japanese/README.txt` | UTF-8 | LF | — | 上游说明，含许可与署名要求 | 有 |
+| `korean/hanja.txt` | UTF-8 | LF | 26 行 `#` 注释（BSD 许可） | `韩文音节:汉字:训音` | 有 |
 | `custom/words.txt` | UTF-8 | LF | 无 | `词<TAB>全拼<TAB>权重` | 有 |
 | `custom/translations.txt` | UTF-8 | LF | `#` 注释行，开头和各分组前都有 | `源词<TAB>译文` | 有 |
 | `custom/english.txt` | UTF-8 | LF | 无 | `编码<TAB>显示词<TAB>权重` | 无 |
@@ -231,4 +233,4 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 
 ## 历史
 
-本仓库最初名为 MSIME-Dict，保存词库源数据和 Python 构建脚本，自定义词条在独立的 msime-customdict 中；2026-09-05 两者并入 MSIME-Engine。MSIME-Engine 被 msime 的 Rust 引擎和构建器取代后，源数据于 2026-09-30 以复制文件的方式回到这里（`cn/`、`en/` 取自 msime-engine [`e92a9c7`](https://github.com/metasequoiaime/msime-engine/tree/e92a9c7c64e262f30218ca9aaad5f40d0b18cf89/dictionary)，`custom/`、`packs/`、`scripts/validate_packs.py` 取自 msime-customdict [`b075c8e`](https://github.com/metasequoiaime/msime-customdict/tree/b075c8e3e71ab48b3c048c229289275b0d42b6d0)，早先的历史在这两个仓库中查阅），本仓库成为唯一的词库源数据仓库。
+本仓库最初名为 MSIME-Dict，保存词库源数据和 Python 构建脚本，自定义词条在独立的 msime-customdict 中；2026-09-05 两者并入 MSIME-Engine。MSIME-Engine 被 msime 的 Rust 引擎和构建器取代后，源数据于 2026-09-30 以复制文件的方式回到这里（当时的 `cn/`、`en/` 取自 msime-engine [`e92a9c7`](https://github.com/metasequoiaime/msime-engine/tree/e92a9c7c64e262f30218ca9aaad5f40d0b18cf89/dictionary)，`custom/`、`packs/`、`scripts/validate_packs.py` 取自 msime-customdict [`b075c8e`](https://github.com/metasequoiaime/msime-customdict/tree/b075c8e3e71ab48b3c048c229289275b0d42b6d0)，早先的历史在这两个仓库中查阅），本仓库成为唯一的词库源数据仓库。
