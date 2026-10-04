@@ -101,5 +101,41 @@ jobs:
           set -euo pipefail
           tag="dict-v${VERSION}"
           (cd dist && sha256sum -c msime-SHA256SUMS.txt && sha256sum -c msime-language-dictionaries-SHA256SUMS)
-          jq -r --arg ref "$MSIME_REF" '"Built by msime-dict-build and msime-dict-build languages from metasequoiaime/msime \($ref).\n\nCustom dictionary: \(.custom_dictionary_repository) \(.custom_dictionary_commit).\n\nPinned inputs: resources/dictionary-sources.lock.json at that msime revision. Checksums: msime-SHA256SUMS.txt and msime-language-dictionaries-SHA256SUMS."' dist/msime-dictionary-manifest.json > notes.md
+          custom_dictionary_repository="$(jq -r '.custom_dictionary_repository' dist/msime-dictionary-manifest.json)"
+          custom_dictionary_commit="$(jq -r '.custom_dictionary_commit' dist/msime-dictionary-manifest.json)"
+          cat > notes.md <<EOF
+本版本由 \`msime-dict-build\` 与 \`msime-dict-build languages\` 构建，使用 \`metasequoiaime/msime\` 的 \`${MSIME_REF}\`。
+
+自定义词典来自 \`${custom_dictionary_repository}\` 提交 \`${custom_dictionary_commit}\`。
+
+## 文件说明
+
+### 主词库与模型
+
+- \`msime-pinyin.db\`：普通话拼音主词库，提供拼音输入的词条与候选。
+- \`msime-wubi.db\`：五笔输入词库，包含五笔 86 与五笔 98 的编码数据。
+- \`msime-english.db\`：英文单词与释义数据，供英文输入和候选使用。
+- \`msime-others.db\`：其他内置数据，包括快捷短语、表情、颜文字和符号等。
+- \`msime-japanese.dat\`：基于 Mozc 开源词典生成的日文词库。
+- \`msime-bigram.bin\`：二元语言模型表，用于整句候选的上下文评分。
+- \`msime-trigram.bin\`：三元语言模型表，与二元模型一起参与整句候选排序。
+- \`msime-mozc_dictionary_oss_README.txt\`：日文词库所需的来源与许可证说明，分发 \`msime-japanese.dat\` 时必须一并保留。
+
+### 语言词库
+
+- \`msime-cantonese.db\`：粤拼输入方案的音节、单字和词语词库。
+- \`msime-zhuyin.db\`：大千注音输入方案的音节、单字和词语词库。
+- \`msime-stroke.db\`：笔画输入方案的编码与候选词库。
+- \`msime-rime_cantonese_LICENSE.txt\`：粤拼词库所用 \`rime-cantonese\` 数据的许可证文本。
+- \`msime-libchewing_data_LICENSE.txt\`：注音词库所用 \`libchewing-data\` 数据的许可证文本。
+- \`msime-rime_stroke_LICENSE.txt\`：笔画词库所用 \`rime-stroke\` 数据的许可证文本。
+
+### 清单与校验
+
+- \`msime-dictionary-manifest.json\`：机器可读的发布清单，记录资源格式兼容性、构建来源提交、上游引用、功能列表、各文件大小与 SHA-256，以及授权检查结果。
+- \`msime-SHA256SUMS.txt\`：主词库、模型、日文许可证说明和主清单的 SHA-256 校验和。
+- \`msime-language-dictionaries-SHA256SUMS\`：语言词库及其许可证文本的 SHA-256 校验和。
+
+上述来源由 \`resources/dictionary-sources.lock.json\` 固定；两份校验和文件可用于下载后完整性验证。
+EOF
           gh release create "$tag" dist/msime-pinyin.db dist/msime-wubi.db dist/msime-english.db dist/msime-others.db dist/msime-japanese.dat dist/msime-cantonese.db dist/msime-zhuyin.db dist/msime-stroke.db dist/msime-bigram.bin dist/msime-trigram.bin dist/msime-mozc_dictionary_oss_README.txt dist/msime-rime_cantonese_LICENSE.txt dist/msime-libchewing_data_LICENSE.txt dist/msime-rime_stroke_LICENSE.txt dist/msime-dictionary-manifest.json dist/msime-SHA256SUMS.txt dist/msime-language-dictionaries-SHA256SUMS --target main --title "$tag" --notes-file notes.md --latest=false
