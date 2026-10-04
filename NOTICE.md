@@ -29,6 +29,7 @@
 | --- | --- | --- |
 | `sources/english/rime-ice-en.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice) | GPL-3.0 |
 | `sources/english/rime-ice-en-supplement.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，提交 `3aea6d3694fb3d94ec663641f021f788822897ad` 的 `en_dicts/en.dict.yaml` 与 `en_ext.dict.yaml` 中相对 `rime-ice-en.txt` 新增的纯 ASCII 单词 | GPL-3.0 |
+| `sources/english/scowl-words.txt` | [en-wl/wordlist](https://github.com/en-wl/wordlist)（SCOWL）发布 `rel-2026.02.25`（提交 `7e99edab8e32f9f9ea2b15f249ca8d4d67237410`）的 Aspell 英文词典 `aspell6-en-2026.02.25-0.tar.bz2`（SCOWL 60 级官方拼写检查词典）中 `en-common.cwl`、`en_US-wo_accents-only.cwl`、`en_GB-ise-wo_accents-only.cwl` 的纯字母词形（至少 3 个字母），排除 `rime-ice-en.txt`、`rime-ice-en-supplement.txt`、`custom/english.txt` 已有或被 rime-ice 注释掉的词、蔑称、只有大写形式且拼出中文词全拼的专名，以及没有 Google 词频的词；由 msime `crates/dict-builder` 的 `english-supplement` 子命令生成 | SCOWL 许可：可自由使用、复制、修改、分发和出售，条件是在所有副本中保留版权声明，并在随附文档中同时保留版权声明与许可声明。文件头照录了版权声明与许可声明；`dict-v` 发布把许可全文作为 `msime-scowl_Copyright.txt` 与 `msime-english.db` 一起附上；词典包 `Copyright` 全文收在 msime 的 `resources/licenses/scowl-aspell6-en-Copyright.txt`。60 级官方词典不涉及 UKACD 条款，也不用澳大利亚英语数据 |
 | `sources/english/google-word-counts.txt` | [Google 1/3 million 词频表](https://www.norvig.com/ngrams/count_1w.txt) | 以来源页面说明为准 |
 | `sources/unlicensed/oaldpe-words.txt` | 自 oaldpe.mdx 提取的词形列表 | 权利归词典出版方 |
 
@@ -38,38 +39,47 @@
 
 | 文件 | 上游 | 上游许可 |
 | --- | --- | --- |
-| `sources/cantonese/jyut6ping3.chars.dict.yaml`、`sources/cantonese/jyut6ping3.words.dict.yaml`、`sources/cantonese/essay-cantonese.txt` | [rime/rime-cantonese](https://github.com/rime/rime-cantonese)，提交 `ac277184f161f297c2031b497588975234019f9d` 的同名文件 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `sources/cantonese/jyut6ping3.chars.dict.yaml`、`sources/cantonese/jyut6ping3.words.dict.yaml`、`sources/cantonese/essay-cantonese.txt` | [rime/rime-cantonese](https://github.com/rime/rime-cantonese)，默认分支 `main` 提交 `259f0e48bba840c3a2e0d117539e96937f3d89bc`（上游每周发布的 `latest` Release 所在提交）的同名文件 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `sources/cantonese/hkcancor-word-counts.txt` | [fcbond/hkcancor](https://github.com/fcbond/hkcancor)（香港粤语语料库 HKCanCor），提交 `39aeadf920e0b5ca93d0ad7792c59e740e7bdd65` 的 `data/utf8/` 下 58 个转写文件，由 msime `crates/dict-builder/src/hkcancor.rs` 统计成两字及以上汉字词的词频，只含词与次数 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)（上游 `data/LICENSE`） |
 | `sources/zhuyin/tsi.csv`、`sources/zhuyin/word.csv` | [chewing/libchewing-data](https://github.com/chewing/libchewing-data)，提交 `c44e81aef24b06f1509f19e1be54c99812d0c43f` 的 `dict/chewing/tsi.csv`、`dict/chewing/word.csv` | [LGPL-2.1-or-later](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) |
 | `sources/zhuyin/mcbopomofo-supplement.txt` | [openvanilla/McBopomofo](https://github.com/openvanilla/McBopomofo)，提交 `be6564acad6c4d3265c34a2e1a872d80f9db6068` 的 `Source/Data/BPMFMappings.txt`，转换为本仓 CSV 格式并排除 `tsi.csv` 已有组合 | BSD（上游说明多字词表源自 BSD 授权的 libtabe，并含修改） |
+| `sources/zhuyin/phrase.occ` | [openvanilla/McBopomofo](https://github.com/openvanilla/McBopomofo)，提交 `be6564acad6c4d3265c34a2e1a872d80f9db6068` 的 `Source/Data/phrase.occ` | [MIT](https://github.com/openvanilla/McBopomofo/blob/be6564acad6c4d3265c34a2e1a872d80f9db6068/LICENSE.txt) |
 | `sources/stroke/stroke.dict.yaml` | [rime/rime-stroke](https://github.com/rime/rime-stroke)，提交 `1e8fff9b9494ddec23b0cbc526bcfd8171a6fd48` 的 `stroke.dict.yaml` | [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.html) |
 
-这六个文件与上游固定提交逐字节一致（UTF-8、LF），没有改编码、换行或内容：
+这七个文件与上游固定提交逐字节一致（UTF-8、LF），没有改编码、换行或内容：
 
 | 文件 | SHA-256 |
 | --- | --- |
-| `sources/cantonese/jyut6ping3.chars.dict.yaml` | `d5c06066ae160bcba5d4340b6424f845e1a3f86caab7e67e5b1725e01458afc6` |
-| `sources/cantonese/jyut6ping3.words.dict.yaml` | `436ec7b5b0b1d320f5bea72ab009e36dcccb0ae75c2dea0c55810a33c8ee1abb` |
-| `sources/cantonese/essay-cantonese.txt` | `12caf53435ad0e1aaaa6a323fe2f3f3aba73046a111989e5e3e3ccc9a79fca3d` |
+| `sources/cantonese/jyut6ping3.chars.dict.yaml` | `9b053a594c80eae76545bcdd83239884a49b1ba48b89ca0ab9e8daac79f33013` |
+| `sources/cantonese/jyut6ping3.words.dict.yaml` | `54d174ad2bb997e4a678b7b076b84e4dc5914481b32467cdea3b43e88b7d5474` |
+| `sources/cantonese/essay-cantonese.txt` | `d08836175f598219f43c2f2f9e12e12711212dbefe08d57b2eddb7a9d9f22a5d` |
 | `sources/zhuyin/tsi.csv` | `c889a1ac3ae1901b3f8f62748bc41b958f010bf995f7f88dbaf9e3494f341428` |
 | `sources/zhuyin/word.csv` | `da55b8e599c1389bc486453554f3410cf9c621d0ffff0ce38855698d26b3892a` |
+| `sources/zhuyin/phrase.occ` | `dcd11597090b2bef88fb385bdd567e235ccd916728c84b8d0d3f8069ccfc7b8d` |
 | `sources/stroke/stroke.dict.yaml` | `b3e93dce89c185f45c3d6e189b86b3a8626913352cc85e1094c786579a665791` |
 
-rime-cantonese 由粤语计算语言学基础建设组（[CanCLID](https://github.com/CanCLID)）开发和维护，按其 README，主体部分以 CC BY 4.0 发布（上游仓库的 `LICENSE-CC-BY`），拼写是香港语言学学会（LSHK）的[粤拼](https://www.lshk.org/jyutping)方案。上游另有按 ODbL 1.0 发布的 `jyut6ping3.maps.dict.yaml`，以及 `jyut6ping3.phrase.dict.yaml`、`jyut6ping3.lettered.dict.yaml`，这三个文件不收入本仓。
+rime-cantonese 由粤语计算语言学基础建设组（[CanCLID](https://github.com/CanCLID)）开发和维护，按其 README，主体部分以 CC BY 4.0 发布（上游仓库的 `LICENSE-CC-BY`），拼写是香港语言学学会（LSHK）的[粤拼](https://www.lshk.org/jyutping)方案。上游另有按 ODbL 1.0 发布的 `jyut6ping3.maps.dict.yaml`，以及 `jyut6ping3.phrase.dict.yaml`、`jyut6ping3.lettered.dict.yaml`，这三个文件不收入本仓。上游默认分支是 `main`：`.github/workflows/fetch-upstream.yml` 每周把 [CanCLID/rime-cantonese-upstream](https://github.com/CanCLID/rime-cantonese-upstream) 的数据重建后推到 `main`，`release.yml` 从 `main` 打包并把 `latest` 标签移到 `main` 的最新提交；`master` 分支只有 2024-12-01 前的自动部署提交（“Deploying to master from @ rime/rime-cantonese@…”），之后不再更新，所以本仓改按 `main` 锁定。两个分支的 `LICENSE-CC-BY` 相同。
+
+HKCanCor 是陆镜光（Luke Kang Kwong）整理的 1997–1998 年香港粤语对话与电台节目转写，按上游 `README.md` 与 `data/README`、`data/LICENSE` 以 CC BY 4.0 发布，要求引用：K. K. Luke and May L. Y. Wong (2015) The Hong Kong Cantonese Corpus: Design and Uses. Journal of Chinese Linguistics Monograph Series, 25, 312–333。本仓只收由它统计出的词频表 `sources/cantonese/hkcancor-word-counts.txt`，不收语料文本；转写文件由 msime 锁文件直接按上游提交固定。粤拼词库只用它给 `essay-cantonese.txt` 没收的词加权，换算方法见 msime `crates/dict-builder/src/cantonese.rs`。
+
+McBopomofo 的 `phrase.occ` 是该项目在自己语料上统计的词语出现次数（上游 `Source/Data/README.md` 与 `AGENTS.md` 称之为 phrase frequency/occurrence data，`textpool.rc` 记着语料路径，语料本身不公开）；上游没有为数据单独声明许可，仓库根目录 `LICENSE.txt` 与 `README.markdown`“軟體授權”一节说明整个项目以 MIT 发布，Copyright (c) 2011-2026 Mengjuei Hsieh et al.。注音词库只用它给 `tsi.csv` 在任何读音下都没计数的词语加权。上游文档写它用 tab 分隔，实际文件用空格分隔，构建器两种都接受。
 
 libchewing-data 的两个文件在文件头声明 `dc:rights,Copyright (c) 2025 libchewing Core Team` 与 `dc:license,LGPL-2.1-or-later`；上游仓库没有单独的许可证文件，许可以文件头为准。
 
 rime-stroke 的上游仓库以 LGPL-3.0 发布（`LICENSE`）。`AUTHORS` 列出的作者是四季的風、雪齋、Kunki Chou 与宋天，并写明前三位的数据是依 CNS11643 全字库的授权声明（http://www.cns11643.gov.tw/AIDB/copyright.do）以 LGPL 再分发的。CNS11643 全字库网站以《政府資料開放授權條款－第1版》授权（见其[全字库授权](https://www.cns11643.gov.tw/pageView.jsp?ID=59)页），要求利用其资料时注明来源：數位發展部，CNS11643中文標準交換碼全字庫網站，https://www.cns11643.gov.tw 。按 `stroke.dict.yaml` 的文件头：主码表源自 CNS11643 中文标准交换码全字库网站（http://www.cns11643.gov.tw），由 Kunki Chou 整理；附码表源自北大中文论坛，由孙海峰、徐孟罗、唐捺之、谢振斌整理；至扩展 J 区的超集扩充数据来自宋天；Rime 输入方案由四季的風、雪齋、Kunki Chou 制作。
 
-msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`、`msime-zhuyin.db`、`msime-stroke.db`，与桌面词库一起放在本仓库的 `dict-v*` Release；随产物分发的署名、改动说明与许可证全文在 msime 的 `resources/licenses/rime-cantonese-CC-BY-4.0.txt`、`resources/licenses/libchewing-data-LGPL-2.1.txt`、`resources/licenses/rime-stroke-LGPL-3.0.txt`，换上游提交时这些文件要一起改。`msime-stroke.db` 的排序权重取自 `sources/pinyin/single-chars.txt`。
+msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`、`msime-zhuyin.db`、`msime-stroke.db`，与桌面词库一起放在本仓库的 `dict-v*` Release；随产物分发的署名、改动说明与许可证全文在 msime 的 `resources/licenses/rime-cantonese-CC-BY-4.0.txt`（同时署名 HKCanCor）、`resources/licenses/libchewing-data-LGPL-2.1.txt`（同时收 McBopomofo 的 MIT 声明）、`resources/licenses/rime-stroke-LGPL-3.0.txt`，换上游提交时这些文件要一起改。`msime-stroke.db` 的排序权重取自 `sources/pinyin/single-chars.txt`。
 
 ## 日文与韩文词库
 
 | 文件 | 上游 | 上游许可 |
 | --- | --- | --- |
-| `sources/japanese/dictionary00.txt` … `dictionary09.txt`、`sources/japanese/id.def`、`sources/japanese/connection_single_column.txt`、`sources/japanese/README.txt` | [google/mozc](https://github.com/google/mozc)，提交 `9fbd649bea4c5e99cd8ad5e487213b26a953a376` 的 `src/data/dictionary_oss/` 文件 | 以随附的 `README.txt` 为准（IPADIC、ICOT 与冲绳方言数据分别附带其上游条款） |
+| `sources/japanese/dictionary00.txt` … `dictionary09.txt`、`sources/japanese/id.def`、`sources/japanese/connection_single_column.txt`、`sources/japanese/README.txt` | [google/mozc](https://github.com/google/mozc)，提交 `9fbd649bea4c5e99cd8ad5e487213b26a953a376` 的 `src/data/dictionary_oss/` 文件 | Mozc 仓库根目录 `LICENSE`：署名 Google Inc. 的三条款 BSD 文本适用于整个仓库，`src/data/dictionary*` 另附 IPAdic、ICOT 与冲绳辞书条款；后者与随附的 `README.txt` 所列条款相同 |
+| `sources/japanese/aux_dictionary.tsv`、`sources/japanese/dictionary_filter.tsv`、`sources/japanese/places.tsv`、`sources/japanese/words.tsv` | [google/mozc](https://github.com/google/mozc)，同一提交 `9fbd649bea4c5e99cd8ad5e487213b26a953a376` 的 `src/data/dictionary_oss/aux_dictionary.tsv`、`src/data/dictionary_oss/dictionary_filter.tsv`、`src/data/dictionary_manual/places.tsv`、`src/data/dictionary_manual/words.tsv` | 与上一行相同：两份目录都在 `src/data/dictionary*` 之下 |
+| `sources/japanese/LICENSE` | [google/mozc](https://github.com/google/mozc)，同一提交 `9fbd649bea4c5e99cd8ad5e487213b26a953a376` 的仓库根目录 `LICENSE`（git blob `15ef0f074d90c3856c3202a9ab1a8a349ae57570`） | 即上面两行所适用的许可文本本身 |
 | `sources/korean/hanja.txt` | [libhangul/libhangul](https://github.com/libhangul/libhangul)，提交 `717409ce61524bb3d8426060a384822f21354c62` 的 `data/hanja/hanja.txt` | BSD-3-Clause |
 
-`sources/japanese/` 与 `sources/korean/hanja.txt` 均逐字节保留上游文件。`msime-dict-build` 从 `sources/japanese/` 构建 `msime-japanese.dat`，从 `sources/korean/hanja.txt` 生成引擎内嵌的韩文 Hanja 表；日文词库发布时必须同时分发 `sources/japanese/README.txt`，韩文数据的 BSD-3-Clause 文本见 msime 的 `resources/licenses/libhangul-hanja-BSD-3-Clause.txt`。更新任一上游提交时，需同步更新 msime 的锁文件、构建器路径和对应的许可证说明。
+`sources/japanese/` 与 `sources/korean/hanja.txt` 均逐字节保留上游文件。`msime-dict-build` 从 `sources/japanese/` 构建 `msime-japanese.dat`，并按 Mozc OSS 构建组装系统词典的方式使用后加的四个文件：`dictionary_filter.tsv` 从基础词库中删去匹配的行（`gen_filtered_dictionary.py`），`aux_dictionary.tsv`、`places.tsv`、`words.tsv` 生成补充词条（`gen_aux_dictionary.py`），`places.tsv` 与 `words.tsv` 来自 Mozc 的 `src/data/dictionary_manual/` 目录，保留上游文件名；从 `sources/korean/hanja.txt` 生成引擎内嵌的韩文 Hanja 表；日文词库发布时必须同时分发 `sources/japanese/README.txt`（附件名 `msime-mozc_dictionary_oss_README.txt`）与 `sources/japanese/LICENSE`：Google 三条款 BSD 文本要求的版权声明与免责声明不在这份 README 里，所以 Mozc 根目录的 `LICENSE` 逐字节收为 `sources/japanese/LICENSE`，作为 `msime-mozc_LICENSE.txt` 与 `msime-japanese.dat` 一起附在 `dict-v` 发布上；韩文数据的 BSD-3-Clause 文本见 msime 的 `resources/licenses/libhangul-hanja-BSD-3-Clause.txt`。更新任一上游提交时，需同步更新 msime 的锁文件、构建器路径和对应的许可证说明。
 
 ## 下游影响
 
@@ -93,7 +103,7 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 | --- | --- | --- |
 | `sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt` | `sources/pinyin/rime-ice.txt`（rime-ice，GPL-3.0） | 中文词库召回下降；rime-ice 是合并前的子集，构建不会失败 |
 | `sources/unlicensed/single-char-whitelist.txt` | 无 | 不做过滤，`single-chars.txt` 里的单字全部收入 |
-| `sources/unlicensed/oaldpe-words.txt` | 无 | 英文词表来自 `rime-ice-en.txt`、`sources/english/rime-ice-en-supplement.txt` 与 `custom/english.txt`，`sources/english/google-word-counts.txt` 提供词频 |
+| `sources/unlicensed/oaldpe-words.txt` | 无 | 英文词表来自 `rime-ice-en.txt`、`sources/english/rime-ice-en-supplement.txt`、`sources/english/scowl-words.txt` 与 `custom/english.txt`，`sources/english/google-word-counts.txt` 提供词频 |
 
 想构建完整词库（本地开发、评估召回率）用 `--include-unlicensed`，或设环境变量 `MSIME_DICT_INCLUDE_UNLICENSED=1`。**这样构建出来的产物不要附到 release 上。**
 
@@ -106,11 +116,12 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 - [chewing/libchewing-data](https://github.com/chewing/libchewing-data) 的 GitHub 仓库已归档，仓库描述是 “Migrated to Codeberg”。`sources/zhuyin/tsi.csv`、`sources/zhuyin/word.csv` 仍按上面记录的 GitHub 提交锁定；Codeberg 上是否有更新的数据没有核实，换上游地址前要先核对。
 - `sources/pinyin/rime-ice-supplement.txt` 生成时只排除了 `rime-ice.txt` 已有的同词同音行，没有对照 `sources/pinyin/single-chars.txt`：它的 8757 行单字中有 8740 对（字,拼音）与 `single-chars.txt` 重合，其中 725 对权重不同。msime 构建器把拼音词表逐行直接插入、不去重，这些单字在 `msime-pinyin.db` 里会出现两行。对候选排序的影响没有在引擎里测过。
 - `sources/pinyin/rime-ice-supplement.txt` 沿用了 rime-ice `base.dict.yaml` 的容错读音，权重与正读相同，例如 `血型 xie'xing 94145`（正读 `血型 xue'xing 94145` 在 `sources/pinyin/rime-ice.txt`）。这是上游的行为，不是转换错误；是否在补充表里排除容错读音尚未决定。
-- 发布拼音输入里有一批多音字读错的词条，「重」在“再次”义下读 chong、「调」在“调整”义下读 tiao，却被标成 zhong、diao。错行留在按字节锁定的文件里不改，正读在 `custom/words.txt` 末尾追加，权重取错行的权重，让正读的排序不低于错读：
-  - 正读原本缺失、已在 `custom/words.txt` 补上的（括号内是错行所在文件与权重）：`重采样 zhong'cai'yang`（`rime-ice.txt`，1060）、`数据去重 shu'ju'qu'zhong`（221）、`数组去重 shu'zu'qu'zhong`（317）、`函数重载 han'shu'zhong'zai`（5612）、`可重入 ke'zhong'ru`（3128）、`可重入函数 ke'zhong'ru'han'shu`（573）、`重入锁 zhong'ru'suo`（503）、`重放攻击 zhong'fang'gong'ji`（502）、`重签名 zhong'qian'ming`（282）、`重编程 zhong'bian'cheng`（100）、`重定时 zhong'ding'shi`（27）、`末端重复 mo'duan'zhong'fu`（2）、`重复精度高 zhong'fu'jing'du'gao`（100）、`二十万军重入赣 er'shi'wan'jun'zhong'ru'gan`（3）、`盛年不重来 sheng'nian'bu'zhong'lai`（12）、`只缘妖雾又重来 zhi'yuan'yao'wu'you'zhong'lai`（12）、`反调试 fan'diao'shi`（380），以上错行都在 `sources/pinyin/rime-ice.txt`。
-  - 错行存在、但正读已在发布输入里且权重不低于错行的，不需要补：`调参 diao'can`（`rime-ice.txt` 1111，正读在 `rime-ice-supplement.txt`，1111）、`调参侠`、`性能调优`、`数据库调优`、`重绘`、`自动重连`（错行在 `rime-ice.txt`，正读在 `rime-ice-supplement.txt`，权重相同）。
-  - 正读已在发布输入里、但权重低于错行的：`调优`，`rime-ice.txt` 里错读 `diao'you` 10687、正读 `tiao'you` 9999，正读排在错读之后。同词同音已存在，追加到 `custom/words.txt` 会成为重复行，而且它的权重上限 10000 也超不过 10687，所以没有处理，需要在锁定文件之外另想办法（例如构建器按词表降权错读）。
-  - 有歧义、没有处理的：`重设计 zhong'she'ji`（“重新设计”读 chong，“重视设计”读 zhong）、`重建设 zhong'jian'she`（同理）、`判重了 pan'zhong'le`（`rime-ice-supplement.txt`，“查重判定”读 chong，“判得重了”读 zhong）。`重载铁路`、`重载列车` 等“重载荷”义的词读 zhong 是对的，而 `rime-ice.txt` 同时收了它们的 chong 读，那是反方向的错，这里没有处理。单独的 `重载` 两读都对（“再次加载”读 chong，“重载荷”读 zhong），`rime-ice-supplement.txt` 的 `重载 zhong'zai`（271）与 `rime-ice.txt` 的 `重载 chong'zai`（20715）都不算错误；`调配` 同样两读都对（调色调配读 tiao，人员调配读 diao）。
+- 发布拼音输入里有一批多音字读错的词条，例如「重」在“再次”“层”义下读 chong、「调」在“调整”义下读 tiao、「行」在“行列”“行业”义下读 hang，却被标成 zhong、diao、xing。错行留在按字节锁定的文件里不改，由 msime 构建器在构建时删除：清单在 msime 仓库的 `resources/dictionary-sources/pinyin-reading-corrections.txt`（每行 `词<TAB>错读<TAB>正读`），`msime-dict-build` 的 `reading-corrections` 阶段在全部拼音输入（含 `custom/words.txt`）并入之后删除每一条错读的全部行；某条错读一行也删不到（上游已改，条目过时），或删完后这个词没有正读的行，构建都会失败。清单目前 218 条，删除 218 行，分三类：
+  - 本节早先记录的 24 条：`重采样 zhong'cai'yang`、`数据去重 shu'ju'qu'zhong`、`数组去重 shu'zu'qu'zhong`、`函数重载 han'shu'zhong'zai`、`可重入 ke'zhong'ru`、`可重入函数 ke'zhong'ru'han'shu`、`重入锁 zhong'ru'suo`、`重放攻击 zhong'fang'gong'ji`、`重签名 zhong'qian'ming`、`重编程 zhong'bian'cheng`、`重定时 zhong'ding'shi`、`末端重复 mo'duan'zhong'fu`、`重复精度高 zhong'fu'jing'du'gao`、`二十万军重入赣 er'shi'wan'jun'zhong'ru'gan`、`盛年不重来 sheng'nian'bu'zhong'lai`、`只缘妖雾又重来 zhi'yuan'yao'wu'you'zhong'lai`、`反调试 fan'diao'shi`（这 17 条的正读已在 `custom/words.txt` 末尾按错行权重补上），以及正读已在 `rime-ice-supplement.txt` 的 `调参 diao'can`、`调参侠`、`性能调优`、`数据库调优`、`重绘 zhong'hui`、`自动重连 zi'dong'zhong'lian`，和 `调优 diao'you`（10687，删除后正读 `调优 tiao'you` 9999 是这个词唯一的读音）。错行都在 `sources/pinyin/rime-ice.txt`。
+  - rime-ice 自己改过读音的 182 条：错行在 `sources/pinyin/rime-ice.txt`，而 rime-ice 提交 `3aea6d3694fb3d94ec663641f021f788822897ad` 的 `cn_dicts/` 已没有这个读音、改收正读，正读随 `rime-ice-supplement.txt` 进入构建。只收按词义能判定的，例如 `重铬酸盐`、`重氮盐`、`重睑`、`重唇鱼` 的“重”读 chong，`重载列车`、`重钢结构`、`重装战士` 的“重”读 zhong，股价的 `回调`、`内调外养` 的“调”读 tiao，`行纪`、`首行缩进`、`太行路` 的“行”读 hang，`进行测量`、`时行感冒` 的“行”读 xing，`不长眼`、`徒长枝`、`长姐如母` 的“长”读 zhang，`三短一长`、`长上影线` 的“长”读 chang，`处理不了`、`上得了台面`、`了不了解吗` 的“了”读 liao。
+  - 所有输入（包括 rime-ice `3aea6d3`）都只有错读的 12 条：`何日更重游`、`弃妾已去难重回`、`飞镜又重磨`、`两重心字罗衣`、`九重泉底龙知无`、`重楼翠阜出霜晓`（“重”读 chong），`行内元素`、`代码行数`、`单行注释`、`用品行业`、`文旅行业`、`直销行业服务网点设立管理办法`（“行”读 hang）。正读按错行的权重追加在 `custom/words.txt` 末尾。
+  - 有歧义、没有处理的：`重设计 zhong'she'ji`（“重新设计”读 chong，“重视设计”读 zhong）、`重建设 zhong'jian'she`（同理）、`判重了 pan'zhong'le`（`rime-ice-supplement.txt`，“查重判定”读 chong，“判得重了”读 zhong）、`重配置 zhong'pei'zhi`、`重载版`、`重装上阵`、`重装秘术`、`霸者重装`、`重上君子堂`、`重鉴`；编程里的“回调”读 diao，所以 `出现回调`、`回调后`、`回调时`、`回调结束`、`快速回调` 两读都留着；`调侃儿 diao'kan'er`（《现代汉语词典》“说行话”义读 diào）、`改调解张`；`林花谢了春红`、`姓了`、`足了十人`；`全行`（“全银行”读 hang）、`修行业`；`增长睫毛`、`长恶不悛`、`长子线`、`张家长`（「张家长李家短」读 chang，「张＋家长」读 zhang；整句 `张家长李家短` 的错读已删除）、`甲长`（保甲的“甲长”读 zhang，龟鳖、甲壳类的“甲长”指背甲长度，读 chang）、`更无长物`（“长物”读 zhàng，rime-ice 新版改成的 chang 也不对）。人名、地名和品牌的读音无法从词义判定，也没有处理：`王行华`、`李时行`、`小西行长`、`徐行镇`、`刘行镇`、`曹行镇`、`高行中学`、`木村了`、`冯了性药酒`、`路学长`、`保长对应`、`快乐长门人`、`重野秀一`。`电子调速微型异步电动机通用技术条件`、`虢州岑二十七长史参三十韵` 两条错读只在 `rime-ice.txt` 里、不在 `--include-unlicensed` 构建换用的 `sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`custom-pinyin-dictionary-part2.txt` 里，放进清单会让那种构建失败，权重都是 1，没有收。
+  - 两读都对、不算错误的：单独的 `重载`（“再次加载”读 chong，“重载荷”读 zhong）、`调配`（调色调配读 tiao，人员调配读 diao）。
 
 ## 本项目自建部分
 
