@@ -1,19 +1,14 @@
 name: Release built dictionaries
 
 # 生成词库属于本仓库的发布边界：msime-dictionary 保存源数据，也发布由 msime 构建器生成的数据库。
-# 源文件保存在本仓库的 Git 提交中；本 workflow 只发布构建后的 dict-v 和 langdict-v 词库附件。
+# 源文件保存在本仓库的 Git 提交中；本 workflow 一次构建并发布完整的 dict-v 词库 Release。
 on:
   workflow_dispatch:
     inputs:
       version:
-        description: "发布版本号（例如 3.0.0；按 kind 生成 dict-v 或 langdict-v 标签）"
+        description: "发布版本号（例如 3.0.0；生成 dict-vX.Y.Z 标签）"
         required: true
         type: string
-      kind:
-        description: "生成桌面词库或语言词库"
-        required: true
-        type: choice
-        options: [desktop, languages]
       msime_ref:
         description: "用于构建的 msime 分支、标签或提交"
         required: true
@@ -58,32 +53,22 @@ jobs:
         run: rustup toolchain install
       - name: Build msime-dict-build
         run: cargo build --manifest-path msime/Cargo.toml --release --locked -p msime-dict-builder
-      - name: Build selected dictionaries
-        env:
-          KIND: ${{ inputs.kind }}
+      - name: Build all dictionaries
         run: |
           set -euo pipefail
           cache="$RUNNER_TEMP/dictionary-sources"
           out="$RUNNER_TEMP/dictionary-release"
-          if [[ "$KIND" == desktop ]]; then
-            msime/target/release/msime-dict-build --repository msime --cache "$cache" --out "$out"
-            for name in msime-pinyin.db msime-wubi.db msime-english.db others.db msime-japanese.dat bigram.bin trigram.bin mozc_dictionary_oss_README.txt dictionary-manifest.json SHA256SUMS.txt; do
-              [[ -s "$out/$name" ]] || { echo "missing $out/$name" >&2; exit 1; }
-            done
-            (cd "$out" && sha256sum -c SHA256SUMS.txt)
-            jq -e '.licensing.includes_unlicensed_inputs == false and .source.dirty == false' "$out/dictionary-manifest.json" >/dev/null
-            artifact="msime-dictionary-${KIND}-${{ inputs.version }}"
-          else
-            msime/target/release/msime-dict-build languages --repository msime --cache "$cache" --out "$out"
-            for name in cantonese.db zhuyin.db rime_cantonese_LICENSE.txt libchewing_data_LICENSE.txt language-dictionaries-SHA256SUMS; do
-              [[ -s "$out/$name" ]] || { echo "missing $out/$name" >&2; exit 1; }
-            done
-            if [[ -e "$out/stroke.db" || -e "$out/rime_stroke_LICENSE.txt" ]]; then
-              for name in stroke.db rime_stroke_LICENSE.txt; do [[ -s "$out/$name" ]] || exit 1; done
-            fi
-            (cd "$out" && sha256sum -c language-dictionaries-SHA256SUMS)
-            artifact="msime-dictionary-${KIND}-${{ inputs.version }}"
+          msime/target/release/msime-dict-build --repository msime --cache "$cache" --out "$out"
+          msime/target/release/msime-dict-build languages --repository msime --cache "$cache" --out "$out"
+          for name in msime-pinyin.db msime-wubi.db msime-english.db others.db msime-japanese.dat bigram.bin trigram.bin mozc_dictionary_oss_README.txt dictionary-manifest.json SHA256SUMS.txt cantonese.db zhuyin.db rime_cantonese_LICENSE.txt libchewing_data_LICENSE.txt language-dictionaries-SHA256SUMS; do
+            [[ -s "$out/$name" ]] || { echo "missing $out/$name" >&2; exit 1; }
+          done
+          if [[ -e "$out/stroke.db" || -e "$out/rime_stroke_LICENSE.txt" ]]; then
+            for name in stroke.db rime_stroke_LICENSE.txt; do [[ -s "$out/$name" ]] || exit 1; done
           fi
+          (cd "$out" && sha256sum -c SHA256SUMS.txt && sha256sum -c language-dictionaries-SHA256SUMS)
+          jq -e '.licensing.includes_unlicensed_inputs == false and .source.dirty == false' "$out/dictionary-manifest.json" >/dev/null
+          artifact="msime-dictionary-${{ inputs.version }}"
           echo "artifact=$artifact" >> "$GITHUB_OUTPUT"
         id: build
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -111,19 +96,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ inputs.version }}
-          KIND: ${{ inputs.kind }}
           MSIME_REF: ${{ inputs.msime_ref }}
         run: |
           set -euo pipefail
-          if [[ "$KIND" == desktop ]]; then
-            tag="dict-v${VERSION}"
-            (cd dist && sha256sum -c SHA256SUMS.txt)
-            jq -r --arg ref "$MSIME_REF" '"Built by msime-dict-build from metasequoiaime/msime \($ref).\n\nCustom dictionary: \(.custom_dictionary_repository) \(.custom_dictionary_commit).\n\nPinned inputs: resources/dictionary-sources.lock.json at that msime revision. Checksums: SHA256SUMS.txt."' dist/dictionary-manifest.json > notes.md
-            gh release create "$tag" dist/msime-pinyin.db dist/msime-wubi.db dist/msime-english.db dist/others.db dist/msime-japanese.dat dist/bigram.bin dist/trigram.bin dist/mozc_dictionary_oss_README.txt dist/dictionary-manifest.json dist/SHA256SUMS.txt --target main --title "$tag" --notes-file notes.md --latest=false
-          else
-            tag="langdict-v${VERSION}"
-            (cd dist && sha256sum -c language-dictionaries-SHA256SUMS)
-            printf '%s\n' "Built by msime-dict-build languages from metasequoiaime/msime ${MSIME_REF}." "" "Pinned inputs: resources/dictionary-sources.lock.json at that msime revision. Checksums: language-dictionaries-SHA256SUMS." > notes.md
-            mapfile -t assets < <(awk '{ print "dist/" $2 }' dist/language-dictionaries-SHA256SUMS)
-            gh release create "$tag" "${assets[@]}" dist/language-dictionaries-SHA256SUMS --target main --title "$tag" --notes-file notes.md --latest=false
-          fi
+          tag="dict-v${VERSION}"
+          (cd dist && sha256sum -c SHA256SUMS.txt && sha256sum -c language-dictionaries-SHA256SUMS)
+          jq -r --arg ref "$MSIME_REF" '"Built by msime-dict-build and msime-dict-build languages from metasequoiaime/msime \($ref).\n\nCustom dictionary: \(.custom_dictionary_repository) \(.custom_dictionary_commit).\n\nPinned inputs: resources/dictionary-sources.lock.json at that msime revision. Checksums: SHA256SUMS.txt and language-dictionaries-SHA256SUMS."' dist/dictionary-manifest.json > notes.md
+          gh release create "$tag" dist/msime-pinyin.db dist/msime-wubi.db dist/msime-english.db dist/others.db dist/msime-japanese.dat dist/cantonese.db dist/zhuyin.db dist/stroke.db dist/bigram.bin dist/trigram.bin dist/mozc_dictionary_oss_README.txt dist/rime_cantonese_LICENSE.txt dist/libchewing_data_LICENSE.txt dist/rime_stroke_LICENSE.txt dist/dictionary-manifest.json dist/SHA256SUMS.txt dist/language-dictionaries-SHA256SUMS --target main --title "$tag" --notes-file notes.md --latest=false

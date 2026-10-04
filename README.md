@@ -1,6 +1,6 @@
 # 水杉输入法词库
 
-水杉输入法词库的源数据只在这个仓库维护：拼音、五笔与英文的基础词库，粤拼、注音、笔画、日文与韩文方案的词库，人工维护的自定义词条和候选窗翻译，以及用户按需导入的专业词库。这里只放文本数据，不放构建脚本；词库由 [msime](https://github.com/metasequoiaime/msime) 的构建器按固定提交取用这里的文件，构建成各平台共用的 `msime-pinyin.db`、`msime-wubi.db`、`msime-english.db`、`others.db` 等 `dict-v*` 词库并在本仓库发布，粤拼、注音、笔画、日文与韩文的数据另外构建成语言词库，以本仓库的 `langdict-v*` 发布。
+水杉输入法词库的源数据只在这个仓库维护：拼音、五笔与英文的基础词库，粤拼、注音、笔画、日文与韩文方案的词库，人工维护的自定义词条和候选窗翻译，以及用户按需导入的专业词库。这里只放文本数据，不放构建脚本；词库由 [msime](https://github.com/metasequoiaime/msime) 的构建器按固定提交取用这里的文件，构建成一个完整的 `dict-v*` Release，其中包含 `msime-pinyin.db`、`msime-wubi.db`、`msime-english.db`、`others.db` 和各语言数据库。
 
 ## 目录
 
@@ -75,7 +75,7 @@ scripts/     维护脚本
 
 1. 改动合入本仓库。
 2. msime 在 `resources/dictionary-sources.lock.json` 里固定本仓库的提交、文件 URL、大小与 SHA-256；构建器直接读取该提交中的源文件，不把源文本重复上传到 Release。
-3. 本仓库的 `release-built-dictionaries.yml` 用固定的 `msime-dict-build` 提交构建并发布 `dict-v*` 词库；`yue/`、`tw/`、`stroke/` 由 `msime-dict-build languages` 构建成 `cantonese.db`、`zhuyin.db`、`stroke.db`，以本仓库的 `langdict-v*` 发布。Release 只包含数据库、模型和校验文件。
+3. 本仓库的 `release-built-dictionaries.yml` 用固定的 `msime-dict-build` 提交一次构建全部词库，并发布一个 `dict-v*` Release。Release 只包含数据库、模型、许可证和校验文件。
 4. 各平台升级各自锁定的词库版本，下一个版本随之带上新词库。
 
 只合入本仓库而不重新构建并发布，用户拿到的仍是旧词库。合并词条 Pull Request 时用 squash，并把标题写成 `feat(...)`（如官网滚动 Pull Request 的 `feat(custom): …`；修正写成 `fix(...)`），便于追踪源数据变更。
