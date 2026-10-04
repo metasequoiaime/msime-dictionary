@@ -1,0 +1,788 @@
+# 学习范式与经典方法：中文候选到英文术语
+自监督学习	Self-supervised Learning
+弱监督学习	Weakly Supervised Learning
+元学习	Meta-learning
+联邦学习	Federated Learning
+对比学习	Contrastive Learning
+表示学习	Representation Learning
+表征学习	Representation Learning
+度量学习	Metric Learning
+多任务学习	Multi-task Learning
+多模态学习	Multimodal Learning
+持续学习	Continual Learning
+主动学习	Active Learning
+离线强化学习	Offline Reinforcement Learning
+逆强化学习	Inverse Reinforcement Learning
+课程学习	Curriculum Learning
+零样本学习	Zero-shot Learning
+少样本学习	Few-shot Learning
+单样本学习	One-shot Learning
+小样本学习	Few-shot Learning
+上下文学习	In-context Learning
+零样本	Zero-shot
+少样本	Few-shot
+端到端学习	End-to-end Learning
+流形学习	Manifold Learning
+生成式模型	Generative Model
+判别式模型	Discriminative Model
+马尔可夫链	Markov Chain
+马尔可夫决策过程	Markov Decision Process
+高斯过程	Gaussian Process
+核技巧	Kernel Trick
+梯度提升	Gradient Boosting
+梯度提升树	Gradient Boosted Trees
+梯度提升决策树	Gradient Boosting Decision Tree
+逻辑回归	Logistic Regression
+套索回归	Lasso Regression
+最近邻	Nearest Neighbor
+密度聚类	Density-based Clustering
+特征值分解	Eigendecomposition
+低秩分解	Low-rank Decomposition
+低秩近似	Low-rank Approximation
+符号主义	Symbolism (AI)
+连接主义	Connectionism
+可解释人工智能	Explainable AI
+# 数据与特征：中文候选到英文术语
+特征图	Feature Map
+特征归因	Feature Attribution
+独热编码	One-hot Encoding
+标签平滑	Label Smoothing
+数据增强	Data Augmentation
+数据标注	Data Annotation
+数据漂移	Data Drift
+概念漂移	Concept Drift
+分布偏移	Distribution Shift
+分布外	Out-of-distribution
+分布外泛化	Out-of-distribution Generalization
+独立同分布	Independent and Identically Distributed
+维数灾难	Curse of Dimensionality
+训练集	Training Set
+验证集	Validation Set
+测试集	Test Set
+开发集	Development Set
+训练数据集	Training Set
+验证数据集	Validation Set
+测试数据集	Test Set
+留出法	Hold-out Method
+留一法	Leave-one-out
+自助法	Bootstrapping
+数据集划分	Dataset Split
+基准数据集	Benchmark Dataset
+评测集	Evaluation Set
+标注数据	Labeled Data
+无标注数据	Unlabeled Data
+伪标签	Pseudo-label
+弱标签	Weak Label
+硬标签	Hard Label
+软标签	Soft Label
+真实标签	Ground-truth Label
+类别不平衡	Class Imbalance
+过采样	Oversampling
+欠采样	Undersampling
+样本权重	Sample Weight
+负采样	Negative Sampling
+难例挖掘	Hard Example Mining
+困难样本	Hard Example
+难负样本	Hard Negative
+正样本	Positive Sample
+负样本	Negative Sample
+对抗样本	Adversarial Example
+合成数据	Synthetic Data
+数据合成	Data Synthesis
+数据配比	Data Mixture
+数据飞轮	Data Flywheel
+训练数据	Training Data
+训练语料	Training Corpus
+预训练语料	Pre-training Corpus
+指令数据	Instruction Data
+偏好数据	Preference Data
+# 训练与优化：中文候选到英文术语
+交叉熵	Cross-entropy
+交叉熵损失	Cross-entropy Loss
+均方误差	Mean Squared Error
+平均绝对误差	Mean Absolute Error
+对比损失	Contrastive Loss
+三元组损失	Triplet Loss
+焦点损失	Focal Loss
+铰链损失	Hinge Loss
+负对数似然	Negative Log-likelihood
+对数似然	Log-likelihood
+最大后验估计	Maximum a Posteriori Estimation
+先验分布	Prior Distribution
+后验分布	Posterior Distribution
+证据下界	Evidence Lower Bound
+变分推断	Variational Inference
+变分下界	Variational Lower Bound
+相对熵	Relative Entropy
+困惑度	Perplexity
+小批量梯度下降	Mini-batch Gradient Descent
+批量梯度下降	Batch Gradient Descent
+动量法	Momentum
+自适应学习率	Adaptive Learning Rate
+学习率衰减	Learning Rate Decay
+学习率调度	Learning Rate Scheduling
+学习率预热	Learning Rate Warmup
+学习速率	Learning Rate
+余弦退火	Cosine Annealing
+余弦衰减	Cosine Decay
+权重衰减	Weight Decay
+梯度裁剪	Gradient Clipping
+梯度爆炸	Exploding Gradient
+梯度累积	Gradient Accumulation
+梯度检查点	Gradient Checkpointing
+梯度惩罚	Gradient Penalty
+梯度同步	Gradient Synchronization
+前向传播	Forward Propagation
+自动微分	Automatic Differentiation
+计算图	Computational Graph
+鞍点	Saddle Point
+局部最优	Local Optimum
+全局最优	Global Optimum
+局部最小值	Local Minimum
+损失曲面	Loss Surface
+损失曲线	Loss Curve
+损失尖峰	Loss Spike
+非凸优化	Non-convex Optimization
+二阶优化	Second-order Optimization
+共轭梯度	Conjugate Gradient
+优化器	Optimizer
+正则项	Regularization Term
+欠拟合	Underfitting
+过参数化	Overparameterization
+重参数化	Reparameterization
+重参数化技巧	Reparameterization Trick
+泛化能力	Generalization Ability
+泛化误差	Generalization Error
+训练误差	Training Error
+测试误差	Test Error
+偏差方差权衡	Bias-variance Tradeoff
+双重下降	Double Descent
+超参数调优	Hyperparameter Tuning
+超参数搜索	Hyperparameter Search
+网格搜索	Grid Search
+随机搜索	Random Search
+贝叶斯优化	Bayesian Optimization
+早停	Early Stopping
+早停法	Early Stopping
+模型检查点	Model Checkpoint
+权重共享	Weight Sharing
+参数共享	Parameter Sharing
+参数量	Parameter Count
+随机失活	Dropout
+暂退法	Dropout
+丢弃法	Dropout
+批归一化	Batch Normalization
+批量归一化	Batch Normalization
+批量规范化	Batch Normalization
+层归一化	Layer Normalization
+层规范化	Layer Normalization
+组归一化	Group Normalization
+实例归一化	Instance Normalization
+均方根归一化	Root Mean Square Layer Normalization
+权重初始化	Weight Initialization
+参数初始化	Parameter Initialization
+冻结参数	Frozen Parameters
+批大小	Batch Size
+批次大小	Batch Size
+训练轮数	Number of Epochs
+混合精度	Mixed Precision
+混合精度训练	Mixed Precision Training
+半精度	Half Precision
+浮点精度	Floating-point Precision
+训练稳定性	Training Stability
+灾难性遗忘	Catastrophic Forgetting
+模型坍缩	Model Collapse
+模式坍塌	Mode Collapse
+模式崩溃	Mode Collapse
+缩放定律	Scaling Laws
+规模定律	Scaling Laws
+扩展定律	Scaling Laws
+涌现能力	Emergent Abilities
+# 分布式训练与硬件：中文候选到英文术语
+模型并行	Model Parallelism
+张量并行	Tensor Parallelism
+流水线并行	Pipeline Parallelism
+序列并行	Sequence Parallelism
+专家并行	Expert Parallelism
+分布式训练	Distributed Training
+全分片数据并行	Fully Sharded Data Parallel
+零冗余优化器	Zero Redundancy Optimizer
+参数服务器	Parameter Server
+显存占用	GPU Memory Usage
+显存溢出	Out of GPU Memory
+激活值	Activations
+激活重计算	Activation Recomputation
+重计算	Recomputation
+算力集群	Compute Cluster
+训练集群	Training Cluster
+张量核心	Tensor Core
+张量处理器	Tensor Processing Unit
+神经网络处理器	Neural Processing Unit
+神经处理单元	Neural Processing Unit
+高带宽内存	High Bandwidth Memory
+每秒浮点运算次数	Floating-point Operations per Second (FLOPS)
+飞桨	PaddlePaddle
+昇思	MindSpore
+算子融合	Operator Fusion
+内核融合	Kernel Fusion
+逐元素	Element-wise
+逐元素乘法	Element-wise Multiplication
+哈达玛积	Hadamard Product
+隐藏维度	Hidden Dimension
+嵌入维度	Embedding Dimension
+雅可比矩阵	Jacobian Matrix
+黑塞矩阵	Hessian Matrix
+海森矩阵	Hessian Matrix
+# 网络结构：中文候选到英文术语
+前馈神经网络	Feedforward Neural Network
+前馈网络	Feedforward Network
+前馈层	Feedforward Layer
+递归神经网络	Recursive Neural Network（树结构递归网络；口语中也指循环神经网络 RNN）
+长短期记忆网络	Long Short-Term Memory Network
+长短期记忆	Long Short-Term Memory
+门控循环单元	Gated Recurrent Unit
+门控机制	Gating Mechanism
+门控线性单元	Gated Linear Unit
+图神经网络	Graph Neural Network
+图卷积网络	Graph Convolutional Network
+图注意力网络	Graph Attention Network
+残差网络	Residual Network
+残差连接	Residual Connection
+跳跃连接	Skip Connection
+密集连接	Dense Connection
+全连接层	Fully Connected Layer
+卷积层	Convolutional Layer
+池化层	Pooling Layer
+最大池化	Max Pooling
+平均池化	Average Pooling
+全局平均池化	Global Average Pooling
+输入层	Input Layer
+输出层	Output Layer
+隐含层	Hidden Layer
+嵌入层	Embedding Layer
+归一化层	Normalization Layer
+线性整流函数	ReLU Function (Rectified Linear Unit)
+修正线性单元	Rectified Linear Unit
+双曲正切	Hyperbolic Tangent
+归一化指数函数	Softmax Function
+逻辑斯谛函数	Logistic Function
+感受野	Receptive Field
+空洞卷积	Dilated Convolution
+膨胀卷积	Dilated Convolution
+转置卷积	Transposed Convolution
+反卷积	Deconvolution
+深度可分离卷积	Depthwise Separable Convolution
+逐点卷积	Pointwise Convolution
+分组卷积	Grouped Convolution
+上采样	Upsampling
+下采样	Downsampling
+特征金字塔	Feature Pyramid
+特征金字塔网络	Feature Pyramid Network
+骨干网络	Backbone Network
+检测头	Detection Head
+自编码器	Autoencoder
+变分自编码器	Variational Autoencoder
+去噪自编码器	Denoising Autoencoder
+掩码自编码器	Masked Autoencoder
+仅解码器	Decoder-only
+生成对抗网络	Generative Adversarial Network
+判别器	Discriminator
+对抗训练	Adversarial Training
+对抗攻击	Adversarial Attack
+玻尔兹曼机	Boltzmann Machine
+受限玻尔兹曼机	Restricted Boltzmann Machine
+深度信念网络	Deep Belief Network
+能量模型	Energy-based Model
+胶囊网络	Capsule Network
+脉冲神经网络	Spiking Neural Network
+神经架构搜索	Neural Architecture Search
+状态空间模型	State Space Model
+万能近似定理	Universal Approximation Theorem
+# 注意力与 Transformer：中文候选到英文术语
+注意力机制	Attention Mechanism
+自注意力	Self-attention
+自注意力机制	Self-attention Mechanism
+多头注意力	Multi-Head Attention
+多头自注意力	Multi-head Self-attention
+交叉注意力	Cross-attention
+因果注意力	Causal Attention
+掩码注意力	Masked Attention
+缩放点积注意力	Scaled Dot-product Attention
+点积注意力	Dot-product Attention
+线性注意力	Linear Attention
+稀疏注意力	Sparse Attention
+滑动窗口注意力	Sliding Window Attention
+分组查询注意力	Grouped-Query Attention
+多查询注意力	Multi-Query Attention
+多头潜在注意力	Multi-head Latent Attention
+分页注意力	PagedAttention
+注意力头	Attention Head
+注意力权重	Attention Weights
+注意力分数	Attention Score
+注意力矩阵	Attention Matrix
+注意力掩码	Attention Mask
+注意力汇聚	Attention Pooling
+注意力评分函数	Attention Scoring Function
+查询向量	Query Vector
+键向量	Key Vector
+值向量	Value Vector
+因果掩码	Causal Mask
+掩码语言模型	Masked Language Model
+因果语言模型	Causal Language Model
+自回归模型	Autoregressive Model
+自回归	Autoregressive
+非自回归	Non-autoregressive
+序列到序列	Sequence-to-sequence
+位置编码	Positional Encoding
+位置嵌入	Positional Embedding
+绝对位置编码	Absolute Positional Encoding
+相对位置编码	Relative Positional Encoding
+旋转位置编码	Rotary Position Embedding
+旋转位置嵌入	Rotary Position Embedding
+正弦位置编码	Sinusoidal Positional Encoding
+混合专家	Mixture of Experts
+混合专家模型	Mixture-of-Experts Model
+门控网络	Gating Network
+专家路由	Expert Routing
+负载均衡损失	Load Balancing Loss
+共享专家	Shared Expert
+稀疏激活	Sparse Activation
+稠密模型	Dense Model
+稀疏模型	Sparse Model
+# 表示、检索与 RAG：中文候选到英文术语
+词嵌入	Word Embedding
+句向量	Sentence Vector
+句嵌入	Sentence Embedding
+文本嵌入	Text Embedding
+嵌入向量	Embedding Vector
+嵌入模型	Embedding Model
+向量表示	Vector Representation
+潜在表示	Latent Representation
+稠密向量	Dense Vector
+稀疏向量	Sparse Vector
+点积相似度	Dot-product Similarity
+语义相似度	Semantic Similarity
+语义检索	Semantic Retrieval
+语义搜索	Semantic Search
+向量检索	Vector Retrieval
+向量索引	Vector Index
+近似最近邻	Approximate Nearest Neighbor
+近似最近邻搜索	Approximate Nearest Neighbor Search
+乘积量化	Product Quantization
+混合检索	Hybrid Retrieval
+稀疏检索	Sparse Retrieval
+稠密检索	Dense Retrieval
+跨模态检索	Cross-modal Retrieval
+重排序模型	Reranker
+文本分块	Text Chunking
+分块策略	Chunking Strategy
+检索增强生成	Retrieval-Augmented Generation
+检索增强	Retrieval Augmentation
+知识库问答	Knowledge Base Question Answering
+实体链接	Entity Linking
+实体识别	Entity Recognition
+命名实体识别	Named Entity Recognition
+信息抽取	Information Extraction
+事件抽取	Event Extraction
+# 自然语言处理：中文候选到英文术语
+神经机器翻译	Neural Machine Translation
+意图识别	Intent Recognition
+槽位填充	Slot Filling
+依存句法分析	Dependency Parsing
+语言建模	Language Modeling
+词袋模型	Bag-of-words Model
+词频逆文档频率	TF-IDF
+子词	Subword
+子词切分	Subword Segmentation
+字节对编码	Byte Pair Encoding
+词元化	Tokenization
+特殊词元	Special Token
+词元数	Token Count
+下一个词元预测	Next-token Prediction
+下一词预测	Next-word Prediction
+自动语音识别	Automatic Speech Recognition
+文本转语音	Text-to-Speech
+# 大语言模型：中文候选到英文术语
+预训练语言模型	Pre-trained Language Model
+继续预训练	Continued Pre-training
+增量预训练	Incremental Pre-training
+后训练	Post-training
+基座模型	Base Model
+视觉语言模型	Vision-Language Model
+多模态模型	Multimodal Model
+视觉编码器	Vision Encoder
+图像编码器	Image Encoder
+文本编码器	Text Encoder
+模态对齐	Modality Alignment
+图文对齐	Image-text Alignment
+对比语言图像预训练	Contrastive Language-Image Pre-Training
+掩码图像建模	Masked Image Modeling
+全参数微调	Full-parameter Fine-tuning
+全量微调	Full Fine-tuning
+参数高效微调	Parameter-Efficient Fine-Tuning
+指令微调	Instruction Tuning
+指令调优	Instruction Tuning
+监督微调	Supervised Fine-Tuning
+有监督微调	Supervised Fine-Tuning
+低秩适配	Low-Rank Adaptation
+低秩自适应	Low-Rank Adaptation
+前缀微调	Prefix Tuning
+提示微调	Prompt Tuning
+提示学习	Prompt Learning
+上下文窗口	Context Window
+上下文长度	Context Length
+长上下文	Long Context
+上下文工程	Context Engineering
+思维链	Chain of Thought
+思维链提示	Chain-of-Thought Prompting
+思维树	Tree of Thoughts
+自一致性	Self-consistency
+逐步推理	Step-by-step Reasoning
+多步推理	Multi-step Reasoning
+测试时计算	Test-time Compute
+测试时扩展	Test-time Scaling
+少样本提示	Few-shot Prompting
+零样本提示	Zero-shot Prompting
+提示模板	Prompt Template
+提示注入	Prompt Injection
+越狱攻击	Jailbreak Attack
+红队测试	Red Teaming
+指令跟随	Instruction Following
+指令遵循	Instruction Following
+模型幻觉	Model Hallucination
+幻觉率	Hallucination Rate
+价值对齐	Value Alignment
+偏好对齐	Preference Alignment
+对齐税	Alignment Tax
+人类偏好	Human Preference
+人类反馈强化学习	Reinforcement Learning from Human Feedback
+基于人类反馈的强化学习	Reinforcement Learning from Human Feedback
+直接偏好优化	Direct Preference Optimization
+偏好优化	Preference Optimization
+奖励模型	Reward Model
+奖励函数	Reward Function
+奖励信号	Reward Signal
+奖励黑客	Reward Hacking
+稀疏奖励	Sparse Reward
+过程奖励模型	Process Reward Model
+结果奖励模型	Outcome Reward Model
+可验证奖励	Verifiable Reward
+拒绝采样	Rejection Sampling
+组相对策略优化	Group Relative Policy Optimization
+自我博弈	Self-play
+自对弈	Self-play
+世界模型	World Model
+视觉语言动作模型	Vision-Language-Action Model
+多智能体系统	Multi-agent System
+工具调用	Tool Calling
+模型上下文协议	Model Context Protocol
+结构化输出	Structured Output
+约束解码	Constrained Decoding
+机制可解释性	Mechanistic Interpretability
+显著图	Saliency Map
+模型卡	Model Card
+模型权重	Model Weights
+开放权重	Open Weights
+参数规模	Parameter Scale
+# 强化学习：中文候选到英文术语
+策略梯度	Policy Gradient
+近端策略优化	Proximal Policy Optimization
+策略网络	Policy Network
+价值网络	Value Network
+价值函数	Value Function
+动作价值函数	Action-value Function
+状态价值函数	State-value Function
+优势函数	Advantage Function
+时序差分	Temporal Difference
+时序差分学习	Temporal Difference Learning
+蒙特卡洛方法	Monte Carlo Method
+蒙特卡洛树搜索	Monte Carlo Tree Search
+经验回放	Experience Replay
+探索与利用	Exploration and Exploitation
+贝尔曼方程	Bellman Equation
+折扣因子	Discount Factor
+同策略	On-policy
+异策略	Off-policy
+无模型强化学习	Model-free Reinforcement Learning
+领域自适应	Domain Adaptation
+# 生成模型：中文候选到英文术语
+扩散模型	Diffusion Model
+潜在扩散模型	Latent Diffusion Model
+去噪扩散概率模型	Denoising Diffusion Probabilistic Model
+噪声调度	Noise Schedule
+前向扩散	Forward Diffusion
+反向扩散	Reverse Diffusion
+分数匹配	Score Matching
+得分匹配	Score Matching
+流匹配	Flow Matching
+标准化流	Normalizing Flow
+归一化流	Normalizing Flow
+无分类器引导	Classifier-free Guidance
+分类器引导	Classifier Guidance
+潜空间	Latent Space
+潜在空间	Latent Space
+隐空间	Latent Space
+潜变量	Latent Variable
+隐变量	Latent Variable
+神经辐射场	Neural Radiance Field
+高斯泼溅	Gaussian Splatting
+三维高斯泼溅	3D Gaussian Splatting
+风格迁移	Style Transfer
+图像修复	Image Inpainting
+重要性采样	Importance Sampling
+吉布斯采样	Gibbs Sampling
+马尔可夫链蒙特卡洛	Markov Chain Monte Carlo
+期望最大化	Expectation-Maximization
+多项分布	Multinomial Distribution
+狄利克雷分布	Dirichlet Distribution
+边缘分布	Marginal Distribution
+联合分布	Joint Distribution
+# 计算机视觉：中文候选到英文术语
+语义分割	Semantic Segmentation
+实例分割	Instance Segmentation
+全景分割	Panoptic Segmentation
+关键点检测	Keypoint Detection
+姿态估计	Pose Estimation
+深度估计	Depth Estimation
+光流估计	Optical Flow Estimation
+视觉问答	Visual Question Answering
+边界框	Bounding Box
+锚框	Anchor Box
+非极大值抑制	Non-maximum Suppression
+交并比	Intersection over Union
+# 评估：中文候选到英文术语
+平均精度	Average Precision
+真正例	True Positive
+假正例	False Positive
+真负例	True Negative
+假负例	False Negative
+曲线下面积	Area Under the Curve
+宏平均	Macro Average
+微平均	Micro Average
+消融实验	Ablation Study
+消融研究	Ablation Study
+基线模型	Baseline Model
+# 压缩、推理与部署：中文候选到英文术语
+知识蒸馏	Knowledge Distillation
+模型蒸馏	Model Distillation
+教师模型	Teacher Model
+学生模型	Student Model
+自蒸馏	Self-distillation
+数据蒸馏	Data Distillation
+数据集蒸馏	Dataset Distillation
+模型剪枝	Model Pruning
+结构化剪枝	Structured Pruning
+非结构化剪枝	Unstructured Pruning
+权重剪枝	Weight Pruning
+模型量化	Model Quantization
+权重量化	Weight Quantization
+激活量化	Activation Quantization
+训练后量化	Post-Training Quantization
+量化感知训练	Quantization-Aware Training
+低比特量化	Low-bit Quantization
+量化误差	Quantization Error
+反量化	Dequantization
+稀疏化	Sparsification
+模型合并	Model Merging
+模型融合	Model Fusion
+推测解码	Speculative Decoding
+投机解码	Speculative Decoding
+投机采样	Speculative Sampling
+草稿模型	Draft Model
+键值缓存	KV Cache
+前缀缓存	Prefix Caching
+提示缓存	Prompt Caching
+连续批处理	Continuous Batching
+动态批处理	Dynamic Batching
+推理引擎	Inference Engine
+推理加速	Inference Acceleration
+推理延迟	Inference Latency
+推理服务	Inference Serving
+首字延迟	Time to First Token
+预填充	Prefill
+解码阶段	Decoding Phase
+贪心解码	Greedy Decoding
+贪婪解码	Greedy Decoding
+束搜索	Beam Search
+集束搜索	Beam Search
+温度采样	Temperature Sampling
+核采样	Nucleus Sampling
+重复惩罚	Repetition Penalty
+端侧部署	On-device Deployment
+端侧推理	On-device Inference
+边缘推理	Edge Inference
+模型推理	Model Inference
+# 框架、库与工具：英文候选到中文释义
+PyTorch	PyTorch 深度学习框架
+TensorFlow	TensorFlow 深度学习框架
+Keras	Keras 深度学习 API
+JAX	JAX 数值计算与自动微分库
+Flax	Flax（JAX 神经网络库）
+NumPy	NumPy 数值计算库
+SciPy	SciPy 科学计算库
+scikit-learn	scikit-learn 机器学习库
+PaddlePaddle	飞桨
+MindSpore	昇思
+Hugging Face	Hugging Face 模型社区与工具
+Transformers	Hugging Face Transformers 库
+Diffusers	Hugging Face Diffusers 库
+PEFT	参数高效微调；Hugging Face PEFT 库
+TRL	Hugging Face TRL 库（Transformer 强化学习）
+safetensors	safetensors 张量存储格式
+DeepSpeed	DeepSpeed 分布式训练库
+Megatron-LM	Megatron-LM 大规模训练框架
+vLLM	vLLM 推理引擎
+SGLang	SGLang 推理引擎
+llama.cpp	llama.cpp 本地推理引擎
+Ollama	Ollama 本地模型运行工具
+TensorRT	TensorRT 推理优化库
+TensorRT-LLM	TensorRT-LLM 大语言模型推理库
+ONNX	开放神经网络交换格式
+ONNX Runtime	ONNX Runtime 推理引擎
+OpenVINO	OpenVINO 推理工具包
+Core ML	Core ML（Apple 机器学习框架）
+MLX	MLX（Apple 芯片机器学习框架）
+Triton	Triton（GPU 编程语言与推理服务器）
+CUDA	CUDA 并行计算平台
+cuDNN	cuDNN 深度神经网络库
+NCCL	NCCL 集合通信库
+ROCm	ROCm（AMD GPU 计算平台）
+XLA	XLA 线性代数编译器
+LangChain	LangChain 大模型应用框架
+LangGraph	LangGraph 智能体编排框架
+LlamaIndex	LlamaIndex 检索增强框架
+Faiss	Faiss 向量检索库
+Milvus	Milvus 向量数据库
+pgvector	pgvector（PostgreSQL 向量扩展）
+Qdrant	Qdrant 向量数据库
+Weaviate	Weaviate 向量数据库
+MLflow	MLflow 实验跟踪平台
+TensorBoard	TensorBoard 训练可视化工具
+Jupyter	Jupyter 交互式笔记本
+XGBoost	XGBoost 梯度提升库
+LightGBM	LightGBM 梯度提升库
+CatBoost	CatBoost 梯度提升库
+OpenCV	OpenCV 计算机视觉库
+GGUF	GGUF 模型文件格式
+tiktoken	tiktoken 分词库
+SentencePiece	SentencePiece 子词切分工具
+WordPiece	WordPiece 子词切分算法
+Kaggle	Kaggle 数据科学竞赛平台
+ImageNet	ImageNet 图像数据集
+MNIST	MNIST 手写数字数据集
+MMLU	MMLU 多任务语言理解基准
+HumanEval	HumanEval 代码生成基准
+SWE-bench	SWE-bench 软件工程基准
+# 模型与架构：英文候选到中文释义
+Transformer	Transformer 架构
+BERT	BERT 双向编码器模型
+RoBERTa	RoBERTa 预训练模型
+Llama	Llama 开放权重模型系列
+Qwen	通义千问模型系列
+DeepSeek	DeepSeek 模型系列
+Mistral	Mistral 模型系列
+Mixtral	Mixtral 混合专家模型
+Gemma	Gemma 开放权重模型系列
+ChatGLM	ChatGLM 对话模型
+ResNet	残差网络
+U-Net	U-Net 编码器解码器网络
+YOLO	YOLO 目标检测模型
+DETR	DETR 检测 Transformer
+ViT	视觉 Transformer
+CLIP	对比语言图像预训练
+DiT	扩散 Transformer
+Mamba	Mamba 状态空间模型
+NeRF	神经辐射场
+RNN	循环神经网络
+LSTM	长短期记忆网络
+GRU	门控循环单元
+GAN	生成对抗网络
+VAE	变分自编码器
+MLP	多层感知机
+GNN	图神经网络
+GCN	图卷积网络
+SSM	状态空间模型
+MoE	混合专家
+LLM	大语言模型
+VLM	视觉语言模型
+VLA	视觉语言动作模型
+MLLM	多模态大语言模型
+DDPM	去噪扩散概率模型
+DDIM	去噪扩散隐式模型
+# 训练与优化：英文候选到中文释义
+LoRA	低秩适配
+QLoRA	量化低秩适配
+DoRA	权重分解低秩适配
+SFT	监督微调
+RLHF	人类反馈强化学习
+RLAIF	AI 反馈强化学习
+DPO	直接偏好优化
+PPO	近端策略优化
+GRPO	组相对策略优化
+SGD	随机梯度下降
+AdamW	AdamW 优化器
+RMSprop	RMSprop 优化器
+Adagrad	Adagrad 优化器
+ReLU	修正线性单元
+GELU	高斯误差线性单元
+SiLU	SiLU 激活函数
+SwiGLU	SwiGLU 门控激活函数
+softmax	归一化指数函数
+dropout	随机失活
+LayerNorm	层归一化
+RMSNorm	均方根归一化
+BatchNorm	批归一化
+logits	softmax 之前的未归一化分数
+FSDP	全分片数据并行
+DDP	分布式数据并行
+QAT	量化感知训练
+PTQ	训练后量化
+GPTQ	GPTQ 训练后量化方法
+AWQ	激活感知权重量化
+MSE	均方误差
+ELBO	证据下界
+MDP	马尔可夫决策过程
+DQN	深度 Q 网络
+MCTS	蒙特卡洛树搜索
+MCMC	马尔可夫链蒙特卡洛
+# 注意力、检索与推理：英文候选到中文释义
+MHA	多头注意力
+MQA	多查询注意力
+GQA	分组查询注意力
+MLA	多头潜在注意力
+RoPE	旋转位置编码
+ALiBi	带线性偏置的注意力
+KV cache	键值缓存
+RAG	检索增强生成
+CoT	思维链
+BPE	字节对编码
+TF-IDF	词频逆文档频率
+HNSW	分层可导航小世界图索引
+kNN	k 近邻
+SVM	支持向量机
+PCA	主成分分析
+t-SNE	t 分布随机近邻嵌入
+UMAP	均匀流形近似与投影
+TTFT	首字延迟
+TPOT	每个输出词元的时间
+MCP	模型上下文协议
+# 评估与任务：英文候选到中文释义
+NLP	自然语言处理
+NLU	自然语言理解
+NLG	自然语言生成
+TTS	文本转语音
+AUC	曲线下面积
+ROC	受试者工作特征曲线
+IoU	交并比
+NMS	非极大值抑制
+BLEU	BLEU 机器翻译评测指标
+ROUGE	ROUGE 文本摘要评测指标
+# 硬件与算力：英文候选到中文释义
+TPU	张量处理器
+NPU	神经网络处理器
+HBM	高带宽内存
+NVLink	NVLink 高速互连
+InfiniBand	InfiniBand 高速网络
+FLOPS	每秒浮点运算次数（运算速度，区别于运算总量 FLOPs）
+FLOPs	浮点运算次数（运算总量，区别于每秒运算次数 FLOPS）
+MFU	模型浮点运算利用率

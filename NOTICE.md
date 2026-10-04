@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | `pinyin/BaseDictIceV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，对照提交 `9e66b0729083b37d217312294f6d516c8d7234be`（见下） | GPL-3.0 |
 | `pinyin/RimeIceSupplementV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，提交 `3aea6d3694fb3d94ec663641f021f788822897ad` 的 `cn_dicts/base.dict.yaml`、`ext.dict.yaml`、`8105.dict.yaml`、`others.dict.yaml`，排除 `BaseDictIceV1.txt` 已有的同词同音行 | GPL-3.0 |
+| `pinyin/PlacesSupplementV1.txt` | [modood/Administrative-divisions-of-China](https://github.com/modood/Administrative-divisions-of-China)，提交 `c49d495b40ac73eb1a66f6eeae5f8fd10696f035` 的 `dist/provinces.csv`、`dist/cities.csv`、`dist/areas.csv`（原始数据来自国家统计局的统计用区划代码）。由 msime `crates/dict-builder` 的 `msime-dict-build places-supplement` 生成省、地、县三级区划的全称与去后缀简称，读音须由 `BaseDictIceV1.txt`、`RimeIceSupplementV1.txt` 证实，只收这两份文件没有、或权重不超过 10 且低于分层下限的词，这两份文件已有排名（权重大于 10）的词不抬升；规则与对照文件的 SHA-256 写在文件头 | WTFPL（区划名称）；读音的证实与权重下限依据 rime-ice 的 `BaseDictIceV1.txt`、`RimeIceSupplementV1.txt`（GPL-3.0） |
 | `unlicensed/BaseDictAllV1Part1.txt`、`unlicensed/BaseDictAllV1Part2.txt` | [wuhgit/CustomPinyinDictionary](https://github.com/wuhgit/CustomPinyinDictionary)（`2023-09-28(No.82)` 版）与 rime-ice 合并去重 | GPL-3.0 与**未声明**的混合 |
 | `pinyin/SingleCharsAllV1.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，读音以 [mozillazg/pinyin-data](https://github.com/mozillazg/pinyin-data) 校正 | GPL-3.0 + MIT |
 | `wubi/Wubi86.txt` | [KyleBing/rime-wubi86-jidian](https://github.com/KyleBing/rime-wubi86-jidian) | Apache-2.0 |
@@ -70,7 +71,7 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 
 ## 下游影响
 
-发布构建的拼音词库 `msime-pinyin.db` 由 `pinyin/SingleCharsAllV1.txt`、`pinyin/BaseDictIceV1.txt`、`pinyin/RimeIceSupplementV1.txt` 与 `custom/words.txt` 构建，另含 msime 仓库自带的 `resources/dictionary-sources/mix/quick_phrases.txt` 快捷短语；`unlicensed/BaseDictAllV1Part1.txt`、`Part2.txt`（含 CustomPinyinDictionary 的内容）不进入发布构建，见下方「发布构建不包含这些条目」。只有用 `--include-unlicensed` 做的本地完整构建才会读入 Part1/2。中文数据主体来自 rime-ice（GPL-3.0），使用该数据库的前端本身以 GPL-3.0 分发，与 rime-ice 兼容，但**必须保留对 rime-ice 的署名**。
+发布构建的拼音词库 `msime-pinyin.db` 由 `pinyin/SingleCharsAllV1.txt`、`pinyin/BaseDictIceV1.txt`、`pinyin/RimeIceSupplementV1.txt`、`pinyin/PlacesSupplementV1.txt` 与 `custom/words.txt` 构建，另含 msime 仓库自带的 `resources/dictionary-sources/mix/quick_phrases.txt` 快捷短语；`unlicensed/BaseDictAllV1Part1.txt`、`Part2.txt`（含 CustomPinyinDictionary 的内容）不进入发布构建，见下方「发布构建不包含这些条目」。只有用 `--include-unlicensed` 做的本地完整构建才会读入 Part1/2。中文数据主体来自 rime-ice（GPL-3.0），使用该数据库的前端本身以 GPL-3.0 分发，与 rime-ice 兼容，但**必须保留对 rime-ice 的署名**。
 
 词库由 [msime](https://github.com/metasequoiaime/msime) 的 Rust 构建器 `crates/dict-builder`（`msime-dict-build`）构建并以本仓库的 `dict-v*` release 发布（数据库按 `msime-<内容>` 命名），随产物送到用户手上的署名在 msime 的 `resources/licenses/` 与 [MSIME-Windows](https://github.com/metasequoiaime/MSIME-Windows) 的 `THIRD_PARTY_NOTICES.txt` 里。改动本文件的来源表时，这些文件要一起改。
 

@@ -12,6 +12,7 @@
 pinyin/                           拼音词库 -> msime-pinyin.db
   BaseDictIceV1.txt                 雾凇拼音（rime-ice）的全拼词条，经本项目修正
   RimeIceSupplementV1.txt           rime-ice 新提交中相对 BaseDictIceV1.txt 新增的词条（本项目生成的补充表）
+  PlacesSupplementV1.txt            行政区划全称与简称中缺失或权重偏低的词条（本项目生成的补充表）
   SingleCharsAllV1.txt              单字读音与字频（笔画词库的权重也取自它）
 wubi/                             五笔词库 -> msime-wubi.db
   Wubi86.txt                        86 版五笔
@@ -72,6 +73,7 @@ CHANGELOG.md                      已冻结，只作历史记录
 | `pinyin/SingleCharsAllV1.txt` | 主命令 Quanpin；languages 的笔画词库用它的字频 | `msime-pinyin.db`；`msime-stroke.db` 的权重 | 进入 |
 | `pinyin/BaseDictIceV1.txt` | 主命令 Quanpin | `msime-pinyin.db` | 进入 |
 | `pinyin/RimeIceSupplementV1.txt` | 主命令 Quanpin | `msime-pinyin.db` | 进入 |
+| `pinyin/PlacesSupplementV1.txt` | 主命令 PlacesSupplement（在 CustomWords 之前）：没有的词插入，已有且权重更低的调高到这里的权重，已有且权重更高的不变 | `msime-pinyin.db` | 进入 |
 | `custom/words.txt` | 主命令 CustomWords：没有的词插入，已有且权重更低的调高到这里的权重，已有且权重更高的不变 | `msime-pinyin.db` | 进入 |
 | `unlicensed/BaseDictAllV1Part1.txt`、`unlicensed/BaseDictAllV1Part2.txt` | 只在 `--include-unlicensed` 的完整构建中读取 | — | 被 `licensing.rs` 排除：合并自 CustomPinyinDictionary，该快照没有声明许可；发布构建改用 `BaseDictIceV1.txt` |
 | `unlicensed/SingleCharWhitelist.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：来源没有记录 |
@@ -114,7 +116,7 @@ CHANGELOG.md                      已冻结，只作历史记录
 
 **权重**：新词条的权重必须落在所在文件现有条目的范围内，CI 按文件当前内容计算这个范围。`custom/words.txt` 目前是 1 到 10000，大多数历史条目写的是 `1`。想让一个词在整句里更容易胜出，就参照基础词库里同量级的真实词取值（例如 `扛不住` 在 `pinyin/BaseDictIceV1.txt` 里是 2430），不要为了靠前填一个极大值。`custom/english.txt` 目前只有 `1`：有 Google 词频的英文词按词频排序，没有词频的才用这里的权重，而且排在所有有词频的词之后。这个范围普通 Pull Request 无法放宽，确实需要时先开 Issue。
 
-**重复**：已经在发布词库里的词（同词同拼音）不应再写进 `custom/words.txt`，check-words 会拒绝它在比对库里找到的重复。但目前它比对的是已归档的 msime-engine `dict-v2.0.1` 的 `msime.db` 和 `english.db`，不是当前的 `msime-pinyin.db` 和 `msime-english.db`，所以之后加入的源数据（例如 `pinyin/RimeIceSupplementV1.txt`）里的词它拦不住。`custom/words.txt` 现有的 9 行（刘汝佳、断连、堪堪、判空、属于是、云风、扛把子、推流、合入）与发布输入里的词重复，其中扛把子（100 → 10000）、推流（689 → 3855）、合入（100 → 3855）三行抬高了已发布词的权重，另外 6 行的权重不高于已有值（5 行更低，断连相等），不起作用。按只追加规则这些行保留不删。
+**重复**：已经在发布词库里的词（同词同拼音）不应再写进 `custom/words.txt`，check-words 会拒绝它在比对库里找到的重复。比对库是本仓最新一次 `dict-v` release（当前是 `dict-v2.0.5`）的 `msime-pinyin.db` 和 `msime-english.db`，在 `check-words.yml` 里按 URL 和 SHA-256 固定，所以已经发布的源数据（包括 `pinyin/RimeIceSupplementV1.txt`、`english/RimeIceEnglishSupplementV1.txt`）里的词都会被拦下；每发布一个新的 `dict-v` 版本，都要把这两个 URL 和哈希改到新版本，否则新版本才加入的词拦不住。发布流程不会自动改它们；check-words 每次运行会比对固定的版本和最新的 `dict-v` release，落后时在运行里给出 warning，但不会因此失败。`custom/words.txt` 现有的 9 行（刘汝佳、断连、堪堪、判空、属于是、云风、扛把子、推流、合入）与发布输入里的词重复，其中扛把子（100 → 10000）、推流（689 → 3855）、合入（100 → 3855）三行抬高了已发布词的权重，另外 6 行的权重不高于已有值（5 行更低，断连相等），不起作用。按只追加规则这些行保留不删。
 
 ### CI
 
@@ -122,7 +124,7 @@ CHANGELOG.md                      已冻结，只作历史记录
 
 | workflow | 触发 | 检查什么 |
 | --- | --- | --- |
-| `check-words.yml` | Pull Request 改动 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` | 用 msime 固定提交（`MSIME_COMMIT`）的 `msime-dict-build check-words`，即构建所用的解析器：只能追加；每行能按构建的规则解析（词语的全拼须是 `'` 分隔的小写字母并能映射到全拼表）；词语和英文的权重在文件现有范围内；不与本次改动、所在文件或比对库重复。翻译可以给已有源词换一个译文，完全相同的一行算重复。结果写成 Pull Request 评论 |
+| `check-words.yml` | Pull Request 改动 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` | 用 msime 固定提交（`MSIME_COMMIT`）的 `msime-dict-build check-words`，即构建所用的解析器：只能追加；每行能按构建的规则解析（词语的全拼须是 `'` 分隔的小写字母并能映射到全拼表）；词语和英文的权重在文件现有范围内；不与本次改动、所在文件或比对库重复（比对库是 `check-words.yml` 固定的最新 `dict-v` release 的 `msime-pinyin.db` 和 `msime-english.db`，随每次 `dict-v` 发布更新，落后于最新 `dict-v` 时给出 warning）。翻译可以给已有源词换一个译文，完全相同的一行算重复。结果写成 Pull Request 评论 |
 | `validate-packs.yml` | Pull Request 改动 `packs/`、`custom/translations.txt`、`custom/words.txt`、它对照的 `pinyin/` 文件、脚本或该 workflow | 运行 `python3 scripts/validate_packs.py`，见[专业词库](#专业词库) |
 | `quality.yml` | 推送到 `main`、Pull Request、merge queue、手动 | actionlint 校验 workflow 与其中的 shell；Pull Request 上另做依赖审查（high 及以上失败） |
 | `codeql.yml` | 每天定时 | CodeQL 分析 GitHub Actions workflow |
@@ -199,6 +201,7 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | --- | --- | --- | --- | --- | --- |
 | `pinyin/BaseDictIceV1.txt` | UTF-8 | CRLF | 1 行 `#` 注释 | `词<TAB>全拼<TAB>权重`，全拼音节用 `'` 分隔 | 有 |
 | `pinyin/RimeIceSupplementV1.txt` | UTF-8 | LF | 1 行 `#` 注释（上游提交与生成方式） | `词<TAB>全拼<TAB>权重`，也含单字行 | 有 |
+| `pinyin/PlacesSupplementV1.txt` | UTF-8 | LF | 5 行 `#` 注释（生成器、上游提交、收录与读音规则、对照集合、字音表与权重下限） | `词<TAB>全拼<TAB>权重`，按词和全拼排序 | 有 |
 | `unlicensed/BaseDictAllV1Part1.txt` | UTF-8 | LF | 无 | `词<TAB>全拼<TAB>权重` | 有 |
 | `unlicensed/BaseDictAllV1Part2.txt` | UTF-8 | CRLF | 无 | `词<TAB>全拼<TAB>权重`，权重都是 1；与 Part1 是因 GitHub 单文件大小限制拆开的同一份词库 | 有 |
 | `pinyin/SingleCharsAllV1.txt` | UTF-8 | CRLF | 1 行 `#` 注释 | `字<TAB>全拼<TAB>权重` | 有 |

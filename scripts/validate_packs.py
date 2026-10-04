@@ -19,6 +19,7 @@ UNLICENSED_ROOT = REPOSITORY_ROOT / "unlicensed"
 SHIPPED_PINYIN_SOURCES = (
     PINYIN_ROOT / "BaseDictIceV1.txt",
     PINYIN_ROOT / "RimeIceSupplementV1.txt",
+    PINYIN_ROOT / "PlacesSupplementV1.txt",
     REPOSITORY_ROOT / "custom" / "words.txt",
 )
 # Excluded from releases for licensing (msime-dict-build licensing.rs); an overlap with them is reported as a note only.

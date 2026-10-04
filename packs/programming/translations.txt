@@ -1,0 +1,939 @@
+# 版本控制与协作：中文候选到英文术语
+合并请求	merge request
+拉取请求	pull request
+工作树	working tree
+裸仓库	bare repository
+上游仓库	upstream repository
+上游分支	upstream branch
+远程跟踪分支	remote-tracking branch
+本地分支	local branch
+特性分支	feature branch
+功能分支	feature branch
+主题分支	topic branch
+发布分支	release branch
+热修复分支	hotfix branch
+开发分支	development branch
+默认分支	default branch
+受保护分支	protected branch
+分支保护	branch protection
+分支策略	branching strategy
+主干开发	trunk-based development
+快进合并	fast-forward merge
+三方合并	three-way merge
+压缩合并	squash merge
+合并冲突	merge conflict
+合并提交	merge commit
+提交信息	commit message
+提交历史	commit history
+提交哈希	commit hash
+签名提交	signed commit
+空提交	empty commit
+分离头指针	detached HEAD
+引用日志	reflog
+子树合并	subtree merge
+稀疏检出	sparse checkout
+部分克隆	partial clone
+钩子脚本	hook script
+预提交钩子	pre-commit hook
+评审意见	review comment
+行内评论	inline comment
+代码所有者	code owner
+版本标签	version tag
+附注标签	annotated tag
+轻量标签	lightweight tag
+语义化版本	semantic versioning
+约定式提交	Conventional Commits
+变更日志	changelog
+更新日志	changelog
+复刻仓库	fork
+议题追踪	issue tracking
+问题追踪	issue tracking
+大文件存储	Large File Storage
+差异比较	diff
+补丁文件	patch file
+工作目录	working directory
+
+# 构建与工具链：中文候选到英文术语
+链接器	linker
+动态链接器	dynamic linker
+链接时优化	link-time optimization
+即时编译	just-in-time compilation
+提前编译	ahead-of-time compilation
+编译单元	compilation unit
+编译期	compile time
+编译时	compile time
+编译警告	compiler warning
+编译缓存	compilation cache
+构建脚本	build script
+构建产物	build artifact
+构建缓存	build cache
+构建流水线	build pipeline
+增量构建	incremental build
+可复现构建	reproducible build
+可重现构建	reproducible build
+目标平台	target platform
+目标三元组	target triple
+交叉编译工具链	cross-compilation toolchain
+汇编器	assembler
+反汇编器	disassembler
+中间表示	intermediate representation
+抽象语法树	abstract syntax tree
+语法分析器	parser
+包管理工具	package manager
+依赖解析	dependency resolution
+依赖树	dependency tree
+依赖地狱	dependency hell
+传递依赖	transitive dependency
+间接依赖	indirect dependency
+开发依赖	dev dependency
+对等依赖	peer dependency
+锁文件	lockfile
+依赖锁定	dependency locking
+版本约束	version constraint
+制品库	artifact repository
+模块打包器	module bundler
+摇树优化	tree shaking
+代码分割	code splitting
+代码压缩	minification
+源码映射	source map
+热模块替换	hot module replacement
+热重载	hot reload
+转译器	transpiler
+格式化工具	formatter
+代码检查工具	linter
+语言服务器	language server
+语言服务器协议	Language Server Protocol
+栈回溯	backtrace
+堆栈跟踪	stack trace
+核心转储	core dump
+性能剖析	profiling
+性能分析器	profiler
+火焰图	flame graph
+内存泄露	memory leak
+
+# 编程语言与运行时：中文候选到英文术语
+借用检查	borrow checking
+借用检查器	borrow checker
+所有权系统	ownership system
+复制语义	copy semantics
+值语义	value semantics
+引用语义	reference semantics
+生命周期标注	lifetime annotation
+生命周期省略	lifetime elision
+悬垂引用	dangling reference
+悬垂指针	dangling pointer
+空指针解引用	null pointer dereference
+原子引用计数	atomic reference counting
+内部可变性	interior mutability
+穷尽匹配	exhaustive matching
+解构赋值	destructuring assignment
+特征对象	trait object
+特征约束	trait bound
+关联类型	associated type
+关联函数	associated function
+泛型参数	generic parameter
+泛型约束	generic constraint
+类型推导	type inference
+类型别名	type alias
+类型注解	type annotation
+类型标注	type annotation
+类型检查器	type checker
+类型收窄	type narrowing
+类型守卫	type guard
+联合类型	union type
+交叉类型	intersection type
+字面量类型	literal type
+映射类型	mapped type
+条件类型	conditional type
+工具类型	utility type
+可空类型	nullable type
+原始类型	primitive type
+元组类型	tuple type
+元组结构体	tuple struct
+单元结构体	unit struct
+枚举变体	enum variant
+声明宏	declarative macro
+过程宏	procedural macro
+派生宏	derive macro
+属性宏	attribute macro
+宏展开	macro expansion
+卫生宏	hygienic macro
+模板特化	template specialization
+单态化	monomorphization
+零成本抽象	zero-cost abstraction
+闭包捕获	closure capture
+箭头函数	arrow function
+纯函数	pure function
+回调地狱	callback hell
+柯里化	currying
+尾调用	tail call
+尾调用优化	tail call optimization
+及早求值	eager evaluation
+短路求值	short-circuit evaluation
+不可变数据	immutable data
+命令式编程	imperative programming
+运行时多态	runtime polymorphism
+静态分派	static dispatch
+动态分派	dynamic dispatch
+接口隔离	interface segregation
+移动构造函数	move constructor
+词法作用域	lexical scope
+暂时性死区	temporal dead zone
+常量折叠	constant folding
+死代码消除	dead code elimination
+函数内联	function inlining
+逃逸分析	escape analysis
+组合优于继承	composition over inheritance
+迭代器适配器	iterator adapter
+生成器函数	generator function
+异步函数	async function
+异步迭代器	async iterator
+异步运行时	async runtime
+宏任务	macrotask
+微任务	microtask
+错误传播	error propagation
+整数溢出	integer overflow
+分代回收	generational collection
+标记清除	mark and sweep
+内存分配器	memory allocator
+内存安全	memory safety
+栈帧	stack frame
+交互式解释器	REPL
+外部函数接口	foreign function interface
+应用二进制接口	application binary interface
+不安全代码	unsafe code
+注解处理器	annotation processor
+字符串插值	string interpolation
+模板字符串	template literal
+空值合并	nullish coalescing
+展开运算符	spread operator
+按位或	bitwise OR
+代理对	surrogate pair
+结构化类型	structural typing
+名义类型	nominal typing
+高阶类型	higher-kinded type
+依赖类型	dependent type
+函子	functor
+
+# 前端：中文候选到英文术语
+状态管理	state management
+全局状态	global state
+局部状态	local state
+状态提升	lifting state up
+派生状态	derived state
+受控组件	controlled component
+非受控组件	uncontrolled component
+函数组件	function component
+类组件	class component
+高阶组件	higher-order component
+纯组件	pure component
+子组件	child component
+父组件	parent component
+组件库	component library
+组件树	component tree
+组件通信	component communication
+单文件组件	single-file component
+异步组件	async component
+服务端组件	server component
+客户端组件	client component
+自定义钩子	custom hook
+渲染函数	render function
+渲染属性	render props
+上下文传递	context passing
+依赖数组	dependency array
+副作用清理	effect cleanup
+计算属性	computed property
+响应式系统	reactivity system
+响应式数据	reactive data
+单向数据流	one-way data flow
+事件处理函数	event handler
+合成事件	synthetic event
+虚拟列表	virtual list
+虚拟滚动	virtual scrolling
+图片懒加载	image lazy loading
+预渲染	prerendering
+预获取	prefetch
+虚拟节点	virtual node
+影子树	shadow tree
+自定义元素	custom element
+差异算法	diffing algorithm
+协调算法	reconciliation
+服务端渲染	server-side rendering
+客户端渲染	client-side rendering
+静态站点生成	static site generation
+流式渲染	streaming rendering
+同构渲染	isomorphic rendering
+部分水合	partial hydration
+渐进式水合	progressive hydration
+单页应用	single-page application
+多页应用	multi-page application
+渐进式网络应用	progressive web app
+微前端	micro frontends
+前端路由	client-side routing
+路由守卫	route guard
+嵌套路由	nested routes
+路由参数	route parameter
+首屏渲染	first screen rendering
+首屏加载	first screen loading
+白屏时间	blank screen time
+首次内容绘制	First Contentful Paint
+最大内容绘制	Largest Contentful Paint
+累积布局偏移	Cumulative Layout Shift
+关键渲染路径	critical rendering path
+合成层	compositing layer
+防抖函数	debounce function
+节流函数	throttle function
+伪类	pseudo-class
+外边距折叠	margin collapsing
+弹性布局	flexbox
+固定定位	fixed positioning
+粘性定位	sticky positioning
+层叠上下文	stacking context
+块格式化上下文	block formatting context
+容器查询	container query
+样式隔离	style isolation
+设计令牌	design token
+无障碍访问	accessibility
+可访问性	accessibility
+屏幕阅读器	screen reader
+浏览器引擎	browser engine
+渲染进程	renderer process
+会话存储	session storage
+跨源资源共享	cross-origin resource sharing
+预检请求	preflight request
+内容安全策略	Content Security Policy
+请求拦截器	request interceptor
+响应拦截器	response interceptor
+骨架屏	skeleton screen
+加载状态	loading state
+空状态	empty state
+抽屉组件	drawer
+分页器	paginator
+气泡卡片	popover
+拖拽排序	drag-and-drop sorting
+视口	viewport
+设备像素比	device pixel ratio
+跨端框架	cross-platform framework
+网页应用	web app
+前端工程化	frontend engineering
+开发服务器	dev server
+模块联邦	module federation
+模块解析	module resolution
+动态导入	dynamic import
+
+# 后端与基础设施：中文候选到英文术语
+消息代理	message broker
+延迟队列	delay queue
+发布订阅模式	publish-subscribe pattern
+消费者组	consumer group
+消息积压	message backlog
+消息幂等	message idempotency
+消息确认	message acknowledgement
+至少一次	at least once
+至多一次	at most once
+恰好一次	exactly once
+精确一次	exactly once
+服务网格	service mesh
+边车代理	sidecar proxy
+边车模式	sidecar pattern
+服务注册	service registration
+注册中心	service registry
+配置中心	configuration center
+服务熔断	circuit breaking
+令牌桶	token bucket
+漏桶	leaky bucket
+固定窗口	fixed window
+舱壁隔离	bulkhead
+舱壁模式	bulkhead pattern
+重试机制	retry mechanism
+指数退避	exponential backoff
+幂等键	idempotency key
+接口幂等	API idempotency
+金丝雀发布	canary release
+蓝绿部署	blue-green deployment
+滚动更新	rolling update
+滚动发布	rolling release
+滚动部署	rolling deployment
+功能开关	feature flag
+特性开关	feature toggle
+版本回滚	version rollback
+零停机部署	zero-downtime deployment
+部署流水线	deployment pipeline
+自托管运行器	self-hosted runner
+基础设施即代码	infrastructure as code
+不可变基础设施	immutable infrastructure
+配置即代码	configuration as code
+容器编排	container orchestration
+容器镜像	container image
+镜像仓库	image registry
+镜像分层	image layers
+多阶段构建	multi-stage build
+控制平面	control plane
+数据平面	data plane
+工作节点	worker node
+命名空间隔离	namespace isolation
+水平自动扩缩	horizontal autoscaling
+自动扩缩容	autoscaling
+自动扩缩	autoscaling
+水平扩展	horizontal scaling
+垂直扩展	vertical scaling
+存活探针	liveness probe
+就绪探针	readiness probe
+启动探针	startup probe
+持久卷	persistent volume
+持久卷申领	persistent volume claim
+存储类	storage class
+反亲和性	anti-affinity
+资源配额	resource quota
+边缘计算	edge computing
+边缘节点	edge node
+内容分发网络	content delivery network
+源站	origin server
+负载均衡器	load balancer
+四层负载均衡	layer 4 load balancing
+七层负载均衡	layer 7 load balancing
+会话保持	session affinity
+粘性会话	sticky session
+网关路由	gateway routing
+微服务架构	microservice architecture
+单体应用	monolith
+单体架构	monolithic architecture
+分层架构	layered architecture
+六边形架构	hexagonal architecture
+整洁架构	clean architecture
+事件驱动架构	event-driven architecture
+事件溯源	event sourcing
+命令查询职责分离	CQRS
+限界上下文	bounded context
+聚合根	aggregate root
+领域事件	domain event
+防腐层	anti-corruption layer
+仓储模式	repository pattern
+中间件链	middleware chain
+请求处理器	request handler
+路由处理函数	route handler
+接口版本	API version
+接口鉴权	API authentication
+接口限流	API rate limiting
+表述性状态转移	Representational State Transfer
+短轮询	short polling
+服务器发送事件	server-sent events
+回调地址	callback URL
+任务调度器	job scheduler
+分布式任务	distributed task
+分布式追踪	distributed tracing
+分布式共识	distributed consensus
+共识算法	consensus algorithm
+领导者选举	leader election
+最终一致性	eventual consistency
+因果一致性	causal consistency
+线性一致性	linearizability
+分区容错	partition tolerance
+分区容错性	partition tolerance
+两阶段提交	two-phase commit
+三阶段提交	three-phase commit
+本地消息表	local message table
+事务消息	transactional message
+发件箱模式	outbox pattern
+缓存穿透	cache penetration
+缓存击穿	cache breakdown
+缓存雪崩	cache avalanche
+缓存预热	cache warming
+缓存失效	cache invalidation
+缓存命中率	cache hit ratio
+缓存淘汰	cache eviction
+缓存一致性	cache consistency
+旁路缓存	cache-aside
+写穿透	write-through
+写回缓存	write-back cache
+最近最少使用	least recently used
+可观测性	observability
+日志聚合	log aggregation
+结构化日志	structured logging
+日志级别	log level
+告警规则	alerting rule
+指标采集	metrics collection
+服务等级目标	service level objective
+服务等级协议	service level agreement
+错误预算	error budget
+平均恢复时间	mean time to recovery
+混沌工程	chaos engineering
+同城双活	intra-city active-active
+主备切换	primary-standby switchover
+尾延迟	tail latency
+每秒查询数	queries per second
+每秒事务数	transactions per second
+容量规划	capacity planning
+协程池	coroutine pool
+连接复用	connection reuse
+心跳检测	heartbeat
+优雅停机	graceful shutdown
+优雅关闭	graceful shutdown
+
+# 数据库：中文候选到英文术语
+键值数据库	key-value database
+列式数据库	columnar database
+行式存储	row-oriented storage
+嵌入式数据库	embedded database
+迁移脚本	migration script
+表结构变更	schema change
+复合主键	composite primary key
+自增主键	auto-increment primary key
+唯一约束	unique constraint
+非空约束	not-null constraint
+检查约束	check constraint
+复合索引	composite index
+覆盖索引	covering index
+非聚簇索引	non-clustered index
+前缀索引	prefix index
+哈希索引	hash index
+索引下推	index condition pushdown
+回表	table lookup
+回表查询	table lookup query
+最左前缀	leftmost prefix
+最左前缀原则	leftmost prefix rule
+索引失效	index not used
+全表扫描	full table scan
+索引扫描	index scan
+查询计划	query plan
+慢查询日志	slow query log
+关联子查询	correlated subquery
+公共表表达式	common table expression
+全外连接	full outer join
+哈希连接	hash join
+嵌套循环连接	nested loop join
+排序合并连接	sort-merge join
+预编译语句	prepared statement
+参数化查询	parameterized query
+批量写入	batch write
+软删除	soft delete
+硬删除	hard delete
+逻辑删除	logical deletion
+读未提交	read uncommitted
+读已提交	read committed
+快照隔离	snapshot isolation
+丢失更新	lost update
+多版本并发控制	multiversion concurrency control
+行级锁	row-level lock
+表级锁	table-level lock
+间隙锁	gap lock
+临键锁	next-key lock
+排他锁	exclusive lock
+锁等待	lock wait
+锁超时	lock timeout
+回滚日志	undo log
+主主复制	multi-primary replication
+半同步复制	semi-synchronous replication
+异步复制	asynchronous replication
+复制延迟	replication lag
+主从延迟	replication lag
+只读副本	read replica
+水平分表	horizontal partitioning
+垂直分表	vertical partitioning
+分片键	shard key
+数据分片	data sharding
+范围分区	range partitioning
+哈希分区	hash partitioning
+热点数据	hot data
+冷热分离	hot-cold data separation
+第三范式	third normal form
+反范式	denormalization
+查询构建器	query builder
+预先加载	eager loading
+游标分页	cursor pagination
+偏移分页	offset pagination
+深分页	deep pagination
+变更数据捕获	change data capture
+数据回填	data backfill
+全量备份	full backup
+时间点恢复	point-in-time recovery
+数据湖	data lake
+湖仓一体	lakehouse
+在线分析处理	online analytical processing
+流批一体	unified batch and stream processing
+日志结构合并树	log-structured merge-tree
+
+# 测试：中文候选到英文术语
+端到端测试	end-to-end test
+快照测试	snapshot test
+契约测试	contract test
+变异测试	mutation testing
+属性测试	property-based testing
+基于属性的测试	property-based testing
+视觉回归测试	visual regression test
+负载测试	load test
+行为驱动开发	behavior-driven development
+测试套件	test suite
+测试夹具	test fixture
+测试替身	test double
+测试桩	test stub
+模拟对象	mock object
+测试覆盖率	test coverage
+行覆盖率	line coverage
+分支覆盖率	branch coverage
+测试金字塔	test pyramid
+测试运行器	test runner
+断言库	assertion library
+断言失败	assertion failure
+不稳定测试	flaky test
+测试隔离	test isolation
+预发布环境	staging environment
+预发环境	staging environment
+线上故障	production incident
+故障复盘	postmortem
+最小复现	minimal reproduction
+复现步骤	steps to reproduce
+二分定位	bisection
+
+# 安全：中文候选到英文术语
+跨站脚本	cross-site scripting
+跨站脚本攻击	cross-site scripting attack
+跨站请求伪造	cross-site request forgery
+服务端请求伪造	server-side request forgery
+命令注入	command injection
+代码注入	code injection
+提示词注入	prompt injection
+路径遍历	path traversal
+目录遍历	directory traversal
+点击劫持	clickjacking
+会话劫持	session hijacking
+会话固定	session fixation
+撞库攻击	credential stuffing
+供应链攻击	supply chain attack
+依赖混淆	dependency confusion
+权限提升	privilege escalation
+越权访问	unauthorized access
+水平越权	horizontal privilege escalation
+垂直越权	vertical privilege escalation
+零日漏洞	zero-day vulnerability
+威胁建模	threat modeling
+最小权限原则	principle of least privilege
+纵深防御	defense in depth
+零信任架构	zero trust architecture
+基于角色的访问控制	role-based access control
+基于属性的访问控制	attribute-based access control
+多因素认证	multi-factor authentication
+双因素认证	two-factor authentication
+一次性密码	one-time password
+刷新令牌	refresh token
+身份令牌	ID token
+令牌过期	token expiration
+令牌吊销	token revocation
+授权码模式	authorization code flow
+授权服务器	authorization server
+资源服务器	resource server
+回调地址校验	redirect URI validation
+会话过期	session expiration
+密钥轮换	key rotation
+密钥泄露	key leak
+凭据泄露	credential leak
+凭据管理	credential management
+机密管理	secrets management
+传输层加密	transport encryption
+静态加密	encryption at rest
+加盐哈希	salted hash
+密码哈希	password hashing
+消息认证码	message authentication code
+自签名证书	self-signed certificate
+证书固定	certificate pinning
+前向保密	forward secrecy
+伪随机数	pseudorandom number
+输出编码	output encoding
+安全响应头	security headers
+沙箱隔离	sandboxing
+软件物料清单	software bill of materials
+漏洞披露	vulnerability disclosure
+安全公告	security advisory
+
+# 操作系统、并发、网络与算法：中文候选到英文术语
+可重入锁	reentrant lock
+递归锁	recursive lock
+无锁数据结构	lock-free data structure
+比较并交换	compare-and-swap
+内存序	memory ordering
+伪共享	false sharing
+缓存行	cache line
+数据竞争	data race
+线程饥饿	thread starvation
+线程局部存储	thread-local storage
+线程本地变量	thread-local variable
+工作窃取	work stealing
+生产者消费者模型	producer-consumer model
+读者写者问题	readers-writers problem
+哲学家就餐问题	dining philosophers problem
+有界队列	bounded queue
+无界队列	unbounded queue
+并发队列	concurrent queue
+绿色线程	green thread
+用户态线程	user-space thread
+句柄泄漏	handle leak
+边缘触发	edge-triggered
+水平触发	level-triggered
+进程号	process ID
+退出码	exit code
+标准错误	standard error
+重定向符	redirection operator
+终端模拟器	terminal emulator
+容器化	containerization
+四次挥手	four-way handshake
+队头阻塞	head-of-line blocking
+半连接队列	SYN queue
+全连接队列	accept queue
+保活机制	keepalive
+解析记录	DNS record
+回环地址	loopback address
+请求体	request body
+响应体	response body
+请求方法	request method
+强缓存	strong caching
+协商缓存	conditional caching
+分片上传	multipart upload
+双向流	bidirectional streaming
+往返时间	round-trip time
+摊还分析	amortized analysis
+差分数组	difference array
+二叉查找树	binary search tree
+最大堆	max-heap
+小顶堆	min-heap
+大顶堆	max-heap
+开放寻址	open addressing
+负载因子	load factor
+环形缓冲区	ring buffer
+滑动窗口算法	sliding window algorithm
+
+# 工程实践：中文候选到英文术语
+技术债务	technical debt
+代码异味	code smell
+意大利面条代码	spaghetti code
+样板代码	boilerplate
+胶水代码	glue code
+重复代码	duplicated code
+蛇形命名	snake_case
+短横线命名	kebab-case
+帕斯卡命名	PascalCase
+向前兼容	forward compatibility
+破坏性变更	breaking change
+弃用警告	deprecation warning
+功能冻结	feature freeze
+代码冻结	code freeze
+长期支持版	long-term support release
+候选版本	release candidate
+预发布版本	pre-release
+夜间构建	nightly build
+开源许可证	open-source license
+宽松许可证	permissive license
+贡献者许可协议	Contributor License Agreement
+需求评审	requirements review
+架构决策记录	architecture decision record
+概念验证	proof of concept
+最小可行产品	minimum viable product
+开发者体验	developer experience
+软件开发工具包	software development kit
+代码搜索	code search
+代码导航	code navigation
+跳转到定义	go to definition
+查找引用	find references
+重命名符号	rename symbol
+提取函数	extract function
+内联变量	inline variable
+
+# 官方文档用词：中文候选到英文术语
+名字空间	namespace
+引用循环	reference cycle
+边车容器	sidecar container
+水平扩缩	horizontal scaling
+垂直扩缩	vertical scaling
+水合不匹配	hydration mismatch
+存储库	repository
+回收策略	reclaim policy
+卷模式	volume mode
+简单请求	simple request
+未跟踪文件	untracked file
+已跟踪文件	tracked file
+
+# 英文候选到中文释义
+Git	分布式版本控制系统
+GitHub	代码托管平台
+GitLab	代码托管与开发平台
+Bitbucket	代码托管平台
+Gitea	自托管代码托管服务
+GitHub Actions	GitHub 持续集成服务
+GitOps	以 Git 为准的运维方式
+DevOps	开发运维一体化
+CI/CD	持续集成与持续交付
+Jenkins	持续集成服务器
+CircleCI	持续集成服务
+Argo CD	GitOps 持续交付工具
+JavaScript	JavaScript 编程语言
+TypeScript	TypeScript 编程语言
+Node.js	JavaScript 运行时
+Deno	JavaScript 与 TypeScript 运行时
+Python	Python 编程语言
+Go	Go 编程语言
+Kotlin	Kotlin 编程语言
+SwiftUI	苹果声明式界面框架
+Objective-C	Objective-C 编程语言
+C#	C# 编程语言
+C++	C++ 编程语言
+Haskell	Haskell 编程语言
+Elixir	Elixir 编程语言
+Erlang	Erlang 编程语言
+OCaml	OCaml 编程语言
+PHP	PHP 编程语言
+WebAssembly	WebAssembly 字节码格式
+WASI	WebAssembly 系统接口
+React	React 前端库
+React Native	React 跨平台移动框架
+Next.js	React 全栈框架
+Vue.js	Vue 前端框架
+Nuxt	Vue 全栈框架
+Svelte	Svelte 前端框架
+SvelteKit	Svelte 全栈框架
+Angular	Angular 前端框架
+SolidJS	SolidJS 前端库
+Vite	前端构建工具
+ESLint	JavaScript 代码检查工具
+Prettier	代码格式化工具
+Tailwind CSS	实用类优先的 CSS 框架
+Vitest	Vite 测试框架
+Playwright	浏览器端到端测试框架
+Cypress	前端端到端测试框架
+Storybook	组件开发与文档工具
+Flutter	跨平台界面框架
+Django	Python Web 框架
+FastAPI	Python Web 框架
+Spring Boot	Java 应用框架
+NestJS	Node.js 服务端框架
+Laravel	PHP Web 框架
+Ruby on Rails	Ruby Web 框架
+GraphQL	GraphQL 查询语言
+gRPC	gRPC 远程过程调用框架
+Protocol Buffers	Google 结构化数据序列化格式
+OpenAPI	OpenAPI 接口描述规范
+Swagger	接口文档工具
+WebSocket	WebSocket 协议
+WebRTC	网页实时通信
+WebGPU	WebGPU 图形接口
+WebGL	WebGL 图形接口
+PostgreSQL	PostgreSQL 关系型数据库
+MySQL	MySQL 关系型数据库
+MariaDB	MariaDB 关系型数据库
+SQLite	SQLite 嵌入式数据库
+MongoDB	MongoDB 文档数据库
+ClickHouse	ClickHouse 列式数据库
+Elasticsearch	Elasticsearch 搜索引擎
+OpenSearch	OpenSearch 搜索引擎
+DynamoDB	DynamoDB 键值数据库
+CockroachDB	CockroachDB 分布式数据库
+TiDB	TiDB 分布式数据库
+DuckDB	DuckDB 嵌入式分析数据库
+Supabase	Supabase 后端服务平台
+Redis	Redis 内存数据库
+Kafka	Kafka 分布式消息平台
+RabbitMQ	RabbitMQ 消息代理
+RocketMQ	RocketMQ 消息中间件
+ZooKeeper	ZooKeeper 分布式协调服务
+Kubernetes	Kubernetes 容器编排系统
+Docker	Docker 容器平台
+Dockerfile	Docker 镜像构建文件
+Docker Hub	Docker 镜像仓库
+Podman	Podman 容器引擎
+Helm	Kubernetes 包管理器
+Istio	Istio 服务网格
+Envoy	Envoy 代理
+NGINX	NGINX 网页服务器
+Terraform	Terraform 基础设施即代码工具
+Ansible	Ansible 自动化运维工具
+Prometheus	Prometheus 监控系统
+Grafana	Grafana 可视化平台
+OpenTelemetry	OpenTelemetry 可观测性框架
+Cloudflare	Cloudflare 网络服务
+Vercel	Vercel 前端托管平台
+LLVM	LLVM 编译器基础设施
+Clang	Clang 编译器
+GCC	GCC 编译器套件
+CMake	CMake 构建系统
+Gradle	Gradle 构建工具
+Bazel	Bazel 构建系统
+Xcode	苹果集成开发环境
+Visual Studio Code	Visual Studio Code 编辑器
+IntelliJ IDEA	IntelliJ IDEA 集成开发环境
+JetBrains	JetBrains 开发工具公司
+Neovim	Neovim 文本编辑器
+PowerShell	PowerShell 命令行外壳
+Homebrew	Homebrew 包管理器
+macOS	苹果桌面操作系统
+iOS	苹果移动操作系统
+FreeBSD	FreeBSD 操作系统
+WSL	适用于 Linux 的 Windows 子系统
+OAuth	开放授权协议
+OIDC	OpenID Connect 身份认证协议
+JWT	JSON Web 令牌
+WebAuthn	Web 身份验证接口
+SAML	安全断言标记语言
+LDAP	轻量目录访问协议
+RBAC	基于角色的访问控制
+ABAC	基于属性的访问控制
+SSO	单点登录
+MFA	多因素认证
+TOTP	基于时间的一次性密码
+OWASP	开放全球应用安全项目
+CVE	通用漏洞披露编号
+SBOM	软件物料清单
+XSS	跨站脚本攻击
+CSRF	跨站请求伪造
+SSRF	服务端请求伪造
+CORS	跨源资源共享
+HTTPS	超文本传输安全协议
+HTTP/2	HTTP 第二版
+HTTP/3	HTTP 第三版
+QUIC	QUIC 传输协议
+TLS	传输层安全协议
+IPv4	互联网协议第四版
+IPv6	互联网协议第六版
+CDN	内容分发网络
+VPC	虚拟私有云
+RPC	远程过程调用
+RESTful	符合 REST 风格的
+NoSQL	非关系型数据库
+ORM	对象关系映射
+MVCC	多版本并发控制
+OLAP	在线分析处理
+OLTP	在线事务处理
+CQRS	命令查询职责分离
+DDD	领域驱动设计
+TDD	测试驱动开发
+BDD	行为驱动开发
+SSR	服务端渲染
+CSR	客户端渲染
+SSG	静态站点生成
+SPA	单页应用
+PWA	渐进式网络应用
+SDK	软件开发工具包
+LSP	语言服务器协议
+FFI	外部函数接口
+ABI	应用二进制接口
+JIT	即时编译
+AOT	提前编译
+AST	抽象语法树
+REPL	交互式解释器
+SLO	服务等级目标
+SLA	服务等级协议
+QPS	每秒查询数
+TPS	每秒事务数
+TTL	存活时间
+LRU	最近最少使用
+FIFO	先进先出
+UUID	通用唯一识别码
+UTF-8	UTF-8 字符编码
+YAML	YAML 数据格式
+TOML	TOML 配置格式
+JSON	JSON 数据格式
+Raft	Raft 共识算法
+Paxos	Paxos 共识算法
+MapReduce	MapReduce 编程模型
+SHA-256	SHA-256 哈希算法
+HMAC	基于哈希的消息认证码
+ECDSA	椭圆曲线数字签名算法
+AES	高级加密标准
+RSA	RSA 公钥加密算法

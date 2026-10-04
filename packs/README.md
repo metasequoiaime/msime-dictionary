@@ -6,6 +6,8 @@
 
 | 目录 | 名称 | 中文候选 | 英文候选 | 翻译 |
 | --- | --- | ---: | ---: | ---: |
+| [`ai_ml`](ai_ml/) | 机器学习与大模型专业词库 | 600 | 169 | 768 |
+| [`programming`](programming/) | 编程开发专业词库 | 731 | 186 | 916 |
 | [`unreal_houdini`](unreal_houdini/) | Unreal Engine 与 Houdini 专业词库 | 116 | 115 | 236 |
 
 条目数取自 `python3 scripts/validate_packs.py` 的输出。
