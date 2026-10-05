@@ -60,8 +60,8 @@
     {
       "path": "sources/cantonese/hkcancor-word-counts.txt",
       "upstream": "hkcancor",
-      "size": 52029,
-      "sha256": "c555c923bf2c21dc4c524cb7af01d3136a8248adc7e460a5d852bd38972926d0"
+      "size": 51970,
+      "sha256": "744bcf9913f57c4b3eb538229f7d20f665b829f751864d8fe0b7acd22402fed1"
     },
     {
       "path": "sources/cantonese/jyut6ping3.chars.dict.yaml",
@@ -84,8 +84,8 @@
     {
       "path": "sources/english/scowl-words.txt",
       "upstream": "SCOWL",
-      "size": 491697,
-      "sha256": "2e1dfa5487cc27fe73433ddc2ca5dc0a0f902abf687d845bbe36fb90fe01c732"
+      "size": 491679,
+      "sha256": "14abbd44db14fe1fc41dae42551a7c089703756e5500b2dea92d944d1ff35728"
     },
     {
       "path": "sources/japanese/LICENSE",
