@@ -30,6 +30,16 @@ jobs:
           # Ignore style suggestions, but fail on shell correctness warnings and errors.
           SHELLCHECK_OPTS: --severity=warning
         run: actionlint -color
+  upstream:
+    name: Upstream record
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check upstream copies against upstream.lock.json
+        run: python3 scripts/check_upstream.py
   dependencies:
     name: Dependency review
     if: github.event_name == 'pull_request'
