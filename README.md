@@ -17,6 +17,7 @@ sources/                                  构建器经 msime 锁文件读取的�
     single-chars.txt                      单字读音与字频 -> msime-pinyin.db；msime-stroke.db 的权重
   wubi/                                   五笔词库 -> msime-wubi.db
     wubi86-jidian.txt                     86 版五笔（rime-wubi86-jidian，另补了 rime-wubi 的词条）-> wubi86 表
+    wubi86-supplement.txt                 86 表没有、98 表或拼音高频二字词里有的词组，编码按 86 词组规则推出（本项目生成的补充表）-> wubi86 表
     wubi98.txt                            98 版五笔主表（98wubi-tables 的 98五笔含词表-【单义】.txt 原样改名，UTF-16LE）-> wubi98 表
     wubi98-fcitx.txt                      Fcitx5 table-extra 的 98 五笔表，作补充（tables/wubi98.txt 原样改名）-> wubi98 表
   english/                                英文词库 -> msime-english.db
@@ -91,6 +92,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt` | 只在 `--include-unlicensed` 的完整构建中读取 | — | 被 `licensing.rs` 排除：合并自 CustomPinyinDictionary，该快照没有声明许可；发布构建改用 `sources/pinyin/rime-ice.txt` |
 | `sources/unlicensed/single-char-whitelist.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：来源没有记录 |
 | `sources/wubi/wubi86-jidian.txt` | 主命令 Wubi | `msime-wubi.db` 的 `wubi86` 表 | 进入 |
+| `sources/wubi/wubi86-supplement.txt` | 主命令 Wubi，在 `wubi86-jidian.txt` 之后并入；同一编码下排在原有词条之后 | `msime-wubi.db` 的 `wubi86` 表 | 进入 |
 | `sources/wubi/wubi98.txt`、`sources/wubi/wubi98-fcitx.txt` | 主命令 Wubi98：以主表为准，补充表中重复的（编码、词语）去掉 | `msime-wubi.db` 的 `wubi98` 表 | 进入 |
 | `sources/english/rime-ice-en.txt`、`sources/english/rime-ice-en-supplement.txt` | 主命令 English，只保留全部由 ASCII 字母组成的显示词；同一个词的每种大小写各占一行：SCOWL 只收了大写形式的（Wikipedia、Ukraine）大写在前，其余全小写的在前 | `msime-english.db` | 进入 |
 | `sources/english/scowl-words.txt` | 主命令 English，与上一行的词表合并；SCOWL 的许可声明同时写入该库的 `source_notices` 表。这些词有英译中释义，但不进中译英释义的候选 | `msime-english.db` | 进入（`dict-v` 发布附 `msime-scowl_Copyright.txt`） |
@@ -151,7 +153,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 本地能跑的是 `python3 scripts/validate_packs.py`，只用 Python 标准库。check-words 需要 Rust 工具链和 msime 检出，本地一般不跑；要跑的话照 `check-words.yml` 的步骤，在 `MSIME_COMMIT` 上构建 `msime-dict-build` 后运行 `check-words`。
 
-`sources/pinyin/`、`sources/wubi/`、`sources/english/` 下的基础词库来自第三方，不在里面加新词；其中本项目生成的补充表（`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`sources/english/rime-ice-en-supplement.txt`、`sources/english/scowl-words.txt`、`sources/zhuyin/mcbopomofo-supplement.txt`、`sources/cantonese/hkcancor-word-counts.txt`）也不手工改，只用 msime 的生成器在原路径重新生成。候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/`、`sources/japanese/`、`sources/korean/` 下的上游文件不在本仓修改，错误报给上游。具体约束见 [AGENTS.md](AGENTS.md)。
+`sources/pinyin/`、`sources/wubi/`、`sources/english/` 下的基础词库来自第三方，不在里面加新词；其中本项目生成的补充表（`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`sources/english/rime-ice-en-supplement.txt`、`sources/english/scowl-words.txt`、`sources/wubi/wubi86-supplement.txt`、`sources/zhuyin/mcbopomofo-supplement.txt`、`sources/cantonese/hkcancor-word-counts.txt`）也不手工改，只用 msime 的生成器在原路径重新生成。候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/`、`sources/japanese/`、`sources/korean/` 下的上游文件不在本仓修改，错误报给上游。具体约束见 [AGENTS.md](AGENTS.md)。
 
 ## 专业词库
 
@@ -232,6 +234,7 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `sources/pinyin/single-chars.txt` | UTF-8 | CRLF | 1 行 `#` 注释 | `字<TAB>全拼<TAB>权重` | 有 |
 | `sources/unlicensed/single-char-whitelist.txt` | UTF-8 | LF | 无 | 一个字 | 有 |
 | `sources/wubi/wubi86-jidian.txt` | UTF-8 | 混合：第 1–89271 行 LF，第 89272 行起 CRLF | 无 | `词<TAB>五笔编码<TAB>权重`；第 3835、51162、73916、78885 行多一个第 4 列 | 有 |
+| `sources/wubi/wubi86-supplement.txt` | UTF-8 | LF | 5 行 `#` 注释（生成器、输入及其 SHA-256、收录规则、编码规则、对照集合与权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内按权重从高到低 | 有 |
 | `sources/wubi/wubi98.txt` | UTF-16LE，带 BOM | CRLF | 无 | `词<TAB>五笔编码`，没有权重，同一编码内按行序排列 | 有（UTF-16LE 的 CRLF） |
 | `sources/wubi/wubi98-fcitx.txt` | UTF-8 | LF | 第 1–8 行是 Fcitx 码表头：`KeyCode=`、`Length=`、`Pinyin=`、`[Rule]` 及规则、`[Data]` | `五笔编码 词`，空格分隔 | 有 |
 | `sources/english/rime-ice-en.txt` | UTF-8 | CRLF | 无；正文中有 1777 行被 `#` 注释掉的条目和 16 个空行 | `显示词 编码 [权重]`，空格分隔；显示词本身可含空格（如 `Dish Network DishNetwork`），51 行带权重 | 有 |

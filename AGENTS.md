@@ -21,7 +21,7 @@
 
 ## 基础词库
 
-`sources/pinyin/`、`sources/wubi/`、`sources/english/`、`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/`、`sources/japanese/`、`sources/korean/`、`sources/unlicensed/` 下的数据来自第三方（见 `NOTICE.md`）。其中一部分是本项目从固定上游提交生成的补充表（`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`sources/english/rime-ice-en-supplement.txt`、`sources/english/scowl-words.txt`、`sources/zhuyin/mcbopomofo-supplement.txt`、`sources/cantonese/hkcancor-word-counts.txt`），不是上游原样文件。不直接编辑上游原表或在其中加新词；经固定上游提交生成的补充表可以作为独立文件加入（规则见下一节），并且：
+`sources/pinyin/`、`sources/wubi/`、`sources/english/`、`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/`、`sources/japanese/`、`sources/korean/`、`sources/unlicensed/` 下的数据来自第三方（见 `NOTICE.md`）。其中一部分是本项目从固定上游提交生成的补充表（`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`sources/english/rime-ice-en-supplement.txt`、`sources/english/scowl-words.txt`、`sources/wubi/wubi86-supplement.txt`、`sources/zhuyin/mcbopomofo-supplement.txt`、`sources/cantonese/hkcancor-word-counts.txt`），不是上游原样文件。不直接编辑上游原表或在其中加新词；经固定上游提交生成的补充表可以作为独立文件加入（规则见下一节），并且：
 
 - 提交说明写清修了什么、依据是什么（上游提交、对照数据或复现方式）；
 - 来源或许可有变化时同一次改动更新 `NOTICE.md`；
@@ -32,7 +32,7 @@
 - 新文件命名为 `sources/<方案>/<来源>-<内容>.txt`，全部小写、用连字符分隔，名字说明数据从哪来、是什么，例如 `sources/english/rime-ice-en-supplement.txt`、`sources/zhuyin/mcbopomofo-supplement.txt`；来源就是内容时可以只写一段，如 `sources/pinyin/places.txt`。不带 `V<N>` 之类的版本后缀：内容由 msime 锁文件里的 SHA-256 固定，文件名不需要表达版本。`sources/cantonese/` 下的三个 rime-cantonese 文件、`sources/zhuyin/tsi.csv`、`sources/zhuyin/word.csv` 与 `sources/zhuyin/phrase.occ`、`sources/stroke/`、`sources/japanese/`、`sources/korean/` 下的上游原样文件保留上游文件名，不套用这条规则；上游原样文件的名字不是 ASCII 或会和别的文件同名时（如 `sources/wubi/wubi98.txt`、`sources/wubi/wubi98-fcitx.txt`），改用 `<来源>-<内容>` 形式的名字，并在 `NOTICE.md` 里写明上游的原文件名。
 - 文件头用 `#` 注释写明：上游仓库与提交；生成命令及其所在的 msime 提交；去重规则，并写全对照集合（排除了哪些文件里已有的哪种组合）。msime 构建器把拼音词表逐行直接插入，不去重，没写进对照集合的文件里的重复行会原样进入产物。
 - 换到新的上游提交或改了生成规则时，用同一个生成器在原路径整份重新生成，不另起新文件名；行格式变了也在原路径重新生成，同时改 msime 读取它的构建阶段。
-- 生成器放在 msime 的 `crates/dict-builder`，不放本仓；补充表不手工编辑。`sources/pinyin/places.txt` 的生成器是 msime `crates/dict-builder/src/places_supplement.rs`（`msime-dict-build places-supplement`），`sources/english/scowl-words.txt` 的生成器是 `crates/dict-builder/src/english_supplement.rs`（`msime-dict-build english-supplement`），`sources/cantonese/hkcancor-word-counts.txt` 的是 `crates/dict-builder/src/hkcancor.rs`（`msime-dict-build hkcancor-counts`，读 msime 锁文件在 `hkcancor/` 下固定的上游转写文件）；现有的 `sources/pinyin/rime-ice-supplement.txt`、`sources/english/rime-ice-en-supplement.txt`、`sources/zhuyin/mcbopomofo-supplement.txt` 在 msime 里只有读取它们的代码，没有生成器，要重新生成时先把生成器补进 dict-builder。
+- 生成器放在 msime 的 `crates/dict-builder`，不放本仓；补充表不手工编辑。`sources/pinyin/places.txt` 的生成器是 msime `crates/dict-builder/src/places_supplement.rs`（`msime-dict-build places-supplement`），`sources/english/scowl-words.txt` 的生成器是 `crates/dict-builder/src/english_supplement.rs`（`msime-dict-build english-supplement`），`sources/cantonese/hkcancor-word-counts.txt` 的是 `crates/dict-builder/src/hkcancor.rs`（`msime-dict-build hkcancor-counts`，读 msime 锁文件在 `hkcancor/` 下固定的上游转写文件），`sources/wubi/wubi86-supplement.txt` 的是 `crates/dict-builder/src/wubi86_supplement.rs`（`msime-dict-build wubi86-supplement`）；现有的 `sources/pinyin/rime-ice-supplement.txt`、`sources/english/rime-ice-en-supplement.txt`、`sources/zhuyin/mcbopomofo-supplement.txt` 在 msime 里只有读取它们的代码，没有生成器，要重新生成时先把生成器补进 dict-builder。
 - 同一次改动更新本仓 `NOTICE.md`；msime 那边同步改锁文件、读取它的构建阶段和 `resources/licenses/` 下的许可证说明。两边 PR 互相链接，下游没有跟上之前不要合入。
 
 ## 粤拼、注音、笔画、日文与韩文词库
