@@ -476,3 +476,4 @@
 管韧姿	guan'ren'zi	100
 洪湖藕汤	hong'hu'ou'tang	100
 粉藕	fen'ou	3855
+脆藕	cui'ou	3855
