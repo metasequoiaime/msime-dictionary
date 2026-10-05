@@ -226,7 +226,7 @@ jobs:
           | `msime-rime_cantonese_LICENSE.txt` | rime-cantonese 数据的许可证（CC BY 4.0），并附 HKCanCor 词频所需的署名与引用（同为 CC BY 4.0），随 `msime-cantonese.db` 分发 | 随语言词库下载 |
           | `msime-libchewing_data_LICENSE.txt` | libchewing-data 数据的许可证（LGPL-2.1），并附 McBopomofo 补充表的 BSD 说明与 `phrase.occ` 所需的 McBopomofo MIT 许可全文，随 `msime-zhuyin.db` 分发 | 随语言词库下载 |
           | `msime-rime_stroke_LICENSE.txt` | rime-stroke 数据的许可证（LGPL-3.0），随 `msime-stroke.db` 分发 | 随语言词库下载 |
-          | `msime-dictionary-manifest.json` | 机器可读的发布清单：`profile`、`format_version` 与 `engine_compatibility`（词库格式与日文模型格式）、`source`（msime 构建器提交，`dirty` 必须为 `false`）、`custom_dictionary_commit`（本仓源数据提交）、`references` 与 `mozc_revision`（固定的上游引用）、`features`、`licensing`（排除了哪些无再分发授权的输入）、`files`（10 个主产物的大小与 SHA-256，不含语言词库） | 客户端下载（桌面词库锁），设置页显示其中的 `profile` 与 `source.commit` |
+          | `msime-dictionary-manifest.json` | 机器可读的发布清单：`profile`、`format_version` 与 `engine_compatibility`（词库格式与日文模型格式）、`source`（msime 构建器提交，`dirty` 必须为 `false`）、`custom_dictionary_commit`（本仓源数据提交）、`references` 与 `mozc_revision`（msime 锁文件记录的上游提交，构建器已核对它们等于本仓 `upstream.lock.json` 的记录）、`features`、`licensing`（排除了哪些无再分发授权的输入）、`files`（10 个主产物的大小与 SHA-256，不含语言词库） | 客户端下载（桌面词库锁），设置页显示其中的 `profile` 与 `source.commit` |
           | `msime-SHA256SUMS.txt` | `sha256sum -c` 格式的校验和：10 个主产物（拼音、五笔、英文、其他、日文模型、二元、三元模型、Mozc 说明、Mozc LICENSE、SCOWL 版权声明）和 manifest | 人工或脚本校验，客户端不下载 |
           | `msime-language-dictionaries-SHA256SUMS` | `sha256sum -c` 格式的校验和：粤拼、注音、笔画三个词库和它们的三个许可证 | 人工或脚本校验，客户端不下载 |
 

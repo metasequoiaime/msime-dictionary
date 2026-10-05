@@ -9,7 +9,7 @@
 ## 目录
 
 ```
-sources/                                  构建器经 msime 锁文件读取的全部输入，按输入方案分目录
+sources/                                  msime 构建器经 --dictionary 读取的全部输入，按输入方案分目录
   pinyin/                                 拼音词库 -> msime-pinyin.db
     rime-ice.txt                          雾凇拼音（rime-ice）的全拼词条，经本项目修正 -> msime-pinyin.db
     rime-ice-supplement.txt               rime-ice 新提交中相对 rime-ice.txt 新增的词条（本项目生成的补充表）-> msime-pinyin.db
@@ -74,13 +74,13 @@ AGENTS.md                                 给代码代理的维护约束
 CHANGELOG.md                              已冻结，只作历史记录
 ```
 
-**目录约定**：`sources/` 放构建器经 msime 锁文件读取的输入，每个文件都按提交和 SHA-256 逐字节锁定；粤拼、注音（`tsi.csv`、`word.csv`、`phrase.occ`）、笔画、日文、韩文的上游原样文件保留上游的文件名；本项目生成或修正的文件，以及上游文件名不是 ASCII 或会和别的文件同名的上游原样文件（`wubi98.txt`、`wubi98-fcitx.txt`，上游原文件名见 `NOTICE.md`），用小写、连字符分隔、说明来源的名字（如 `rime-ice-supplement.txt`、`mcbopomofo-supplement.txt`），不带版本后缀，因为内容由锁文件固定。`custom/` 是唯一接受投稿的地方，只追加。`packs/` 是可选的专业词库，不进入构建。
+**目录约定**：`sources/` 放 msime 构建器经 `--dictionary` 读取的输入，由本仓 Git 提交固定，上游原样文件和派生文件另由根目录 `upstream.lock.json` 按 SHA-256 固定；粤拼、注音（`tsi.csv`、`word.csv`、`phrase.occ`）、笔画、日文、韩文的上游原样文件保留上游的文件名；本项目生成或修正的文件，以及上游文件名不是 ASCII 或会和别的文件同名的上游原样文件（`wubi98.txt`、`wubi98-fcitx.txt`，上游原文件名见 `NOTICE.md`），用小写、连字符分隔、说明来源的名字（如 `rime-ice-supplement.txt`、`mcbopomofo-supplement.txt`），不带版本后缀，因为内容由提交固定。`custom/` 是唯一接受投稿的地方，只追加。`packs/` 是可选的专业词库，不进入构建。
 
-所有数据文件按字节锁定：msime 的锁文件按提交、大小和 SHA-256 固定每个文件，所以不要格式化、转换编码或换行符、排序或去重，仓库的 `.gitattributes`（`* -text`）关闭了换行转换。各文件的上游与许可见 [NOTICE.md](NOTICE.md)，逐文件的格式见[文件格式](#文件格式)。
+所有数据文件按字节保存：`upstream.lock.json` 按大小和 SHA-256 固定上游原样文件与派生文件，CI 由 `scripts/check_upstream.py` 检查，msime 构建器读取时再校验一遍，并要求记录的上游提交等于 msime 锁文件和许可证写明的提交；所以不要格式化、转换编码或换行符、排序或去重，仓库的 `.gitattributes`（`* -text`）关闭了换行转换。各文件的上游与许可见 [NOTICE.md](NOTICE.md)，逐文件的格式见[文件格式](#文件格式)。
 
 ## 源文件与发布产物
 
-下表依据 msime 发布构建器（`fix/dictionary-release-latest` 分支，见[发布](#发布)的过渡说明）中 `crates/dict-builder` 的 `main.rs`、`licensing.rs` 和各语言模块。“主命令”指 `msime-dict-build --cache … --out …`，“languages”指 `msime-dict-build languages`，发布 workflow 两者都运行。
+下表依据 msime develop 上发布构建器 `crates/dict-builder` 的 `main.rs`、`licensing.rs` 和各语言模块。“主命令”指 `msime-dict-build --cache … --out …`，“languages”指 `msime-dict-build languages`，发布 workflow 两者都运行。
 
 | 源文件 | 读取它的构建阶段 | 产物 | 发布状态 |
 | --- | --- | --- | --- |
@@ -109,7 +109,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/japanese/README.txt` | 主命令 JapaneseModel，原样复制 | `msime-mozc_dictionary_oss_README.txt` | 进入 |
 | `sources/japanese/LICENSE` | 主命令 JapaneseModel，原样复制 | `msime-mozc_LICENSE.txt` | 进入 |
 | `sources/korean/hanja.txt` | `msime-dict-build hanja`，发布 workflow 不运行 | msime 源码里的 `crates/engine/src/korean/hanja.tsv`，由引擎用 `include_str!` 内嵌 | 不是 Release 附件 |
-| `custom/names.txt` | 无 | — | 没有消费方：锁文件没有收录，官网投稿也不写它 |
+| `custom/names.txt` | 无 | — | 没有消费方：构建器不读，官网投稿也不写它 |
 | `packs/` | 不进入构建 | msime.app 按本仓 `main` 读取并列出（官网缓存约一小时），用户在设置里导入 | 不进入 Release |
 
 几点补充：
@@ -185,9 +185,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 手动运行（Actions 里的 Release built dictionaries → Run workflow）用于用新的构建器重建同一份源数据，或者只构建不发布的试跑：`version` 留空即自动加修订号，也可以填 `X.Y.Z`；`msime_ref` 默认 `develop`；`publish` 默认关闭，此时只把附件和说明预览上传为 workflow artifact，说明也写进 job summary。打开 `publish` 只能从 `main` 运行；手动指定的版本低于现有最高版本时，Release 不标为 latest。打开 `publish` 的手动运行和推送触发的发布共用一个 concurrency 组，组里只保留一个排队的运行，后来的会取消先排队的：手动发布还在排队时有新的合入推送，手动那次会被取消，改由推送的运行按默认参数（`develop`、自动版本号）发布；反过来手动运行也会取代排队中的推送运行（源数据不丢，只是换成手动指定的参数）。所以手动发布前先在 Actions 里确认没有排队中的发布运行，触发后确认它没有被取消。
 
-msime `resources/dictionary-sources.lock.json` 里固定的本仓提交与各文件的大小和 SHA-256，现在只用于 msime 自己的可复现构建（不传 `--dictionary` 运行 `msime-dict-build` 时按它下载源文件），发布不再依赖它。要在 msime 里复现某个版本，把它升级到该版本 manifest 的 `custom_dictionary_commit`。
-
-过渡说明：本仓 #53（`sources/` 布局）已经合入 `main`，但按 `sources/` 布局读取本仓文件的构建器在 msime PR #3513（分支 `fix/dictionary-release-latest`）上，`--dictionary` 参数也还在 msime 那边并行开发，都没有进入 develop。本 workflow 还要求第二轮词库补全产出的 `msime-mozc_LICENSE.txt` 与 `msime-scowl_Copyright.txt`，所以构建器那边的改动（英文 SCOWL、读音纠错、日文 Mozc 补充、粤拼与注音权重，以及这两个声明文件）要并进 #3513。合入顺序是：先让 #3513（含 `--dictionary` 和第二轮构建器改动）进入 develop；再合入本 workflow，它只改 `.github/` 和文档，合入时不触发发布；最后合入第二轮源数据（`feat/dictionary-round2`，含 `sources/japanese/LICENSE`、`sources/english/scowl-words.txt`），这次推送就是第一次自动发布，带全部 19 个附件。第二轮源数据不要先于本 workflow 合入：`main` 上的旧 workflow 只上传固定的 17 个附件，没有 `msime-mozc_LICENSE.txt` 和 `msime-scowl_Copyright.txt`，在那段时间里用第二轮构建器手动发版，`msime-english.db` 带着 SCOWL 的词、`msime-japanese.dat` 带着 Mozc 补充词，却缺少它们必须一起分发的声明。本 workflow 合入后、第二轮源数据合入前，不要再合入别的改动 `sources/` 或 `custom/` 的提交，否则那次推送会在第二轮源文件还不在 `main` 上时用 develop 的构建器发布；两步最好紧接着做。#53 的数据已经由旧 workflow 从 `134c358`（用 #3513 分支的构建器 `42256e7`）发布为 `dict-v2.0.6`，所以不需要补发；确有需要时从 `main` 手动运行并打开 `publish`，版本号会在已有最高的 `dict-v` 上继续加一。
+msime 的 `resources/dictionary-sources.lock.json` 不固定本仓任何文件，msime 只消费本仓的 `dict-v` Release 附件。要复现某个版本，按它 manifest 的 `custom_dictionary_commit` 检出本仓、按 `source.commit` 检出 msime，再带 `--dictionary` 运行 `msime-dict-build`。
 
 **某个改动进了哪个版本**：每个 Release 的 manifest（`msime-dictionary-manifest.json`）的 `custom_dictionary_commit` 是构建实际读取的本仓提交，Release 说明开头也写着它。由本 workflow 自动发布的版本，标签就打在这个提交上；`dict-v2.0.6` 及更早的版本是用旧 workflow 手动发布的，标签打在发布时的 `main` 上，不一定是读取的源数据（例如 `dict-v2.0.5` 的标签指向 `a4b790c`，而构建读取的是 `5926261`，之后合入的 `5bc9c77`（#42）不在其中）。所以统一按 manifest 判断一个提交是否已发布：
 

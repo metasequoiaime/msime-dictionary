@@ -1,4 +1,4 @@
-# 香港粤语语料库（HKCanCor）词频表，由 msime 仓库 crates/dict-builder/src/hkcancor.rs 的 `msime-dict-build hkcancor-counts --cache <dir> --out sources/cantonese/hkcancor-word-counts.txt` 生成，生成器所在的提交就是在 resources/dictionary-sources.lock.json 里固定本文件的 msime 提交；不要手工编辑。
+# 香港粤语语料库（HKCanCor）词频表，由 msime 仓库提交 b8ebd31db97ebd5d1ed239f6e478b89edb554d20 的 crates/dict-builder/src/hkcancor.rs 以 `msime-dict-build hkcancor-counts --cache <dir> --out sources/cantonese/hkcancor-word-counts.txt` 生成；不要手工编辑。
 # 上游：https://github.com/fcbond/hkcancor 提交 39aeadf920e0b5ca93d0ad7792c59e740e7bdd65 的 data/utf8/ 下 58 个转写文件（K. K. Luke and May L. Y. Wong, The Hong Kong Cantonese Corpus: Design and Uses, Journal of Chinese Linguistics Monograph Series 25, 2015；CC BY 4.0，见上游 data/LICENSE）。
 # 计数：<sent_tag> 块里每行一个 词/词性/粤拼/ 标注，一行计一次，不分词性、跨文件相加；拆不成这三段加空尾段的行（转写者的 ○/#/#/@ 占位等）不计。共 160806 个标注，跳过 30 行。只写出两个及以上汉字组成的词，单字、字母、数字与标点不写；不与其他文件对照去重，每个词一行。
 即係	1960
