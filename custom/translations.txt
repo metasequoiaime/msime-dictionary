@@ -236,3 +236,123 @@ Skeletal Mesh Output	骨骼网格体输出
 欢迎	welcome
 请问	excuse me; may I ask
 再见了	goodbye
+
+# 常用技术词汇。ECDICT 的义项偏旧（browser 只有「浏览程序」，architecture 没有「架构」），反查推不出这些候选的英文，见 metasequoiaime/msime#3806。
+架构	architecture
+架构师	architect
+前端	front end
+前后端	front end and back end
+全栈	full stack
+服务端	server side
+微服务	microservice
+集群	cluster
+分布式	distributed
+负载均衡	load balancing
+高可用	high availability
+缓存	cache
+并发	concurrency
+异步	asynchronous
+回调	callback
+插件	plugin
+源码	source code
+兼容	compatible
+运维	operations
+云计算	cloud computing
+云原生	cloud native
+虚拟化	virtualization
+虚拟机	virtual machine
+镜像	image
+机器学习	machine learning
+深度学习	deep learning
+神经网络	neural network
+大模型	large language model
+提示词	prompt
+微调	fine-tuning
+数据集	dataset
+大数据	big data
+数据仓库	data warehouse
+区块链	blockchain
+认证	authentication
+鉴权	authorization
+权限	permission
+令牌	token
+哈希	hash
+序列化	serialization
+反序列化	deserialization
+消息队列	message queue
+数据结构	data structure
+编程语言	programming language
+编译器	compiler
+解释器	interpreter
+浏览器	browser
+开源	open source
+闭源	closed source
+单元测试	unit test
+集成测试	integration test
+持续集成	continuous integration
+持续部署	continuous deployment
+回滚	rollback
+灰度发布	canary release
+埋点	tracking event
+多态	polymorphism
+泛型	generics
+闭包	closure
+迭代器	iterator
+装饰器	decorator
+内存泄漏	memory leak
+垃圾回收	garbage collection
+依赖注入	dependency injection
+设计模式	design pattern
+单例	singleton
+技术栈	tech stack
+路由	routing
+渲染	render
+组件化	componentization
+响应式	responsive
+跨域	cross-origin
+告警	alert
+熔断	circuit breaker
+限流	rate limiting
+幂等	idempotent
+读写分离	read-write splitting
+定时任务	scheduled task
+批处理	batch processing
+流处理	stream processing
+实时	real-time
+离线	offline
+冷启动	cold start
+热更新	hot update
+补丁	patch
+渗透测试	penetration testing
+防火墙	firewall
+产品经理	product manager
+
+# 反查选错义项的常用词，例如「吞吐量」给出 throughout、「域名」给出 header、「后端」给出 be。
+后端	back end
+依赖	depend on; dependency
+配置	configure; configuration
+开发	develop; development
+升级	upgrade
+域名	domain name
+吞吐量	throughput
+组件	component
+仓库	warehouse; repository
+模型	model
+性能	performance
+代理	agent; proxy
+容器	container
+指针	pointer
+反射	reflect; reflection
+用户	user
+训练	train; training
+合并	merge; combine
+密码	password
+快照	snapshot
+栈	stack
+堆	heap; pile
+生成器	generator
+准确率	accuracy
+源代码	source code
+前台	front desk; foreground
+账号	account
+上线	go live
