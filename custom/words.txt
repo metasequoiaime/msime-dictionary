@@ -505,3 +505,5 @@
 李菲儿	li'fei'er	100
 胡静	hu'jing	3855
 李兰迪	li'lan'di	100
+已助力	yi'zhu'li	100
+必现	bi'xian	3855
