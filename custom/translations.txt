@@ -236,3 +236,25 @@ Skeletal Mesh Output	骨骼网格体输出
 欢迎	welcome
 请问	excuse me; may I ask
 再见了	goodbye
+# 常用软件技术词。ECDICT 反查只收进英文词条释义里出现过的中文，这些词要么不在任何高质量词条的释义里（架构、前端、开源、缓存），要么反查排到了偏门义项（后端→be、重构→remodeling、容器→pocket）。
+# 这一组是 msime#3806 报告的「架构」缺译及同类高频词。
+架构	architecture
+架构师	architect
+构架	framework; architecture
+框架	framework; frame
+微服务	microservice
+服务端	server side
+前端	front end
+后端	back end
+编程	programming
+云计算	cloud computing
+机器学习	machine learning
+开源	open source
+缓存	cache
+并发	concurrency
+集群	cluster
+分布式	distributed
+插件	plugin
+重构	refactor
+容器	container
+组件	component
