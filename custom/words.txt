@@ -538,3 +538,7 @@
 屈楚萧	qu'chu'xiao	100
 王晓晨	wang'xiao'chen	100
 难以相交	nan'yi'xiang'jiao	100
+呈奏	cheng'zou	3855
+梅钿	mei'dian	3855
+梅花钿	mei'hua'dian	100
+镇杀	zhen'sha	3855
