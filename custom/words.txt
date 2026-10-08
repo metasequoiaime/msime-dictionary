@@ -546,3 +546,6 @@
 筛掉	shai'diao	3855
 帝者战神	di'zhe'zhan'shen	100
 手拿把掐	shou'na'ba'qia	100
+王力	wang'li	3855
+地老话	di'lao'hua	100
+地佬话	di'lao'hua	100
