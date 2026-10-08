@@ -542,3 +542,5 @@
 梅钿	mei'dian	3855
 梅花钿	mei'hua'dian	100
 镇杀	zhen'sha	3855
+捡的	jian'de	3855
+筛掉	shai'diao	3855
