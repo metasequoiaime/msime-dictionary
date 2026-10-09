@@ -168,7 +168,7 @@
 块状油藏	kuai'zhuang'you'cang	10000
 层状油藏	ceng'zhuang'you'cang	10000
 裂缝性油藏	lie'feng'xing'you'cang	10000
-多重介质	duo'zhong'jie'zhi	10000
+多重介质	duo'chong'jie'zhi	10000
 水窜	shui'cuan	10000
 含水上升	han'shui'shang'sheng	10000
 产量构成	chan'liang'gou'cheng	10000
@@ -398,7 +398,7 @@
 采收率标定	cai'shou'lv'biao'ding	10000
 驱替实验	qu'ti'shi'yan	10000
 岩心驱替	yan'xin'qu'ti	10000
-长岩心驱替	zhang'yan'xin'qu'ti	10000
+长岩心驱替	chang'yan'xin'qu'ti	10000
 微观驱替	wei'guan'qu'ti	10000
 可视化驱替	ke'shi'hua'qu'ti	10000
 波及体积	bo'ji'ti'ji	10000
@@ -503,7 +503,7 @@
 重复压裂	chong'fu'ya'lie	10000
 暂堵转向	zan'du'zhuan'xiang	10000
 裂缝导流能力	lie'feng'dao'liu'neng'li	10000
-缝长	feng'zhang	10000
+缝长	feng'chang	10000
 缝高	feng'gao	10000
 缝宽	feng'kuan	10000
 压裂施工压力	ya'lie'shi'gong'ya'li	10000
@@ -517,7 +517,7 @@
 井工厂	jing'gong'chang	10000
 工厂化作业	gong'chang'hua'zuo'ye	10000
 平台钻井	ping'tai'zuan'jing	10000
-长水平段	zhang'shui'ping'duan	10000
+长水平段	chang'shui'ping'duan	10000
 分段压裂	fen'duan'ya'lie	10000
 渗吸	shen'xi	10000
 自发渗吸	zi'fa'shen'xi	10000
@@ -559,7 +559,7 @@
 渗透率应力敏感	shen'tou'lv'ying'li'min'gan	10000
 气体滑脱	qi'ti'hua'tuo	10000
 吸附膨胀	xi'fu'peng'zhang	10000
-多重运移机制	duo'zhong'yun'yi'ji'zhi	10000
+多重运移机制	duo'chong'yun'yi'ji'zhi	10000
 油藏数值模拟	you'cang'shu'zhi'mo'ni	10000
 三维地质模型	san'wei'di'zhi'mo'xing	10000
 网格粗化	wang'ge'cu'hua	10000
@@ -593,7 +593,7 @@
 完井段	wan'jing'duan	10000
 定压生产	ding'ya'sheng'chan	10000
 定产生产	ding'chan'sheng'chan	10000
-时间步长	shi'jian'bu'zhang	10000
+时间步长	shi'jian'bu'chang	10000
 隐式求解	yin'shi'qiu'jie	10000
 全隐式	quan'yin'shi	10000
 自适应隐式	zi'shi'ying'yin'shi	10000
@@ -671,7 +671,7 @@
 均方位移	jun'fang'wei'yi	10000
 径向分布函数	jing'xiang'fen'bu'han'shu	10000
 结构因子	jie'gou'yin'zi	10000
-键长	jian'zhang	10000
+键长	jian'chang	10000
 均方根偏差	jun'fang'gen'pian'cha	10000
 均方根涨落	jun'fang'gen'zhang'luo	10000
 自由能面	zi'you'neng'mian	10000
@@ -715,7 +715,7 @@
 氢键网络	qing'jian'wang'luo	10000
 粗粒化模拟	cu'li'hua'mo'ni	10000
 全原子模拟	quan'yuan'zi'mo'ni	10000
-长时间尺度	zhang'shi'jian'chi'du	10000
+长时间尺度	chang'shi'jian'chi'du	10000
 能量最小化	neng'liang'zui'xiao'hua	10000
 最陡下降法	zui'dou'xia'jiang'fa	10000
 退火模拟	tui'huo'mo'ni	10000
@@ -1417,7 +1417,7 @@
 广义最小残差法	guang'yi'zui'xiao'can'cha'fa	10000
 正交极小化法	zheng'jiao'ji'xiao'hua'fa	10000
 双共轭梯度法	shuang'gong'e'ti'du'fa	10000
-代数多重网格法	dai'shu'duo'zhong'wang'ge'fa	10000
+代数多重网格法	dai'shu'duo'chong'wang'ge'fa	10000
 不完全分解	bu'wan'quan'fen'jie	10000
 嵌套分解法	qian'tao'fen'jie'fa	10000
 区域分解法	qu'yu'fen'jie'fa	10000
@@ -1431,7 +1431,7 @@
 梯形法	ti'xing'fa	10000
 库朗数	ku'lang'shu	10000
 库朗条件	ku'lang'tiao'jian	10000
-时间步长控制	shi'jian'bu'zhang'kong'zhi	10000
+时间步长控制	shi'jian'bu'chang'kong'zhi	10000
 时间截断误差	shi'jian'jie'duan'wu'cha	10000
 空间截断误差	kong'jian'jie'duan'wu'cha	10000
 数值耗散	shu'zhi'hao'san	10000

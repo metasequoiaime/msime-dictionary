@@ -1452,7 +1452,7 @@
 状态方程闪蒸	Equation of State Flash
 # 英文候选到中文释义
 EOR	提高采收率
-IOR	提高采收率
+IOR	改善采收率
 MMP	最小混相压力
 WAG	气水交替
 SOR	残余油饱和度
