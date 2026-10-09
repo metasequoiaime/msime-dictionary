@@ -1,0 +1,1652 @@
+# 中文候选到英文术语
+烃源岩	Hydrocarbon Source Rock
+生烃灶	Hydrocarbon Kitchen
+有机质丰度	Organic Matter Abundance
+干酪根	Kerogen
+镜质体反射率	Vitrinite Reflectance
+生烃门限	Hydrocarbon Generation Threshold
+生烃期	Hydrocarbon Generation Stage
+排烃	Hydrocarbon Expulsion
+初次运移	Primary Migration
+二次运移	Secondary Migration
+油气聚集	Oil and Gas Accumulation
+圈闭	Trap
+构造圈闭	Structural Trap
+地层圈闭	Stratigraphic Trap
+岩性圈闭	Lithologic Trap
+复合圈闭	Combination Trap
+断层封闭性	Fault Seal
+盖层	Cap Rock
+储集层	Reservoir
+储层非均质性	Reservoir Heterogeneity
+有效孔隙度	Effective Porosity
+绝对渗透率	Absolute Permeability
+孔隙结构	Pore Structure
+孔喉结构	Pore Throat Structure
+孔喉比	Pore-to-Throat Ratio
+喉道半径	Throat Radius
+压汞法	Mercury Injection Method
+压实作用	Compaction
+胶结作用	Cementation
+次生孔隙	Secondary Porosity
+原生孔隙	Primary Porosity
+沉积相	Sedimentary Facies
+三角洲相	Delta Facies
+辫状河	Braided River
+曲流河	Meandering River
+泥岩	Mudstone
+蒸发岩	Evaporite
+生物礁	Reef
+砂体	Sand Body
+砂地比	Sand-to-Shale Ratio
+地震解释	Seismic Interpretation
+地震属性	Seismic Attribute
+波阻抗	Wave Impedance
+地震反演	Seismic Inversion
+测井	Well Logging
+测井解释	Log Interpretation
+自然伽马	Natural Gamma Ray
+声波时差	Acoustic Slowness
+密度测井	Density Logging
+核磁共振测井	Nuclear Magnetic Resonance Logging
+地层评价	Formation Evaluation
+含油饱和度	Oil Saturation
+含水饱和度	Water Saturation
+束缚水饱和度	Irreducible Water Saturation
+残余油饱和度	Residual Oil Saturation
+储层建模	Reservoir Modeling
+地质建模	Geological Modeling
+相控建模	Facies-Controlled Modeling
+变差函数	Variogram
+序贯高斯模拟	Sequential Gaussian Simulation
+可采储量	Recoverable Reserves
+控制储量	Probable Reserves
+预测储量	Possible Reserves
+油气藏类型	Reservoir Type
+构造演化	Tectonic Evolution
+沉积体系	Depositional System
+层序地层	Sequence Stratigraphy
+储层描述	Reservoir Characterization
+含油气系统	Petroleum System
+运移通道	Migration Pathway
+输导体系	Carrier System
+地层水	Formation Water
+水型	Water Type
+油源对比	Oil-Source Correlation
+生物标志物	Biomarker
+成熟生烃	Mature Hydrocarbon Generation
+油藏工程	Reservoir Engineering
+物质平衡方程	Material Balance Equation
+驱动类型	Drive Mechanism
+水压驱动	Water Drive
+弹性驱动	Elastic Drive
+溶解气驱	Solution Gas Drive
+气顶驱	Gas Cap Drive
+重力驱	Gravity Drainage
+相对渗透率	Relative Permeability
+相渗曲线	Relative Permeability Curve
+毛管压力	Capillary Pressure
+界面张力	Interfacial Tension
+油水两相流	Oil-Water Two-Phase Flow
+三相流	Three-Phase Flow
+达西定律	Darcy's Law
+渗流力学	Flow Mechanics in Porous Media
+启动压力梯度	Threshold Pressure Gradient
+低速非达西渗流	Low-Velocity Non-Darcy Flow
+非达西渗流	Non-Darcy Flow
+原始地层压力	Original Formation Pressure
+饱和压力	Bubble Point Pressure
+露点压力	Dew Point Pressure
+地层压力系数	Formation Pressure Coefficient
+井底流压	Bottomhole Flowing Pressure
+井底压力	Bottomhole Pressure
+静水压力	Hydrostatic Pressure
+地层破裂压力	Formation Fracture Pressure
+油藏压力	Reservoir Pressure
+压力传播	Pressure Transient
+试井	Well Testing
+压力恢复	Pressure Build-Up
+压降试井	Drawdown Test
+干扰试井	Interference Test
+不稳定试井	Transient Well Testing
+产能测试	Productivity Test
+试采	Production Test
+采油指数	Productivity Index
+采液指数	Liquid Productivity Index
+吸水指数	Injectivity Index
+比采油指数	Specific Productivity Index
+表皮系数	Skin Factor
+井筒储集	Wellbore Storage
+流动效率	Flow Efficiency
+拟压力	Pseudopressure
+产量递减	Production Decline
+递减率	Decline Rate
+产量递减规律	Production Decline Behavior
+含气率	Gas Rate
+采出程度	Recovery Degree
+剩余油	Remaining Oil
+可动油	Movable Oil
+注水开发	Waterflooding
+注采比	Injection-Production Ratio
+注采井网	Well Pattern
+井网密度	Well Density
+五点法井网	Five-Spot Pattern
+行列注水	Line Drive
+面积注水	Area Flooding
+综合含水率	Composite Water Cut
+稳产期	Stable Production Period
+递减期	Decline Period
+开发方案	Development Plan
+开发指标	Development Index
+平均地层压力	Average Reservoir Pressure
+井间干扰	Interwell Interference
+流体取样	Fluid Sampling
+高压物性	Reservoir Fluid Properties
+原油物性	Crude Oil Properties
+溶解气油比	Solution Gas-Oil Ratio
+气油比	Gas-Oil Ratio
+原油体积系数	Oil Formation Volume Factor
+原油压缩系数	Oil Compressibility
+地层原油粘度	Formation Oil Viscosity
+重力分异	Gravity Segregation
+混相	Miscibility
+纵向波及系数	Vertical Sweep Efficiency
+平面波及系数	Areal Sweep Efficiency
+驱油效率	Displacement Efficiency
+体积波及系数	Volumetric Sweep Efficiency
+流度比	Mobility Ratio
+原油粘度	Crude Oil Viscosity
+地层原油密度	Formation Oil Density
+天然气物性	Natural Gas Properties
+偏差系数	Deviation Factor
+压缩因子	Compressibility Factor
+凝析气藏	Condensate Gas Reservoir
+挥发性油藏	Volatile Oil Reservoir
+高凝油	High-Pour-Point Oil
+底水油藏	Bottom Water Reservoir
+边水油藏	Edge Water Reservoir
+气顶气藏	Gas Cap Reservoir
+块状油藏	Massive Reservoir
+层状油藏	Layered Reservoir
+裂缝性油藏	Fractured Reservoir
+多重介质	Multiple Media
+水窜	Water Channeling
+含水上升	Water Cut Rise
+产量构成	Production Composition
+配产	Production Allocation
+配注	Injection Allocation
+注水压力	Injection Pressure
+注水量	Injection Rate
+注采平衡	Injection-Production Balance
+压力保持水平	Pressure Maintenance Level
+地层能量	Formation Energy
+弹性能量	Elastic Energy
+驱动指数	Drive Index
+水驱特征曲线	Water Drive Characteristic Curve
+甲型水驱曲线	Type A Water Drive Curve
+注水倍数	Injected Pore Volume
+波及体积系数	Volumetric Sweep Coefficient
+相渗曲线归一化	Relative Permeability Normalization
+拟相对渗透率	Pseudo Relative Permeability
+储层敏感性	Reservoir Sensitivity
+速敏	Rate Sensitivity
+水敏	Water Sensitivity
+盐敏	Salt Sensitivity
+酸敏	Acid Sensitivity
+碱敏	Alkali Sensitivity
+应力敏感	Stress Sensitivity
+石油钻井	Oil Well Drilling
+旋转钻井	Rotary Drilling
+金刚石钻头	Diamond Bit
+钻铤	Drill Collar
+方钻杆	Kelly
+顶驱	Top Drive
+水基钻井液	Water-Based Mud
+油基钻井液	Oil-Based Mud
+合成基钻井液	Synthetic-Based Mud
+钻井液密度	Mud Density
+流变参数	Rheological Parameter
+塑性粘度	Plastic Viscosity
+动切力	Yield Point
+失水造壁性	Fluid Loss and Wall Building
+井壁稳定	Wellbore Stability
+井漏	Lost Circulation
+井涌	Well Kick
+井控	Well Control
+压井	Kill Well
+井底压差	Bottomhole Pressure Difference
+过平衡钻井	Overbalanced Drilling
+欠平衡钻井	Underbalanced Drilling
+机械钻速	Rate of Penetration
+钻压	Weight on Bit
+起下钻	Tripping
+卡钻	Stuck Pipe
+断钻具	Drill String Failure
+落鱼	Fish
+定向钻井	Directional Drilling
+大位移井	Extended-Reach Well
+多分支井	Multilateral Well
+井眼轨迹	Wellbore Trajectory
+随钻测量	Measurement While Drilling
+随钻测井	Logging While Drilling
+旋转导向	Rotary Steerable System
+螺杆钻具	Mud Motor
+涡轮钻具	Turbine
+表层套管	Surface Casing
+技术套管	Intermediate Casing
+生产套管	Production Casing
+固井	Well Cementing
+固井质量	Cementing Quality
+声幅测井	Cement Bond Log
+完井	Well Completion
+射孔枪	Perforating Gun
+套管完井	Cased Hole Completion
+裸眼完井	Open Hole Completion
+砾石充填	Gravel Packing
+防砂	Sand Control
+封隔器	Packer
+生产管柱	Production String
+采油树	Christmas Tree
+井筒完整性	Well Integrity
+环空	Annulus
+水泥环	Cement Sheath
+套管磨损	Casing Wear
+套管腐蚀	Casing Corrosion
+井筒流动	Wellbore Flow
+井眼净化	Hole Cleaning
+环空压耗	Annular Pressure Loss
+当量循环密度	Equivalent Circulating Density
+破裂压力梯度	Fracture Pressure Gradient
+地层孔隙压力	Pore Pressure
+坍塌压力	Collapse Pressure
+钻井窗口	Drilling Window
+井身结构	Casing Program
+固井顶替	Cement Displacement
+井控装备	Well Control Equipment
+节流管汇	Choke Manifold
+压井液密度	Kill Mud Weight
+地层承压能力	Formation Integrity
+地层漏失压力	Leak-Off Pressure
+钻井周期	Drilling Cycle
+钻井成本	Drilling Cost
+安全密度窗口	Safe Mud Weight Window
+井壁坍塌	Wellbore Collapse
+缩径	Hole Narrowing
+划眼	Reaming
+扫塞	Drill Out
+通井	Well Reaming
+套管扶正器	Casing Centralizer
+套管柱设计	Casing Design
+套管强度	Casing Strength
+抗挤强度	Collapse Strength
+抗内压强度	Burst Strength
+固井附件	Cementing Accessories
+尾管悬挂器	Liner Hanger
+分级注水泥	Stage Cementing
+采油工程	Production Engineering
+采气工程	Gas Production Engineering
+自喷期	Natural Flow Period
+人工举升	Artificial Lift
+气举	Gas Lift
+气举阀	Gas Lift Valve
+游梁式抽油机	Beam Pumping Unit
+抽油杆	Sucker Rod
+电潜泵	Electric Submersible Pump
+水力活塞泵	Hydraulic Piston Pump
+射流泵	Jet Pump
+有杆泵	Rod Pump
+无杆泵	Rodless Pump
+泵效	Pump Efficiency
+冲次	Stroke Frequency
+泵径	Pump Diameter
+泵深	Pump Setting Depth
+动液面	Dynamic Liquid Level
+静液面	Static Liquid Level
+沉没度	Submergence Depth
+生产压差	Producing Pressure Difference
+井筒多相流	Wellbore Multiphase Flow
+气液两相流	Gas-Liquid Two-Phase Flow
+段塞流	Slug Flow
+泡状流	Bubbly Flow
+环状流	Annular Flow
+雾状流	Mist Flow
+持液率	Liquid Holdup
+井筒压力分布	Wellbore Pressure Distribution
+垂直管流	Vertical Pipe Flow
+节点分析	Nodal Analysis
+流入动态	Inflow Performance
+流入动态关系	Inflow Performance Relationship
+流出动态	Outflow Performance
+气井产能	Gas Well Productivity
+二项式产能方程	Binomial Deliverability Equation
+指数式产能方程	Exponential Deliverability Equation
+无阻流量	Absolute Open Flow
+气井积液	Liquid Loading in Gas Wells
+临界携液流量	Critical Liquid Carrying Rate
+排水采气	Dewatering Gas Recovery
+泡沫排水	Foam Dewatering
+柱塞气举	Plunger Lift
+井下节流	Downhole Choke
+水合物堵塞	Hydrate Plugging
+防蜡	Wax Control
+清蜡	Wax Removal
+防垢	Scale Control
+析蜡点	Wax Appearance Temperature
+析蜡	Wax Precipitation
+稠油开采	Heavy Oil Production
+热力采油	Thermal Recovery
+蒸汽吞吐	Cyclic Steam Stimulation
+蒸汽驱	Steam Flooding
+火烧油层	In-Situ Combustion
+电加热采油	Electric Heating
+井筒降粘	Wellbore Viscosity Reduction
+掺稀油	Diluent Blending
+检泵	Pump Inspection
+修井	Workover
+井下作业	Downhole Operation
+增产措施	Stimulation
+基质酸化	Matrix Acidizing
+酸压	Fracture Acidizing
+土酸	Mud Acid
+缓速酸	Retarded Acid
+隔离液	Spacer Fluid
+解堵	Plug Removal
+射孔优化	Perforation Optimization
+生产测井	Production Logging
+井温测井	Temperature Logging
+抽油机井	Beam Pumped Well
+防偏磨	Eccentric Wear Control
+扶正器	Centralizer
+油管柱	Tubing String
+气锚	Gas Anchor
+井下气液分离器	Downhole Separator
+清防蜡剂	Paraffin Inhibitor
+破乳剂	Demulsifier
+原油脱水	Crude Oil Dehydration
+原油稳定	Crude Oil Stabilization
+三相分离器	Three-Phase Separator
+集输系统	Gathering System
+管线腐蚀	Pipeline Corrosion
+水驱	Water Flooding
+气驱	Gas Flooding
+混相驱	Miscible Flooding
+最小混相压力	Minimum Miscibility Pressure
+近混相	Near Miscible
+二氧化碳驱	CO2 Flooding
+氮气驱	Nitrogen Flooding
+烃类气驱	Hydrocarbon Gas Flooding
+烟道气驱	Flue Gas Flooding
+化学驱	Chemical Flooding
+聚合物驱	Polymer Flooding
+表面活性剂驱	Surfactant Flooding
+碱驱	Alkaline Flooding
+三元复合驱	Alkali-Surfactant-Polymer Flooding
+二元复合驱	Surfactant-Polymer Flooding
+泡沫驱	Foam Flooding
+微生物驱	Microbial Enhanced Oil Recovery
+纳米驱	Nanofluid Flooding
+低矿化度水驱	Low Salinity Water Flooding
+部分水解聚丙烯酰胺	Partially Hydrolyzed Polyacrylamide
+降粘剂	Viscosity Reducer
+驱油剂	Oil Displacement Agent
+牺牲剂	Sacrificial Agent
+凝胶调驱	Gel Profile Control
+深部调驱	Deep Profile Control
+调剖	Profile Control
+堵水	Water Shutoff
+选择性堵水	Selective Water Shutoff
+聚合物微球	Polymer Microsphere
+采收率标定	Recovery Factor Determination
+驱替实验	Displacement Experiment
+岩心驱替	Core Flooding
+长岩心驱替	Long Core Flooding
+微观驱替	Microscopic Displacement
+可视化驱替	Visualized Displacement
+波及体积	Swept Volume
+油墙	Oil Bank
+残余油	Residual Oil
+相态行为	Phase Behavior
+流体相态	Fluid Phase Behavior
+混相条件	Miscibility Condition
+一次接触混相	First-Contact Miscibility
+多次接触混相	Multiple-Contact Miscibility
+抽提	Extraction
+汽化气驱	Vaporizing Gas Drive
+凝析气驱	Condensing Gas Drive
+富气驱	Enriched Gas Flooding
+干气驱	Dry Gas Flooding
+波及效率	Sweep Efficiency
+粘性指进	Viscous Fingering
+重力超覆	Gravity Override
+窜流	Channeling
+高渗条带	High-Permeability Streak
+优势通道	Preferential Channel
+气水交替	Water Alternating Gas
+泡沫稳定性	Foam Stability
+乳化降粘	Emulsion Viscosity Reduction
+碳捕集利用与封存	Carbon Capture Utilization and Storage
+二氧化碳封存	CO2 Storage
+驱油效率提高	Displacement Efficiency Improvement
+增油降水	Increase Oil and Reduce Water
+化学剂损耗	Chemical Loss
+吸附滞留	Adsorption and Retention
+色谱分离	Chromatographic Separation
+波及系数	Sweep Coefficient
+注气开发	Gas Injection Development
+混相压力	Miscibility Pressure
+聚合物浓度	Polymer Concentration
+聚合物分子量	Polymer Molecular Weight
+粘度比	Viscosity Ratio
+残余阻力系数	Residual Resistance Factor
+表面活性剂浓度	Surfactant Concentration
+界面活性	Interfacial Activity
+超低界面张力	Ultra-Low Interfacial Tension
+色谱效应	Chromatographic Effect
+驱替前缘	Displacement Front
+驱替速度	Displacement Rate
+注入速度	Injection Rate
+调驱剂	Profile Control Agent
+非常规油气	Unconventional Oil and Gas
+页岩气	Shale Gas
+致密油	Tight Oil
+致密气	Tight Gas
+致密砂岩气	Tight Sandstone Gas
+天然气水合物	Natural Gas Hydrate
+页岩储层	Shale Reservoir
+致密储层	Tight Reservoir
+纳米孔	Nanoscale Pore
+微裂缝	Microfracture
+天然裂缝	Natural Fracture
+有机孔	Organic Pore
+无机孔	Inorganic Pore
+比表面积	Specific Surface Area
+吸附气	Adsorbed Gas
+游离气	Free Gas
+吸附等温线	Adsorption Isotherm
+兰氏体积	Langmuir Volume
+兰氏压力	Langmuir Pressure
+临界解吸压力	Critical Desorption Pressure
+含气量	Gas Content
+页岩孔隙度	Shale Porosity
+页岩渗透率	Shale Permeability
+表观渗透率	Apparent Permeability
+滑脱效应	Slippage Effect
+克努森扩散	Knudsen Diffusion
+克努森数	Knudsen Number
+解吸附	Desorption
+吸附油	Adsorbed Oil
+游离油	Free Oil
+页岩脆性	Shale Brittleness
+脆性指数	Brittleness Index
+矿物组分	Mineral Composition
+黏土矿物	Clay Mineral
+伊利石	Illite
+干酪根类型	Kerogen Type
+水平主应力	Horizontal Principal Stress
+最小水平主应力	Minimum Horizontal Stress
+最大水平主应力	Maximum Horizontal Stress
+应力各向异性	Stress Anisotropy
+水力压裂	Hydraulic Fracturing
+压裂裂缝	Hydraulic Fracture
+主裂缝	Main Fracture
+次生裂缝	Secondary Fracture
+人工裂缝	Artificial Fracture
+裂缝网络	Fracture Network
+压裂液	Fracturing Fluid
+滑溜水	Slickwater
+交联冻胶	Crosslinked Gel
+压裂液返排	Flowback
+返排率	Flowback Rate
+压裂段	Fracturing Stage
+桥塞	Bridge Plug
+分簇射孔	Cluster Perforation
+密切割	Dense Cluster Spacing
+重复压裂	Refracturing
+暂堵转向	Temporary Plugging Diversion
+裂缝导流能力	Fracture Conductivity
+缝长	Fracture Length
+缝高	Fracture Height
+缝宽	Fracture Width
+压裂施工压力	Fracturing Treatment Pressure
+破裂压力	Breakdown Pressure
+闭合压力	Closure Pressure
+净压力	Net Pressure
+滤失	Fluid Loss
+压裂规模	Fracturing Scale
+体积压裂	Stimulated Reservoir Volume Fracturing
+改造体积	Stimulated Reservoir Volume
+井工厂	Well Factory
+工厂化作业	Factory Operation
+平台钻井	Pad Drilling
+长水平段	Long Lateral
+分段压裂	Staged Fracturing
+渗吸	Imbibition
+自发渗吸	Spontaneous Imbibition
+强制渗吸	Forced Imbibition
+渗吸采收率	Imbibition Recovery
+焖井	Soak
+焖井时间	Soak Time
+页岩油藏	Shale Oil Reservoir
+致密油藏	Tight Oil Reservoir
+地质甜点	Geological Sweet Spot
+工程甜点	Engineering Sweet Spot
+可压性	Fracability
+多段压裂	Multi-Stage Fracturing
+页岩气压裂	Shale Gas Fracturing
+页岩气井	Shale Gas Well
+初期产量	Initial Production
+最终可采储量	Estimated Ultimate Recovery
+单井控制储量	Well Drainage Reserves
+井距	Well Spacing
+丛式水平井	Cluster Horizontal Wells
+裂缝监测	Fracture Monitoring
+微地震监测	Microseismic Monitoring
+示踪剂监测	Tracer Monitoring
+水平井段	Horizontal Lateral
+造斜段	Build Section
+储层改造	Reservoir Stimulation
+缝网	Fracture Network Geometry
+裂缝复杂性	Fracture Complexity
+压裂车组	Fracturing Fleet
+混砂车	Blender
+压裂泵车	Fracturing Pump Truck
+连续油管	Coiled Tubing
+钻塞	Mill Out
+套管变形	Casing Deformation
+页岩气开发	Shale Gas Development
+煤层气开发	Coalbed Methane Development
+煤层气排采	Coalbed Methane Production
+临界解吸	Critical Desorption
+渗透率应力敏感	Permeability Stress Sensitivity
+气体滑脱	Gas Slippage
+吸附膨胀	Adsorption Swelling
+多重运移机制	Multiple Transport Mechanisms
+油藏数值模拟	Reservoir Numerical Simulation
+三维地质模型	Three-Dimensional Geological Model
+网格粗化	Upscaling
+角点网格	Corner Point Grid
+非结构网格	Unstructured Grid
+局部网格加密	Local Grid Refinement
+黑油模型	Black Oil Model
+组分模型	Compositional Model
+双重介质模型	Dual Porosity Model
+双孔双渗	Dual Porosity Dual Permeability
+裂缝模型	Fracture Model
+离散裂缝网络	Discrete Fracture Network
+闪蒸计算	Flash Calculation
+岩石压缩系数	Rock Compressibility
+流体物性	Fluid Properties
+历史拟合	History Matching
+自动历史拟合	Automatic History Matching
+参数敏感性	Parameter Sensitivity
+不确定性分析	Uncertainty Analysis
+代理模型	Surrogate Model
+响应面	Response Surface
+蒙特卡洛模拟	Monte Carlo Simulation
+产量拟合	Production History Matching
+压力拟合	Pressure Matching
+剩余油分布	Remaining Oil Distribution
+饱和度分布	Saturation Distribution
+压力场	Pressure Field
+流线模拟	Streamline Simulation
+井模型	Well Model
+井指数	Well Index
+完井段	Completion Interval
+定压生产	Constant Pressure Production
+定产生产	Constant Rate Production
+时间步长	Time Step
+隐式求解	Implicit Solution
+全隐式	Fully Implicit
+自适应隐式	Adaptive Implicit
+线性求解器	Linear Solver
+大规模并行	Large-Scale Parallel
+代理加速	Proxy Acceleration
+机器学习代理	Machine Learning Proxy
+降阶模型	Reduced-Order Model
+动态预测	Dynamic Prediction
+产量预测	Production Prediction
+开发方案优化	Development Plan Optimization
+井位优化	Well Placement Optimization
+注采优化	Injection-Production Optimization
+敏感性分析	Sensitivity Analysis
+二氧化碳驱模拟	CO2 Flooding Simulation
+化学驱模拟	Chemical Flooding Simulation
+热采模拟	Thermal Simulation
+组分追踪	Component Tracking
+数值弥散	Numerical Dispersion
+时间离散	Time Discretization
+空间离散	Spatial Discretization
+有限差分	Finite Difference
+有限体积	Finite Volume
+控制体积	Control Volume
+守恒方程	Conservation Equation
+达西流动	Darcy Flow
+多相流	Multiphase Flow
+黑油模拟	Black Oil Simulation
+组分模拟	Compositional Simulation
+混相模拟	Miscible Simulation
+裂缝性油藏模拟	Fractured Reservoir Simulation
+页岩气模拟	Shale Gas Simulation
+多尺度模拟	Multiscale Simulation
+网格方向效应	Grid Orientation Effect
+数值收敛	Numerical Convergence
+相渗曲线处理	Relative Permeability Treatment
+端点标定	End-Point Scaling
+含水饱和度函数	Water Saturation Function
+体积平衡	Volume Balance
+物质守恒	Material Conservation
+初始条件	Initial Condition
+分子动力学	Molecular Dynamics
+分子力学	Molecular Mechanics
+蒙特卡洛方法	Monte Carlo Method
+第一性原理	First Principles
+从头计算	Ab Initio Calculation
+半经验方法	Semi-Empirical Method
+势函数	Potential Function
+势能面	Potential Energy Surface
+全原子力场	All-Atom Force Field
+联合原子力场	United-Atom Force Field
+粗粒化模型	Coarse-Grained Model
+反应力场	Reactive Force Field
+极化力场	Polarizable Force Field
+范德华力	Van der Waals Force
+库仑作用	Coulomb Interaction
+氢键	Hydrogen Bond
+非键相互作用	Nonbonded Interaction
+截断半径	Cutoff Radius
+周期性边界条件	Periodic Boundary Condition
+最小镜像约定	Minimum Image Convention
+长程静电	Long-Range Electrostatics
+粒子网格埃瓦尔德	Particle Mesh Ewald
+邻居列表	Neighbor List
+积分算法	Integration Algorithm
+蛙跳算法	Leapfrog Algorithm
+系综	Ensemble
+正则系综	Canonical Ensemble
+微正则系综	Microcanonical Ensemble
+等温等压系综	Isobaric-Isothermal Ensemble
+巨正则系综	Grand Canonical Ensemble
+温度耦合	Temperature Coupling
+压力耦合	Pressure Coupling
+平衡模拟	Equilibrium Simulation
+均方位移	Mean Square Displacement
+径向分布函数	Radial Distribution Function
+结构因子	Structure Factor
+键长	Bond Length
+均方根偏差	Root Mean Square Deviation
+均方根涨落	Root Mean Square Fluctuation
+自由能面	Free Energy Surface
+平均力势	Potential of Mean Force
+伞形采样	Umbrella Sampling
+热力学积分	Thermodynamic Integration
+自由能微扰	Free Energy Perturbation
+元动力学	Metadynamics
+副本交换	Replica Exchange
+拉伸分子动力学	Steered Molecular Dynamics
+约束分子动力学	Constrained Molecular Dynamics
+解吸过程	Desorption Process
+相互作用能	Interaction Energy
+油水界面	Oil-Water Interface
+固液界面	Solid-Liquid Interface
+界面吸附	Interfacial Adsorption
+表面活性剂分子	Surfactant Molecule
+两亲分子	Amphiphilic Molecule
+亲水基	Hydrophilic Group
+疏水基	Hydrophobic Group
+界面膜	Interfacial Film
+水膜	Water Film
+纳米受限空间	Nanoconfinement
+纳米孔道	Nanochannel
+受限效应	Confinement Effect
+溶剂化	Solvation
+水化层	Hydration Layer
+双电层	Electric Double Layer
+黏土表面	Clay Surface
+分子构象	Molecular Conformation
+质子化	Protonation
+去质子化	Deprotonation
+分子间作用力	Intermolecular Force
+原子间势	Interatomic Potential
+键合作用	Bonded Interaction
+角度势	Angular Potential
+扭转势	Torsional Potential
+非键势	Nonbonded Potential
+兰纳琼斯势	Lennard-Jones Potential
+偶极矩	Dipole Moment
+氢键网络	Hydrogen Bond Network
+粗粒化模拟	Coarse-Grained Simulation
+全原子模拟	All-Atom Simulation
+长时间尺度	Long Time Scale
+能量最小化	Energy Minimization
+最陡下降法	Steepest Descent
+退火模拟	Simulated Annealing
+模拟盒子	Simulation Box
+溶剂盒子	Solvent Box
+界面模型	Interface Model
+分子动力学轨迹	Molecular Dynamics Trajectory
+原子坐标	Atomic Coordinate
+流速分布	Velocity Distribution
+界面张力计算	Interfacial Tension Calculation
+储集空间	Reservoir Space
+孔隙类型	Pore Type
+原生粒间孔	Primary Intergranular Pore
+次生溶孔	Secondary Dissolution Pore
+铸模孔	Moldic Pore
+晶间孔	Intercrystalline Pore
+裂缝孔隙度	Fracture Porosity
+基质孔隙度	Matrix Porosity
+有效厚度	Net Pay Thickness
+净毛比	Net-to-Gross Ratio
+储层物性	Reservoir Physical Properties
+物性下限	Property Cutoff
+孔渗关系	Porosity-Permeability Relationship
+渗透率级差	Permeability Ratio
+突进系数	Permeability Contrast Coefficient
+储层连通性	Reservoir Connectivity
+砂体连通性	Sand Body Connectivity
+隔夹层	Interbed and Barrier
+泥质含量	Shale Content
+沉积微相	Sedimentary Microfacies
+测井相	Logging Facies
+成岩阶段	Diagenetic Stage
+成岩序列	Diagenetic Sequence
+有机质类型	Organic Matter Type
+有机质成熟度	Organic Matter Maturity
+生油门限	Oil Generation Threshold
+排烃门限	Expulsion Threshold
+油气运移	Oil and Gas Migration
+圈闭有效性	Trap Effectiveness
+盖层封闭性	Seal Capacity
+油气充注	Hydrocarbon Charging
+充注历史	Charging History
+成藏期次	Accumulation Stage
+成藏模式	Accumulation Model
+输导层	Carrier Bed
+断裂输导	Fault Conduit
+不整合面	Unconformity Surface
+叠合盆地	Superimposed Basin
+坳陷	Depression
+斜坡带	Slope Zone
+构造带	Structural Belt
+圈闭面积	Trap Area
+闭合高度	Closure Height
+溢出点	Spill Point
+油气柱高度	Hydrocarbon Column Height
+储层预测	Reservoir Prediction
+测井曲线	Well Log Curve
+饱和度测井	Saturation Logging
+中子孔隙度	Neutron Porosity
+地层测试器	Formation Tester
+取心	Coring
+岩心分析	Core Analysis
+薄片鉴定	Thin Section Analysis
+渗流方程	Seepage Equation
+连续性方程	Continuity Equation
+径向流	Radial Flow
+线性流	Linear Flow
+球形流	Spherical Flow
+双孔介质	Dual Porosity Medium
+窜流形状因子	Shape Factor
+井筒储存效应	Wellbore Storage Effect
+裂缝表皮	Fracture Skin
+复合油藏	Composite Reservoir
+径向复合	Radial Composite
+流压梯度	Flowing Pressure Gradient
+节流效应	Throttling Effect
+拟压力函数	Pseudopressure Function
+气藏物质平衡	Gas Reservoir Material Balance
+定容气藏	Volumetric Gas Reservoir
+水驱气藏	Water Drive Gas Reservoir
+废弃压力	Abandonment Pressure
+经济极限产量	Economic Limit Rate
+极限含水率	Limit Water Cut
+井网优化	Well Pattern Optimization
+注采井距	Injection-Production Spacing
+水驱控制程度	Waterflood Control Degree
+注水利用率	Water Injection Utilization
+存水率	Water Storage Rate
+水驱指数	Water Drive Index
+耗水率	Water Consumption Rate
+采油速度	Oil Production Rate
+采液速度	Liquid Production Rate
+综合递减率	Composite Decline Rate
+自然递减率	Natural Decline Rate
+措施产量	Stimulation Production
+新井产量	New Well Production
+产能建设	Productivity Construction
+产能评价	Productivity Evaluation
+采油强度	Oil Production Intensity
+采液强度	Liquid Production Intensity
+吸水剖面	Water Injection Profile
+产液剖面	Liquid Production Profile
+分层测试	Layered Testing
+分层注水	Separate Layer Water Injection
+分层采油	Separate Layer Production
+堵剂	Plugging Agent
+深部液流转向	Deep Fluid Diversion
+优势流场	Preferential Flow Field
+剩余油分布规律	Remaining Oil Distribution Pattern
+精细油藏描述	Fine Reservoir Description
+生产动态分析	Production Performance Analysis
+井组分析	Well Group Analysis
+注采对应关系	Injection-Production Correspondence
+水驱前缘	Waterflood Front
+见水时间	Water Breakthrough Time
+无水采收率	Water-Free Recovery
+见水	Water Breakthrough
+钻具组合	Bottomhole Assembly
+钻具失效	Drill String Failure
+钻杆接头	Tool Joint
+加重钻杆	Heavy Weight Drill Pipe
+震击器	Jar
+扩眼器	Reamer
+随钻扩眼	Underreaming While Drilling
+井眼扩大	Hole Enlargement
+井径测井	Caliper Log
+井斜角	Inclination Angle
+造斜率	Build Rate
+狗腿度	Dogleg Severity
+井眼曲率	Wellbore Curvature
+防斜打直	Vertical Drilling
+复合钻井	Compound Drilling
+滑动钻进	Sliding Drilling
+旋转钻进	Rotary Drilling Mode
+机械破岩	Mechanical Rock Breaking
+破岩效率	Rock Breaking Efficiency
+钻头磨损	Bit Wear
+钻头选型	Bit Selection
+水力参数	Hydraulic Parameters
+喷射钻井	Jet Drilling
+环空返速	Annular Return Velocity
+岩屑携带	Cuttings Carrying
+岩屑床	Cuttings Bed
+循环压耗	Circulating Pressure Loss
+泵压	Pump Pressure
+立管压力	Standpipe Pressure
+套压	Casing Pressure
+录井	Mud Logging
+气测录井	Gas Logging
+岩心录井	Core Logging
+钻井取心	Drilling Coring
+岩心收获率	Core Recovery
+保压取心	Pressure Coring
+密闭取心	Sealed Coring
+井壁取心	Sidewall Coring
+地层测试	Formation Testing
+中途测试	Drill Stem Testing
+完井测试	Completion Testing
+试油	Well Testing for Oil
+试气	Well Testing for Gas
+完井液	Completion Fluid
+射孔液	Perforating Fluid
+防砂完井	Sand Control Completion
+智能完井	Intelligent Completion
+压裂滑套	Fracturing Sleeve
+管外封隔器	External Casing Packer
+分级箍	Stage Collar
+固井质量评价	Cementing Quality Evaluation
+水泥胶结	Cement Bonding
+声波变密度	Variable Density Log
+套管头	Casing Head
+油管头	Tubing Head
+防喷器组	Blowout Preventer Stack
+环形防喷器	Annular Blowout Preventer
+闸板防喷器	Ram Blowout Preventer
+节流压井	Choke and Kill
+井控演练	Well Control Drill
+井喷失控	Blowout Out of Control
+井口装置	Wellhead Equipment
+举升方式优选	Artificial Lift Selection
+举升参数优化	Lift Parameter Optimization
+抽汲	Swabbing
+泵挂深度	Pump Setting Depth
+泵充满系数	Pump Fillage
+泵漏失	Pump Leakage
+气锁	Gas Lock
+供液能力	Liquid Supply Capacity
+供液不足	Insufficient Liquid Supply
+间抽	Intermittent Pumping
+定压放气	Pressure-Regulated Gas Release
+套管气回收	Casinghead Gas Recovery
+加热输送	Heated Transportation
+掺水集输	Water Blending Gathering
+原油集输	Crude Oil Gathering and Transportation
+转油站	Transfer Station
+联合站	Central Processing Facility
+油气水分离	Oil-Gas-Water Separation
+原油电脱水	Crude Oil Electrical Dehydration
+天然气净化	Natural Gas Purification
+露点控制	Dew Point Control
+清管	Pigging
+空心抽油杆	Hollow Sucker Rod
+连续抽油杆	Continuous Sucker Rod
+玻璃钢抽油杆	Fiberglass Sucker Rod
+示功图	Dynamometer Card
+功图诊断	Dynamometer Card Diagnosis
+井下工具	Downhole Tool
+打捞工具	Fishing Tool
+磨铣工具	Milling Tool
+套铣	Washover
+磨铣	Milling
+侧钻	Sidetracking
+套管开窗	Casing Window
+解卡	Freeing Stuck Pipe
+套管补贴	Casing Patch
+套管整形	Casing Reshaping
+挤水泥	Squeeze Cementing
+封窜	Channel Sealing
+化学堵水	Chemical Water Shutoff
+机械堵水	Mechanical Water Shutoff
+化学驱油	Chemical Flooding
+驱油体系	Displacement System
+驱油机理	Displacement Mechanism
+碱水驱	Alkaline Water Flooding
+复合驱	Combined Flooding
+泡沫复合驱	Foam Combined Flooding
+连续气驱	Continuous Gas Injection
+注入井	Injection Well
+采出井	Production Well
+注入能力	Injectivity
+细管实验	Slim Tube Experiment
+最小混相压力测定	MMP Determination
+相态模拟	Phase Behavior Simulation
+流体相态拟合	Fluid Phase Behavior Matching
+流体组成	Fluid Composition
+组分分析	Compositional Analysis
+原油组分	Crude Oil Composition
+地层流体	Formation Fluid
+注气混相	Miscible Gas Injection
+非混相驱	Immiscible Flooding
+波及控制	Sweep Control
+流度控制	Mobility Control
+聚合物溶液	Polymer Solution
+剪切降解	Shear Degradation
+机械降解	Mechanical Degradation
+热氧降解	Thermal-Oxidative Degradation
+聚合物稳定性	Polymer Stability
+不可及孔隙体积	Inaccessible Pore Volume
+吸附量	Adsorption Amount
+滞留量	Retention Amount
+表面活性剂吸附	Surfactant Adsorption
+碱耗	Alkali Consumption
+碱岩反应	Alkali-Rock Reaction
+微乳液驱	Microemulsion Flooding
+泡沫封堵	Foam Plugging
+微生物采油	Microbial Oil Recovery
+生物表面活性剂	Biosurfactant
+生物聚合物	Biopolymer
+纳米流体	Nanofluid
+纳米颗粒	Nanoparticle
+智能水	Smart Water
+离子组成	Ion Composition
+润湿反转	Wettability Alteration
+润湿性改变	Wettability Change
+页岩层系	Shale System
+富有机质页岩	Organic-Rich Shale
+页岩孔隙	Shale Pore
+纳米孔隙	Nanopore
+有机质孔	Organic Matter Pore
+粒间孔	Intergranular Pore
+粒内孔	Intragranular Pore
+页岩比表面	Shale Specific Surface Area
+页岩吸附	Shale Adsorption
+页岩含气量	Shale Gas Content
+页岩气藏	Shale Gas Reservoir
+脆性矿物	Brittle Mineral
+硅质含量	Silica Content
+钙质含量	Calcareous Content
+粘土含量	Clay Content
+页岩层理	Shale Bedding
+层理缝	Bedding Fracture
+构造缝	Tectonic Fracture
+成岩缝	Diagenetic Fracture
+裂缝发育	Fracture Development
+裂缝密度	Fracture Density
+裂缝充填	Fracture Filling
+裂缝有效性	Fracture Effectiveness
+缝网复杂度	Fracture Network Complexity
+体积改造	Volume Stimulation
+分段多簇	Multi-Stage Multi-Cluster
+缝控储量	Fracture-Controlled Reserves
+压裂参数	Fracturing Parameters
+施工排量	Treatment Rate
+砂量	Proppant Volume
+砂比	Proppant Concentration
+前置液	Pad Fluid
+携砂液	Proppant-Laden Fluid
+顶替液	Displacement Fluid
+压裂液体系	Fracturing Fluid System
+破胶剂	Breaker
+减阻剂	Drag Reducer
+助排剂	Flowback Aid
+粘土稳定剂	Clay Stabilizer
+支撑剂铺置	Proppant Placement
+导流能力测试	Conductivity Test
+井中微地震	Downhole Microseismic
+地面微地震	Surface Microseismic
+应变监测	Strain Monitoring
+分布式光纤	Distributed Optical Fiber
+压窜	Frac Hit
+段间干扰	Inter-Stage Interference
+重复压裂时机	Refracturing Timing
+暂堵剂	Temporary Plugging Agent
+暂堵球	Diverter Ball
+转向剂	Diverting Agent
+缝内转向	In-Fracture Diversion
+缝间转向	Inter-Fracture Diversion
+焖井返排	Soak and Flowback
+油藏模拟器	Reservoir Simulator
+黑油模拟器	Black Oil Simulator
+组分模拟器	Compositional Simulator
+热采模拟器	Thermal Simulator
+双重介质模拟	Dual Porosity Simulation
+双孔双渗模型	Dual Porosity Dual Permeability Model
+基质裂缝耦合	Matrix-Fracture Coupling
+裂缝嵌入	Fracture Embedding
+离散裂缝模型	Discrete Fracture Model
+复杂裂缝模拟	Complex Fracture Simulation
+压裂水平井模拟	Fractured Horizontal Well Simulation
+历史拟合参数	History Matching Parameters
+不确定性量化	Uncertainty Quantification
+代理模型优化	Surrogate Model Optimization
+智能优化	Intelligent Optimization
+差分进化算法	Differential Evolution Algorithm
+集合卡尔曼滤波	Ensemble Kalman Filter
+数据同化	Data Assimilation
+地质统计学	Geostatistics
+序贯指示模拟	Sequential Indicator Simulation
+截断高斯模拟	Truncated Gaussian Simulation
+多点地质统计	Multiple-Point Geostatistics
+训练图像	Training Image
+收敛判据	Convergence Criterion
+数值稳定性	Numerical Stability
+自适应时间步	Adaptive Time Stepping
+井底压力约束	Bottomhole Pressure Constraint
+投资回收期	Payback Period
+方案对比	Scenario Comparison
+优化配产	Production Allocation Optimization
+自动拟合	Automatic Matching
+本征正交分解	Proper Orthogonal Decomposition
+神经网络代理	Neural Network Proxy
+深度学习代理	Deep Learning Proxy
+强化学习优化	Reinforcement Learning Optimization
+智能注采	Intelligent Injection and Production
+布井方案	Well Layout Plan
+全原子分子动力学	All-Atom Molecular Dynamics
+粗粒化分子动力学	Coarse-Grained Molecular Dynamics
+反应分子动力学	Reactive Molecular Dynamics
+第一性原理分子动力学	Ab Initio Molecular Dynamics
+力场参数	Force Field Parameters
+力场优化	Force Field Optimization
+电荷分配	Charge Assignment
+极化效应	Polarization Effect
+键合相互作用	Bonded Interaction
+长程修正	Long-Range Correction
+色散修正	Dispersion Correction
+埃瓦尔德求和	Ewald Summation
+截断距离	Cutoff Distance
+开关函数	Switching Function
+周期性边界	Periodic Boundary
+系综选择	Ensemble Selection
+温控方法	Thermostatting Method
+压控方法	Barostatting Method
+平衡步	Equilibration Step
+生产步	Production Step
+氢键分析	Hydrogen Bond Analysis
+溶剂可及表面	Solvent Accessible Surface
+粘度计算	Viscosity Calculation
+热导率计算	Thermal Conductivity Calculation
+界面张力模拟	Interfacial Tension Simulation
+接触角模拟	Contact Angle Simulation
+液滴模拟	Droplet Simulation
+相平衡模拟	Phase Equilibrium Simulation
+自由能计算	Free Energy Calculation
+增强采样	Enhanced Sampling
+平均力势计算	Potential of Mean Force Calculation
+结合自由能	Binding Free Energy
+结合能计算	Binding Energy Calculation
+相互作用能分解	Interaction Energy Decomposition
+能量分解	Energy Decomposition
+后处理分析	Post-Processing Analysis
+可视化分析	Visualization Analysis
+吉布斯系综	Gibbs Ensemble
+分子力学优化	Molecular Mechanics Optimization
+几何优化	Geometry Optimization
+构象搜索	Conformational Search
+分子对接	Molecular Docking
+表面活性剂聚集体	Surfactant Aggregate
+胶束形成	Micelle Formation
+界面膜结构	Interfacial Film Structure
+油水界面模拟	Oil-Water Interface Simulation
+纳米孔道流动	Nanochannel Flow
+受限空间扩散	Confined Space Diffusion
+页岩纳米孔	Shale Nanopore
+干酪根分子模型	Kerogen Molecular Model
+干酪根结构	Kerogen Structure
+沥青质分子	Asphaltene Molecule
+沥青质聚集	Asphaltene Aggregation
+水分子模型	Water Model
+离子水化	Ion Hydration
+离子吸附	Ion Adsorption
+表面电荷分布	Surface Charge Distribution
+双电层结构	Electric Double Layer Structure
+生储盖组合	Source-Reservoir-Seal Assemblage
+储盖组合	Reservoir-Seal Assemblage
+生烃动力学	Hydrocarbon Generation Kinetics
+盆地模拟	Basin Modeling
+埋藏史	Burial History
+热演化史	Thermal Evolution History
+古地温	Paleogeotemperature
+古压力	Paleopressure
+流体包裹体	Fluid Inclusion
+均一温度	Homogenization Temperature
+碳同位素	Carbon Isotope
+氢同位素	Hydrogen Isotope
+生物标志化合物	Biomarker Compound
+甾烷	Sterane
+萜烷	Terpane
+饱和烃	Saturated Hydrocarbon
+族组分	Group Composition
+沉积旋回	Sedimentary Cycle
+物源分析	Provenance Analysis
+古水流	Paleocurrent
+重矿物	Heavy Mineral
+成分成熟度	Compositional Maturity
+结构成熟度	Textural Maturity
+粒度中值	Median Grain Size
+沉积构造	Sedimentary Structure
+交错层理	Cross-Bedding
+平行层理	Parallel Bedding
+水平层理	Horizontal Bedding
+冲刷面	Scour Surface
+生物扰动	Bioturbation
+岩石物理模型	Petrophysical Model
+阿尔奇公式	Archie Equation
+地层因素	Formation Factor
+电阻率指数	Resistivity Index
+胶结指数	Cementation Exponent
+水淹层解释	Water-Flooded Zone Interpretation
+中子寿命测井	Neutron Lifetime Logging
+碳氧比测井	Carbon-Oxygen Ratio Logging
+产出剖面	Production Profile
+注入剖面	Injection Profile
+井间示踪	Interwell Tracer
+双对数曲线	Log-Log Plot
+压力导数曲线	Pressure Derivative Curve
+变井筒储存	Variable Wellbore Storage
+垂直裂缝试井	Vertically Fractured Well Test
+水平井试井	Horizontal Well Test
+多井试井	Multiwell Testing
+裂缝性储层试井	Fractured Reservoir Well Test
+复合试井模型	Composite Well Test Model
+径向复合模型	Radial Composite Model
+双孔试井模型	Dual Porosity Well Test Model
+井筒相态再分布	Wellbore Phase Redistribution
+原油析蜡	Crude Oil Wax Precipitation
+原油乳状液	Crude Oil Emulsion
+原油流变性	Crude Oil Rheology
+地层原油取样	Formation Oil Sampling
+流体相态分析	Fluid Phase Behavior Analysis
+钻井参数优化	Drilling Parameter Optimization
+钻头压降	Bit Pressure Drop
+水力破岩	Hydraulic Rock Breaking
+钻柱振动	Drill String Vibration
+粘滑振动	Stick-Slip Vibration
+横向振动	Lateral Vibration
+扭转振动	Torsional Vibration
+纵向振动	Axial Vibration
+钻柱疲劳	Drill String Fatigue
+疲劳失效	Fatigue Failure
+钻具刺漏	Drill String Washout
+井下故障	Downhole Failure
+堵漏剂	Lost Circulation Material
+随钻堵漏	Lost Circulation Control While Drilling
+承压堵漏	Pressure-Bearing Lost Circulation Control
+井漏处理	Lost Circulation Treatment
+套管检测	Casing Inspection
+井径扩大率	Hole Enlargement Ratio
+井眼质量	Wellbore Quality
+井底清洗	Bottomhole Cleaning
+岩屑浓度	Cuttings Concentration
+岩屑床清除	Cuttings Bed Removal
+井眼失稳	Wellbore Instability
+页岩水化膨胀	Shale Hydration Swelling
+井壁强化	Wellbore Strengthening
+随钻压力监测	Pressure Monitoring While Drilling
+有杆泵系统	Rod Pumping System
+井下效率	Downhole Efficiency
+地面效率	Surface Efficiency
+冲程损失	Stroke Loss
+悬点载荷	Polished Rod Load
+光杆载荷	Polished Rod Load
+示功图分析	Dynamometer Card Analysis
+液击	Fluid Pound
+砂卡	Sand Sticking
+结蜡	Wax Deposition
+腐蚀监测	Corrosion Monitoring
+智能间抽	Intelligent Intermittent Pumping
+出砂预测	Sand Production Prediction
+出砂机理	Sand Production Mechanism
+防砂工艺	Sand Control Technique
+压裂充填	Frac-Pack
+泡排剂	Foaming Agent for Dewatering
+速度管柱	Velocity String
+多相流量计	Multiphase Flowmeter
+油气水计量	Oil-Gas-Water Metering
+原油含水分析	Crude Oil Water Cut Analysis
+原油破乳	Crude Oil Demulsification
+电脱水器	Electrical Dehydrator
+沉降分离	Settling Separation
+混相压力预测	Miscibility Pressure Prediction
+相包络线	Phase Envelope
+反凝析	Retrograde Condensation
+临界凝析温度	Cricondentherm
+相态拟合	Phase Behavior Matching
+组分梯度	Compositional Gradient
+重力稳定注气	Gravity-Stable Gas Injection
+注气提高采收率	Gas Injection EOR
+泡沫剂配方	Foam Formulation
+聚合物剪切	Polymer Shear
+聚合物老化	Polymer Aging
+调驱体系	Profile Control and Flooding System
+微观驱油机理	Microscopic Displacement Mechanism
+孔隙尺度模拟	Pore-Scale Simulation
+孔隙网络模型	Pore Network Model
+数字岩心	Digital Core
+微观模型	Micromodel
+可视化物模	Visual Physical Model
+页岩油开发	Shale Oil Development
+页岩油甜点	Shale Oil Sweet Spot
+页岩油赋存	Shale Oil Occurrence
+可动油饱和度	Movable Oil Saturation
+页岩油吸附	Shale Oil Adsorption
+页岩储集空间	Shale Reservoir Space
+页岩脆性评价	Shale Brittleness Evaluation
+可压裂性评价	Fracability Evaluation
+压裂甜点	Fracturing Sweet Spot
+地应力剖面	In-Situ Stress Profile
+三维地应力	Three-Dimensional In-Situ Stress
+压裂裂缝扩展	Hydraulic Fracture Propagation
+裂缝起裂	Fracture Initiation
+裂缝延伸	Fracture Propagation
+缝网形成	Fracture Network Formation
+支撑剂沉降	Proppant Settling
+支撑剂回流	Proppant Flowback
+压裂液伤害	Fracturing Fluid Damage
+压后返排	Post-Frac Flowback
+产能预测	Productivity Prediction
+递减分析	Decline Analysis
+多相流模拟	Multiphase Flow Simulation
+化学驱数值模拟	Chemical Flooding Numerical Simulation
+泡沫驱模拟	Foam Flooding Simulation
+聚合物驱模拟	Polymer Flooding Simulation
+基质渗透率	Matrix Permeability
+双孔双渗模拟	Dual Porosity Dual Permeability Simulation
+井筒模型耦合	Wellbore Model Coupling
+地面管网模型	Surface Network Model
+生产优化	Production Optimization
+经济优化	Economic Optimization
+智能油田	Intelligent Oilfield
+数字孪生油藏	Reservoir Digital Twin
+受限扩散	Confined Diffusion
+干酪根模型	Kerogen Model
+沥青质模型	Asphaltene Model
+蜡沉积	Wax Deposition
+水合物生成	Hydrate Formation
+水合物分解	Hydrate Dissociation
+二氧化碳水合物	CO2 Hydrate
+界面分子层	Interfacial Molecular Layer
+纳米限域效应	Nanoconfinement Effect
+纳米通道流动	Nanoscale Channel Flow
+质量守恒方程	Mass Conservation Equation
+动量守恒方程	Momentum Conservation Equation
+能量守恒方程	Energy Conservation Equation
+组分质量守恒方程	Component Mass Conservation Equation
+达西方程	Darcy Equation
+势梯度	Potential Gradient
+本构方程	Constitutive Equation
+平衡方程	Equilibrium Equation
+对流扩散方程	Convection-Diffusion Equation
+扩散方程	Diffusion Equation
+热传导方程	Heat Conduction Equation
+热对流方程	Heat Convection Equation
+传热方程	Heat Transfer Equation
+菲克定律	Fick's Law
+傅里叶定律	Fourier's Law
+拉普拉斯方程	Laplace Equation
+泊松方程	Poisson Equation
+累积项	Accumulation Term
+流通项	Flux Term
+源汇项	Source-Sink Term
+传导率系数	Transmissibility Coefficient
+几何因子	Geometric Factor
+相平衡方程	Phase Equilibrium Equation
+相平衡常数	Phase Equilibrium Constant
+闪蒸方程	Flash Equation
+泡点方程	Bubble Point Equation
+露点方程	Dew Point Equation
+逸度	Fugacity
+逸度系数	Fugacity Coefficient
+逸度平衡方程	Fugacity Equilibrium Equation
+逸度系数方程	Fugacity Coefficient Equation
+化学势	Chemical Potential
+摩尔分数	Mole Fraction
+组分摩尔分数	Component Mole Fraction
+相稳定性分析	Phase Stability Analysis
+两相闪蒸	Two-Phase Flash
+三相闪蒸	Three-Phase Flash
+立方型状态方程	Cubic Equation of State
+状态方程法	Equation of State Method
+体积平移	Volume Translation
+临界性质	Critical Properties
+偏心因子	Acentric Factor
+二元交互系数	Binary Interaction Coefficient
+拟组分	Pseudo-Component
+组分劈分	Component Splitting
+重馏分表征	Heavy Fraction Characterization
+相间传质	Interphase Mass Transfer
+局部平衡假设	Local Equilibrium Assumption
+非平衡相变	Non-Equilibrium Phase Transition
+体积约束方程	Volume Constraint Equation
+饱和度约束方程	Saturation Constraint Equation
+相压力约束方程	Phase Pressure Constraint Equation
+毛管压力方程	Capillary Pressure Equation
+毛管压力模型	Capillary Pressure Model
+相对渗透率模型	Relative Permeability Model
+相对渗透率插值	Relative Permeability Interpolation
+三相相对渗透率	Three-Phase Relative Permeability
+相对渗透率滞后	Relative Permeability Hysteresis
+滞后模型	Hysteresis Model
+分流量方程	Fractional Flow Equation
+分流量函数	Fractional Flow Function
+前缘推进方程	Frontal Advance Equation
+贝克莱列维莱特方程	Buckley-Leverett Equation
+吸附方程	Adsorption Equation
+兰氏吸附方程	Langmuir Adsorption Equation
+弗罗因德利希方程	Freundlich Equation
+溶质运移方程	Solute Transport Equation
+扩散系数方程	Diffusion Coefficient Equation
+弥散系数	Dispersion Coefficient
+渗透率降低因子	Permeability Reduction Factor
+粘度模型	Viscosity Model
+粘度混合规则	Viscosity Mixing Rule
+密度混合规则	Density Mixing Rule
+焓平衡	Enthalpy Balance
+反应速率方程	Reaction Rate Equation
+化学反应动力学方程	Chemical Reaction Kinetics Equation
+阿伦尼乌斯方程	Arrhenius Equation
+化学计量系数	Stoichiometric Coefficient
+燃烧反应方程	Combustion Reaction Equation
+孔隙度压力关系	Porosity-Pressure Relationship
+渗透率孔隙度关系	Permeability-Porosity Relationship
+卡门科泽尼方程	Carman-Kozeny Equation
+井方程	Well Equation
+井筒流动方程	Wellbore Flow Equation
+多相管流方程	Multiphase Pipe Flow Equation
+节点方程	Nodal Equation
+井指数方程	Well Index Equation
+产量递减方程	Production Decline Equation
+稳态渗流方程	Steady-State Flow Equation
+拟稳态渗流方程	Pseudo-Steady-State Flow Equation
+非稳态渗流方程	Unsteady-State Flow Equation
+径向流方程	Radial Flow Equation
+线性流方程	Linear Flow Equation
+球形流方程	Spherical Flow Equation
+牛顿拉夫逊法	Newton-Raphson Iteration
+雅可比矩阵	Jacobian Matrix
+线性化方程	Linearized Equation
+主变量	Primary Variables
+变量替换	Variable Substitution
+相出现与消失	Phase Appearance and Disappearance
+阻尼因子	Damping Factor
+迭代收敛	Iteration Convergence
+残差方程	Residual Equation
+隐式压力显式饱和度	Implicit Pressure Explicit Saturation
+全隐式方法	Fully Implicit Method
+自适应隐式方法	Adaptive Implicit Method
+半隐式方法	Semi-Implicit Method
+顺序求解	Sequential Solution
+联立求解	Simultaneous Solution
+全耦合求解	Fully Coupled Solution
+三对角矩阵	Tridiagonal Matrix
+带状矩阵	Banded Matrix
+矩阵求解	Matrix Solution
+直接求解法	Direct Solution Method
+迭代求解法	Iterative Solution Method
+逐次超松弛法	Successive Over-Relaxation Method
+预处理共轭梯度法	Preconditioned Conjugate Gradient Method
+广义最小残差法	Generalized Minimal Residual Method
+正交极小化法	Orthomin Method
+双共轭梯度法	Biconjugate Gradient Method
+代数多重网格法	Algebraic Multigrid Method
+不完全分解	Incomplete Factorization
+嵌套分解法	Nested Factorization Method
+区域分解法	Domain Decomposition Method
+预处理技术	Preconditioning Technique
+并行求解	Parallel Solution
+时间积分	Time Integration
+隐式积分	Implicit Integration
+显式积分	Explicit Integration
+向后欧拉法	Backward Euler Method
+向前欧拉法	Forward Euler Method
+梯形法	Trapezoidal Method
+库朗数	Courant Number
+库朗条件	Courant Condition
+时间步长控制	Time Step Control
+时间截断误差	Time Truncation Error
+空间截断误差	Spatial Truncation Error
+数值耗散	Numerical Dissipation
+应力平衡方程	Stress Equilibrium Equation
+有效应力方程	Effective Stress Equation
+多孔弹性方程	Poroelastic Equation
+渗流应力耦合方程	Seepage-Stress Coupling Equation
+地质力学耦合	Geomechanical Coupling
+塑性本构方程	Plastic Constitutive Equation
+泡沫模型方程	Foam Model Equation
+凝胶模型方程	Gel Model Equation
+聚合物驱模型方程	Polymer Flooding Model Equation
+化学驱模型方程	Chemical Flooding Model Equation
+热采模型方程	Thermal Recovery Model Equation
+组分模型方程	Compositional Model Equation
+黑油模型方程	Black Oil Model Equation
+状态方程闪蒸	Equation of State Flash
+# 英文候选到中文释义
+EOR	提高采收率
+IOR	改善采收率
+MMP	最小混相压力
+WAG	气水交替
+SOR	残余油饱和度
+Sw	含水饱和度
+So	含油饱和度
+Sg	含气饱和度
+PVT	高压物性
+AOF	无阻流量
+IPR	流入动态关系
+PI	采油指数
+BHP	井底压力
+FBHP	井底流压
+WHP	井口压力
+THP	油压
+GOC	气油界面
+OWC	油水界面
+GWC	气水界面
+TD	完钻井深
+MD	测量井深
+TVD	垂深
+DFN	离散裂缝网络
+SRV	改造体积
+LGR	局部网格加密
+EOS	状态方程
+DTP	压力降落
+BU	压力恢复
+WCT	含水率
+GOR	气油比
+API度	美国石油学会重度
+STB	标准桶
+STB/d	每日标准桶
+MMscf/d	每日百万标准立方英尺
+ROP	机械钻速
+WOB	钻压
+RPM	转速
+RSS	旋转导向
+MWD	随钻测量
+LWD	随钻测井
+BHA	井底钻具组合
+BOP	防喷器
+ECD	当量循环密度
+LWD Log	随钻测井曲线
+PDC	聚晶金刚石复合片
+OBM	油基钻井液
+WBM	水基钻井液
+SBM	合成基钻井液
+Lost Circulation	井漏
+Kick	井涌
+ESP	电潜泵
+PCP	螺杆泵
+GL	气举
+Plunger Lift	柱塞气举
+SRP	有杆抽油系统
+Wax	蜡
+Asphaltene	沥青质
+Hydrate	水合物
+Kerogen	干酪根
+Shale	页岩
+Sandstone	砂岩
+Carbonate	碳酸盐岩
+Dolomite	白云岩
+Limestone	石灰岩
+Mudstone	泥岩
+Evaporite	蒸发岩
+Anticline	背斜
+Fault	断层
+Trap	圈闭
+Diagenesis	成岩作用
+Porosity	孔隙度
+Permeability	渗透率
+Saturation	饱和度
+Wettability	润湿性
+Viscosity	粘度
+Miscibility	混相
+Condensate	凝析油
+Aquifer	含水层
+Pay Zone	产层
+Net Pay	净产层厚度
+Capillary	毛管
+Capillary Pressure	毛管压力
+Threshold Pressure Gradient	启动压力梯度
+Imbibition	渗吸
+Huff-n-Puff	吞吐
+Proppant	支撑剂
+Slickwater	滑溜水
+Hydraulic Fracturing	水力压裂
+Perforation	射孔
+Acidizing	酸化
+Refracturing	重复压裂
+Bridge Plug	桥塞
+Coiled Tubing	连续油管
+Fracability	可压性
+Sweet Spot	甜点
+Langmuir	兰氏
+Waterflood	注水开发
+CO2 EOR	二氧化碳驱
+Polymer	聚合物
+Surfactant	表面活性剂
+ASP	三元复合驱
+SP	二元复合驱
+Micelle	胶束
+Profile Control	调剖
+Foam	泡沫
+ECLIPSE	油藏数值模拟软件
+CMG	计算机模拟集团软件
+IMEX	黑油模拟器
+GEM	组分模拟器
+STARS	热采与化学驱模拟器
+tNavigator	tNavigator 模拟器
+Petrel	Petrel 地质建模软件
+Visage	Visage 地质力学软件
+OFM	油藏动态分析软件
+Techlog	测井解释软件
+GOCAD	GOCAD 地质建模软件
+Kingdom	地震解释软件
+OpendTect	开源地震解释软件
+OLGA	多相流瞬态模拟软件
+PIPESIM	井筒与管网模拟软件
+Prosper	生产系统分析软件
+GAP	管网优化软件
+Ecrin	试井解释软件
+Saphir	试井解释软件
+Topaze	产量递减分析软件
+Multiflash	流体相态计算软件
+gPROMS	过程模拟软件
+COMSOL	多物理场仿真软件
+Molecular Dynamics	分子动力学
+MC	蒙特卡洛
+DFT	密度泛函理论
+MM	分子力学
+QM	量子力学
+QM/MM	量子力学与分子力学结合方法
+RDF	径向分布函数
+MSD	均方位移
+PMF	平均力势
+SMD	拉伸分子动力学
+pmemd	分子动力学模拟引擎
+LAMMPS	大规模原子分子并行模拟器
+GROMACS	分子动力学模拟软件
+NAMD	分子动力学模拟软件
+AMBER	分子动力学模拟软件包
+CHARMM	分子动力学模拟软件包
+OpenMM	分子动力学模拟库
+DL_POLY	分子动力学模拟软件
+Tinker	分子力学与动力学软件包
+GULP	晶格与分子模拟软件
+PLUMED	增强采样插件
+Packmol	分子体系初始构型工具
+mBuild	分子体系构建工具
+Foyer	力场参数化工具
+Avogadro	分子建模与可视化软件
+Jmol	分子可视化软件
+VMD	分子可视化软件
+OVITO	原子轨迹可视化软件
+VESTA	晶体结构可视化软件
+Materials Studio	材料与分子模拟软件
+PyMOL	分子可视化软件
+Lennard-Jones	兰纳-琼斯势
+PPPM	粒子网格埃瓦尔德方法
+Ewald	埃瓦尔德求和
+Nose-Hoover	诺斯-胡佛恒温器
+Berendsen	贝伦德森恒温器
+NVT	正则系综
+NPT	等温等压系综
+NVE	微正则系综
+GCMC	巨正则蒙特卡洛
+Umbrella Sampling	伞形采样
+Metadynamics	元动力学
+Replica Exchange	副本交换
+Thermodynamic Integration	热力学积分
+Free Energy Perturbation	自由能微扰
+Steered MD	拉伸分子动力学
+Contact Angle	接触角
+Interfacial Tension	界面张力
+CMC	临界胶束浓度
+Water Film	水膜
+Oil Film	油膜
+Nanoconfinement	纳米受限
+Diffusion Coefficient	扩散系数
+PR EOS	彭-罗宾逊状态方程
+SRK EOS	索阿维-雷德利希-邝状态方程
+EOS Method	状态方程法
+IMPES	隐式压力显式饱和度
+AIM	自适应隐式方法
+NR	牛顿拉夫逊法
+Jacobian	雅可比矩阵
+GMRES	广义最小残差法
+ORTHOMIN	正交极小化法
+BiCGSTAB	双共轭梯度稳定法
+AMG	代数多重网格
+ILU	不完全 LU 分解
+CFL	库朗条件
+Buckley-Leverett	贝克莱列维莱特方程
+Reaction Kinetics	反应动力学
+WinProp	流体相态计算软件
+CMOST	历史拟合与优化软件
+CMG Builder	CMG 前处理软件

@@ -1,0 +1,199 @@
+eor	EOR	10
+ior	IOR	10
+mmp	MMP	10
+wag	WAG	10
+sor	SOR	10
+sw	Sw	10
+so	So	10
+sg	Sg	10
+pvt	PVT	10
+aof	AOF	10
+ipr	IPR	10
+pi	PI	10
+bhp	BHP	10
+fbhp	FBHP	10
+whp	WHP	10
+thp	THP	10
+goc	GOC	10
+owc	OWC	10
+gwc	GWC	10
+td	TD	10
+md	MD	10
+tvd	TVD	10
+dfn	DFN	10
+srv	SRV	10
+lgr	LGR	10
+eos	EOS	10
+dtp	DTP	10
+bu	BU	10
+wct	WCT	10
+gor	GOR	10
+api	API度	10
+stb	STB	10
+stb-d	STB/d	10
+mscfd	MMscf/d	10
+rop	ROP	10
+wob	WOB	10
+rpm	RPM	10
+rss	RSS	10
+mwd	MWD	10
+lwd	LWD	10
+bha	BHA	10
+bop	BOP	10
+ecd	ECD	10
+lwd-log	LWD Log	10
+pdc	PDC	10
+obm	OBM	10
+wbm	WBM	10
+sbm	SBM	10
+lost-circulation	Lost Circulation	10
+kick	Kick	10
+esp	ESP	10
+pcp	PCP	10
+gl	GL	10
+pl	Plunger Lift	10
+srp	SRP	10
+wax	Wax	10
+asphaltene	Asphaltene	10
+hydrate	Hydrate	10
+kerogen	Kerogen	10
+shale	Shale	10
+sandstone	Sandstone	10
+carbonate	Carbonate	10
+dolomite	Dolomite	10
+limestone	Limestone	10
+mudstone	Mudstone	10
+evaporite	Evaporite	10
+anticline	Anticline	10
+fault	Fault	10
+trap	Trap	10
+diagenesis	Diagenesis	10
+porosity	Porosity	10
+permeability	Permeability	10
+saturation	Saturation	10
+wettability	Wettability	10
+viscosity	Viscosity	10
+miscibility	Miscibility	10
+condensate	Condensate	10
+aquifer	Aquifer	10
+payzone	Pay Zone	10
+netpay	Net Pay	10
+capillary	Capillary	10
+capillary-pressure	Capillary Pressure	10
+threshold-pressure-gradient	Threshold Pressure Gradient	10
+imbibition	Imbibition	10
+huff-n-puff	Huff-n-Puff	10
+proppant	Proppant	10
+slickwater	Slickwater	10
+hydraulic-fracturing	Hydraulic Fracturing	10
+perforation	Perforation	10
+acidizing	Acidizing	10
+refrac	Refracturing	10
+bridge-plug	Bridge Plug	10
+coiled-tubing	Coiled Tubing	10
+fracability	Fracability	10
+sweet-spot	Sweet Spot	10
+langmuir	Langmuir	10
+waterflood	Waterflood	10
+carbon-dioxide-eor	CO2 EOR	10
+polymer	Polymer	10
+surfactant	Surfactant	10
+asp	ASP	10
+sp	SP	10
+micelle	Micelle	10
+profile-control	Profile Control	10
+foam	Foam	10
+eclipse	ECLIPSE	10
+cmg	CMG	10
+imex	IMEX	10
+gems	GEM	10
+stars	STARS	10
+tnav	tNavigator	10
+petrel	Petrel	10
+visage	Visage	10
+ofm	OFM	10
+techlog	Techlog	10
+gocad	GOCAD	10
+kingdom	Kingdom	10
+opendtect	OpendTect	10
+olga	OLGA	10
+pipesim	PIPESIM	10
+prosper	Prosper	10
+gap	GAP	10
+ecrin	Ecrin	10
+saphir	Saphir	10
+topaze	Topaze	10
+multiflash	Multiflash	10
+gproms	gPROMS	10
+comsol	COMSOL	10
+mol-dynamics	Molecular Dynamics	10
+mc	MC	10
+dft	DFT	10
+mm	MM	10
+qm	QM	10
+qm-mm	QM/MM	10
+rdf	RDF	10
+msd	MSD	10
+pmf	PMF	10
+smd	SMD	10
+pmemd	pmemd	10
+lammps	LAMMPS	10
+gromacs	GROMACS	10
+namd	NAMD	10
+amber	AMBER	10
+charmm	CHARMM	10
+openmm	OpenMM	10
+dl-poly	DL_POLY	10
+tinker	Tinker	10
+gulp	GULP	10
+plumed	PLUMED	10
+packmol	Packmol	10
+mbuild	mBuild	10
+foyer	Foyer	10
+avogadro	Avogadro	10
+jmol	Jmol	10
+vmd	VMD	10
+ovito	OVITO	10
+vesta	VESTA	10
+materials-studio	Materials Studio	10
+pymol	PyMOL	10
+lennard-jones	Lennard-Jones	10
+pppm	PPPM	10
+ewald	Ewald	10
+nose-hoover	Nose-Hoover	10
+berendsen	Berendsen	10
+nvt	NVT	10
+npt	NPT	10
+nve	NVE	10
+gcmc	GCMC	10
+umbrella-sampling	Umbrella Sampling	10
+metadynamics	Metadynamics	10
+replica-exchange	Replica Exchange	10
+thermodynamic-integration	Thermodynamic Integration	10
+free-energy-perturbation	Free Energy Perturbation	10
+steered-md	Steered MD	10
+contact-angle	Contact Angle	10
+interfacial-tension	Interfacial Tension	10
+cmc	CMC	10
+water-film	Water Film	10
+oil-film	Oil Film	10
+nanoconfinement	Nanoconfinement	10
+diffusion-coefficient	Diffusion Coefficient	10
+pr-eos	PR EOS	10
+srk-eos	SRK EOS	10
+eos-method	EOS Method	10
+impes	IMPES	10
+aim	AIM	10
+nr	NR	10
+jacobian	Jacobian	10
+gmres	GMRES	10
+orthomin	ORTHOMIN	10
+bicgstab	BiCGSTAB	10
+amg	AMG	10
+ilu	ILU	10
+cfl	CFL	10
+buckley-leverett	Buckley-Leverett	10
+reaction-kinetics	Reaction Kinetics	10
+winprop	WinProp	10
+cmost	CMOST	10
+cmg-builder	CMG Builder	10
