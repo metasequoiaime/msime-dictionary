@@ -542,3 +542,15 @@
 梅钿	mei'dian	3855
 梅花钿	mei'hua'dian	100
 镇杀	zhen'sha	3855
+捡的	jian'de	3855
+筛掉	shai'diao	3855
+帝者战神	di'zhe'zhan'shen	100
+手拿把掐	shou'na'ba'qia	100
+王力	wang'li	3855
+地老话	di'lao'hua	100
+地佬话	di'lao'hua	100
+沈羽洁	shen'yu'jie	100
+岭南粤音	ling'nan'yue'yin	100
+泛粤大典	fan'yue'da'dian	100
+泛粤典	fan'yue'dian	100
+以撒的结合	yi'sa'de'jie'he	100
