@@ -550,7 +550,6 @@
 地老话	di'lao'hua	100
 地佬话	di'lao'hua	100
 沈羽洁	shen'yu'jie	100
-拼豆	pin'dou	3855
 岭南粤音	ling'nan'yue'yin	100
 泛粤大典	fan'yue'da'dian	100
 泛粤典	fan'yue'dian	100
