@@ -552,3 +552,6 @@
 电竞	dian'jing	3855
 沈羽洁	shen'yu'jie	100
 拼豆	ping'dou	3855
+岭南粤音	ling'nan'yue'yin	100
+泛粤大典	fan'yue'da'dian	100
+泛粤典	fan'yue'dian	100
