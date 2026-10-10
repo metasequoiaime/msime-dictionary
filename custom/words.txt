@@ -554,3 +554,12 @@
 泛粤大典	fan'yue'da'dian	100
 泛粤典	fan'yue'dian	100
 以撒的结合	yi'sa'de'jie'he	100
+基元律动	ji'yuan'lv'dong	100
+原分支	yuan'fen'zhi	100
+弔图	diao'tu	3333
+首右	shou'you	3333
+首右双拼	shou'you'shuang'pin	100
+首右辅码	shou'you'fu'ma	100
+红果短剧	hong'guo'duan'ju	100
+雅江水电站	ya'jiang'shui'dian'zhan	100
+墨脱水电站	mo'tuo'shui'dian'zhan	100
