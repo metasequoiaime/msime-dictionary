@@ -561,3 +561,5 @@
 首右双拼	shou'you'shuang'pin	100
 首右辅码	shou'you'fu'ma	100
 红果短剧	hong'guo'duan'ju	100
+雅江水电站	ya'jiang'shui'dian'zhan	100
+墨脱水电站	mo'tuo'shui'dian'zhan	100
