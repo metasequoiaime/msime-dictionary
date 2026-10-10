@@ -47,6 +47,8 @@ sources/                                  msime 构建器经 --dictionary 读取
     places.tsv、words.tsv                 Mozc dictionary_manual 的人工词表（读音、词语、词性）-> msime-japanese.dat
     README.txt                            上游说明与许可 -> msime-mozc_dictionary_oss_README.txt
     LICENSE                               Mozc 仓库根目录的许可证（Google BSD 与词典条款）-> msime-mozc_LICENSE.txt
+  cn-en/                                  中译英候选窗释义
+    machine-translations.txt              拼音与五笔词条的英文释义（汇总已有翻译与大模型生成）-> msime-english.db（构建器尚未读取）
   korean/                                 韩文方案（libhangul 原样）
     hanja.txt                             韩文音节与汉字 -> msime 引擎内嵌的 Hanja 表（不是 Release 附件）
   unlicensed/                             没有再分发授权的文件，发布构建不使用，只供 --include-unlicensed 的本地完整构建
@@ -102,6 +104,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/english/google-word-counts.txt` | 主命令 English，作为排序权重 | `msime-english.db` | 进入 |
 | `custom/english.txt` | 主命令 English | `msime-english.db` | 进入 |
 | `sources/unlicensed/oaldpe-words.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：提取自商业词典 |
+| `sources/cn-en/machine-translations.txt` | 尚无：计划在 msime 加一个排在 EnglishGlosses 之后、CustomTranslations 之前的阶段，覆盖由 ECDICT 生成的中译英释义 | `msime-english.db` | 构建器加入读取阶段之前不进入 |
 | `custom/translations.txt` | 主命令 CustomTranslations，覆盖由 ECDICT 生成的释义 | `msime-english.db` | 进入 |
 | `sources/cantonese/` 下 4 个文件 | languages；`hkcancor-word-counts.txt` 只作排序权重 | `msime-cantonese.db` | 进入 |
 | `sources/zhuyin/` 下 4 个文件 | languages；`phrase.occ` 只作排序权重 | `msime-zhuyin.db` | 进入 |
@@ -263,6 +266,7 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `sources/japanese/aux_dictionary.tsv` | UTF-8 | LF | 1 行 `#` 列名 | `读音<TAB>词语<TAB>基准读音<TAB>基准词语<TAB>代价偏移` | 有 |
 | `sources/japanese/places.tsv`、`sources/japanese/words.tsv` | UTF-8 | LF | 1 行 `#` 列名 | `读音<TAB>词语<TAB>词性`，词性是 `名詞`、`固有名詞`、`地名` 等 Mozc 别名 | 有 |
 | `sources/korean/hanja.txt` | UTF-8 | LF | 26 行 `#` 注释（BSD 许可） | `韩文音节:汉字:训音` | 有 |
+| `sources/cn-en/machine-translations.txt` | UTF-8 | LF | 3 行 `#` 注释（用途、来源、范围） | `源词<TAB>译文`，每个源词一行 | 有 |
 | `custom/words.txt` | UTF-8 | LF | 无 | `词<TAB>全拼<TAB>权重` | 有 |
 | `custom/translations.txt` | UTF-8 | LF | `#` 注释行，开头和各分组前都有 | `源词<TAB>译文` | 有 |
 | `custom/english.txt` | UTF-8 | LF | 无 | `编码<TAB>显示词<TAB>权重` | 无 |
