@@ -560,3 +560,4 @@
 首右	shou'you	3333
 首右双拼	shou'you'shuang'pin	100
 首右辅码	shou'you'fu'ma	100
+红果短剧	hong'guo'duan'ju	100
