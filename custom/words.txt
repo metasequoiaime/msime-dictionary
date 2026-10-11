@@ -564,3 +564,7 @@
 雅江水电站	ya'jiang'shui'dian'zhan	100
 墨脱水电站	mo'tuo'shui'dian'zhan	100
 对易子	dui'yi'zi	100
+一阶	yi'jie	3333
+一阶导	yi'jie'dao	100
+二阶导	er'jie'dao	100
+三阶导	san'jie'dao	100
