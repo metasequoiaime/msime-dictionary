@@ -568,3 +568,4 @@
 一阶导	yi'jie'dao	100
 二阶导	er'jie'dao	100
 三阶导	san'jie'dao	100
+终末地	zhong'mo'di	100
