@@ -30,3 +30,5 @@ hoyoverse	HoYoverse	1
 zhipu	Zhipu	1
 unitree	Unitree	1
 kling	Kling	1
+snipaste	Snipaste	1
+snipaste	snipaste	1
