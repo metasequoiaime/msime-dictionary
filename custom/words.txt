@@ -574,3 +574,4 @@
 水杉输入法	shui'shan'shu'ru'fa	100
 先把规矩立住	xian'ba'gui'ju'li'zhu	100
 不烧心	bu'shao'xin	100
+评审意见	ping'shen'yi'jian	100
