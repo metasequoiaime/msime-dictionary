@@ -569,3 +569,12 @@
 二阶导	er'jie'dao	100
 三阶导	san'jie'dao	100
 终末地	zhong'mo'di	100
+字统网	zi'tong'wang	100
+字统	zi'tong	3333
+水杉输入法	shui'shan'shu'ru'fa	100
+先把规矩立住	xian'ba'gui'ju'li'zhu	100
+不烧心	bu'shao'xin	100
+评审意见	ping'shen'yi'jian	100
+何海峰	he'hai'feng	100
+周志农	zhou'zhi'nong	100
+仙逆	xian'ni	3333
