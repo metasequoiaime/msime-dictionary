@@ -34,7 +34,6 @@
 部分克隆	bu'fen'ke'long	10000
 钩子脚本	gou'zi'jiao'ben	10000
 预提交钩子	yu'ti'jiao'gou'zi	10000
-评审意见	ping'shen'yi'jian	10000
 行内评论	hang'nei'ping'lun	10000
 代码所有者	dai'ma'suo'you'zhe	10000
 版本标签	ban'ben'biao'qian	10000
