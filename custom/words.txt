@@ -582,3 +582,7 @@
 一大坨	yi'da'tuo	100
 引导项	yin'dao'xiang	100
 丑到无法接受	chou'dao'wu'fa'jie'shou	100
+上下键	shang'xia'jian	100
+选词键	xuan'ci'jian	100
+候选词框	hou'xuan'ci'kuang	100
+选词窗口	xuan'ci'chuang'kou	100
