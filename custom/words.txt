@@ -586,3 +586,4 @@
 选词键	xuan'ci'jian	100
 候选词框	hou'xuan'ci'kuang	100
 选词窗口	xuan'ci'chuang'kou	100
+税前税后	shui'qian'shui'hou	100
