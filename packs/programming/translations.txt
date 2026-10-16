@@ -35,7 +35,6 @@
 部分克隆	partial clone
 钩子脚本	hook script
 预提交钩子	pre-commit hook
-评审意见	review comment
 行内评论	inline comment
 代码所有者	code owner
 版本标签	version tag
