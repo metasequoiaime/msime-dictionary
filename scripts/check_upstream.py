@@ -23,6 +23,7 @@ RECORD = ROOT / "upstream.lock.json"
 
 # Mirror of `UPSTREAM_FILES` in msime crates/dict-builder/src/sources.rs. The msime builder is authoritative; this copy only drives the early checks here, and any change to the builder's list must be followed here. The first matching entry wins, and an entry ending in `/` matches every path under that directory, so the exact HKCanCor path listed before `sources/cantonese/` names its own upstream.
 UPSTREAM_FILES = (
+    ("sources/opencc/", "OpenCC"),
     ("sources/pinyin/rime-ice.txt", "rime-ice"),
     ("sources/pinyin/rime-ice-supplement.txt", "rime-ice-supplement"),
     ("sources/english/rime-ice-en-supplement.txt", "rime-ice-supplement"),
