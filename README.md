@@ -49,6 +49,7 @@ sources/                                  msime 构建器经 --dictionary 读取
     LICENSE                               Mozc 仓库根目录的许可证（Google BSD 与词典条款）-> msime-mozc_LICENSE.txt
   cn-en/                                  中译英候选窗释义
     machine-translations.txt              拼音与五笔词条的英文释义（汇总已有翻译与大模型生成）-> msime-english.db（构建器尚未读取）
+  opencc/                                 OpenCC 七份简繁转换表与 LICENSE，构建时内嵌，不是 Release 附件
   korean/                                 韩文方案（libhangul 原样）
     hanja.txt                             韩文音节与汉字 -> msime 引擎内嵌的 Hanja 表（不是 Release 附件）
   unlicensed/                             没有再分发授权的文件，发布构建不使用，只供 --include-unlicensed 的本地完整构建
@@ -114,6 +115,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/japanese/aux_dictionary.tsv`、`places.tsv`、`words.tsv` | 主命令 JapaneseModel，按 Mozc `gen_aux_dictionary.py --strict` 生成补充词条：aux 行复制基准词条的上下文 ID 与代价再加偏移，词表行按词性取同词性词条代价的中位数，基础词库已有的跳过 | `msime-japanese.dat` | 进入 |
 | `sources/japanese/README.txt` | 主命令 JapaneseModel，原样复制 | `msime-mozc_dictionary_oss_README.txt` | 进入 |
 | `sources/japanese/LICENSE` | 主命令 JapaneseModel，原样复制 | `msime-mozc_LICENSE.txt` | 进入 |
+| `sources/opencc/*.txt`、`sources/opencc/LICENSE` | msime 的 OpenCC 构建输入（固定提交、大小与 SHA-256） | 客户端内嵌简繁转换表；许可证随应用分发 | 不是 Release 附件 |
 | `sources/korean/hanja.txt` | `msime-dict-build hanja`，发布 workflow 不运行 | msime 源码里的 `crates/engine/src/korean/hanja.tsv`，由引擎用 `include_str!` 内嵌 | 不是 Release 附件 |
 | `custom/names.txt` | 无 | — | 没有消费方：构建器不读，官网投稿也不写它 |
 | `packs/` | 不进入构建 | msime.app 按本仓 `main` 读取并列出（官网缓存约一小时），用户在设置里导入 | 不进入 Release |
@@ -192,7 +194,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 手动运行（Actions 里的 Release built dictionaries → Run workflow）用于用新的构建器重建同一份源数据，或者只构建不发布的试跑：`version` 留空即自动加修订号，也可以填 `X.Y.Z`；`msime_ref` 默认 `develop`；`publish` 默认关闭，此时只把附件和说明预览上传为 workflow artifact，说明也写进 job summary。打开 `publish` 只能从 `main` 运行；手动指定的版本低于现有最高版本时，Release 不标为 latest。打开 `publish` 的手动运行和推送触发的发布共用一个 concurrency 组，组里只保留一个排队的运行，后来的会取消先排队的：手动发布还在排队时有新的合入推送，手动那次会被取消，改由推送的运行按默认参数（`develop`、自动版本号）发布；反过来手动运行也会取代排队中的推送运行（源数据不丢，只是换成手动指定的参数）。所以手动发布前先在 Actions 里确认没有排队中的发布运行，触发后确认它没有被取消。
 
-msime 的 `resources/dictionary-sources.lock.json` 不固定本仓任何文件，msime 只消费本仓的 `dict-v` Release 附件。要复现某个版本，按它 manifest 的 `custom_dictionary_commit` 检出本仓、按 `source.commit` 检出 msime，再带 `--dictionary` 运行 `msime-dict-build`。
+msime 的 `resources/dictionary-sources.lock.json` 不固定本仓任何文件，通常消费本仓的 `dict-v` Release 附件；OpenCC 是构建期内嵌输入，由独立的 `resources/opencc.lock.json` 固定本仓提交和文件摘要，首次构建下载或从指定的检出目录读取，不在运行时联网。要复现某个版本，按它 manifest 的 `custom_dictionary_commit` 检出本仓、按 `source.commit` 检出 msime，再带 `--dictionary` 运行 `msime-dict-build`。
 
 **某个改动进了哪个版本**：每个 Release 的 manifest（`msime-dictionary-manifest.json`）的 `custom_dictionary_commit` 是构建实际读取的本仓提交，Release 说明开头也写着它。由本 workflow 自动发布的版本，标签就打在这个提交上；`dict-v2.0.6` 及更早的版本是用旧 workflow 手动发布的，标签打在发布时的 `main` 上，不一定是读取的源数据（例如 `dict-v2.0.5` 的标签指向 `a4b790c`，而构建读取的是 `5926261`，之后合入的 `5bc9c77`（#42）不在其中）。所以统一按 manifest 判断一个提交是否已发布：
 
