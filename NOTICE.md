@@ -83,6 +83,17 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 
 `sources/japanese/` 与 `sources/korean/hanja.txt` 均逐字节保留上游文件。`msime-dict-build` 从 `sources/japanese/` 构建 `msime-japanese.dat`，并按 Mozc OSS 构建组装系统词典的方式使用后加的四个文件：`dictionary_filter.tsv` 从基础词库中删去匹配的行（`gen_filtered_dictionary.py`），`aux_dictionary.tsv`、`places.tsv`、`words.tsv` 生成补充词条（`gen_aux_dictionary.py`），`places.tsv` 与 `words.tsv` 来自 Mozc 的 `src/data/dictionary_manual/` 目录，保留上游文件名；从 `sources/korean/hanja.txt` 生成引擎内嵌的韩文 Hanja 表；日文词库发布时必须同时分发 `sources/japanese/README.txt`（附件名 `msime-mozc_dictionary_oss_README.txt`）与 `sources/japanese/LICENSE`：Google 三条款 BSD 文本要求的版权声明与免责声明不在这份 README 里，所以 Mozc 根目录的 `LICENSE` 逐字节收为 `sources/japanese/LICENSE`，作为 `msime-mozc_LICENSE.txt` 与 `msime-japanese.dat` 一起附在 `dict-v` 发布上；韩文数据的 BSD-3-Clause 文本见 msime 的 `resources/licenses/libhangul-hanja-BSD-3-Clause.txt`。更新任一上游提交时，需同步更新本仓的 `upstream.lock.json`，以及 msime 锁文件里对应的上游引用（Mozc 是 `mozc.commit`）、构建器路径和许可证说明。机器可读的上游提交与文件哈希记录在根目录的 `upstream.lock.json`，由 `scripts/check_upstream.py` 检查。
 
+## 符号
+
+| 文件 | 上游 | 上游许可 |
+| --- | --- | --- |
+| `sources/symbols/wanxiang_symbols.yaml` | [amzxyz/rime-wanxiang](https://github.com/amzxyz/rime-wanxiang)，标签 `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）的仓库根目录 `wanxiang_symbols.yaml`。文件头注明它最初复制自 Rime 发行版的 `symbols.yaml`（[rime/rime-prelude](https://github.com/rime/rime-prelude)），万象在其上扩充了分组 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)（上游仓库 `LICENSE`）；最初的 `symbols.yaml` 部分为 rime-prelude 的 LGPL-3.0 |
+| `sources/symbols/codex_sym.txt` | 同一提交的 `lua/data/codex_sym.txt`，由万象从 [typst/codex](https://github.com/typst/codex) 的符号命名数据生成 | CC BY 4.0（万象）；符号名称来自 Apache-2.0 的 typst/codex |
+| `sources/symbols/LICENSE` | 同一提交的仓库根目录 `LICENSE` | 即 CC BY 4.0 许可文本本身 |
+| `sources/symbols/wanxiang-unrenderable.txt` | 本项目生成的剔除清单：由 MSIME-Windows 的 `scripts/check-symbol-rendering.py` 用 Windows 自带字体检查上面两份文件里的符号，列出看不见、私用区、系统字体没有字形或不能合成一个字形的符号，判定环境与规则写在文件头 | 只含上面两份文件里的符号与出处，许可同上 |
+
+前三个文件与上游提交逐字节一致（UTF-8、LF）。构建器只取 `wanxiang_symbols.yaml` 中 `symbols:` 下的符号分组，不收 Emoji 分类、元素周期表与 XCompose 合成三段，并剔除 `wanxiang-unrenderable.txt` 列出的全部符号。CC BY 4.0 要求保留署名并注明改动：随产物分发时在 MSIME-Windows 的 `THIRD_PARTY_NOTICES.txt` 中署名 rime-wanxiang 与 typst/codex。
+
 ## 下游影响
 
 发布构建的拼音词库 `msime-pinyin.db` 由 `sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt` 与 `custom/words.txt` 构建，另含 msime 仓库自带的 `resources/dictionary-sources/mix/quick_phrases.txt` 快捷短语；`sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt`（含 CustomPinyinDictionary 的内容）不进入发布构建，见下方「发布构建不包含这些条目」。只有用 `--include-unlicensed` 做的本地完整构建才会读入这两份。中文数据主体来自 rime-ice（GPL-3.0），使用该数据库的前端本身以 GPL-3.0 分发，与 rime-ice 兼容，但**必须保留对 rime-ice 的署名**。

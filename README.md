@@ -117,13 +117,15 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/japanese/LICENSE` | 主命令 JapaneseModel，原样复制 | `msime-mozc_LICENSE.txt` | 进入 |
 | `sources/opencc/*.txt`、`sources/opencc/LICENSE` | msime 的 OpenCC 构建输入（固定提交、大小与 SHA-256） | 客户端内嵌简繁转换表；许可证随应用分发 | 不是 Release 附件 |
 | `sources/korean/hanja.txt` | `msime-dict-build hanja`，发布 workflow 不运行 | msime 源码里的 `crates/engine/src/korean/hanja.tsv`，由引擎用 `include_str!` 内嵌 | 不是 Release 附件 |
+| `sources/symbols/wanxiang_symbols.yaml`、`sources/symbols/codex_sym.txt` | 尚无：目前只有 MSIME-Windows 的本地构建器 `scripts/build-dictionary.py` 读取，剔除 `wanxiang-unrenderable.txt` 列出的符号后生成表情面板的 `symbol_catalog` 与 S 模式、符号混输的 `symbol_code` | `others.db` | msime 构建器加入读取阶段之前不进入；Release 的 `msime-others.db` 仍用 msime 的旧符号表 |
+| `sources/symbols/wanxiang-unrenderable.txt` | 同上，构建时整份剔除 | — | 不进入任何产物 |
 | `custom/names.txt` | 无 | — | 没有消费方：构建器不读，官网投稿也不写它 |
 | `packs/` | 不进入构建 | msime.app 按本仓 `main` 读取并列出（官网缓存约一小时），用户在设置里导入 | 不进入 Release |
 
 几点补充：
 
 - `msime-pinyin.db` 构建完的全拼表同时是 `msime-bigram.bin`、`msime-trigram.bin` 的词表，ECDICT 释义的中文权重也从它读取，所以改动它的输入也会改变 n-gram 模型和 `msime-english.db` 的释义。
-- 有些输入不在本仓：ECDICT、zhwiki 语料、msime `resources/dictionary-sources/` 下的快捷短语（进入 `msime-pinyin.db`）以及 emoji、颜文字和符号（构成 `msime-others.db`），还有 msime `resources/licenses/` 下的许可证文本。
+- 有些输入不在本仓：ECDICT、zhwiki 语料、msime `resources/dictionary-sources/` 下的快捷短语（进入 `msime-pinyin.db`）以及 emoji、颜文字和旧符号表（构成 `msime-others.db`；新的符号源在本仓 `sources/symbols/`，见上表），还有 msime `resources/licenses/` 下的许可证文本。
 - `licensing.rs` 排除的输入记录在每个 Release 的 manifest 里（`licensing.excluded_inputs`），发布 workflow 会断言 `licensing.includes_unlicensed_inputs` 为 `false`。
 
 ## 贡献词条

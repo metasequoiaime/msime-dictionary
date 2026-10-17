@@ -1,0 +1,73 @@
+# 由 MSIME-Windows 仓库提交 5dfced148f2942d9ce691cbbdc8573001101e2e8 的 scripts/check-symbol-rendering.py 生成，不要手工编辑。
+# 判定环境：Windows 10.0.26200，197 个 C:\Windows\Fonts 字体（不含 Noto 系列），Segoe UI Emoji 1.70。
+# 检查对象：sources/symbols/wanxiang_symbols.yaml 中入选的符号分组与 sources/symbols/codex_sym.txt 的全部符号，共 5839 个不同的符号。
+# 判定规则见生成脚本的说明：invisible 看不见，private-use 私用区，no-glyph 系统字体没有字形，split 序列不能合成一个字形。
+# build-dictionary.py 构建 others.db 时剔除这里列出的全部符号，它们不进入表情面板，也不进入 S 模式和符号混输。
+# 共 66 个：invisible 27，no-glyph 38，private-use 1
+# 格式：码位<TAB>符号（invisible 留空）<TAB>原因<TAB>出处（万象分组编码或 codex:名称）
+U+1D360	𝍠	no-glyph	/1 /scsz /sch
+U+1D369	𝍩	no-glyph	/1 /10 /scsz /scz
+U+1D372	𝍲	no-glyph	/1 /scsz /xxtj
+U+1D361	𝍡	no-glyph	/2 /scsz /sch
+U+1D36A	𝍪	no-glyph	/2 /scsz /scz
+U+1D373	𝍳	no-glyph	/2 /scsz /xxtj
+U+1D362	𝍢	no-glyph	/3 /scsz /sch
+U+1D36B	𝍫	no-glyph	/3 /scsz /scz
+U+1D374	𝍴	no-glyph	/3 /scsz /xxtj
+U+1D363	𝍣	no-glyph	/4 /scsz /sch
+U+1D36C	𝍬	no-glyph	/4 /scsz /scz
+U+1D375	𝍵	no-glyph	/4 /scsz /xxtj
+U+1D364	𝍤	no-glyph	/5 /scsz /sch
+U+1D36D	𝍭	no-glyph	/5 /scsz /scz
+U+1D376	𝍶	no-glyph	/5 /scsz /xxtj
+U+1D365	𝍥	no-glyph	/6 /scsz /sch
+U+1D36E	𝍮	no-glyph	/6 /scsz /scz
+U+1D376 U+1D372	𝍶𝍲	no-glyph	/6
+U+1D366	𝍦	no-glyph	/7 /scsz /sch
+U+1D36F	𝍯	no-glyph	/7 /scsz /scz
+U+1D376 U+1D373	𝍶𝍳	no-glyph	/7
+U+1D367	𝍧	no-glyph	/8 /scsz /sch
+U+1D370	𝍰	no-glyph	/8 /scsz /scz
+U+1D376 U+1D374	𝍶𝍴	no-glyph	/8
+U+1D368	𝍨	no-glyph	/9 /scsz /sch
+U+1D371	𝍱	no-glyph	/9 /scsz /scz
+U+1D376 U+1D375	𝍶𝍵	no-glyph	/9
+U+1D376 U+1D376	𝍶𝍶	no-glyph	/10
+U+1D377	𝍷	no-glyph	/scsz /xftj
+U+1D378	𝍸	no-glyph	/scsz /xftj
+U+036A		invisible	/h
+U+1D515	𝔕	no-glyph	/R
+U+31BA	ㆺ	no-glyph	/vx
+U+31BE	ㆾ	no-glyph	/vue /vve
+U+302A		invisible	/sd /ud
+U+302B		invisible	/sd /ud
+U+302C		invisible	/sd /ud
+U+302D		invisible	/sd /ud
+U+F8FF		private-use	/aj
+U+2060		invisible	codex:wj
+U+200D		invisible	codex:zwj
+U+200C		invisible	codex:zwnj
+U+200B		invisible	codex:zws
+U+200E		invisible	codex:lrm
+U+200F		invisible	codex:rlm
+U+0020		invisible	codex:space
+U+00A0		invisible	codex:space.nobreak
+U+202F		invisible	codex:space.nobreak.narrow
+U+2002		invisible	codex:space.en
+U+2003		invisible	codex:space.quad
+U+2004		invisible	codex:space.third
+U+2005		invisible	codex:space.quarter
+U+2006		invisible	codex:space.sixth
+U+205F		invisible	codex:space.med
+U+2007		invisible	codex:space.fig
+U+2008		invisible	codex:space.punct
+U+2009		invisible	codex:space.thin
+U+200A		invisible	codex:space.hair
+U+20DB		invisible	codex:dot.triple
+U+20DC		invisible	codex:dot.quad
+U+00AD		invisible	codex:hyph.soft
+U+1F8B9	🢹	no-glyph	codex:arrow.tr.bar
+U+1F8BA	🢺	no-glyph	codex:arrow.br.bar
+U+1F8B8	🢸	no-glyph	codex:arrow.tl.bar
+U+1F8BB	🢻	no-glyph	codex:arrow.bl.bar
+U+1F8D0	🣐	no-glyph	codex:arrows.rl.long
