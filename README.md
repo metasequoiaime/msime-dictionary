@@ -17,8 +17,8 @@ sources/                                  msime 构建器经 --dictionary 读取
     single-chars.txt                      单字读音与字频 -> msime-pinyin.db；msime-stroke.db 的权重
   wubi/                                   五笔词库 -> msime-wubi.db
     wubi86-jidian.txt                     86 版五笔（rime-wubi86-jidian，另补了 rime-wubi 的词条）-> wubi86 表
-    wubi86-supplement.txt                 86 表没有、98 表或拼音高频二字词里有的词组，编码按 86 词组规则推出（本项目生成的补充表）-> wubi86 表
-    wubi98-supplement.txt                 98 表没有、86 表或拼音高频二字词里有的词组，编码按词组规则由 98 单字码推出（本项目生成的补充表）-> wubi98 表
+    wubi86-supplement.txt                 86 表没有、98 表或拼音输入里有的多字词组，编码按 86 词组规则推出（本项目生成的补充表）-> wubi86 表
+    wubi98-supplement.txt                 98 表没有、86 表或拼音输入里有的多字词组，编码按词组规则由 98 单字码推出（本项目生成的补充表）-> wubi98 表
     wubi98.txt                            98 版五笔主表（98wubi-tables 的 98五笔含词表-【单义】.txt 原样改名，UTF-16LE）-> wubi98 表
     wubi98-fcitx.txt                      Fcitx5 table-extra 的 98 五笔表，作补充（tables/wubi98.txt 原样改名）-> wubi98 表
   english/                                英文词库 -> msime-english.db
@@ -80,6 +80,8 @@ CHANGELOG.md                              已冻结，只作历史记录
 ```
 
 **目录约定**：`sources/` 放 msime 构建器经 `--dictionary` 读取的输入，由本仓 Git 提交固定，上游原样文件和派生文件另由根目录 `upstream.lock.json` 按 SHA-256 固定；粤拼、注音（`tsi.csv`、`word.csv`、`phrase.occ`）、笔画、日文、韩文的上游原样文件保留上游的文件名；本项目生成或修正的文件，以及上游文件名不是 ASCII 或会和别的文件同名的上游原样文件（`wubi98.txt`、`wubi98-fcitx.txt`，上游原文件名见 `NOTICE.md`），用小写、连字符分隔、说明来源的名字（如 `rime-ice-supplement.txt`、`mcbopomofo-supplement.txt`），不带版本后缀，因为内容由提交固定。`custom/` 是唯一接受投稿的地方，只追加。`packs/` 是可选的专业词库，不进入构建。
+
+五笔 86、98 的词组补充表由 msime 的同名生成器从另一版五笔原表、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt` 和 `custom/words.txt` 生成。rime-ice 主表与补充表收录权重不低于 100 的两字及以上汉字词；区划名称与人工词条不限权重。两个版本分别用自己的单字全码推导词组编码，原表任何编码已有的词不再加入，同词多音只生成一行。补充词排在原表同码候选之后；新增重码会使一些原本唯一的四码不再自动上屏，生成器报告会统计这些编码。`packs/` 和 `sources/unlicensed/` 不参与生成。
 
 所有数据文件按字节保存：`upstream.lock.json` 按大小和 SHA-256 固定上游原样文件与派生文件，CI 由 `scripts/check_upstream.py` 检查，msime 构建器读取时再校验一遍，并要求记录的上游提交等于 msime 锁文件和许可证写明的提交；所以不要格式化、转换编码或换行符、排序或去重，仓库的 `.gitattributes`（`* -text`）关闭了换行转换。各文件的上游与许可见 [NOTICE.md](NOTICE.md)，逐文件的格式见[文件格式](#文件格式)。
 
@@ -243,8 +245,8 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `sources/pinyin/single-chars.txt` | UTF-8 | CRLF | 1 行 `#` 注释 | `字<TAB>全拼<TAB>权重` | 有 |
 | `sources/unlicensed/single-char-whitelist.txt` | UTF-8 | LF | 无 | 一个字 | 有 |
 | `sources/wubi/wubi86-jidian.txt` | UTF-8 | 混合：第 1–89271 行 LF，第 89272 行起 CRLF | 无 | `词<TAB>五笔编码<TAB>权重`；第 3835、51162、73916、78885 行多一个第 4 列 | 有 |
-| `sources/wubi/wubi86-supplement.txt` | UTF-8 | LF | 5 行 `#` 注释（生成器、输入及其 SHA-256、收录规则、编码规则、对照集合与权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内按权重从高到低 | 有 |
-| `sources/wubi/wubi98-supplement.txt` | UTF-8 | LF | 5 行 `#` 注释（生成器、输入及其 SHA-256、收录规则、编码规则、对照集合与权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内按权重从高到低 | 有 |
+| `sources/wubi/wubi86-supplement.txt` | UTF-8 | LF | 6 行 `#` 注释（生成器、输入及其 SHA-256、上游仓库与提交、收录规则、编码规则、对照集合与权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内按权重从高到低 | 有 |
+| `sources/wubi/wubi98-supplement.txt` | UTF-8 | LF | 6 行 `#` 注释（生成器、输入及其 SHA-256、上游仓库与提交、收录规则、编码规则、对照集合与权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内按权重从高到低 | 有 |
 | `sources/wubi/wubi98.txt` | UTF-16LE，带 BOM | CRLF | 无 | `词<TAB>五笔编码`，没有权重，同一编码内按行序排列 | 有（UTF-16LE 的 CRLF） |
 | `sources/wubi/wubi98-fcitx.txt` | UTF-8 | LF | 第 1–8 行是 Fcitx 码表头：`KeyCode=`、`Length=`、`Pinyin=`、`[Rule]` 及规则、`[Data]` | `五笔编码 词`，空格分隔 | 有 |
 | `sources/english/rime-ice-en.txt` | UTF-8 | CRLF | 无；正文中有 1777 行被 `#` 注释掉的条目和 16 个空行 | `显示词 编码 [权重]`，空格分隔；显示词本身可含空格（如 `Dish Network DishNetwork`），51 行带权重 | 有 |
