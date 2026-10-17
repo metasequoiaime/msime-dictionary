@@ -357,3 +357,21 @@ Skeletal Mesh Output	骨骼网格体输出
 账号	account
 上线	go live
 评审意见	review comment
+云同步	cloud sync
+五笔查码	Wubi code lookup
+反向查码	reverse code lookup
+自动上屏	automatic text commit
+五笔混输	mixed Wubi and pinyin input
+拼音反查	reverse pinyin lookup
+流式输出	streaming output
+端侧模型	on-device model
+本地模型	local model
+云端模型	cloud-hosted model
+屏幕翻译	screen translation
+跨端同步	cross-device sync
+账号同步	account sync
+词频学习	word frequency learning
+本地优先	local-first
+候选排序	candidate ranking
+个人词库	personal dictionary
+系统词库	system dictionary
