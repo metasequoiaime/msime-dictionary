@@ -256,14 +256,14 @@
     {
       "path": "sources/pinyin/rime-ice-supplement.txt",
       "upstream": "rime-ice-supplement",
-      "size": 1324324,
-      "sha256": "aa382455a3e6127fba26ee69db1155b77b6be2b960cf538688beff59606cb07d"
+      "size": 1341839,
+      "sha256": "41c50c9b452c89d4accd3abac57a40312a861ad36611850d584fc7d25609ffd3"
     },
     {
       "path": "sources/pinyin/rime-ice.txt",
       "upstream": "rime-ice",
-      "size": 28521963,
-      "sha256": "d364637b9e27bb9b1c325971a4fa587e371ee3f98807b407744da345b876d4ec"
+      "size": 28590541,
+      "sha256": "76252df96ac5e287d81b498f96fe2ec211861caa2f4423b2d30fbe331fc1d264"
     },
     {
       "path": "sources/stroke/stroke.dict.yaml",
