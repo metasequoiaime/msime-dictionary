@@ -83,6 +83,10 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 五笔 86、98 的词组补充表由 msime 的同名生成器从另一版五笔原表、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt` 和 `custom/words.txt` 生成。rime-ice 主表与补充表收录权重不低于 100 的两字及以上汉字词；区划名称与人工词条不限权重。两个版本分别用自己的单字全码推导词组编码，原表任何编码已有的词不再加入，同词多音只生成一行。补充词排在原表同码候选之后；新增重码会使一些原本唯一的四码不再自动上屏，生成器报告会统计这些编码。`packs/` 和 `sources/unlicensed/` 不参与生成。
 
+发布构建每次在产物目录中重新派生两版五笔补充数据，新增人工词条不必另等一次手动重建。`sources/wubi/` 下的两份补充表保留为可复现的源快照；构建使用本次提交的原表、拼音与人工词条生成，不依赖快照是否已跟上。生成器、数据库和中间产物仍留在 msime，不能提交到本仓。
+
+`Preview upstream dictionary updates` 每周检查 rime-ice，并生成中英文补充表的审核候选、增删数量、权重变化数量、输入摘要、上游提交与许可证；也可手动指定 `msime_ref` 和 `upstream_ref` 试跑。它只上传 workflow artifact，不自动合并或发布。生成器是 msime 的 `msime-dict-build rime-ice-supplement --upstream <干净的上游检出> --dictionary <本仓检出> --out <候选目录>`；中文对照主拼音表、单字表、区划表和人工词条按同词同音去重，英文对照基础英文表、SCOWL 和人工英文词按小写词形去重。没有注音的 `tencent.dict.yaml` 不自动猜音导入；引擎不支持的读音单列到 `unsupported-readings.txt`，未注音行单列到 `unannotated-words.txt`，报告列出两类数量。历史补充表的权重另经万象对齐，上游候选的词频变化也须审核。审核后仍按下文跨仓顺序更新引用、许可证、数据与锁，并试跑完整构建。
+
 所有数据文件按字节保存：`upstream.lock.json` 按大小和 SHA-256 固定上游原样文件与派生文件，CI 由 `scripts/check_upstream.py` 检查，msime 构建器读取时再校验一遍，并要求记录的上游提交等于 msime 锁文件和许可证写明的提交；所以不要格式化、转换编码或换行符、排序或去重，仓库的 `.gitattributes`（`* -text`）关闭了换行转换。各文件的上游与许可见 [NOTICE.md](NOTICE.md)，逐文件的格式见[文件格式](#文件格式)。
 
 ## 源文件与发布产物
@@ -99,8 +103,8 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt` | 只在 `--include-unlicensed` 的完整构建中读取 | — | 被 `licensing.rs` 排除：合并自 CustomPinyinDictionary，该快照没有声明许可；发布构建改用 `sources/pinyin/rime-ice.txt` |
 | `sources/unlicensed/single-char-whitelist.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：来源没有记录 |
 | `sources/wubi/wubi86-jidian.txt` | 主命令 Wubi | `msime-wubi.db` 的 `wubi86` 表 | 进入 |
-| `sources/wubi/wubi86-supplement.txt` | 主命令 Wubi，在 `wubi86-jidian.txt` 之后并入；同一编码下排在原有词条之后 | `msime-wubi.db` 的 `wubi86` 表 | 进入 |
-| `sources/wubi/wubi98-supplement.txt` | 主命令 Wubi98，在两张 98 表之后并入；同一编码下排在原有词条之后 | `msime-wubi.db` 的 `wubi98` 表 | 进入 |
+| `sources/wubi/wubi86-supplement.txt` | 供复现与审计的源快照；Wubi 从本次提交的相同输入重新派生补充数据，排在原表之后 | `msime-wubi.db` 的 `wubi86` 表 | 使用实时派生数据 |
+| `sources/wubi/wubi98-supplement.txt` | 供复现与审计的源快照；Wubi98 从本次提交的相同输入重新派生补充数据，排在两张原表之后 | `msime-wubi.db` 的 `wubi98` 表 | 使用实时派生数据 |
 | `sources/wubi/wubi98.txt`、`sources/wubi/wubi98-fcitx.txt` | 主命令 Wubi98：以主表为准，补充表中重复的（编码、词语）去掉 | `msime-wubi.db` 的 `wubi98` 表 | 进入 |
 | `sources/english/rime-ice-en.txt`、`sources/english/rime-ice-en-supplement.txt` | 主命令 English，只保留全部由 ASCII 字母组成的显示词；同一个词的每种大小写各占一行：SCOWL 只收了大写形式的（Wikipedia、Ukraine）大写在前，其余全小写的在前 | `msime-english.db` | 进入 |
 | `sources/english/scowl-words.txt` | 主命令 English，与上一行的词表合并；SCOWL 的许可声明同时写入该库的 `source_notices` 表。这些词有英译中释义，但不进中译英释义的候选 | `msime-english.db` | 进入（`dict-v` 发布附 `msime-scowl_Copyright.txt`） |
