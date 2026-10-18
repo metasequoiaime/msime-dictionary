@@ -1,0 +1,94 @@
+name: Preview upstream dictionary updates
+
+on:
+  schedule:
+    - cron: '23 3 * * 1'
+  workflow_dispatch:
+    inputs:
+      msime_ref:
+        description: '生成器的 msime 分支、标签或提交；跨仓试跑时填写对应 PR 分支'
+        type: string
+        default: develop
+      upstream_ref:
+        description: '预览 rime-ice 的分支、标签或提交；报告记录检出后的完整提交'
+        type: string
+        default: main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-upstream-dictionaries-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Checkout dictionary comparison data
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: dictionary
+          persist-credentials: false
+      - name: Checkout generator
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: metasequoiaime/msime
+          ref: ${{ inputs.msime_ref || 'develop' }}
+          path: msime
+          persist-credentials: false
+      - name: Checkout upstream candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: iDvel/rime-ice
+          ref: ${{ inputs.upstream_ref || 'main' }}
+          path: upstream
+          persist-credentials: false
+          sparse-checkout: |
+            cn_dicts
+            en_dicts
+      - name: Build generator
+        working-directory: msime
+        run: cargo build --locked --release -p msime-dict-builder
+      - name: Generate review candidates
+        run: >-
+          msime/target/release/msime-dict-build rime-ice-supplement
+          --upstream upstream --dictionary dictionary --repository msime
+          --out preview
+      - name: Report changes
+        shell: python
+        run: |
+          import json
+          import os
+          from pathlib import Path
+
+          report = json.loads(Path('preview/upstream-update.json').read_text())
+          previous = json.loads(Path('dictionary/upstream.lock.json').read_text())['upstreams']['rime-ice-supplement']['commit']
+          lines = [
+              '## 上游词库更新预览', '',
+              f"固定上游：`{previous}` → `{report['commit']}`", '',
+              '| 补充表 | 新增词条 | 移出词条 | 权重变化 | 候选总数 |',
+              '| --- | ---: | ---: | ---: | ---: |',
+          ]
+          for directory, name in [('pinyin', 'rime-ice-supplement.txt'), ('english', 'rime-ice-en-supplement.txt')]:
+              def keys(path):
+                  return {tuple(fields[:2]): tuple(fields[2:]) for line in path.read_text().splitlines() if line and not line.startswith('#') for fields in [line.split('\t')]}
+              old = keys(Path('dictionary/sources') / directory / name)
+              new = keys(Path('preview') / name)
+              changed = sum(old[key] != new[key] for key in old.keys() & new.keys())
+              lines.append(f'| {name} | {len(new.keys() - old.keys())} | {len(old.keys() - new.keys())} | {changed} | {len(new)} |')
+          lines += ['', f"不支持的词音组合：{report['unsupported_readings']}，详见 unsupported-readings.txt，不进入候选。", f"未注音词条：{report['unannotated_words']}，详见 unannotated-words.txt，不猜读音。", '', '下载 candidate artifact 查看完整数据、输入摘要、生成器提交和上游许可证。', '',
+                    '候选尚未发布。审核读音、词频和许可后，按 README 的跨仓流程更新 msime 引用与许可证，再更新本仓数据、NOTICE 和 upstream.lock.json，试跑完整构建；两版五笔由构建器重新派生。',
+                    '不读取个人词库，不提交、合并或发布任何改动。']
+          summary = '\n'.join(lines) + '\n'
+          Path('preview/README.md').write_text(summary)
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as stream:
+              stream.write(summary)
+      - name: Upload review candidates
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: upstream-dictionary-candidate
+          path: preview/
+          retention-days: 30
+          if-no-files-found: error
