@@ -61,6 +61,7 @@ custom/                                   人工维护的数据，唯一接受�
   words.txt                               中文词条 -> msime-pinyin.db
   translations.txt                        候选窗翻译 -> msime-english.db
   english.txt                             英文词条 -> msime-english.db
+  symbols.txt                             符号与标点的拼音读音（dian -> ·、）-> 目前只进 MSIME-Windows 本地构建的 others.db
   names.txt                               人名（没有任何构建或网站读取）
 packs/                                    用户按需导入的专业词库，不进入构建
   README.md                               专业词库的说明与验收清单
@@ -121,6 +122,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/korean/hanja.txt` | `msime-dict-build hanja`，发布 workflow 不运行 | msime 源码里的 `crates/engine/src/korean/hanja.tsv`，由引擎用 `include_str!` 内嵌 | 不是 Release 附件 |
 | `sources/symbols/wanxiang_symbols.yaml`、`sources/symbols/codex_sym.txt` | 尚无：目前只有 MSIME-Windows 的本地构建器 `scripts/build-dictionary.py` 读取，剔除 `wanxiang-unrenderable.txt` 列出的符号后生成表情面板的 `symbol_catalog` 与 S 模式、符号混输的 `symbol_code` | `others.db` | msime 构建器加入读取阶段之前不进入；Release 的 `msime-others.db` 仍用 msime 的旧符号表 |
 | `sources/symbols/wanxiang-unrenderable.txt` | 同上，构建时整份剔除 | — | 不进入任何产物 |
+| `custom/symbols.txt` | 尚无：同上，只有 MSIME-Windows 的本地构建器读取，作为拼音读音编码追加进 `symbol_code`（排在万象分组之后、codex 名称之前），可以混进普通拼音候选 | `others.db` | 同上，msime 构建器加入读取阶段之前不进入 |
 | `custom/names.txt` | 无 | — | 没有消费方：构建器不读，官网投稿也不写它 |
 | `packs/` | 不进入构建 | msime.app 按本仓 `main` 读取并列出（官网缓存约一小时），用户在设置里导入 | 不进入 Release |
 
@@ -276,6 +278,7 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `custom/words.txt` | UTF-8 | LF | 无 | `词<TAB>全拼<TAB>权重` | 有 |
 | `custom/translations.txt` | UTF-8 | LF | `#` 注释行，开头和各分组前都有 | `源词<TAB>译文` | 有 |
 | `custom/english.txt` | UTF-8 | LF | 无 | `编码<TAB>显示词<TAB>权重` | 无 |
+| `custom/symbols.txt` | UTF-8 | LF | `#` 注释行，开头和各分组前都有 | `编码<TAB>符号`，编码是全拼小写字母，同一编码多行按文件顺序 | 有 |
 | `custom/names.txt` | UTF-8 | LF | 无 | 一个人名 | 无 |
 
 ## 许可
