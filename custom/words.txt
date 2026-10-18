@@ -607,3 +607,4 @@
 候选排序	hou'xuan'pai'xu	100
 个人词库	ge'ren'ci'ku	100
 系统词库	xi'tong'ci'ku	100
+孬蛋	nao'dan	100
