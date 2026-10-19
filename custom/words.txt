@@ -611,3 +611,4 @@
 候选窗预编辑	hou'xuan'chuang'yu'bian'ji	100
 折戟	zhe'ji	3333
 甘道夫	gan'dao'fu	100
+小巧思	xiao'qiao'si	100
