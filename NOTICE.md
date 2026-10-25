@@ -105,6 +105,7 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 | `sources/symbols/codex_sym.txt` | 同一提交的 `lua/data/codex_sym.txt`，由万象从 [typst/codex](https://github.com/typst/codex) 的符号命名数据生成 | CC BY 4.0（万象）；符号名称来自 Apache-2.0 的 typst/codex |
 | `sources/symbols/LICENSE` | 同一提交的仓库根目录 `LICENSE` | 即 CC BY 4.0 许可文本本身 |
 | `sources/symbols/wanxiang-unrenderable.txt` | 本项目生成的剔除清单：由 MSIME-Windows 的 `scripts/check-symbol-rendering.py` 用 Windows 自带字体检查上面两份文件里的符号，列出看不见、私用区、系统字体没有字形或不能合成一个字形的符号，判定环境与规则写在文件头 | 只含上面两份文件里的符号与出处，许可同上 |
+| `sources/symbols/piliapp-symbols.txt` | 2026-08-17 采集自 [PiliApp 特殊符号](https://tw.piliapp.com/symbol/) 51 个分类页面上可直接复制的 Unicode 字符，按分类分组去重；原在 msime 的 `resources/dictionary-sources/symbols/piliapp_symbols.txt`，字节不变 | **未声明**，见下方「待解决」 |
 | `sources/symbols/symbol-names.tsv` | 本项目自写：符号名称与拼音到符号，名称与码位是事实，没有整段复制任何现成的表 | GPL-3.0-only，随 msime 引擎分发 |
 | `sources/symbols/latex-symbols.tsv` | 本项目自写：LaTeX 命令名到码位，命令名取自 LaTeX 内核与 amssymb、amsmath 等宏包的公开命令，不来自 unicode-math 或 fcitx5 `latex.mb` 的表 | MIT，Copyright (c) 2026 Metasequoia IME contributors；全文见 msime 的 `plugins/phrase_table/LICENSE` |
 
@@ -121,12 +122,13 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 以下部分目前没有明确的再分发授权，需要与上游作者确认后才能补上：
 
 - [wuhgit/CustomPinyinDictionary](https://github.com/wuhgit/CustomPinyinDictionary) 是 `sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt` 的主体。上游在 2026-09-30 的提交 `cf17f96af885cb818c2fad87184f383a52482351`（“Add License”）加入了 CC-BY-SA-4.0 许可，但本仓用的 `2023-09-28(No.82)` 快照早于这次加许可，许可是否覆盖这份快照没有确认，所以仍按未声明许可处理，继续排除在发布构建之外。
+- `sources/symbols/piliapp-symbols.txt` 采集自 PiliApp 网站，网站没有给出数据许可。它和其余几项不同：不在 `sources/unlicensed/`，`licensing.rs` 也不排除它，而是照旧进入 `msime-others.db` 的符号页——这份数据在 msime 仓库里时就一直随发布分发，搬到本仓只是把来源和许可状态写明，由维护者决定先保持面板内容不变。内容是 Unicode 字符按主题的分组，可替换的来源是本仓已有授权的 `wanxiang_symbols.yaml` 与 `codex_sym.txt`（CC BY 4.0），但两者只覆盖它 2323 个符号中的 1138 个，动物、人员与活动、盲文、心形、分数等分类没有对应。确认授权或换成有授权的来源之前，不要往这份文件里加内容。
 - `sources/unlicensed/single-char-whitelist.txt` 的来源没有记录。完整构建用它过滤单字条目，所以需要补上来源；在补上之前不要假定它可以再分发。
 - `sources/unlicensed/oaldpe-words.txt` 提取自商业词典。词典本体曾以 `en/oaldpe.mdx` 放在本仓中，现已移除——构建只需要提取好的词形列表，不需要词典本体。提取脚本 `makecikudb/englishdb/extract_oaldpe_headwords.py` 已随旧的 Python 构建流程删除，需要时从 git 历史取回，自备 `.mdx` 作为参数运行。**注意移除只影响当前版本，词典本体仍留在 git 历史中。**改写历史会让所有 fork、clone 以及下游锁定的 commit 全部失效，因此暂不改写；是否改写单独决策。
 
 ### 发布构建不包含这些条目
 
-上面这些条目**默认不进入构建产物**。判定写在 msime 的 `crates/dict-builder/src/licensing.rs` 里，`msime-dict-build` 每次运行都会打印它排除了什么、为什么排除、以及换用了什么替代输入：
+上面这些条目除 `sources/symbols/piliapp-symbols.txt`（原因见该条）外，**默认不进入构建产物**。判定写在 msime 的 `crates/dict-builder/src/licensing.rs` 里，`msime-dict-build` 每次运行都会打印它排除了什么、为什么排除、以及换用了什么替代输入：
 
 | 排除的输入 | 替代 | 后果 |
 | --- | --- | --- |
