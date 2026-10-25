@@ -2,6 +2,8 @@
 
 水杉输入法（[msime](https://github.com/metasequoiaime/msime)）词库的源数据仓库：这里只放文本源数据，由 msime 的构建器 `msime-dict-build` 构建成本仓 `dict-v*` Release 中的数据库与模型；构建脚本和生成的数据库都不放在这里。
 
+**万象词库来源声明：`sources/pinyin/wanxiang/` 下的 15 份 `.dict.yaml` 文件全部来自 [万象拼音（amzxyz/rime-wanxiang）](https://github.com/amzxyz/rime-wanxiang) 的 `dicts/` 目录，署名作者 amzxyz，按 [CC BY 4.0（署名 4.0 国际）](https://creativecommons.org/licenses/by/4.0/) 许可分发。** 上游词库数据源自 [万象词库（amzxyz/RIME-LMDG）](https://github.com/amzxyz/RIME-LMDG)。本仓逐字节复制这些文件，保留上游文件名、文件头、词条、读音与权重；来源提交及完整文件清单见 [NOTICE.md「万象词库原始文件」](NOTICE.md#万象词库原始文件)。
+
 - 想加一个词、一个英文单词或一条候选窗翻译：见[贡献词条](#贡献词条)。
 - 想做一个按需导入的专业词库：见[专业词库](#专业词库)和 [packs/README.md](packs/README.md)。
 - 维护者发布新词库：见[发布](#发布)。
@@ -15,6 +17,7 @@ sources/                                  msime 构建器经 --dictionary 读取
     rime-ice-supplement.txt               rime-ice 新提交中相对 rime-ice.txt 新增的词条（本项目生成的补充表），与万象共有的词条权重取自万象 -> msime-pinyin.db
     places.txt                            行政区划全称与简称中缺失或权重偏低的词条（本项目生成的补充表）-> msime-pinyin.db
     single-chars.txt                      单字读音与字频，与万象共有的读音字频取自万象 -> msime-pinyin.db；msime-stroke.db 的权重
+    wanxiang/                             万象词库（amzxyz/rime-wanxiang）dicts/ 下 15 份原样文件，CC BY 4.0，作者 amzxyz
   wubi/                                   五笔词库 -> msime-wubi.db
     wubi86-jidian.txt                     86 版五笔（rime-wubi86-jidian，另补了 rime-wubi 的词条）-> wubi86 表
     wubi86-supplement.txt                 86 表没有、98 表或拼音输入里有的多字词组，编码按 86 词组规则推出（本项目生成的补充表）-> wubi86 表
@@ -292,6 +295,8 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 ## 许可
 
 本仓库**不对外提供统一的开源许可**：其中绝大部分词库并非本项目的作品，给整个仓库挂一份 LICENSE 等于替上游作者重新授权。逐项的来源与上游条款见 [NOTICE.md](NOTICE.md)，使用或再分发前请以对应上游的条款为准。本项目自建的部分（`custom/`、`packs/`、`scripts/`）以 GPL-3.0 提供。
+
+**`sources/pinyin/wanxiang/` 中的 15 份词库文件来自万象词库，作者为 amzxyz，许可为 CC BY 4.0。** 本次复制的来源是 [amzxyz/rime-wanxiang 提交 `aa9947f3f513ff88a3f7ce4e342fcb519d517025`](https://github.com/amzxyz/rime-wanxiang/tree/aa9947f3f513ff88a3f7ce4e342fcb519d517025/dicts)，文件内容未作修改。使用或再分发这些文件及其改编数据时，须保留万象词库与 amzxyz 的署名、来源链接、[CC BY 4.0 许可链接](https://creativecommons.org/licenses/by/4.0/)及上游提供的声明；有改动时须注明改动。许可全文见本仓 [sources/symbols/LICENSE](sources/symbols/LICENSE)，逐项登记见 [NOTICE.md「万象词库原始文件」](NOTICE.md#万象词库原始文件)。
 
 拼音词库（`sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`）中与万象共有的词条，权重改编自 [amzxyz/rime-wanxiang](https://github.com/amzxyz/rime-wanxiang) 标签 `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）的词库（词库数据源自同一作者的 [amzxyz/RIME-LMDG](https://github.com/amzxyz/RIME-LMDG)），按 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 使用：署名 amzxyz 与万象拼音，改动是去掉声调、按文件统一缩放并取整，词条与读音仍来自 rime-ice，详见 [NOTICE.md](NOTICE.md)「拼音权重与万象对齐」。CC BY 4.0 可以单向并入 GPL-3.0 作品（[FSF 的兼容性列表](https://www.gnu.org/licenses/license-list.html#ccby)），所以这三份文件仍按 rime-ice 的 GPL-3.0 分发，同时保留对万象的署名；再分发由它们构建的 `msime-pinyin.db` 时，也要一并保留这份署名与改动说明。
 
