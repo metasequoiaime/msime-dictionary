@@ -51,6 +51,7 @@ sources/                                  msime 构建器经 --dictionary 读取
     machine-translations.txt              拼音与五笔词条的英文释义（汇总已有翻译与大模型生成）-> msime-english.db（构建器尚未读取）
   opencc/                                 OpenCC 七份简繁转换表与 LICENSE，构建时内嵌，不是 Release 附件
   symbols/                                符号源数据
+    piliapp-symbols.txt                   表情面板符号页的分类与符号（采集自 PiliApp，许可未确认）-> msime-others.db
     symbol-names.tsv                      打拼音出符号的符号名称表（本项目自写）-> msime 引擎内嵌（不是 Release 附件）
     latex-symbols.tsv                     LaTeX 命令名到码位（本项目自写，MIT）-> msime 符号模式与官方短语表「LaTeX 符号」（不是 Release 附件）
   korean/                                 韩文方案（libhangul 原样）
@@ -126,8 +127,9 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/japanese/LICENSE` | 主命令 JapaneseModel，原样复制 | `msime-mozc_LICENSE.txt` | 进入 |
 | `sources/opencc/*.txt`、`sources/opencc/LICENSE` | msime 的 OpenCC 构建输入（固定提交、大小与 SHA-256） | 客户端内嵌简繁转换表；许可证随应用分发 | 不是 Release 附件 |
 | `sources/korean/hanja.txt` | `msime-dict-build hanja`，发布 workflow 不运行 | msime 源码里的 `crates/engine/src/korean/hanja.tsv`，由引擎用 `include_str!` 内嵌 | 不是 Release 附件 |
-| `sources/symbols/wanxiang_symbols.yaml`、`sources/symbols/codex_sym.txt` | 尚无：目前只有 MSIME-Windows 的本地构建器 `scripts/build-dictionary.py` 读取，剔除 `wanxiang-unrenderable.txt` 列出的符号后生成表情面板的 `symbol_catalog` 与 S 模式、符号混输的 `symbol_code` | `others.db` | msime 构建器加入读取阶段之前不进入；Release 的 `msime-others.db` 仍用 msime 的旧符号表 |
+| `sources/symbols/wanxiang_symbols.yaml`、`sources/symbols/codex_sym.txt` | 尚无：目前只有 MSIME-Windows 的本地构建器 `scripts/build-dictionary.py` 读取，剔除 `wanxiang-unrenderable.txt` 列出的符号后生成表情面板的 `symbol_catalog` 与 S 模式、符号混输的 `symbol_code` | `others.db` | 万象两份不进入 Release 附件：`msime-others.db` 的符号页用下面的 `piliapp-symbols.txt`；msime 的 `scripts/build_symbol_groups.py` 另按 `resources/symbol-groups.lock.json` 固定本仓提交读 `wanxiang_symbols.yaml`，生成引擎内嵌的符号模式分组表 |
 | `sources/symbols/wanxiang-unrenderable.txt` | 同上，构建时整份剔除 | — | 不进入任何产物 |
+| `sources/symbols/piliapp-symbols.txt` | 主命令 Symbols 阶段，51 个分类映射到表情面板符号页的父标签与小标题 | `msime-others.db` 的 `symbol_catalog` | 进入（许可未确认，见 `NOTICE.md`「待解决」） |
 | `sources/symbols/symbol-names.tsv` | msime 的 `scripts/sync_symbol_tables.py` 按 `resources/symbol-tables.lock.json`（固定本仓提交、大小与 SHA-256）同步成 `crates/engine/src/local/symbol_candidates.tsv` | 引擎内嵌的符号混输名称表（`zhengfu` 得 ±、`phi` 得 φ）；MSIME-Windows 的 `scripts/dictionary_build/symbols_db.py` 也读它，把两个音节以上的中文名称（编码是全拼去掉 `'`）和拉丁名称写进 `others.db` 的 `symbol_code` | 不是 Release 附件 |
 | `sources/symbols/latex-symbols.tsv` | 同上，同步成 `plugins/phrase_table/latex-symbols/symbols.tsv` | 符号模式（Shift+S）的 LaTeX 命令名，以及官方短语表「LaTeX 符号」的 `plugin.toml` | 不是 Release 附件 |
 | `custom/names.txt` | 无 | — | 没有消费方：构建器不读，官网投稿也不写它 |
@@ -136,7 +138,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 几点补充：
 
 - `msime-pinyin.db` 构建完的全拼表同时是 `msime-bigram.bin`、`msime-trigram.bin` 的词表，ECDICT 释义的中文权重也从它读取，所以改动它的输入也会改变 n-gram 模型和 `msime-english.db` 的释义。
-- 有些输入不在本仓：ECDICT、zhwiki 语料、msime `resources/dictionary-sources/` 下的快捷短语（进入 `msime-pinyin.db`）以及 emoji、颜文字和旧符号表（构成 `msime-others.db`；新的符号源在本仓 `sources/symbols/`，见上表），还有 msime `resources/licenses/` 下的许可证文本。
+- 有些输入不在本仓：ECDICT、zhwiki 语料、msime `resources/dictionary-sources/` 下的快捷短语（进入 `msime-pinyin.db`）以及 emoji 和颜文字（与本仓的 `sources/symbols/piliapp-symbols.txt` 一起构成 `msime-others.db`），还有 msime `resources/licenses/` 下的许可证文本。
 - `licensing.rs` 排除的输入记录在每个 Release 的 manifest 里（`licensing.excluded_inputs`），发布 workflow 会断言 `licensing.includes_unlicensed_inputs` 为 `false`。
 
 ## 贡献词条
