@@ -50,6 +50,9 @@ sources/                                  msime 构建器经 --dictionary 读取
   cn-en/                                  中译英候选窗释义
     machine-translations.txt              拼音与五笔词条的英文释义（汇总已有翻译与大模型生成）-> msime-english.db（构建器尚未读取）
   opencc/                                 OpenCC 七份简繁转换表与 LICENSE，构建时内嵌，不是 Release 附件
+  symbols/                                符号源数据
+    symbol-names.tsv                      打拼音出符号的符号名称表（本项目自写）-> msime 引擎内嵌（不是 Release 附件）
+    latex-symbols.tsv                     LaTeX 命令名到码位（本项目自写，MIT）-> msime 符号模式与官方短语表「LaTeX 符号」（不是 Release 附件）
   korean/                                 韩文方案（libhangul 原样）
     hanja.txt                             韩文音节与汉字 -> msime 引擎内嵌的 Hanja 表（不是 Release 附件）
   unlicensed/                             没有再分发授权的文件，发布构建不使用，只供 --include-unlicensed 的本地完整构建
@@ -125,6 +128,8 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/korean/hanja.txt` | `msime-dict-build hanja`，发布 workflow 不运行 | msime 源码里的 `crates/engine/src/korean/hanja.tsv`，由引擎用 `include_str!` 内嵌 | 不是 Release 附件 |
 | `sources/symbols/wanxiang_symbols.yaml`、`sources/symbols/codex_sym.txt` | 尚无：目前只有 MSIME-Windows 的本地构建器 `scripts/build-dictionary.py` 读取，剔除 `wanxiang-unrenderable.txt` 列出的符号后生成表情面板的 `symbol_catalog` 与 S 模式、符号混输的 `symbol_code` | `others.db` | msime 构建器加入读取阶段之前不进入；Release 的 `msime-others.db` 仍用 msime 的旧符号表 |
 | `sources/symbols/wanxiang-unrenderable.txt` | 同上，构建时整份剔除 | — | 不进入任何产物 |
+| `sources/symbols/symbol-names.tsv` | msime 的 `scripts/sync_symbol_tables.py` 按 `resources/symbol-tables.lock.json`（固定本仓提交、大小与 SHA-256）同步成 `crates/engine/src/local/symbol_candidates.tsv` | 引擎内嵌的符号混输名称表（`zhengfu` 得 ±、`phi` 得 φ） | 不是 Release 附件 |
+| `sources/symbols/latex-symbols.tsv` | 同上，同步成 `plugins/phrase_table/latex-symbols/symbols.tsv` | 符号模式（Shift+S）的 LaTeX 命令名，以及官方短语表「LaTeX 符号」的 `plugin.toml` | 不是 Release 附件 |
 | `custom/names.txt` | 无 | — | 没有消费方：构建器不读，官网投稿也不写它 |
 | `packs/` | 不进入构建 | msime.app 按本仓 `main` 读取并列出（官网缓存约一小时），用户在设置里导入 | 不进入 Release |
 
