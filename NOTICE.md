@@ -25,6 +25,32 @@
 
 `sources/wubi/wubi98.txt` 与上游文件逐字节一致（SHA-256 `1b5a4c22eddae08d8e0e6aa8f926f92d45d6cdaa591e5cee0e8aad29271da1cc`，UTF-16LE 带 BOM、CRLF），没有改编码或换行。权利声明来自数据作者本人：上游仓库在 2024-01-20 的提交 `4dbcaa65` 加入 Unlicense，此前同一作者在 2021 年把这份表贡献给 [fcitx/fcitx5-table-extra](https://github.com/fcitx/fcitx5-table-extra)（`tables/wubi98.txt`，GPL-3.0-or-later 包内分发，Debian main 收录）。两份表 112584 条里只有 4 条不同，差异来自上游 2024-06-25 的拆分校正（`72a36bae`）。上游没有记录 GB2312/GBK 部分的单字编码与简码是怎样生成的，只能说它们依照 98 版五笔的编码规范；这里如实记下，不把它描述成独立生成。界面上称“98 五笔”，不使用“王码”“五笔字型”等商标。
 
+### 万象词库原始文件
+
+`sources/pinyin/wanxiang/` 下的以下 15 份文件全部来自 **万象词库 / 万象拼音（rime-wanxiang），作者 amzxyz**，直接来源为 [amzxyz/rime-wanxiang](https://github.com/amzxyz/rime-wanxiang) 提交 [`aa9947f3f513ff88a3f7ce4e342fcb519d517025`](https://github.com/amzxyz/rime-wanxiang/tree/aa9947f3f513ff88a3f7ce4e342fcb519d517025/dicts) 的 `dicts/` 目录。上游 README 将词库来源标为同一作者的 [万象词库（amzxyz/RIME-LMDG）](https://github.com/amzxyz/RIME-LMDG)，多份词库的文件头也保留了该链接。
+
+| 本仓文件（均位于 `sources/pinyin/wanxiang/`） | 上游文件（均位于 `dicts/`） | 上游许可 |
+| --- | --- | --- |
+| `cuoyin.dict.yaml` | `cuoyin.dict.yaml` | CC BY 4.0 |
+| `diming.dict.yaml` | `diming.dict.yaml` | CC BY 4.0 |
+| `duoyin.dict.yaml` | `duoyin.dict.yaml` | CC BY 4.0 |
+| `fangyan.dict.yaml` | `fangyan.dict.yaml` | CC BY 4.0 |
+| `huaxue.dict.yaml` | `huaxue.dict.yaml` | CC BY 4.0 |
+| `jichu.dict.yaml` | `jichu.dict.yaml` | CC BY 4.0 |
+| `mingren.dict.yaml` | `mingren.dict.yaml` | CC BY 4.0 |
+| `mixed.dict.yaml` | `mixed.dict.yaml` | CC BY 4.0 |
+| `shici.dict.yaml` | `shici.dict.yaml` | CC BY 4.0 |
+| `taifeng.dict.yaml` | `taifeng.dict.yaml` | CC BY 4.0 |
+| `wuzhong.dict.yaml` | `wuzhong.dict.yaml` | CC BY 4.0 |
+| `yaopin.dict.yaml` | `yaopin.dict.yaml` | CC BY 4.0 |
+| `yiren.dict.yaml` | `yiren.dict.yaml` | CC BY 4.0 |
+| `yixue.dict.yaml` | `yixue.dict.yaml` | CC BY 4.0 |
+| `zi.dict.yaml` | `zi.dict.yaml` | CC BY 4.0 |
+
+许可依据是该提交仓库根目录的 [LICENSE](https://github.com/amzxyz/rime-wanxiang/blob/aa9947f3f513ff88a3f7ce4e342fcb519d517025/LICENSE) 与 README 的 CC BY 4.0 声明。许可名称为 Creative Commons Attribution 4.0 International（知识共享署名 4.0 国际），[许可链接](https://creativecommons.org/licenses/by/4.0/)，全文亦收在本仓 [sources/symbols/LICENSE](sources/symbols/LICENSE)。
+
+本次改动仅将上述文件从上游 `dicts/` 复制到本仓 `sources/pinyin/wanxiang/`，保留原文件名及全部字节，未修改文件头、词条、读音、权重、行序、编码或换行。再分发原文件或改编数据时，须保留作者 amzxyz 与万象词库的署名、来源链接、许可链接以及上游提供的版权与免责声明；改编时须注明改动并保留已有改动说明。上游按许可中的免责声明以原样提供数据。
+
 ### 拼音权重与万象对齐
 
 `sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt` 中与万象共有的词条，权重改编自 [amzxyz/rime-wanxiang](https://github.com/amzxyz/rime-wanxiang) 标签 `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）`dicts/` 下的词库。上游仓库以 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 发布（仓库根目录 `LICENSE`，全文也收在本仓 `sources/symbols/LICENSE`），词库文件头注明数据出自同一作者的 [amzxyz/RIME-LMDG](https://github.com/amzxyz/RIME-LMDG)。署名：万象拼音（rime-wanxiang），作者 amzxyz。CC BY 4.0 可以单向并入 GPL-3.0 作品，所以这三份文件仍按 rime-ice 的 GPL-3.0 分发，同时保留这里的署名与改动说明。
