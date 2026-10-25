@@ -128,7 +128,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/korean/hanja.txt` | `msime-dict-build hanja`，发布 workflow 不运行 | msime 源码里的 `crates/engine/src/korean/hanja.tsv`，由引擎用 `include_str!` 内嵌 | 不是 Release 附件 |
 | `sources/symbols/wanxiang_symbols.yaml`、`sources/symbols/codex_sym.txt` | 尚无：目前只有 MSIME-Windows 的本地构建器 `scripts/build-dictionary.py` 读取，剔除 `wanxiang-unrenderable.txt` 列出的符号后生成表情面板的 `symbol_catalog` 与 S 模式、符号混输的 `symbol_code` | `others.db` | msime 构建器加入读取阶段之前不进入；Release 的 `msime-others.db` 仍用 msime 的旧符号表 |
 | `sources/symbols/wanxiang-unrenderable.txt` | 同上，构建时整份剔除 | — | 不进入任何产物 |
-| `sources/symbols/symbol-names.tsv` | msime 的 `scripts/sync_symbol_tables.py` 按 `resources/symbol-tables.lock.json`（固定本仓提交、大小与 SHA-256）同步成 `crates/engine/src/local/symbol_candidates.tsv` | 引擎内嵌的符号混输名称表（`zhengfu` 得 ±、`phi` 得 φ） | 不是 Release 附件 |
+| `sources/symbols/symbol-names.tsv` | msime 的 `scripts/sync_symbol_tables.py` 按 `resources/symbol-tables.lock.json`（固定本仓提交、大小与 SHA-256）同步成 `crates/engine/src/local/symbol_candidates.tsv` | 引擎内嵌的符号混输名称表（`zhengfu` 得 ±、`phi` 得 φ）；MSIME-Windows 的 `scripts/dictionary_build/symbols_db.py` 也读它，把两个音节以上的中文名称（编码是全拼去掉 `'`）和拉丁名称写进 `others.db` 的 `symbol_code` | 不是 Release 附件 |
 | `sources/symbols/latex-symbols.tsv` | 同上，同步成 `plugins/phrase_table/latex-symbols/symbols.tsv` | 符号模式（Shift+S）的 LaTeX 命令名，以及官方短语表「LaTeX 符号」的 `plugin.toml` | 不是 Release 附件 |
 | `custom/names.txt` | 无 | — | 没有消费方：构建器不读，官网投稿也不写它 |
 | `packs/` | 不进入构建 | msime.app 按本仓 `main` 读取并列出（官网缓存约一小时），用户在设置里导入 | 不进入 Release |
