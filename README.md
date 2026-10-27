@@ -170,7 +170,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | workflow | 触发 | 检查什么 |
 | --- | --- | --- |
 | `check-words.yml` | Pull Request 改动 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` | 用 msime 固定提交（`MSIME_COMMIT`）的 `msime-dict-build check-words`，即构建所用的解析器：只能追加；每行能按构建的规则解析（词语的全拼须是 `'` 分隔的小写字母并能映射到全拼表）；词语和英文的权重在文件现有范围内；不与本次改动、所在文件或比对库重复（比对库是运行时找到的最新 `dict-v` release 的 `msime-pinyin.db` 和 `msime-english.db`，按该 release 的 `msime-SHA256SUMS.txt` 校验）。翻译可以给已有源词换一个译文，完全相同的一行算重复。结果写成 Pull Request 评论 |
-| `validate-packs.yml` | Pull Request 改动 `packs/`、`custom/translations.txt`、`custom/words.txt`、它对照的 `sources/pinyin/`、`sources/unlicensed/` 文件、脚本或该 workflow | 运行 `python3 scripts/validate_packs.py`，见[专业词库](#专业词库) |
+| `ci.yml` | Pull Request 改动 `packs/`、`custom/translations.txt`、`custom/words.txt`、它对照的 `sources/pinyin/`、`sources/unlicensed/` 文件、脚本或该 workflow | 运行 `python3 scripts/validate_packs.py`，见[专业词库](#专业词库) |
 | `quality.yml` | 推送到 `main`、Pull Request、merge queue、手动 | actionlint 校验 workflow 与其中的 shell；Pull Request 上另做依赖审查（high 及以上失败） |
 | `codeql.yml` | 每天定时 | CodeQL 分析 GitHub Actions workflow |
 | `release-built-dictionaries.yml` | 推送到 `main` 且改动了 `sources/` 或 `custom/`；手动（可只构建不发布） | 用这次推送的提交构建 19 个附件，自动加修订号发布 `dict-v*` Release，说明列出源数据变更和每个附件的用途，见[发布](#发布) |
