@@ -627,3 +627,4 @@
 金纽扣花	jin'niu'kou'hua	100
 实施例	shi'shi'li	100
 小花柳叶菜	xiao'hua'liu'ye'cai	100
+针叶樱桃	zhen'ye'ying'tao	100
