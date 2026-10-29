@@ -632,3 +632,4 @@
 世界吞噬者	shi'jie'tun'shi'zhe	100
 刷铁机	shua'tie'ji	100
 全物品	quan'wu'pin	100
+影之刃零	ying'zhi'ren'ling	100
