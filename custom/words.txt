@@ -621,3 +621,7 @@
 菲欧妮	fei'ou'ni	100
 星见雅	xing'jian'ya	100
 首尾帧	shou'wei'zhen	100
+绿咖啡豆	lv'ka'fei'dou	100
+绿咖啡	lv'ka'fei	100
+金纽扣	jin'niu'kou	100
+金纽扣花	jin'niu'kou'hua	100
