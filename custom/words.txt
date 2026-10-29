@@ -628,3 +628,7 @@
 实施例	shi'shi'li	100
 小花柳叶菜	xiao'hua'liu'ye'cai	100
 针叶樱桃	zhen'ye'ying'tao	100
+世吞	shi'tun	3333
+世界吞噬者	shi'jie'tun'shi'zhe	100
+刷铁机	shua'tie'ji	100
+全物品	quan'wu'pin	100
