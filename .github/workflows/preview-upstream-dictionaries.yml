@@ -23,7 +23,7 @@ concurrency:
 
 jobs:
   preview:
-    runs-on: ubuntu-24.04
+    runs-on: depot-ubuntu-24.04-8
     timeout-minutes: 60
     steps:
       - name: Checkout dictionary comparison data
