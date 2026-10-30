@@ -1450,6 +1450,230 @@
 组分模型方程	Compositional Model Equation
 黑油模型方程	Black Oil Model Equation
 状态方程闪蒸	Equation of State Flash
+岩心	Core Sample
+岩心实验	Core Experiment
+核磁	NMR
+凝析气	Condensate Gas
+驱替	Displacement
+单井	Single Well
+注采	Injection and Production
+井网	Well Pattern
+相渗	Relative Permeability
+采出量	Production Volume
+补能	Energy Supplementation
+笼统注采	Commingled Injection and Production
+流压	Flowing Pressure
+产气量	Gas Production Rate
+生产井	Production Well
+焖置	Soaking
+焖置期	Soaking Period
+储氢	Hydrogen Storage
+表活剂	Surfactant
+驱油	Oil Displacement
+注气	Gas Injection
+注气驱	Gas Injection Flooding
+注气补能	Gas Injection for Energy Supplementation
+井段	Well Interval
+单井模型	Single-Well Model
+闪蒸	Flash Vaporization
+算例	Case Study
+半缝长	Half-Fracture Length
+微流控	Microfluidics
+微流控实验	Microfluidic Experiment
+断块	Fault Block
+断块油气藏	Fault-Block Reservoir
+古潜山	Buried Hill
+生油岩	Source Rock
+储集岩	Reservoir Rock
+扇三角洲	Fan Delta
+浊积扇	Turbidite Fan
+三角洲前缘	Delta Front
+河口坝	Mouth Bar
+席状砂	Sheet Sand
+点坝	Point Bar
+决口扇	Crevasse Splay
+潮坪	Tidal Flat
+障壁岛	Barrier Island
+滨浅湖	Shore-Shallow Lake
+半深湖	Semi-Deep Lake
+鲍马序列	Bouma Sequence
+有效渗透率	Effective Permeability
+分选性	Sorting
+胶结类型	Cementation Type
+白云石化	Dolomitization
+四性关系	Four-Property Relationship
+动用储量	Developed Reserves
+剩余可采储量	Remaining Recoverable Reserves
+储量丰度	Reserve Abundance
+含油面积	Oil-Bearing Area
+地震资料处理	Seismic Data Processing
+叠前偏移	Prestack Migration
+叠后偏移	Poststack Migration
+偏移成像	Migration Imaging
+时深转换	Time-Depth Conversion
+层位标定	Horizon Calibration
+地震分辨率	Seismic Resolution
+反褶积	Deconvolution
+静校正	Static Correction
+动校正	Normal Moveout Correction
+速度分析	Velocity Analysis
+裂缝预测	Fracture Prediction
+属性提取	Attribute Extraction
+四维地震	Four-Dimensional Seismic
+时移地震	Time-Lapse Seismic
+井间地震	Crosswell Seismic
+重力勘探	Gravity Survey
+磁法勘探	Magnetic Survey
+电法勘探	Electrical Survey
+储层伤害	Formation Damage
+颗粒运移	Fines Migration
+有机垢	Organic Scale
+声波测井	Acoustic Logging
+自然电位	Spontaneous Potential
+地层水矿化度	Formation Water Salinity
+一次采油	Primary Recovery
+二次采油	Secondary Recovery
+开发层系	Development Layer Series
+注采系统	Injection-Production System
+九点法井网	Nine-Spot Pattern
+反九点井网	Inverted Nine-Spot Pattern
+七点法井网	Seven-Spot Pattern
+四点法井网	Four-Spot Pattern
+交错行列井网	Staggered Line Drive
+边缘注水	Edge Water Injection
+切割注水	Cutoff Water Injection
+水侵系数	Water Influx Coefficient
+气窜	Gas Channeling
+储采比	Reserve-Production Ratio
+经济可采储量	Economic Recoverable Reserves
+水驱采收率	Waterflood Recovery
+单井产能	Single-Well Productivity
+合理生产压差	Reasonable Drawdown
+弹性产率	Elastic Productivity
+综合压缩系数	Total Compressibility
+剩余油饱和度	Remaining Oil Saturation
+驱替效率	Displacement Efficiency
+注水前缘	Waterflood Front
+舌进	Tonguing
+水锁	Water Blocking
+贾敏效应	Jamin Effect
+毛管数	Capillary Number
+指数递减	Exponential Decline
+双曲递减	Hyperbolic Decline
+调和递减	Harmonic Decline
+阿普斯递减	Arps Decline
+递减指数	Decline Exponent
+乙型水驱曲线	Type B Waterflood Curve
+丙型水驱曲线	Type C Waterflood Curve
+丁型水驱曲线	Type D Waterflood Curve
+注水井	Water Injection Well
+观察井	Observation Well
+调整井	Adjustment Well
+加密井	Infill Well
+评价井	Appraisal Well
+报废井	Abandoned Well
+层间干扰	Interlayer Interference
+注水指示曲线	Injection Well Indicator Diagram
+钻井泵	Mud Pump
+钻头水眼	Bit Nozzle
+碰压	Plug Bumping
+候凝	Waiting on Cement
+套管程序	Casing Program
+稳斜	Hold Angle
+靶区	Target Zone
+下套管	Casing Running
+负压射孔	Underbalanced Perforating
+复合射孔	Composite Perforating
+射孔参数	Perforation Parameter
+硫化氢防护	H2S Protection
+天然气脱水	Gas Dehydration
+天然气脱硫	Gas Desulfurization
+天然气凝液	Natural Gas Liquids
+轻烃回收	Light Hydrocarbon Recovery
+清蜡剂	Paraffin Remover
+水合物抑制剂	Hydrate Inhibitor
+沥青质沉积	Asphaltene Deposition
+井筒腐蚀	Wellbore Corrosion
+管道完整性	Pipeline Integrity
+含蜡量	Wax Content
+胶质沥青质	Resin and Asphaltene
+凝点	Pour Point
+集油管线	Gathering Line
+天然气液化	Gas Liquefaction
+储气库	Gas Storage
+管道输送	Pipeline Transportation
+泄漏检测	Leak Detection
+蒸汽辅助重力泄油	Steam Assisted Gravity Drainage
+超稠油	Super Heavy Oil
+原位改质	In-Situ Upgrading
+洗油效率	Oil Washing Efficiency
+防窜	Channeling Control
+剖面调整	Profile Modification
+多介质驱替	Multi-Medium Displacement
+应力阴影	Stress Shadow
+裂缝干扰	Fracture Interference
+覆膜砂	Resin-Coated Sand
+线性胶	Linear Gel
+返排液	Flowback Fluid
+支撑裂缝	Propped Fracture
+裂缝闭合	Fracture Closure
+压裂设计	Fracturing Design
+施工曲线	Treating Curve
+砂堵	Screen-Out
+加砂	Sand Addition
+压后评估	Post-Fracture Evaluation
+物质平衡检验	Material Balance Check
+储量拟合	Reserve History Matching
+生产历史	Production History
+预测方案	Prediction Case
+平衡初始化	Equilibrium Initialization
+操作成本	Operating Cost
+爱因斯坦关系	Einstein Relation
+格林库博公式	Green-Kubo Formula
+储层	Reservoir
+凝析	Condensate
+压汞	Mercury Injection
+孔喉	Pore Throat
+运移	Migration
+缝洞	Fracture-Vug
+束缚水	Irreducible Water
+岩性	Lithology
+正演	Forward Modeling
+排驱	Drainage
+液锁	Liquid Blocking
+围压	Confining Pressure
+产状	Attitude
+孔渗	Porosity-Permeability
+井间	Interwell
+段间	Stage Interval
+累产	Cumulative Production
+采出	Production
+高含水	High Water Cut
+垂向	Vertical
+产液	Liquid Production
+产气	Gas Production
+关井	Well Shut-In
+重质	Heavy
+幂律	Power Law
+水锤	Water Hammer
+增油	Oil Increment
+压驱	Fracturing-Displacement
+埋存	Storage
+缝端	Fracture Tip
+缝间	Inter-Fracture
+赋存	Occurrence
+初压	Initial Fracturing
+复压	Refracturing
+半长	Half-Length
+地质模型	Geological Model
+传质	Mass Transfer
+相场	Phase Field
+井流	Well Flow
+流固	Fluid-Solid
+井名	Well Name
+层号	Layer Number
+井数	Well Count
+段数	Stage Count
 # 英文候选到中文释义
 EOR	提高采收率
 IOR	改善采收率
@@ -1650,3 +1874,41 @@ Reaction Kinetics	反应动力学
 WinProp	流体相态计算软件
 CMOST	历史拟合与优化软件
 CMG Builder	CMG 前处理软件
+Core Sample	岩心
+Displacement	驱替
+NMR	核磁共振
+Microfluidics	微流控
+Soaking	焖置；焖井
+Condensate Gas	凝析气
+Well Pattern	井网
+Gas Injection	注气
+Production Well	生产井
+Hydrogen Storage	储氢
+Syncline	向斜
+Fault Block	断块
+Buried Hill	潜山
+Fan Delta	扇三角洲
+Tidal Flat	潮坪
+Proved Reserves	探明储量
+Primary Recovery	一次采油
+Secondary Recovery	二次采油
+Tertiary Recovery	三次采油
+Nine-Spot Pattern	九点法井网
+Inverted Nine-Spot Pattern	反九点井网
+Edge Water Injection	边缘注水
+Water Cut	含水率
+Drawdown	生产压差
+Water Blocking	水锁
+Capillary Number	毛管数
+Resin-Coated Sand	覆膜砂
+Ceramic Proppant	陶粒
+Screen-Out	砂堵
+Formation Damage	储层伤害
+SAGD	蒸汽辅助重力泄油
+Oil Sands	油砂
+Oil Shale	油页岩
+Gas Storage	储气库
+Cathodic Protection	阴极保护
+Corrosion Inhibitor	缓蚀剂
+Scale Inhibitor	阻垢剂
+Pour Point Depressant	降凝剂
