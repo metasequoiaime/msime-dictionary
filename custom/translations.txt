@@ -375,3 +375,4 @@ Skeletal Mesh Output	骨骼网格体输出
 候选排序	candidate ranking
 个人词库	personal dictionary
 系统词库	system dictionary
+琪露诺	Cirno
