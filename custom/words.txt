@@ -633,3 +633,4 @@
 刷铁机	shua'tie'ji	100
 全物品	quan'wu'pin	100
 影之刃零	ying'zhi'ren'ling	100
+琪露诺	qi'lu'nuo	100
