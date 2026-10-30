@@ -2,6 +2,12 @@
 
 本仓库**不对外提供统一的开源许可**，因为其中绝大部分词库并非本项目的作品，而是从其他项目收集、合并、去重而来（见 [README](README.md)）。给整个仓库挂一份 LICENSE 等于替上游作者重新授权，因此这里改为逐项说明来源与上游条款。使用或再分发本仓库的数据时，请以对应上游的条款为准。
 
+## 可选鸟类名称词库
+
+`packs/birds/quanpin.txt`、`packs/birds/english.txt`、`packs/birds/translations.txt` 的鸟名来自 [alchaincyf/huashu-bird-sticker](https://github.com/alchaincyf/huashu-bird-sticker/tree/47bb6f366641a76a482e2fb2fd26b2ac515f1a13) 提交 `47bb6f366641a76a482e2fb2fd26b2ac515f1a13` 的 `data/species.json`（`names.zh-Hans` 与 `names.en`），对照同提交的 `data/species.csv`。该项目 `NOTICE.md` 声明这些名称来自 **IOC World Bird List v15.2** 多语种版，编者 **Frank Gill、David Donsker、Pamela Rasmussen**，按 [CC BY 3.0（署名 3.0 未本地化版本）](https://creativecommons.org/licenses/by/3.0/) 许可使用，原始来源为 [IOC World Bird List](https://worldbirdnames.org/)。
+
+本包沿用 CC BY 3.0，不适用本仓自建专业词库的 GPL-3.0 声明。整理时保留原中英鸟名，筛选有简体中文名的 11,041 个鸟种，以 pypinyin 0.55.0 标注并按语境修正读音，对发布拼音输入去重，生成英文输入键、导入权重及中英双向对照。数据摘要、去重集合、多音字规则及审校状态见 [packs/birds/README.md](packs/birds/README.md)。未使用该项目的贴纸、参考照片或图鉴文字，也不将其 MIT 或 PolyForm Shield 许可套用到这些第三方鸟名。
+
 ## 中文词库
 
 | 文件 | 上游 | 上游许可 |
@@ -182,7 +188,7 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 
 ## 本项目自建部分
 
-`custom/` 下的自定义词条、候选窗翻译覆盖、英文词条与人名，`packs/` 下的专业词库，以及 `scripts/validate_packs.py` 由本项目编写，依据 GPL-3.0 提供，与组织内其他仓库一致。
+`custom/` 下的自定义词条、候选窗翻译覆盖、英文词条与人名，`packs/` 下由本项目自写的专业词库，以及 `scripts/validate_packs.py` 由本项目编写，依据 GPL-3.0 提供，与组织内其他仓库一致。`packs/birds/` 的 IOC 鸟名及其整理词表沿用 CC BY 3.0，见上方「可选鸟类名称词库」。
 
 `sources/cn-en/machine-translations.txt` 是本项目整理的中译英释义，同样依据 GPL-3.0 提供。源词取自 `sources/pinyin/`、`sources/wubi/` 与 `custom/words.txt`（来源与许可见上文）；译文汇总了 `custom/translations.txt` 与人工整理的翻译，其余由大模型生成：DeepSeek（`deepseek-chat`、`deepseek-flash`、`deepseek-v4-pro`，按 DeepSeek 开放平台用户协议，输出内容的权利归使用者）与 ChatGPT（按 OpenAI 使用条款，输出归使用者），纯数字与年份按规则生成。生成的译文没有逐条人工审校，可能有误译；修正写到 `custom/translations.txt`，它在构建时覆盖本文件。
 

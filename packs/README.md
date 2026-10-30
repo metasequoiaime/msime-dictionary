@@ -7,6 +7,7 @@
 | 目录 | 名称 | 中文候选 | 英文候选 | 翻译 |
 | --- | --- | ---: | ---: | ---: |
 | [`ai_ml`](ai_ml/) | 机器学习与大模型专业词库 | 600 | 169 | 768 |
+| [`birds`](birds/) | 世界鸟类名称词库 | 9819 | 11041 | 22082 |
 | [`petroleum_engineering`](petroleum_engineering/) | 石油工程专业词库 | 1451 | 199 | 1650 |
 | [`programming`](programming/) | 编程开发专业词库 | 730 | 186 | 915 |
 | [`unreal_houdini`](unreal_houdini/) | Unreal Engine 与 Houdini 专业词库 | 116 | 115 | 236 |
@@ -25,6 +26,8 @@
 ## 路线
 
 按以下顺序新增，每个 PR 只加一个词库，每个词库 100 到 2000 条；超过这个规模的应作为主词库的补充表处理，不放进 `packs/`。
+
+例外：`birds` 按完整的 IOC 中英鸟名清单作为一个可选包收录，允许超过上述规模；其读音按本次整理要求用 pypinyin 标注并进行语境修正，尚未逐条完成人工审校，具体规则及来源见该包 README。其他词库仍适用常规规模与人工审校要求。
 
 1. `programming`：版本控制、并发、数据库、前后端和编程语言术语。
 2. `ai_ml`：机器学习与大模型术语。
@@ -48,10 +51,10 @@
 | 7 | 中文候选不与发布词库重复：`(词语, 全拼)` 不出现在 `sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`custom/words.txt` 中。与 `sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt` 重复的只作提示，因为发布构建不使用这两个文件 | 脚本 |
 | 8 | 权重：`quanpin.txt` 在 1 到 10000 之间（与 `custom/words.txt` 的范围一致）；`english.txt` 必须写权重，在 1 到 10 之间（`custom/english.txt` 现用 1，`unreal_houdini` 现用 10） | 脚本 |
 | 9 | 每个中文词语和英文显示内容都有翻译；`translations.txt` 内同一源词只出现一次 | 脚本 |
-| 10 | 读音逐条人工核对，多音字在 README 里列出 | 人工 |
+| 10 | 读音逐条人工核对，多音字在 README 里列出；`birds` 的自动标注例外与审校状态见上文 | 人工 |
 | 11 | README 按术语分组列出所依据的文档及访问日期；没有官方中文出处、按通行说法收录的术语在 README 里单独成节并注明这一点，可以点名其中的代表性术语，再说明分组文档没有覆盖的其余条目都归入这一节；不复制定义正文 | 人工 |
 | 12 | 有歧义的短缩写只留在专业词库里，不同步到 `custom/translations.txt`（参照 `unreal_houdini` 的做法） | 人工 |
 | 13 | 只收领域里实际会输入的词，不收句子和定义；人名只收公共人物；不出现真实可拨的手机号或真实地址 | 人工 |
-| 14 | 规模在 100 到 2000 条之间 | 人工 |
+| 14 | 规模在 100 到 2000 条之间，`birds` 的完整清单例外见上文 | 人工 |
 
 `scripts/validate_packs.py` 只依赖 Python 标准库，本地直接运行即可。它同时检查 `custom/translations.txt` 的格式：那里允许后写的行给已有源词换译文（与构建和 check-words 一致），只拒绝源词和译文都相同的重复行。
