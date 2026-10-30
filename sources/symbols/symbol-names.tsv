@@ -2,7 +2,7 @@
 # 唯一的编辑入口是 msime-dictionary 的 sources/symbols/symbol-names.tsv。msime 的 crates/engine/src/local/symbol_candidates.tsv 是 scripts/sync_symbol_tables.py 按 resources/symbol-tables.lock.json 同步的逐字节副本，引擎用 include_str! 编进去；不要在 msime 里手改。
 # 格式：名称<TAB>拼音<TAB>符号[<空格>符号...]，`#` 开头的行是注释。
 # 拼音用引擎词库的写法：音节以 ' 分隔，ü 写 v；拉丁名称（希腊字母的英文拼写）的拼音列写 -。
-# 符号之间用一个空格分隔，所以符号本身不含空格，成对的括号算一个符号。专用码位在前，ASCII 组合在后（全角时 ASCII 会变宽）。
+# 符号之间用一个空格分隔，所以符号本身不含空格，成对的括号算一个符号。专用码位在前，ASCII 组合在后（全角时 ASCII 会变宽）；MSIME-Windows#928 表格列出的名称按它的顺序排，表格的主符号在前、变体随后（加号 + ＋、平方米 m² ㎡）。
 # 写法规则由 symbol_candidates.rs 的单元测试检查：名称必须是符号的名字，不收常用虚词；单音节名称只收派、度、点、一至十、希腊字母的单字读音（缪、纽、柔、套、斐、凯），以及加、正、乘、叉、错、角、分、秒、左、右、上、下、圆、圈；每个名称最多 6 个符号。
 # 同一个拼音有几个名称时，词库里有的那个写在前面：符号按文字去重，留下的那行跟着排在前面的名称找锚定词。
 
@@ -15,7 +15,7 @@
 负正号	fu'zheng'hao	∓
 减加	jian'jia	∓
 减加号	jian'jia'hao	∓
-乘号	cheng'hao	× · ✕
+乘号	cheng'hao	× ✕ ·
 乘以	cheng'yi	×
 乘	cheng	× ✕
 点乘	dian'cheng	·
@@ -81,14 +81,14 @@
 平行	ping'xing	∥
 角度	jiao'du	∠
 角	jiao	∠
-全等	quan'deng	≌ ≅
+全等	quan'deng	≅ ≌
 同构	tong'gou	≅ ≌
-相似	xiang'si	∽ ∼
-等价	deng'jia	⇔ ∼
+相似	xiang'si	∼ ∽
+等价	deng'jia	∼ ⇔
 属于	shu'yu	∈ ∋
 不属于	bu'shu'yu	∉ ∌
-子集	zi'ji	⊆ ⊂ ⊇
-真子集	zhen'zi'ji	⊊ ⊂ ⊃
+子集	zi'ji	⊆ ⊇ ⊂
+真子集	zhen'zi'ji	⊂ ⊃ ⊊
 包含	bao'han	⊆ ⊇
 真包含	zhen'bao'han	⊂ ⊃
 不包含	bu'bao'han	⊄ ⊅
@@ -107,8 +107,8 @@
 逻辑与	luo'ji'yu	∧
 逻辑或	luo'ji'huo	∨
 逻辑非	luo'ji'fei	¬
-合取	he'qu	∧ ⋀
-析取	xi'qu	∨ ⋁
+合取	he'qu	⋀ ∧
+析取	xi'qu	⋁ ∨
 推出	tui'chu	⇒ ⇐ ⊢
 证明	zheng'ming	⊢
 反证	fan'zheng	⊣
@@ -131,16 +131,16 @@
 圆周率	yuan'zhou'lv	π
 直径	zhi'jing	⌀ Φ
 卡方	ka'fang	χ²
-等号	deng'hao	＝ =
+等号	deng'hao	= ＝
 等于	deng'yu	＝ =
-加号	jia'hao	＋ +
-正号	zheng'hao	＋ +
-加	jia	＋ +
-正	zheng	＋ +
+加号	jia'hao	+ ＋
+正号	zheng'hao	+ ＋
+加	jia	+ ＋
+正	zheng	+ ＋
 不大于	bu'da'yu	≯ ≤
 不小于	bu'xiao'yu	≮ ≥
 定义为	ding'yi'wei	≜ ≔
-蕴含	yun'han	⇒ → ⇐
+蕴含	yun'han	⇒ ⇐ →
 当且仅当	dang'qie'jin'dang	⇔
 包含于	bao'han'yu	⊆ ⊂
 超集	chao'ji	⊇ ⊃
@@ -204,14 +204,14 @@
 十分之一	shi'fen'zhi'yi	⅒
 
 # ---- 单位 ----
-平方米	ping'fang'mi	㎡ m²
-平米	ping'mi	㎡ m²
-立方米	li'fang'mi	㎥ m³
-平方厘米	ping'fang'li'mi	㎠ cm²
+平方米	ping'fang'mi	m² ㎡
+平米	ping'mi	m² ㎡
+立方米	li'fang'mi	m³ ㎥
+平方厘米	ping'fang'li'mi	cm² ㎠
 平方毫米	ping'fang'hao'mi	㎟ mm²
 平方公里	ping'fang'gong'li	㎢ km²
 平方千米	ping'fang'qian'mi	㎢ km²
-立方厘米	li'fang'li'mi	㎤ cm³
+立方厘米	li'fang'li'mi	cm³ ㎤
 立方毫米	li'fang'hao'mi	㎣ mm³
 毫米	hao'mi	㎜
 厘米	li'mi	㎝
@@ -316,16 +316,16 @@ aleph	-	ℵ
 实心圆	shi'xin'yuan	●
 空心圆	kong'xin'yuan	○
 同心圆	tong'xin'yuan	◎
-方块	fang'kuai	■ □
+方块	fang'kuai	□ ■
 方框	fang'kuang	□ ■
 正方形	zheng'fang'xing	□ ■
 长方形	chang'fang'xing	▭ ▬ ▯ ▮
 平行四边形	ping'xing'si'bian'xing	▱ ▰
-菱形	ling'xing	◆ ◇
+菱形	ling'xing	◇ ◆
 三角形	san'jiao'xing	△ ▲
 三角	san'jiao	△ ▲
 倒三角	dao'san'jiao	▽ ▼
-圆点	yuan'dian	• ⊙
+圆点	yuan'dian	⊙ •
 项目符号	xiang'mu'fu'hao	• ◦ ▪
 间隔号	jian'ge'hao	·
 点	dian	·
@@ -334,7 +334,7 @@ aleph	-	ℵ
 对勾	dui'gou	√ ✓ ✔
 打钩	da'gou	√ ✓
 打勾	da'gou	√ ✓
-叉号	cha'hao	× ✗ ✕
+叉号	cha'hao	× ✕ ✗
 错号	cuo'hao	× ✗
 打叉	da'cha	× ✗
 复选框	fu'xuan'kuang	☐ ☑ ☒
@@ -426,7 +426,7 @@ aleph	-	ℵ
 版权	ban'quan	©
 版权符号	ban'quan'fu'hao	©
 编号	bian'hao	№
-人民币	ren'min'bi	¥ ￥
+人民币	ren'min'bi	￥ ¥
 日元	ri'yuan	¥ ￥
 美元	mei'yuan	$
 美分	mei'fen	¢
