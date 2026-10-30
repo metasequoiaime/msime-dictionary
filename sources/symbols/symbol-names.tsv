@@ -2,72 +2,118 @@
 # 唯一的编辑入口是 msime-dictionary 的 sources/symbols/symbol-names.tsv。msime 的 crates/engine/src/local/symbol_candidates.tsv 是 scripts/sync_symbol_tables.py 按 resources/symbol-tables.lock.json 同步的逐字节副本，引擎用 include_str! 编进去；不要在 msime 里手改。
 # 格式：名称<TAB>拼音<TAB>符号[<空格>符号...]，`#` 开头的行是注释。
 # 拼音用引擎词库的写法：音节以 ' 分隔，ü 写 v；拉丁名称（希腊字母的英文拼写）的拼音列写 -。
-# 符号之间用一个空格分隔，所以符号本身不含空格，成对的括号算一个符号。专用码位在前，ASCII 组合在后（全角时 ASCII 会变宽）。
-# 写法规则由 symbol_candidates.rs 的单元测试检查：名称必须是符号的名字，不收常用虚词；单音节名称只收派、度、点、一至十和希腊字母的单字读音（缪、纽、柔、套、斐、凯）；每个名称最多 6 个符号。
+# 符号之间用一个空格分隔，所以符号本身不含空格，成对的括号算一个符号。专用码位在前，ASCII 组合在后（全角时 ASCII 会变宽）；MSIME-Windows#928 表格列出的名称按它的顺序排，表格的主符号在前、变体随后（加号 + ＋、平方米 m² ㎡）。
+# 写法规则由 symbol_candidates.rs 的单元测试检查：名称必须是符号的名字，不收常用虚词；单音节名称只收派、度、点、一至十、希腊字母的单字读音（缪、纽、柔、套、斐、凯），以及加、正、乘、叉、错、角、分、秒、左、右、上、下、圆、圈；每个名称最多 6 个符号。
 # 同一个拼音有几个名称时，词库里有的那个写在前面：符号按文字去重，留下的那行跟着排在前面的名称找锚定词。
 
 # ---- 数学 ----
 正负	zheng'fu	±
 正负号	zheng'fu'hao	±
+加减	jia'jian	±
+加减号	jia'jian'hao	±
 负正	fu'zheng	∓
-乘号	cheng'hao	× ·
+负正号	fu'zheng'hao	∓
+减加	jian'jia	∓
+减加号	jian'jia'hao	∓
+乘号	cheng'hao	× ✕ ·
 乘以	cheng'yi	×
+乘	cheng	× ✕
 点乘	dian'cheng	·
 叉乘	cha'cheng	×
-除号	chu'hao	÷
+叉	cha	× ✕
+错	cuo	× ✕
+除号	chu'hao	÷ ／
 除以	chu'yi	÷
 减号	jian'hao	−
 不等于	bu'deng'yu	≠
 不等号	bu'deng'hao	≠
 约等于	yue'deng'yu	≈
 约等号	yue'deng'hao	≈
+约等	yue'deng	≈
 恒等于	heng'deng'yu	≡
+恒等	heng'deng	≡
 等价于	deng'jia'yu	⇔ ≡
 大于	da'yu	> ＞
 小于	xiao'yu	< ＜
 大于号	da'yu'hao	> ＞
 小于号	xiao'yu'hao	< ＜
-大于等于	da'yu'deng'yu	≥
-小于等于	xiao'yu'deng'yu	≤
+大于等于	da'yu'deng'yu	≥ ≧
+大于或等于	da'yu'huo'deng'yu	≥ ≧
+小于等于	xiao'yu'deng'yu	≤ ≦
+小于或等于	xiao'yu'huo'deng'yu	≤ ≦
 远大于	yuan'da'yu	≫
 远小于	yuan'xiao'yu	≪
-根号	gen'hao	√
+先于	xian'yu	≺
+前于	qian'yu	≺
+后于	hou'yu	≻
+优于	you'yu	≻
+先于或等于	xian'yu'huo'deng'yu	≼
+后于或等于	hou'yu'huo'deng'yu	≽
+根号	gen'hao	√ ∛ ∜
 平方根	ping'fang'gen	√
 立方根	li'fang'gen	∛
+三次根	san'ci'gen	∛
+四次根	si'ci'gen	∜
 无穷	wu'qiong	∞
 无穷大	wu'qiong'da	∞
 无限大	wu'xian'da	∞
-积分	ji'fen	∫
+无限	wu'xian	∞
+积分	ji'fen	∫ ∬ ∭ ∮ ∯ ∰
 二重积分	er'chong'ji'fen	∬
 三重积分	san'chong'ji'fen	∭
+曲线积分	qu'xian'ji'fen	∮
+线积分	xian'ji'fen	∮
+面积分	mian'ji'fen	∯
+体积积分	ti'ji'ji'fen	∰
+体积分	ti'ji'fen	∰
 偏微分	pian'wei'fen	∂
 偏导数	pian'dao'shu	∂
+偏导	pian'dao	∂
 求和	qiu'he	∑
+连加	lian'jia	∑
 连乘	lian'cheng	∏
+求积	qiu'ji	∏
 正比	zheng'bi	∝
 正比于	zheng'bi'yu	∝
-垂直	chui'zhi	⊥
+正比号	zheng'bi'hao	∝
+垂直	chui'zhi	⊥ ⊤
+正交	zheng'jiao	⊥ ⊤
 平行	ping'xing	∥
 角度	jiao'du	∠
-全等	quan'deng	≌
-相似	xiang'si	∽
-属于	shu'yu	∈
-不属于	bu'shu'yu	∉
-子集	zi'ji	⊆ ⊂
-真子集	zhen'zi'ji	⊊ ⊂
+角	jiao	∠
+全等	quan'deng	≅ ≌
+同构	tong'gou	≅ ≌
+相似	xiang'si	∼ ∽
+等价	deng'jia	∼ ⇔
+属于	shu'yu	∈ ∋
+不属于	bu'shu'yu	∉ ∌
+子集	zi'ji	⊆ ⊇ ⊂
+真子集	zhen'zi'ji	⊂ ⊃ ⊊
+包含	bao'han	⊆ ⊇
+真包含	zhen'bao'han	⊂ ⊃
+不包含	bu'bao'han	⊄ ⊅
 交集	jiao'ji	∩
 并集	bing'ji	∪
 空集	kong'ji	∅
 因为号	yin'wei'hao	∵
 所以号	suo'yi'hao	∴
+因为	yin'wei	∵
+所以	suo'yi	∴
 全称量词	quan'cheng'liang'ci	∀
 存在量词	cun'zai'liang'ci	∃
+任意	ren'yi	∀
+对于所有	dui'yu'suo'you	∀
+存在	cun'zai	∃
 逻辑与	luo'ji'yu	∧
 逻辑或	luo'ji'huo	∨
 逻辑非	luo'ji'fei	¬
-合取	he'qu	∧
-析取	xi'qu	∨
+合取	he'qu	⋀ ∧
+析取	xi'qu	⋁ ∨
+推出	tui'chu	⇒ ⇐ ⊢
+证明	zheng'ming	⊢
+反证	fan'zheng	⊣
 异或	yi'huo	⊕
+同或	tong'huo	⊙
 百分号	bai'fen'hao	％ %
 千分号	qian'fen'hao	‰
 万分号	wan'fen'hao	‱
@@ -85,13 +131,16 @@
 圆周率	yuan'zhou'lv	π
 直径	zhi'jing	⌀ Φ
 卡方	ka'fang	χ²
-等号	deng'hao	＝ =
+等号	deng'hao	= ＝
 等于	deng'yu	＝ =
-加号	jia'hao	＋ +
+加号	jia'hao	+ ＋
+正号	zheng'hao	+ ＋
+加	jia	+ ＋
+正	zheng	+ ＋
 不大于	bu'da'yu	≯ ≤
 不小于	bu'xiao'yu	≮ ≥
 定义为	ding'yi'wei	≜ ≔
-蕴含	yun'han	⇒ →
+蕴含	yun'han	⇒ ⇐ →
 当且仅当	dang'qie'jin'dang	⇔
 包含于	bao'han'yu	⊆ ⊂
 超集	chao'ji	⊇ ⊃
@@ -100,6 +149,8 @@
 差集	cha'ji	∖
 映射	ying'she	↦ →
 梯度	ti'du	∇
+增量	zeng'liang	∆
+变换量	bian'huan'liang	∆
 哈密顿算子	ha'mi'dun'suan'zi	∇
 拉普拉斯算子	la'pu'la'si'suan'zi	Δ ∇²
 环路积分	huan'lu'ji'fen	∮
@@ -109,13 +160,21 @@
 四次方根	si'ci'fang'gen	∜
 角分	jiao'fen	′
 角秒	jiao'miao	″
+分	fen	′
+秒	miao	″
 直角	zhi'jiao	∟ ⊾
 圆弧	yuan'hu	⌒
 不平行	bu'ping'xing	∦
+整除	zheng'chu	∣
+不整除	bu'zheng'chu	∤
 垂直于	chui'zhi'yu	⊥
 平行于	ping'xing'yu	∥
 张量积	zhang'liang'ji	⊗
+外积	wai'ji	⊗
 直和	zhi'he	⊕
+直差	zhi'cha	⊖
+对称差	dui'chen'cha	⊖
+禁止	jin'zhi	⊘
 卷积	juan'ji	∗
 不存在	bu'cun'zai	∄
 比号	bi'hao	∶
@@ -145,14 +204,14 @@
 十分之一	shi'fen'zhi'yi	⅒
 
 # ---- 单位 ----
-平方米	ping'fang'mi	㎡ m²
-平米	ping'mi	㎡ m²
-立方米	li'fang'mi	㎥ m³
-平方厘米	ping'fang'li'mi	㎠ cm²
+平方米	ping'fang'mi	m² ㎡
+平米	ping'mi	m² ㎡
+立方米	li'fang'mi	m³ ㎥
+平方厘米	ping'fang'li'mi	cm² ㎠
 平方毫米	ping'fang'hao'mi	㎟ mm²
 平方公里	ping'fang'gong'li	㎢ km²
 平方千米	ping'fang'qian'mi	㎢ km²
-立方厘米	li'fang'li'mi	㎤ cm³
+立方厘米	li'fang'li'mi	cm³ ㎤
 立方毫米	li'fang'hao'mi	㎣ mm³
 毫米	hao'mi	㎜
 厘米	li'mi	㎝
@@ -245,21 +304,28 @@ nabla	-	∇
 aleph	-	ℵ
 
 # ---- 形状与记号 ----
-五角星	wu'jiao'xing	★ ☆
-星星	xing'xing	☆ ★
+五角星	wu'jiao'xing	☆ ★
+红星	hong'xing	☆ ★
+星星	xing'xing	✧ ✦ ☆ ★
+四角星	si'jiao'xing	✧ ✦
 星号	xing'hao	＊
 米字号	mi'zi'hao	※
-圆圈	yuan'quan	○ ● ◎
+圆圈	yuan'quan	○ ● ◎ ◉
+圆	yuan	○ ● ◎ ◉
+圈	quan	○ ● ◎ ◉
 实心圆	shi'xin'yuan	●
 空心圆	kong'xin'yuan	○
 同心圆	tong'xin'yuan	◎
-方块	fang'kuai	■ □
-方框	fang'kuang	□
+方块	fang'kuai	□ ■
+方框	fang'kuang	□ ■
 正方形	zheng'fang'xing	□ ■
-菱形	ling'xing	◆ ◇
+长方形	chang'fang'xing	▭ ▬ ▯ ▮
+平行四边形	ping'xing'si'bian'xing	▱ ▰
+菱形	ling'xing	◇ ◆
 三角形	san'jiao'xing	△ ▲
+三角	san'jiao	△ ▲
 倒三角	dao'san'jiao	▽ ▼
-圆点	yuan'dian	•
+圆点	yuan'dian	⊙ •
 项目符号	xiang'mu'fu'hao	• ◦ ▪
 间隔号	jian'ge'hao	·
 点	dian	·
@@ -268,18 +334,28 @@ aleph	-	ℵ
 对勾	dui'gou	√ ✓ ✔
 打钩	da'gou	√ ✓
 打勾	da'gou	√ ✓
-叉号	cha'hao	× ✗
+叉号	cha'hao	× ✕ ✗
 错号	cuo'hao	× ✗
 打叉	da'cha	× ✗
 复选框	fu'xuan'kuang	☐ ☑ ☒
 箭头	jian'tou	→ ← ↑ ↓
-右箭头	you'jian'tou	→
-左箭头	zuo'jian'tou	←
-上箭头	shang'jian'tou	↑
-下箭头	xia'jian'tou	↓
-左右箭头	zuo'you'jian'tou	↔
+右箭头	you'jian'tou	→ ⇒
+左箭头	zuo'jian'tou	← ⇐
+上箭头	shang'jian'tou	↑ ⇑
+下箭头	xia'jian'tou	↓ ⇓
+左右箭头	zuo'you'jian'tou	↔ ⇔
 双向箭头	shuang'xiang'jian'tou	↔
 上下箭头	shang'xia'jian'tou	↕
+左右	zuo'you	↔ ⇔
+上下	shang'xia	↕
+左上	zuo'shang	↖
+右上	you'shang	↗
+右下	you'xia	↘
+左下	zuo'xia	↙
+左	zuo	← ⇐
+右	you	→ ⇒
+上	shang	↑ ⇑
+下	xia	↓ ⇓
 黑桃	hei'tao	♠ ♤
 红桃	hong'tao	♥ ♡
 梅花	mei'hua	♣ ♧
@@ -298,6 +374,8 @@ aleph	-	ℵ
 女性符号	nv'xing'fu'hao	♀
 雄性	xiong'xing	♂
 雌性	ci'xing	♀
+男性	nan'xing	♂
+女性	nv'xing	♀
 
 # ---- 标点与括号 ----
 逗号	dou'hao	， ,
@@ -339,6 +417,8 @@ aleph	-	ℵ
 井号	jing'hao	＃ #
 段落符号	duan'luo'fu'hao	¶
 章节号	zhang'jie'hao	§
+章节	zhang'jie	§
+段落	duan'luo	¶
 
 # ---- 其他 ----
 商标	shang'biao	™
@@ -346,7 +426,7 @@ aleph	-	ℵ
 版权	ban'quan	©
 版权符号	ban'quan'fu'hao	©
 编号	bian'hao	№
-人民币	ren'min'bi	¥ ￥
+人民币	ren'min'bi	￥ ¥
 日元	ri'yuan	¥ ￥
 美元	mei'yuan	$
 美分	mei'fen	¢
@@ -355,6 +435,8 @@ aleph	-	ℵ
 韩元	han'yuan	₩
 卢布	lu'bu	₽
 印度卢比	yin'du'lu'bi	₹
+卢比	lu'bi	₹
+里拉	li'la	₺
 泰铢	tai'zhu	฿
 比特币	bi'te'bi	₿
 
