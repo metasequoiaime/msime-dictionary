@@ -3,7 +3,7 @@
 # 格式：名称<TAB>拼音<TAB>符号[<空格>符号...]，`#` 开头的行是注释。
 # 拼音用引擎词库的写法：音节以 ' 分隔，ü 写 v；拉丁名称（希腊字母的英文拼写）的拼音列写 -。
 # 符号之间用一个空格分隔，所以符号本身不含空格，成对的括号算一个符号。专用码位在前，ASCII 组合在后（全角时 ASCII 会变宽）。
-# 写法规则由 symbol_candidates.rs 的单元测试检查：名称必须是符号的名字，不收常用虚词；单音节名称只收派、度、点、一至十和希腊字母的单字读音（缪、纽、柔、套、斐、凯）；每个名称最多 6 个符号。
+# 写法规则由 symbol_candidates.rs 的单元测试检查：名称必须是符号的名字，不收常用虚词；单音节名称只收派、度、点、一至十、希腊字母的单字读音（缪、纽、柔、套、斐、凯），以及加、正、乘、叉、错、角、分、秒、左、右、上、下、圆、圈；每个名称最多 6 个符号。
 # 同一个拼音有几个名称时，词库里有的那个写在前面：符号按文字去重，留下的那行跟着排在前面的名称找锚定词。
 
 # ---- 数学 ----
@@ -17,8 +17,11 @@
 减加号	jian'jia'hao	∓
 乘号	cheng'hao	× · ✕
 乘以	cheng'yi	×
+乘	cheng	× ✕
 点乘	dian'cheng	·
 叉乘	cha'cheng	×
+叉	cha	× ✕
+错	cuo	× ✕
 除号	chu'hao	÷ ／
 除以	chu'yi	÷
 减号	jian'hao	−
@@ -77,6 +80,7 @@
 正交	zheng'jiao	⊥ ⊤
 平行	ping'xing	∥
 角度	jiao'du	∠
+角	jiao	∠
 全等	quan'deng	≌ ≅
 同构	tong'gou	≅ ≌
 相似	xiang'si	∽ ∼
@@ -131,6 +135,8 @@
 等于	deng'yu	＝ =
 加号	jia'hao	＋ +
 正号	zheng'hao	＋ +
+加	jia	＋ +
+正	zheng	＋ +
 不大于	bu'da'yu	≯ ≤
 不小于	bu'xiao'yu	≮ ≥
 定义为	ding'yi'wei	≜ ≔
@@ -154,6 +160,8 @@
 四次方根	si'ci'fang'gen	∜
 角分	jiao'fen	′
 角秒	jiao'miao	″
+分	fen	′
+秒	miao	″
 直角	zhi'jiao	∟ ⊾
 圆弧	yuan'hu	⌒
 不平行	bu'ping'xing	∦
@@ -303,6 +311,8 @@ aleph	-	ℵ
 星号	xing'hao	＊
 米字号	mi'zi'hao	※
 圆圈	yuan'quan	○ ● ◎ ◉
+圆	yuan	○ ● ◎ ◉
+圈	quan	○ ● ◎ ◉
 实心圆	shi'xin'yuan	●
 空心圆	kong'xin'yuan	○
 同心圆	tong'xin'yuan	◎
@@ -342,6 +352,10 @@ aleph	-	ℵ
 右上	you'shang	↗
 右下	you'xia	↘
 左下	zuo'xia	↙
+左	zuo	← ⇐
+右	you	→ ⇒
+上	shang	↑ ⇑
+下	xia	↓ ⇓
 黑桃	hei'tao	♠ ♤
 红桃	hong'tao	♥ ♡
 梅花	mei'hua	♣ ♧
