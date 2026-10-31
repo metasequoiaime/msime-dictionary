@@ -1,0 +1,2 @@
+# 人工审校的粤语词，构建进 msime-cantonese.db。格式：词<TAB>带声调粤拼，一个汉字一个音节，音节之间一个空格，写繁体字形。每个字的读音必须是 sources/cantonese/jyut6ping3.chars.dict.yaml 给这个字的读音之一，否则构建失败。只追加，不改、不删、不重排已有的行。本文件以 CC BY 4.0 提供，见 NOTICE.md。
+周杰倫	zau1 git6 leon4
