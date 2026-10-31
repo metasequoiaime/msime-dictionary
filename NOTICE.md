@@ -188,7 +188,7 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 
 ## 本项目自建部分
 
-`custom/` 下的自定义词条、候选窗翻译覆盖、英文词条与人名，`packs/` 下由本项目自写的专业词库，以及 `scripts/validate_packs.py` 由本项目编写，依据 GPL-3.0 提供，与组织内其他仓库一致。`packs/birds/` 的 IOC 鸟名及其整理词表沿用 CC BY 3.0，见上方「可选鸟类名称词库」。
+`custom/` 下的自定义词条、候选窗翻译覆盖、英文词条与人名，`packs/` 下由本项目自写的专业词库，以及 `scripts/validate_packs.py` 由本项目编写，依据 GPL-3.0 提供，与组织内其他仓库一致。`packs/birds/` 的 IOC 鸟名及其整理词表沿用 CC BY 3.0，见上方「可选鸟类名称词库」。`custom/cantonese.txt`（人工审校的粤语词与粤拼）是例外，以 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 提供，署名为 msime-dictionary 贡献者：它由 msime 构建进 `msime-cantonese.db`，库里 rime-cantonese 与 HKCanCor 的数据都是 CC BY 4.0，用同一许可让整个库仍按单一许可分发；署名随库写在 msime 的 `resources/licenses/rime-cantonese-CC-BY-4.0.txt`。
 
 `sources/cn-en/machine-translations.txt` 是本项目整理的中译英释义，同样依据 GPL-3.0 提供。源词取自 `sources/pinyin/`、`sources/wubi/` 与 `custom/words.txt`（来源与许可见上文）；译文汇总了 `custom/translations.txt` 与人工整理的翻译，其余由大模型生成：DeepSeek（`deepseek-chat`、`deepseek-flash`、`deepseek-v4-pro`，按 DeepSeek 开放平台用户协议，输出内容的权利归使用者）与 ChatGPT（按 OpenAI 使用条款，输出归使用者），纯数字与年份按规则生成。生成的译文没有逐条人工审校，可能有误译；修正写到 `custom/translations.txt`，它在构建时覆盖本文件。
 

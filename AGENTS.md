@@ -13,7 +13,7 @@
 
 ## 自定义词条
 
-- `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` **只追加**：新行写在文件末尾，不修改、删除或重排已有的行。check-words 会拒绝任何非追加的改动。
+- `custom/words.txt`、`custom/translations.txt`、`custom/english.txt`、`custom/cantonese.txt` **只追加**：新行写在文件末尾，不修改、删除或重排已有的行。check-words 会拒绝任何非追加的改动；`custom/cantonese.txt` 要等 `check-words.yml` 把它加进触发路径和参数（需要 msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 合入后的 `MSIME_COMMIT`）才有这道检查，在那之前由审核者人工核对。
 - `custom/words.txt` 的格式是 `词<TAB>全拼<TAB>权重`，全拼音节用 `'` 分隔；另外两个文件的格式见 `README.md`。词语和英文的权重落在所在文件现有的范围内；不要为了让一个词靠前填一个极大值。
 - 候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。
 

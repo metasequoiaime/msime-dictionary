@@ -68,6 +68,7 @@ custom/                                   人工维护的数据，唯一接受�
   words.txt                               中文词条 -> msime-pinyin.db
   translations.txt                        候选窗翻译 -> msime-english.db
   english.txt                             英文词条 -> msime-english.db
+  cantonese.txt                           人工审校的粤语词（CC BY 4.0）-> msime-cantonese.db
   names.txt                               人名（没有任何构建或网站读取）
 packs/                                    用户按需导入的专业词库，不进入构建
   README.md                               专业词库的说明与验收清单
@@ -123,6 +124,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/cantonese/` 下 4 个文件 | languages；`hkcancor-word-counts.txt` 只作排序权重 | `msime-cantonese.db` | 进入 |
 | `sources/zhuyin/` 下 4 个文件 | languages；`phrase.occ` 只作排序权重 | `msime-zhuyin.db` | 进入 |
 | `sources/stroke/stroke.dict.yaml` | languages | `msime-stroke.db` | 进入 |
+| `custom/cantonese.txt` | languages（msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 起读取）：每个字的读音必须是 `sources/cantonese/jyut6ping3.chars.dict.yaml` 给它的读音之一，否则构建失败；权重取 `essay-cantonese.txt` 的分数，essay 没列时取补词门槛 1000；没有的词插入，已有且权重更低的调高，更高的不变 | `msime-cantonese.db` | msime 构建器读取后进入 |
 | `sources/japanese/dictionary00.txt` … `dictionary09.txt`、`id.def`、`connection_single_column.txt` | 主命令 JapaneseModel | `msime-japanese.dat` | 进入 |
 | `sources/japanese/dictionary_filter.tsv` | 主命令 JapaneseModel，按 Mozc `gen_filtered_dictionary.py` 删去基础词库中完全匹配的行 | `msime-japanese.dat` | 进入 |
 | `sources/japanese/aux_dictionary.tsv`、`places.tsv`、`words.tsv` | 主命令 JapaneseModel，按 Mozc `gen_aux_dictionary.py --strict` 生成补充词条：aux 行复制基准词条的上下文 ID 与代价再加偏移，词表行按词性取同词性词条代价的中位数，基础词库已有的跳过 | `msime-japanese.dat` | 进入 |
@@ -149,15 +151,16 @@ CHANGELOG.md                              已冻结，只作历史记录
 有两种途径：
 
 - **官网提交**：在 [msime.app](https://msime.app) 的词条提交页填写中文词语、英文单词或候选窗翻译。人名也按词语提交。服务端以 `community-words/<时间戳>` 分支按批开 Pull Request，维护者审核后合入。
-- **直接提 Pull Request**：在 `custom/words.txt`、`custom/translations.txt` 或 `custom/english.txt` 的末尾追加行。不要修改、删除或重排已有的行。
+- **直接提 Pull Request**：在 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` 或 `custom/cantonese.txt` 的末尾追加行。不要修改、删除或重排已有的行。
 
-三个文件的格式：
+四个文件的格式：
 
 | 文件 | 每行 | 说明 |
 | --- | --- | --- |
 | `custom/words.txt` | `词<TAB>全拼<TAB>权重` | 全拼音节用 `'` 分隔，如 `未来可期	wei'lai'ke'qi	5000` |
 | `custom/translations.txt` | `源词<TAB>译文` | 源词含 U+3400 及以上的字符（汉字）时是中译英，否则是英译中；`#` 开头是注释。同一源词写了多行时，构建取最后一行 |
 | `custom/english.txt` | `编码<TAB>显示词<TAB>权重` | 编码是输入的小写字母，显示词是上屏的写法，同一编码可以有多个显示词 |
+| `custom/cantonese.txt` | `词<TAB>带声调粤拼` | 两个及以上汉字，写繁体字形；一个汉字一个音节，音节之间一个空格，如 `周杰倫	zau1 git6 leon4`；`#` 开头是注释。每个字的读音必须是 `sources/cantonese/jyut6ping3.chars.dict.yaml` 给它的读音之一；多音字选哪个读音由审校者把关，CI 查不出。没有权重列 |
 
 **权重**：新词条的权重必须落在所在文件现有条目的范围内，CI 按文件当前内容计算这个范围。`custom/words.txt` 目前是 1 到 10000，大多数历史条目写的是 `1`。想让一个词在整句里更容易胜出，就参照基础词库里同量级的真实词取值（例如 `扛不住` 在 `sources/pinyin/rime-ice.txt` 里是 2430），不要为了靠前填一个极大值。`custom/english.txt` 目前只有 `1`：有 Google 词频的英文词按词频排序，没有词频的才用这里的权重，而且排在所有有词频的词之后。这个范围普通 Pull Request 无法放宽，确实需要时先开 Issue。
 
@@ -291,11 +294,12 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `custom/words.txt` | UTF-8 | LF | 无 | `词<TAB>全拼<TAB>权重` | 有 |
 | `custom/translations.txt` | UTF-8 | LF | `#` 注释行，开头和各分组前都有 | `源词<TAB>译文` | 有 |
 | `custom/english.txt` | UTF-8 | LF | 无 | `编码<TAB>显示词<TAB>权重` | 无 |
+| `custom/cantonese.txt` | UTF-8 | LF | 1 行 `#` 注释（格式与规则） | `词<TAB>带声调粤拼` | 有 |
 | `custom/names.txt` | UTF-8 | LF | 无 | 一个人名 | 无 |
 
 ## 许可
 
-本仓库**不对外提供统一的开源许可**：其中绝大部分词库并非本项目的作品，给整个仓库挂一份 LICENSE 等于替上游作者重新授权。逐项的来源与上游条款见 [NOTICE.md](NOTICE.md)，使用或再分发前请以对应上游的条款为准。本项目自建的部分（`custom/`、`packs/`、`scripts/`）以 GPL-3.0 提供；其中 `packs/birds/` 使用的 IOC 鸟名及其整理词表沿用 CC BY 3.0，具体署名与改动说明见该包 README 和 NOTICE。
+本仓库**不对外提供统一的开源许可**：其中绝大部分词库并非本项目的作品，给整个仓库挂一份 LICENSE 等于替上游作者重新授权。逐项的来源与上游条款见 [NOTICE.md](NOTICE.md)，使用或再分发前请以对应上游的条款为准。本项目自建的部分（`custom/`、`packs/`、`scripts/`）以 GPL-3.0 提供；其中 `packs/birds/` 使用的 IOC 鸟名及其整理词表沿用 CC BY 3.0，具体署名与改动说明见该包 README 和 NOTICE；`custom/cantonese.txt` 以 CC BY 4.0 提供，与它构建进的 `msime-cantonese.db` 的其余来源同一许可，见 NOTICE。
 
 **`sources/pinyin/wanxiang/` 中的 15 份词库文件来自万象词库，作者为 amzxyz，许可为 CC BY 4.0。** 本次复制的来源是 [amzxyz/rime-wanxiang 提交 `aa9947f3f513ff88a3f7ce4e342fcb519d517025`](https://github.com/amzxyz/rime-wanxiang/tree/aa9947f3f513ff88a3f7ce4e342fcb519d517025/dicts)，文件内容未作修改。使用或再分发这些文件及其改编数据时，须保留万象词库与 amzxyz 的署名、来源链接、[CC BY 4.0 许可链接](https://creativecommons.org/licenses/by/4.0/)及上游提供的声明；有改动时须注明改动。许可全文见本仓 [sources/symbols/LICENSE](sources/symbols/LICENSE)，逐项登记见 [NOTICE.md「万象词库原始文件」](NOTICE.md#万象词库原始文件)。
 
