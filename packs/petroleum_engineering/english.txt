@@ -197,3 +197,41 @@ reaction-kinetics	Reaction Kinetics	10
 winprop	WinProp	10
 cmost	CMOST	10
 cmg-builder	CMG Builder	10
+core-sample	Core Sample	10
+displacement	Displacement	10
+nmr	NMR	10
+microfluidics	Microfluidics	10
+soaking	Soaking	10
+condensate-gas	Condensate Gas	10
+well-pattern	Well Pattern	10
+gas-injection	Gas Injection	10
+production-well	Production Well	10
+hydrogen-storage	Hydrogen Storage	10
+syncline	Syncline	10
+fault-block	Fault Block	10
+buried-hill	Buried Hill	10
+fan-delta	Fan Delta	10
+tidal-flat	Tidal Flat	10
+proved-reserves	Proved Reserves	10
+primary-recovery	Primary Recovery	10
+secondary-recovery	Secondary Recovery	10
+tertiary-recovery	Tertiary Recovery	10
+nine-spot	Nine-Spot Pattern	10
+inverted-nine-spot	Inverted Nine-Spot Pattern	10
+edge-water-injection	Edge Water Injection	10
+water-cut	Water Cut	10
+drawdown	Drawdown	10
+water-block	Water Blocking	10
+capillary-number	Capillary Number	10
+resin-coated-sand	Resin-Coated Sand	10
+ceramic-proppant	Ceramic Proppant	10
+screen-out	Screen-Out	10
+formation-damage	Formation Damage	10
+sagd	SAGD	10
+oil-sands	Oil Sands	10
+oil-shale	Oil Shale	10
+gas-storage	Gas Storage	10
+cathodic-protection	Cathodic Protection	10
+corrosion-inhibitor	Corrosion Inhibitor	10
+scale-inhibitor	Scale Inhibitor	10
+pour-point-depressant	Pour Point Depressant	10
