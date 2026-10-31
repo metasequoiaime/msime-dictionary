@@ -635,3 +635,4 @@
 影之刃零	ying'zhi'ren'ling	100
 琪露诺	qi'lu'nuo	100
 司凤	si'feng	3333
+兜帽	dou'mao	3333
