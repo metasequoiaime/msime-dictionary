@@ -1597,7 +1597,7 @@
 管道完整性	Pipeline Integrity
 含蜡量	Wax Content
 胶质沥青质	Resin and Asphaltene
-凝点	Pour Point
+凝点	Solidification Point
 集油管线	Gathering Line
 天然气液化	Gas Liquefaction
 储气库	Gas Storage
