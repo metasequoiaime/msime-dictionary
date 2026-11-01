@@ -637,3 +637,4 @@
 司凤	si'feng	3333
 兜帽	dou'mao	3333
 鼠输入法	shu'shu'ru'fa	100
+天空盒	tian'kong'he	100
