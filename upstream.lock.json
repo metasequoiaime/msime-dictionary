@@ -236,6 +236,18 @@
       "sha256": "9ab40618a9b162cca6dae9ec6767a8c4669017a20b2d6da5f94b7a7f99d09170"
     },
     {
+      "path": "sources/opencc/TSCharacters.txt",
+      "upstream": "OpenCC",
+      "size": 104516,
+      "sha256": "737c21c66f55a419dd6956cb3089476cdefc5a36877452631617696df1e5d925"
+    },
+    {
+      "path": "sources/opencc/TSPhrases.txt",
+      "upstream": "OpenCC",
+      "size": 8786,
+      "sha256": "362fa1b9a7d6edd04b462a32e12c9fef3adae822ab1dee9c83561cc37c06cb1f"
+    },
+    {
       "path": "sources/opencc/TWPhrases.txt",
       "upstream": "OpenCC",
       "size": 19429,
