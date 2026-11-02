@@ -24,6 +24,8 @@ sources/                                  msime 构建器经 --dictionary 读取
     wubi98-supplement.txt                 98 表没有、86 表或拼音输入里有的多字词组，编码按词组规则由 98 单字码推出（本项目生成的补充表）-> wubi98 表
     wubi98.txt                            98 版五笔主表（98wubi-tables 的 98五笔含词表-【单义】.txt 原样改名，UTF-16LE）-> wubi98 表
     wubi98-fcitx.txt                      Fcitx5 table-extra 的 98 五笔表，作补充（tables/wubi98.txt 原样改名）-> wubi98 表
+    wubixsj-byujiang.txt                  新世纪五笔码表（byujiang/wubi06_rime 的 dicts/wubi06.dict.yaml 原样改名，来源存疑，见 NOTICE.md），只取单字 -> wubixsj 表
+    wubixsj-supplement.txt                新世纪五笔的全部词组，编码按词组规则由新世纪单字码推出（本项目生成）-> wubixsj 表
   english/                                英文词库 -> msime-english.db
     rime-ice-en.txt                       雾凇的英文词表 -> msime-english.db
     rime-ice-en-supplement.txt            rime-ice 新提交中相对 rime-ice-en.txt 新增的纯 ASCII 单词（本项目生成的补充表）-> msime-english.db
@@ -87,11 +89,13 @@ AGENTS.md                                 给代码代理的维护约束
 CHANGELOG.md                              已冻结，只作历史记录
 ```
 
-**目录约定**：`sources/` 放 msime 构建器经 `--dictionary` 读取的输入，由本仓 Git 提交固定，上游原样文件和派生文件另由根目录 `upstream.lock.json` 按 SHA-256 固定；粤拼、注音（`tsi.csv`、`word.csv`、`phrase.occ`）、笔画、日文、韩文的上游原样文件保留上游的文件名；本项目生成或修正的文件，以及上游文件名不是 ASCII 或会和别的文件同名的上游原样文件（`wubi98.txt`、`wubi98-fcitx.txt`，上游原文件名见 `NOTICE.md`），用小写、连字符分隔、说明来源的名字（如 `rime-ice-supplement.txt`、`mcbopomofo-supplement.txt`），不带版本后缀，因为内容由提交固定。`custom/` 是唯一接受投稿的地方，只追加。`packs/` 是可选的专业词库，不进入构建。
+**目录约定**：`sources/` 放 msime 构建器经 `--dictionary` 读取的输入，由本仓 Git 提交固定，上游原样文件和派生文件另由根目录 `upstream.lock.json` 按 SHA-256 固定；粤拼、注音（`tsi.csv`、`word.csv`、`phrase.occ`）、笔画、日文、韩文的上游原样文件保留上游的文件名；本项目生成或修正的文件，以及上游文件名不是 ASCII 或会和别的文件同名的上游原样文件（`wubi98.txt`、`wubi98-fcitx.txt`；`wubixsj-byujiang.txt` 也照这个写法改名，和同目录的五笔原表一致；上游原文件名见 `NOTICE.md`），用小写、连字符分隔、说明来源的名字（如 `rime-ice-supplement.txt`、`mcbopomofo-supplement.txt`），不带版本后缀，因为内容由提交固定。`custom/` 是唯一接受投稿的地方，只追加。`packs/` 是可选的专业词库，不进入构建。
 
 五笔 86、98 的词组补充表由 msime 的同名生成器从另一版五笔原表、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt` 和 `custom/words.txt` 生成。rime-ice 主表与补充表收录权重不低于 100 的两字及以上汉字词；区划名称与人工词条不限权重。两个版本分别用自己的单字全码推导词组编码，原表任何编码已有的词不再加入，同词多音只生成一行。补充词排在原表同码候选之后；新增重码会使一些原本唯一的四码不再自动上屏，生成器报告会统计这些编码。`packs/` 和 `sources/unlicensed/` 不参与生成。
 
-发布构建每次在产物目录中重新派生两版五笔补充数据，新增人工词条不必另等一次手动重建。`sources/wubi/` 下的两份补充表保留为可复现的源快照；构建使用本次提交的原表、拼音与人工词条生成，不依赖快照是否已跟上。生成器、数据库和中间产物仍留在 msime，不能提交到本仓。
+新世纪五笔的码表 `sources/wubi/wubixsj-byujiang.txt` 只取基本区单字，上游的词组不用，上游权重只用来定同一编码下几个单字的先后。词组全部由 msime 的 `wubixsj-supplement` 生成：候选与 86、98 补充表相同（另加 86 极点表和两张 98 表里的多字词），编码按同一套词组规则由新世纪单字全码推出。86 极点表里有的词沿用它在极点表里的权重，其余的词排在同码单字之后。
+
+发布构建每次在产物目录中重新派生三份五笔词组数据，新增人工词条不必另等一次手动重建。`sources/wubi/` 下的三份补充表（`wubi86-supplement.txt`、`wubi98-supplement.txt`、`wubixsj-supplement.txt`）保留为可复现的源快照；构建使用本次提交的原表、拼音与人工词条生成，不依赖快照是否已跟上。生成器、数据库和中间产物仍留在 msime，不能提交到本仓。
 
 `Preview upstream dictionary updates` 每周检查 rime-ice，并生成中英文补充表的审核候选、增删数量、权重变化数量、输入摘要、上游提交与许可证；也可手动指定 `msime_ref` 和 `upstream_ref` 试跑。它只上传 workflow artifact，不自动合并或发布。生成器是 msime 的 `msime-dict-build rime-ice-supplement --upstream <干净的上游检出> --dictionary <本仓检出> --out <候选目录>`；中文对照主拼音表、单字表、区划表和人工词条按同词同音去重，英文对照基础英文表、SCOWL 和人工英文词按小写词形去重。没有注音的 `tencent.dict.yaml` 不自动猜音导入；引擎不支持的读音单列到 `unsupported-readings.txt`，未注音行单列到 `unannotated-words.txt`，报告列出两类数量。历史补充表的权重另经万象对齐，上游候选的词频变化也须审核。审核后仍按下文跨仓顺序更新引用、许可证、数据与锁，并试跑完整构建。
 
@@ -114,6 +118,8 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/wubi/wubi86-supplement.txt` | 供复现与审计的源快照；Wubi 从本次提交的相同输入重新派生补充数据，排在原表之后 | `msime-wubi.db` 的 `wubi86` 表 | 使用实时派生数据 |
 | `sources/wubi/wubi98-supplement.txt` | 供复现与审计的源快照；Wubi98 从本次提交的相同输入重新派生补充数据，排在两张原表之后 | `msime-wubi.db` 的 `wubi98` 表 | 使用实时派生数据 |
 | `sources/wubi/wubi98.txt`、`sources/wubi/wubi98-fcitx.txt` | 主命令 Wubi98：以主表为准，补充表中重复的（编码、词语）去掉 | `msime-wubi.db` 的 `wubi98` 表 | 进入 |
+| `sources/wubi/wubixsj-byujiang.txt` | 主命令 WubiXsj：只取基本区单字，同码单字按上游权重定先后、按名次重算权重；上游的词组不读 | `msime-wubi.db` 的 `wubixsj` 表 | 进入（许可由转载者给出，见 `NOTICE.md`） |
+| `sources/wubi/wubixsj-supplement.txt` | 供复现与审计的源快照；WubiXsj 从本次提交的相同输入重新派生词组，排在单字之后 | `msime-wubi.db` 的 `wubixsj` 表 | 使用实时派生数据 |
 | `sources/english/rime-ice-en.txt`、`sources/english/rime-ice-en-supplement.txt` | 主命令 English，只保留全部由 ASCII 字母组成的显示词；同一个词的每种大小写各占一行：SCOWL 只收了大写形式的（Wikipedia、Ukraine）大写在前，其余全小写的在前 | `msime-english.db` | 进入 |
 | `sources/english/scowl-words.txt` | 主命令 English，与上一行的词表合并；SCOWL 的许可声明同时写入该库的 `source_notices` 表。这些词有英译中释义，但不进中译英释义的候选 | `msime-english.db` | 进入（`dict-v` 发布附 `msime-scowl_Copyright.txt`） |
 | `sources/english/google-word-counts.txt` | 主命令 English，作为排序权重 | `msime-english.db` | 进入 |
@@ -182,7 +188,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 本地能跑的是 `python3 scripts/validate_packs.py`，只用 Python 标准库。check-words 需要 Rust 工具链和 msime 检出，本地一般不跑；要跑的话照 `check-words.yml` 的步骤，在 `MSIME_COMMIT` 上构建 `msime-dict-build` 后运行 `check-words`。
 
-`sources/pinyin/`、`sources/wubi/`、`sources/english/` 下的基础词库来自第三方，不在里面加新词；其中本项目生成的补充表（`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`sources/english/rime-ice-en-supplement.txt`、`sources/english/scowl-words.txt`、`sources/wubi/wubi86-supplement.txt`、`sources/wubi/wubi98-supplement.txt`、`sources/zhuyin/mcbopomofo-supplement.txt`、`sources/cantonese/hkcancor-word-counts.txt`）也不手工改，只用 msime 的生成器在原路径重新生成。例外是拼音权重的整体对齐：`sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt` 中与万象（rime-wanxiang）共有的词条，权重按万象的词频统一改写过一次，只改权重列，不增删词条，方法见 `NOTICE.md`「拼音权重与万象对齐」。候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/`、`sources/japanese/`、`sources/korean/` 下的上游文件不在本仓修改，错误报给上游。具体约束见 [AGENTS.md](AGENTS.md)。
+`sources/pinyin/`、`sources/wubi/`、`sources/english/` 下的基础词库来自第三方，不在里面加新词；其中本项目生成的补充表（`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`sources/english/rime-ice-en-supplement.txt`、`sources/english/scowl-words.txt`、`sources/wubi/wubi86-supplement.txt`、`sources/wubi/wubi98-supplement.txt`、`sources/wubi/wubixsj-supplement.txt`、`sources/zhuyin/mcbopomofo-supplement.txt`、`sources/cantonese/hkcancor-word-counts.txt`）也不手工改，只用 msime 的生成器在原路径重新生成。例外是拼音权重的整体对齐：`sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt` 中与万象（rime-wanxiang）共有的词条，权重按万象的词频统一改写过一次，只改权重列，不增删词条，方法见 `NOTICE.md`「拼音权重与万象对齐」。候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/`、`sources/japanese/`、`sources/korean/` 下的上游文件不在本仓修改，错误报给上游。具体约束见 [AGENTS.md](AGENTS.md)。
 
 ## 专业词库
 
@@ -230,7 +236,7 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | 附件 | 内容 |
 | --- | --- |
 | `msime-pinyin.db` | 普通话拼音主词库，以及快捷短语表；构建时按 msime 的读音纠错表删去已知的错误读音 |
-| `msime-wubi.db` | 五笔 86 与五笔 98 的编码数据 |
+| `msime-wubi.db` | 五笔 86、五笔 98 与新世纪五笔的编码数据 |
 | `msime-english.db` | 英文单词（含 SCOWL 60 级补充词表）与中英双向释义，库内附 SCOWL 版权声明 |
 | `msime-others.db` | 表情、颜文字和符号（数据来自 msime 仓库） |
 | `msime-japanese.dat` | 基于 Mozc 开源词典生成的日文词库，含 Mozc 的过滤表与 aux、地名、补充词表 |
@@ -267,6 +273,8 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `sources/wubi/wubi98-supplement.txt` | UTF-8 | LF | 6 行 `#` 注释（生成器、输入及其 SHA-256、上游仓库与提交、收录规则、编码规则、对照集合与权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内按权重从高到低 | 有 |
 | `sources/wubi/wubi98.txt` | UTF-16LE，带 BOM | CRLF | 无 | `词<TAB>五笔编码`，没有权重，同一编码内按行序排列 | 有（UTF-16LE 的 CRLF） |
 | `sources/wubi/wubi98-fcitx.txt` | UTF-8 | LF | 第 1–8 行是 Fcitx 码表头：`KeyCode=`、`Length=`、`Pinyin=`、`[Rule]` 及规则、`[Data]` | `五笔编码 词`，空格分隔 | 有 |
+| `sources/wubi/wubixsj-byujiang.txt` | UTF-8 | LF | Rime 码表头：`#` 注释、`---` 与 `...` 之间的 YAML（`name: wubi06`、`columns`、`encoder`） | `词<TAB>五笔编码<TAB>权重`，单字与词组混排；构建只读单字行 | 有 |
+| `sources/wubi/wubixsj-supplement.txt` | UTF-8 | LF | 6 行 `#` 注释（生成器、输入及其 SHA-256、上游仓库与提交、收录规则、编码规则、权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内第一层（极点权重）在前、各层内按权重从高到低 | 有 |
 | `sources/english/rime-ice-en.txt` | UTF-8 | CRLF | 无；正文中有 1777 行被 `#` 注释掉的条目和 16 个空行 | `显示词 编码 [权重]`，空格分隔；显示词本身可含空格（如 `Dish Network DishNetwork`），51 行带权重 | 有 |
 | `sources/english/rime-ice-en-supplement.txt` | UTF-8 | LF | 3 行 `#` 注释（其中的 `BaseDictIceEn.txt` 是 `rime-ice-en.txt` 的旧名，见 `NOTICE.md`） | `显示词<TAB>编码` | 有 |
 | `sources/english/scowl-words.txt` | UTF-8 | LF | 9 行 `#` 注释（生成器、上游发布与提交、SCOWL 版权与许可声明、收录规则、对照集合、排除规则、排序方式、行序） | 一个显示词，全由 ASCII 字母组成，至少 3 个字母；按小写形式排序，同一个词的全小写形式在前 | 有 |

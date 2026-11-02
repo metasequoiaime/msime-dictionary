@@ -23,6 +23,7 @@
 | `sources/wubi/wubi98-supplement.txt` | 本项目生成的补充表：由 msime `crates/dict-builder` 的 `wubi98-supplement` 子命令从本仓 `sources/wubi/wubi98.txt`、`sources/wubi/wubi98-fcitx.txt`、`sources/wubi/wubi86-jidian.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt` 和 `custom/words.txt` 生成。词条取两张 98 表都没有、而 86 表收录，或 rime-ice 主表与补充表权重不低于 100 的两字及以上词，或区划补充表与人工词条（不限权重；只收基本区汉字），编码按词组规则由 98 表的单字全码推出 | GPL-3.0（词条依据 GPL-3.0 的 rime-ice 与人工词条、WTFPL 的区划名称及 Apache-2.0 的 jidian 表；编码依据 Unlicense 的 98 五笔表和 GPL-3.0-or-later 的 Fcitx 表） |
 | `sources/wubi/wubi98.txt` | [yanhuacuo/98wubi-tables](https://github.com/yanhuacuo/98wubi-tables)（98五笔小组），提交 `6b8b6fb9d3c34e0d5e3b17211e1f1c100e7eb697` 的 `98五笔含词表-【单义】.txt`（见下） | Unlicense |
 | `sources/wubi/wubi98-fcitx.txt` | [fcitx/fcitx5-table-extra](https://github.com/fcitx/fcitx5-table-extra)，提交 `dbc7154a7f0b9fc04313160ae8066ed4d8cbc446` 的 `tables/wubi98.txt` | GPL-3.0-or-later（随仓库的 `LICENSES/GPL-3.0-or-later.txt`） |
+| `sources/wubi/wubixsj-supplement.txt` | 本项目生成的新世纪五笔词组表：由 msime `crates/dict-builder` 的 `wubixsj-supplement` 子命令从本仓 `sources/wubi/wubixsj-byujiang.txt`、`sources/wubi/wubi86-jidian.txt`、`sources/wubi/wubi98.txt`、`sources/wubi/wubi98-fcitx.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt` 和 `custom/words.txt` 生成。词条取 86、98 表里的两字及以上词，或 rime-ice 主表与补充表权重不低于 100 的两字及以上词，或区划补充表与人工词条（不限权重；只收基本区汉字），编码按词组规则由新世纪表的单字全码推出；86 极点表里有的词沿用它在极点表里的权重，其余的权重低于同码单字。不用 `wubixsj-byujiang.txt` 自己的词组 | GPL-3.0（词条依据 GPL-3.0 的 rime-ice 与人工词条、WTFPL 的区划名称、Apache-2.0 的 jidian 表、Unlicense 与 GPL-3.0-or-later 的 98 表；编码依据仓库级 GPL-3.0 的新世纪单字码，见下；第一层权重取自 Apache-2.0 的 jidian 表） |
 | `sources/wubi/wubixsj-byujiang.txt` | [byujiang/wubi06_rime](https://github.com/byujiang/wubi06_rime)，提交 `fc1cedbb21cde3ca160ce291888fa70697720ab3` 的 `dicts/wubi06.dict.yaml`（新世纪五笔，见下） | GPL-3.0（仓库级，由转载者给出；来源没有记录，见下） |
 | `sources/unlicensed/single-char-whitelist.txt` | **待确认**，见下方「待解决」 | **待确认** |
 
@@ -201,4 +202,4 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 
 这些表由 msime 构建时校验后内嵌，供 `s2t`、`s2tw`、`s2twp` 转换以及开发工具使用，不新增 `dict-v` Release 附件。更新时同步 msime 的 `resources/opencc.lock.json` 和许可证说明；保持上游文件名与逐字节锁定。
 
-五笔补充数据在发布构建时从本次固定原表、拼音和人工词条重新派生；本仓两份补充表为审计快照，来源和许可与上表相同。每周 rime-ice 更新预览生成审核候选，不改变本表记录的已固定源提交；候选通过审核并更新源数据时再同步来源、许可证和锁。
+五笔补充数据（含新世纪五笔的全部词组）在发布构建时从本次固定原表、拼音和人工词条重新派生；本仓三份补充表为审计快照，来源和许可与上表相同。每周 rime-ice 更新预览生成审核候选，不改变本表记录的已固定源提交；候选通过审核并更新源数据时再同步来源、许可证和锁。
