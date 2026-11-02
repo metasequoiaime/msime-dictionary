@@ -1,0 +1,3 @@
+# 粤语词库香港字形替换的人工否决表：msime 构建器（crates/dict-builder/src/cantonese.rs）从 OpenCC 的 sources/opencc/TWVariants.txt 与 sources/opencc/HKVariants.txt 取候选异体对，按 HKCanCor 词频判定是否把 OpenCC 字形换成香港字形；这里列出的 OpenCC 字形一律不换。每行一个字，必须是两张异体表里某一行的键，# 开头是注释。由维护者审定，不接受投稿，不受只追加规则限制：撤销否决就删掉那一行。
+# 搵：rime-cantonese 只写「搵」（144 个词），固定提交的 HKCanCor 只写「揾」（34 次）；维护者决定保留「搵食、搵錢」的「搵」，不换成「揾」（msime #10697）。
+搵

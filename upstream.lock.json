@@ -216,6 +216,12 @@
       "sha256": "663cc10b7de7c7cee3ff9df1ee963977d6c26c00b23f8fe670fab481283ed4f9"
     },
     {
+      "path": "sources/opencc/HKVariants.txt",
+      "upstream": "OpenCC",
+      "size": 1001,
+      "sha256": "e5cd4345303224587102f2c9e4d2b67d2b7e349c6ce9152e4a118f4656cf7302"
+    },
+    {
       "path": "sources/opencc/LICENSE",
       "upstream": "OpenCC",
       "size": 9165,
