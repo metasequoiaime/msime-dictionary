@@ -639,3 +639,4 @@
 鼠输入法	shu'shu'ru'fa	100
 天空盒	tian'kong'he	100
 交换区	jiao'huan'qu	100
+白赤练	bai'chi'lian	100
