@@ -95,7 +95,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 新世纪五笔的码表 `sources/wubi/wubixsj-byujiang.txt` 只取基本区单字，上游的词组不用，上游权重只用来定同一编码下几个单字的先后。词组全部由 msime 的 `wubixsj-supplement` 生成：候选与 86、98 补充表相同（另加 86 极点表和两张 98 表里的多字词），编码按同一套词组规则由新世纪单字全码推出。86 极点表里有的词沿用它在极点表里的权重，其余的词排在同码单字之后。
 
-发布构建每次在产物目录中重新派生三份五笔词组数据，新增人工词条不必另等一次手动重建。`sources/wubi/` 下的三份补充表（`wubi86-supplement.txt`、`wubi98-supplement.txt`、`wubixsj-supplement.txt`）保留为可复现的源快照；构建使用本次提交的原表、拼音与人工词条生成，不依赖快照是否已跟上。生成器、数据库和中间产物仍留在 msime，不能提交到本仓。
+发布构建每次在产物目录中重新派生三份五笔词组数据，新增人工词条不必另等一次手动重建。`sources/wubi/` 下的三份补充表（`wubi86-supplement.txt`、`wubi98-supplement.txt`、`wubixsj-supplement.txt`）保留为可复现的源快照；构建使用本次提交的原表、拼音与人工词条生成，不依赖快照是否已跟上。`wubixsj-supplement.txt` 另外是新世纪表的发布开关：msime 构建器不读它的内容，只看它在不在，在就构建并发布 `wubixsj` 表，不在（收入它之前的提交）就不建这张表、`msime-wubi.db` 只有 86 和 98。所以合入收入它的那次改动就会发布第一个带新世纪表的 `dict-v`，不要删掉它。生成器、数据库和中间产物仍留在 msime，不能提交到本仓。
 
 `Preview upstream dictionary updates` 每周检查 rime-ice，并生成中英文补充表的审核候选、增删数量、权重变化数量、输入摘要、上游提交与许可证；也可手动指定 `msime_ref` 和 `upstream_ref` 试跑。它只上传 workflow artifact，不自动合并或发布。生成器是 msime 的 `msime-dict-build rime-ice-supplement --upstream <干净的上游检出> --dictionary <本仓检出> --out <候选目录>`；中文对照主拼音表、单字表、区划表和人工词条按同词同音去重，英文对照基础英文表、SCOWL 和人工英文词按小写词形去重。没有注音的 `tencent.dict.yaml` 不自动猜音导入；引擎不支持的读音单列到 `unsupported-readings.txt`，未注音行单列到 `unannotated-words.txt`，报告列出两类数量。历史补充表的权重另经万象对齐，上游候选的词频变化也须审核。审核后仍按下文跨仓顺序更新引用、许可证、数据与锁，并试跑完整构建。
 
@@ -119,7 +119,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/wubi/wubi98-supplement.txt` | 供复现与审计的源快照；Wubi98 从本次提交的相同输入重新派生补充数据，排在两张原表之后 | `msime-wubi.db` 的 `wubi98` 表 | 使用实时派生数据 |
 | `sources/wubi/wubi98.txt`、`sources/wubi/wubi98-fcitx.txt` | 主命令 Wubi98：以主表为准，补充表中重复的（编码、词语）去掉 | `msime-wubi.db` 的 `wubi98` 表 | 进入 |
 | `sources/wubi/wubixsj-byujiang.txt` | 主命令 WubiXsj：只取基本区单字，同码单字按上游权重定先后、按名次重算权重；上游的词组不读 | `msime-wubi.db` 的 `wubixsj` 表 | 进入（许可由转载者给出，见 `NOTICE.md`） |
-| `sources/wubi/wubixsj-supplement.txt` | 供复现与审计的源快照；WubiXsj 从本次提交的相同输入重新派生词组，排在单字之后 | `msime-wubi.db` 的 `wubixsj` 表 | 使用实时派生数据 |
+| `sources/wubi/wubixsj-supplement.txt` | 供复现与审计的源快照，也是新世纪表的发布开关（构建器只看它在不在）；WubiXsj 从本次提交的相同输入重新派生词组，排在单字之后 | `msime-wubi.db` 的 `wubixsj` 表 | 使用实时派生数据 |
 | `sources/english/rime-ice-en.txt`、`sources/english/rime-ice-en-supplement.txt` | 主命令 English，只保留全部由 ASCII 字母组成的显示词；同一个词的每种大小写各占一行：SCOWL 只收了大写形式的（Wikipedia、Ukraine）大写在前，其余全小写的在前 | `msime-english.db` | 进入 |
 | `sources/english/scowl-words.txt` | 主命令 English，与上一行的词表合并；SCOWL 的许可声明同时写入该库的 `source_notices` 表。这些词有英译中释义，但不进中译英释义的候选 | `msime-english.db` | 进入（`dict-v` 发布附 `msime-scowl_Copyright.txt`） |
 | `sources/english/google-word-counts.txt` | 主命令 English，作为排序权重 | `msime-english.db` | 进入 |
