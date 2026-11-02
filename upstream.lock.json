@@ -49,6 +49,10 @@
       "repository": "https://github.com/fcitx/fcitx5-table-extra.git",
       "commit": "dbc7154a7f0b9fc04313160ae8066ed4d8cbc446"
     },
+    "wubi06-rime": {
+      "repository": "https://github.com/byujiang/wubi06_rime.git",
+      "commit": "fc1cedbb21cde3ca160ce291888fa70697720ab3"
+    },
     "OpenCC": {
       "repository": "https://github.com/BYVoid/OpenCC.git",
       "commit": "26753884f1984add422f3b0249ccee8613deaff6"
@@ -282,6 +286,12 @@
       "upstream": "98wubi-tables",
       "size": 1988020,
       "sha256": "1b5a4c22eddae08d8e0e6aa8f926f92d45d6cdaa591e5cee0e8aad29271da1cc"
+    },
+    {
+      "path": "sources/wubi/wubixsj-byujiang.txt",
+      "upstream": "wubi06-rime",
+      "size": 1421790,
+      "sha256": "0c668f59b13b6f201d479678883925957989156b69eeaec163870ace2b011875"
     },
     {
       "path": "sources/zhuyin/mcbopomofo-supplement.txt",
