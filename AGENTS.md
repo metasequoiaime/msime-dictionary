@@ -61,7 +61,7 @@ python3 scripts/validate_packs.py
 
 ## OpenCC 转换数据
 
-`sources/opencc/` 的七份文本与 `LICENSE` 保留上游名字和字节，由 `upstream.lock.json` 校验。来源与派生表的生成方式见 `NOTICE.md`。转换算法、下载与生成工具留在 msime；本仓不放 Rust crate 或生成的数据库。跨仓 PR 互链，先合本仓，再把 msime 的 OpenCC 锁指向合并后的固定提交，不能让下游默认分支引用未合并的 PR 提交。
+`sources/opencc/` 的九份文本与 `LICENSE` 保留上游名字和字节，由 `upstream.lock.json` 校验。来源与派生表的生成方式见 `NOTICE.md`。转换算法、下载与生成工具留在 msime；本仓不放 Rust crate 或生成的数据库。跨仓 PR 互链，先合本仓，再把 msime 的 OpenCC 锁指向合并后的固定提交，不能让下游默认分支引用未合并的 PR 提交。
 
 ## 符号名称表
 

@@ -54,7 +54,7 @@ sources/                                  msime 构建器经 --dictionary 读取
     LICENSE                               Mozc 仓库根目录的许可证（Google BSD 与词典条款）-> msime-mozc_LICENSE.txt
   cn-en/                                  中译英候选窗释义
     machine-translations.txt              拼音与五笔词条的英文释义（汇总已有翻译与大模型生成）-> msime-english.db（构建器尚未读取）
-  opencc/                                 OpenCC 七份简繁转换表与 LICENSE，构建时内嵌，不是 Release 附件
+  opencc/                                 OpenCC 九份简繁转换表与 LICENSE，构建时内嵌，不是 Release 附件
   symbols/                                符号源数据
     piliapp-symbols.txt                   表情面板符号页的分类与符号（采集自 PiliApp，许可未确认）-> msime-others.db
     symbol-names.tsv                      打拼音出符号的符号名称表（本项目自写）-> msime 引擎内嵌（不是 Release 附件）
