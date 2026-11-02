@@ -48,6 +48,7 @@ GENERATED = (
     "sources/english/scowl-words.txt",
     "sources/wubi/wubi86-supplement.txt",
     "sources/wubi/wubi98-supplement.txt",
+    "sources/wubi/wubixsj-supplement.txt",
     "sources/cantonese/hkcancor-word-counts.txt",
 )
 
