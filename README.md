@@ -73,6 +73,7 @@ custom/                                   人工维护的数据，唯一接受�
 packs/                                    用户按需导入的专业词库，不进入构建
   README.md                               专业词库的说明与验收清单
   ai_ml/                                  机器学习与大模型
+  mathematics/                            数学
   petroleum_engineering/                  石油工程与油气开发
   programming/                            编程开发
   unreal_houdini/                         Unreal Engine 与 Houdini

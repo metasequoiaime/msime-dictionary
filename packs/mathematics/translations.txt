@@ -1,0 +1,1258 @@
+# 集合论与数理逻辑：中文候选到英文术语
+选择公理	Axiom of Choice
+佐恩引理	Zorn's Lemma
+良序定理	Well-ordering Theorem
+预序	Preorder
+超限归纳法	Transfinite Induction
+连续统	Continuum
+笛卡儿积	Cartesian Product
+单射	Injection
+双射	Bijection
+逆像	Inverse Image
+示性函数	Indicator Function
+力迫法	Forcing
+可构成集	Constructible Set
+大基数	Large Cardinal
+不可达基数	Inaccessible Cardinal
+共尾性	Cofinality
+滤子	Filter
+超积	Ultraproduct
+二阶逻辑	Second-order Logic
+证明论	Proof Theory
+递归论	Recursion Theory
+不完备性定理	Incompleteness Theorem
+哥德尔不完备定理	Gödel's Incompleteness Theorem
+紧致性定理	Compactness Theorem
+完备性定理	Completeness Theorem
+可满足性	Satisfiability
+自由变元	Free Variable
+约束变元	Bound Variable
+初等等价	Elementary Equivalence
+直觉主义逻辑	Intuitionistic Logic
+皮亚诺公理	Peano Axioms
+同伦类型论	Homotopy Type Theory
+良定义	Well-defined
+良基	Well-founded
+零一律	Zero-one Law
+# 群论：中文候选到英文术语
+幺半群	Monoid
+半群	Semigroup
+幺元	Identity Element
+阿贝尔群	Abelian Group
+交换群	Commutative Group
+循环群	Cyclic Group
+对称群	Symmetric Group
+交错群	Alternating Group
+二面体群	Dihedral Group
+四元数群	Quaternion Group
+克莱因四元群	Klein Four-group
+正规子群	Normal Subgroup
+商群	Quotient Group
+左陪集	Left Coset
+右陪集	Right Coset
+双陪集	Double Coset
+群同态	Group Homomorphism
+自同构	Automorphism
+内自同构	Inner Automorphism
+外自同构	Outer Automorphism
+自同态	Endomorphism
+同构定理	Isomorphism Theorem
+第一同构定理	First Isomorphism Theorem
+群作用	Group Action
+稳定子	Stabilizer
+稳定化子	Stabilizer
+传递作用	Transitive Action
+忠实作用	Faithful Action
+自由作用	Free Action
+轨道稳定子定理	Orbit-stabilizer Theorem
+伯恩赛德引理	Burnside's Lemma
+共轭类	Conjugacy Class
+类方程	Class Equation
+中心化子	Centralizer
+正规化子	Normalizer
+换位子	Commutator
+换位子群	Commutator Subgroup
+导出子群	Derived Subgroup
+西罗定理	Sylow Theorems
+西罗子群	Sylow Subgroup
+可解群	Solvable Group
+幂零群	Nilpotent Group
+单群	Simple Group
+有限单群	Finite Simple Group
+散在单群	Sporadic Group
+魔群	Monster Group
+合成列	Composition Series
+半直积	Semidirect Product
+直积	Direct Product
+直和	Direct Sum
+自由群	Free Group
+生成元	Generator
+群表现	Group Presentation
+挠群	Torsion Group
+挠元	Torsion Element
+无挠	Torsion-free
+有限生成	Finitely Generated
+有限生成阿贝尔群	Finitely Generated Abelian Group
+特征子群	Characteristic Subgroup
+极大子群	Maximal Subgroup
+群胚	Groupoid
+拟群	Quasigroup
+自由积	Free Product
+融合积	Amalgamated Free Product
+圈积	Wreath Product
+内直积	Internal Direct Product
+群扩张	Group Extension
+中心扩张	Central Extension
+舒尔乘子	Schur Multiplier
+转移同态	Transfer Homomorphism
+置换表示	Permutation Representation
+正规列	Normal Series
+次正规子群	Subnormal Subgroup
+导出列	Derived Series
+上中心列	Upper Central Series
+下中心列	Lower Central Series
+自由阿贝尔群	Free Abelian Group
+群环	Group Ring
+# 环、域与模：中文候选到英文术语
+交换环	Commutative Ring
+含幺环	Unital Ring
+整环	Integral Domain
+除环	Division Ring
+主理想	Principal Ideal
+主理想整环	Principal Ideal Domain
+唯一分解整环	Unique Factorization Domain
+欧几里得整环	Euclidean Domain
+素理想	Prime Ideal
+极大理想	Maximal Ideal
+准素理想	Primary Ideal
+根理想	Radical Ideal
+诣零根	Nilradical
+雅各布森根	Jacobson Radical
+幂零元	Nilpotent Element
+幂等元	Idempotent Element
+可逆元	Invertible Element
+商环	Quotient Ring
+多项式环	Polynomial Ring
+形式幂级数	Formal Power Series
+诺特环	Noetherian Ring
+阿廷环	Artinian Ring
+局部环	Local Ring
+分式域	Field of Fractions
+素域	Prime Field
+代数扩张	Algebraic Extension
+超越扩张	Transcendental Extension
+有限扩张	Finite Extension
+可分扩张	Separable Extension
+正规扩张	Normal Extension
+伽罗瓦扩张	Galois Extension
+伽罗瓦群	Galois Group
+伽罗瓦对应	Galois Correspondence
+分裂域	Splitting Field
+代数闭域	Algebraically Closed Field
+极小多项式	Minimal Polynomial
+本原元	Primitive Element
+本原元定理	Primitive Element Theorem
+有限域	Finite Field
+分圆多项式	Cyclotomic Polynomial
+分圆域	Cyclotomic Field
+代数整数	Algebraic Integer
+整闭	Integrally Closed
+整闭包	Integral Closure
+整扩张	Integral Extension
+戴德金整环	Dedekind Domain
+赋值环	Valuation Ring
+离散赋值环	Discrete Valuation Ring
+克鲁尔维数	Krull Dimension
+希尔伯特基定理	Hilbert's Basis Theorem
+希尔伯特零点定理	Hilbert's Nullstellensatz
+艾森斯坦判别法	Eisenstein's Criterion
+高斯引理	Gauss's Lemma
+首一多项式	Monic Polynomial
+本原多项式	Primitive Polynomial
+结式	Resultant
+对称多项式	Symmetric Polynomial
+初等对称多项式	Elementary Symmetric Polynomial
+格罗布纳基	Gröbner Basis
+左模	Left Module
+右模	Right Module
+子模	Submodule
+商模	Quotient Module
+自由模	Free Module
+投射模	Projective Module
+内射模	Injective Module
+平坦模	Flat Module
+有限生成模	Finitely Generated Module
+诺特模	Noetherian Module
+阿廷模	Artinian Module
+半单模	Semisimple Module
+不可分解模	Indecomposable Module
+挠模	Torsion Module
+模同态	Module Homomorphism
+张量积	Tensor Product
+对称代数	Symmetric Algebra
+张量代数	Tensor Algebra
+外代数	Exterior Algebra
+分次环	Graded Ring
+分次模	Graded Module
+中山引理	Nakayama's Lemma
+结合代数	Associative Algebra
+非交换代数	Noncommutative Algebra
+半单代数	Semisimple Algebra
+中心单代数	Central Simple Algebra
+可除代数	Division Algebra
+四元数代数	Quaternion Algebra
+克利福德代数	Clifford Algebra
+霍普夫代数	Hopf Algebra
+若尔当代数	Jordan Algebra
+环同态	Ring Homomorphism
+相伴元	Associate Element
+有限表现	Finitely Presented
+正则局部环	Regular Local Ring
+域论	Field Theory
+# 线性代数：中文候选到英文术语
+线性空间	Linear Space
+商空间	Quotient Space
+对偶空间	Dual Space
+双对偶	Double Dual
+线性映射	Linear Map
+线性泛函	Linear Functional
+零空间	Null Space
+列空间	Column Space
+行空间	Row Space
+行秩	Row Rank
+列秩	Column Rank
+零化度	Nullity
+秩零化度定理	Rank-nullity Theorem
+维数公式	Dimension Formula
+基变换	Change of Basis
+过渡矩阵	Transition Matrix
+相似矩阵	Similar Matrices
+合同矩阵	Congruent Matrices
+广义特征向量	Generalized Eigenvector
+若尔当标准形	Jordan Normal Form
+若尔当块	Jordan Block
+有理标准形	Rational Canonical Form
+不变因子	Invariant Factor
+初等因子	Elementary Divisor
+史密斯标准形	Smith Normal Form
+对角化	Diagonalization
+可对角化	Diagonalizable
+上三角矩阵	Upper Triangular Matrix
+下三角矩阵	Lower Triangular Matrix
+幂零矩阵	Nilpotent Matrix
+幂等矩阵	Idempotent Matrix
+正交矩阵	Orthogonal Matrix
+酉矩阵	Unitary Matrix
+埃尔米特矩阵	Hermitian Matrix
+正规矩阵	Normal Matrix
+正定矩阵	Positive Definite Matrix
+半正定矩阵	Positive Semidefinite Matrix
+反对称矩阵	Skew-symmetric Matrix
+斜对称矩阵	Skew-symmetric Matrix
+伴随矩阵	Adjugate Matrix
+余子式	Minor
+代数余子式	Cofactor
+主子式	Principal Minor
+顺序主子式	Leading Principal Minor
+范德蒙德行列式	Vandermonde Determinant
+克拉默法则	Cramer's Rule
+初等变换	Elementary Transformation
+初等矩阵	Elementary Matrix
+行阶梯形	Row Echelon Form
+简化行阶梯形	Reduced Row Echelon Form
+分块矩阵	Block Matrix
+克罗内克积	Kronecker Product
+哈达玛积	Hadamard Product
+谱分解	Spectral Decomposition
+极分解	Polar Decomposition
+楚列斯基分解	Cholesky Decomposition
+施密特正交化	Gram-Schmidt Orthogonalization
+正交补	Orthogonal Complement
+正交投影	Orthogonal Projection
+内积空间	Inner Product Space
+双线性型	Bilinear Form
+惯性定理	Law of Inertia
+惯性指数	Index of Inertia
+正惯性指数	Positive Index of Inertia
+符号差	Signature
+埃尔米特型	Hermitian Form
+辛形式	Symplectic Form
+辛空间	Symplectic Space
+多重线性映射	Multilinear Map
+多重线性代数	Multilinear Algebra
+广义逆	Generalized Inverse
+伪逆	Pseudoinverse
+谱半径	Spectral Radius
+矩阵范数	Matrix Norm
+算子范数	Operator Norm
+弗罗贝尼乌斯范数	Frobenius Norm
+零化多项式	Annihilating Polynomial
+循环子空间	Cyclic Subspace
+不变子空间	Invariant Subspace
+直和分解	Direct Sum Decomposition
+极大线性无关组	Maximal Linearly Independent Set
+生成子空间	Spanned Subspace
+豪斯霍尔德变换	Householder Transformation
+吉文斯旋转	Givens Rotation
+瑞利商	Rayleigh Quotient
+盖尔圆盘定理	Gershgorin Circle Theorem
+# 范畴论与同调代数：中文候选到英文术语
+态射	Morphism
+函子	Functor
+协变函子	Covariant Functor
+反变函子	Contravariant Functor
+忠实函子	Faithful Functor
+完全函子	Full Functor
+遗忘函子	Forgetful Functor
+自由函子	Free Functor
+可表函子	Representable Functor
+伴随函子	Adjoint Functor
+左伴随	Left Adjoint
+右伴随	Right Adjoint
+自然变换	Natural Transformation
+自然同构	Natural Isomorphism
+范畴等价	Equivalence of Categories
+米田引理	Yoneda Lemma
+米田嵌入	Yoneda Embedding
+始对象	Initial Object
+终对象	Terminal Object
+零对象	Zero Object
+余积	Coproduct
+纤维积	Fiber Product
+等化子	Equalizer
+余等化子	Coequalizer
+余极限	Colimit
+正向极限	Direct Limit
+逆向极限	Inverse Limit
+直极限	Direct Limit
+逆极限	Inverse Limit
+单态射	Monomorphism
+满态射	Epimorphism
+对偶范畴	Opposite Category
+反范畴	Opposite Category
+小范畴	Small Category
+局部小范畴	Locally Small Category
+函子范畴	Functor Category
+阿贝尔范畴	Abelian Category
+加性范畴	Additive Category
+三角范畴	Triangulated Category
+导出范畴	Derived Category
+同伦范畴	Homotopy Category
+模型范畴	Model Category
+幺半范畴	Monoidal Category
+对称幺半范畴	Symmetric Monoidal Category
+笛卡儿闭范畴	Cartesian Closed Category
+拓扑斯	Topos
+高阶范畴	Higher Category
+无穷范畴	Infinity Category
+余单子	Comonad
+二范畴	2-category
+纤维范畴	Fibered Category
+代数叠	Algebraic Stack
+格罗滕迪克拓扑	Grothendieck Topology
+图表追踪	Diagram Chasing
+交换图	Commutative Diagram
+蛇引理	Snake Lemma
+五引理	Five Lemma
+泛性质	Universal Property
+链复形	Chain Complex
+上链复形	Cochain Complex
+链映射	Chain Map
+链同伦	Chain Homotopy
+正合列	Exact Sequence
+短正合列	Short Exact Sequence
+长正合列	Long Exact Sequence
+分裂正合列	Split Exact Sequence
+正合函子	Exact Functor
+左正合	Left Exact
+右正合	Right Exact
+导出函子	Derived Functor
+左导出函子	Left Derived Functor
+右导出函子	Right Derived Functor
+投射分解	Projective Resolution
+内射分解	Injective Resolution
+自由分解	Free Resolution
+平坦分解	Flat Resolution
+同调群	Homology Group
+上同调群	Cohomology Group
+谱序列	Spectral Sequence
+拟同构	Quasi-isomorphism
+映射锥	Mapping Cone
+同调维数	Homological Dimension
+投射维数	Projective Dimension
+内射维数	Injective Dimension
+整体维数	Global Dimension
+群上同调	Group Cohomology
+层上同调	Sheaf Cohomology
+切赫上同调	Čech Cohomology
+德拉姆上同调	de Rham Cohomology
+奇异同调	Singular Homology
+奇异上同调	Singular Cohomology
+单纯同调	Simplicial Homology
+胞腔同调	Cellular Homology
+相对同调	Relative Homology
+约化同调	Reduced Homology
+屈内特公式	Künneth Formula
+万有系数定理	Universal Coefficient Theorem
+庞加莱对偶	Poincaré Duality
+塞尔对偶	Serre Duality
+上积	Cup Product
+卡积	Cap Product
+贝蒂数	Betti Number
+欧拉示性数	Euler Characteristic
+典范同构	Canonical Isomorphism
+典范映射	Canonical Map
+自然映射	Natural Map
+商映射	Quotient Map
+限制映射	Restriction Map
+归纳极限	Inductive Limit
+投射极限	Projective Limit
+同伦极限	Homotopy Limit
+# 拓扑：中文候选到英文术语
+开集	Open Set
+闭集	Closed Set
+邻域基	Neighborhood Base
+拓扑基	Basis of a Topology
+子基	Subbase
+子空间拓扑	Subspace Topology
+商拓扑	Quotient Topology
+积拓扑	Product Topology
+离散拓扑	Discrete Topology
+平凡拓扑	Trivial Topology
+余有限拓扑	Cofinite Topology
+扎里斯基拓扑	Zariski Topology
+完备度量空间	Complete Metric Space
+可度量化	Metrizable
+豪斯多夫空间	Hausdorff Space
+分离公理	Separation Axiom
+正则空间	Regular Space
+正规空间	Normal Space
+紧空间	Compact Space
+紧集	Compact Set
+紧化	Compactification
+一点紧化	One-point Compactification
+局部紧	Locally Compact
+仿紧	Paracompact
+序列紧	Sequentially Compact
+连通空间	Connected Space
+道路连通	Path-connected
+局部连通	Locally Connected
+单连通	Simply Connected
+可分空间	Separable Space
+第一可数	First-countable
+第二可数	Second-countable
+稠密子集	Dense Subset
+无处稠密	Nowhere Dense
+贝尔纲定理	Baire Category Theorem
+开映射	Open Map
+闭映射	Closed Map
+乌雷松引理	Urysohn's Lemma
+蒂茨扩张定理	Tietze Extension Theorem
+吉洪诺夫定理	Tychonoff's Theorem
+同伦	Homotopy
+同伦等价	Homotopy Equivalence
+同伦群	Homotopy Group
+基本群	Fundamental Group
+基本群胚	Fundamental Groupoid
+道路提升	Path Lifting
+覆叠空间	Covering Space
+覆叠映射	Covering Map
+万有覆叠	Universal Cover
+单值群	Monodromy Group
+范坎彭定理	Seifert-van Kampen Theorem
+形变收缩	Deformation Retraction
+强形变收缩	Strong Deformation Retraction
+可缩空间	Contractible Space
+胞腔复形	CW Complex
+单纯复形	Simplicial Complex
+单形	Simplex
+单纯集	Simplicial Set
+重心重分	Barycentric Subdivision
+上纤维化	Cofibration
+主丛	Principal Bundle
+向量丛	Vector Bundle
+线丛	Line Bundle
+切丛	Tangent Bundle
+余切丛	Cotangent Bundle
+法丛	Normal Bundle
+平凡丛	Trivial Bundle
+陈类	Chern Class
+庞特里亚金类	Pontryagin Class
+欧拉类	Euler Class
+分类空间	Classifying Space
+映射度	Degree of a Map
+布劳威尔不动点定理	Brouwer Fixed-point Theorem
+若尔当曲线定理	Jordan Curve Theorem
+莫比乌斯带	Möbius Strip
+克莱因瓶	Klein Bottle
+射影平面	Projective Plane
+实射影空间	Real Projective Space
+复射影空间	Complex Projective Space
+连通和	Connected Sum
+亏格	Genus
+可定向	Orientable
+不可定向	Non-orientable
+纽结理论	Knot Theory
+纽结不变量	Knot Invariant
+琼斯多项式	Jones Polynomial
+辫群	Braid Group
+映射类群	Mapping Class Group
+楔和	Wedge Sum
+粉碎积	Smash Product
+环路空间	Loop Space
+道路空间	Path Space
+稳定同伦	Stable Homotopy
+上同调运算	Cohomology Operation
+斯廷罗德平方	Steenrod Square
+示性数	Characteristic Number
+配边	Cobordism
+配边理论	Cobordism Theory
+莫尔斯理论	Morse Theory
+莫尔斯函数	Morse Function
+柄体	Handlebody
+柄分解	Handle Decomposition
+几何化猜想	Geometrization Conjecture
+点集拓扑	Point-set Topology
+一般拓扑	General Topology
+微分拓扑	Differential Topology
+聚点	Accumulation Point
+极限点	Limit Point
+孤立点	Isolated Point
+边界点	Boundary Point
+稳定同伦群	Stable Homotopy Group
+霍普夫纤维化	Hopf Fibration
+单纯逼近	Simplicial Approximation
+莱夫谢茨不动点定理	Lefschetz Fixed-point Theorem
+莱夫谢茨数	Lefschetz Number
+# 微分几何与微分拓扑：中文候选到英文术语
+光滑流形	Smooth Manifold
+拓扑流形	Topological Manifold
+微分流形	Differentiable Manifold
+带边流形	Manifold with Boundary
+复流形	Complex Manifold
+伪黎曼流形	Pseudo-Riemannian Manifold
+洛伦兹流形	Lorentzian Manifold
+辛流形	Symplectic Manifold
+凯勒流形	Kähler Manifold
+坐标卡	Coordinate Chart
+光滑结构	Smooth Structure
+微分同胚	Diffeomorphism
+局部微分同胚	Local Diffeomorphism
+子流形	Submanifold
+浸入子流形	Immersed Submanifold
+嵌入子流形	Embedded Submanifold
+正则值	Regular Value
+萨德定理	Sard's Theorem
+横截性	Transversality
+横截相交	Transversal Intersection
+惠特尼嵌入定理	Whitney Embedding Theorem
+单位分解	Partition of Unity
+余切空间	Cotangent Space
+余切向量	Cotangent Vector
+切映射	Tangent Map
+推前	Pushforward
+积分曲线	Integral Curve
+李括号	Lie Bracket
+李导数	Lie Derivative
+微分形式	Differential Form
+外微分	Exterior Derivative
+外导数	Exterior Derivative
+楔积	Wedge Product
+闭形式	Closed Form
+恰当形式	Exact Form
+斯托克斯定理	Stokes' Theorem
+体积形式	Volume Form
+张量场	Tensor Field
+张量丛	Tensor Bundle
+弗罗贝尼乌斯定理	Frobenius Theorem
+叶状结构	Foliation
+仿射联络	Affine Connection
+协变导数	Covariant Derivative
+和乐群	Holonomy Group
+曲率张量	Curvature Tensor
+黎曼曲率张量	Riemann Curvature Tensor
+里奇曲率	Ricci Curvature
+里奇张量	Ricci Tensor
+里奇流	Ricci Flow
+数量曲率	Scalar Curvature
+标量曲率	Scalar Curvature
+截面曲率	Sectional Curvature
+高斯曲率	Gaussian Curvature
+平均曲率	Mean Curvature
+主曲率	Principal Curvature
+挠率	Torsion
+挠率张量	Torsion Tensor
+指数映射	Exponential Map
+第二基本形式	Second Fundamental Form
+高斯映射	Gauss Map
+绝妙定理	Theorema Egregium
+度量张量	Metric Tensor
+黎曼度量	Riemannian Metric
+等距同构	Isometric Isomorphism
+雅可比场	Jacobi Field
+割迹	Cut Locus
+霍奇理论	Hodge Theory
+霍奇星算子	Hodge Star Operator
+调和形式	Harmonic Form
+规范场	Gauge Field
+规范变换	Gauge Transformation
+联络形式	Connection Form
+曲率形式	Curvature Form
+结构方程	Structure Equation
+标架丛	Frame Bundle
+活动标架	Moving Frame
+辛几何	Symplectic Geometry
+接触几何	Contact Geometry
+泊松流形	Poisson Manifold
+哈密顿向量场	Hamiltonian Vector Field
+动量映射	Moment Map
+复结构	Complex Structure
+近复结构	Almost Complex Structure
+凯勒形式	Kähler Form
+旋量	Spinor
+自旋结构	Spin Structure
+狄拉克算子	Dirac Operator
+指标定理	Index Theorem
+极小曲面	Minimal Surface
+复几何	Complex Geometry
+几何分析	Geometric Analysis
+克里斯托费尔符号	Christoffel Symbol
+爱因斯坦流形	Einstein Manifold
+洛伦兹度量	Lorentzian Metric
+闵可夫斯基空间	Minkowski Space
+体积元	Volume Element
+霍奇分解	Hodge Decomposition
+霍奇猜想	Hodge Conjecture
+# 李理论与表示论：中文候选到英文术语
+李群	Lie Group
+李子群	Lie Subgroup
+李子代数	Lie Subalgebra
+单李代数	Simple Lie Algebra
+半单李代数	Semisimple Lie Algebra
+可解李代数	Solvable Lie Algebra
+幂零李代数	Nilpotent Lie Algebra
+约化群	Reductive Group
+线性代数群	Linear Algebraic Group
+一般线性群	General Linear Group
+特殊线性群	Special Linear Group
+特殊正交群	Special Orthogonal Group
+酉群	Unitary Group
+特殊酉群	Special Unitary Group
+辛群	Symplectic Group
+洛伦兹群	Lorentz Group
+庞加莱群	Poincaré Group
+伴随表示	Adjoint Representation
+基灵型	Killing Form
+嘉当子代数	Cartan Subalgebra
+嘉当矩阵	Cartan Matrix
+正根	Positive Root
+外尔群	Weyl Group
+外尔室	Weyl Chamber
+邓金图	Dynkin Diagram
+最高权表示	Highest Weight Representation
+权空间	Weight Space
+权格	Weight Lattice
+根格	Root Lattice
+泛包络代数	Universal Enveloping Algebra
+卡西米尔元	Casimir Element
+单参数子群	One-parameter Subgroup
+极大环面	Maximal Torus
+博雷尔子群	Borel Subgroup
+抛物子群	Parabolic Subgroup
+旗流形	Flag Manifold
+旗簇	Flag Variety
+齐性空间	Homogeneous Space
+表示论	Representation Theory
+群表示	Group Representation
+线性表示	Linear Representation
+完全可约	Completely Reducible
+正则表示	Regular Representation
+诱导表示	Induced Representation
+限制表示	Restricted Representation
+特征标	Character
+特征标表	Character Table
+特征标理论	Character Theory
+舒尔引理	Schur's Lemma
+马施克定理	Maschke's Theorem
+弗罗贝尼乌斯互反律	Frobenius Reciprocity
+群代数	Group Algebra
+对偶表示	Dual Representation
+酉表示	Unitary Representation
+杨图	Young Diagram
+杨表	Young Tableau
+维尔马模	Verma Module
+量子群	Quantum Group
+仿射李代数	Affine Lie Algebra
+顶点算子代数	Vertex Operator Algebra
+朗兰兹纲领	Langlands Program
+自守形式	Automorphic Form
+自守表示	Automorphic Representation
+# 代数几何：中文候选到英文术语
+仿射簇	Affine Variety
+射影簇	Projective Variety
+拟射影簇	Quasi-projective Variety
+不可约分支	Irreducible Component
+射影空间	Projective Space
+坐标环	Coordinate Ring
+函数域	Function Field
+有理映射	Rational Map
+双有理	Birational
+双有理等价	Birational Equivalence
+正则函数	Regular Function
+概形	Scheme
+仿射概形	Affine Scheme
+射影概形	Projective Scheme
+素谱	Prime Spectrum
+环层空间	Ringed Space
+局部环层空间	Locally Ringed Space
+结构层	Structure Sheaf
+预层	Presheaf
+层化	Sheafification
+拟凝聚层	Quasi-coherent Sheaf
+可逆层	Invertible Sheaf
+局部自由层	Locally Free Sheaf
+理想层	Ideal Sheaf
+直像	Direct Image
+除子	Divisor
+除子类群	Divisor Class Group
+韦伊除子	Weil Divisor
+卡蒂埃除子	Cartier Divisor
+皮卡群	Picard Group
+线性系	Linear System
+典范除子	Canonical Divisor
+典范丛	Canonical Bundle
+算术亏格	Arithmetic Genus
+几何亏格	Geometric Genus
+奇点消解	Resolution of Singularities
+平坦态射	Flat Morphism
+平展态射	Étale Morphism
+平展上同调	Étale Cohomology
+真态射	Proper Morphism
+分离态射	Separated Morphism
+有限态射	Finite Morphism
+闭浸入	Closed Immersion
+开浸入	Open Immersion
+一般点	Generic Point
+闭点	Closed Point
+余维数	Codimension
+相交理论	Intersection Theory
+周环	Chow Ring
+贝祖定理	Bézout's Theorem
+超椭圆曲线	Hyperelliptic Curve
+阿贝尔簇	Abelian Variety
+雅可比簇	Jacobian Variety
+模空间	Moduli Space
+希尔伯特概形	Hilbert Scheme
+格拉斯曼流形	Grassmannian
+环面簇	Toric Variety
+霍奇结构	Hodge Structure
+韦伊猜想	Weil Conjectures
+算术几何	Arithmetic Geometry
+光滑态射	Smooth Morphism
+不分歧	Unramified
+泛点	Generic Point
+# 实分析与测度论：中文候选到英文术语
+上极限	Limit Superior
+下极限	Limit Inferior
+柯西列	Cauchy Sequence
+一致连续	Uniform Continuity
+一致收敛	Uniform Convergence
+逐点收敛	Pointwise Convergence
+绝对收敛	Absolute Convergence
+条件收敛	Conditional Convergence
+依测度收敛	Convergence in Measure
+几乎处处	Almost Everywhere
+几乎处处收敛	Almost Everywhere Convergence
+内闭一致收敛	Locally Uniform Convergence
+等度连续	Equicontinuity
+利普希茨连续	Lipschitz Continuity
+利普希茨条件	Lipschitz Condition
+赫尔德连续	Hölder Continuity
+有界变差	Bounded Variation
+有界变差函数	Function of Bounded Variation
+全变差	Total Variation
+单调收敛定理	Monotone Convergence Theorem
+控制收敛定理	Dominated Convergence Theorem
+法图引理	Fatou's Lemma
+富比尼定理	Fubini's Theorem
+托内利定理	Tonelli's Theorem
+测度空间	Measure Space
+可测空间	Measurable Space
+可测函数	Measurable Function
+可测集	Measurable Set
+外测度	Outer Measure
+黎曼和	Riemann Sum
+达布和	Darboux Sum
+斯蒂尔切斯积分	Stieltjes Integral
+博雷尔集	Borel Set
+博雷尔测度	Borel Measure
+拉东测度	Radon Measure
+哈尔测度	Haar Measure
+零测集	Null Set
+简单函数	Simple Function
+符号测度	Signed Measure
+复测度	Complex Measure
+乘积测度	Product Measure
+西格玛代数	Sigma-algebra
+单调类定理	Monotone Class Theorem
+奇异测度	Singular Measure
+勒贝格分解	Lebesgue Decomposition
+勒贝格微分定理	Lebesgue Differentiation Theorem
+极大函数	Maximal Function
+磨光算子	Mollifier
+磨光子	Mollifier
+紧支集	Compact Support
+支集	Support
+检验函数	Test Function
+试验函数	Test Function
+广义函数	Generalized Function
+缓增分布	Tempered Distribution
+施瓦茨空间	Schwartz Space
+索伯列夫空间	Sobolev Space
+索伯列夫嵌入定理	Sobolev Embedding Theorem
+弱导数	Weak Derivative
+迹定理	Trace Theorem
+赫尔德不等式	Hölder's Inequality
+詹森不等式	Jensen's Inequality
+杨氏不等式	Young's Inequality
+插值定理	Interpolation Theorem
+傅里叶系数	Fourier Coefficient
+帕塞瓦尔恒等式	Parseval's Identity
+普朗歇尔定理	Plancherel Theorem
+狄利克雷核	Dirichlet Kernel
+费耶尔核	Fejér Kernel
+吉布斯现象	Gibbs Phenomenon
+梅林变换	Mellin Transform
+希尔伯特变换	Hilbert Transform
+隐函数定理	Implicit Function Theorem
+反函数定理	Inverse Function Theorem
+收敛半径	Radius of Convergence
+收敛域	Region of Convergence
+伽马函数	Gamma Function
+贝塔函数	Beta Function
+黎曼泽塔函数	Riemann Zeta Function
+贝塞尔函数	Bessel Function
+勒让德多项式	Legendre Polynomial
+埃尔米特多项式	Hermite Polynomial
+切比雪夫多项式	Chebyshev Polynomial
+超几何函数	Hypergeometric Function
+渐近展开	Asymptotic Expansion
+渐近分析	Asymptotic Analysis
+鞍点法	Saddle Point Method
+凸函数	Convex Function
+凸集	Convex Set
+凸分析	Convex Analysis
+凸包	Convex Hull
+次梯度	Subgradient
+次微分	Subdifferential
+勒让德变换	Legendre Transform
+共轭函数	Conjugate Function
+黎曼重排定理	Riemann Rearrangement Theorem
+致密性定理	Bolzano-Weierstrass Theorem
+有限覆盖定理	Heine-Borel Theorem
+闭区间套定理	Nested Interval Theorem
+确界原理	Least-upper-bound Principle
+单调有界定理	Monotone Convergence Theorem for Sequences
+魏尔斯特拉斯判别法	Weierstrass M-test
+阿贝尔判别法	Abel's Test
+狄利克雷判别法	Dirichlet's Test
+比值判别法	Ratio Test
+根值判别法	Root Test
+积分判别法	Integral Test
+莱布尼茨判别法	Leibniz Test
+阿贝尔求和	Abel Summation
+切萨罗求和	Cesàro Summation
+含参变量积分	Integral Depending on a Parameter
+反常积分	Improper Integral
+散度定理	Divergence Theorem
+雅可比行列式	Jacobian Determinant
+拉格朗日乘子	Lagrange Multiplier
+海森矩阵	Hessian Matrix
+黑塞矩阵	Hessian Matrix
+# 复分析：中文候选到英文术语
+全纯函数	Holomorphic Function
+亚纯函数	Meromorphic Function
+整函数	Entire Function
+柯西积分公式	Cauchy Integral Formula
+柯西积分定理	Cauchy Integral Theorem
+洛朗级数	Laurent Series
+洛朗展开	Laurent Expansion
+孤立奇点	Isolated Singularity
+可去奇点	Removable Singularity
+本性奇点	Essential Singularity
+辐角原理	Argument Principle
+儒歇定理	Rouché's Theorem
+刘维尔定理	Liouville's Theorem
+最大模原理	Maximum Modulus Principle
+开映射定理	Open Mapping Theorem
+施瓦茨引理	Schwarz Lemma
+黎曼映射定理	Riemann Mapping Theorem
+共形映射	Conformal Map
+保角映射	Conformal Mapping
+莫比乌斯变换	Möbius Transformation
+分式线性变换	Linear Fractional Transformation
+黎曼球面	Riemann Sphere
+扩充复平面	Extended Complex Plane
+单值化定理	Uniformization Theorem
+分支点	Branch Point
+围道积分	Contour Integral
+调和函数	Harmonic Function
+次调和函数	Subharmonic Function
+多复变	Several Complex Variables
+多复变函数	Functions of Several Complex Variables
+模函数	Modular Function
+模群	Modular Group
+上半平面	Upper Half-plane
+双曲几何	Hyperbolic Geometry
+# 泛函分析与算子理论：中文候选到英文术语
+赋范空间	Normed Space
+赋范线性空间	Normed Linear Space
+巴拿赫空间	Banach Space
+希尔伯特空间	Hilbert Space
+拓扑向量空间	Topological Vector Space
+局部凸空间	Locally Convex Space
+弗雷歇空间	Fréchet Space
+正交基	Orthogonal Basis
+标准正交基	Orthonormal Basis
+规范正交基	Orthonormal Basis
+有界线性算子	Bounded Linear Operator
+有界算子	Bounded Operator
+无界算子	Unbounded Operator
+紧算子	Compact Operator
+自伴算子	Self-adjoint Operator
+正规算子	Normal Operator
+酉算子	Unitary Operator
+投影算子	Projection Operator
+迹类算子	Trace Class Operator
+弗雷德霍姆算子	Fredholm Operator
+弗雷德霍姆指标	Fredholm Index
+伴随算子	Adjoint Operator
+闭算子	Closed Operator
+稠定算子	Densely Defined Operator
+谱定理	Spectral Theorem
+谱理论	Spectral Theory
+点谱	Point Spectrum
+连续谱	Continuous Spectrum
+剩余谱	Residual Spectrum
+预解式	Resolvent
+预解集	Resolvent Set
+算子代数	Operator Algebra
+巴拿赫代数	Banach Algebra
+弱拓扑	Weak Topology
+弱星拓扑	Weak-star Topology
+弱收敛	Weak Convergence
+强收敛	Strong Convergence
+自反空间	Reflexive Space
+一致凸空间	Uniformly Convex Space
+一致有界原理	Uniform Boundedness Principle
+共鸣定理	Banach-Steinhaus Theorem
+巴拿赫不动点定理	Banach Fixed-point Theorem
+压缩映射	Contraction Mapping
+压缩映射原理	Contraction Mapping Principle
+绍德尔不动点定理	Schauder Fixed-point Theorem
+里斯表示定理	Riesz Representation Theorem
+算子半群	Operator Semigroup
+强连续半群	Strongly Continuous Semigroup
+变分不等式	Variational Inequality
+# 微分方程与动力系统：中文候选到英文术语
+柯西问题	Cauchy Problem
+狄利克雷问题	Dirichlet Problem
+诺伊曼问题	Neumann Problem
+狄利克雷边界条件	Dirichlet Boundary Condition
+诺伊曼边界条件	Neumann Boundary Condition
+罗宾边界条件	Robin Boundary Condition
+存在唯一性定理	Existence and Uniqueness Theorem
+皮卡迭代	Picard Iteration
+朗斯基行列式	Wronskian
+基本解	Fundamental Solution
+基本解组	Fundamental System of Solutions
+格林函数	Green's Function
+特征线	Characteristic Curve
+特征线法	Method of Characteristics
+分离变量法	Separation of Variables
+椭圆型方程	Elliptic Equation
+抛物型方程	Parabolic Equation
+双曲型方程	Hyperbolic Equation
+泊松方程	Poisson's Equation
+热方程	Heat Equation
+波动方程	Wave Equation
+输运方程	Transport Equation
+最大值原理	Maximum Principle
+能量估计	Energy Estimate
+先验估计	A Priori Estimate
+椭圆正则性	Elliptic Regularity
+本征值问题	Eigenvalue Problem
+特征值问题	Eigenvalue Problem
+李雅普诺夫稳定性	Lyapunov Stability
+李雅普诺夫函数	Lyapunov Function
+李雅普诺夫指数	Lyapunov Exponent
+渐近稳定	Asymptotic Stability
+极限环	Limit Cycle
+奇怪吸引子	Strange Attractor
+遍历理论	Ergodic Theory
+遍历性	Ergodicity
+遍历定理	Ergodic Theorem
+庞加莱映射	Poincaré Map
+中心流形	Center Manifold
+稳定流形	Stable Manifold
+不稳定流形	Unstable Manifold
+哈密顿系统	Hamiltonian System
+可积系统	Integrable System
+格朗沃尔不等式	Grönwall's Inequality
+全微分方程	Exact Differential Equation
+伯努利方程	Bernoulli Equation
+里卡蒂方程	Riccati Equation
+达朗贝尔公式	d'Alembert's Formula
+庞加莱不等式	Poincaré Inequality
+# 数论：中文候选到英文术语
+剩余类	Residue Class
+完全剩余系	Complete Residue System
+简化剩余系	Reduced Residue System
+既约剩余系	Reduced Residue System
+欧拉函数	Euler's Totient Function
+欧拉定理	Euler's Theorem
+威尔逊定理	Wilson's Theorem
+二次非剩余	Quadratic Nonresidue
+二次互反律	Quadratic Reciprocity
+勒让德符号	Legendre Symbol
+雅可比符号	Jacobi Symbol
+完全积性函数	Completely Multiplicative Function
+数论函数	Arithmetic Function
+狄利克雷卷积	Dirichlet Convolution
+狄利克雷级数	Dirichlet Series
+狄利克雷特征	Dirichlet Character
+狄利克雷定理	Dirichlet's Theorem
+素数定理	Prime Number Theorem
+素数计数函数	Prime-counting Function
+广义黎曼猜想	Generalized Riemann Hypothesis
+孪生素数猜想	Twin Prime Conjecture
+丢番图逼近	Diophantine Approximation
+二次域	Quadratic Field
+虚二次域	Imaginary Quadratic Field
+实二次域	Real Quadratic Field
+整数环	Ring of Integers
+理想类群	Ideal Class Group
+类数	Class Number
+类域论	Class Field Theory
+单位群	Unit Group
+狄利克雷单位定理	Dirichlet's Unit Theorem
+局部域	Local Field
+整体域	Global Field
+阿代尔环	Adele Ring
+伊代尔群	Idele Group
+戴德金泽塔函数	Dedekind Zeta Function
+莫德尔定理	Mordell's Theorem
+高斯和	Gauss Sum
+埃拉托斯特尼筛法	Sieve of Eratosthenes
+圆法	Circle Method
+华林问题	Waring's Problem
+闵可夫斯基定理	Minkowski's Theorem
+惯性群	Inertia Group
+分解群	Decomposition Group
+弗罗贝尼乌斯元	Frobenius Element
+阿廷互反律	Artin Reciprocity
+希尔伯特类域	Hilbert Class Field
+# 概率论与随机过程：中文候选到英文术语
+概率空间	Probability Space
+随机向量	Random Vector
+概率质量函数	Probability Mass Function
+联合分布	Joint Distribution
+边缘分布	Marginal Distribution
+条件分布	Conditional Distribution
+条件期望	Conditional Expectation
+矩母函数	Moment-generating Function
+大数定律	Law of Large Numbers
+强大数定律	Strong Law of Large Numbers
+弱大数定律	Weak Law of Large Numbers
+依概率收敛	Convergence in Probability
+依分布收敛	Convergence in Distribution
+几乎必然收敛	Almost Sure Convergence
+几乎必然	Almost Surely
+切比雪夫不等式	Chebyshev's Inequality
+马尔可夫不等式	Markov's Inequality
+马尔可夫链	Markov Chain
+马尔可夫过程	Markov Process
+转移矩阵	Transition Matrix
+平稳分布	Stationary Distribution
+维纳过程	Wiener Process
+上鞅	Supermartingale
+下鞅	Submartingale
+鞅论	Martingale Theory
+停时	Stopping Time
+可选停时定理	Optional Stopping Theorem
+伊藤积分	Itô Integral
+伊藤公式	Itô's Formula
+随机积分	Stochastic Integral
+随机微分方程	Stochastic Differential Equation
+扩散过程	Diffusion Process
+列维过程	Lévy Process
+大偏差原理	Large Deviation Principle
+负二项分布	Negative Binomial Distribution
+伽马分布	Gamma Distribution
+贝塔分布	Beta Distribution
+卡方分布	Chi-squared Distribution
+柯西分布	Cauchy Distribution
+多元正态分布	Multivariate Normal Distribution
+随机游走	Random Walk
+吉尔萨诺夫定理	Girsanov Theorem
+鞅收敛定理	Martingale Convergence Theorem
+一致可积	Uniformly Integrable
+柯尔莫哥洛夫零一律	Kolmogorov's Zero-one Law
+尾事件	Tail Event
+平稳过程	Stationary Process
+布朗桥	Brownian Bridge
+二次变差	Quadratic Variation
+局部鞅	Local Martingale
+半鞅	Semimartingale
+可料过程	Predictable Process
+# 组合数学与图论：中文候选到英文术语
+指数生成函数	Exponential Generating Function
+贝尔数	Bell Number
+整数分拆	Integer Partition
+拉姆齐理论	Ramsey Theory
+拉姆齐数	Ramsey Number
+拉丁方	Latin Square
+多重图	Multigraph
+二部图	Bipartite Graph
+导出子图	Induced Subgraph
+完美匹配	Perfect Matching
+霍尔定理	Hall's Marriage Theorem
+图着色	Graph Coloring
+色数	Chromatic Number
+拉普拉斯矩阵	Laplacian Matrix
+最大流最小割定理	Max-flow Min-cut Theorem
+独立集	Independent Set
+支配集	Dominating Set
+树宽	Treewidth
+图子式	Graph Minor
+随机图	Random Graph
+拟阵	Matroid
+极值组合	Extremal Combinatorics
+概率方法	Probabilistic Method
+加性组合	Additive Combinatorics
+# 几何：中文候选到英文术语
+欧氏几何	Euclidean Geometry
+仿射几何	Affine Geometry
+交比	Cross-ratio
+柏拉图立体	Platonic Solid
+离散几何	Discrete Geometry
+积分几何	Integral Geometry
+分形维数	Fractal Dimension
+豪斯多夫维数	Hausdorff Dimension
+豪斯多夫测度	Hausdorff Measure
+# 数值与优化：中文候选到英文术语
+有限元方法	Finite Element Method
+有限差分法	Finite Difference Method
+谱方法	Spectral Method
+对偶问题	Dual Problem
+拉格朗日对偶	Lagrangian Duality
+# 英文候选到中文释义
+monoid	幺半群
+semigroup	半群
+groupoid	群胚
+quasigroup	拟群
+functorial	函子性的
+morphism	态射
+endomorphism	自同态
+automorphism	自同构
+epimorphism	满态射
+monomorphism	单态射
+homomorphism	同态
+homeomorphism	同胚
+homeomorphic	同胚的
+diffeomorphism	微分同胚
+diffeomorphic	微分同胚的
+quasi-isomorphism	拟同构
+quasi-coherent	拟凝聚的
+colimit	余极限
+coproduct	余积
+pushout	推出
+pushforward	推前
+coequalizer	余等化子
+presheaf	预层
+sheafification	层化
+topos	拓扑斯
+comonad	余单子
+adjunction	伴随
+bimodule	双模
+nilradical	诣零根
+nilpotent	幂零的
+unipotent	幂幺的
+semisimple	半单的
+Noetherian	诺特的
+Artinian	阿廷的
+abelian	阿贝尔的
+cokernel	余核
+coimage	余像
+codomain	陪域
+preimage	原像
+codimension	余维数
+injective	单射的
+surjective	满射的
+bijective	双射的
+bijection	双射
+surjection	满射
+homotopy	同伦
+homotopic	同伦的
+cohomology	上同调
+fibration	纤维化
+cofibration	上纤维化
+cobordism	配边
+simplicial	单纯的
+submanifold	子流形
+orientable	可定向的
+holonomy	和乐
+Riemannian	黎曼的
+Kähler	凯勒
+Čech	切赫
+Künneth	屈内特
+Poincaré	庞加莱
+Möbius	莫比乌斯
+Zariski	扎里斯基
+Grothendieck	格罗滕迪克
+Yoneda	米田
+holomorphic	全纯的
+meromorphic	亚纯的
+biholomorphic	双全纯的
+equicontinuous	等度连续的
+Lipschitz	利普希茨
+Hölder	赫尔德
+Sobolev	索伯列夫
+Fréchet	弗雷歇
+Fejér	费耶尔
+Cesàro	切萨罗
+supremum	上确界
+infimum	下确界
+limsup	上极限
+liminf	下极限
+mollifier	磨光子
+Gödel	哥德尔
+Löwenheim	勒文海姆
+submartingale	下鞅
+supermartingale	上鞅
+ergodic	遍历的
+Itô	伊藤
+Lévy	列维
+Erdős	埃尔德什
+Bézout	贝祖
+totient	欧拉函数
+Gröbner	格罗布纳
+Schrödinger	薛定谔
+étale	平展
+Nullstellensatz	零点定理
+Sylow	西罗
+Noether	诺特
+Jacobian	雅可比行列式
+Wronskian	朗斯基行列式
+Lyapunov	李雅普诺夫
+Chern	陈省身
+Weyl	外尔
+Cartan	嘉当
+Dynkin	邓金
+Borel	博雷尔
+Fubini	富比尼
+Fatou	法图
+Urysohn	乌雷松
+Tychonoff	吉洪诺夫
+Baire	贝尔
+Lindelöf	林德勒夫
