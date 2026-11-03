@@ -14,6 +14,7 @@
 ## 自定义词条
 
 - `custom/words.txt`、`custom/translations.txt`、`custom/english.txt`、`custom/cantonese.txt` **只追加**：新行写在文件末尾，不修改、删除或重排已有的行。check-words 会拒绝任何非追加的改动；`custom/cantonese.txt` 要等 `check-words.yml` 把它加进触发路径和参数（需要 msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 合入后的 `MSIME_COMMIT`）才有这道检查，在那之前由审核者人工核对。
+- `custom/cantonese-variant-vetoes.txt` 是例外：它是粤拼词库香港字形替换的人工否决表（每行一个不换的 OpenCC 字形），由维护者审定，不接受投稿，也不受只追加限制，撤销否决就删掉那一行。msime 构建器要求每个字都是 `sources/opencc/TWVariants.txt` 或 `HKVariants.txt` 里某一行的键，否则构建失败。
 - `custom/words.txt` 的格式是 `词<TAB>全拼<TAB>权重`，全拼音节用 `'` 分隔；另外两个文件的格式见 `README.md`。词语和英文的权重落在所在文件现有的范围内；不要为了让一个词靠前填一个极大值。
 - 候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。
 
@@ -61,7 +62,7 @@ python3 scripts/validate_packs.py
 
 ## OpenCC 转换数据
 
-`sources/opencc/` 的九份文本与 `LICENSE` 保留上游名字和字节，由 `upstream.lock.json` 校验。来源与派生表的生成方式见 `NOTICE.md`。转换算法、下载与生成工具留在 msime；本仓不放 Rust crate 或生成的数据库。跨仓 PR 互链，先合本仓，再把 msime 的 OpenCC 锁指向合并后的固定提交，不能让下游默认分支引用未合并的 PR 提交。
+`sources/opencc/` 的十份文本与 `LICENSE` 保留上游名字和字节，由 `upstream.lock.json` 校验。来源与派生表的生成方式见 `NOTICE.md`。转换算法、下载与生成工具留在 msime；本仓不放 Rust crate 或生成的数据库。跨仓 PR 互链，先合本仓，再把 msime 的 OpenCC 锁指向合并后的固定提交，不能让下游默认分支引用未合并的 PR 提交。
 
 ## 符号名称表
 

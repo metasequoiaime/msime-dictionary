@@ -54,7 +54,7 @@ sources/                                  msime 构建器经 --dictionary 读取
     LICENSE                               Mozc 仓库根目录的许可证（Google BSD 与词典条款）-> msime-mozc_LICENSE.txt
   cn-en/                                  中译英候选窗释义
     machine-translations.txt              拼音与五笔词条的英文释义（汇总已有翻译与大模型生成）-> msime-english.db（构建器尚未读取）
-  opencc/                                 OpenCC 九份简繁转换表与 LICENSE，构建时内嵌，不是 Release 附件
+  opencc/                                 OpenCC 十份转换表与 LICENSE，构建时内嵌，不是 Release 附件；其中 HKVariants.txt 不内嵌，只由粤拼词库读取 -> msime-cantonese.db
   symbols/                                符号源数据
     piliapp-symbols.txt                   表情面板符号页的分类与符号（采集自 PiliApp，许可未确认）-> msime-others.db
     symbol-names.tsv                      打拼音出符号的符号名称表（本项目自写）-> msime 引擎内嵌（不是 Release 附件）
@@ -71,6 +71,7 @@ custom/                                   人工维护的数据，唯一接受�
   translations.txt                        候选窗翻译 -> msime-english.db
   english.txt                             英文词条 -> msime-english.db
   cantonese.txt                           人工审校的粤语词（CC BY 4.0）-> msime-cantonese.db
+  cantonese-variant-vetoes.txt            粤拼词库不换成香港字形的 OpenCC 字形（维护者审定，不接受投稿，不受只追加限制）-> msime-cantonese.db
   names.txt                               人名（没有任何构建或网站读取）
 packs/                                    用户按需导入的专业词库，不进入构建
   README.md                               专业词库的说明与验收清单
@@ -131,13 +132,15 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/cantonese/` 下 4 个文件 | languages；`hkcancor-word-counts.txt` 只作排序权重 | `msime-cantonese.db` | 进入 |
 | `sources/zhuyin/` 下 4 个文件 | languages；`phrase.occ` 只作排序权重 | `msime-zhuyin.db` | 进入 |
 | `sources/stroke/stroke.dict.yaml` | languages | `msime-stroke.db` | 进入 |
+| `sources/opencc/TWVariants.txt`、`sources/opencc/HKVariants.txt` | languages：只列出候选异体对，由 HKCanCor 词频决定是否把 rime-cantonese 的 OpenCC 字形换成香港字形（msime #10451 起读 `TWVariants.txt`，#10697 起两张表都读）；表的内容不写进词库 | `msime-cantonese.db` | 进入（只影响字形） |
+| `custom/cantonese-variant-vetoes.txt` | languages（msime #10697 起读取）：每行一个 OpenCC 字形，必须是上面两张表里某一行的键，列出的字一律不换；写了表里没有的字时构建失败 | `msime-cantonese.db` | 进入（只影响字形） |
 | `custom/cantonese.txt` | languages（msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 起读取）：每个字的读音必须是 `sources/cantonese/jyut6ping3.chars.dict.yaml` 给它的读音之一，否则构建失败；权重取 `essay-cantonese.txt` 的分数，essay 没列时取补词门槛 1000；没有的词插入，已有且权重更低的调高，更高的不变 | `msime-cantonese.db` | msime 构建器读取后进入 |
 | `sources/japanese/dictionary00.txt` … `dictionary09.txt`、`id.def`、`connection_single_column.txt` | 主命令 JapaneseModel | `msime-japanese.dat` | 进入 |
 | `sources/japanese/dictionary_filter.tsv` | 主命令 JapaneseModel，按 Mozc `gen_filtered_dictionary.py` 删去基础词库中完全匹配的行 | `msime-japanese.dat` | 进入 |
 | `sources/japanese/aux_dictionary.tsv`、`places.tsv`、`words.tsv` | 主命令 JapaneseModel，按 Mozc `gen_aux_dictionary.py --strict` 生成补充词条：aux 行复制基准词条的上下文 ID 与代价再加偏移，词表行按词性取同词性词条代价的中位数，基础词库已有的跳过 | `msime-japanese.dat` | 进入 |
 | `sources/japanese/README.txt` | 主命令 JapaneseModel，原样复制 | `msime-mozc_dictionary_oss_README.txt` | 进入 |
 | `sources/japanese/LICENSE` | 主命令 JapaneseModel，原样复制 | `msime-mozc_LICENSE.txt` | 进入 |
-| `sources/opencc/*.txt`、`sources/opencc/LICENSE` | msime 的 OpenCC 构建输入（固定提交、大小与 SHA-256） | 客户端内嵌简繁转换表；许可证随应用分发 | 不是 Release 附件 |
+| `sources/opencc/*.txt`、`sources/opencc/LICENSE` | msime 的 OpenCC 构建输入（固定提交、大小与 SHA-256）；`HKVariants.txt` 除外，它不在 msime 的 `resources/opencc.lock.json` 里，只由 languages 读取（见上） | 客户端内嵌简繁转换表；许可证随应用分发 | 不是 Release 附件 |
 | `sources/korean/hanja.txt` | `msime-dict-build hanja`，发布 workflow 不运行 | msime 源码里的 `crates/engine/src/korean/hanja.tsv`，由引擎用 `include_str!` 内嵌 | 不是 Release 附件 |
 | `sources/symbols/wanxiang_symbols.yaml`、`sources/symbols/codex_sym.txt` | 尚无：目前只有 MSIME-Windows 的本地构建器 `scripts/build-dictionary.py` 读取，剔除 `wanxiang-unrenderable.txt` 列出的符号后生成表情面板的 `symbol_catalog` 与 S 模式、符号混输的 `symbol_code` | `others.db` | 万象两份不进入 Release 附件：`msime-others.db` 的符号页用下面的 `piliapp-symbols.txt`；msime 的 `scripts/build_symbol_groups.py` 另按 `resources/symbol-groups.lock.json` 固定本仓提交读 `wanxiang_symbols.yaml`，生成引擎内嵌的符号模式分组表 |
 | `sources/symbols/wanxiang-unrenderable.txt` | 同上，构建时整份剔除 | — | 不进入任何产物 |
@@ -304,6 +307,7 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `custom/translations.txt` | UTF-8 | LF | `#` 注释行，开头和各分组前都有 | `源词<TAB>译文` | 有 |
 | `custom/english.txt` | UTF-8 | LF | 无 | `编码<TAB>显示词<TAB>权重` | 无 |
 | `custom/cantonese.txt` | UTF-8 | LF | 1 行 `#` 注释（格式与规则） | `词<TAB>带声调粤拼` | 有 |
+| `custom/cantonese-variant-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每个字为什么否决） | 一个字 | 有 |
 | `custom/names.txt` | UTF-8 | LF | 无 | 一个人名 | 无 |
 
 ## 许可
