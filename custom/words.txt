@@ -641,3 +641,4 @@
 交换区	jiao'huan'qu	100
 白赤练	bai'chi'lian	100
 疗肺草	liao'fei'cao	100
+疫霉菌	yi'mei'jun	100
