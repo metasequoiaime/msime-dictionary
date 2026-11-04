@@ -19,7 +19,8 @@ sources/                                  msime 构建器经 --dictionary 读取
     single-chars.txt                      单字读音与字频，与万象共有的读音字频取自万象 -> msime-pinyin.db；msime-stroke.db 的权重
     wanxiang/                             万象词库（amzxyz/rime-wanxiang）dicts/ 下 15 份原样文件，CC BY 4.0，作者 amzxyz
   wubi/                                   五笔词库 -> msime-wubi.db
-    wubi86-jidian.txt                     86 版五笔（rime-wubi86-jidian，另补了 rime-wubi 的词条）-> wubi86 表
+    wubi86-jidian.txt                     86 版五笔（rime-wubi86-jidian 的数据区，有 6 处本仓改动，见 NOTICE.md）-> wubi86 表
+    wubi86-rime-wubi.txt                  rime-wubi 里极点表没有的 86 行（#36 补进来，后来从 wubi86-jidian.txt 拆出），构建时权重一律按 10 -> wubi86 表
     wubi86-supplement.txt                 86 表没有、98 表或拼音输入里有的多字词组，编码按 86 词组规则推出（本项目生成的补充表）-> wubi86 表
     wubi98-supplement.txt                 98 表没有、86 表或拼音输入里有的多字词组，编码按词组规则由 98 单字码推出（本项目生成的补充表）-> wubi98 表
     wubi98.txt                            98 版五笔主表（98wubi-tables 的 98五笔含词表-【单义】.txt 原样改名，UTF-16LE）-> wubi98 表
@@ -120,6 +121,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt` | 只在 `--include-unlicensed` 的完整构建中读取 | — | 被 `licensing.rs` 排除：合并自 CustomPinyinDictionary，该快照没有声明许可；发布构建改用 `sources/pinyin/rime-ice.txt` |
 | `sources/unlicensed/single-char-whitelist.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：来源没有记录 |
 | `sources/wubi/wubi86-jidian.txt` | 主命令 Wubi | `msime-wubi.db` 的 `wubi86` 表 | 进入 |
+| `sources/wubi/wubi86-rime-wubi.txt` | 主命令 Wubi，接在 `wubi86-jidian.txt` 之后，每行权重按 10 写入（同码排在极点行之后、补充词之前）；这个文件在不在决定构建器按拆分后的布局还是按旧的合并文件读 86 原表 | `msime-wubi.db` 的 `wubi86` 表 | 进入（扩展区字不写入） |
 | `sources/wubi/wubi86-supplement.txt` | 供复现与审计的源快照；Wubi 从本次提交的相同输入重新派生补充数据，排在原表之后 | `msime-wubi.db` 的 `wubi86` 表 | 使用实时派生数据 |
 | `sources/wubi/wubi98-supplement.txt` | 供复现与审计的源快照；Wubi98 从本次提交的相同输入重新派生补充数据，排在两张原表之后 | `msime-wubi.db` 的 `wubi98` 表 | 使用实时派生数据 |
 | `sources/wubi/wubi98.txt`、`sources/wubi/wubi98-fcitx.txt` | 主命令 Wubi98：以主表为准，补充表中重复的（编码、词语）去掉 | `msime-wubi.db` 的 `wubi98` 表 | 进入 |
@@ -287,7 +289,8 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `sources/unlicensed/custom-pinyin-dictionary-part2.txt` | UTF-8 | CRLF | 无 | `词<TAB>全拼<TAB>权重`，权重都是 1；与 part1 是因 GitHub 单文件大小限制拆开的同一份词库 | 有 |
 | `sources/pinyin/single-chars.txt` | UTF-8 | CRLF | 1 行 `#` 注释 | `字<TAB>全拼<TAB>权重` | 有 |
 | `sources/unlicensed/single-char-whitelist.txt` | UTF-8 | LF | 无 | 一个字 | 有 |
-| `sources/wubi/wubi86-jidian.txt` | UTF-8 | 混合：第 1–89271 行 LF，第 89272 行起 CRLF | 无 | `词<TAB>五笔编码<TAB>权重`；第 3835、51162、73916、78885 行多一个第 4 列 | 有 |
+| `sources/wubi/wubi86-jidian.txt` | UTF-8 | 混合：第 1–89271 行 LF，最后一行（第 89272 行）CRLF | 无 | `词<TAB>五笔编码<TAB>权重`；第 3835、51162、73916、78885 行多一个第 4 列 | 有 |
+| `sources/wubi/wubi86-rime-wubi.txt` | UTF-8 | CRLF | 无 | `词<TAB>五笔编码<TAB>权重`，按 rime-wubi 的文件顺序 | 有 |
 | `sources/wubi/wubi86-supplement.txt` | UTF-8 | LF | 6 行 `#` 注释（生成器、输入及其 SHA-256、上游仓库与提交、收录规则、编码规则、对照集合与权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内按权重从高到低 | 有 |
 | `sources/wubi/wubi98-supplement.txt` | UTF-8 | LF | 6 行 `#` 注释（生成器、输入及其 SHA-256、上游仓库与提交、收录规则、编码规则、对照集合与权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内按权重从高到低 | 有 |
 | `sources/wubi/wubi98.txt` | UTF-16LE，带 BOM | CRLF | 无 | `词<TAB>五笔编码`，没有权重，同一编码内按行序排列 | 有（UTF-16LE 的 CRLF） |
