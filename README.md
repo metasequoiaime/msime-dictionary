@@ -102,7 +102,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 发布构建每次在产物目录中重新派生三份五笔词组数据，新增人工词条不必另等一次手动重建。`sources/wubi/` 下的三份补充表（`wubi86-supplement.txt`、`wubi98-supplement.txt`、`wubixsj-supplement.txt`）保留为可复现的源快照；构建使用本次提交的原表、拼音与人工词条生成，不依赖快照是否已跟上。`wubixsj-supplement.txt` 另外是新世纪表的发布开关：msime 构建器不读它的内容，只看它在不在，在就构建并发布 `wubixsj` 表，不在（收入它之前的提交）就不建这张表、`msime-wubi.db` 只有 86 和 98。所以合入收入它的那次改动就会发布第一个带新世纪表的 `dict-v`，不要删掉它。生成器、数据库和中间产物仍留在 msime，不能提交到本仓。
 
-`Preview upstream dictionary updates` 每周检查 rime-ice，并生成中英文补充表的审核候选、增删数量、权重变化数量、输入摘要、上游提交与许可证；也可手动指定 `msime_ref` 和 `upstream_ref` 试跑。它只上传 workflow artifact，不自动合并或发布。生成器是 msime 的 `msime-dict-build rime-ice-supplement --upstream <干净的上游检出> --dictionary <本仓检出> --out <候选目录>`；中文对照主拼音表、单字表、区划表和人工词条按同词同音去重，英文对照基础英文表、SCOWL 和人工英文词按小写词形去重。没有注音的 `tencent.dict.yaml` 不自动猜音导入；引擎不支持的读音单列到 `unsupported-readings.txt`，未注音行单列到 `unannotated-words.txt`，报告列出两类数量。历史补充表的权重另经万象对齐，上游候选的词频变化也须审核。审核后仍按下文跨仓顺序更新引用、许可证、数据与锁，并试跑完整构建。
+`Preview upstream dictionary updates` 每周检查 rime-ice，并生成中英文补充表的审核候选、增删数量、权重变化数量、输入摘要、上游提交与许可证；也可手动指定 `msime_ref` 和 `upstream_ref` 试跑。它只上传 workflow artifact，不自动合并或发布。生成器是 msime 的 `msime-dict-build rime-ice-supplement --upstream <干净的上游检出> --dictionary <本仓检出> --out <候选目录>`；中文对照主拼音表、单字表、区划表和人工词条按同词同音去重，英文对照基础英文表、SCOWL 和人工英文词按小写词形去重（用构建的解析器取词，基础英文表里被 rime-ice 注释掉的条目也算，不把它们加回来）。没有注音的 `tencent.dict.yaml` 不自动猜音导入；引擎不支持的读音单列到 `unsupported-readings.txt`，未注音行单列到 `unannotated-words.txt`，报告列出两类数量。历史补充表的权重另经万象对齐，上游候选的词频变化也须审核。审核后仍按下文跨仓顺序更新引用、许可证、数据与锁，并试跑完整构建。
 
 所有数据文件按字节保存：`upstream.lock.json` 按大小和 SHA-256 固定上游原样文件与派生文件，CI 由 `scripts/check_upstream.py` 检查，msime 构建器读取时再校验一遍，并要求记录的上游提交等于 msime 锁文件和许可证写明的提交；所以不要格式化、转换编码或换行符、排序或去重，仓库的 `.gitattributes`（`* -text`）关闭了换行转换。各文件的上游与许可见 [NOTICE.md](NOTICE.md)，逐文件的格式见[文件格式](#文件格式)。
 
@@ -295,7 +295,7 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `sources/wubi/wubixsj-byujiang.txt` | UTF-8 | LF | Rime 码表头：`#` 注释、`---` 与 `...` 之间的 YAML（`name: wubi06`、`columns`、`encoder`） | `词<TAB>五笔编码<TAB>权重`，单字与词组混排；构建只读单字行 | 有 |
 | `sources/wubi/wubixsj-supplement.txt` | UTF-8 | LF | 6 行 `#` 注释（生成器、输入及其 SHA-256、上游仓库与提交、收录规则、编码规则、权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内第一层（极点权重）在前、各层内按权重从高到低 | 有 |
 | `sources/english/rime-ice-en.txt` | UTF-8 | CRLF | 无；正文中有 1777 行被 `#` 注释掉的条目和 16 个空行 | `显示词 编码 [权重]`，空格分隔；显示词本身可含空格（如 `Dish Network DishNetwork`），51 行带权重 | 有 |
-| `sources/english/rime-ice-en-supplement.txt` | UTF-8 | LF | 3 行 `#` 注释（其中的 `BaseDictIceEn.txt` 是 `rime-ice-en.txt` 的旧名，见 `NOTICE.md`） | `显示词<TAB>编码` | 有 |
+| `sources/english/rime-ice-en-supplement.txt` | UTF-8 | LF | `#` 注释：生成器所在的 msime 提交与命令、上游提交、去重对照和各输入的 SHA-256 | `显示词<TAB>编码` | 有 |
 | `sources/english/scowl-words.txt` | UTF-8 | LF | 9 行 `#` 注释（生成器、上游发布与提交、SCOWL 版权与许可声明、收录规则、对照集合、排除规则、排序方式、行序） | 一个显示词，全由 ASCII 字母组成，至少 3 个字母；按小写形式排序，同一个词的全小写形式在前 | 有 |
 | `sources/english/google-word-counts.txt` | UTF-8 | LF | 无 | `词<TAB>次数` | 无 |
 | `sources/unlicensed/oaldpe-words.txt` | UTF-8 | LF | 无 | 一个小写词形 | 有 |
