@@ -1,7 +1,8 @@
-# msime 构建器 reweight 阶段的第二步（格式见 msime crates/dict-builder/README.md「Curation tables」）。这个文件不在时只做第一步：按 sources/pinyin/wanxiang/ 的万象 7ab73ee 复现 #84 的换算，产物不变。
-# unattested-cap：万象 15 份参与对照的词库都不收的多字词，权重不高于同一全拼键上万象收录的最高词（dict-cleanse 方案 2.1「碎片、虚词组合」，门的 > 闷的、或在 > 火灾）。
+# msime 构建器 reweight 阶段的第二步（格式见 msime crates/dict-builder/README.md「Curation tables」）。这个文件不在时只做第一步：按 sources/pinyin/wanxiang/ 的万象 7ab73ee 复现 #84 的换算，产物不变。回滚第二步就删掉这个文件再发一版。
+# 评测（dict-cleanse 方案 4.3，B = dict-v2.0.56，C = 本文件打开时的试跑产物，msime 决策笔记 .agents/notes/implemented/feature/2026-11-04-wanxiang-reweight-stage.md）：quanpin-words-v2 非同码桶 top-1 全拼 fixed 66 / broken 13，九键 23/4，14 键 21/11（挂模型），没有一臂 broken 多于 fixed；ctx-v1 sampled 选词全拼、声母、混打 top-1 都是 0 broken；粗俗首屏曝光与 B 相同；全拼表一行不少；只改 msime-pinyin.db 7019 行权重。
+# unattested-cap：万象 15 份参与对照的词库都不收的多字词，权重不高于同一全拼键上万象收录的最高词（dict-cleanse 方案 2.1「碎片、虚词组合」，门的 > 闷的、或在 > 火灾）。压下去 3651 行。
 unattested-cap	on
 # renming：万象 renming 是正则抽出、未经筛选的人名表，与其他 14 份词库同一「词＋全拼」的 267 行上（两边权重都大于 10），其他词库权重之和 ÷ renming 权重之和 = 0.408，与 #84 定文件系数的算法相同。
 renming	0.41
-# duoyin：万象 duoyin 是多字词的兼容读音，同一个词在其他词库里另一读音的权重与 duoyin 权重之比，3813 个词上中位数 2.1，取 1/2.1 约 0.5。
+# duoyin：万象 duoyin 是多字词的兼容读音，同一个词在其他词库里另一读音的权重与 duoyin 权重之比，3813 个词上中位数 2.1，取 1/2.1 约 0.5（取 0.25 时 命中、落下 这类正当读音会掉到同键第二）。renming、duoyin 两项共改 3370 行。
 duoyin	0.5
