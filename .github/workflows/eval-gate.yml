@@ -8,6 +8,8 @@ name: Dictionary eval gate
 #
 # 时间：全部 convert_eval 并行跑在 8 核 runner 上。quanpin-words-v2 默认全量；作业逼近 120 分钟上限时，把 QUANPIN_V2_LIMIT 设成等距子集的大小（B、C 用同一批用例，其余门槛仍然全量）。
 on:
+  push:
+    branches: [cleanse-data/eval-gate-ci]
   pull_request:
   merge_group:
   workflow_dispatch:
@@ -89,7 +91,7 @@ jobs:
         id: builder
         if: ${{ steps.scope.outputs.relevant == 'true' }}
         env:
-          OVERRIDE: ${{ inputs.msime_ref }}
+          OVERRIDE: ${{ inputs.msime_ref || 'cleanse/eval-gate-ci' }}
         run: |
           set -euo pipefail
           pin="$(jq -er '.msime_commit' dictionary/builder.lock.json)"
@@ -217,7 +219,7 @@ jobs:
           PINNED: ${{ steps.builder.outputs.pinned }}
           BASELINE_TAG: ${{ steps.baseline.outputs.tag }}
           LIMIT_INPUT: ${{ inputs.limit }}
-          ARMS_INPUT: ${{ inputs.arms }}
+          ARMS_INPUT: ${{ inputs.arms || 'model,engine' }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
