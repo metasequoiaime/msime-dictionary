@@ -1,7 +1,7 @@
 name: Release built dictionaries
 
 # 生成词库属于本仓库的发布边界：msime-dictionary 保存源数据，也发布由 msime 构建器生成的数据库。
-# 每次推送到 main 且改动了 sources/、custom/ 或 builder.lock.json，本 workflow 就用这次推送的提交构建并发布一个新的 dict-vX.Y.Z Release；手动运行用于重建或只构建不发布的试跑。
+# 每次推送到 main 且改动了 sources/、custom/、curation/ 或 builder.lock.json，本 workflow 就用这次推送的提交构建并发布一个新的 dict-vX.Y.Z Release；手动运行用于重建或只构建不发布的试跑。
 # 构建器固定为 builder.lock.json 的 msime_commit，不跟随 msime develop：升级构建器就是开一个只改这个提交的 PR 并附上试跑，合入后按新构建器发布一版。
 on:
   push:
@@ -9,6 +9,7 @@ on:
     paths:
       - "sources/**"
       - "custom/**"
+      - "curation/**"
       - "builder.lock.json"
   workflow_dispatch:
     inputs:
@@ -230,7 +231,7 @@ jobs:
           # shellcheck disable=SC2016
           {
             printf '## dict-v%s\n\n' "$VERSION"
-            printf -- '- 词库源数据：[`%s`](%s/commit/%s)（本仓 `sources/` 与 `custom/`，也是这个标签指向的提交）\n' "${SOURCE_SHA:0:7}" "$repo_url" "$SOURCE_SHA"
+            printf -- '- 词库源数据：[`%s`](%s/commit/%s)（本仓 `sources/`、`custom/` 与 `curation/`，也是这个标签指向的提交）\n' "${SOURCE_SHA:0:7}" "$repo_url" "$SOURCE_SHA"
             if [[ "$PINNED" == true ]]; then
               printf -- '- 构建器：`metasequoiaime/msime` 的提交 [`%s`](%s/commit/%s)，由本仓 `builder.lock.json` 固定\n' "${MSIME_COMMIT:0:9}" "$msime_url" "$MSIME_COMMIT"
             else
@@ -257,11 +258,11 @@ jobs:
               printf '没有更早的 `dict-v` 版本可比较。\n\n'
             else
               printf '比较基点：%s\n\n' "$base_desc"
-              changes="$(git -C dictionary log --no-merges --format="- [\`%h\`](${repo_url}/commit/%H) %s" "${base}..${SOURCE_SHA}" -- sources custom)"
+              changes="$(git -C dictionary log --no-merges --format="- [\`%h\`](${repo_url}/commit/%H) %s" "${base}..${SOURCE_SHA}" -- sources custom curation)"
               if [[ -n "$changes" ]]; then
-                printf '此后改动 `sources/` 或 `custom/` 的提交：\n\n%s\n\n' "$changes"
+                printf '此后改动 `sources/`、`custom/` 或 `curation/` 的提交：\n\n%s\n\n' "$changes"
               else
-                printf '此后 `sources/` 与 `custom/` 没有变化，本版本是用同一份源数据重新构建的。\n\n'
+                printf '此后 `sources/`、`custom/` 与 `curation/` 没有变化，本版本是用同一份源数据重新构建的。\n\n'
               fi
             fi
             cat <<'EOF'
@@ -271,7 +272,7 @@ jobs:
 
           | 文件 | 用途 | 谁使用 |
           | --- | --- | --- |
-          | `msime-pinyin.db` | 普通话拼音主词库：全拼词表（rime-ice 及其补充表、行政区划地名补充表、`custom/words.txt`，构建时按 msime `resources/dictionary-sources/pinyin-reading-corrections.txt` 删去已知的错误读音），以及快捷短语表 | 客户端下载（桌面词库锁） |
+          | `msime-pinyin.db` | 普通话拼音主词库：全拼词表（rime-ice 及其补充表、行政区划地名补充表、`custom/words.txt`，构建时按 msime `resources/dictionary-sources/pinyin-reading-corrections.txt` 删去已知的错误读音，再按本仓 `curation/pinyin-vetoes.txt` 删词、按 `curation/pinyin-weight-overrides.txt` 改权重），`curation/offensive-words.txt` 写成的 `sentence_excluded` 表（不拿来拼整句、不当首选的粗俗词），以及快捷短语表 | 客户端下载（桌面词库锁） |
           | `msime-wubi.db` | 五笔 86、98 与新世纪码表（98 合入 Fcitx5 补充表） | 客户端下载（桌面词库锁） |
           | `msime-english.db` | 英文单词表（rime-ice 英文词表及其补充表、SCOWL 60 级补充词表 `sources/english/scowl-words.txt`、`custom/english.txt`），以及由 ECDICT 生成、经 `custom/translations.txt` 修正的英汉与汉英释义（SCOWL 补充的词只有英汉释义）；库内 `source_notices` 表存 SCOWL 的版权声明 | 客户端下载（桌面词库锁） |
           | `msime-others.db` | 表情（含拼音关键词）、颜文字和符号表，数据来自 msime 仓库 | 客户端下载（桌面词库锁） |

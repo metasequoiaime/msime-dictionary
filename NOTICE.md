@@ -75,6 +75,17 @@
 
 `sources/pinyin/places.txt`、`sources/wubi/wubi86-supplement.txt` 的文件头记录了生成时对照的 `rime-ice.txt`、`rime-ice-supplement.txt` 的 SHA-256。那是生成当时的输入，作为历史陈述保留，与现在的文件不同；`upstream.lock.json` 已按改写后的字节刷新。
 
+### 维护者清洗表
+
+`curation/` 下的三张表由 msime 构建器在读入上面这些文件之后施加，源文件本身不改：`curation/pinyin-vetoes.txt` 从全拼表删掉列出的词或读音（整词否决也从 `wubi86`、`wubi98`、`wubixsj` 三张五笔表删掉这个词），`curation/pinyin-weight-overrides.txt` 把列出的读音的权重改成给定的值，`curation/offensive-words.txt` 写成 `msime-pinyin.db` 的 `sentence_excluded` 表。所以发布的 `msime-pinyin.db`、`msime-wubi.db` 是对 rime-ice（GPL-3.0）以及五笔原表数据的修改版本，修改内容就是这三张表，每一行都可以在本仓的提交历史里查到加入的理由。
+
+2026-11-04 的第一批（dict-cleanse 方案 2.1、3.1、3.2）：
+
+- 否决：564 个含粗俗词的碎片短语（个鸡巴、是傻逼、去他妈的），整词删除。粗俗词本身不删。
+- 权重覆盖 2344 行。其中 553 行（`rime-ice.txt` 里权重是上游 rime-ice `9e66b0729083b37d217312294f6d516c8d7234be` 的 `cn_dicts/base.dict.yaml`、`ext.dict.yaml` 同词同音权重 5 倍以上、万象对齐又没有改写过的行）恢复上游的权重；其余的行降到同一全拼下被它压过的词的权重之下（取那个词在本仓的权重减 1）。新的权重只来自 rime-ice 上游和本仓已有的权重，没有引入新的数据来源，也没有从万象抄权重。
+- 选出这些行时用 rime-wanxiang `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）`dicts/` 下除 `abbrev`、`en`、`t9_abbrev` 以外的 17 份词库作参照：万象不收的词才算碎片、万象不收的读音才算非标准读音、万象收录的词才算被压过的常用词。署名同上一节。
+- `curation/offensive-words.txt` 是本项目自写的词表，从 msime 引擎内嵌的 `crates/engine/src/lattice/offensive_words.txt` 迁来（那一份以 MPL-2.0 随引擎分发），这里与 `curation/` 的其余两张表一样依据 GPL-3.0 提供。
+
 ## 英文词库
 
 | 文件 | 上游 | 上游许可 |
@@ -149,7 +160,7 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 
 ## 下游影响
 
-发布构建的拼音词库 `msime-pinyin.db` 由 `sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt` 与 `custom/words.txt` 构建，另含 msime 仓库自带的 `resources/dictionary-sources/mix/quick_phrases.txt` 快捷短语；`sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt`（含 CustomPinyinDictionary 的内容）不进入发布构建，见下方「发布构建不包含这些条目」。只有用 `--include-unlicensed` 做的本地完整构建才会读入这两份。中文数据主体来自 rime-ice（GPL-3.0），使用该数据库的前端本身以 GPL-3.0 分发，与 rime-ice 兼容，但**必须保留对 rime-ice 的署名**；与万象共有词条的权重来自 rime-wanxiang（CC BY 4.0），同样**必须保留对万象的署名并注明改动**（见上方「拼音权重与万象对齐」）。
+发布构建的拼音词库 `msime-pinyin.db` 由 `sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt` 与 `custom/words.txt` 构建，另含 msime 仓库自带的 `resources/dictionary-sources/mix/quick_phrases.txt` 快捷短语；`sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt`（含 CustomPinyinDictionary 的内容）不进入发布构建，见下方「发布构建不包含这些条目」。只有用 `--include-unlicensed` 做的本地完整构建才会读入这两份。中文数据主体来自 rime-ice（GPL-3.0），使用该数据库的前端本身以 GPL-3.0 分发，与 rime-ice 兼容，但**必须保留对 rime-ice 的署名**；与万象共有词条的权重来自 rime-wanxiang（CC BY 4.0），同样**必须保留对万象的署名并注明改动**（见上方「拼音权重与万象对齐」）；构建时还按 `curation/` 的表删词、改权重，见上方「维护者清洗表」。
 
 词库由 [msime](https://github.com/metasequoiaime/msime) 的 Rust 构建器 `crates/dict-builder`（`msime-dict-build`）构建并以本仓库的 `dict-v*` release 发布（数据库按 `msime-<内容>` 命名），随产物送到用户手上的署名在 msime 的 `resources/licenses/` 与 [MSIME-Windows](https://github.com/metasequoiaime/MSIME-Windows) 的 `THIRD_PARTY_NOTICES.txt` 里。改动本文件的来源表时，这些文件要一起改。
 
@@ -192,7 +203,7 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 
 ## 本项目自建部分
 
-`custom/` 下的自定义词条、候选窗翻译覆盖、英文词条与人名，`packs/` 下由本项目自写的专业词库，以及 `scripts/validate_packs.py` 由本项目编写，依据 GPL-3.0 提供，与组织内其他仓库一致。`packs/birds/` 的 IOC 鸟名及其整理词表沿用 CC BY 3.0，见上方「可选鸟类名称词库」。`custom/cantonese.txt`（人工审校的粤语词与粤拼）是例外，以 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 提供，署名为 msime-dictionary 贡献者：它由 msime 构建进 `msime-cantonese.db`，库里 rime-cantonese 与 HKCanCor 的数据都是 CC BY 4.0，用同一许可让整个库仍按单一许可分发；署名随库写在 msime 的 `resources/licenses/rime-cantonese-CC-BY-4.0.txt`。
+`custom/` 下的自定义词条、候选窗翻译覆盖、英文词条与人名，`curation/` 下维护者审定的否决表、权重覆盖表与粗俗词表，`packs/` 下由本项目自写的专业词库，以及 `scripts/validate_packs.py` 由本项目编写，依据 GPL-3.0 提供，与组织内其他仓库一致。`packs/birds/` 的 IOC 鸟名及其整理词表沿用 CC BY 3.0，见上方「可选鸟类名称词库」。`custom/cantonese.txt`（人工审校的粤语词与粤拼）是例外，以 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 提供，署名为 msime-dictionary 贡献者：它由 msime 构建进 `msime-cantonese.db`，库里 rime-cantonese 与 HKCanCor 的数据都是 CC BY 4.0，用同一许可让整个库仍按单一许可分发；署名随库写在 msime 的 `resources/licenses/rime-cantonese-CC-BY-4.0.txt`。
 
 `sources/cn-en/machine-translations.txt` 是本项目整理的中译英释义，同样依据 GPL-3.0 提供。源词取自 `sources/pinyin/`、`sources/wubi/` 与 `custom/words.txt`（来源与许可见上文）；译文汇总了 `custom/translations.txt` 与人工整理的翻译，其余由大模型生成：DeepSeek（`deepseek-chat`、`deepseek-flash`、`deepseek-v4-pro`，按 DeepSeek 开放平台用户协议，输出内容的权利归使用者）与 ChatGPT（按 OpenAI 使用条款，输出归使用者），纯数字与年份按规则生成。生成的译文没有逐条人工审校，可能有误译；修正写到 `custom/translations.txt`，它在构建时覆盖本文件。
 
