@@ -99,7 +99,7 @@
       "path": "sources/english/rime-ice-en-supplement.txt",
       "upstream": "rime-ice-supplement",
       "size": 42996,
-      "sha256": "d862b75ecc111384c0d5fcdaa4323b11530acc309f7fc1b803b99cea358f2b2c"
+      "sha256": "18d74fded19cc104607e5bfe14c1e5aeec901b58455e3f488e44bf2e38f21e23"
     },
     {
       "path": "sources/english/scowl-words.txt",
