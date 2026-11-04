@@ -71,6 +71,7 @@ custom/                                   人工维护的数据，唯一接受�
   translations.txt                        候选窗翻译 -> msime-english.db
   english.txt                             英文词条 -> msime-english.db
   cantonese.txt                           人工审校的粤语词（CC BY 4.0）-> msime-cantonese.db
+  wubi86.txt                              86 五笔的人工词条（如 一…十 的编码上的 ①…⑩）-> msime-wubi.db
   cantonese-variant-vetoes.txt            粤拼词库不换成香港字形的 OpenCC 字形（维护者审定，不接受投稿，不受只追加限制）-> msime-cantonese.db
   names.txt                               人名（没有任何构建或网站读取）
 packs/                                    用户按需导入的专业词库，不进入构建
@@ -136,6 +137,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/stroke/stroke.dict.yaml` | languages | `msime-stroke.db` | 进入 |
 | `sources/opencc/TWVariants.txt`、`sources/opencc/HKVariants.txt` | languages：只列出候选异体对，由 HKCanCor 词频决定是否把 rime-cantonese 的 OpenCC 字形换成香港字形（msime #10451 起读 `TWVariants.txt`；`HKVariants.txt` 从 msime [#10754](https://github.com/metasequoiaime/msime/pull/10754)（`a8480ce407`）起才读，目前固定的构建器 `93815fffb` 早于它，只读 `TWVariants.txt` 外加代码里写死的「溼→濕」一对（#10711），把 `builder.lock.json` 升到 `a8480ce407` 或之后才生效）；表的内容不写进词库 | `msime-cantonese.db` | 进入（只影响字形） |
 | `custom/cantonese-variant-vetoes.txt` | languages（msime [#10754](https://github.com/metasequoiaime/msime/pull/10754)（`a8480ce407`）起读取，目前固定的构建器 `93815fffb` 早于它、不读这张表，升级 `builder.lock.json` 后才生效）：每行一个 OpenCC 字形，必须是上面两张表里某一行的键，列出的字一律不换；写了表里没有的字时构建失败 | `msime-cantonese.db` | 进入（只影响字形） |
+| `custom/wubi86.txt` | 主命令 Wubi：接在 `sources/wubi/wubi86-jidian.txt` 和生成的 `wubi86-supplement.txt` 之后写进 `wubi86`，同码同权重时排在原有候选之后（msime [#10862](https://github.com/metasequoiaime/msime/pull/10862)（`95c758b6c5`）起读取，更早的构建器不读这个文件） | `msime-wubi.db` | msime 构建器读取后进入 |
 | `custom/cantonese.txt` | languages（msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 起读取）：每个字的读音必须是 `sources/cantonese/jyut6ping3.chars.dict.yaml` 给它的读音之一，否则构建失败；权重取 `essay-cantonese.txt` 的分数，essay 没列时取补词门槛 1000；没有的词插入，已有且权重更低的调高，更高的不变 | `msime-cantonese.db` | msime 构建器读取后进入 |
 | `sources/japanese/dictionary00.txt` … `dictionary09.txt`、`id.def`、`connection_single_column.txt` | 主命令 JapaneseModel | `msime-japanese.dat` | 进入 |
 | `sources/japanese/dictionary_filter.tsv` | 主命令 JapaneseModel，按 Mozc `gen_filtered_dictionary.py` 删去基础词库中完全匹配的行 | `msime-japanese.dat` | 进入 |
@@ -165,7 +167,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 - **官网提交**：在 [msime.app](https://msime.app) 的词条提交页填写中文词语、英文单词或候选窗翻译。人名也按词语提交。服务端以 `community-words/<时间戳>` 分支按批开 Pull Request，维护者审核后合入。
 - **直接提 Pull Request**：在 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` 或 `custom/cantonese.txt` 的末尾追加行。不要修改、删除或重排已有的行。
 
-四个文件的格式：
+五个文件的格式：
 
 | 文件 | 每行 | 说明 |
 | --- | --- | --- |
@@ -173,6 +175,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `custom/translations.txt` | `源词<TAB>译文` | 源词含 U+3400 及以上的字符（汉字）时是中译英，否则是英译中；`#` 开头是注释。同一源词写了多行时，构建取最后一行 |
 | `custom/english.txt` | `编码<TAB>显示词<TAB>权重` | 编码是输入的小写字母，显示词是上屏的写法，同一编码可以有多个显示词 |
 | `custom/cantonese.txt` | `词<TAB>带声调粤拼` | 两个及以上汉字，写繁体字形；一个汉字一个音节，音节之间一个空格，如 `周杰倫	zau1 git6 leon4`；`#` 开头是注释。每个字的读音必须是 `sources/cantonese/jyut6ping3.chars.dict.yaml` 给它的读音之一；多音字选哪个读音由审校者把关，CI 查不出。没有权重列 |
+| `custom/wubi86.txt` | `值<TAB>编码<TAB>权重` | 编码是 86 五笔的小写字母码，值是上屏的字、词或符号，如 `①	g	1`。权重取 1 这类小值，排在同码原有候选之后；不要用它把原有的字挤下首选 |
 
 **权重**：新词条的权重必须落在所在文件现有条目的范围内，CI 按文件当前内容计算这个范围。`custom/words.txt` 目前是 1 到 10000，大多数历史条目写的是 `1`。想让一个词在整句里更容易胜出，就参照基础词库里同量级的真实词取值（例如 `扛不住` 在 `sources/pinyin/rime-ice.txt` 里是 2430），不要为了靠前填一个极大值。`custom/english.txt` 目前只有 `1`：有 Google 词频的英文词按词频排序，没有词频的才用这里的权重，而且排在所有有词频的词之后。这个范围普通 Pull Request 无法放宽，确实需要时先开 Issue。
 
@@ -319,6 +322,7 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `custom/translations.txt` | UTF-8 | LF | `#` 注释行，开头和各分组前都有 | `源词<TAB>译文` | 有 |
 | `custom/english.txt` | UTF-8 | LF | 无 | `编码<TAB>显示词<TAB>权重` | 无 |
 | `custom/cantonese.txt` | UTF-8 | LF | 1 行 `#` 注释（格式与规则） | `词<TAB>带声调粤拼` | 有 |
+| `custom/wubi86.txt` | UTF-8 | LF | 1 行 `#` 注释（格式） | `值<TAB>编码<TAB>权重` | 有 |
 | `custom/cantonese-variant-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每个字为什么否决） | 一个字 | 有 |
 | `custom/names.txt` | UTF-8 | LF | 无 | 一个人名 | 无 |
 

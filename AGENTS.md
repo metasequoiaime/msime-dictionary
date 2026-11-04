@@ -13,7 +13,7 @@
 
 ## 自定义词条
 
-- `custom/words.txt`、`custom/translations.txt`、`custom/english.txt`、`custom/cantonese.txt` **只追加**：新行写在文件末尾，不修改、删除或重排已有的行。check-words 会拒绝任何非追加的改动；`custom/cantonese.txt` 要等 `check-words.yml` 把它加进触发路径和参数（需要 msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 合入后的 `MSIME_COMMIT`）才有这道检查，在那之前由审核者人工核对。
+- `custom/words.txt`、`custom/translations.txt`、`custom/english.txt`、`custom/cantonese.txt`、`custom/wubi86.txt` **只追加**：新行写在文件末尾，不修改、删除或重排已有的行。check-words 会拒绝任何非追加的改动；`custom/cantonese.txt` 要等 `check-words.yml` 把它加进触发路径和参数（需要 msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 合入后的 `MSIME_COMMIT`）才有这道检查，在那之前由审核者人工核对；check-words 不检查 `custom/wubi86.txt`，一直由审核者人工核对（编码是该字词的 86 码，权重不把同码原有的首选挤下去）。
 - `custom/cantonese-variant-vetoes.txt` 是例外：它是粤拼词库香港字形替换的人工否决表（每行一个不换的 OpenCC 字形），由维护者审定，不接受投稿，也不受只追加限制，撤销否决就删掉那一行。从 msime #10754（`a8480ce407`）起，构建器读这张表，并要求每个字都是 `sources/opencc/TWVariants.txt` 或 `HKVariants.txt` 里某一行的键，否则构建失败；`builder.lock.json` 目前固定的 `93815fffb` 早于它，这张表和 `HKVariants.txt` 都不读，固定提交升到 `a8480ce407` 或之后才生效。
 - `custom/words.txt` 的格式是 `词<TAB>全拼<TAB>权重`，全拼音节用 `'` 分隔；另外两个文件的格式见 `README.md`。词语和英文的权重落在所在文件现有的范围内；不要为了让一个词靠前填一个极大值。
 - 候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。
