@@ -77,7 +77,7 @@
 
 **构建期重算。** msime 构建器的 `reweight` 阶段（`crates/dict-builder/src/reweight.rs`，排在 `quanpin` 之后、`places-supplement` 之前）读 `sources/pinyin/wanxiang/` 里登记的 17 份文件，在每次构建时按上面同一套规则（同样 15 份词库、同样的读音换算和取最高权重、同样的三个系数、四舍五入）重算三份文件里与万象共有的行。三份文件现在的权重就是这样算出来的（共有的 597343 行逐行吻合），所以这一步不改变产物；它保证以后在原路径重新生成补充表、或者换新的上游提交时，对齐结果不会被冲掉。只认写了非负整数权重的万象行：没写权重（`fangyan` 的 闹热）或写 `-1`（`diming` 的 柏香镇）的行不换算，#84 当时也没有换算它们。
 
-`curation/pinyin-reweight.txt` 存在时，`reweight` 阶段另做第二步（格式见 msime `crates/dict-builder/README.md`「Curation tables」）：`renming`（人名，正则抽取、未经筛选）和 `duoyin`（多音兼容读音）两份词库的权重先乘一个缩放比例再换算；`unattested-cap` 让万象任何一份词库都不收的多字词，权重不高于同一全拼键上万象收录的词里最高的那个（门的 不再压过 闷的）。这一步改的仍然只是权重，用的仍然只是万象的权重和收录与否，不加入任何万象的词条。文件不在时不做第二步。
+`curation/pinyin-reweight.txt` 存在时，`reweight` 阶段另做第二步（格式见 msime `crates/dict-builder/README.md`「Curation tables」）：`renming`（人名，正则抽取、未经筛选）和 `duoyin`（多音兼容读音）两份词库的权重先乘一个缩放比例再换算；`unattested-cap` 让万象全套 17 份词库在任何读音下都不收的多字词，不再排在同一全拼键上万象原始权重达到门槛（默认 100）的词前面（门的 不再压过 闷的）；`curation/pinyin-reweight-exempt.txt` 列出的行不做第二步。这一步改的仍然只是权重，用的仍然只是万象的权重和收录与否，不加入任何万象的词条。文件不在时不做第二步。
 
 `sources/pinyin/places.txt`、`sources/wubi/wubi86-supplement.txt` 的文件头记录了生成时对照的 `rime-ice.txt`、`rime-ice-supplement.txt` 的 SHA-256。那是生成当时的输入，作为历史陈述保留，与现在的文件不同；`upstream.lock.json` 已按改写后的字节刷新。
 

@@ -1,7 +1,7 @@
 name: Release built dictionaries
 
 # 生成词库属于本仓库的发布边界：msime-dictionary 保存源数据，也发布由 msime 构建器生成的数据库。
-# 每次推送到 main 且改动了 sources/、custom/ 或 builder.lock.json，本 workflow 就用这次推送的提交构建并发布一个新的 dict-vX.Y.Z Release；手动运行用于重建或只构建不发布的试跑。
+# 每次推送到 main 且改动了 sources/、custom/、curation/ 或 builder.lock.json，本 workflow 就用这次推送的提交构建并发布一个新的 dict-vX.Y.Z Release；手动运行用于重建或只构建不发布的试跑。
 # 构建器固定为 builder.lock.json 的 msime_commit，不跟随 msime develop：升级构建器就是开一个只改这个提交的 PR 并附上试跑，合入后按新构建器发布一版。
 on:
   push:
@@ -9,6 +9,7 @@ on:
     paths:
       - "sources/**"
       - "custom/**"
+      - "curation/**"
       - "builder.lock.json"
   workflow_dispatch:
     inputs:
@@ -230,7 +231,7 @@ jobs:
           # shellcheck disable=SC2016
           {
             printf '## dict-v%s\n\n' "$VERSION"
-            printf -- '- 词库源数据：[`%s`](%s/commit/%s)（本仓 `sources/` 与 `custom/`，也是这个标签指向的提交）\n' "${SOURCE_SHA:0:7}" "$repo_url" "$SOURCE_SHA"
+            printf -- '- 词库源数据：[`%s`](%s/commit/%s)（本仓 `sources/`、`custom/` 与 `curation/`，也是这个标签指向的提交）\n' "${SOURCE_SHA:0:7}" "$repo_url" "$SOURCE_SHA"
             if [[ "$PINNED" == true ]]; then
               printf -- '- 构建器：`metasequoiaime/msime` 的提交 [`%s`](%s/commit/%s)，由本仓 `builder.lock.json` 固定\n' "${MSIME_COMMIT:0:9}" "$msime_url" "$MSIME_COMMIT"
             else
@@ -251,17 +252,26 @@ jobs:
                 fi
               fi
             fi
+            # 万象登记进 upstream.lock.json 之后，构建器的 reweight 阶段按它重算全拼权重（不认识这个上游的构建器会直接失败，所以走到这里就说明阶段跑过了）；说明里写明只做了第一步还是打开了第二步，回滚第二步的版本也看得出来。
+            wanxiang_commit="$(jq -r '.upstreams["rime-wanxiang"].commit // empty' dictionary/upstream.lock.json)"
+            if [[ -n "$wanxiang_commit" ]]; then
+              if [[ -f dictionary/curation/pinyin-reweight.txt ]]; then
+                printf -- '- 拼音权重：与万象共有的行由构建器的 `reweight` 阶段按 `sources/pinyin/wanxiang/`（万象 `%s`）重算，`curation/pinyin-reweight.txt` 打开了第二步（`curation/pinyin-reweight-exempt.txt` 列出的行除外），见 `NOTICE.md`「拼音权重与万象对齐」\n' "${wanxiang_commit:0:7}"
+              else
+                printf -- '- 拼音权重：与万象共有的行由构建器的 `reweight` 阶段按 `sources/pinyin/wanxiang/`（万象 `%s`）重算，只做第一步（复现 #84 的换算，权重不变），见 `NOTICE.md`「拼音权重与万象对齐」\n' "${wanxiang_commit:0:7}"
+              fi
+            fi
             printf -- '- 触发：%s，[workflow 运行](%s/actions/runs/%s)\n\n' "$trigger" "$repo_url" "$GITHUB_RUN_ID"
             printf '## 源数据变更\n\n'
             if [[ -z "$PREVIOUS_TAG" ]]; then
               printf '没有更早的 `dict-v` 版本可比较。\n\n'
             else
               printf '比较基点：%s\n\n' "$base_desc"
-              changes="$(git -C dictionary log --no-merges --format="- [\`%h\`](${repo_url}/commit/%H) %s" "${base}..${SOURCE_SHA}" -- sources custom)"
+              changes="$(git -C dictionary log --no-merges --format="- [\`%h\`](${repo_url}/commit/%H) %s" "${base}..${SOURCE_SHA}" -- sources custom curation)"
               if [[ -n "$changes" ]]; then
-                printf '此后改动 `sources/` 或 `custom/` 的提交：\n\n%s\n\n' "$changes"
+                printf '此后改动 `sources/`、`custom/` 或 `curation/` 的提交：\n\n%s\n\n' "$changes"
               else
-                printf '此后 `sources/` 与 `custom/` 没有变化，本版本是用同一份源数据重新构建的。\n\n'
+                printf '此后 `sources/`、`custom/` 与 `curation/` 没有变化，本版本是用同一份源数据重新构建的。\n\n'
               fi
             fi
             cat <<'EOF'
