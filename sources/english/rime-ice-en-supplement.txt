@@ -1,4 +1,4 @@
-# rime-ice 英文补充词条，由 msime 仓库提交 f557354b391baa5dd5d9131474e2eca8e7a4a89b 的 crates/dict-builder/src/rime_ice_supplement.rs 以 `msime-dict-build rime-ice-supplement --upstream <rime-ice 该提交的干净检出> --dictionary <msime-dictionary checkout> --out <输出目录>` 生成；不要手工编辑。
+# rime-ice 英文补充词条，由 msime 仓库提交 cfee1718974f7e1b6b49a0586ed80b2cd88e5c6c 的 crates/dict-builder/src/rime_ice_supplement.rs 以 `msime-dict-build rime-ice-supplement --upstream <rime-ice 该提交的干净检出> --dictionary <msime-dictionary checkout> --out <输出目录>` 生成；不要手工编辑。
 # 上游：https://github.com/iDvel/rime-ice 提交 3aea6d3694fb3d94ec663641f021f788822897ad；许可 GPL-3.0。
 # 去重对照：sources/english/rime-ice-en.txt、sources/english/scowl-words.txt、custom/english.txt；中文按同词同音排除、重复取最大权重，英文按小写词形排除（对照文件里注释掉的 `# 词 编码` 条目也算）、保留纯 ASCII 显示词。
 # 输入：en_dicts/en.dict.yaml SHA-256 d08db21af6c686bfafa4d62926e33ea685319927a374acd99dde84a351b5aa35
