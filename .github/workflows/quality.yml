@@ -40,6 +40,19 @@ jobs:
           persist-credentials: false
       - name: Check upstream copies against upstream.lock.json
         run: python3 scripts/check_upstream.py
+  builder:
+    name: Builder pin
+    runs-on: depot-ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # Merging to main publishes a release, so a malformed pin or one that is not on msime develop must fail here rather than in the release run after merge.
+      - name: Check builder.lock.json
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: scripts/check_builder_lock.sh builder.lock.json
   dependencies:
     name: Dependency review
     if: github.event_name == 'pull_request'
