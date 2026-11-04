@@ -2,10 +2,10 @@
 #
 # 一行 `词<TAB>全拼<TAB>权重`：构建的 `weight-overrides` 阶段（紧接 `word-vetoes`）把这个读音的权重设成这个值，五笔三张表的生成器按覆盖后的权重判断 100 的门槛和同码排序。每一条都必须在全拼表里有那一行，而且不能是 custom/words.txt 从已有的行提了权的行，否则构建失败。
 #
-# 每一行都来自 msime-dict-build cleanse-report（msime 87bb7d3895，对 msime-dictionary c418ff0（dict-v2.0.55），上游 rime-ice 9e66b07 的 cn_dicts，参照表为万象 7ab73ee 的 17 份 dicts，--reference-scale 9.2） 的一份清单，并按 dict-cleanse 方案 2.1 的判定标准审过。一行同时落进几类时只写一次，写在给出最低权重的那一类下面，权重取几类里最低的；值是绝对值，同键别的词的权重变了要重新跑报告核对。审过的取舍和抽检结果见 msime 的 `.agents/notes/implemented/feature/2026-11-04-dictionary-vetoes-and-weight-overrides.md`。
+# 每一行都来自 msime-dict-build cleanse-report（msime 87bb7d3895，对 msime-dictionary 7109e04（dict-v2.0.56），上游 rime-ice 9e66b07 的 cn_dicts，参照表为万象 7ab73ee 的 17 份 dicts，--reference-scale 9.2） 的一份清单，并按 dict-cleanse 方案 2.1 的判定标准审过。一行同时落进几类时只写一次，写在给出最低权重的那一类下面，权重取几类里最低的；值是绝对值，同键别的词的权重变了要重新跑报告核对。审过的取舍和抽检结果见 msime 的 `.agents/notes/implemented/feature/2026-11-04-dictionary-vetoes-and-weight-overrides.md`。
 
 # ---- 本地权重损坏，恢复上游值（方案 3.1，546 行）----
-# 来源：weight-disagreement.tsv 里来源是 sources/pinyin/rime-ice.txt、本地权重是上游 rime-ice 9e66b07 的 base/ext 同词同音权重 5 倍以上的 553 行（#84 的万象对齐没有改写过它们，权重不等于万象乘 9.2）。写上游的权重。rime-ice-supplement.txt 的行不在此列：那是从早先的上游提交整理来、经过万象对齐的补充表，与当前上游不同不说明损坏。
+# 来源：weight-disagreement.tsv 里来源是 sources/pinyin/rime-ice.txt、本地权重是上游 rime-ice 9e66b07 的 base/ext 同词同音权重 5 倍以上的 553 行（#84 的万象对齐没有改写过它们，权重不等于万象乘 9.2），写上游的权重；其中 7 行同时落进下面的类、那一类给的权重更低，写在那一类下面。rime-ice-supplement.txt 的行不在此列：那是从早先的上游提交整理来、经过万象对齐的补充表，与当前上游不同不说明损坏。本地权重比上游低 5 倍以上的 109 行（二〇〇一 82 对上游 9999 这类，多是上游的占位权重被调低了）也不在此列，恢复它们只会把占位值抬回来。
 门的	men'de	4351
 或在	huo'zai	1843
 在中	zai'zhong	1301
@@ -558,7 +558,7 @@
 车件	che'jian	1499
 
 # ---- custom 越位（方案 3.1 与 H11，12 行）----
-# 来源：custom/words.txt 新插入的词（之前的输入没有这一行，所以覆盖表可以改）在自己的全拼键上权重最高、压过一个本地权重 1000 以上的词，15 条，逐条审过：人名和冷僻词 12 条降到被压过的词之下（同键最高的另一个词的最终权重减 1）；吸猫（常用网络词）、古茗（连锁茶饮品牌）、兜帽（常用词，被压的 都冇 是粤语）保留。
+# 来源：custom/words.txt 新插入的词（之前的输入没有这一行，所以覆盖表可以改）在自己的全拼键上权重最高、压过一个本地权重 1000 以上的词，15 条（方案写的 13 条是 dict-v2.0.41 上的数），逐条审过：人名和冷僻词 12 条降到被压过的词之下（同键最高的另一个词的最终权重减 1），它们仍是这个键上的第二个候选；吸猫（常用网络词）、古茗（连锁茶饮品牌）、兜帽（常用词，被压的 都冇 是粤语）保留。custom/words.txt 从已有的行提了权的行不在此列，覆盖表不能改它们。
 白冰	bai'bing	2446
 伯远	bo'yuan	3845
 鹤秋	he'qiu	1416
@@ -572,8 +572,9 @@
 挽昼	wan'zhou	2455
 字统	zi'tong	973
 
-# ---- 占位权重（方案 3.1，226 行）----
+# ---- 占位权重（方案 3.1，229 行）----
 # 来源：placeholder-weights.tsv（万象不收的多字词，权重不小于 1000 且每位数字相同，或是梗数字 19260817、12345678；custom/words.txt 的行除外），按方案 H5「源里没有的行」的规则：不得高于同键最高的万象收录词。写同键万象收录词里最高的最终权重减 1；同键没有万象收录词、或已经低于它的不改。
+嗷呜	ao'wu	2971
 罢诉	ba'su	146
 板硬	ban'ying	376
 报领	bao'ling	321
@@ -586,6 +587,7 @@
 吃儿	chi'er	523
 斥卖	chi'mai	54
 宠妹	chong'mei	201
+臭乎乎	chou'hu'hu	3348
 传技	chuan'ji	606
 闯回	chuang'hui	661
 吹腔	chui'qiang	574
@@ -599,6 +601,7 @@
 复谈	fu'tan	634
 甘紫菜	gan'zi'cai	257
 够没	gou'mei	864
+钩拳	gou'quan	6080
 官风	guan'feng	174
 过不	guo'bu	695
 好真	hao'zhen	146
@@ -801,8 +804,8 @@
 揍她们	zou'ta'men	551
 坐前边	zuo'qian'bian	54
 
-# ---- 碎片词压过同键常用词（方案 3.2，1544 行）----
-# 来源：fragment-over-common.tsv（万象 7ab73ee 任何读音都不收的多字词，在同一个全拼键上排在一个万象权重 100 以上的词前面），1663 行。人工抽检：随机 120 行加权重最高的 200 行，去重后 309 行，误伤 20 行（6.5%%；只算随机的 120 行是 8 行、6.7%%，按词义这一行比被压的词更该在前，如 事实的、汉密尔顿、怡人、恶梦），这 20 行不写，其余 1643 行写建议值（被压过的常用词里最低的权重减 1）。
+# ---- 碎片词压过同键常用词（方案 3.2，1519 行）----
+# 来源：fragment-over-common.tsv（万象 7ab73ee 任何读音都不收的多字词，在同一个全拼键上排在一个万象权重 100 以上的词前面），1663 行，全部逐条审过。误伤（按词义这一行比被压的词更该在前，如 事实的、汉密尔顿、恢宏、顾盼、并道，或者降下去会让粗俗词顶上来，如 即把 让给 鸡巴、绽露 让给 站撸）45 行，占 2.7%；随机抽的 120 行（种子 20261104）里误伤 8 行，占 6.7%（95% 区间约 3.4%～12.6%），权重最高的 200 行里 17 行，占 8.5%，误伤集中在高权重的行。误伤的 45 行不按这一类改（其中同时是本地损坏或占位权重的行照那两类的规则写在上面，如 等的 恢复上游权重、嗷呜 的 9999 按占位权重重定），其余 1618 行写建议值（被压过的常用词里最低的权重减 1），其中 99 行同时落进别的类、取了更低的值，写在那一类下面。逐条结论见 msime 的决策笔记。
 得分儿	de'fen'er	9190
 有新	you'xin	1471
 在对	zai'dui	15860
@@ -826,7 +829,6 @@
 倒被	dao'bei	10303
 到会	dao'hui	3927
 在有	zai'you	4617
-为的	wei'de	1627
 而做	er'zuo	4268
 在以	zai'yi	1443
 是来	shi'lai	3983
@@ -865,7 +867,6 @@
 为对	wei'dui	4470
 车到	che'dao	2649
 倍受	bei'shou	1205
-有您	you'nin	1186
 自告	zi'gao	1066
 是到	shi'dao	974
 上你	shang'ni	1361
@@ -935,7 +936,6 @@
 直对	zhi'dui	5307
 我并	wo'bing	919
 去时	qu'shi	1756
-时值	shi'zhi	1204
 就中	jiu'zhong	1407
 中才	zhong'cai	17497
 以对	yi'dui	3348
@@ -949,7 +949,6 @@
 叫的	jiao'de	5280
 又再	you'zai	3164
 打私	da'si	8077
-相联	xiang'lian	965
 崖刻	ya'ke	2593
 于晏	yu'yan	919
 钱吗	qian'ma	2041
@@ -974,7 +973,6 @@
 而复	er'fu	947
 做那	zuo'na	4562
 和和	he'he	2915
-脸薄	lian'bao	1848
 汽缸	qi'gang	12244
 易使	yi'shi	1039
 从有	cong'you	1195
@@ -995,7 +993,6 @@
 秽史	hui'shi	1839
 鱼人	yu'ren	1048
 成大	cheng'da	3927
-著者	zhu'zhe	1241
 为向	wei'xiang	1627
 一不	yi'bu	1149
 得而	de'er	9760
@@ -1053,12 +1050,9 @@
 连级	lian'ji	1149
 为做	wei'zuo	1269
 过把	guo'ba	7479
-礼仪的	li'yi'de	1287
 设得	she'de	1269
-招集	zhao'ji	965
 咱的	zan'de	5629
 以得到	yi'de'dao	1867
-恢宏	hui'hong	7828
 把把	ba'ba	2796
 请援	qing'yuan	919
 斯坦·李	si'tan'li	5031
@@ -1068,14 +1062,12 @@
 使了	shi'le	1002
 内尔	nei'er	4682
 腰的	yao'de	974
-余华	yu'hua	1269
 找那	zhao'na	1269
 青淤	qing'yu	1204
 印机	yin'ji	1581
 多被	duo'bei	3707
 之好	zhi'hao	1775
 最感	zui'gan	8813
-余力	yu'li	1673
 同被	tong'bei	8610
 次比	ci'bi	8665
 应时	ying'shi	332
@@ -1088,7 +1080,6 @@
 就用着	jiu'yong'zhe	1416
 爱就	ai'jiu	1581
 熬吗	ao'ma	1489
-嗷呜	ao'wu	2971
 笆篱	ba'li	1351
 罢讼	ba'song	1765
 白船	bai'chuan	4820
@@ -1109,7 +1100,6 @@
 衬料	chen'liao	1591
 趁钱	chen'qian	2133
 宠弟	chong'di	3495
-臭乎乎	chou'hu'hu	3348
 闯练	chuang'lian	6198
 蹿火	cuan'huo	992
 打瞌	da'ke	3191
@@ -1131,7 +1121,6 @@
 搞吗	gao'ma	7276
 高速堵	gao'su'du	3467
 更其	geng'qi	8647
-钩拳	gou'quan	6080
 姑姥爷	gu'lao'ye	8527
 惯养	guan'yang	99
 核账	he'zhang	99
@@ -1191,15 +1180,12 @@
 砸去	za'qu	2281
 再瞅	zai'chou	1324
 在聘	zai'pin	1489
-绽露	zhan'lu	4862
 仗胆	zhang'dan	3201
 治服	zhi'fu	965
-直溜	zhi'liu	1204
 之阵	zhi'zhen	1075
 自经	zi'jing	947
 吱溜	zi'liu	1204
 歇假	xie'jia	1931
-顾盼	gu'pan	1765
 将得	jiang'de	1554
 说睡	shuo'shui	9558
 子才	zi'cai	1407
@@ -1210,7 +1196,6 @@
 撤防	che'fang	3872
 制锁	zhi'suo	4093
 为左	wei'zuo	1269
-伊甸	yi'dian	1379
 张元	zhang'yuan	8196
 它吧	ta'ba	5942
 可都	ke'dou	6669
@@ -1261,7 +1246,6 @@
 要就	yao'jiu	3927
 天果	tian'guo	1425
 纳德	na'de	6954
-阵形	zhen'xing	965
 第一辑	di'yi'ji	937
 小我	xiao'wo	5169
 正熙	zheng'xi	1057
@@ -1305,7 +1289,6 @@
 滋育	zi'yu	1213
 小不	xiao'bu	4194
 级次	ji'ci	1241
-并道	bing'dao	1039
 期市	qi'shi	1959
 既便	ji'bian	1066
 应办	ying'ban	4663
@@ -1399,9 +1382,7 @@
 才下	cai'xia	1039
 嗞嗞	zi'zi	919
 张得	zhang'de	1195
-伊妹儿	yi'mei'er	1195
 丽英	li'ying	3201
-隐讳	yin'hui	1655
 这岂	zhe'qi	2971
 自北	zi'bei	4102
 弃舍	qi'she	3900
@@ -1409,7 +1390,6 @@
 敌区	di'qu	3753
 吴川	wu'chuan	3743
 民俗旅游	min'su'lv'you	4636
-钱夹	qian'jia	2971
 托德	tuo'de	1259
 满不	man'bu	1545
 影响系统	ying'xiang'xi'tong	5087
@@ -1523,7 +1503,6 @@
 治税	zhi'shui	947
 扶扶	fu'fu	3256
 每二	mei'er	3983
-顾惜	gu'xi	993
 斯巴	si'ba	2244
 胸的	xiong'de	2971
 弈天	yi'tian	1241
@@ -1893,7 +1872,6 @@
 天英	tian'ying	1637
 同做	tong'zuo	1223
 志芳	zhi'fang	2244
-即把	ji'ba	2189
 世锦	shi'jin	1379
 适值	shi'zhi	1204
 智网	zhi'wang	1903
@@ -2349,12 +2327,12 @@
 脊兽	ji'shou	99
 
 # ---- 非标准读音压过同键规范读音（方案 3.2，15 行）----
-# 来源：nonstandard-readings.tsv（万象收了这个词却不收这个读音，在自己的键上压过一个读音是万象收了的、本地权重 1000 以上的词），181 行全部逐条审过，误伤 164 行（90.6%%：剥皮 bao'pi、调到 diao'dao、顺利地 shun'li'de 这类读音本来就对，或者被压的词是冷僻的技术词、碎片），只写 17 行：读音不规范，而且被压的是常用词（上调 shang'diao 让 上吊，止血 zhi'xie 让 纸屑）。
+# 来源：nonstandard-readings.tsv（万象收了这个词却不收这个读音，在自己的键上压过一个读音是万象收了的、本地权重 1000 以上的词），181 行全部逐条审过，误伤 164 行（90.6%：剥皮 bao'pi、调到 diao'dao、长于 chang'yu、顺利地 shun'li'de 这类读音本来就对，或者被压的词是冷僻的技术词、碎片，或者读音是否不规范拿不准，如 行纪 hang'ji），只挑 17 行：读音不规范，而且被压的是常用词（上调 shang'diao 让 上吊，止血 zhi'xie 让 纸屑，劲舞 jing'wu 让 警务）；其中 2 行同时落进别的类、取了更低的值，写在那一类下面。
 上调	shang'diao	1931
 心血	xin'xie	3026
 输血	shu'xie	1839
 劲爆	jing'bao	1002
-行纪	hang'ji	9015
+劲舞	jing'wu	1443
 调车	tiao'che	8748
 加血	jia'xie	8233
 偷着	tou'zhao	5694
