@@ -87,7 +87,7 @@
 
 `sources/pinyin/rime-ice-supplement.txt` 第 1 行文件头里的 `BaseDictIceV1` 是生成时对照文件的旧名，指现在的 `sources/pinyin/rime-ice.txt`。这个文件按字节锁定，权重另经万象对齐，文件头作为历史陈述保留不改；下次在原路径重新生成时再改成新名。`sources/english/rime-ice-en-supplement.txt` 已用 msime 的生成器在原路径重新生成（2026-11-04，dict-cleanse 方案 H7），文件头写的是现在的文件名。
 
-构建时还按 `curation/english-vetoes.txt` 从上面这些英文词表里删词（任何大小写都不收，连同释义），按 `curation/gloss-vetoes.txt` 不用 ECDICT（MIT，msime 构建时下载）里列出的英文词与中文义项的配对，源文件本身不改。所以发布的 `msime-english.db` 是对 rime-ice（GPL-3.0）英文词表和 ECDICT 释义的修改版本，修改内容就是这两张表，每一行都可以在本仓的提交历史里查到加入的理由。2026-11-04 的第一批（dict-cleanse 方案 H7、H8）：英文否决 86 个词（网页模板残留 12、成人站点名和色情垃圾词 26、错拼 15、蔑称 7、垃圾邮件药名 26），释义成对否决 65 对（普通中文词配粗口或性含义英文 34、配蔑称 7、普通英文词配辱骂性中文 15、高频中文词的明显误配 9）。
+构建时还按 `curation/english-vetoes.txt` 从上面这些英文词表里删词（任何大小写都不收，连同释义），按 `curation/gloss-vetoes.txt` 不用 ECDICT（MIT，msime 构建时下载）里列出的英文词与中文义项的配对，源文件本身不改。另外，`rime-ice-en-supplement.txt` 里只有大写写法、而 SCOWL 拼写词典收了小写词形的词（PuTTY 和 putty、Playwright 和 playwright，2026-11-04 的试跑是 18 个），构建时补上小写写法（msime `english::add_attested_lowercase`）。所以发布的 `msime-english.db` 是对 rime-ice（GPL-3.0）英文词表和 ECDICT 释义的修改版本，修改内容就是这两张表和这条补写法的规则，表里每一行都可以在本仓的提交历史里查到加入的理由。2026-11-04 的第一批（dict-cleanse 方案 H7、H8）：英文否决 86 个词（网页模板残留 12、成人站点名和色情垃圾词 26、错拼 15、蔑称 7、垃圾邮件药名 26），释义成对否决 65 对（普通中文词配粗口或性含义英文 34、配蔑称 7、普通英文词配辱骂性中文 15、高频中文词的明显误配 9）。
 
 ## 粤拼、注音与笔画词库
 
