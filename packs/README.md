@@ -7,7 +7,7 @@
 | 目录 | 名称 | 中文候选 | 英文候选 | 翻译 |
 | --- | --- | ---: | ---: | ---: |
 | [`ai_ml`](ai_ml/) | 机器学习与大模型专业词库 | 600 | 169 | 768 |
-| [`birds`](birds/) | 世界鸟类名称词库 | 9819 | 11041 | 22082 |
+| [`birds`](birds/) | 世界鸟类名称词库 | 9818 | 11041 | 22082 |
 | [`mathematics`](mathematics/) | 数学专业词库 | 1133 | 117 | 1239 |
 | [`petroleum_engineering`](petroleum_engineering/) | 石油工程专业词库 | 1451 | 199 | 1650 |
 | [`programming`](programming/) | 编程开发专业词库 | 730 | 186 | 915 |

@@ -5,8 +5,8 @@ on:
 permissions: {contents: read, pull-requests: write}
 concurrency: {group: "check-words-${{ github.event.pull_request.number }}", cancel-in-progress: true}
 env:
-  # The msime commit whose msime-dict-build checks the files: the same parsers and validation the dictionary build uses, so an entry that passes here builds. Move it when msime changes check-words or a custom file format.
-  MSIME_COMMIT: 434d8da644553e098368dcf739ba5113881cdc48
+  # The msime commit whose msime-dict-build checks the files: the same parsers and validation the dictionary build uses, so an entry that passes here builds. Move it when msime changes check-words or a custom file format. From this commit on check-words also rejects additions that the curation/ veto tables would delete (`--pinyin-vetoes`, `--english-vetoes`).
+  MSIME_COMMIT: 2f5de01dcde0e72ba6a2b931d13c8d8474715530
 jobs:
   check:
     runs-on: depot-ubuntu-24.04
@@ -16,6 +16,15 @@ jobs:
         with: {fetch-depth: 0, persist-credentials: false}
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with: {repository: metasequoiaime/msime, ref: "${{ env.MSIME_COMMIT }}", path: msime, persist-credentials: false}
+      # MSIME_COMMIT has to be reviewed builder code on msime develop, as builder.lock.json does (scripts/check_builder_lock.sh): a commit only on a pull request branch disappears when that branch is squash-merged and deleted, and every later submission's check would then fetch a dangling commit. A pull request that moves MSIME_COMMIT to a builder that is not merged yet fails here until it is.
+      - name: Check that MSIME_COMMIT is on msime develop
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          status="$(gh api "repos/metasequoiaime/msime/compare/${MSIME_COMMIT}...develop" --jq .status)" || { echo "::error::cannot compare MSIME_COMMIT $MSIME_COMMIT with msime develop" >&2; exit 1; }
+          case "$status" in
+            ahead|identical) ;;
+            *) echo "::error::MSIME_COMMIT $MSIME_COMMIT is not on msime develop (compare status: $status); move it to the merged commit" >&2; exit 1 ;;
+          esac
       # rustup on the runner installs the toolchain msime's rust-toolchain.toml pins.
       - name: Build msime-dict-build
         working-directory: msime
@@ -36,6 +45,16 @@ jobs:
           grep -E '[ *](msime-pinyin\.db|msime-english\.db)$' msime-SHA256SUMS.txt > shipped.sha256
           test "$(wc -l < shipped.sha256)" -eq 2
           sha256sum -c shipped.sha256
+      # curation/ holds the maintainer-reviewed veto and override tables, and the checks below read its veto tables from the base commit. A pull request that changed curation/ together with custom/ could drop a veto and add the vetoed word back in one go, so a pull request that changes both is stopped here; the maintainer tables change in a pull request of their own.
+      - name: Keep curation/ changes out of submissions
+        env: {BASE_SHA: "${{ github.event.pull_request.base.sha }}"}
+        run: |
+          curated=$(git diff --name-only "$BASE_SHA" HEAD -- curation | tr '\n' ' ')
+          custom=$(git diff --name-only "$BASE_SHA" HEAD -- custom | tr '\n' ' ')
+          if [ -n "$curated" ] && [ -n "$custom" ]; then
+            echo "::error::this pull request changes custom/ ($custom) and also curation/ ($curated); change the maintainer tables in curation/ in a separate pull request" >&2
+            exit 1
+          fi
       # Additions only, in each of words.txt, translations.txt and english.txt: an edit, deletion or reordering of an existing line is rejected, and every added line must parse as the build parses it and repeat nothing in this change, in its file or in the shipped dictionary. Words and English lines must also fit their file's existing weight range; a translation may give an existing source a new gloss, since the later line wins.
       - name: Check the custom files
         id: check
@@ -54,12 +73,18 @@ jobs:
           add words.txt --base --head
           add translations.txt --translations-base --translations-head
           add english.txt --english-base --english-head
+          # The veto tables come from the base commit, as the build will read them once this pull request is merged; a table the base commit does not have is passed as a missing file, which reads as an empty table (the builder's built-in English slurs still apply).
+          vetoes=()
+          for table in pinyin-vetoes english-vetoes; do
+            git show "$BASE_SHA:curation/$table.txt" > "$RUNNER_TEMP/base-$table.txt" 2>/dev/null || rm -f "$RUNNER_TEMP/base-$table.txt"
+            vetoes+=("--$table" "$RUNNER_TEMP/base-$table.txt")
+          done
           if [ ${#args[@]} -eq 0 ]; then
             echo "status=0" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           set +e
-          msime/target/release/msime-dict-build check-words "${args[@]}" \
+          msime/target/release/msime-dict-build check-words "${args[@]}" "${vetoes[@]}" \
             --msime-db "$RUNNER_TEMP/msime-pinyin.db" --english-db "$RUNNER_TEMP/msime-english.db" --json "$RUNNER_TEMP/report.json" --markdown "$RUNNER_TEMP/summary.md"
           status=$?
           set -e

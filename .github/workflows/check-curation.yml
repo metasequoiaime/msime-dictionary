@@ -1,0 +1,90 @@
+name: Check curation tables
+
+# curation/ 的表合进 main 就发版，表写错（解析错误、过期条目、否决和覆盖冲突）只有构建时才暴露。这个检查在 Pull Request 上用 builder.lock.json 固定的构建器，按发布 workflow 的两条命令把主库和 languages 都完整构建一遍（不发布），表有问题就在合并前失败；再把 msime-pinyin.db、msime-wubi.db、msime-english.db、msime-cantonese.db 与最新的 dict-v 逐表比较，报告写进运行摘要和 artifact。languages 也要构建：粤拼的 cantonese-word-vetoes.txt、cantonese-essay-keep.txt 只在 languages 里校验，拼音否决表改变粤拼 essay 补词的佐证（权重覆盖表不影响），会让豁免行过期；custom/cantonese.txt 收录被粤拼否决的词、或让豁免行有了佐证，也会让 languages 构建失败，而 check-words 不检查这个文件，所以它也触发这个检查。维护者要把它设为 main 的 required check（dict-cleanse 方案 0.4、R-3 的一部分，评测把关另算）。
+on:
+  pull_request:
+    paths:
+      - "curation/**"
+      - "custom/cantonese.txt"
+      - "builder.lock.json"
+      - ".github/workflows/check-curation.yml"
+  workflow_dispatch:
+    inputs:
+      msime_ref:
+        description: "留空用 builder.lock.json 固定的 msime 提交；填 msime 的分支或提交只用于试跑尚未合入的构建器"
+        required: false
+        default: ""
+        type: string
+
+permissions: {contents: read}
+concurrency: {group: "check-curation-${{ github.event.pull_request.number || github.run_id }}", cancel-in-progress: true}
+
+jobs:
+  build:
+    runs-on: depot-ubuntu-24.04-8
+    timeout-minutes: 60
+    steps:
+      - name: Checkout dictionary sources
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: {path: dictionary, persist-credentials: false}
+      # Same builder as the release that a merge would publish: the commit pinned in this pull request's builder.lock.json, checked to be on msime develop.
+      - name: Resolve msime builder
+        id: builder
+        env:
+          OVERRIDE: ${{ inputs.msime_ref }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          pin="$(dictionary/scripts/check_builder_lock.sh dictionary/builder.lock.json)"
+          echo "ref=${OVERRIDE:-$pin}" >> "$GITHUB_OUTPUT"
+          echo "msime builder: ${OVERRIDE:-$pin} (pinned: $pin)"
+      - name: Checkout msime builder
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: metasequoiaime/msime
+          ref: ${{ steps.builder.outputs.ref }}
+          path: msime
+          persist-credentials: false
+      # A builder from before msime #10858 does not read curation/ at all, so the tables would build without effect; say so instead of passing silently.
+      - name: Check that the builder reads curation/
+        run: |
+          if [ ! -f msime/crates/dict-builder/src/curation.rs ]; then
+            echo "::warning::msime $(git -C msime rev-parse HEAD) does not read curation/; these tables take no effect until builder.lock.json moves to a builder that does"
+            echo "The pinned builder does not read \`curation/\`; the tables were not checked." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Install Rust
+        working-directory: msime
+        run: rustup toolchain install
+      - name: Build msime-dict-build
+        run: cargo build --manifest-path msime/Cargo.toml --release --locked -p msime-dict-builder
+      # The main build runs word-vetoes, weight-overrides and sentence-excluded and the Wubi stages that read the same tables; languages reads the Cantonese word vetoes and essay keep list, checks them against custom/cantonese.txt and against the Pinyin tables as applied, and fails on a stale keep line or a vetoed curated word. Every stale, conflicting or malformed entry fails one of the two; both commands are the release workflow's, into one directory as there.
+      - name: Build the dictionaries the tables change
+        run: |
+          set -euo pipefail
+          msime/target/release/msime-dict-build --repository msime --dictionary "$GITHUB_WORKSPACE/dictionary" --cache "$RUNNER_TEMP/dictionary-sources" --out "$RUNNER_TEMP/head"
+          msime/target/release/msime-dict-build languages --repository msime --dictionary "$GITHUB_WORKSPACE/dictionary" --cache "$RUNNER_TEMP/dictionary-sources" --out "$RUNNER_TEMP/head"
+      - name: Compare with the latest dict-v release
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          set -euo pipefail
+          tag=$(gh release list --repo "$GITHUB_REPOSITORY" --exclude-drafts --exclude-pre-releases --limit 100 --json tagName --jq '[.[].tagName | select(test("^dict-v[0-9]+\\.[0-9]+\\.[0-9]+$"))] | sort_by(ltrimstr("dict-v") | split(".") | map(tonumber)) | last // empty')
+          [ -n "$tag" ] || { echo "::error::no dict-v release found to compare against" >&2; exit 1; }
+          mkdir -p "$RUNNER_TEMP/base" "$RUNNER_TEMP/diff-head"
+          gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir "$RUNNER_TEMP/base" -p msime-pinyin.db -p msime-wubi.db -p msime-english.db -p msime-cantonese.db -p msime-SHA256SUMS.txt -p msime-language-dictionaries-SHA256SUMS
+          # msime-cantonese.db is listed in the language dictionaries' checksum file, not in msime-SHA256SUMS.txt; each line has to match, so a missing entry fails here rather than comparing an unchecked file.
+          (cd "$RUNNER_TEMP/base" && grep -E '[ *](msime-pinyin\.db|msime-wubi\.db|msime-english\.db)$' msime-SHA256SUMS.txt > main.sha256 && grep -E '[ *]msime-cantonese\.db$' msime-language-dictionaries-SHA256SUMS > languages.sha256 && test "$(cat main.sha256 languages.sha256 | wc -l)" -eq 4 && cat main.sha256 languages.sha256 | sha256sum -c -)
+          rm "$RUNNER_TEMP/base/msime-SHA256SUMS.txt" "$RUNNER_TEMP/base/msime-language-dictionaries-SHA256SUMS" "$RUNNER_TEMP/base/main.sha256" "$RUNNER_TEMP/base/languages.sha256"
+          for name in msime-pinyin.db msime-wubi.db msime-english.db msime-cantonese.db; do
+            ln "$RUNNER_TEMP/head/$name" "$RUNNER_TEMP/diff-head/$name"
+          done
+          # shellcheck disable=SC2016
+          printf 'Built with msime `%s`, compared with `%s`.\n' "$(git -C msime rev-parse HEAD)" "$tag" > "$RUNNER_TEMP/preamble.md"
+          python3 msime/scripts/dict_artifact_diff.py --base "$RUNNER_TEMP/base" --head "$RUNNER_TEMP/diff-head" --preamble "$RUNNER_TEMP/preamble.md" --markdown "$RUNNER_TEMP/diff.md" --json "$RUNNER_TEMP/diff.json" --samples 20
+          cat "$RUNNER_TEMP/diff.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload the comparison
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: curation-diff
+          path: |
+            ${{ runner.temp }}/diff.md
+            ${{ runner.temp }}/diff.json

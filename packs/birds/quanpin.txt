@@ -2073,7 +2073,7 @@
 安氏叉尾海燕	an'shi'cha'wei'hai'yan	1000
 斑腰叉尾海燕	ban'yao'cha'wei'hai'yan	1000
 蒙氏叉尾海燕	meng'shi'cha'wei'hai'yan	1000
-佛得角叉尾海燕	fu'de'jiao'cha'wei'hai'yan	1000
+佛得角叉尾海燕	fo'de'jiao'cha'wei'hai'yan	1000
 美州黑叉尾海燕	mei'zhou'hei'cha'wei'hai'yan	1000
 乌叉尾海燕	wu'cha'wei'hai'yan	1000
 小海燕	xiao'hai'yan	1000
@@ -2101,7 +2101,6 @@
 红圆尾鹱	hong'yuan'wei'hu	1000
 柔羽圆尾鹱	rou'yu'yuan'wei'hu	1000
 马德拉圆尾鹱	ma'de'la'yuan'wei'hu	1000
-佛得角圆尾鹱	fu'de'jiao'yuan'wei'hu	1000
 德岛圆尾鹱	de'dao'yuan'wei'hu	1000
 黑顶圆尾鹱	hei'ding'yuan'wei'hu	1000
 瓦努阿图圆尾鹱	wa'nu'a'tu'yuan'wei'hu	1000
@@ -2131,7 +2130,7 @@
 大黑风鹱	da'hei'feng'hu	1000
 猛鹱	meng'hu	1000
 斯氏鹱	si'shi'hu	1000
-佛得角鹱	fu'de'jiao'hu	1000
+佛得角鹱	fo'de'jiao'hu	1000
 灰背鹱	hui'bei'hu	1000
 灰鹱	hui'hu	1000
 粉脚鹱	fen'jiao'hu	1000
@@ -2157,7 +2156,7 @@
 小鹱	xiao'hu	1000
 亚南极鹱	ya'nan'ji'hu	1000
 北大西洋鹱	bei'da'xi'yang'hu	1000
-佛得角小鹱	fu'de'jiao'xiao'hu	1000
+佛得角小鹱	fo'de'jiao'xiao'hu	1000
 秘鲁鹈燕	bi'lu'ti'yan	1000
 麦哲伦鹈燕	mai'zhe'lun'ti'yan	1000
 南乔治亚鹈燕	nan'qiao'zhi'ya'ti'yan	1000
@@ -2538,7 +2537,7 @@
 林鵟	lin'kuang	1000
 马岛鵟	ma'dao'kuang	1000
 索岛鵟	suo'dao'kuang	1000
-佛得角鵟	fu'de'jiao'kuang	1000
+佛得角鵟	fo'de'jiao'kuang	1000
 棕尾鵟	zong'wei'kuang	1000
 大鵟	da'kuang	1000
 喜山鵟	xi'shan'kuang	1000
@@ -6043,7 +6042,7 @@
 吕宋鸦	lv'song'ya	1000
 巴拉望乌鸦	ba'la'wang'wu'ya	1000
 紫背乌鸦	zi'bei'wu'ya	1000
-佛罗乌鸦	fu'luo'wu'ya	1000
+佛罗乌鸦	fo'luo'wu'ya	1000
 关岛乌鸦	guan'dao'wu'ya	1000
 长嘴乌鸦	chang'zui'wu'ya	1000
 白嘴乌鸦	bai'zui'wu'ya	1000
@@ -6580,7 +6579,7 @@
 栗领崖燕	li'ling'ya'yan	1000
 鳞胸鹪鹛	lin'xiong'jiao'mei	1000
 台湾鹪鹛	tai'wan'jiao'mei	1000
-尼泊尔鹪鹛	ni'po'er'jiao'mei	1000
+尼泊尔鹪鹛	ni'bo'er'jiao'mei	1000
 小鳞胸鹪鹛	xiao'lin'xiong'jiao'mei	1000
 须薮莺	xu'sou'ying	1000
 草莺	cao'ying	1000
@@ -6703,7 +6702,7 @@
 灰头柳莺	hui'tou'liu'ying	1000
 山柳莺	shan'liu'ying	1000
 内岛柳莺	nei'dao'liu'ying	1000
-佛罗柳莺	fu'luo'liu'ying	1000
+佛罗柳莺	fo'luo'liu'ying	1000
 帝汶柳莺	di'wen'liu'ying	1000
 罗地岛柳莺	luo'di'dao'liu'ying	1000
 圣岛柳莺	sheng'dao'liu'ying	1000
@@ -6720,7 +6719,7 @@
 戈岛薮莺	ge'dao'sou'ying	1000
 科摩罗薮莺	ke'mo'luo'sou'ying	1000
 巴士拉苇莺	ba'shi'la'wei'ying	1000
-佛得角苇莺	fu'de'jiao'wei'ying	1000
+佛得角苇莺	fo'de'jiao'wei'ying	1000
 细嘴苇莺	xi'zui'wei'ying	1000
 塞岛苇莺	sai'dao'wei'ying	1000
 罗岛苇莺	luo'dao'wei'ying	1000
@@ -6791,7 +6790,7 @@
 爪哇短翅蝗莺	zhao'wa'duan'chi'huang'ying	1000
 四川短翅蝗莺	si'chuan'duan'chi'huang'ying	1000
 本省短翅蝗莺	ben'sheng'duan'chi'huang'ying	1000
-佛莱河蝗莺	fu'lai'he'huang'ying	1000
+佛莱河蝗莺	fo'lai'he'huang'ying	1000
 刺蝗莺	ci'huang'ying	1000
 新西兰蝗莺	xin'xi'lan'huang'ying	1000
 姬蝗莺	ji'huang'ying	1000
@@ -8096,7 +8095,7 @@
 婆罗洲短翅鸫	po'luo'zhou'duan'chi'dong	1000
 苏门答腊短翅鸫	su'men'da'la'duan'chi'dong	1000
 蓝短翅鸫	lan'duan'chi'dong	1000
-佛罗短翅鸫	fu'luo'duan'chi'dong	1000
+佛罗短翅鸫	fo'luo'duan'chi'dong	1000
 栗腹歌鸲	li'fu'ge'qu	1000
 日本歌鸲	ri'ben'ge'qu	1000
 伊岛歌鸲	yi'dao'ge'qu	1000
@@ -8130,7 +8129,7 @@
 哈氏姬鹟	ha'shi'ji'weng	1000
 帝汶姬鹟	di'wen'ji'weng	1000
 菲律宾姬鹟	fei'lv'bin'ji'weng	1000
-佛氏姬鹟	fu'shi'ji'weng	1000
+佛氏姬鹟	fo'shi'ji'weng	1000
 苏拉威西姬鹟	su'la'wei'xi'ji'weng	1000
 达岛姬鹟	da'dao'ji'weng	1000
 白眉林鸲	bai'mei'lin'qu	1000
@@ -8284,7 +8283,7 @@
 柬埔寨啄花鸟	jian'pu'zhai'zhuo'hua'niao	1000
 苏门答腊啄花鸟	su'men'da'la'zhuo'hua'niao	1000
 火喉啄花鸟	huo'hou'zhuo'hua'niao	1000
-佛罗啄花鸟	fu'luo'zhuo'hua'niao	1000
+佛罗啄花鸟	fo'luo'zhuo'hua'niao	1000
 松巴啄花鸟	song'ba'zhuo'hua'niao	1000
 帝汶啄花鸟	di'wen'zhuo'hua'niao	1000
 红头啄花鸟	hong'tou'zhuo'hua'niao	1000

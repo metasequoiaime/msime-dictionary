@@ -2,7 +2,7 @@
 
 组织级约定和跨仓边界以 [组织 AGENTS.md](https://github.com/metasequoiaime/.github/blob/main/AGENTS.md) 为准。本文件补充本仓的数据与验证规则。
 
-本仓只放词库源数据，分三个顶层目录：`sources/` 是 msime 构建器经 `--dictionary` 读取的全部输入，按输入方案分子目录（`sources/pinyin/`、`sources/wubi/`、`sources/english/` 是拼音、五笔与英文的基础词库，`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/`、`sources/japanese/`、`sources/korean/` 是粤拼、注音、笔画、日文与韩文方案的词库，`sources/unlicensed/` 是没有再分发授权、发布构建不使用的文件，`sources/symbols/` 是 rime-wanxiang 的符号表与本项目生成的「Windows 显示不了的符号」剔除清单，目前只由 MSIME-Windows 的本地构建器读取，另有两份本项目自写的符号表 `symbol-names.tsv`、`latex-symbols.tsv`，见文末「符号名称表」，以及 msime 构建器 Symbols 阶段读的表情面板符号页 `piliapp-symbols.txt`，它的许可未确认，见 `NOTICE.md`「待解决」，不要往里加内容）；`custom/` 是人工维护数据，也是唯一接受投稿的目录；`packs/` 是用户按需导入的专业词库，不进入构建。构建器在 msime 仓库的 `crates/dict-builder`（`msime-dict-build`）。构建器只用 `--dictionary <本仓检出>` 读取 `sources/` 与 `custom/`，并把该提交记为 manifest 的 `custom_dictionary_commit`；msime 的锁文件不固定本仓任何文件，msime 通常消费本仓的 `dict-v` Release 附件；`sources/opencc/` 是构建期内嵌的例外，由 msime 的 `resources/opencc.lock.json` 独立固定本仓提交和逐文件摘要，不新增发布附件。根目录的 `upstream.lock.json` 按大小和 SHA-256 记录上游原样文件与派生文件，以及各上游的提交：构建器读取时逐个校验字节，并要求记录的提交等于 msime 锁文件里的上游引用，哪些路径算上游数据由 msime 构建器决定；`scripts/check_upstream.py` 在 CI 里先查一遍。`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/` 由 `languages` 子命令构建成 `msime-cantonese.db`、`msime-zhuyin.db`、`msime-stroke.db`；`sources/japanese/` 由主构建生成 `msime-japanese.dat`；`sources/korean/hanja.txt` 由 `hanja` 子命令生成 msime 源码里引擎内嵌的 `crates/engine/src/korean/hanja.tsv`，不是 Release 附件。每次推送到 `main` 且改动了 `sources/`、`custom/` 或 `builder.lock.json`，本仓 `.github/workflows/release-built-dictionaries.yml` 就用这个提交和它的 `builder.lock.json` 固定的 msime 构建器提交（不是 msime `develop`）构建全部 19 个附件，在现有最高的 `dict-vX.Y.Z` 上加一个修订号发布 Release，标签打在这个提交上，说明列出源数据变更和每个附件的用途；手动运行只用于重建或试跑。所以合入 `main` 等于发版：没准备好发布的源数据改动不要合入。构建器只通过改 `builder.lock.json` 的 `msime_commit` 升级：一个只改这个提交的 PR（唯一的例外是下面「路径就是契约」和升级上游提交写的跨仓改动），新提交必须在 msime `develop` 上（`scripts/check_builder_lock.sh` 检查，PR 的 quality 检查和发布 workflow 都跑它），PR 里附上用新提交在 PR 分支上手动试跑（`msime_ref` 留空、`publish` 关闭）的运行链接；合入即按新构建器发布一版。手动运行的 `msime_ref` 只用于试跑，发布的运行拒绝它；回滚就是在 `main` 上 revert 升级 PR；步骤见 `README.md`「升级构建器」。已发布的版本不可修改。附件清单在 workflow 的 `RELEASE_ASSETS` 里，增删附件时同一次改动更新它、说明模板里的文件表和 `README.md` 的附件表，`RELEASE_ASSETS` 与说明文件表不一致时 workflow 会失败。发版的完整流程和发布后去 msime 升级哪些锁文件写在 `README.md`，本文件只列约束。不要把构建脚本、生成器、生成的数据库或其他产物加回本仓。
+本仓只放词库源数据，分四个顶层目录：`sources/` 是 msime 构建器经 `--dictionary` 读取的全部输入，按输入方案分子目录（`sources/pinyin/`、`sources/wubi/`、`sources/english/` 是拼音、五笔与英文的基础词库，`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/`、`sources/japanese/`、`sources/korean/` 是粤拼、注音、笔画、日文与韩文方案的词库，`sources/unlicensed/` 是没有再分发授权、发布构建不使用的文件，`sources/symbols/` 是 rime-wanxiang 的符号表与本项目生成的「Windows 显示不了的符号」剔除清单，目前只由 MSIME-Windows 的本地构建器读取，另有两份本项目自写的符号表 `symbol-names.tsv`、`latex-symbols.tsv`，见文末「符号名称表」，以及 msime 构建器 Symbols 阶段读的表情面板符号页 `piliapp-symbols.txt`，它的许可未确认，见 `NOTICE.md`「待解决」，不要往里加内容）；`custom/` 是人工维护数据，也是唯一接受投稿的目录；`curation/` 是维护者审定的清洗表（否决表、权重覆盖表、粗俗词表），不接受投稿，见下文「维护者清洗表」；`packs/` 是用户按需导入的专业词库，不进入构建。构建器在 msime 仓库的 `crates/dict-builder`（`msime-dict-build`）。构建器只用 `--dictionary <本仓检出>` 读取 `sources/`、`custom/` 与 `curation/`，并把该提交记为 manifest 的 `custom_dictionary_commit`；msime 的锁文件不固定本仓任何文件，msime 通常消费本仓的 `dict-v` Release 附件；`sources/opencc/` 是构建期内嵌的例外，由 msime 的 `resources/opencc.lock.json` 独立固定本仓提交和逐文件摘要，不新增发布附件。根目录的 `upstream.lock.json` 按大小和 SHA-256 记录上游原样文件与派生文件，以及各上游的提交：构建器读取时逐个校验字节，并要求记录的提交等于 msime 锁文件里的上游引用，哪些路径算上游数据由 msime 构建器决定；`scripts/check_upstream.py` 在 CI 里先查一遍。`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/` 由 `languages` 子命令构建成 `msime-cantonese.db`、`msime-zhuyin.db`、`msime-stroke.db`；`sources/japanese/` 由主构建生成 `msime-japanese.dat`；`sources/korean/hanja.txt` 由 `hanja` 子命令生成 msime 源码里引擎内嵌的 `crates/engine/src/korean/hanja.tsv`，不是 Release 附件。每次推送到 `main` 且改动了 `sources/`、`custom/`、`curation/` 或 `builder.lock.json`，本仓 `.github/workflows/release-built-dictionaries.yml` 就用这个提交和它的 `builder.lock.json` 固定的 msime 构建器提交（不是 msime `develop`）构建全部 19 个附件，在现有最高的 `dict-vX.Y.Z` 上加一个修订号发布 Release，标签打在这个提交上，说明列出源数据变更和每个附件的用途；手动运行只用于重建或试跑。所以合入 `main` 等于发版：没准备好发布的源数据改动不要合入。构建器只通过改 `builder.lock.json` 的 `msime_commit` 升级：一个只改这个提交的 PR（唯一的例外是下面「路径就是契约」和升级上游提交写的跨仓改动），新提交必须在 msime `develop` 上（`scripts/check_builder_lock.sh` 检查，PR 的 quality 检查和发布 workflow 都跑它），PR 里附上用新提交在 PR 分支上手动试跑（`msime_ref` 留空、`publish` 关闭）的运行链接；合入即按新构建器发布一版。手动运行的 `msime_ref` 只用于试跑，发布的运行拒绝它；回滚就是在 `main` 上 revert 升级 PR；步骤见 `README.md`「升级构建器」。已发布的版本不可修改。附件清单在 workflow 的 `RELEASE_ASSETS` 里，增删附件时同一次改动更新它、说明模板里的文件表和 `README.md` 的附件表，`RELEASE_ASSETS` 与说明文件表不一致时 workflow 会失败。发版的完整流程和发布后去 msime 升级哪些锁文件写在 `README.md`，本文件只列约束。不要把构建脚本、生成器、生成的数据库或其他产物加回本仓。
 
 ## 文件是逐字节锁定的
 
@@ -13,10 +13,31 @@
 
 ## 自定义词条
 
-- `custom/words.txt`、`custom/translations.txt`、`custom/english.txt`、`custom/cantonese.txt`、`custom/wubi86.txt` **只追加**：新行写在文件末尾，不修改、删除或重排已有的行。check-words 会拒绝任何非追加的改动；`custom/cantonese.txt` 要等 `check-words.yml` 把它加进触发路径和参数（需要 msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 合入后的 `MSIME_COMMIT`）才有这道检查，在那之前由审核者人工核对；check-words 不检查 `custom/wubi86.txt`，一直由审核者人工核对（编码是该字词的 86 码，权重不把同码原有的首选挤下去）。
+- `custom/words.txt`、`custom/translations.txt`、`custom/english.txt`、`custom/cantonese.txt`、`custom/wubi86.txt` **只追加**：新行写在文件末尾，不修改、删除或重排已有的行。check-words 会拒绝任何非追加的改动；`custom/cantonese.txt` 要等 `check-words.yml` 把它加进触发路径和参数才有这道检查（构建器的 `check-words` 从 msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 起能检查它，workflow 还没接上），在那之前由审核者人工核对；它的改动另外触发 `check-curation.yml`，用固定的构建器跑一遍 languages，和下文「维护者清洗表」里粤拼两张表冲突的追加在合并前失败；check-words 不检查 `custom/wubi86.txt`，一直由审核者人工核对（编码是该字词的 86 码，权重不把同码原有的首选挤下去）。
 - `custom/cantonese-variant-vetoes.txt` 是例外：它是粤拼词库香港字形替换的人工否决表（每行一个不换的 OpenCC 字形），由维护者审定，不接受投稿，也不受只追加限制，撤销否决就删掉那一行。从 msime #10754（`a8480ce407`）起，构建器读这张表，并要求每个字都是 `sources/opencc/TWVariants.txt` 或 `HKVariants.txt` 里某一行的键，否则构建失败；`builder.lock.json` 目前固定的 `93815fffb` 早于它，这张表和 `HKVariants.txt` 都不读，固定提交升到 `a8480ce407` 或之后才生效。
 - `custom/words.txt` 的格式是 `词<TAB>全拼<TAB>权重`，全拼音节用 `'` 分隔；另外两个文件的格式见 `README.md`。词语和英文的权重落在所在文件现有的范围内；不要为了让一个词靠前填一个极大值。
 - 候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。
+
+## 维护者清洗表
+
+上游文件逐字节锁定、`custom/` 只追加，所以删词、改权重和粗俗词表都写在 `curation/` 下的独立表里，由 msime 构建器在读入之后施加（`crates/dict-builder/src/curation.rs`，格式见那边 README 的「Curation tables」和本仓 `README.md`）：`pinyin-vetoes.txt`（`词` 或 `词<TAB>全拼`）、`pinyin-weight-overrides.txt`（`词<TAB>全拼<TAB>权重`，与全拼键无关的频率修正再加第四列 `wubi`，五笔补充词组的同码排序才跟着变）、`offensive-words.txt`（一个词或 `!` 开头的豁免写法），英文的 `english-vetoes.txt`（一个英文词）、`gloss-vetoes.txt`（`中文<TAB>英文`），粤拼的 `cantonese-word-vetoes.txt`（`词` 或 `词<TAB>去调粤拼`）、`cantonese-essay-keep.txt`（`词<TAB>去调粤拼`）。
+
+拼音的否决表和权重覆盖表不只作用于 `msime-pinyin.db`：整词否决也从三张五笔表删词，带 `wubi` 的覆盖行也改五笔补充词组的同码排序，否决和带 `wubi` 的覆盖还会改变 `wubi86-rime-wubi.txt` 的行能不能越过同码极点行；languages 判断粤拼 essay 补词有没有佐证时，读的是去掉否决读音之后的拼音词表（被否决的读音不算佐证），所以改否决表可能改变 `msime-cantonese.db` 的次序，试跑时 languages 的产物也要比较。权重覆盖表不影响粤拼库：覆盖只决定普通话同键上排第几，被压低的词仍然是拼音库的词。
+
+- 只由维护者改，不接受投稿；不受只追加限制，撤销一条就删掉那一行。msime-web、msime-cloud 不读写这个目录。
+- 每一行都要有来源：先用 msime 的 `msime-dict-build cleanse-report` 出候选清单（`--upstream` 给上游 rime-ice 检出，`--reference` 给万象 `7ab73ee` 的全部 17 份 dicts，即本仓 `sources/pinyin/wanxiang/`），逐条审过再抄进表里，在表里那一节的 `#` 注释写明出自哪一份清单、哪个 msime 提交和本仓提交、审定规则和抽检结果。会误伤正常词的写豁免（粗俗词表的 `!` 写法）或不写。
+- 每一条都必须在本次输入里匹配到东西，否则构建失败：输入变了、条目匹配不到时把它删掉，不要留着。同一个读音不能既否决又覆盖；覆盖不能作用于 `custom/words.txt` 从已有的行提了权的行。
+- 覆盖的权重是绝对值：同键别的词的权重变了（上游换了提交、补充表重新生成、万象重加权），要重新跑 `cleanse-report` 核对，碎片和越位的行可能又压过了常用词，或者降得过头。
+- 覆盖表第四列 `wubi` 只写在本地损坏恢复上游值、占位权重这类与全拼键无关的修正上。碎片、非标准读音、人工词条越位是按同一全拼键上的竞争定的，五笔编码上没有这层竞争，不写 `wubi`；方案定了五笔只做定点清洗、不做大删，覆盖表也删不掉五笔里的词（门槛取覆盖前后较大的权重）。五笔里要删的词写进否决表，逐条审过。
+- 改 `curation/` 的 Pull Request 不要同时改 `custom/`：check-words 从基准提交读否决表，两处一起改会让撤销否决、加回词条在同一个 PR 里过检查，所以 workflow 直接拒绝这种 PR。
+- 合入即发版。改了 `curation/`、`custom/cantonese.txt` 或 `builder.lock.json` 的 PR 由 `check-curation.yml` 用固定的构建器完整构建主库和 languages（与发布 workflow 的两条命令相同），把 `msime-pinyin.db`、`msime-wubi.db`、`msime-english.db`、`msime-cantonese.db` 与最新的 `dict-v` 逐表比较，表有问题在合并前失败；它要设为 `main` 的 required check。另外在 PR 分支上手动运行 Release built dictionaries（`publish` 关闭）试跑，下载 artifact 用 msime 的 `scripts/dict_artifact_diff.py` 和最新的 `dict-v` 逐表比较，结果写进 PR。`builder.lock.json` 固定的构建器早于 msime #10858 时不读 `curation/`，表合进来也不生效，要等固定提交升上去。
+
+`custom/cantonese.txt` 与粤拼的两张表互相校验，三者之一变了，另外两张可能就过期，languages 构建直接失败（合入即发版，所以发布会失败）：
+
+- 否决表（`cantonese-word-vetoes.txt`）的条目匹配到 `custom/cantonese.txt` 收录的词（整词否决匹配这个词的任何读音，按读音否决只匹配同一读音；都按换成香港字形之后的字面比），构建失败。投稿追加被否决的词，就是要推翻维护者的否决：审核者先判断否决对不对，否决对就拒绝投稿，否决错了先单独提 PR 删否决行、合入之后再收投稿。
+- `custom/cantonese.txt` 收录的词本身就是 essay 补词的佐证（只看字面，不看读音）。豁免表（`cantonese-essay-keep.txt`）要求每一行都是这次构建本来会压低的词，所以追加一个豁免表里已有的词，那一行就过期，构建失败。豁免表里的词已经保留 essay 分数，同一读音不用再写进 `custom/cantonese.txt`，审核者拒绝这类投稿；要收它的另一个读音时，因为改 `curation/` 的 PR 不同时改 `custom/`，先单独提 PR 删掉豁免行，合入之后再收投稿（中间那一版这个词会被压低一次）。
+- 豁免行也会因为拼音否决表变了而过期（这个词在拼音库里有了或没了佐证），见上文「拼音的否决表和权重覆盖表不只作用于 `msime-pinyin.db`」一段；权重覆盖表不影响粤拼佐证。
+- 改这三张表中任何一张的 PR，`check-curation.yml` 都会构建 languages 并把 `msime-cantonese.db` 和最新的 `dict-v` 比较，看这份差异再合入。`Eval gate` 也构建 languages，但在它设为 required check 之前，挡得住这类失败的只有 `check-curation.yml`，所以这两张粤拼表、拼音否决表和 `custom/cantonese.txt` 的 PR 都要看到它通过、看过 `msime-cantonese.db` 的差异再合入。
 
 ## 基础词库
 
@@ -51,6 +72,8 @@ python3 scripts/validate_packs.py
 ```
 
 它检查专业词库的格式与读音（对照 `sources/pinyin/single-chars.txt` 和 `sources/pinyin/rime-ice-supplement.txt` 的单字行）、与发布用拼音输入的重复项、翻译覆盖率，以及 `custom/translations.txt` 的格式；完整检查项见 `README.md` 专业词库一节和 `packs/README.md` 的验收清单。这三个文件的追加规则由 check-words workflow 用固定版本的 `msime-dict-build check-words` 检查，需要 Rust 工具链，本地一般不跑。
+
+改动 `sources/`、`custom/`、`curation/`、`upstream.lock.json`、`builder.lock.json` 或 `release-built-dictionaries.yml` 的 Pull Request 还要过 `eval-gate.yml`（检查名 `Eval gate`）：用候选提交的 `builder.lock.json` 固定的 msime 构建器构建候选词库，下载最新的 `dict-v` 发布作为基线，用同一个 msime 提交里的 `scripts/dict_eval_gate.py` 跑排序评测的硬门槛（金标准对不丢、must-outrank 不退步、粗俗首屏曝光不增加、quanpin-words-v2 三种键盘的配对 McNemar、全拼行数下限），并附上方案 4.3 的参考项（整句集、粗俗目标码）、与基线逐表逐行的产物差异（逐词的删除、降权清单）和五笔、英文的 top-N 差异，结果写成 PR 评论，候选产物（含 languages）上传为 artifact `dictionary-candidate`。languages 也在这里构建，粤拼、注音、笔画的构建错误在合入前就会让检查失败。它失败就不要合入：合入就是发布。评测脚本随构建器固定，门槛口径的变化同样要靠升级 `builder.lock.json` 进来；固定提交里没有 `scripts/dict_eval_gate.py` 时这个检查失败。
 
 ## 隐私
 

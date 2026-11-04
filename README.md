@@ -2,7 +2,7 @@
 
 水杉输入法（[msime](https://github.com/metasequoiaime/msime)）词库的源数据仓库：这里只放文本源数据，由 msime 的构建器 `msime-dict-build` 构建成本仓 `dict-v*` Release 中的数据库与模型；构建脚本和生成的数据库都不放在这里。
 
-**万象词库来源声明：`sources/pinyin/wanxiang/` 下的 15 份 `.dict.yaml` 文件全部来自 [万象拼音（amzxyz/rime-wanxiang）](https://github.com/amzxyz/rime-wanxiang) 的 `dicts/` 目录，署名作者 amzxyz，按 [CC BY 4.0（署名 4.0 国际）](https://creativecommons.org/licenses/by/4.0/) 许可分发。** 上游词库数据源自 [万象词库（amzxyz/RIME-LMDG）](https://github.com/amzxyz/RIME-LMDG)。本仓逐字节复制这些文件，保留上游文件名、文件头、词条、读音与权重；来源提交及完整文件清单见 [NOTICE.md「万象词库原始文件」](NOTICE.md#万象词库原始文件)。
+**万象词库来源声明：`sources/pinyin/wanxiang/` 下的 17 份 `.dict.yaml` 文件全部来自 [万象拼音（amzxyz/rime-wanxiang）](https://github.com/amzxyz/rime-wanxiang) 的 `dicts/` 目录，署名作者 amzxyz，按 [CC BY 4.0（署名 4.0 国际）](https://creativecommons.org/licenses/by/4.0/) 许可分发。** 上游词库数据源自 [万象词库（amzxyz/RIME-LMDG）](https://github.com/amzxyz/RIME-LMDG)。本仓逐字节复制这些文件，保留上游文件名、文件头、词条、读音与权重；来源提交及完整文件清单见 [NOTICE.md「万象词库原始文件」](NOTICE.md#万象词库原始文件)。
 
 - 想加一个词、一个英文单词或一条候选窗翻译：见[贡献词条](#贡献词条)。
 - 想做一个按需导入的专业词库：见[专业词库](#专业词库)和 [packs/README.md](packs/README.md)。
@@ -17,9 +17,10 @@ sources/                                  msime 构建器经 --dictionary 读取
     rime-ice-supplement.txt               rime-ice 新提交中相对 rime-ice.txt 新增的词条（本项目生成的补充表），与万象共有的词条权重取自万象 -> msime-pinyin.db
     places.txt                            行政区划全称与简称中缺失或权重偏低的词条（本项目生成的补充表）-> msime-pinyin.db
     single-chars.txt                      单字读音与字频，与万象共有的读音字频取自万象 -> msime-pinyin.db；msime-stroke.db 的权重
-    wanxiang/                             万象词库（amzxyz/rime-wanxiang）dicts/ 下 15 份原样文件，CC BY 4.0，作者 amzxyz
+    wanxiang/                             万象词库（amzxyz/rime-wanxiang）v18.0.16 dicts/ 下 17 份原样文件，CC BY 4.0，作者 amzxyz；构建时按它重算与万象共有的拼音权重
   wubi/                                   五笔词库 -> msime-wubi.db
-    wubi86-jidian.txt                     86 版五笔（rime-wubi86-jidian，另补了 rime-wubi 的词条）-> wubi86 表
+    wubi86-jidian.txt                     86 版五笔（rime-wubi86-jidian 的数据区，有 6 处本仓改动，见 NOTICE.md）-> wubi86 表
+    wubi86-rime-wubi.txt                  rime-wubi 里极点表没有的 86 行（#36 补进来，后来从 wubi86-jidian.txt 拆出），构建时权重一般按 10（上游的 0 仍是 0），拼音库词频悬殊的排到同码冷僻极点行之前 -> wubi86 表
     wubi86-supplement.txt                 86 表没有、98 表或拼音输入里有的多字词组，编码按 86 词组规则推出（本项目生成的补充表）-> wubi86 表
     wubi98-supplement.txt                 98 表没有、86 表或拼音输入里有的多字词组，编码按词组规则由 98 单字码推出（本项目生成的补充表）-> wubi98 表
     wubi98.txt                            98 版五笔主表（98wubi-tables 的 98五笔含词表-【单义】.txt 原样改名，UTF-16LE）-> wubi98 表
@@ -74,6 +75,14 @@ custom/                                   人工维护的数据，唯一接受�
   wubi86.txt                              86 五笔的人工词条（如 一…十 的编码上的 ①…⑩）-> msime-wubi.db
   cantonese-variant-vetoes.txt            粤拼词库不换成香港字形的 OpenCC 字形（维护者审定，不接受投稿，不受只追加限制）-> msime-cantonese.db
   names.txt                               人名（没有任何构建或网站读取）
+curation/                                 维护者审定的清洗表，不接受投稿，不受只追加限制（msime 构建器读入其他输入之后施加）
+  pinyin-vetoes.txt                       拼音否决表：整词或按读音删掉的词条（整词否决也从三张五笔表删掉）-> msime-pinyin.db、msime-wubi.db
+  pinyin-weight-overrides.txt             拼音权重覆盖表：把一个读音的权重设成给定的值 -> msime-pinyin.db（第四列写了 wubi 的也改五笔补充词组的同码排序）
+  offensive-words.txt                     不拿来拼整句、不当首选的粗俗词和豁免写法 -> msime-pinyin.db 的 sentence_excluded 表，五笔表里排到同码最后 -> msime-wubi.db
+  english-vetoes.txt                      英文否决表：所有英文来源都不收的词（垃圾 token、错拼、蔑称、垃圾邮件药名）-> msime-english.db
+  gloss-vetoes.txt                        释义成对否决表：`中文<TAB>英文`，这个英文词的这个中文义项两个方向都不用 -> msime-english.db
+  cantonese-word-vetoes.txt               粤拼词否决表：`词` 或 `词<TAB>粤拼`，删掉 essay 的错字写法 -> msime-cantonese.db
+  cantonese-essay-keep.txt                粤拼 essay 补词豁免表：`词<TAB>粤拼`，没有佐证也不压低的常用口语词 -> msime-cantonese.db
 packs/                                    用户按需导入的专业词库，不进入构建
   README.md                               专业词库的说明与验收清单
   ai_ml/                                  机器学习与大模型
@@ -94,7 +103,7 @@ AGENTS.md                                 给代码代理的维护约束
 CHANGELOG.md                              已冻结，只作历史记录
 ```
 
-**目录约定**：`sources/` 放 msime 构建器经 `--dictionary` 读取的输入，由本仓 Git 提交固定，上游原样文件和派生文件另由根目录 `upstream.lock.json` 按 SHA-256 固定；粤拼、注音（`tsi.csv`、`word.csv`、`phrase.occ`）、笔画、日文、韩文的上游原样文件保留上游的文件名；本项目生成或修正的文件，以及上游文件名不是 ASCII 或会和别的文件同名的上游原样文件（`wubi98.txt`、`wubi98-fcitx.txt`；`wubixsj-byujiang.txt` 也照这个写法改名，和同目录的五笔原表一致；上游原文件名见 `NOTICE.md`），用小写、连字符分隔、说明来源的名字（如 `rime-ice-supplement.txt`、`mcbopomofo-supplement.txt`），不带版本后缀，因为内容由提交固定。`custom/` 是唯一接受投稿的地方，只追加。`packs/` 是可选的专业词库，不进入构建。
+**目录约定**：`sources/` 放 msime 构建器经 `--dictionary` 读取的输入，由本仓 Git 提交固定，上游原样文件和派生文件另由根目录 `upstream.lock.json` 按 SHA-256 固定；粤拼、注音（`tsi.csv`、`word.csv`、`phrase.occ`）、笔画、日文、韩文的上游原样文件保留上游的文件名；本项目生成或修正的文件，以及上游文件名不是 ASCII 或会和别的文件同名的上游原样文件（`wubi98.txt`、`wubi98-fcitx.txt`；`wubixsj-byujiang.txt` 也照这个写法改名，和同目录的五笔原表一致；上游原文件名见 `NOTICE.md`），用小写、连字符分隔、说明来源的名字（如 `rime-ice-supplement.txt`、`mcbopomofo-supplement.txt`），不带版本后缀，因为内容由提交固定。`custom/` 是唯一接受投稿的地方，只追加。`curation/` 放维护者审定的否决表、权重覆盖表和粗俗词表：上游文件逐字节锁定、`custom/` 只追加，删词和改权重都写成这里的独立表，由构建器在读入之后施加；它不接受投稿，msime-web 和 msime-cloud 也不读写它。`packs/` 是可选的专业词库，不进入构建。
 
 五笔 86、98 的词组补充表由 msime 的同名生成器从另一版五笔原表、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt` 和 `custom/words.txt` 生成。rime-ice 主表与补充表收录权重不低于 100 的两字及以上汉字词；区划名称与人工词条不限权重。两个版本分别用自己的单字全码推导词组编码，原表任何编码已有的词不再加入，同词多音只生成一行。补充词排在原表同码候选之后；新增重码会使一些原本唯一的四码不再自动上屏，生成器报告会统计这些编码。`packs/` 和 `sources/unlicensed/` 不参与生成。
 
@@ -102,7 +111,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 发布构建每次在产物目录中重新派生三份五笔词组数据，新增人工词条不必另等一次手动重建。`sources/wubi/` 下的三份补充表（`wubi86-supplement.txt`、`wubi98-supplement.txt`、`wubixsj-supplement.txt`）保留为可复现的源快照；构建使用本次提交的原表、拼音与人工词条生成，不依赖快照是否已跟上。`wubixsj-supplement.txt` 另外是新世纪表的发布开关：msime 构建器不读它的内容，只看它在不在，在就构建并发布 `wubixsj` 表，不在（收入它之前的提交）就不建这张表、`msime-wubi.db` 只有 86 和 98。所以合入收入它的那次改动就会发布第一个带新世纪表的 `dict-v`，不要删掉它。生成器、数据库和中间产物仍留在 msime，不能提交到本仓。
 
-`Preview upstream dictionary updates` 每周检查 rime-ice，并生成中英文补充表的审核候选、增删数量、权重变化数量、输入摘要、上游提交与许可证；也可手动指定 `msime_ref` 和 `upstream_ref` 试跑。它只上传 workflow artifact，不自动合并或发布。生成器是 msime 的 `msime-dict-build rime-ice-supplement --upstream <干净的上游检出> --dictionary <本仓检出> --out <候选目录>`；中文对照主拼音表、单字表、区划表和人工词条按同词同音去重，英文对照基础英文表、SCOWL 和人工英文词按小写词形去重。没有注音的 `tencent.dict.yaml` 不自动猜音导入；引擎不支持的读音单列到 `unsupported-readings.txt`，未注音行单列到 `unannotated-words.txt`，报告列出两类数量。历史补充表的权重另经万象对齐，上游候选的词频变化也须审核。审核后仍按下文跨仓顺序更新引用、许可证、数据与锁，并试跑完整构建。
+`Preview upstream dictionary updates` 每周检查 rime-ice，并生成中英文补充表的审核候选、增删数量、权重变化数量、输入摘要、上游提交与许可证；也可手动指定 `msime_ref` 和 `upstream_ref` 试跑。它只上传 workflow artifact，不自动合并或发布。生成器是 msime 的 `msime-dict-build rime-ice-supplement --upstream <干净的上游检出> --dictionary <本仓检出> --out <候选目录>`；中文对照主拼音表、单字表、区划表和人工词条按同词同音去重，英文对照基础英文表、SCOWL 和人工英文词按小写词形去重（用构建的解析器取词，基础英文表里被 rime-ice 注释掉的条目也算，不把它们加回来）。没有注音的 `tencent.dict.yaml` 不自动猜音导入；引擎不支持的读音单列到 `unsupported-readings.txt`，未注音行单列到 `unannotated-words.txt`，报告列出两类数量。历史补充表的权重另经万象对齐，上游候选的词频变化也须审核。审核后仍按下文跨仓顺序更新引用、许可证、数据与锁，并试跑完整构建。
 
 所有数据文件按字节保存：`upstream.lock.json` 按大小和 SHA-256 固定上游原样文件与派生文件，CI 由 `scripts/check_upstream.py` 检查，msime 构建器读取时再校验一遍，并要求记录的上游提交等于 msime 锁文件和许可证写明的提交；所以不要格式化、转换编码或换行符、排序或去重，仓库的 `.gitattributes`（`* -text`）关闭了换行转换。各文件的上游与许可见 [NOTICE.md](NOTICE.md)，逐文件的格式见[文件格式](#文件格式)。
 
@@ -117,9 +126,13 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/pinyin/rime-ice-supplement.txt` | 主命令 Quanpin | `msime-pinyin.db` | 进入 |
 | `sources/pinyin/places.txt` | 主命令 PlacesSupplement（在 CustomWords 之前）：没有的词插入，已有且权重更低的调高到这里的权重，已有且权重更高的不变 | `msime-pinyin.db` | 进入 |
 | `custom/words.txt` | 主命令 CustomWords：没有的词插入，已有且权重更低的调高到这里的权重，已有且权重更高的不变 | `msime-pinyin.db` | 进入 |
+| `curation/pinyin-vetoes.txt` | 主命令 WordVetoes（在 ReadingCorrections 之后）：`词` 删掉这个词的全部读音，并让三张五笔表不写入它；`词<TAB>全拼` 只删这一个读音。一条在全拼表里删不到东西（整词否决在五笔原表里也没有）时构建失败。五笔三张表的补充词组生成器也按否决之后的拼音行判断，`wubi86-rime-wubi.txt` 的行与极点行比拼音库词频时被否决的读音也不算；languages 判断粤拼 essay 补词有没有拼音库佐证时，被否决的读音不算 | `msime-pinyin.db`、`msime-wubi.db`、`msime-cantonese.db` | msime 构建器读取后进入：`builder.lock.json` 升到带 msime #10858 的提交才生效，在那之前固定的构建器不读 `curation/` |
+| `curation/pinyin-weight-overrides.txt` | 主命令 WeightOverrides（紧接 WordVetoes）：`词<TAB>全拼<TAB>权重` 把这个读音的权重设成这个值，可降可升；全拼表没有这一行，或这一行是 `custom/words.txt` 从已有的行提了权的，构建失败。第四列可以写 `wubi`，只写在与全拼键无关的频率修正上（本地损坏恢复上游值、占位权重）：五笔补充词组按它排同码，`wubi86-rime-wubi.txt` 的行与极点行比拼音库词频时也用修正后的值；不写的是相对同一全拼键的降权，五笔不理。五笔补充词组的 100 门槛取覆盖前后较大的权重，覆盖表不会把词从五笔里删掉 | `msime-pinyin.db`、`msime-wubi.db` | 同上 |
+| `curation/offensive-words.txt` | 主命令 SentenceExcluded（紧接 WeightOverrides），用引擎的解析器读，写成 `sentence_excluded(value, exempt)` 表；每个词必须是全拼表里的词、每条豁免写法必须出现在全拼表的某个词里，否则构建失败。引擎打开词库时读这张表，旧词库没有这张表时用引擎内嵌的后备表。主命令 Wubi、Wubi98、WubiXsj 还按它把三张五笔表里含粗俗词的行排到同码其余行之后（同码只有它一行的不动），粗俗词本身保留、不当首选 | `msime-pinyin.db`、`msime-wubi.db` | 同上 |
 | `sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt` | 只在 `--include-unlicensed` 的完整构建中读取 | — | 被 `licensing.rs` 排除：合并自 CustomPinyinDictionary，该快照没有声明许可；发布构建改用 `sources/pinyin/rime-ice.txt` |
 | `sources/unlicensed/single-char-whitelist.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：来源没有记录 |
 | `sources/wubi/wubi86-jidian.txt` | 主命令 Wubi | `msime-wubi.db` 的 `wubi86` 表 | 进入 |
+| `sources/wubi/wubi86-rime-wubi.txt` | 主命令 Wubi，接在 `wubi86-jidian.txt` 之后，权重一般按 10 写入（同码排在极点行之后、补充词之前，同码几行按上游词频排）；在拼音库上游四张表（`single-chars.txt`、`rime-ice.txt`、`rime-ice-supplement.txt`、`places.txt`，按拼音否决表和覆盖表里带 `wubi` 的频率修正读，与五笔补充词组排序用的词频相同）里的最高词频不低于 100、又是同码最后几行极点行各自词频 10 倍以上的，排到这几行之前（的话 `rqyt` 排在 魅族 之前）；上游权重为 0 的 12 个部首、部件按 0 写在补充词之后；极点表已有的词组（`版权所有 bqsy`、`T恤 ttnt`）不写入；这个文件在不在决定构建器按拆分后的布局还是按旧的合并文件读 86 原表 | `msime-wubi.db` 的 `wubi86` 表 | 进入（扩展区字不写入） |
 | `sources/wubi/wubi86-supplement.txt` | 供复现与审计的源快照；Wubi 从本次提交的相同输入重新派生补充数据，排在原表之后 | `msime-wubi.db` 的 `wubi86` 表 | 使用实时派生数据 |
 | `sources/wubi/wubi98-supplement.txt` | 供复现与审计的源快照；Wubi98 从本次提交的相同输入重新派生补充数据，排在两张原表之后 | `msime-wubi.db` 的 `wubi98` 表 | 使用实时派生数据 |
 | `sources/wubi/wubi98.txt`、`sources/wubi/wubi98-fcitx.txt` | 主命令 Wubi98：以主表为准，补充表中重复的（编码、词语）去掉 | `msime-wubi.db` 的 `wubi98` 表 | 进入 |
@@ -131,7 +144,9 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `custom/english.txt` | 主命令 English | `msime-english.db` | 进入 |
 | `sources/unlicensed/oaldpe-words.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：提取自商业词典 |
 | `sources/cn-en/machine-translations.txt` | 尚无：计划在 msime 加一个排在 EnglishGlosses 之后、CustomTranslations 之前的阶段，覆盖由 ECDICT 生成的中译英释义 | `msime-english.db` | 构建器加入读取阶段之前不进入 |
-| `custom/translations.txt` | 主命令 CustomTranslations，覆盖由 ECDICT 生成的释义 | `msime-english.db` | 进入 |
+| `custom/translations.txt` | 主命令 CustomTranslations，覆盖由 ECDICT 生成的释义；译文写成单独一个 `-` 的行删掉这个源词的释义（msime #10858 起；`builder.lock.json`、`check-words.yml` 的 `MSIME_COMMIT` 和 msime-windows 的 `english_db.py` 都支持之前不要加这种行，旧构建器会把 `-` 当成译文发布） | `msime-english.db` | 进入 |
+| `curation/english-vetoes.txt` | 主命令 English：全部英文来源统一不收这些词的任何大小写，释义随之没有；每个词都必须在某个来源里，否则构建失败 | `msime-english.db` | msime #10858 起读取，`builder.lock.json` 升到带它的提交才生效 |
+| `curation/gloss-vetoes.txt` | 主命令 EnglishGlosses：ECDICT 给这个英文词列的这个中文义项，英译中、中译英都不用；每一对都必须是某个英文候选词的义项，否则构建失败 | `msime-english.db` | msime #10858 起读取，`builder.lock.json` 升到带它的提交才生效 |
 | `sources/cantonese/` 下 4 个文件 | languages；`hkcancor-word-counts.txt` 只作排序权重 | `msime-cantonese.db` | 进入 |
 | `sources/zhuyin/` 下 4 个文件 | languages；`phrase.occ` 只作排序权重 | `msime-zhuyin.db` | 进入 |
 | `sources/stroke/stroke.dict.yaml` | languages | `msime-stroke.db` | 进入 |
@@ -139,6 +154,8 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `custom/cantonese-variant-vetoes.txt` | languages（msime [#10754](https://github.com/metasequoiaime/msime/pull/10754)（`a8480ce407`）起读取，目前固定的构建器 `93815fffb` 早于它、不读这张表，升级 `builder.lock.json` 后才生效）：每行一个 OpenCC 字形，必须是上面两张表里某一行的键，列出的字一律不换；写了表里没有的字时构建失败 | `msime-cantonese.db` | 进入（只影响字形） |
 | `custom/wubi86.txt` | 主命令 Wubi：接在 `sources/wubi/wubi86-jidian.txt` 和生成的 `wubi86-supplement.txt` 之后写进 `wubi86`，同码同权重时排在原有候选之后（msime [#10862](https://github.com/metasequoiaime/msime/pull/10862)（`95c758b6c5`）起读取，更早的构建器不读这个文件） | `msime-wubi.db` | msime 构建器读取后进入 |
 | `custom/cantonese.txt` | languages（msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 起读取）：每个字的读音必须是 `sources/cantonese/jyut6ping3.chars.dict.yaml` 给它的读音之一，否则构建失败；权重取 `essay-cantonese.txt` 的分数，essay 没列时取补词门槛 1000；没有的词插入，已有且权重更低的调高，更高的不变 | `msime-cantonese.db` | msime 构建器读取后进入 |
+| `curation/cantonese-word-vetoes.txt` | languages：所有来源（字表、词表、essay 补词、HKCanCor、`custom/cantonese.txt`）写入之后删掉列出的词（`词` 删全部读音，至少两个字）或读音（`词<TAB>去调粤拼`）；一条删不到东西，或否决了 `custom/cantonese.txt` 收录的词，构建失败 | `msime-cantonese.db` | msime #10858 起读取，`builder.lock.json` 升到带它的提交才生效 |
+| `curation/cantonese-essay-keep.txt` | languages：词表没收、由 essay 补进来的词没有 HKCanCor、`custom/cantonese.txt` 或拼音库的佐证时压到同键有证据的词表词之下，这里列的 `词<TAB>去调粤拼` 不压；每一行都必须是这次构建本来会压低的词，同一个词也不能既豁免又否决，否则构建失败 | `msime-cantonese.db` | 同上 |
 | `sources/japanese/dictionary00.txt` … `dictionary09.txt`、`id.def`、`connection_single_column.txt` | 主命令 JapaneseModel | `msime-japanese.dat` | 进入 |
 | `sources/japanese/dictionary_filter.tsv` | 主命令 JapaneseModel，按 Mozc `gen_filtered_dictionary.py` 删去基础词库中完全匹配的行 | `msime-japanese.dat` | 进入 |
 | `sources/japanese/aux_dictionary.tsv`、`places.tsv`、`words.tsv` | 主命令 JapaneseModel，按 Mozc `gen_aux_dictionary.py --strict` 生成补充词条：aux 行复制基准词条的上下文 ID 与代价再加偏移，词表行按词性取同词性词条代价的中位数，基础词库已有的跳过 | `msime-japanese.dat` | 进入 |
@@ -174,7 +191,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `custom/words.txt` | `词<TAB>全拼<TAB>权重` | 全拼音节用 `'` 分隔，如 `未来可期	wei'lai'ke'qi	5000` |
 | `custom/translations.txt` | `源词<TAB>译文` | 源词含 U+3400 及以上的字符（汉字）时是中译英，否则是英译中；`#` 开头是注释。同一源词写了多行时，构建取最后一行 |
 | `custom/english.txt` | `编码<TAB>显示词<TAB>权重` | 编码是输入的小写字母，显示词是上屏的写法，同一编码可以有多个显示词 |
-| `custom/cantonese.txt` | `词<TAB>带声调粤拼` | 两个及以上汉字，写繁体字形；一个汉字一个音节，音节之间一个空格，如 `周杰倫	zau1 git6 leon4`；`#` 开头是注释。每个字的读音必须是 `sources/cantonese/jyut6ping3.chars.dict.yaml` 给它的读音之一；多音字选哪个读音由审校者把关，CI 查不出。没有权重列 |
+| `custom/cantonese.txt` | `词<TAB>带声调粤拼` | 两个及以上汉字，写繁体字形；一个汉字一个音节，音节之间一个空格，如 `周杰倫	zau1 git6 leon4`；`#` 开头是注释。每个字的读音必须是 `sources/cantonese/jyut6ping3.chars.dict.yaml` 给它的读音之一；多音字选哪个读音由审校者把关，CI 查不出。没有权重列。`curation/cantonese-word-vetoes.txt` 否决了的词（同一读音，或整词否决的任何读音）和 `curation/cantonese-essay-keep.txt` 已经列出的词不要再投：前者会让构建失败，后者收进来以后豁免行过期，构建同样失败；这类改动由 `check-curation.yml` 构建 languages 时拦下，见 `AGENTS.md`「维护者清洗表」 |
 | `custom/wubi86.txt` | `值<TAB>编码<TAB>权重` | 编码是 86 五笔的小写字母码，值是上屏的字、词或符号，如 `①	g	1`。权重取 1 这类小值，排在同码原有候选之后；不要用它把原有的字挤下首选 |
 
 **权重**：新词条的权重必须落在所在文件现有条目的范围内，CI 按文件当前内容计算这个范围。`custom/words.txt` 目前是 1 到 10000，大多数历史条目写的是 `1`。想让一个词在整句里更容易胜出，就参照基础词库里同量级的真实词取值（例如 `扛不住` 在 `sources/pinyin/rime-ice.txt` 里是 2430），不要为了靠前填一个极大值。`custom/english.txt` 目前只有 `1`：有 Google 词频的英文词按词频排序，没有词频的才用这里的权重，而且排在所有有词频的词之后。这个范围普通 Pull Request 无法放宽，确实需要时先开 Issue。
@@ -183,21 +200,23 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 ### CI
 
-本仓有 5 个 workflow（`.github/workflows/`）：
+本仓有 6 个 workflow（`.github/workflows/`）：
 
 | workflow | 触发 | 检查什么 |
 | --- | --- | --- |
-| `check-words.yml` | Pull Request 改动 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` | 用 msime 固定提交（`MSIME_COMMIT`）的 `msime-dict-build check-words`，即构建所用的解析器：只能追加；每行能按构建的规则解析（词语的全拼须是 `'` 分隔的小写字母并能映射到全拼表）；词语和英文的权重在文件现有范围内；不与本次改动、所在文件或比对库重复（比对库是运行时找到的最新 `dict-v` release 的 `msime-pinyin.db` 和 `msime-english.db`，按该 release 的 `msime-SHA256SUMS.txt` 校验）。翻译可以给已有源词换一个译文，完全相同的一行算重复。结果写成 Pull Request 评论 |
+| `check-words.yml` | Pull Request 改动 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` | 用 msime 固定提交（`MSIME_COMMIT`，必须在 msime `develop` 上，否则检查失败）的 `msime-dict-build check-words`，即构建所用的解析器：只能追加；不能加回 `curation/pinyin-vetoes.txt` 否决的词或读音、`curation/english-vetoes.txt` 和构建器内置的英文蔑称（两张否决表取 Pull Request 基准提交的版本）；同时改了 `custom/` 和 `curation/` 的 Pull Request 直接失败，`curation/` 的改动单独开 Pull Request；每行能按构建的规则解析（词语的全拼须是 `'` 分隔的小写字母并能映射到全拼表）；词语和英文的权重在文件现有范围内；不与本次改动、所在文件或比对库重复（比对库是运行时找到的最新 `dict-v` release 的 `msime-pinyin.db` 和 `msime-english.db`，按该 release 的 `msime-SHA256SUMS.txt` 校验）。翻译可以给已有源词换一个译文，完全相同的一行算重复。结果写成 Pull Request 评论 |
 | `ci.yml` | Pull Request 改动 `packs/`、`custom/translations.txt`、`custom/words.txt`、它对照的 `sources/pinyin/`、`sources/unlicensed/` 文件、脚本或该 workflow | 运行 `python3 scripts/validate_packs.py`，见[专业词库](#专业词库) |
 | `quality.yml` | 推送到 `main`、Pull Request、merge queue、手动 | actionlint 校验 workflow 与其中的 shell；`scripts/check_builder_lock.sh` 检查 `builder.lock.json` 的提交是完整的 40 位提交且在 msime `develop` 上（发布 workflow 构建前也跑同一个脚本）；Pull Request 上另做依赖审查（high 及以上失败） |
 | `codeql.yml` | 每天定时 | CodeQL 分析 GitHub Actions workflow |
-| `release-built-dictionaries.yml` | 推送到 `main` 且改动了 `sources/`、`custom/` 或 `builder.lock.json`；手动（可只构建不发布） | 用这次推送的提交和 `builder.lock.json` 固定的 msime 构建器构建 19 个附件，自动加修订号发布 `dict-v*` Release，说明列出源数据变更和每个附件的用途，见[发布](#发布) |
+| `check-curation.yml` | Pull Request 改动 `curation/`、`custom/cantonese.txt` 或 `builder.lock.json`；手动（可指定未合入的 msime 构建器试跑） | 用 `builder.lock.json` 固定的 msime 构建器，按发布 workflow 的命令把主库和 languages 都完整构建一遍（不发布），`curation/` 的表解析出错、条目过期、否决与覆盖冲突都在合并前失败；粤拼的两张表只在 languages 里校验，拼音否决表和 `custom/cantonese.txt` 的改动也可能让粤拼豁免行过期或否决到人工词条，同样在这里失败。再把 `msime-pinyin.db`、`msime-wubi.db`、`msime-english.db`、`msime-cantonese.db` 与最新的 `dict-v` 用 msime 的 `scripts/dict_artifact_diff.py` 逐表比较，报告写进运行摘要和 artifact。应设为 `main` 的 required check |
+| `eval-gate.yml` | Pull Request、merge queue、手动（可用 `msime_ref` 换 msime 分支试跑） | 改动了 `sources/`、`custom/`、`curation/`、`upstream.lock.json`、`builder.lock.json` 或 `release-built-dictionaries.yml` 时，用 `builder.lock.json` 固定的 msime 提交构建候选词库，以最新的 `dict-v` 发布为基线，跑同一提交里 `scripts/dict_eval_gate.py` 的五道硬门槛：评测集的金标准（词, 读音）对在基线里有的候选里不能少；`resources/eval/must-outrank.tsv` 在基线上通过的行不能变成失败（两边都失败的是已知问题，只列出）；粗俗词和英文冒犯词的首屏曝光数不能增加；`quanpin-words-v2.tsv` 在全拼、九键、14 键上配对比较，top-1 或 top-5 弄坏的显著多于修好的（McNemar p < 0.05）就失败；全拼行数不低于构建器的下限。评测挂出厂的整句模型、开混输英文，quanpin-words-v2 另加一臂不挂模型。报告还附上只供参考的整句集配对比较、粗俗目标码首屏、与基线逐表逐行的产物差异和五笔、英文的 top-N 差异；languages 也一起构建，候选产物上传为 artifact `dictionary-candidate`（保留 7 天）。结果写成 Pull Request 评论；没改这些路径的 PR 直接通过。建议设为 `main` 的 required check |
+| `release-built-dictionaries.yml` | 推送到 `main` 且改动了 `sources/`、`custom/`、`curation/` 或 `builder.lock.json`；手动（可只构建不发布） | 用这次推送的提交和 `builder.lock.json` 固定的 msime 构建器构建 19 个附件，自动加修订号发布 `dict-v*` Release，说明列出源数据变更和每个附件的用途，见[发布](#发布) |
 
 从 fork 发来的 Pull Request 拿到的是只读 token，check-words 不会发评论；同样的结果在该次运行的 job summary 里。维护者在 CI 之外再人工审核内容（包括敏感词）。
 
 本地能跑的是 `python3 scripts/validate_packs.py`，只用 Python 标准库。check-words 需要 Rust 工具链和 msime 检出，本地一般不跑；要跑的话照 `check-words.yml` 的步骤，在 `MSIME_COMMIT` 上构建 `msime-dict-build` 后运行 `check-words`。
 
-`sources/pinyin/`、`sources/wubi/`、`sources/english/` 下的基础词库来自第三方，不在里面加新词；其中本项目生成的补充表（`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`sources/english/rime-ice-en-supplement.txt`、`sources/english/scowl-words.txt`、`sources/wubi/wubi86-supplement.txt`、`sources/wubi/wubi98-supplement.txt`、`sources/wubi/wubixsj-supplement.txt`、`sources/zhuyin/mcbopomofo-supplement.txt`、`sources/cantonese/hkcancor-word-counts.txt`）也不手工改，只用 msime 的生成器在原路径重新生成。例外是拼音权重的整体对齐：`sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt` 中与万象（rime-wanxiang）共有的词条，权重按万象的词频统一改写过一次，只改权重列，不增删词条，方法见 `NOTICE.md`「拼音权重与万象对齐」。候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/`、`sources/japanese/`、`sources/korean/` 下的上游文件不在本仓修改，错误报给上游。具体约束见 [AGENTS.md](AGENTS.md)。
+`sources/pinyin/`、`sources/wubi/`、`sources/english/` 下的基础词库来自第三方，不在里面加新词；其中本项目生成的补充表（`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`sources/english/rime-ice-en-supplement.txt`、`sources/english/scowl-words.txt`、`sources/wubi/wubi86-supplement.txt`、`sources/wubi/wubi98-supplement.txt`、`sources/wubi/wubixsj-supplement.txt`、`sources/zhuyin/mcbopomofo-supplement.txt`、`sources/cantonese/hkcancor-word-counts.txt`）也不手工改，只用 msime 的生成器在原路径重新生成。例外是拼音权重的整体对齐：`sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt` 中与万象（rime-wanxiang）共有的词条，权重按万象的词频统一改写过一次，只改权重列，不增删词条，方法见 `NOTICE.md`「拼音权重与万象对齐」。删词、改权重写到 `curation/` 的表里，由构建器在读入之后施加，不改上游文件，见上文「目录约定」与 `NOTICE.md`「维护者清洗表」。候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/`、`sources/japanese/`、`sources/korean/` 下的上游文件不在本仓修改，错误报给上游。具体约束见 [AGENTS.md](AGENTS.md)。
 
 ## 专业词库
 
@@ -222,11 +241,11 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 ## 发布
 
-合入 `main` 的推送只要改动了 `sources/`、`custom/` 或 `builder.lock.json`，`release-built-dictionaries.yml` 就自动用这次推送的提交构建并发布一个新的 `dict-v*` Release，不需要先去 msime 改锁文件。只改 `packs/`、文档或 workflow 的合入不触发发布。
+合入 `main` 的推送只要改动了 `sources/`、`custom/`、`curation/` 或 `builder.lock.json`，`release-built-dictionaries.yml` 就自动用这次推送的提交构建并发布一个新的 `dict-v*` Release，不需要先去 msime 改锁文件。只改 `packs/`、文档或 workflow 的合入不触发发布。
 
 1. 版本号：在现有最高的 `dict-vX.Y.Z` 上加一个修订号（`dict-v2.0.6` 之后是 `dict-v2.0.7`）；算出的标签已经存在时失败，已发布的版本不可修改。发布的运行共用一个 concurrency 组，不会两次合入抢同一个版本号；GitHub 每组只保留一个排队的运行，短时间内连续合入时排在中间的运行会被取消，由最新的那次发布，它的说明列出自上一版以来的全部源数据提交。
-2. 构建：检出这次推送的提交，用这个提交里 `builder.lock.json` 固定的 msime 提交（不是 msime `develop`，见下文「升级构建器」）构建 `msime-dict-build`，运行它和 `msime-dict-build languages`，以 `--dictionary <检出目录>` 直接读取检出里的 `sources/` 与 `custom/`。workflow 检查 19 个附件齐全、两份校验和匹配、manifest 的 `licensing.includes_unlicensed_inputs` 与 `source.dirty` 都是 `false`，`source.commit` 等于实际检出的 msime 提交，并且 `custom_dictionary_commit` 等于这次推送的提交。
-3. 发布：`dict-vX.Y.Z` 标签打在这次推送的提交上，Release 标为 latest。Release 说明写明源数据提交、msime 构建器提交及它是否与上一版相同（不同时附 msime 的对比链接）、触发方式、自上一版以来改动 `sources/` 或 `custom/` 的提交（比较基点是上一版 manifest 的 `custom_dictionary_commit`，读不到时退回上一版的标签），以及下表每个附件的用途和谁使用它。
+2. 构建：检出这次推送的提交，用这个提交里 `builder.lock.json` 固定的 msime 提交（不是 msime `develop`，见下文「升级构建器」）构建 `msime-dict-build`，运行它和 `msime-dict-build languages`，以 `--dictionary <检出目录>` 直接读取检出里的 `sources/`、`custom/` 与 `curation/`。workflow 检查 19 个附件齐全、两份校验和匹配、manifest 的 `licensing.includes_unlicensed_inputs` 与 `source.dirty` 都是 `false`，`source.commit` 等于实际检出的 msime 提交，并且 `custom_dictionary_commit` 等于这次推送的提交。
+3. 发布：`dict-vX.Y.Z` 标签打在这次推送的提交上，Release 标为 latest。Release 说明写明源数据提交、msime 构建器提交及它是否与上一版相同（不同时附 msime 的对比链接）、触发方式、自上一版以来改动 `sources/`、`custom/` 或 `curation/` 的提交（比较基点是上一版 manifest 的 `custom_dictionary_commit`，读不到时退回上一版的标签），以及下表每个附件的用途和谁使用它。
 4. msime 各平台在 `resources/desktop-dictionary.lock.json` 和 `resources/language-dictionaries.lock.json` 里升级到新版本的 URL、大小和 SHA-256，下一个客户端版本随之带上新词库；check-words 的比对库在运行时自动取最新版本，不需要改。
 
 手动运行（Actions 里的 Release built dictionaries → Run workflow）用于重建同一份源数据，或者只构建不发布的试跑：`version` 留空即自动加修订号，也可以填 `X.Y.Z`；`msime_ref` 默认留空，即用运行所在分支上 `builder.lock.json` 固定的提交，填 msime 的分支、标签或提交只用于试跑（说明预览会标出这不是固定的提交），打开 `publish` 时只能留空或等于固定的提交，否则 workflow 失败；`publish` 默认关闭，此时只把附件和说明预览上传为 workflow artifact，说明也写进 job summary。打开 `publish` 只能从 `main` 运行；手动指定的版本低于现有最高版本时，Release 不标为 latest。打开 `publish` 的手动运行和推送触发的发布共用一个 concurrency 组，组里只保留一个排队的运行，后来的会取消先排队的：手动发布还在排队时有新的合入推送，手动那次会被取消，改由推送的运行按默认参数（固定的构建器、自动版本号）发布；反过来手动运行也会取代排队中的推送运行（源数据不丢，只是换成手动指定的参数）。所以手动发布前先在 Actions 里确认没有排队中的发布运行，触发后确认它没有被取消。
@@ -287,7 +306,8 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `sources/unlicensed/custom-pinyin-dictionary-part2.txt` | UTF-8 | CRLF | 无 | `词<TAB>全拼<TAB>权重`，权重都是 1；与 part1 是因 GitHub 单文件大小限制拆开的同一份词库 | 有 |
 | `sources/pinyin/single-chars.txt` | UTF-8 | CRLF | 1 行 `#` 注释 | `字<TAB>全拼<TAB>权重` | 有 |
 | `sources/unlicensed/single-char-whitelist.txt` | UTF-8 | LF | 无 | 一个字 | 有 |
-| `sources/wubi/wubi86-jidian.txt` | UTF-8 | 混合：第 1–89271 行 LF，第 89272 行起 CRLF | 无 | `词<TAB>五笔编码<TAB>权重`；第 3835、51162、73916、78885 行多一个第 4 列 | 有 |
+| `sources/wubi/wubi86-jidian.txt` | UTF-8 | 混合：第 1–89271 行 LF，最后一行（第 89272 行）CRLF | 无 | `词<TAB>五笔编码<TAB>权重`；第 3835、51162、73916、78885 行多一个第 4 列 | 有 |
+| `sources/wubi/wubi86-rime-wubi.txt` | UTF-8 | CRLF | 无 | `词<TAB>五笔编码<TAB>权重`，按 rime-wubi 的文件顺序 | 有 |
 | `sources/wubi/wubi86-supplement.txt` | UTF-8 | LF | 6 行 `#` 注释（生成器、输入及其 SHA-256、上游仓库与提交、收录规则、编码规则、对照集合与权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内按权重从高到低 | 有 |
 | `sources/wubi/wubi98-supplement.txt` | UTF-8 | LF | 6 行 `#` 注释（生成器、输入及其 SHA-256、上游仓库与提交、收录规则、编码规则、对照集合与权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内按权重从高到低 | 有 |
 | `sources/wubi/wubi98.txt` | UTF-16LE，带 BOM | CRLF | 无 | `词<TAB>五笔编码`，没有权重，同一编码内按行序排列 | 有（UTF-16LE 的 CRLF） |
@@ -295,7 +315,7 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `sources/wubi/wubixsj-byujiang.txt` | UTF-8 | LF | Rime 码表头：`#` 注释、`---` 与 `...` 之间的 YAML（`name: wubi06`、`columns`、`encoder`） | `词<TAB>五笔编码<TAB>权重`，单字与词组混排；构建只读单字行 | 有 |
 | `sources/wubi/wubixsj-supplement.txt` | UTF-8 | LF | 6 行 `#` 注释（生成器、输入及其 SHA-256、上游仓库与提交、收录规则、编码规则、权重） | `词<TAB>五笔编码<TAB>权重`，按编码排序，同一编码内第一层（极点权重）在前、各层内按权重从高到低 | 有 |
 | `sources/english/rime-ice-en.txt` | UTF-8 | CRLF | 无；正文中有 1777 行被 `#` 注释掉的条目和 16 个空行 | `显示词 编码 [权重]`，空格分隔；显示词本身可含空格（如 `Dish Network DishNetwork`），51 行带权重 | 有 |
-| `sources/english/rime-ice-en-supplement.txt` | UTF-8 | LF | 3 行 `#` 注释（其中的 `BaseDictIceEn.txt` 是 `rime-ice-en.txt` 的旧名，见 `NOTICE.md`） | `显示词<TAB>编码` | 有 |
+| `sources/english/rime-ice-en-supplement.txt` | UTF-8 | LF | `#` 注释：生成器所在的 msime 提交与命令、上游提交、去重对照和各输入的 SHA-256 | `显示词<TAB>编码` | 有 |
 | `sources/english/scowl-words.txt` | UTF-8 | LF | 9 行 `#` 注释（生成器、上游发布与提交、SCOWL 版权与许可声明、收录规则、对照集合、排除规则、排序方式、行序） | 一个显示词，全由 ASCII 字母组成，至少 3 个字母；按小写形式排序，同一个词的全小写形式在前 | 有 |
 | `sources/english/google-word-counts.txt` | UTF-8 | LF | 无 | `词<TAB>次数` | 无 |
 | `sources/unlicensed/oaldpe-words.txt` | UTF-8 | LF | 无 | 一个小写词形 | 有 |
@@ -325,14 +345,21 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `custom/wubi86.txt` | UTF-8 | LF | 1 行 `#` 注释（格式） | `值<TAB>编码<TAB>权重` | 有 |
 | `custom/cantonese-variant-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每个字为什么否决） | 一个字 | 有 |
 | `custom/names.txt` | UTF-8 | LF | 无 | 一个人名 | 无 |
+| `curation/pinyin-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | `词` 或 `词<TAB>全拼` | 有 |
+| `curation/pinyin-weight-overrides.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | `词<TAB>全拼<TAB>权重`，或再加第四列 `wubi` | 有 |
+| `curation/offensive-words.txt` | UTF-8 | LF | `#` 注释行（用途、收词标准、来历） | 一个词，或 `!` 开头的豁免写法 | 有 |
+| `curation/english-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | 一个英文词 | 有 |
+| `curation/gloss-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | `中文<TAB>英文` | 有 |
+| `curation/cantonese-word-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | `词` 或 `词<TAB>去调粤拼` | 有 |
+| `curation/cantonese-essay-keep.txt` | UTF-8 | LF | `#` 注释行（规则、来源，以及每个词不豁免时的权重） | `词<TAB>去调粤拼` | 有 |
 
 ## 许可
 
-本仓库**不对外提供统一的开源许可**：其中绝大部分词库并非本项目的作品，给整个仓库挂一份 LICENSE 等于替上游作者重新授权。逐项的来源与上游条款见 [NOTICE.md](NOTICE.md)，使用或再分发前请以对应上游的条款为准。本项目自建的部分（`custom/`、`packs/`、`scripts/`）以 GPL-3.0 提供；其中 `packs/birds/` 使用的 IOC 鸟名及其整理词表沿用 CC BY 3.0，具体署名与改动说明见该包 README 和 NOTICE；`custom/cantonese.txt` 以 CC BY 4.0 提供，与它构建进的 `msime-cantonese.db` 的其余来源同一许可，见 NOTICE。
+本仓库**不对外提供统一的开源许可**：其中绝大部分词库并非本项目的作品，给整个仓库挂一份 LICENSE 等于替上游作者重新授权。逐项的来源与上游条款见 [NOTICE.md](NOTICE.md)，使用或再分发前请以对应上游的条款为准。本项目自建的部分（`custom/`、`curation/`、`packs/`、`scripts/`）以 GPL-3.0 提供；其中 `packs/birds/` 使用的 IOC 鸟名及其整理词表沿用 CC BY 3.0，具体署名与改动说明见该包 README 和 NOTICE；`custom/cantonese.txt` 以 CC BY 4.0 提供，与它构建进的 `msime-cantonese.db` 的其余来源同一许可，见 NOTICE；`curation/cantonese-word-vetoes.txt`、`curation/cantonese-essay-keep.txt` 列的是 rime-cantonese 的词与读音，同样以 CC BY 4.0 提供。
 
-**`sources/pinyin/wanxiang/` 中的 15 份词库文件来自万象词库，作者为 amzxyz，许可为 CC BY 4.0。** 本次复制的来源是 [amzxyz/rime-wanxiang 提交 `aa9947f3f513ff88a3f7ce4e342fcb519d517025`](https://github.com/amzxyz/rime-wanxiang/tree/aa9947f3f513ff88a3f7ce4e342fcb519d517025/dicts)，文件内容未作修改。使用或再分发这些文件及其改编数据时，须保留万象词库与 amzxyz 的署名、来源链接、[CC BY 4.0 许可链接](https://creativecommons.org/licenses/by/4.0/)及上游提供的声明；有改动时须注明改动。许可全文见本仓 [sources/symbols/LICENSE](sources/symbols/LICENSE)，逐项登记见 [NOTICE.md「万象词库原始文件」](NOTICE.md#万象词库原始文件)。
+**`sources/pinyin/wanxiang/` 中的 17 份词库文件来自万象词库，作者为 amzxyz，许可为 CC BY 4.0。** 复制的来源是 [amzxyz/rime-wanxiang 标签 `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）](https://github.com/amzxyz/rime-wanxiang/tree/7ab73ee0c7f80190004233e70f954833df64c80e/dicts)，文件内容未作修改。使用或再分发这些文件及其改编数据时，须保留万象词库与 amzxyz 的署名、来源链接、[CC BY 4.0 许可链接](https://creativecommons.org/licenses/by/4.0/)及上游提供的声明；有改动时须注明改动。许可全文见本仓 [sources/symbols/LICENSE](sources/symbols/LICENSE)，逐项登记见 [NOTICE.md「万象词库原始文件」](NOTICE.md#万象词库原始文件)。
 
-拼音词库（`sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`）中与万象共有的词条，权重改编自 [amzxyz/rime-wanxiang](https://github.com/amzxyz/rime-wanxiang) 标签 `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）的词库（词库数据源自同一作者的 [amzxyz/RIME-LMDG](https://github.com/amzxyz/RIME-LMDG)），按 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 使用：署名 amzxyz 与万象拼音，改动是去掉声调、按文件统一缩放并取整，词条与读音仍来自 rime-ice，详见 [NOTICE.md](NOTICE.md)「拼音权重与万象对齐」。CC BY 4.0 可以单向并入 GPL-3.0 作品（[FSF 的兼容性列表](https://www.gnu.org/licenses/license-list.html#ccby)），所以这三份文件仍按 rime-ice 的 GPL-3.0 分发，同时保留对万象的署名；再分发由它们构建的 `msime-pinyin.db` 时，也要一并保留这份署名与改动说明。
+拼音词库（`sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`）中与万象共有的词条，权重改编自 [amzxyz/rime-wanxiang](https://github.com/amzxyz/rime-wanxiang) 标签 `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）的词库（词库数据源自同一作者的 [amzxyz/RIME-LMDG](https://github.com/amzxyz/RIME-LMDG)），按 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 使用：署名 amzxyz 与万象拼音，改动是去掉声调、按文件统一缩放并取整（msime 构建器的 `reweight` 阶段每次构建按 `sources/pinyin/wanxiang/` 重算一遍；`curation/pinyin-reweight.txt` 存在时还给人名、多音两份词库单独定比例，并让万象任何读音都不收的多字词不再排在同键万象权重达到门槛的词前面），词条与读音仍来自 rime-ice，详见 [NOTICE.md](NOTICE.md)「拼音权重与万象对齐」。CC BY 4.0 可以单向并入 GPL-3.0 作品（[FSF 的兼容性列表](https://www.gnu.org/licenses/license-list.html#ccby)），所以这三份文件仍按 rime-ice 的 GPL-3.0 分发，同时保留对万象的署名；再分发由它们构建的 `msime-pinyin.db` 时，也要一并保留这份署名与改动说明。
 
 ## 历史
 
