@@ -81,6 +81,8 @@ curation/                                 维护者审定的清洗表，不接�
   offensive-words.txt                     不拿来拼整句、不当首选的粗俗词和豁免写法 -> msime-pinyin.db 的 sentence_excluded 表，五笔表里排到同码最后 -> msime-wubi.db
   english-vetoes.txt                      英文否决表：所有英文来源都不收的词（垃圾 token、错拼、蔑称、垃圾邮件药名）-> msime-english.db
   gloss-vetoes.txt                        释义成对否决表：`中文<TAB>英文`，这个英文词的这个中文义项两个方向都不用 -> msime-english.db
+  cantonese-word-vetoes.txt               粤拼词否决表：`词` 或 `词<TAB>粤拼`，删掉 essay 的错字写法 -> msime-cantonese.db
+  cantonese-essay-keep.txt                粤拼 essay 补词豁免表：`词<TAB>粤拼`，没有佐证也不压低的常用口语词 -> msime-cantonese.db
 packs/                                    用户按需导入的专业词库，不进入构建
   README.md                               专业词库的说明与验收清单
   ai_ml/                                  机器学习与大模型
@@ -152,6 +154,8 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `custom/cantonese-variant-vetoes.txt` | languages（msime [#10754](https://github.com/metasequoiaime/msime/pull/10754)（`a8480ce407`）起读取，目前固定的构建器 `93815fffb` 早于它、不读这张表，升级 `builder.lock.json` 后才生效）：每行一个 OpenCC 字形，必须是上面两张表里某一行的键，列出的字一律不换；写了表里没有的字时构建失败 | `msime-cantonese.db` | 进入（只影响字形） |
 | `custom/wubi86.txt` | 主命令 Wubi：接在 `sources/wubi/wubi86-jidian.txt` 和生成的 `wubi86-supplement.txt` 之后写进 `wubi86`，同码同权重时排在原有候选之后（msime [#10862](https://github.com/metasequoiaime/msime/pull/10862)（`95c758b6c5`）起读取，更早的构建器不读这个文件） | `msime-wubi.db` | msime 构建器读取后进入 |
 | `custom/cantonese.txt` | languages（msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 起读取）：每个字的读音必须是 `sources/cantonese/jyut6ping3.chars.dict.yaml` 给它的读音之一，否则构建失败；权重取 `essay-cantonese.txt` 的分数，essay 没列时取补词门槛 1000；没有的词插入，已有且权重更低的调高，更高的不变 | `msime-cantonese.db` | msime 构建器读取后进入 |
+| `curation/cantonese-word-vetoes.txt` | languages：所有来源（字表、词表、essay 补词、HKCanCor、`custom/cantonese.txt`）写入之后删掉列出的词（`词` 删全部读音，至少两个字）或读音（`词<TAB>去调粤拼`）；一条删不到东西，或否决了 `custom/cantonese.txt` 收录的词，构建失败 | `msime-cantonese.db` | msime #10858 起读取，`builder.lock.json` 升到带它的提交才生效 |
+| `curation/cantonese-essay-keep.txt` | languages：词表没收、由 essay 补进来的词没有 HKCanCor、`custom/cantonese.txt` 或拼音库的佐证时压到同键有证据的词表词之下，这里列的 `词<TAB>去调粤拼` 不压；每一行都必须是这次构建本来会压低的词，同一个词也不能既豁免又否决，否则构建失败 | `msime-cantonese.db` | 同上 |
 | `sources/japanese/dictionary00.txt` … `dictionary09.txt`、`id.def`、`connection_single_column.txt` | 主命令 JapaneseModel | `msime-japanese.dat` | 进入 |
 | `sources/japanese/dictionary_filter.tsv` | 主命令 JapaneseModel，按 Mozc `gen_filtered_dictionary.py` 删去基础词库中完全匹配的行 | `msime-japanese.dat` | 进入 |
 | `sources/japanese/aux_dictionary.tsv`、`places.tsv`、`words.tsv` | 主命令 JapaneseModel，按 Mozc `gen_aux_dictionary.py --strict` 生成补充词条：aux 行复制基准词条的上下文 ID 与代价再加偏移，词表行按词性取同词性词条代价的中位数，基础词库已有的跳过 | `msime-japanese.dat` | 进入 |
@@ -344,10 +348,14 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `curation/pinyin-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | `词` 或 `词<TAB>全拼` | 有 |
 | `curation/pinyin-weight-overrides.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | `词<TAB>全拼<TAB>权重`，或再加第四列 `wubi` | 有 |
 | `curation/offensive-words.txt` | UTF-8 | LF | `#` 注释行（用途、收词标准、来历） | 一个词，或 `!` 开头的豁免写法 | 有 |
+| `curation/english-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | 一个英文词 | 有 |
+| `curation/gloss-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | `中文<TAB>英文` | 有 |
+| `curation/cantonese-word-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | `词` 或 `词<TAB>去调粤拼` | 有 |
+| `curation/cantonese-essay-keep.txt` | UTF-8 | LF | `#` 注释行（规则、来源，以及每个词不豁免时的权重） | `词<TAB>去调粤拼` | 有 |
 
 ## 许可
 
-本仓库**不对外提供统一的开源许可**：其中绝大部分词库并非本项目的作品，给整个仓库挂一份 LICENSE 等于替上游作者重新授权。逐项的来源与上游条款见 [NOTICE.md](NOTICE.md)，使用或再分发前请以对应上游的条款为准。本项目自建的部分（`custom/`、`curation/`、`packs/`、`scripts/`）以 GPL-3.0 提供；其中 `packs/birds/` 使用的 IOC 鸟名及其整理词表沿用 CC BY 3.0，具体署名与改动说明见该包 README 和 NOTICE；`custom/cantonese.txt` 以 CC BY 4.0 提供，与它构建进的 `msime-cantonese.db` 的其余来源同一许可，见 NOTICE。
+本仓库**不对外提供统一的开源许可**：其中绝大部分词库并非本项目的作品，给整个仓库挂一份 LICENSE 等于替上游作者重新授权。逐项的来源与上游条款见 [NOTICE.md](NOTICE.md)，使用或再分发前请以对应上游的条款为准。本项目自建的部分（`custom/`、`curation/`、`packs/`、`scripts/`）以 GPL-3.0 提供；其中 `packs/birds/` 使用的 IOC 鸟名及其整理词表沿用 CC BY 3.0，具体署名与改动说明见该包 README 和 NOTICE；`custom/cantonese.txt` 以 CC BY 4.0 提供，与它构建进的 `msime-cantonese.db` 的其余来源同一许可，见 NOTICE；`curation/cantonese-word-vetoes.txt`、`curation/cantonese-essay-keep.txt` 列的是 rime-cantonese 的词与读音，同样以 CC BY 4.0 提供。
 
 **`sources/pinyin/wanxiang/` 中的 17 份词库文件来自万象词库，作者为 amzxyz，许可为 CC BY 4.0。** 复制的来源是 [amzxyz/rime-wanxiang 标签 `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）](https://github.com/amzxyz/rime-wanxiang/tree/7ab73ee0c7f80190004233e70f954833df64c80e/dicts)，文件内容未作修改。使用或再分发这些文件及其改编数据时，须保留万象词库与 amzxyz 的署名、来源链接、[CC BY 4.0 许可链接](https://creativecommons.org/licenses/by/4.0/)及上游提供的声明；有改动时须注明改动。许可全文见本仓 [sources/symbols/LICENSE](sources/symbols/LICENSE)，逐项登记见 [NOTICE.md「万象词库原始文件」](NOTICE.md#万象词库原始文件)。
 

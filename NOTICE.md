@@ -88,7 +88,7 @@
 
 ### 维护者清洗表
 
-`curation/` 下的三张表由 msime 构建器在读入上面这些文件之后施加，源文件本身不改：`curation/pinyin-vetoes.txt` 从全拼表删掉列出的词或读音（整词否决也从 `wubi86`、`wubi98`、`wubixsj` 三张五笔表删掉这个词），`curation/pinyin-weight-overrides.txt` 把列出的读音的权重改成给定的值，`curation/offensive-words.txt` 写成 `msime-pinyin.db` 的 `sentence_excluded` 表，并让三张五笔表里含这些粗俗词的行排到同码其余行之后。五笔补充词组只取覆盖表里第四列写了 `wubi` 的频率修正来排同码，覆盖表不会让词掉出五笔补充词组的门槛。所以发布的 `msime-pinyin.db`、`msime-wubi.db` 是对 rime-ice（GPL-3.0）以及五笔原表数据的修改版本，修改内容就是这三张表，每一行都可以在本仓的提交历史里查到加入的理由。
+`curation/` 下拼音的三张表由 msime 构建器在读入上面这些文件之后施加，源文件本身不改：`curation/pinyin-vetoes.txt` 从全拼表删掉列出的词或读音（整词否决也从 `wubi86`、`wubi98`、`wubixsj` 三张五笔表删掉这个词），`curation/pinyin-weight-overrides.txt` 把列出的读音的权重改成给定的值，`curation/offensive-words.txt` 写成 `msime-pinyin.db` 的 `sentence_excluded` 表，并让三张五笔表里含这些粗俗词的行排到同码其余行之后。五笔补充词组只取覆盖表里第四列写了 `wubi` 的频率修正来排同码，覆盖表不会让词掉出五笔补充词组的门槛。所以发布的 `msime-pinyin.db`、`msime-wubi.db` 是对 rime-ice（GPL-3.0）以及五笔原表数据的修改版本，修改内容就是这三张表，每一行都可以在本仓的提交历史里查到加入的理由。
 
 2026-11-04 的第一批（dict-cleanse 方案 2.1、3.1、3.2）：
 
@@ -145,6 +145,8 @@ libchewing-data 的两个文件在文件头声明 `dc:rights,Copyright (c) 2025 
 rime-stroke 的上游仓库以 LGPL-3.0 发布（`LICENSE`）。`AUTHORS` 列出的作者是四季的風、雪齋、Kunki Chou 与宋天，并写明前三位的数据是依 CNS11643 全字库的授权声明（http://www.cns11643.gov.tw/AIDB/copyright.do）以 LGPL 再分发的。CNS11643 全字库网站以《政府資料開放授權條款－第1版》授权（见其[全字库授权](https://www.cns11643.gov.tw/pageView.jsp?ID=59)页），要求利用其资料时注明来源：數位發展部，CNS11643中文標準交換碼全字庫網站，https://www.cns11643.gov.tw 。按 `stroke.dict.yaml` 的文件头：主码表源自 CNS11643 中文标准交换码全字库网站（http://www.cns11643.gov.tw），由 Kunki Chou 整理；附码表源自北大中文论坛，由孙海峰、徐孟罗、唐捺之、谢振斌整理；至扩展 J 区的超集扩充数据来自宋天；Rime 输入方案由四季的風、雪齋、Kunki Chou 制作。
 
 msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`、`msime-zhuyin.db`、`msime-stroke.db`，与桌面词库一起放在本仓库的 `dict-v*` Release；随产物分发的署名、改动说明与许可证全文在 msime 的 `resources/licenses/rime-cantonese-CC-BY-4.0.txt`（同时署名 HKCanCor）、`resources/licenses/libchewing-data-LGPL-2.1.txt`（同时收 McBopomofo 的 MIT 声明）、`resources/licenses/rime-stroke-LGPL-3.0.txt`，换上游提交时这些文件要一起改。`msime-stroke.db` 的排序权重取自 `sources/pinyin/single-chars.txt`。
+
+粤拼库另按 `curation/` 下两张维护者表修改，源文件本身不改：`curation/cantonese-word-vetoes.txt` 在所有来源写入之后删掉 essay 里的错字写法（第一批 6 条，用「訓」代「瞓」、词表在同一读音上另有正确写法的词），`curation/cantonese-essay-keep.txt` 列出不受「essay 补词要有佐证」规则压低的常用口语词（第一批 66 个）。佐证之一是拼音库（rime-ice 词表与补充表、地名表）收了这个词的简体写法，读的是按 `curation/pinyin-vetoes.txt`、`curation/pinyin-weight-overrides.txt` 删改之后的拼音行，所以这两张拼音表也会影响 `msime-cantonese.db`。两张粤拼表列的都是 rime-cantonese 的词与读音，依据 CC BY 4.0 提供，署名同上。
 
 ## 日文与韩文词库
 

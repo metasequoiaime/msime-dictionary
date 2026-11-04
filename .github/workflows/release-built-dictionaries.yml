@@ -282,8 +282,8 @@ jobs:
           | 文件 | 用途 | 谁使用 |
           | --- | --- | --- |
           | `msime-pinyin.db` | 普通话拼音主词库：全拼词表（rime-ice 及其补充表、行政区划地名补充表、`custom/words.txt`，构建时按 msime `resources/dictionary-sources/pinyin-reading-corrections.txt` 删去已知的错误读音，再按本仓 `curation/pinyin-vetoes.txt` 删词、按 `curation/pinyin-weight-overrides.txt` 改权重），`curation/offensive-words.txt` 写成的 `sentence_excluded` 表（不拿来拼整句、不当首选的粗俗词），以及快捷短语表 | 客户端下载（桌面词库锁） |
-          | `msime-wubi.db` | 五笔 86、98 与新世纪码表（98 合入 Fcitx5 补充表） | 客户端下载（桌面词库锁） |
-          | `msime-english.db` | 英文单词表（rime-ice 英文词表及其补充表、SCOWL 60 级补充词表 `sources/english/scowl-words.txt`、`custom/english.txt`），以及由 ECDICT 生成、经 `custom/translations.txt` 修正的英汉与汉英释义（SCOWL 补充的词只有英汉释义）；库内 `source_notices` 表存 SCOWL 的版权声明 | 客户端下载（桌面词库锁） |
+          | `msime-wubi.db` | 五笔 86、98 与新世纪码表（98 合入 Fcitx5 补充表）；`curation/pinyin-vetoes.txt` 整词否决的词三张表都不收，含 `curation/offensive-words.txt` 粗俗词的行排到同码其余行之后 | 客户端下载（桌面词库锁） |
+          | `msime-english.db` | 英文单词表（rime-ice 英文词表及其补充表、SCOWL 60 级补充词表 `sources/english/scowl-words.txt`、`custom/english.txt`），以及由 ECDICT 生成、经 `custom/translations.txt` 修正的英汉与汉英释义（SCOWL 补充的词只有英汉释义）；`curation/english-vetoes.txt` 的词任何大小写都不收，`curation/gloss-vetoes.txt` 列出的英文词与中文义项的配对两个方向都不用；库内 `source_notices` 表存 SCOWL 的版权声明 | 客户端下载（桌面词库锁） |
           | `msime-others.db` | 表情（含拼音关键词）、颜文字和符号表，数据来自 msime 仓库 | 客户端下载（桌面词库锁） |
           | `msime-japanese.dat` | 由 Mozc OSS 词典生成的日文转换模型（`MSJPDT1` 格式），与 Mozc 自己的构建一致：基础词典先按 `dictionary_filter.tsv` 过滤，再加入 `aux_dictionary.tsv`、`places.tsv`、`words.tsv` 的补充词 | 客户端下载（桌面词库锁；macOS 在启用日文时按需下载） |
           | `msime-bigram.bin` | 二元语言模型，由固定的中文维基语料按拼音词表统计，用于整句候选的上下文评分 | 客户端下载（桌面词库锁） |
