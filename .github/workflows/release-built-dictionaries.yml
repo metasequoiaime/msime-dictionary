@@ -1,13 +1,15 @@
 name: Release built dictionaries
 
 # 生成词库属于本仓库的发布边界：msime-dictionary 保存源数据，也发布由 msime 构建器生成的数据库。
-# 每次推送到 main 且改动了 sources/ 或 custom/，本 workflow 就用这次推送的提交构建并发布一个新的 dict-vX.Y.Z Release；手动运行用于重建（换 msime 构建器版本）或只构建不发布的试跑。
+# 每次推送到 main 且改动了 sources/、custom/ 或 builder.lock.json，本 workflow 就用这次推送的提交构建并发布一个新的 dict-vX.Y.Z Release；手动运行用于重建或只构建不发布的试跑。
+# 构建器固定为 builder.lock.json 的 msime_commit，不跟随 msime develop：升级构建器就是开一个只改这个提交的 PR 并附上试跑，合入后按新构建器发布一版。
 on:
   push:
     branches: [main]
     paths:
       - "sources/**"
       - "custom/**"
+      - "builder.lock.json"
   workflow_dispatch:
     inputs:
       version:
@@ -16,9 +18,9 @@ on:
         default: ""
         type: string
       msime_ref:
-        description: "用于构建的 msime 分支、标签或提交"
+        description: "留空用 builder.lock.json 固定的 msime 提交；填 msime 的分支、标签或提交只用于试跑，打开 publish 时只能留空或等于固定的提交"
         required: false
-        default: develop
+        default: ""
         type: string
       publish:
         description: "发布 GitHub Release（只能从 main 运行）；关闭时只上传 workflow artifact 和说明预览"
@@ -28,7 +30,7 @@ on:
 
 permissions: {}
 
-# Runs that publish share one group so two runs cannot claim the same version. GitHub keeps at most one pending run per group and a newly queued run cancels the pending one: a burst of merges is released by the newest pending run, whose notes list every source change since the previous release, but a publishing manual run that is still pending is also cancelled by a later push (and replaces a pending push run), so its version and msime_ref inputs are lost. Dry runs get their own group and never block a release.
+# Runs that publish share one group so two runs cannot claim the same version. GitHub keeps at most one pending run per group and a newly queued run cancels the pending one: a burst of merges is released by the newest pending run, whose notes list every source change since the previous release, but a publishing manual run that is still pending is also cancelled by a later push (and replaces a pending push run), so its version input is lost. Dry runs get their own group and never block a release.
 concurrency:
   group: ${{ (github.event_name == 'push' || inputs.publish) && 'release-built-dictionaries' || format('release-built-dictionaries-dry-run-{0}', github.run_id) }}
   cancel-in-progress: false
@@ -115,11 +117,39 @@ jobs:
             echo "publish=$publish"
           } >> "$GITHUB_OUTPUT"
           echo "dict-v${version} (previous: ${previous:-none}, latest: $latest, publish: $publish)"
+      # The builder is the msime commit pinned in builder.lock.json of the commit being built, so a release is reproducible from this repository alone and a builder change reaches users only through a reviewed pin bump. The msime_ref input overrides it for dry runs only.
+      - name: Resolve msime builder
+        id: builder
+        env:
+          OVERRIDE: ${{ inputs.msime_ref }}
+          PUBLISH: ${{ steps.version.outputs.publish }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # Same check as the quality workflow runs on pull requests: a full commit that is on msime develop.
+          pin="$(dictionary/scripts/check_builder_lock.sh dictionary/builder.lock.json)"
+          if [[ -z "$OVERRIDE" || "$OVERRIDE" == "$pin" ]]; then
+            ref="$pin"
+            pinned=true
+          else
+            if [[ "$PUBLISH" == true ]]; then
+              echo "a publishing run builds only with the pinned msime commit $pin; leave msime_ref empty, or bump builder.lock.json in a pull request" >&2
+              exit 1
+            fi
+            ref="$OVERRIDE"
+            pinned=false
+          fi
+          {
+            echo "pin=$pin"
+            echo "ref=$ref"
+            echo "pinned=$pinned"
+          } >> "$GITHUB_OUTPUT"
+          echo "msime builder: $ref (pinned: $pinned)"
       - name: Checkout msime builder
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: metasequoiaime/msime
-          ref: ${{ inputs.msime_ref || 'develop' }}
+          ref: ${{ steps.builder.outputs.ref }}
           path: msime
           persist-credentials: false
       - name: Install Rust
@@ -131,29 +161,37 @@ jobs:
         id: build
         env:
           SOURCE_SHA: ${{ github.sha }}
+          PIN: ${{ steps.builder.outputs.pin }}
+          PINNED: ${{ steps.builder.outputs.pinned }}
         run: |
           set -euo pipefail
           cache="$RUNNER_TEMP/dictionary-sources"
           out="$RUNNER_TEMP/dictionary-release"
           dictionary="$GITHUB_WORKSPACE/dictionary"
+          msime_commit="$(git -C msime rev-parse HEAD)"
+          if [[ "$PINNED" == true && "$msime_commit" != "$PIN" ]]; then
+            echo "checked out msime $msime_commit, expected the pinned $PIN" >&2
+            exit 1
+          fi
           msime/target/release/msime-dict-build --repository msime --dictionary "$dictionary" --cache "$cache" --out "$out"
           msime/target/release/msime-dict-build languages --repository msime --dictionary "$dictionary" --cache "$cache" --out "$out"
           for name in $RELEASE_ASSETS; do
             [[ -s "$out/$name" ]] || { echo "missing $out/$name" >&2; exit 1; }
           done
           (cd "$out" && sha256sum -c msime-SHA256SUMS.txt && sha256sum -c msime-language-dictionaries-SHA256SUMS)
-          jq -e --arg sha "$SOURCE_SHA" '.licensing.includes_unlicensed_inputs == false and .source.dirty == false and .custom_dictionary_commit == $sha' "$out/msime-dictionary-manifest.json" >/dev/null || {
-            echo "manifest check failed: expected unlicensed inputs excluded, a clean builder and custom_dictionary_commit $SOURCE_SHA" >&2
+          jq -e --arg sha "$SOURCE_SHA" --arg msime "$msime_commit" '.licensing.includes_unlicensed_inputs == false and .source.dirty == false and .source.commit == $msime and .custom_dictionary_commit == $sha' "$out/msime-dictionary-manifest.json" >/dev/null || {
+            echo "manifest check failed: expected unlicensed inputs excluded, a clean builder at msime $msime_commit and custom_dictionary_commit $SOURCE_SHA" >&2
             jq '{licensing, source, custom_dictionary_commit}' "$out/msime-dictionary-manifest.json" >&2
             exit 1
           }
-          echo "msime_commit=$(git -C msime rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "msime_commit=$msime_commit" >> "$GITHUB_OUTPUT"
       - name: Write release notes
         env:
           VERSION: ${{ steps.version.outputs.version }}
           PREVIOUS_TAG: ${{ steps.version.outputs.previous }}
           SOURCE_SHA: ${{ github.sha }}
-          MSIME_REF: ${{ inputs.msime_ref || 'develop' }}
+          MSIME_REF: ${{ steps.builder.outputs.ref }}
+          PINNED: ${{ steps.builder.outputs.pinned }}
           MSIME_COMMIT: ${{ steps.build.outputs.msime_commit }}
           ACTOR: ${{ github.actor }}
           GH_TOKEN: ${{ github.token }}
@@ -172,8 +210,12 @@ jobs:
           # Compare against the source commit the previous release was actually built from (its manifest's custom_dictionary_commit); tags of manually published releases up to dict-v2.0.5 point at a later main than the data they contain. Fall back to the tag when that release has no readable manifest or the commit is not an ancestor of this one.
           base=""
           base_desc=""
+          previous_builder=""
           if [[ -n "$PREVIOUS_TAG" ]]; then
-            previous_commit="$(gh release download "$PREVIOUS_TAG" --repo "$GITHUB_REPOSITORY" --pattern msime-dictionary-manifest.json --output - 2>/dev/null | jq -r '.custom_dictionary_commit // empty' 2>/dev/null || true)"
+            previous_manifest="$(gh release download "$PREVIOUS_TAG" --repo "$GITHUB_REPOSITORY" --pattern msime-dictionary-manifest.json --output - 2>/dev/null || true)"
+            previous_commit="$(jq -r '.custom_dictionary_commit // empty' 2>/dev/null <<< "$previous_manifest" || true)"
+            previous_builder="$(jq -r '.source.commit // empty' 2>/dev/null <<< "$previous_manifest" || true)"
+            [[ "$previous_builder" =~ ^[0-9a-f]{40}$ ]] || previous_builder=""
             if [[ "$previous_commit" =~ ^[0-9a-f]{40}$ ]] && git -C dictionary merge-base --is-ancestor "$previous_commit" "$SOURCE_SHA" 2>/dev/null; then
               base="$previous_commit"
               # shellcheck disable=SC2016
@@ -189,7 +231,26 @@ jobs:
           {
             printf '## dict-v%s\n\n' "$VERSION"
             printf -- '- 词库源数据：[`%s`](%s/commit/%s)（本仓 `sources/` 与 `custom/`，也是这个标签指向的提交）\n' "${SOURCE_SHA:0:7}" "$repo_url" "$SOURCE_SHA"
-            printf -- '- 构建器：`metasequoiaime/msime` 的 `%s`，即提交 [`%s`](%s/commit/%s)\n' "$MSIME_REF" "${MSIME_COMMIT:0:9}" "$msime_url" "$MSIME_COMMIT"
+            if [[ "$PINNED" == true ]]; then
+              printf -- '- 构建器：`metasequoiaime/msime` 的提交 [`%s`](%s/commit/%s)，由本仓 `builder.lock.json` 固定\n' "${MSIME_COMMIT:0:9}" "$msime_url" "$MSIME_COMMIT"
+            else
+              printf -- '- 构建器：试跑指定的 `metasequoiaime/msime` 的 `%s`，即提交 [`%s`](%s/commit/%s)，不是 `builder.lock.json` 固定的提交\n' "$MSIME_REF" "${MSIME_COMMIT:0:9}" "$msime_url" "$MSIME_COMMIT"
+            fi
+            if [[ -n "$PREVIOUS_TAG" ]]; then
+              if [[ -z "$previous_builder" ]]; then
+                printf -- '- 构建器变化：读不到 `%s` 的 manifest 里的构建器提交\n' "$PREVIOUS_TAG"
+              elif [[ "$previous_builder" == "$MSIME_COMMIT" ]]; then
+                printf -- '- 构建器变化：无，与 `%s` 相同\n' "$PREVIOUS_TAG"
+              else
+                # A rollback (reverting a pin bump) moves the builder back to an ancestor; a forward compare link would show nothing, so link the changes being withdrawn instead.
+                direction="$(gh api "repos/metasequoiaime/msime/compare/${previous_builder}...${MSIME_COMMIT}" --jq .status 2>/dev/null || true)"
+                if [[ "$direction" == behind ]]; then
+                  printf -- '- 构建器变化：回退，`%s` 用的是更新的 [`%s`](%s/commit/%s)，[查看撤回的 msime 改动](%s/compare/%s...%s)\n' "$PREVIOUS_TAG" "${previous_builder:0:9}" "$msime_url" "$previous_builder" "$msime_url" "$MSIME_COMMIT" "$previous_builder"
+                else
+                  printf -- '- 构建器变化：`%s` 用的是 [`%s`](%s/commit/%s)，[查看两者之间的 msime 改动](%s/compare/%s...%s)\n' "$PREVIOUS_TAG" "${previous_builder:0:9}" "$msime_url" "$previous_builder" "$msime_url" "$previous_builder" "$MSIME_COMMIT"
+                fi
+              fi
+            fi
             printf -- '- 触发：%s，[workflow 运行](%s/actions/runs/%s)\n\n' "$trigger" "$repo_url" "$GITHUB_RUN_ID"
             printf '## 源数据变更\n\n'
             if [[ -z "$PREVIOUS_TAG" ]]; then

@@ -54,7 +54,7 @@ sources/                                  msime 构建器经 --dictionary 读取
     LICENSE                               Mozc 仓库根目录的许可证（Google BSD 与词典条款）-> msime-mozc_LICENSE.txt
   cn-en/                                  中译英候选窗释义
     machine-translations.txt              拼音与五笔词条的英文释义（汇总已有翻译与大模型生成）-> msime-english.db（构建器尚未读取）
-  opencc/                                 OpenCC 十份转换表与 LICENSE，构建时内嵌，不是 Release 附件；其中 HKVariants.txt 不内嵌，只由粤拼词库读取 -> msime-cantonese.db
+  opencc/                                 OpenCC 十份转换表与 LICENSE，构建时内嵌，不是 Release 附件；其中 HKVariants.txt 不内嵌，只由粤拼词库读取（构建器 msime #10754 起，见源文件表） -> msime-cantonese.db
   symbols/                                符号源数据
     piliapp-symbols.txt                   表情面板符号页的分类与符号（采集自 PiliApp，许可未确认）-> msime-others.db
     symbol-names.tsv                      打拼音出符号的符号名称表（本项目自写）-> msime 引擎内嵌（不是 Release 附件）
@@ -81,10 +81,12 @@ packs/                                    用户按需导入的专业词库，�
   programming/                            编程开发
   unreal_houdini/                         Unreal Engine 与 Houdini
 scripts/
+  check_builder_lock.sh                   检查 builder.lock.json 的 msime 提交（quality 与发布 workflow 都跑）
   validate_packs.py                       专业词库与 custom/translations.txt 的本地检查
 .github/
   workflows/                              CI 与发布 workflow，见下文
   dependabot.yml
+builder.lock.json                         发布构建所用的 msime 构建器提交，见[发布](#发布)
 README.md                                 本文件
 NOTICE.md                                 各文件的上游、提交、许可与已知问题
 AGENTS.md                                 给代码代理的维护约束
@@ -105,7 +107,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 ## 源文件与发布产物
 
-下表依据 msime develop 上发布构建器 `crates/dict-builder` 的 `main.rs`、`licensing.rs` 和各语言模块。“主命令”指 `msime-dict-build --cache … --out …`，“languages”指 `msime-dict-build languages`，发布 workflow 两者都运行。
+下表依据 msime 发布构建器 `crates/dict-builder`（发布用 `builder.lock.json` 固定的提交，见[发布](#发布)）的 `main.rs`、`licensing.rs` 和各语言模块。“主命令”指 `msime-dict-build --cache … --out …`，“languages”指 `msime-dict-build languages`，发布 workflow 两者都运行。
 
 | 源文件 | 读取它的构建阶段 | 产物 | 发布状态 |
 | --- | --- | --- | --- |
@@ -132,8 +134,8 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/cantonese/` 下 4 个文件 | languages；`hkcancor-word-counts.txt` 只作排序权重 | `msime-cantonese.db` | 进入 |
 | `sources/zhuyin/` 下 4 个文件 | languages；`phrase.occ` 只作排序权重 | `msime-zhuyin.db` | 进入 |
 | `sources/stroke/stroke.dict.yaml` | languages | `msime-stroke.db` | 进入 |
-| `sources/opencc/TWVariants.txt`、`sources/opencc/HKVariants.txt` | languages：只列出候选异体对，由 HKCanCor 词频决定是否把 rime-cantonese 的 OpenCC 字形换成香港字形（msime #10451 起读 `TWVariants.txt`，#10697 起两张表都读）；表的内容不写进词库 | `msime-cantonese.db` | 进入（只影响字形） |
-| `custom/cantonese-variant-vetoes.txt` | languages（msime #10697 起读取）：每行一个 OpenCC 字形，必须是上面两张表里某一行的键，列出的字一律不换；写了表里没有的字时构建失败 | `msime-cantonese.db` | 进入（只影响字形） |
+| `sources/opencc/TWVariants.txt`、`sources/opencc/HKVariants.txt` | languages：只列出候选异体对，由 HKCanCor 词频决定是否把 rime-cantonese 的 OpenCC 字形换成香港字形（msime #10451 起读 `TWVariants.txt`；`HKVariants.txt` 从 msime [#10754](https://github.com/metasequoiaime/msime/pull/10754)（`a8480ce407`）起才读，目前固定的构建器 `93815fffb` 早于它，只读 `TWVariants.txt` 外加代码里写死的「溼→濕」一对（#10711），把 `builder.lock.json` 升到 `a8480ce407` 或之后才生效）；表的内容不写进词库 | `msime-cantonese.db` | 进入（只影响字形） |
+| `custom/cantonese-variant-vetoes.txt` | languages（msime [#10754](https://github.com/metasequoiaime/msime/pull/10754)（`a8480ce407`）起读取，目前固定的构建器 `93815fffb` 早于它、不读这张表，升级 `builder.lock.json` 后才生效）：每行一个 OpenCC 字形，必须是上面两张表里某一行的键，列出的字一律不换；写了表里没有的字时构建失败 | `msime-cantonese.db` | 进入（只影响字形） |
 | `custom/cantonese.txt` | languages（msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 起读取）：每个字的读音必须是 `sources/cantonese/jyut6ping3.chars.dict.yaml` 给它的读音之一，否则构建失败；权重取 `essay-cantonese.txt` 的分数，essay 没列时取补词门槛 1000；没有的词插入，已有且权重更低的调高，更高的不变 | `msime-cantonese.db` | msime 构建器读取后进入 |
 | `sources/japanese/dictionary00.txt` … `dictionary09.txt`、`id.def`、`connection_single_column.txt` | 主命令 JapaneseModel | `msime-japanese.dat` | 进入 |
 | `sources/japanese/dictionary_filter.tsv` | 主命令 JapaneseModel，按 Mozc `gen_filtered_dictionary.py` 删去基础词库中完全匹配的行 | `msime-japanese.dat` | 进入 |
@@ -184,9 +186,9 @@ CHANGELOG.md                              已冻结，只作历史记录
 | --- | --- | --- |
 | `check-words.yml` | Pull Request 改动 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` | 用 msime 固定提交（`MSIME_COMMIT`）的 `msime-dict-build check-words`，即构建所用的解析器：只能追加；每行能按构建的规则解析（词语的全拼须是 `'` 分隔的小写字母并能映射到全拼表）；词语和英文的权重在文件现有范围内；不与本次改动、所在文件或比对库重复（比对库是运行时找到的最新 `dict-v` release 的 `msime-pinyin.db` 和 `msime-english.db`，按该 release 的 `msime-SHA256SUMS.txt` 校验）。翻译可以给已有源词换一个译文，完全相同的一行算重复。结果写成 Pull Request 评论 |
 | `ci.yml` | Pull Request 改动 `packs/`、`custom/translations.txt`、`custom/words.txt`、它对照的 `sources/pinyin/`、`sources/unlicensed/` 文件、脚本或该 workflow | 运行 `python3 scripts/validate_packs.py`，见[专业词库](#专业词库) |
-| `quality.yml` | 推送到 `main`、Pull Request、merge queue、手动 | actionlint 校验 workflow 与其中的 shell；Pull Request 上另做依赖审查（high 及以上失败） |
+| `quality.yml` | 推送到 `main`、Pull Request、merge queue、手动 | actionlint 校验 workflow 与其中的 shell；`scripts/check_builder_lock.sh` 检查 `builder.lock.json` 的提交是完整的 40 位提交且在 msime `develop` 上（发布 workflow 构建前也跑同一个脚本）；Pull Request 上另做依赖审查（high 及以上失败） |
 | `codeql.yml` | 每天定时 | CodeQL 分析 GitHub Actions workflow |
-| `release-built-dictionaries.yml` | 推送到 `main` 且改动了 `sources/` 或 `custom/`；手动（可只构建不发布） | 用这次推送的提交构建 19 个附件，自动加修订号发布 `dict-v*` Release，说明列出源数据变更和每个附件的用途，见[发布](#发布) |
+| `release-built-dictionaries.yml` | 推送到 `main` 且改动了 `sources/`、`custom/` 或 `builder.lock.json`；手动（可只构建不发布） | 用这次推送的提交和 `builder.lock.json` 固定的 msime 构建器构建 19 个附件，自动加修订号发布 `dict-v*` Release，说明列出源数据变更和每个附件的用途，见[发布](#发布) |
 
 从 fork 发来的 Pull Request 拿到的是只读 token，check-words 不会发评论；同样的结果在该次运行的 job summary 里。维护者在 CI 之外再人工审核内容（包括敏感词）。
 
@@ -217,14 +219,24 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 ## 发布
 
-合入 `main` 的推送只要改动了 `sources/` 或 `custom/`，`release-built-dictionaries.yml` 就自动用这次推送的提交构建并发布一个新的 `dict-v*` Release，不需要先去 msime 改锁文件。只改 `packs/`、文档或 workflow 的合入不触发发布。
+合入 `main` 的推送只要改动了 `sources/`、`custom/` 或 `builder.lock.json`，`release-built-dictionaries.yml` 就自动用这次推送的提交构建并发布一个新的 `dict-v*` Release，不需要先去 msime 改锁文件。只改 `packs/`、文档或 workflow 的合入不触发发布。
 
 1. 版本号：在现有最高的 `dict-vX.Y.Z` 上加一个修订号（`dict-v2.0.6` 之后是 `dict-v2.0.7`）；算出的标签已经存在时失败，已发布的版本不可修改。发布的运行共用一个 concurrency 组，不会两次合入抢同一个版本号；GitHub 每组只保留一个排队的运行，短时间内连续合入时排在中间的运行会被取消，由最新的那次发布，它的说明列出自上一版以来的全部源数据提交。
-2. 构建：检出这次推送的提交，用 msime `develop` 的 `msime-dict-build` 和 `msime-dict-build languages`，以 `--dictionary <检出目录>` 直接读取检出里的 `sources/` 与 `custom/`。workflow 检查 19 个附件齐全、两份校验和匹配、manifest 的 `licensing.includes_unlicensed_inputs` 与 `source.dirty` 都是 `false`，并且 `custom_dictionary_commit` 等于这次推送的提交。
-3. 发布：`dict-vX.Y.Z` 标签打在这次推送的提交上，Release 标为 latest。Release 说明写明源数据提交、msime 构建器的分支和实际使用的提交、触发方式、自上一版以来改动 `sources/` 或 `custom/` 的提交（比较基点是上一版 manifest 的 `custom_dictionary_commit`，读不到时退回上一版的标签），以及下表每个附件的用途和谁使用它。
+2. 构建：检出这次推送的提交，用这个提交里 `builder.lock.json` 固定的 msime 提交（不是 msime `develop`，见下文「升级构建器」）构建 `msime-dict-build`，运行它和 `msime-dict-build languages`，以 `--dictionary <检出目录>` 直接读取检出里的 `sources/` 与 `custom/`。workflow 检查 19 个附件齐全、两份校验和匹配、manifest 的 `licensing.includes_unlicensed_inputs` 与 `source.dirty` 都是 `false`，`source.commit` 等于实际检出的 msime 提交，并且 `custom_dictionary_commit` 等于这次推送的提交。
+3. 发布：`dict-vX.Y.Z` 标签打在这次推送的提交上，Release 标为 latest。Release 说明写明源数据提交、msime 构建器提交及它是否与上一版相同（不同时附 msime 的对比链接）、触发方式、自上一版以来改动 `sources/` 或 `custom/` 的提交（比较基点是上一版 manifest 的 `custom_dictionary_commit`，读不到时退回上一版的标签），以及下表每个附件的用途和谁使用它。
 4. msime 各平台在 `resources/desktop-dictionary.lock.json` 和 `resources/language-dictionaries.lock.json` 里升级到新版本的 URL、大小和 SHA-256，下一个客户端版本随之带上新词库；check-words 的比对库在运行时自动取最新版本，不需要改。
 
-手动运行（Actions 里的 Release built dictionaries → Run workflow）用于用新的构建器重建同一份源数据，或者只构建不发布的试跑：`version` 留空即自动加修订号，也可以填 `X.Y.Z`；`msime_ref` 默认 `develop`；`publish` 默认关闭，此时只把附件和说明预览上传为 workflow artifact，说明也写进 job summary。打开 `publish` 只能从 `main` 运行；手动指定的版本低于现有最高版本时，Release 不标为 latest。打开 `publish` 的手动运行和推送触发的发布共用一个 concurrency 组，组里只保留一个排队的运行，后来的会取消先排队的：手动发布还在排队时有新的合入推送，手动那次会被取消，改由推送的运行按默认参数（`develop`、自动版本号）发布；反过来手动运行也会取代排队中的推送运行（源数据不丢，只是换成手动指定的参数）。所以手动发布前先在 Actions 里确认没有排队中的发布运行，触发后确认它没有被取消。
+手动运行（Actions 里的 Release built dictionaries → Run workflow）用于重建同一份源数据，或者只构建不发布的试跑：`version` 留空即自动加修订号，也可以填 `X.Y.Z`；`msime_ref` 默认留空，即用运行所在分支上 `builder.lock.json` 固定的提交，填 msime 的分支、标签或提交只用于试跑（说明预览会标出这不是固定的提交），打开 `publish` 时只能留空或等于固定的提交，否则 workflow 失败；`publish` 默认关闭，此时只把附件和说明预览上传为 workflow artifact，说明也写进 job summary。打开 `publish` 只能从 `main` 运行；手动指定的版本低于现有最高版本时，Release 不标为 latest。打开 `publish` 的手动运行和推送触发的发布共用一个 concurrency 组，组里只保留一个排队的运行，后来的会取消先排队的：手动发布还在排队时有新的合入推送，手动那次会被取消，改由推送的运行按默认参数（固定的构建器、自动版本号）发布；反过来手动运行也会取代排队中的推送运行（源数据不丢，只是换成手动指定的参数）。所以手动发布前先在 Actions 里确认没有排队中的发布运行，触发后确认它没有被取消。
+
+**升级构建器**：发布构建器固定在根目录 `builder.lock.json` 的 `msime_commit`（完整的 40 位提交），不跟随 msime `develop`。`crates/dict-builder` 的改动合进 msime `develop` 后不会进入任何发布，直到本仓有一个 PR 改了这个提交。升级的做法：
+
+1. 选 msime `develop` 上的一个提交（PR squash 合并后的提交）。`scripts/check_builder_lock.sh` 用 GitHub 的 compare 接口检查固定的提交在 `develop` 上，PR 分支上的提交会被拒绝；本仓 PR 的 quality 检查和发布 workflow 都跑它，所以写错的提交在 PR 上就失败，不会等到合入后的发布。
+2. 开一个本仓 PR，只改 `builder.lock.json` 的 `msime_commit`，正文写明新旧两个提交之间与词库产物有关的 msime 改动。
+3. 在这个 PR 分支上手动运行 Release built dictionaries（`msime_ref` 留空、`publish` 关闭），试跑的就是 PR 里的新提交。把运行链接贴进 PR：说明预览的「构建器变化」一行给出新旧提交的 msime 对比链接，审核者下载试跑的 artifact 与上一版附件比对，看产物的变化是否都在预期之内。
+4. 合入后这次推送按新构建器发布一个新版本；源数据没变时说明写着「用同一份源数据重新构建」。构建器的改动因此单独成版，不会跟着下一次无关的源数据推送一起发出去。
+5. 回滚：在 `main` 上 revert 那个升级 PR（也是一个 PR），合入的推送改了 `builder.lock.json`，按旧构建器发布一个新版本，说明的「构建器变化」一行标为「回退」并给出撤回的 msime 改动。不要靠在 msime `develop` 上 revert 再手动发布：发布的运行只用固定的提交，`develop` 的变化不会进入发布。
+
+需要 msime 与本仓同时改动的跨仓改动（移动文件、升级上游提交）是「只改提交」的唯一例外：在本仓 PR 分支上先用 `msime_ref` 指向 msime 的 PR 分支试跑；msime 合入后，在同一个本仓 PR 里把 `builder.lock.json` 改成 msime `develop` 上的合并提交，`msime_ref` 留空再试跑一次，然后合入。这样一次推送只带进这个跨仓改动，前提是旧的固定提交到合并提交的父提交之间没有别的 `crates/dict-builder` 改动；有的话，先按上面的步骤开一个只改提交的 PR，把固定提交升到合并提交的父提交并合入，再合跨仓 PR，免得别的构建器改动跟着这次数据改动一起发出去。数据和构建器在同一次推送里一起换，合入之间有别的推送也仍用旧构建器构建旧数据，不会失败。
 
 msime 的 `resources/dictionary-sources.lock.json` 不固定本仓任何文件，通常消费本仓的 `dict-v` Release 附件；OpenCC 是构建期内嵌输入，由独立的 `resources/opencc.lock.json` 固定本仓提交和文件摘要，首次构建下载或从指定的检出目录读取，不在运行时联网。要复现某个版本，按它 manifest 的 `custom_dictionary_commit` 检出本仓、按 `source.commit` 检出 msime，再带 `--dictionary` 运行 `msime-dict-build`。
 
