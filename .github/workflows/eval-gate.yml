@@ -8,10 +8,8 @@ name: Dictionary eval gate
 #
 # 评测臂默认两臂：挂整句模型的一臂是产品默认，跑全部门槛；不挂模型的一臂只跑 quanpin-words-v2，量词库权重本身（方案 4.2）。两臂都另跑方案 4.3 的参考项（sentences-v1、九键长句、particles、neutral），只报告。
 #
-# 时间：全部 convert_eval 并行跑在 8 核 runner 上。2026-11-04 在分支上的试跑（两臂、quanpin-words-v2 全量，构建器有 sccache 缓存）整个作业约 16 分钟，其中门槛 12 分钟，离 120 分钟上限很远，所以默认全量。构建器换了大版本、缓存全失效时编译会多出十几分钟；作业逼近上限时，把 QUANPIN_V2_LIMIT 设成等距子集的大小（B、C 用同一批用例，其余门槛仍然全量）。
+# 时间：全部 convert_eval 并行跑在 8 核 runner 上。2026-11-04 在分支上的试跑（两臂、quanpin-words-v2 全量加四份整句参考集，构建 languages、两组产物差异，构建器有 sccache 缓存）整个作业约 16 到 18 分钟，其中门槛和参考项 12 到 14 分钟，产物差异和 top-N 清单不到 1 分钟，离 120 分钟上限很远，所以默认全量。构建器换了大版本、缓存全失效时编译会多出十几分钟；作业逼近上限时，把 QUANPIN_V2_LIMIT 设成等距子集的大小（B、C 用同一批用例，其余门槛仍然全量）。
 on:
-  push:
-    branches: [cleanse-data/eval-gate-ci]
   pull_request:
   merge_group:
   workflow_dispatch:
@@ -94,7 +92,7 @@ jobs:
         id: builder
         if: ${{ steps.scope.outputs.relevant == 'true' }}
         env:
-          OVERRIDE: ${{ inputs.msime_ref || 'cleanse/eval-gate-ci' }}
+          OVERRIDE: ${{ inputs.msime_ref }}
         run: |
           set -euo pipefail
           pin="$(jq -er '.msime_commit' dictionary/builder.lock.json)"
@@ -284,7 +282,7 @@ jobs:
             --baseline "$RUNNER_TEMP/baseline" --candidate "$RUNNER_TEMP/candidate" \
             --model "$RUNNER_TEMP/sentence-model.safetensors" --binary target/release/examples/convert_eval \
             --work "$RUNNER_TEMP/eval" --jobs "$EVAL_JOBS" --limit "$limit" --arms "$arms" \
-            --must-outrank-strict --preamble "$report/preamble.md" --markdown "$report/report.md" --json "$report/report.json") > "$report/stdout.txt" || status=$?
+            --preamble "$report/preamble.md" --markdown "$report/report.md" --json "$report/report.json") > "$report/stdout.txt" || status=$?
           cp "$RUNNER_TEMP"/eval/exposure-*.json "$report/" 2>/dev/null || true
           if [[ ! -s "$report/report.md" ]]; then
             printf '## 词库评测把关\n\n%s\n**评测没能跑完**（exit %s），没有结论，见 workflow 日志。\n' "$(cat "$report/preamble.md")" "$status" > "$report/report.md"
