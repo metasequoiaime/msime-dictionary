@@ -278,9 +278,9 @@ jobs:
           | `msime-japanese.dat` | 由 Mozc OSS 词典生成的日文转换模型（`MSJPDT1` 格式），与 Mozc 自己的构建一致：基础词典先按 `dictionary_filter.tsv` 过滤，再加入 `aux_dictionary.tsv`、`places.tsv`、`words.tsv` 的补充词 | 客户端下载（桌面词库锁；macOS 在启用日文时按需下载） |
           | `msime-bigram.bin` | 二元语言模型，由固定的中文维基语料按拼音词表统计，用于整句候选的上下文评分 | 客户端下载（桌面词库锁） |
           | `msime-trigram.bin` | 三元语言模型，与二元模型一起参与整句候选排序 | 客户端下载（桌面词库锁） |
-          | `msime-cantonese.db` | 粤拼方案词库：rime-cantonese 的音节、单字与词语，按其 essay 词频排序；essay 没收的词按香港粤语语料库（HKCanCor）的词频 `sources/cantonese/hkcancor-word-counts.txt` 加权 | 客户端按需下载（语言词库锁） |
-          | `msime-zhuyin.db` | 注音方案词库：libchewing-data 的单字与词语，加 McBopomofo 补充表；`tsi.csv` 没计数的词语按 McBopomofo `phrase.occ` 的出现次数加权 | 客户端按需下载（语言词库锁） |
-          | `msime-stroke.db` | 笔画方案词库：rime-stroke 的笔画编码，按拼音单字表的字频排序 | 客户端按需下载（语言词库锁） |
+          | `msime-cantonese.db` | 粤拼方案词库：rime-cantonese 的音节、单字与词语，按其 essay 词频排序；essay 没收的词按香港粤语语料库（HKCanCor）的词频 `sources/cantonese/hkcancor-word-counts.txt` 加权；词表没收、由 essay 补进来的词要有 HKCanCor、`custom/cantonese.txt` 或拼音库（rime-ice 词表与补充表、地名表，按 `curation/` 的拼音否决表和权重覆盖表删改之后）的佐证，否则压到同键有 essay 或 HKCanCor 证据的词表词之下，`curation/cantonese-essay-keep.txt` 列出的常用口语词除外；`curation/cantonese-word-vetoes.txt` 删去 essay 的错字写法 | 客户端按需下载（语言词库锁） |
+          | `msime-zhuyin.db` | 注音方案词库：libchewing-data 的单字与词语，加 McBopomofo 补充表；`tsi.csv` 没计数的词语按 McBopomofo `phrase.occ` 的出现次数加权；同一个键上权重并列或只差 1 的单读音字按 `phrase.occ` 重排 | 客户端按需下载（语言词库锁） |
+          | `msime-stroke.db` | 笔画方案词库：rime-stroke 的笔画编码，按拼音单字表的字频排序，繁体字形（OpenCC 简转繁的第一个字形及其台湾、香港写法）继承对应简体字字频的四分之一；扩展 B 区及以后的字只收字频达到门槛的和粤拼词表用到的 | 客户端按需下载（语言词库锁） |
           | `msime-mozc_dictionary_oss_README.txt` | Mozc 词典的来源与许可说明（IPAdic、ICOT、冲绳词典），分发 `msime-japanese.dat` 时必须一并分发 | 随 `msime-japanese.dat` 下载 |
           | `msime-mozc_LICENSE.txt` | Mozc 仓库根目录的 `LICENSE`（`sources/japanese/LICENSE` 原文）：Google 三条款 BSD 版权声明与免责声明，以及词典数据的 NAIST/ICOT 条款与冲绳辞书的公有领域声明，分发 `msime-japanese.dat` 时必须一并分发 | 随 `msime-japanese.dat` 分发（msime 桌面词库锁尚未登记，升级时加入） |
           | `msime-scowl_Copyright.txt` | 英文词库所用 SCOWL 词表的版权与许可声明（msime `resources/licenses/scowl-aspell6-en-Copyright.txt` 原文，与 `msime-english.db` 的 `source_notices` 表逐字节相同），分发 `msime-english.db` 时必须一并分发 | 随 `msime-english.db` 分发（msime 桌面词库锁尚未登记，升级时加入） |
