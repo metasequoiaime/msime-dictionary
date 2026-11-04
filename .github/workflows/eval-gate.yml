@@ -6,7 +6,7 @@ name: Dictionary eval gate
 #
 # 不改动发布输入的 PR（文档、packs/、workflow 以外的脚本）不会发布任何东西，作业只判定范围就以成功结束，这样把「Eval gate」设为 main 的 required check 时，这些 PR 不会一直等一个不会出现的检查。
 #
-# 时间：全部 convert_eval 并行跑在 8 核 runner 上。quanpin-words-v2 默认全量；作业逼近 120 分钟上限时，把 QUANPIN_V2_LIMIT 设成等距子集的大小（B、C 用同一批用例，其余门槛仍然全量）。
+# 时间：全部 convert_eval 并行跑在 8 核 runner 上。2026-11-04 在分支上的试跑（两臂、quanpin-words-v2 全量，构建器有 sccache 缓存）整个作业约 16 分钟，其中门槛 12 分钟，离 120 分钟上限很远，所以默认全量。构建器换了大版本、缓存全失效时编译会多出十几分钟；作业逼近上限时，把 QUANPIN_V2_LIMIT 设成等距子集的大小（B、C 用同一批用例，其余门槛仍然全量）。
 on:
   push:
     branches: [cleanse-data/eval-gate-ci]
@@ -27,7 +27,7 @@ on:
       arms:
         description: "评测臂：model（产品默认，挂模型），或 model,engine 再加一臂不挂模型（只跑 quanpin-words-v2）"
         required: false
-        default: model
+        default: model,engine
         type: string
 
 permissions: {}
@@ -160,14 +160,16 @@ jobs:
         if: ${{ steps.scope.outputs.relevant == 'true' }}
         env:
           SOURCE_SHA: ${{ github.sha }}
+          MSIME_COMMIT: ${{ steps.tools.outputs.commit }}
         run: |
           set -euo pipefail
           out="$RUNNER_TEMP/candidate"
           msime/target/release/msime-dict-build --repository msime --dictionary "$GITHUB_WORKSPACE/dictionary" --cache "$RUNNER_TEMP/dictionary-sources" --out "$out"
           (cd "$out" && sha256sum -c msime-SHA256SUMS.txt)
-          jq -e '.licensing.includes_unlicensed_inputs == false and .source.dirty == false' "$out/msime-dictionary-manifest.json" >/dev/null || {
-            echo "candidate manifest check failed: expected unlicensed inputs excluded and a clean builder" >&2
-            jq '{licensing, source}' "$out/msime-dictionary-manifest.json" >&2
+          # 与发布 workflow 的清单检查相同：评测的必须是这次检出的提交、用这个 msime 提交构建的授权产物。
+          jq -e --arg sha "$SOURCE_SHA" --arg msime "$MSIME_COMMIT" '.licensing.includes_unlicensed_inputs == false and .source.dirty == false and .source.commit == $msime and .custom_dictionary_commit == $sha' "$out/msime-dictionary-manifest.json" >/dev/null || {
+            echo "candidate manifest check failed: expected unlicensed inputs excluded, a clean builder at $MSIME_COMMIT and dictionary commit $SOURCE_SHA" >&2
+            jq '{licensing, source, custom_dictionary_commit}' "$out/msime-dictionary-manifest.json" >&2
             exit 1
           }
       - name: Save the pinned dictionary sources
