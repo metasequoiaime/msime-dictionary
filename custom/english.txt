@@ -33,3 +33,5 @@ kling	Kling	1
 snipaste	Snipaste	1
 snipaste	snipaste	1
 lycopene	Lycopene	1
+etf	ETF	1
+etfs	ETFs	1
