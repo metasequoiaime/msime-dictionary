@@ -191,7 +191,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `custom/words.txt` | `词<TAB>全拼<TAB>权重` | 全拼音节用 `'` 分隔，如 `未来可期	wei'lai'ke'qi	5000` |
 | `custom/translations.txt` | `源词<TAB>译文` | 源词含 U+3400 及以上的字符（汉字）时是中译英，否则是英译中；`#` 开头是注释。同一源词写了多行时，构建取最后一行 |
 | `custom/english.txt` | `编码<TAB>显示词<TAB>权重` | 编码是输入的小写字母，显示词是上屏的写法，同一编码可以有多个显示词 |
-| `custom/cantonese.txt` | `词<TAB>带声调粤拼` | 两个及以上汉字，写繁体字形；一个汉字一个音节，音节之间一个空格，如 `周杰倫	zau1 git6 leon4`；`#` 开头是注释。每个字的读音必须是 `sources/cantonese/jyut6ping3.chars.dict.yaml` 给它的读音之一；多音字选哪个读音由审校者把关，CI 查不出。没有权重列 |
+| `custom/cantonese.txt` | `词<TAB>带声调粤拼` | 两个及以上汉字，写繁体字形；一个汉字一个音节，音节之间一个空格，如 `周杰倫	zau1 git6 leon4`；`#` 开头是注释。每个字的读音必须是 `sources/cantonese/jyut6ping3.chars.dict.yaml` 给它的读音之一；多音字选哪个读音由审校者把关，CI 查不出。没有权重列。`curation/cantonese-word-vetoes.txt` 否决了的词（同一读音，或整词否决的任何读音）和 `curation/cantonese-essay-keep.txt` 已经列出的词不要再投：前者会让构建失败，后者收进来以后豁免行过期，构建同样失败；这类改动由 `check-curation.yml` 构建 languages 时拦下，见 `AGENTS.md`「维护者清洗表」 |
 | `custom/wubi86.txt` | `值<TAB>编码<TAB>权重` | 编码是 86 五笔的小写字母码，值是上屏的字、词或符号，如 `①	g	1`。权重取 1 这类小值，排在同码原有候选之后；不要用它把原有的字挤下首选 |
 
 **权重**：新词条的权重必须落在所在文件现有条目的范围内，CI 按文件当前内容计算这个范围。`custom/words.txt` 目前是 1 到 10000，大多数历史条目写的是 `1`。想让一个词在整句里更容易胜出，就参照基础词库里同量级的真实词取值（例如 `扛不住` 在 `sources/pinyin/rime-ice.txt` 里是 2430），不要为了靠前填一个极大值。`custom/english.txt` 目前只有 `1`：有 Google 词频的英文词按词频排序，没有词频的才用这里的权重，而且排在所有有词频的词之后。这个范围普通 Pull Request 无法放宽，确实需要时先开 Issue。
