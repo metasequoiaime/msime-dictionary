@@ -64,6 +64,10 @@
     "rime-wubi": {
       "repository": "https://github.com/rime/rime-wubi.git",
       "commit": "152a0d3f3efe40cae216d1e3b338242446848d07"
+    },
+    "rime-wanxiang": {
+      "repository": "https://github.com/amzxyz/rime-wanxiang.git",
+      "commit": "7ab73ee0c7f80190004233e70f954833df64c80e"
     }
   },
   "files": [
@@ -294,6 +298,108 @@
       "upstream": "rime-ice",
       "size": 28590541,
       "sha256": "76252df96ac5e287d81b498f96fe2ec211861caa2f4423b2d30fbe331fc1d264"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/cuoyin.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 8107,
+      "sha256": "05b423d95163e3e94a4acfd6ef83e22f85fe6212aabd8678298b896147187bea"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/diming.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 3147701,
+      "sha256": "627b351e6fa660a40cef86dd923a4bafdeb0bc052c3f2b5eb36600b0d839e0d2"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/duoyin.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 142216,
+      "sha256": "36d3110e14cc58910bcb586cef0c0cb193d4f571332baf517932c39d9498f9ac"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/fangyan.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 8716,
+      "sha256": "5d9b1b05e4c84c47a8a7c234429aaa0b793b5a711ed4d2a5b4cd5581485e7dac"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/huaxue.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 793045,
+      "sha256": "d886b18c68541a94fb0c189bb0c5e00f77fef99f9d2e14c80bf3d6cd477e9070"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/jichu.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 45091360,
+      "sha256": "b4de9313dff73b4f67535822b57e69d4b2af32dbfd9a9b0de34681fb28500f8c"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/lianxiang.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 7843105,
+      "sha256": "5a3be6113f341ffd562ab7be18692587955c8e1b0b76a3cc9644e5bc56d6f9ea"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/mingren.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 551682,
+      "sha256": "74e7fd782c90e3c8a28936558840f5f423c0874db70af53e4f0b9b87197d50f1"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/mixed.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 35710,
+      "sha256": "53301bdeb915e78ca1eee02ce21977dc65af6e537890476961997f3c352dbc70"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/renming.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 558187,
+      "sha256": "4c171aa4f5608934f5c504d8435c0e85dc06b938a1337a1fb041819dca1ca631"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/shici.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 16424711,
+      "sha256": "7c9c8b24d53bd9b3c7b2e991c7bbf1d3d70c9e6c1337e5418e434a06c8a0ffad"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/taifeng.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 8372,
+      "sha256": "da4e7a67f7c399bc27ee7227f669dc023eea722f1f369637100c2f57087ddf10"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/wuzhong.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 2014033,
+      "sha256": "6b0217acf79ec51f3edf8533f51506f9ae4104608c152c8c125eaa691ec44082"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/yaopin.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 574422,
+      "sha256": "9596228b5a9ef5cc9202653d3b7da599900182a064bc9b8538781d9bd9c45c4d"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/yiren.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 362060,
+      "sha256": "33a7fbb49ed171c70a35de5a173d8d150c3ec87316e4fa6e77a1cc7eaa920c38"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/yixue.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 826294,
+      "sha256": "a38c29aef6130aff840ab94bd83641ab6061226ca0ebfef007b0ab8fd5f5eaf8"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/zi.dict.yaml",
+      "upstream": "rime-wanxiang",
+      "size": 616522,
+      "sha256": "4be1b3689bb6a5e9316583b3aa2e8c1cb83a33a7efe3775568e957212943b35a"
     },
     {
       "path": "sources/stroke/stroke.dict.yaml",

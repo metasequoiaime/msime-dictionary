@@ -252,6 +252,15 @@ jobs:
                 fi
               fi
             fi
+            # 万象登记进 upstream.lock.json 之后，构建器的 reweight 阶段按它重算全拼权重（不认识这个上游的构建器会直接失败，所以走到这里就说明阶段跑过了）；说明里写明只做了第一步还是打开了第二步，回滚第二步的版本也看得出来。
+            wanxiang_commit="$(jq -r '.upstreams["rime-wanxiang"].commit // empty' dictionary/upstream.lock.json)"
+            if [[ -n "$wanxiang_commit" ]]; then
+              if [[ -f dictionary/curation/pinyin-reweight.txt ]]; then
+                printf -- '- 拼音权重：与万象共有的行由构建器的 `reweight` 阶段按 `sources/pinyin/wanxiang/`（万象 `%s`）重算，`curation/pinyin-reweight.txt` 打开了第二步（`curation/pinyin-reweight-exempt.txt` 列出的行除外），见 `NOTICE.md`「拼音权重与万象对齐」\n' "${wanxiang_commit:0:7}"
+              else
+                printf -- '- 拼音权重：与万象共有的行由构建器的 `reweight` 阶段按 `sources/pinyin/wanxiang/`（万象 `%s`）重算，只做第一步（复现 #84 的换算，权重不变），见 `NOTICE.md`「拼音权重与万象对齐」\n' "${wanxiang_commit:0:7}"
+              fi
+            fi
             printf -- '- 触发：%s，[workflow 运行](%s/actions/runs/%s)\n\n' "$trigger" "$repo_url" "$GITHUB_RUN_ID"
             printf '## 源数据变更\n\n'
             if [[ -z "$PREVIOUS_TAG" ]]; then
