@@ -1,12 +1,12 @@
 name: Dictionary eval gate
 
-# 合入 main 就是发布（release-built-dictionaries.yml），约 24 小时后客户端自动收到，所以排序评测必须在合入之前跑完。这里在每个改动发布输入（sources/、custom/、curation/、builder.lock.json）的 Pull Request 上：用候选提交里 builder.lock.json 固定的 msime 构建器构建候选词库 C，下载最新的 dict-v 发布作为基线 B，再由同一个 msime 提交里的 scripts/dict_eval_gate.py 跑 dict-cleanse 方案 4.3 的五道硬门槛（金标准对不丢、must-outrank、粗俗首屏曝光 C ≤ B、quanpin-words-v2 三种键盘的配对 McNemar、全拼行数下限）。报告写进作业摘要、上传为 artifact，同仓库的 PR 上更新一条评论；任何一道门槛失败，这个检查就失败。
+# 合入 main 就是发布（release-built-dictionaries.yml），约 24 小时后客户端自动收到，所以排序评测必须在合入之前跑完。这里在每个改动发布输入（sources/、custom/、curation/、upstream.lock.json、builder.lock.json，以及决定发布怎么构建的 release-built-dictionaries.yml）的 Pull Request 上：用候选提交里 builder.lock.json 固定的 msime 构建器构建候选词库 C，下载最新的 dict-v 发布作为基线 B，再由同一个 msime 提交里的 scripts/dict_eval_gate.py 跑 dict-cleanse 方案 4.3 的五道硬门槛（金标准对不丢、must-outrank、粗俗首屏曝光 C ≤ B、quanpin-words-v2 三种键盘的配对 McNemar、全拼行数下限）。同一个作业还按发布 workflow 的命令构建 languages 词库（粤拼、注音、笔画），把 C 与 B 的两组产物逐表逐行比较（dict_artifact_diff.py，即逐词的删除、降权清单），并列出五笔和英文的 top-N 差异（dictionary_topn_diff.py），附在报告后面，只报告不判定。报告写进作业摘要、上传为 artifact `dictionary-eval-gate`，候选产物上传为 `dictionary-candidate`（保留 7 天），同仓库的 PR 上更新一条评论；任何一道门槛失败、任何一步构建或比较失败，这个检查就失败。
 #
 # 评测脚本和构建器取自同一个固定提交：门槛的口径（评测集、词表、判定规则）随构建器一起由 builder.lock.json 显式升级，不跟随 msime develop。固定提交里还没有 scripts/dict_eval_gate.py 时作业失败并说明原因，先把 builder.lock.json 升到含它的提交。手动运行可以用 msime_ref 换一个 msime 分支或提交试跑（只用于试跑；PR 上总是用固定提交）。
 #
 # 不改动发布输入的 PR（文档、packs/、workflow 以外的脚本）不会发布任何东西，作业只判定范围就以成功结束，这样把「Eval gate」设为 main 的 required check 时，这些 PR 不会一直等一个不会出现的检查。
 #
-# 评测臂默认两臂：挂整句模型的一臂是产品默认，跑全部门槛；不挂模型的一臂只跑 quanpin-words-v2，量词库权重本身（方案 4.2）。
+# 评测臂默认两臂：挂整句模型的一臂是产品默认，跑全部门槛；不挂模型的一臂只跑 quanpin-words-v2，量词库权重本身（方案 4.2）。两臂都另跑方案 4.3 的参考项（sentences-v1、九键长句、particles、neutral），只报告。
 #
 # 时间：全部 convert_eval 并行跑在 8 核 runner 上。2026-11-04 在分支上的试跑（两臂、quanpin-words-v2 全量，构建器有 sccache 缓存）整个作业约 16 分钟，其中门槛 12 分钟，离 120 分钟上限很远，所以默认全量。构建器换了大版本、缓存全失效时编译会多出十几分钟；作业逼近上限时，把 QUANPIN_V2_LIMIT 设成等距子集的大小（B、C 用同一批用例，其余门槛仍然全量）。
 on:
@@ -77,10 +77,11 @@ jobs:
           esac
           relevant=true
           if [[ -n "$base" ]]; then
-            changed="$(git -C dictionary diff --no-renames --name-only "$base" HEAD -- sources custom curation builder.lock.json .github/workflows/eval-gate.yml)"
+            # upstream.lock.json 由构建器逐项核对（版本、提交、引用对不上就构建失败），也算进 manifest 的 source.dirty；发布 workflow 决定发布用什么命令构建。
+            changed="$(git -C dictionary diff --no-renames --name-only "$base" HEAD -- sources custom curation upstream.lock.json builder.lock.json .github/workflows/release-built-dictionaries.yml .github/workflows/eval-gate.yml)"
             if [[ -z "$changed" ]]; then
               relevant=false
-              echo "这次改动没有碰发布输入（sources/、custom/、curation/、builder.lock.json），合入不会发布，不跑评测。" >> "$GITHUB_STEP_SUMMARY"
+              echo "这次改动没有碰发布输入（sources/、custom/、curation/、upstream.lock.json、builder.lock.json、发布 workflow），合入不会改变发布的内容，不跑评测。" >> "$GITHUB_STEP_SUMMARY"
             else
               printf 'changed release inputs:\n%s\n' "$changed"
             fi
@@ -120,10 +121,12 @@ jobs:
           set -euo pipefail
           commit="$(git -C msime rev-parse HEAD)"
           echo "commit=$commit" >> "$GITHUB_OUTPUT"
-          if [[ ! -f msime/scripts/dict_eval_gate.py ]]; then
-            echo "::error::msime $commit has no scripts/dict_eval_gate.py; bump builder.lock.json to a msime develop commit that includes the eval gate before relying on this check"
-            exit 1
-          fi
+          for script in dict_eval_gate.py dict_artifact_diff.py dictionary_topn_diff.py; do
+            if [[ ! -f "msime/scripts/$script" ]]; then
+              echo "::error::msime $commit has no scripts/$script; bump builder.lock.json to a msime develop commit that includes the eval gate before relying on this check"
+              exit 1
+            fi
+          done
       # 按 msime 锁下载的源数据（ECDICT、zhwiki 语料片段、区划表、SCOWL、HKCanCor）。构建器只复用大小和摘要都对得上的文件，缓存旧了只会多下载。
       - name: Restore the pinned dictionary sources
         id: sources
@@ -155,8 +158,9 @@ jobs:
           rustup toolchain install
           cargo build --release --locked -p msime-dict-builder --bin msime-dict-build
           cargo build --release --locked -p msime-input-runtime --example convert_eval
-      # 只跑主构建：评测读的是桌面词库锁里的那组主产物，粤拼、注音、笔画（languages）由发布试跑检查。
+      # 主构建和 languages 的命令与发布 workflow 相同，分两个目录放，与基线的两组附件（msime-SHA256SUMS.txt、msime-language-dictionaries-SHA256SUMS）一一对应。评测只读主产物；languages 在这里构建是为了让粤拼、注音、笔画的构建错误在合入之前暴露，并参与产物差异。
       - name: Build the candidate dictionaries
+        id: candidate
         if: ${{ steps.scope.outputs.relevant == 'true' }}
         env:
           SOURCE_SHA: ${{ github.sha }}
@@ -164,8 +168,11 @@ jobs:
         run: |
           set -euo pipefail
           out="$RUNNER_TEMP/candidate"
+          languages="$RUNNER_TEMP/candidate-languages"
           msime/target/release/msime-dict-build --repository msime --dictionary "$GITHUB_WORKSPACE/dictionary" --cache "$RUNNER_TEMP/dictionary-sources" --out "$out"
+          msime/target/release/msime-dict-build languages --repository msime --dictionary "$GITHUB_WORKSPACE/dictionary" --cache "$RUNNER_TEMP/dictionary-sources" --out "$languages"
           (cd "$out" && sha256sum -c msime-SHA256SUMS.txt)
+          (cd "$languages" && sha256sum -c msime-language-dictionaries-SHA256SUMS)
           # 与发布 workflow 的清单检查相同：评测的必须是这次检出的提交、用这个 msime 提交构建的授权产物。
           jq -e --arg sha "$SOURCE_SHA" --arg msime "$MSIME_COMMIT" '.licensing.includes_unlicensed_inputs == false and .source.dirty == false and .source.commit == $msime and .custom_dictionary_commit == $sha' "$out/msime-dictionary-manifest.json" >/dev/null || {
             echo "candidate manifest check failed: expected unlicensed inputs excluded, a clean builder at $MSIME_COMMIT and dictionary commit $SOURCE_SHA" >&2
@@ -179,7 +186,7 @@ jobs:
         with:
           path: ${{ runner.temp }}/dictionary-sources
           key: ${{ steps.sources.outputs.cache-primary-key }}
-      # 基线是用户此刻手里的词库：本仓最新的 dict-v 发布（每次合入发布一版，所以运行时现查，不固定版本），按它自带的 msime-SHA256SUMS.txt 下载并校验其中列出的全部文件。
+      # 基线是用户此刻手里的词库：本仓最新的 dict-v 发布（每次合入发布一版，所以运行时现查，不固定版本），按它自带的 msime-SHA256SUMS.txt 和 msime-language-dictionaries-SHA256SUMS 下载并校验其中列出的全部文件。
       - name: Download the baseline release
         id: baseline
         if: ${{ steps.scope.outputs.relevant == 'true' }}
@@ -189,17 +196,32 @@ jobs:
           set -euo pipefail
           tag="$(gh release list --repo "$GITHUB_REPOSITORY" --exclude-drafts --exclude-pre-releases --limit 100 --json tagName --jq '[.[].tagName | select(test("^dict-v[0-9]+\\.[0-9]+\\.[0-9]+$"))] | sort_by(ltrimstr("dict-v") | split(".") | map(tonumber)) | last // empty')"
           [[ -n "$tag" ]] || { echo "no dict-v release to compare against" >&2; exit 1; }
-          dir="$RUNNER_TEMP/baseline"
-          mkdir -p "$dir"
-          gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir "$dir" -p msime-SHA256SUMS.txt
-          patterns=()
-          while read -r _ name; do
-            patterns+=(-p "${name#\*}")
-          done < "$dir/msime-SHA256SUMS.txt"
-          gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir "$dir" "${patterns[@]}"
-          (cd "$dir" && sha256sum -c msime-SHA256SUMS.txt)
+          fetch() {
+            local sums="$1" dir="$2"
+            mkdir -p "$dir"
+            gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir "$dir" -p "$sums"
+            local patterns=()
+            while read -r _ name; do
+              patterns+=(-p "${name#\*}")
+            done < "$dir/$sums"
+            gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir "$dir" "${patterns[@]}"
+            (cd "$dir" && sha256sum -c "$sums")
+          }
+          fetch msime-SHA256SUMS.txt "$RUNNER_TEMP/baseline"
+          fetch msime-language-dictionaries-SHA256SUMS "$RUNNER_TEMP/baseline-languages"
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
           echo "baseline: $tag"
+      # 方案第 5 节要求每个词库 PR 附上逐词的删除和降权清单：两组产物逐表逐行比较，JSON 里每张表每类差异最多列 200000 行（一次清洗批次远小于这个数，全部列出），Markdown 只放样例。五笔和英文没有金标准，top-N 差异清单只作审阅附件。都只报告；比较不了（库打不开）时这一步失败。
+      - name: Diff the candidate against the baseline
+        if: ${{ steps.scope.outputs.relevant == 'true' }}
+        working-directory: msime
+        run: |
+          set -euo pipefail
+          diff="$RUNNER_TEMP/report/diff"
+          mkdir -p "$diff"
+          python3 scripts/dict_artifact_diff.py --base "$RUNNER_TEMP/baseline" --head "$RUNNER_TEMP/candidate" --markdown "$diff/main.md" --json "$diff/main.json" --json-samples 200000 --max-markdown-chars 15000
+          python3 scripts/dict_artifact_diff.py --base "$RUNNER_TEMP/baseline-languages" --head "$RUNNER_TEMP/candidate-languages" --markdown "$diff/languages.md" --json "$diff/languages.json" --json-samples 200000 --max-markdown-chars 8000
+          python3 scripts/dictionary_topn_diff.py --before "$RUNNER_TEMP/baseline" --after "$RUNNER_TEMP/candidate" --out "$diff/topn"
       # 挂模型的一臂是产品默认：模型在 msime 桌面词库锁里，按锁的 URL 下载、按锁的 SHA-256 校验。
       - name: Download the sentence model
         if: ${{ steps.scope.outputs.relevant == 'true' }}
@@ -241,7 +263,7 @@ jobs:
               printf -- '- 构建器与评测工具：试跑指定的 msime `%s`，即 [`%s`](%s/metasequoiaime/msime/commit/%s)，不是 `builder.lock.json` 固定的提交\n' "$MSIME_REF" "${MSIME_COMMIT:0:10}" "$server" "$MSIME_COMMIT"
             fi
             printf -- '- 基线：[`%s`](%s/%s/releases/tag/%s)，用户现在自动更新到的版本\n' "$BASELINE_TAG" "$server" "$GITHUB_REPOSITORY" "$BASELINE_TAG"
-            printf -- '- [workflow 运行](%s)：完整的 JSON 报告和两边的曝光报告在 artifact `dictionary-eval-gate` 里\n' "$RUN_URL"
+            printf -- '- [workflow 运行](%s)：完整的 JSON 报告、两边的曝光报告和产物差异清单在 artifact `dictionary-eval-gate` 里，候选产物在 `dictionary-candidate` 里（保留 7 天）\n' "$RUN_URL"
           } > "$report/preamble.md"
           status=0
           (cd msime && python3 scripts/dict_eval_gate.py run \
@@ -253,6 +275,21 @@ jobs:
           if [[ ! -s "$report/report.md" ]]; then
             printf '## 词库评测把关\n\n%s\n**评测没能跑完**（exit %s），没有结论，见 workflow 日志。\n' "$(cat "$report/preamble.md")" "$status" > "$report/report.md"
           fi
+          # 产物差异附在评测报告后面，标题降两级放进折叠块。
+          # shellcheck disable=SC2016
+          {
+            printf '\n### 产物差异（参考，只报告）\n\n'
+            printf '与基线逐表逐行比较（`dict_artifact_diff.py`），完整的新增、删除、改权重清单在 artifact 的 `diff/main.json`、`diff/languages.json`；五笔和英文的 top-N 差异清单在 `diff/topn/`。\n\n'
+            printf '| top-N 清单 | 比较 | 变了 | 首选变了 |\n| --- | --- | --- | --- |\n'
+            jq -r '.lists | to_entries[] | "| \(.key) | \(.value.compared) | \(.value.changed) | \(.value.top1_changed // "-") |"' "$report/diff/topn/summary.json"
+            for part in main languages; do
+              title="主词库"
+              [[ "$part" == languages ]] && title="languages（粤拼、注音、笔画）"
+              printf '\n<details><summary>%s的逐表差异</summary>\n\n' "$title"
+              sed -e '1{/^## /d;}' -e 's/^### /#### /' "$report/diff/$part.md"
+              printf '\n</details>\n'
+            done
+          } >> "$report/report.md"
           cat "$report/report.md" >> "$GITHUB_STEP_SUMMARY"
           echo "status=$status" >> "$GITHUB_OUTPUT"
       - name: Upload the report
@@ -263,6 +300,17 @@ jobs:
           path: ${{ runner.temp }}/report/
           if-no-files-found: ignore
           retention-days: 30
+      # 方案第 5 节要求的 dry-run 构建结果：与发布同样的两组产物，审阅时可以直接下载对照。
+      - name: Upload the candidate dictionaries
+        if: ${{ !cancelled() && steps.scope.outputs.relevant == 'true' && steps.candidate.outcome == 'success' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dictionary-candidate
+          path: |
+            ${{ runner.temp }}/candidate/
+            ${{ runner.temp }}/candidate-languages/
+          if-no-files-found: error
+          retention-days: 7
       - name: Check the result
         if: ${{ steps.scope.outputs.relevant == 'true' }}
         env:
