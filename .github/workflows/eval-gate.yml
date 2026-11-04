@@ -169,12 +169,24 @@ jobs:
           MSIME_COMMIT: ${{ steps.tools.outputs.commit }}
         run: |
           set -euo pipefail
+          build="$RUNNER_TEMP/build"
           out="$RUNNER_TEMP/candidate"
           languages="$RUNNER_TEMP/candidate-languages"
-          msime/target/release/msime-dict-build --repository msime --dictionary "$GITHUB_WORKSPACE/dictionary" --cache "$RUNNER_TEMP/dictionary-sources" --out "$out"
-          msime/target/release/msime-dict-build languages --repository msime --dictionary "$GITHUB_WORKSPACE/dictionary" --cache "$RUNNER_TEMP/dictionary-sources" --out "$languages"
-          (cd "$out" && sha256sum -c msime-SHA256SUMS.txt)
-          (cd "$languages" && sha256sum -c msime-language-dictionaries-SHA256SUMS)
+          msime/target/release/msime-dict-build --repository msime --dictionary "$GITHUB_WORKSPACE/dictionary" --cache "$RUNNER_TEMP/dictionary-sources" --out "$build/main"
+          msime/target/release/msime-dict-build languages --repository msime --dictionary "$GITHUB_WORKSPACE/dictionary" --cache "$RUNNER_TEMP/dictionary-sources" --out "$build/languages"
+          (cd "$build/main" && sha256sum -c msime-SHA256SUMS.txt)
+          (cd "$build/languages" && sha256sum -c msime-language-dictionaries-SHA256SUMS)
+          # 构建目录里还有不发布的中间文件（五笔补充码表的 *-supplement.txt，三个共约 37 MB）：只取校验和清单列出的文件和清单本身，与发布的附件、与基线下载的文件一一对应。
+          publishable() {
+            local from="$1" sums="$2" to="$3"
+            mkdir -p "$to"
+            ln "$from/$sums" "$to/"
+            while read -r _ name; do
+              ln "$from/${name#\*}" "$to/"
+            done < "$from/$sums"
+          }
+          publishable "$build/main" msime-SHA256SUMS.txt "$out"
+          publishable "$build/languages" msime-language-dictionaries-SHA256SUMS "$languages"
           # 与发布 workflow 的清单检查相同：评测的必须是这次检出的提交、用这个 msime 提交构建的授权产物。
           jq -e --arg sha "$SOURCE_SHA" --arg msime "$MSIME_COMMIT" '.licensing.includes_unlicensed_inputs == false and .source.dirty == false and .source.commit == $msime and .custom_dictionary_commit == $sha' "$out/msime-dictionary-manifest.json" >/dev/null || {
             echo "candidate manifest check failed: expected unlicensed inputs excluded, a clean builder at $MSIME_COMMIT and dictionary commit $SOURCE_SHA" >&2
@@ -361,7 +373,14 @@ jobs:
               printf '## 词库评测把关\n\n这次运行没有产出报告（构建或下载在写出报告之前就失败了），见 [workflow 运行](%s)。\n' "$RUN_URL"
             fi
           } > "$body"
-          # 评论正文上限 65536 个字符；超出时只留结论表，明细看作业摘要。
+          # 评论正文上限 65536 个字符（这里按字节数算，偏保守）。超出时先去掉附在后面的产物差异明细，还放不下就只留结论表，明细看作业摘要。
+          if (( $(wc -c < "$body") > 60000 )); then
+            {
+              echo "$marker"
+              sed '/^### 产物差异/,$d' report/report.md
+              printf '\n产物差异的明细太长，没有放进评论，见 [workflow 运行](%s) 的作业摘要和 artifact。\n' "$RUN_URL"
+            } > "$body"
+          fi
           if (( $(wc -c < "$body") > 60000 )); then
             {
               echo "$marker"
