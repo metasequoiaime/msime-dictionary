@@ -134,7 +134,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `custom/english.txt` | 主命令 English | `msime-english.db` | 进入 |
 | `sources/unlicensed/oaldpe-words.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：提取自商业词典 |
 | `sources/cn-en/machine-translations.txt` | 尚无：计划在 msime 加一个排在 EnglishGlosses 之后、CustomTranslations 之前的阶段，覆盖由 ECDICT 生成的中译英释义 | `msime-english.db` | 构建器加入读取阶段之前不进入 |
-| `custom/translations.txt` | 主命令 CustomTranslations，覆盖由 ECDICT 生成的释义；译文写成单独一个 `-` 的行删掉这个源词的释义（msime 分支 cleanse/english-glosses 起） | `msime-english.db` | 进入 |
+| `custom/translations.txt` | 主命令 CustomTranslations，覆盖由 ECDICT 生成的释义；译文写成单独一个 `-` 的行删掉这个源词的释义（msime 分支 cleanse/english-glosses 起；`builder.lock.json`、`check-words.yml` 的 `MSIME_COMMIT` 和 msime-windows 的 `english_db.py` 都支持之前不要加这种行，旧构建器会把 `-` 当成译文发布） | `msime-english.db` | 进入 |
 | `curation/english-vetoes.txt` | 主命令 English：全部英文来源统一不收这些词的任何大小写，释义随之没有；每个词都必须在某个来源里，否则构建失败 | `msime-english.db` | msime #10858 起读取，`builder.lock.json` 升到带它的提交才生效 |
 | `curation/gloss-vetoes.txt` | 主命令 EnglishGlosses：ECDICT 给这个英文词列的这个中文义项，英译中、中译英都不用；每一对都必须是某个英文候选词的义项，否则构建失败 | `msime-english.db` | msime 分支 cleanse/english-glosses 起读取，`builder.lock.json` 升到带它的提交才生效 |
 | `sources/cantonese/` 下 4 个文件 | languages；`hkcancor-word-counts.txt` 只作排序权重 | `msime-cantonese.db` | 进入 |

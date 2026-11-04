@@ -1,8 +1,10 @@
 # 释义成对否决表（msime 构建器 `crates/dict-builder/src/curation.rs` 的 GlossVetoes 读）。维护者审定，不接受投稿，不受只追加限制：撤销否决就删掉那一行。
 #
-# 一行 `中文<TAB>英文`：ECDICT 给这个英文词（小写；屈折形式代表原形进中译英时也按原形算）列的这个中文义项，english-glosses 阶段两个方向都不用：英译中不选它，中译英也不拿这个英文词译这个中文词。每一对都必须是 ECDICT 里某个英文候选词的义项，否则构建失败。custom/translations.txt 的人工译文不受它管；要删掉某个源词的全部释义，在 custom/translations.txt 末尾追加 `源词<TAB>-`。英文词本身是蔑称的，写进 english-vetoes.txt（词和释义一起删），不写在这里。
+# 一行 `中文<TAB>英文`：ECDICT 给这个英文词（小写；屈折形式代表原形进中译英时也按原形算）列的这个中文义项，english-glosses 阶段两个方向都不用：英译中不选它，中译英也不拿这个英文词译这个中文词。每一对都必须是 ECDICT 里某个英文候选词的义项，否则构建失败。custom/translations.txt 的人工译文不受它管。要删掉某个源词的全部释义，可以在 custom/translations.txt 末尾追加 `源词<TAB>-`，但只能在 builder.lock.json、check-words.yml 的 MSIME_COMMIT 都升到支持这个删除标记的 msime 提交（msime 分支 cleanse/english-glosses 合入之后），并且 msime-windows 的 scripts/dictionary_build/english_db.py 也同步之后再加：在那之前的构建器和 Windows 构建都把 `-` 当成一条普通译文发布出去。英文词本身是蔑称的，写进 english-vetoes.txt（词和释义一起删），不写在这里。
 #
 # 调查方法（dict-cleanse 方案 H8，2026-11-04）：用 msime 分支 cleanse/english-glosses 的新打分，在 dict-v2.0.55 的英文候选词上（去掉 english-vetoes.txt 的词）推出两张释义表，(1) 中译英：英文一侧含粗口、性含义词或蔑称的条目 121 条，(2) 英译中：中文一侧含辱骂性字眼（白痴、残废、杂种、低能、尿、粪……）的条目 327 条，逐条审。中文词本身就粗俗或贬损、英文是对等译法的（他妈的 fuck、母狗 bitch、瘸子 gimp、混账东西 motherfucker）不否决；否决会让英译中丢掉正确释义的也不否决（口交 blowjob、娼妓 whore、小便 piss、公鸡 cock 留着，否则 blowjob、whore、piss、cock 就没有或只剩错的释义）；每一对都核对过否决前后的两个方向。
+#
+# 最后一节是另一次调查（2026-11-04，H8 修正）：按 msime 分支 cleanse/english-glosses 修正后的规则，把 dict-v2.0.57 试跑的拼音权重前 1000 个中文词的中译英和英文词频前 1000 个词的英译中，与 dict-v2.0.56 逐条对比，挑出 ECDICT 本身就把义项列错、两个方向都错的配对（instance 的第一项是「建议」），同样核对过否决前后的两个方向。
 
 # ---- 普通的中文词译成粗口或带性含义的英文（中译英） ----
 # ECDICT 给这些英文词列了一个冷僻的或成语里的义项（damn 的「一点」来自 not a damn，hooker 是一种渔船，rape 的古义是「掠夺」，cock 指水龙头、翘起），中译英打分把它挑成了普通中文词的译文。否决之后这些中文词改用别的英文词或不给译文，英文词的英译中也不再选这个义项（damn 改成「诅咒；指责」）。粗俗中文词本身的正确译文（他妈的 fuck、狗屁 shit、荡妇 slut）不在这里。
@@ -68,3 +70,15 @@
 同性恋者	buggers
 同性恋者	buggered
 同性恋者	buggering
+
+# ---- 高频中文词的明显误配（两个方向） ----
+# ECDICT 把冷僻用法排在前面或干脆列错：instance 的第一项是「建议」，like 的第一项是「可能」，wise 有一行「vi. 知道」（wise up），impose 有「vi. 利用」（impose on），rare 有「adv. 非常」，when 有「n. 时间」，account 有「vt. 认为」「vi. 导致」（account for），calling 的「行业」进中译英时记到原形 call 名下。中译英因此把 建议 译成 instance、可能 译成 like、知道 译成 wise、利用 译成 impose、非常 译成 highly; rare、时间 译成 time; when、认为 译成 account、导致 译成 account、行业 译成 call；英译中也跟着错（instance「建议；情况」，like「可能；喜欢」，wise「知道；方法」，impose「利用；欺骗」，rare「非常；非常好的」）。否决之后：建议 suggest; proposition，可能 possibly; likely，知道 know，利用 utilize; use，非常 highly; very，时间 time，认为 consider; understand，导致 generate; lead，行业 不给译文；instance「情况；例子」，like「喜欢；愿意」，wise「方法；方式」，impose「征；欺骗」，rare「稀罕的；罕有的」，when「何时；什么时候」，account 和 calling 的英译中不变或只换第二项。
+建议	instance
+可能	like
+知道	wise
+利用	impose
+非常	rare
+时间	when
+认为	account
+导致	account
+行业	calling
