@@ -13,7 +13,7 @@
 
 ## 自定义词条
 
-- `custom/words.txt`、`custom/translations.txt`、`custom/english.txt`、`custom/cantonese.txt`、`custom/wubi86.txt` **只追加**：新行写在文件末尾，不修改、删除或重排已有的行。check-words 会拒绝任何非追加的改动；`custom/cantonese.txt` 要等 `check-words.yml` 把它加进触发路径和参数（需要 msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 合入后的 `MSIME_COMMIT`）才有这道检查，在那之前由审核者人工核对；check-words 不检查 `custom/wubi86.txt`，一直由审核者人工核对（编码是该字词的 86 码，权重不把同码原有的首选挤下去）。
+- `custom/words.txt`、`custom/translations.txt`、`custom/english.txt`、`custom/cantonese.txt`、`custom/wubi86.txt` **只追加**：新行写在文件末尾，不修改、删除或重排已有的行。check-words 会拒绝任何非追加的改动；`custom/cantonese.txt` 要等 `check-words.yml` 把它加进触发路径和参数才有这道检查（构建器的 `check-words` 从 msime [#10382](https://github.com/metasequoiaime/msime/pull/10382) 起能检查它，workflow 还没接上），在那之前由审核者人工核对；它的改动另外触发 `check-curation.yml`，用固定的构建器跑一遍 languages，和下文「维护者清洗表」里粤拼两张表冲突的追加在合并前失败；check-words 不检查 `custom/wubi86.txt`，一直由审核者人工核对（编码是该字词的 86 码，权重不把同码原有的首选挤下去）。
 - `custom/cantonese-variant-vetoes.txt` 是例外：它是粤拼词库香港字形替换的人工否决表（每行一个不换的 OpenCC 字形），由维护者审定，不接受投稿，也不受只追加限制，撤销否决就删掉那一行。从 msime #10754（`a8480ce407`）起，构建器读这张表，并要求每个字都是 `sources/opencc/TWVariants.txt` 或 `HKVariants.txt` 里某一行的键，否则构建失败；`builder.lock.json` 目前固定的 `93815fffb` 早于它，这张表和 `HKVariants.txt` 都不读，固定提交升到 `a8480ce407` 或之后才生效。
 - `custom/words.txt` 的格式是 `词<TAB>全拼<TAB>权重`，全拼音节用 `'` 分隔；另外两个文件的格式见 `README.md`。词语和英文的权重落在所在文件现有的范围内；不要为了让一个词靠前填一个极大值。
 - 候选窗翻译的修正写到 `custom/translations.txt`，不改 ECDICT。
@@ -30,7 +30,14 @@
 - 覆盖的权重是绝对值：同键别的词的权重变了（上游换了提交、补充表重新生成、万象重加权），要重新跑 `cleanse-report` 核对，碎片和越位的行可能又压过了常用词，或者降得过头。
 - 覆盖表第四列 `wubi` 只写在本地损坏恢复上游值、占位权重这类与全拼键无关的修正上。碎片、非标准读音、人工词条越位是按同一全拼键上的竞争定的，五笔编码上没有这层竞争，不写 `wubi`；方案定了五笔只做定点清洗、不做大删，覆盖表也删不掉五笔里的词（门槛取覆盖前后较大的权重）。五笔里要删的词写进否决表，逐条审过。
 - 改 `curation/` 的 Pull Request 不要同时改 `custom/`：check-words 从基准提交读否决表，两处一起改会让撤销否决、加回词条在同一个 PR 里过检查，所以 workflow 直接拒绝这种 PR。
-- 合入即发版。改了 `curation/` 或 `builder.lock.json` 的 PR 由 `check-curation.yml` 用固定的构建器完整构建主库、与最新的 `dict-v` 逐表比较，表有问题在合并前失败；它要设为 `main` 的 required check。另外在 PR 分支上手动运行 Release built dictionaries（`publish` 关闭）试跑，下载 artifact 用 msime 的 `scripts/dict_artifact_diff.py` 和最新的 `dict-v` 逐表比较，结果写进 PR。`builder.lock.json` 固定的构建器早于 msime #10858 时不读 `curation/`，表合进来也不生效，要等固定提交升上去。
+- 合入即发版。改了 `curation/`、`custom/cantonese.txt` 或 `builder.lock.json` 的 PR 由 `check-curation.yml` 用固定的构建器完整构建主库和 languages（与发布 workflow 的两条命令相同），把 `msime-pinyin.db`、`msime-wubi.db`、`msime-english.db`、`msime-cantonese.db` 与最新的 `dict-v` 逐表比较，表有问题在合并前失败；它要设为 `main` 的 required check。另外在 PR 分支上手动运行 Release built dictionaries（`publish` 关闭）试跑，下载 artifact 用 msime 的 `scripts/dict_artifact_diff.py` 和最新的 `dict-v` 逐表比较，结果写进 PR。`builder.lock.json` 固定的构建器早于 msime #10858 时不读 `curation/`，表合进来也不生效，要等固定提交升上去。
+
+`custom/cantonese.txt` 与粤拼的两张表互相校验，三者之一变了，另外两张可能就过期，languages 构建直接失败（合入即发版，所以发布会失败）：
+
+- 否决表（`cantonese-word-vetoes.txt`）的条目匹配到 `custom/cantonese.txt` 收录的词（整词否决匹配这个词的任何读音，按读音否决只匹配同一读音；都按换成香港字形之后的字面比），构建失败。投稿追加被否决的词，就是要推翻维护者的否决：审核者先判断否决对不对，否决对就拒绝投稿，否决错了先单独提 PR 删否决行、合入之后再收投稿。
+- `custom/cantonese.txt` 收录的词本身就是 essay 补词的佐证（只看字面，不看读音）。豁免表（`cantonese-essay-keep.txt`）要求每一行都是这次构建本来会压低的词，所以追加一个豁免表里已有的词，那一行就过期，构建失败。豁免表里的词已经保留 essay 分数，同一读音不用再写进 `custom/cantonese.txt`，审核者拒绝这类投稿；要收它的另一个读音时，因为改 `curation/` 的 PR 不同时改 `custom/`，先单独提 PR 删掉豁免行，合入之后再收投稿（中间那一版这个词会被压低一次）。
+- 豁免行也会因为拼音的否决表、覆盖表变了而过期（这个词在拼音库里有了或没了佐证），见上文「拼音的否决表和权重覆盖表不只作用于 `msime-pinyin.db`」一段。
+- 改这三张表中任何一张的 PR，`check-curation.yml` 都会构建 languages 并把 `msime-cantonese.db` 和最新的 `dict-v` 比较，看这份差异再合入。`Eval gate` 也构建 languages，但在它设为 required check 之前，挡得住这类失败的只有 `check-curation.yml`，所以这两张粤拼表、拼音的两张表和 `custom/cantonese.txt` 的 PR 都要看到它通过、看过 `msime-cantonese.db` 的差异再合入。
 
 ## 基础词库
 
