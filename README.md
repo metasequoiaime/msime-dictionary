@@ -74,6 +74,9 @@ custom/                                   人工维护的数据，唯一接受�
   wubi86.txt                              86 五笔的人工词条（如 一…十 的编码上的 ①…⑩）-> msime-wubi.db
   cantonese-variant-vetoes.txt            粤拼词库不换成香港字形的 OpenCC 字形（维护者审定，不接受投稿，不受只追加限制）-> msime-cantonese.db
   names.txt                               人名（没有任何构建或网站读取）
+curation/                                 维护者审定的清洗表，不接受投稿，不受只追加限制（msime 构建器读入其他输入之后施加）
+  english-vetoes.txt                      英文否决表：所有英文来源都不收的词（垃圾 token、错拼、蔑称、垃圾邮件药名）-> msime-english.db
+  gloss-vetoes.txt                        释义成对否决表：`中文<TAB>英文`，这个英文词的这个中文义项两个方向都不用 -> msime-english.db
 packs/                                    用户按需导入的专业词库，不进入构建
   README.md                               专业词库的说明与验收清单
   ai_ml/                                  机器学习与大模型
@@ -131,7 +134,9 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `custom/english.txt` | 主命令 English | `msime-english.db` | 进入 |
 | `sources/unlicensed/oaldpe-words.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：提取自商业词典 |
 | `sources/cn-en/machine-translations.txt` | 尚无：计划在 msime 加一个排在 EnglishGlosses 之后、CustomTranslations 之前的阶段，覆盖由 ECDICT 生成的中译英释义 | `msime-english.db` | 构建器加入读取阶段之前不进入 |
-| `custom/translations.txt` | 主命令 CustomTranslations，覆盖由 ECDICT 生成的释义 | `msime-english.db` | 进入 |
+| `custom/translations.txt` | 主命令 CustomTranslations，覆盖由 ECDICT 生成的释义；译文写成单独一个 `-` 的行删掉这个源词的释义（msime 分支 cleanse/english-glosses 起） | `msime-english.db` | 进入 |
+| `curation/english-vetoes.txt` | 主命令 English：全部英文来源统一不收这些词的任何大小写，释义随之没有；每个词都必须在某个来源里，否则构建失败 | `msime-english.db` | msime #10858 起读取，`builder.lock.json` 升到带它的提交才生效 |
+| `curation/gloss-vetoes.txt` | 主命令 EnglishGlosses：ECDICT 给这个英文词列的这个中文义项，英译中、中译英都不用；每一对都必须是某个英文候选词的义项，否则构建失败 | `msime-english.db` | msime 分支 cleanse/english-glosses 起读取，`builder.lock.json` 升到带它的提交才生效 |
 | `sources/cantonese/` 下 4 个文件 | languages；`hkcancor-word-counts.txt` 只作排序权重 | `msime-cantonese.db` | 进入 |
 | `sources/zhuyin/` 下 4 个文件 | languages；`phrase.occ` 只作排序权重 | `msime-zhuyin.db` | 进入 |
 | `sources/stroke/stroke.dict.yaml` | languages | `msime-stroke.db` | 进入 |

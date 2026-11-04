@@ -1,0 +1,106 @@
+# 英文否决表（msime 构建器 `crates/dict-builder/src/curation.rs` 的 EnglishVetoes 读）。维护者审定，不接受投稿，不受只追加限制：撤销否决就删掉那一行。
+#
+# 一行一个小写 ASCII 词。构建的 english 阶段对全部英文来源（rime-ice-en.txt、rime-ice-en-supplement.txt、scowl-words.txt、OALDPE 词头、custom/english.txt）统一否决这个词的所有大小写，它在 msime-english.db 里的释义也跟着没有；custom/translations.txt 里英文一侧含这些词的条目也不写。每个词都必须在这些来源里有，否则构建失败。构建器内置的蔑称（english_supplement::OFFENSIVE 和 nigger、tranny、beyatch）不用、也不能再写在这里。check-words 拒绝往 custom/ 追加这里否决的词。
+#
+# 调查方法（dict-cleanse 方案 H7，2026-11-04）：对照 dict-v2.0.55 的 msime-english.db（english_words 与 dict-v2.0.56 相同），取 SCOWL 60（en-wl/wordlist rel-2026.02.25 的 aspell6-en-2026.02.25-0，SHA-256 77a5cb43…，与 scowl-words.txt 文件头一致）不收的词，按两张清单逐条审：(1) 在 1 到 5 个字母的前缀下排前三位的词（1580 个，其中 ECDICT 也没有释义的 790 个）；(2) 与 SCOWL 60 的词只差一处编辑、对方的 Google 计数至少是它 20 倍的词（163 个）。Google 排名按 sources/english/google-word-counts.txt。技术名词、产品名、人名地名和外语普通词（xbox、nginx、bilibili、gratuit）不删，只删下面这几类。
+
+# ---- 网页模板和站点代码的残留（2026-11-04 第一批） ----
+# 不是任何语言的词：AutoCAD DXF 的实体代码（acdbentity、acdbline）、BLAST 比对输出的字段名（sbjct）、论坛和购物站模板里粘连在一起的字样（postposted、viewpicture、listprice、starsmerchant、bizjournalshire、pricetool）、被截断的词（docume）、vBulletin 页脚的版权方（jelsoft）、站点名（sublimedirectory）。它们的 Google 计数来自网页模板的重复，排进前 2 万（acdbentity 第 8470 名），E-2 的常见度门槛拦不住，又占着 acd、sbj、pos 这类前缀的首位。
+acdbentity
+acdbline
+sbjct
+postposted
+viewpicture
+listprice
+starsmerchant
+bizjournalshire
+sublimedirectory
+pricetool
+docume
+jelsoft
+
+# ---- 成人站点名和色情垃圾页的拼接词、外语色情垃圾词（2026-11-04 第一批） ----
+# 站点名和拼接词（milfhunter、pichunter、sexcam、livesex、telefonsex、worldsex、thehun、ampland、tiava、thumbzilla）以及色情垃圾页里的德语、西班牙语、葡萄牙语词（nutten、titten、erotik、fetisch、lesbianas、transexuales、travesti、zoofilia），不是英文词，计数全靠垃圾页（milfhunter 第 3847 名、sexcam 第 3822 名）。粗俗的英文词本身（hentai、femdom、cumshot、gangbang）按方案 2.1 的 (b) 档保留，由引擎排出首选和首屏，不在这里。
+milfhunter
+pichunter
+madthumbs
+sleazydream
+cumfiesta
+milfseeker
+voyeurweb
+bangbus
+livesex
+sexcam
+telefonsex
+worldsex
+thehun
+ampland
+tiava
+thumbzilla
+nutten
+titten
+tittens
+erotik
+fetisch
+lesbianas
+transexuales
+travesti
+travestis
+zoofilia
+
+# ---- 错拼（2026-11-04 第一批） ----
+# rime-ice 的英文词表（rime-ice-en.txt）和 rime-ice 英文补充表里，与 SCOWL 60 的某个词差一个字母或相邻两个字母对调、自己不在 SCOWL 60 里的错拼：definately（definitely）、millenium（millennium）、philppines（philippines）、nvdia（nvidia）、mishief（mischief）、btitish（british）、itsdangerours（itsdangerous）、amature/amatuer（amateur）、voyuer（voyeur）、insest（incest）、beastiality/beastality（bestiality）、masterbating/masterbation（masturbating/masturbation）。后面几个是色情垃圾页的常见错拼，Google 计数也在前 2 万。
+definately
+millenium
+philppines
+nvdia
+mishief
+btitish
+itsdangerours
+amature
+amatuer
+voyuer
+insest
+beastiality
+beastality
+masterbating
+masterbation
+
+# ---- 蔑称（2026-11-04 第一批，方案 2.1 (c) 档：词和释义一起删） ----
+# 现代英语里主要义项就是蔑称、构建器内置表（english_supplement::OFFENSIVE 和 nigger、tranny、beyatch）还没收的：negro、negroes、negress（对黑人的过时蔑称，rime-ice 和 SCOWL 都收了，dict-v2.0.41 实测九键「内容」第 2 位是 Negro），shemale、shemales、ladyboy、ladyboys（对跨性别者的蔑称，计数也主要来自色情垃圾页，shemale 第 2648 名）。retard 还有「延缓」的动词义，不删，由引擎粗俗词表兜底。
+negro
+negroes
+negress
+shemale
+shemales
+ladyboy
+ladyboys
+
+# ---- 垃圾邮件推销的处方药名（2026-11-04 第一批） ----
+# 都不在 SCOWL 60 里，Google 计数却排进前 2 万（phentermine 第 1599 名，比绝大多数常用词靠前；cialis 第 4437 名、tramadol 第 5442 名），这是 2006 年网页语料里药品垃圾邮件和垃圾页留下的计数，不是常用度。它们占着 phe、cia、tra 这类常见前缀的首位，E-2 的常见度门槛按 Google 排名放行它们。SCOWL 收了的药名（viagra、valium、prozac、zoloft、diazepam）不在这里，照常保留。
+phentermine
+xanax
+cialis
+levitra
+tramadol
+zyban
+xenical
+ambien
+propecia
+vicodin
+hydrocodone
+meridia
+carisoprodol
+alprazolam
+adipex
+didrex
+fioricet
+ionamin
+celexa
+wellbutrin
+lipitor
+paxil
+ultram
+ativan
+tamiflu
+lortab
