@@ -20,7 +20,7 @@ sources/                                  msime 构建器经 --dictionary 读取
     wanxiang/                             万象词库（amzxyz/rime-wanxiang）v18.0.16 dicts/ 下 17 份原样文件，CC BY 4.0，作者 amzxyz；构建时按它重算与万象共有的拼音权重
   wubi/                                   五笔词库 -> msime-wubi.db
     wubi86-jidian.txt                     86 版五笔（rime-wubi86-jidian 的数据区，有 6 处本仓改动，见 NOTICE.md）-> wubi86 表
-    wubi86-rime-wubi.txt                  rime-wubi 里极点表没有的 86 行（#36 补进来，后来从 wubi86-jidian.txt 拆出），构建时权重按 10（上游的 0 仍是 0） -> wubi86 表
+    wubi86-rime-wubi.txt                  rime-wubi 里极点表没有的 86 行（#36 补进来，后来从 wubi86-jidian.txt 拆出），构建时权重一般按 10（上游的 0 仍是 0），拼音库词频悬殊的排到同码冷僻极点行之前 -> wubi86 表
     wubi86-supplement.txt                 86 表没有、98 表或拼音输入里有的多字词组，编码按 86 词组规则推出（本项目生成的补充表）-> wubi86 表
     wubi98-supplement.txt                 98 表没有、86 表或拼音输入里有的多字词组，编码按词组规则由 98 单字码推出（本项目生成的补充表）-> wubi98 表
     wubi98.txt                            98 版五笔主表（98wubi-tables 的 98五笔含词表-【单义】.txt 原样改名，UTF-16LE）-> wubi98 表
@@ -132,7 +132,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt` | 只在 `--include-unlicensed` 的完整构建中读取 | — | 被 `licensing.rs` 排除：合并自 CustomPinyinDictionary，该快照没有声明许可；发布构建改用 `sources/pinyin/rime-ice.txt` |
 | `sources/unlicensed/single-char-whitelist.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：来源没有记录 |
 | `sources/wubi/wubi86-jidian.txt` | 主命令 Wubi | `msime-wubi.db` 的 `wubi86` 表 | 进入 |
-| `sources/wubi/wubi86-rime-wubi.txt` | 主命令 Wubi，接在 `wubi86-jidian.txt` 之后，权重按 10 写入（同码排在极点行之后、补充词之前，同码几行按上游词频排）；上游权重为 0 的 12 个部首、部件按 0 写在补充词之后；极点表已有的词组（`版权所有 bqsy`、`T恤 ttnt`）不写入；这个文件在不在决定构建器按拆分后的布局还是按旧的合并文件读 86 原表 | `msime-wubi.db` 的 `wubi86` 表 | 进入（扩展区字不写入） |
+| `sources/wubi/wubi86-rime-wubi.txt` | 主命令 Wubi，接在 `wubi86-jidian.txt` 之后，权重一般按 10 写入（同码排在极点行之后、补充词之前，同码几行按上游词频排）；在拼音库上游四张表（`single-chars.txt`、`rime-ice.txt`、`rime-ice-supplement.txt`、`places.txt`）里的最高词频不低于 100、又是同码最后几行极点行各自词频 10 倍以上的，排到这几行之前（的话 `rqyt` 排在 魅族 之前）；上游权重为 0 的 12 个部首、部件按 0 写在补充词之后；极点表已有的词组（`版权所有 bqsy`、`T恤 ttnt`）不写入；这个文件在不在决定构建器按拆分后的布局还是按旧的合并文件读 86 原表 | `msime-wubi.db` 的 `wubi86` 表 | 进入（扩展区字不写入） |
 | `sources/wubi/wubi86-supplement.txt` | 供复现与审计的源快照；Wubi 从本次提交的相同输入重新派生补充数据，排在原表之后 | `msime-wubi.db` 的 `wubi86` 表 | 使用实时派生数据 |
 | `sources/wubi/wubi98-supplement.txt` | 供复现与审计的源快照；Wubi98 从本次提交的相同输入重新派生补充数据，排在两张原表之后 | `msime-wubi.db` 的 `wubi98` 表 | 使用实时派生数据 |
 | `sources/wubi/wubi98.txt`、`sources/wubi/wubi98-fcitx.txt` | 主命令 Wubi98：以主表为准，补充表中重复的（编码、词语）去掉 | `msime-wubi.db` 的 `wubi98` 表 | 进入 |
