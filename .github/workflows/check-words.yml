@@ -6,7 +6,7 @@ permissions: {contents: read, pull-requests: write}
 concurrency: {group: "check-words-${{ github.event.pull_request.number }}", cancel-in-progress: true}
 env:
   # The msime commit whose msime-dict-build checks the files: the same parsers and validation the dictionary build uses, so an entry that passes here builds. Move it when msime changes check-words or a custom file format. From this commit on check-words also rejects additions that the curation/ veto tables would delete (`--pinyin-vetoes`, `--english-vetoes`).
-  MSIME_COMMIT: 87bb7d3895f2f5d07c9df6d116f3446a9c6160f8
+  MSIME_COMMIT: 6f8e5cadd8853cd6a940d7f75e8708c47308b22a
 jobs:
   check:
     runs-on: depot-ubuntu-24.04
