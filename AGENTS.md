@@ -64,6 +64,8 @@ python3 scripts/validate_packs.py
 
 它检查专业词库的格式与读音（对照 `sources/pinyin/single-chars.txt` 和 `sources/pinyin/rime-ice-supplement.txt` 的单字行）、与发布用拼音输入的重复项、翻译覆盖率，以及 `custom/translations.txt` 的格式；完整检查项见 `README.md` 专业词库一节和 `packs/README.md` 的验收清单。这三个文件的追加规则由 check-words workflow 用固定版本的 `msime-dict-build check-words` 检查，需要 Rust 工具链，本地一般不跑。
 
+改动 `sources/`、`custom/`、`curation/`、`upstream.lock.json`、`builder.lock.json` 或 `release-built-dictionaries.yml` 的 Pull Request 还要过 `eval-gate.yml`（检查名 `Eval gate`）：用候选提交的 `builder.lock.json` 固定的 msime 构建器构建候选词库，下载最新的 `dict-v` 发布作为基线，用同一个 msime 提交里的 `scripts/dict_eval_gate.py` 跑排序评测的硬门槛（金标准对不丢、must-outrank 不退步、粗俗首屏曝光不增加、quanpin-words-v2 三种键盘的配对 McNemar、全拼行数下限），并附上方案 4.3 的参考项（整句集、粗俗目标码）、与基线逐表逐行的产物差异（逐词的删除、降权清单）和五笔、英文的 top-N 差异，结果写成 PR 评论，候选产物（含 languages）上传为 artifact `dictionary-candidate`。languages 也在这里构建，粤拼、注音、笔画的构建错误在合入前就会让检查失败。它失败就不要合入：合入就是发布。评测脚本随构建器固定，门槛口径的变化同样要靠升级 `builder.lock.json` 进来；固定提交里没有 `scripts/dict_eval_gate.py` 时这个检查失败。
+
 ## 隐私
 
 示例数据不得使用真实可拨的手机号、真实地址或真实人名，即便只是 mock。手机号用 `13800000000` 这类保留号段，地址用明显虚构串。这条来自 MSIME-Windows#74。

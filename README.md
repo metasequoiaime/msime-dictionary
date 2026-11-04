@@ -196,7 +196,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 ### CI
 
-本仓有 5 个 workflow（`.github/workflows/`）：
+本仓有 6 个 workflow（`.github/workflows/`）：
 
 | workflow | 触发 | 检查什么 |
 | --- | --- | --- |
@@ -205,6 +205,7 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `quality.yml` | 推送到 `main`、Pull Request、merge queue、手动 | actionlint 校验 workflow 与其中的 shell；`scripts/check_builder_lock.sh` 检查 `builder.lock.json` 的提交是完整的 40 位提交且在 msime `develop` 上（发布 workflow 构建前也跑同一个脚本）；Pull Request 上另做依赖审查（high 及以上失败） |
 | `codeql.yml` | 每天定时 | CodeQL 分析 GitHub Actions workflow |
 | `check-curation.yml` | Pull Request 改动 `curation/` 或 `builder.lock.json`；手动（可指定未合入的 msime 构建器试跑） | 用 `builder.lock.json` 固定的 msime 构建器把主库完整构建一遍（不发布），`curation/` 的表解析出错、条目过期、否决与覆盖冲突都在合并前失败；再把 `msime-pinyin.db`、`msime-wubi.db`、`msime-english.db` 与最新的 `dict-v` 用 msime 的 `scripts/dict_artifact_diff.py` 逐表比较，报告写进运行摘要和 artifact。应设为 `main` 的 required check |
+| `eval-gate.yml` | Pull Request、merge queue、手动（可用 `msime_ref` 换 msime 分支试跑） | 改动了 `sources/`、`custom/`、`curation/`、`upstream.lock.json`、`builder.lock.json` 或 `release-built-dictionaries.yml` 时，用 `builder.lock.json` 固定的 msime 提交构建候选词库，以最新的 `dict-v` 发布为基线，跑同一提交里 `scripts/dict_eval_gate.py` 的五道硬门槛：评测集的金标准（词, 读音）对在基线里有的候选里不能少；`resources/eval/must-outrank.tsv` 在基线上通过的行不能变成失败（两边都失败的是已知问题，只列出）；粗俗词和英文冒犯词的首屏曝光数不能增加；`quanpin-words-v2.tsv` 在全拼、九键、14 键上配对比较，top-1 或 top-5 弄坏的显著多于修好的（McNemar p < 0.05）就失败；全拼行数不低于构建器的下限。评测挂出厂的整句模型、开混输英文，quanpin-words-v2 另加一臂不挂模型。报告还附上只供参考的整句集配对比较、粗俗目标码首屏、与基线逐表逐行的产物差异和五笔、英文的 top-N 差异；languages 也一起构建，候选产物上传为 artifact `dictionary-candidate`（保留 7 天）。结果写成 Pull Request 评论；没改这些路径的 PR 直接通过。建议设为 `main` 的 required check |
 | `release-built-dictionaries.yml` | 推送到 `main` 且改动了 `sources/`、`custom/`、`curation/` 或 `builder.lock.json`；手动（可只构建不发布） | 用这次推送的提交和 `builder.lock.json` 固定的 msime 构建器构建 19 个附件，自动加修订号发布 `dict-v*` Release，说明列出源数据变更和每个附件的用途，见[发布](#发布) |
 
 从 fork 发来的 Pull Request 拿到的是只读 token，check-words 不会发评论；同样的结果在该次运行的 job summary 里。维护者在 CI 之外再人工审核内容（包括敏感词）。
