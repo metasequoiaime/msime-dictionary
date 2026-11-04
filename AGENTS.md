@@ -36,8 +36,8 @@
 
 - 否决表（`cantonese-word-vetoes.txt`）的条目匹配到 `custom/cantonese.txt` 收录的词（整词否决匹配这个词的任何读音，按读音否决只匹配同一读音；都按换成香港字形之后的字面比），构建失败。投稿追加被否决的词，就是要推翻维护者的否决：审核者先判断否决对不对，否决对就拒绝投稿，否决错了先单独提 PR 删否决行、合入之后再收投稿。
 - `custom/cantonese.txt` 收录的词本身就是 essay 补词的佐证（只看字面，不看读音）。豁免表（`cantonese-essay-keep.txt`）要求每一行都是这次构建本来会压低的词，所以追加一个豁免表里已有的词，那一行就过期，构建失败。豁免表里的词已经保留 essay 分数，同一读音不用再写进 `custom/cantonese.txt`，审核者拒绝这类投稿；要收它的另一个读音时，因为改 `curation/` 的 PR 不同时改 `custom/`，先单独提 PR 删掉豁免行，合入之后再收投稿（中间那一版这个词会被压低一次）。
-- 豁免行也会因为拼音的否决表、覆盖表变了而过期（这个词在拼音库里有了或没了佐证），见上文「拼音的否决表和权重覆盖表不只作用于 `msime-pinyin.db`」一段。
-- 改这三张表中任何一张的 PR，`check-curation.yml` 都会构建 languages 并把 `msime-cantonese.db` 和最新的 `dict-v` 比较，看这份差异再合入。`Eval gate` 也构建 languages，但在它设为 required check 之前，挡得住这类失败的只有 `check-curation.yml`，所以这两张粤拼表、拼音的两张表和 `custom/cantonese.txt` 的 PR 都要看到它通过、看过 `msime-cantonese.db` 的差异再合入。
+- 豁免行也会因为拼音否决表变了而过期（这个词在拼音库里有了或没了佐证），见上文「拼音的否决表和权重覆盖表不只作用于 `msime-pinyin.db`」一段；权重覆盖表不影响粤拼佐证。
+- 改这三张表中任何一张的 PR，`check-curation.yml` 都会构建 languages 并把 `msime-cantonese.db` 和最新的 `dict-v` 比较，看这份差异再合入。`Eval gate` 也构建 languages，但在它设为 required check 之前，挡得住这类失败的只有 `check-curation.yml`，所以这两张粤拼表、拼音否决表和 `custom/cantonese.txt` 的 PR 都要看到它通过、看过 `msime-cantonese.db` 的差异再合入。
 
 ## 基础词库
 

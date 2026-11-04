@@ -1,6 +1,6 @@
 name: Check curation tables
 
-# curation/ 的表合进 main 就发版，表写错（解析错误、过期条目、否决和覆盖冲突）只有构建时才暴露。这个检查在 Pull Request 上用 builder.lock.json 固定的构建器，按发布 workflow 的两条命令把主库和 languages 都完整构建一遍（不发布），表有问题就在合并前失败；再把 msime-pinyin.db、msime-wubi.db、msime-english.db、msime-cantonese.db 与最新的 dict-v 逐表比较，报告写进运行摘要和 artifact。languages 也要构建：粤拼的 cantonese-word-vetoes.txt、cantonese-essay-keep.txt 只在 languages 里校验，拼音的否决表和覆盖表改变粤拼 essay 补词的佐证，会让豁免行过期；custom/cantonese.txt 收录被粤拼否决的词、或让豁免行有了佐证，也会让 languages 构建失败，而 check-words 不检查这个文件，所以它也触发这个检查。维护者要把它设为 main 的 required check（dict-cleanse 方案 0.4、R-3 的一部分，评测把关另算）。
+# curation/ 的表合进 main 就发版，表写错（解析错误、过期条目、否决和覆盖冲突）只有构建时才暴露。这个检查在 Pull Request 上用 builder.lock.json 固定的构建器，按发布 workflow 的两条命令把主库和 languages 都完整构建一遍（不发布），表有问题就在合并前失败；再把 msime-pinyin.db、msime-wubi.db、msime-english.db、msime-cantonese.db 与最新的 dict-v 逐表比较，报告写进运行摘要和 artifact。languages 也要构建：粤拼的 cantonese-word-vetoes.txt、cantonese-essay-keep.txt 只在 languages 里校验，拼音否决表改变粤拼 essay 补词的佐证（权重覆盖表不影响），会让豁免行过期；custom/cantonese.txt 收录被粤拼否决的词、或让豁免行有了佐证，也会让 languages 构建失败，而 check-words 不检查这个文件，所以它也触发这个检查。维护者要把它设为 main 的 required check（dict-cleanse 方案 0.4、R-3 的一部分，评测把关另算）。
 on:
   pull_request:
     paths:
