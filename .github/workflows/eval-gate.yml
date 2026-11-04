@@ -6,10 +6,10 @@ name: Dictionary eval gate
 #
 # 不改动发布输入的 PR（文档、packs/、workflow 以外的脚本）不会发布任何东西，作业只判定范围就以成功结束，这样把「Eval gate」设为 main 的 required check 时，这些 PR 不会一直等一个不会出现的检查。
 #
+# 评测臂默认两臂：挂整句模型的一臂是产品默认，跑全部门槛；不挂模型的一臂只跑 quanpin-words-v2，量词库权重本身（方案 4.2）。
+#
 # 时间：全部 convert_eval 并行跑在 8 核 runner 上。2026-11-04 在分支上的试跑（两臂、quanpin-words-v2 全量，构建器有 sccache 缓存）整个作业约 16 分钟，其中门槛 12 分钟，离 120 分钟上限很远，所以默认全量。构建器换了大版本、缓存全失效时编译会多出十几分钟；作业逼近上限时，把 QUANPIN_V2_LIMIT 设成等距子集的大小（B、C 用同一批用例，其余门槛仍然全量）。
 on:
-  push:
-    branches: [cleanse-data/eval-gate-ci]
   pull_request:
   merge_group:
   workflow_dispatch:
@@ -91,7 +91,7 @@ jobs:
         id: builder
         if: ${{ steps.scope.outputs.relevant == 'true' }}
         env:
-          OVERRIDE: ${{ inputs.msime_ref || 'cleanse/eval-gate-ci' }}
+          OVERRIDE: ${{ inputs.msime_ref }}
         run: |
           set -euo pipefail
           pin="$(jq -er '.msime_commit' dictionary/builder.lock.json)"
@@ -229,7 +229,7 @@ jobs:
           mkdir -p "$report"
           limit="${LIMIT_INPUT:-$QUANPIN_V2_LIMIT}"
           [[ "$limit" =~ ^[0-9]+$ ]] || { echo "limit must be a non-negative integer, got '$limit'" >&2; exit 1; }
-          arms="${ARMS_INPUT:-model}"
+          arms="${ARMS_INPUT:-model,engine}"
           server="${GITHUB_SERVER_URL:-https://github.com}"
           # printf 的格式串用单引号包住，Markdown 代码片段里的反引号保持字面含义。
           # shellcheck disable=SC2016
