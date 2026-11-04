@@ -76,8 +76,8 @@ custom/                                   人工维护的数据，唯一接受�
   names.txt                               人名（没有任何构建或网站读取）
 curation/                                 维护者审定的清洗表，不接受投稿，不受只追加限制（msime 构建器读入其他输入之后施加）
   pinyin-vetoes.txt                       拼音否决表：整词或按读音删掉的词条（整词否决也从三张五笔表删掉）-> msime-pinyin.db、msime-wubi.db
-  pinyin-weight-overrides.txt             拼音权重覆盖表：把一个读音的权重设成给定的值 -> msime-pinyin.db（五笔补充词组的门槛和排序也跟着变）
-  offensive-words.txt                     不拿来拼整句、不当首选的粗俗词和豁免写法 -> msime-pinyin.db 的 sentence_excluded 表
+  pinyin-weight-overrides.txt             拼音权重覆盖表：把一个读音的权重设成给定的值 -> msime-pinyin.db（第四列写了 wubi 的也改五笔补充词组的同码排序）
+  offensive-words.txt                     不拿来拼整句、不当首选的粗俗词和豁免写法 -> msime-pinyin.db 的 sentence_excluded 表，五笔表里排到同码最后 -> msime-wubi.db
 packs/                                    用户按需导入的专业词库，不进入构建
   README.md                               专业词库的说明与验收清单
   ai_ml/                                  机器学习与大模型
@@ -122,8 +122,8 @@ CHANGELOG.md                              已冻结，只作历史记录
 | `sources/pinyin/places.txt` | 主命令 PlacesSupplement（在 CustomWords 之前）：没有的词插入，已有且权重更低的调高到这里的权重，已有且权重更高的不变 | `msime-pinyin.db` | 进入 |
 | `custom/words.txt` | 主命令 CustomWords：没有的词插入，已有且权重更低的调高到这里的权重，已有且权重更高的不变 | `msime-pinyin.db` | 进入 |
 | `curation/pinyin-vetoes.txt` | 主命令 WordVetoes（在 ReadingCorrections 之后）：`词` 删掉这个词的全部读音，并让三张五笔表不写入它；`词<TAB>全拼` 只删这一个读音。一条在全拼表里删不到东西（整词否决在五笔原表里也没有）时构建失败。五笔三张表的补充词组生成器也按否决之后的拼音行判断 | `msime-pinyin.db`、`msime-wubi.db` | msime 构建器读取后进入：`builder.lock.json` 升到带 msime #10858 的提交才生效，在那之前固定的构建器不读 `curation/` |
-| `curation/pinyin-weight-overrides.txt` | 主命令 WeightOverrides（紧接 WordVetoes）：`词<TAB>全拼<TAB>权重` 把这个读音的权重设成这个值，可降可升；全拼表没有这一行，或这一行是 `custom/words.txt` 从已有的行提了权的，构建失败。五笔补充词组按覆盖后的权重判断 100 的门槛和同码排序 | `msime-pinyin.db`、`msime-wubi.db` | 同上 |
-| `curation/offensive-words.txt` | 主命令 SentenceExcluded（紧接 WeightOverrides），用引擎的解析器读，写成 `sentence_excluded(value, exempt)` 表；每个词必须是全拼表里的词、每条豁免写法必须出现在全拼表的某个词里，否则构建失败。引擎打开词库时读这张表，旧词库没有这张表时用引擎内嵌的后备表 | `msime-pinyin.db` | 同上 |
+| `curation/pinyin-weight-overrides.txt` | 主命令 WeightOverrides（紧接 WordVetoes）：`词<TAB>全拼<TAB>权重` 把这个读音的权重设成这个值，可降可升；全拼表没有这一行，或这一行是 `custom/words.txt` 从已有的行提了权的，构建失败。第四列可以写 `wubi`，只写在与全拼键无关的频率修正上（本地损坏恢复上游值、占位权重）：五笔补充词组按它排同码；不写的是相对同一全拼键的降权，五笔不理。五笔补充词组的 100 门槛取覆盖前后较大的权重，覆盖表不会把词从五笔里删掉 | `msime-pinyin.db`、`msime-wubi.db` | 同上 |
+| `curation/offensive-words.txt` | 主命令 SentenceExcluded（紧接 WeightOverrides），用引擎的解析器读，写成 `sentence_excluded(value, exempt)` 表；每个词必须是全拼表里的词、每条豁免写法必须出现在全拼表的某个词里，否则构建失败。引擎打开词库时读这张表，旧词库没有这张表时用引擎内嵌的后备表。主命令 Wubi、Wubi98、WubiXsj 还按它把三张五笔表里含粗俗词的行排到同码其余行之后（同码只有它一行的不动），粗俗词本身保留、不当首选 | `msime-pinyin.db`、`msime-wubi.db` | 同上 |
 | `sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt` | 只在 `--include-unlicensed` 的完整构建中读取 | — | 被 `licensing.rs` 排除：合并自 CustomPinyinDictionary，该快照没有声明许可；发布构建改用 `sources/pinyin/rime-ice.txt` |
 | `sources/unlicensed/single-char-whitelist.txt` | 只在完整构建中读取 | — | 被 `licensing.rs` 排除：来源没有记录 |
 | `sources/wubi/wubi86-jidian.txt` | 主命令 Wubi | `msime-wubi.db` 的 `wubi86` 表 | 进入 |
@@ -194,10 +194,11 @@ CHANGELOG.md                              已冻结，只作历史记录
 
 | workflow | 触发 | 检查什么 |
 | --- | --- | --- |
-| `check-words.yml` | Pull Request 改动 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` | 用 msime 固定提交（`MSIME_COMMIT`）的 `msime-dict-build check-words`，即构建所用的解析器：只能追加；不能加回 `curation/pinyin-vetoes.txt` 否决的词或读音、`curation/english-vetoes.txt` 和构建器内置的英文蔑称（两张否决表取 Pull Request 基准提交的版本）；同时改了 `custom/` 和 `curation/` 的 Pull Request 直接失败，`curation/` 的改动单独开 Pull Request；每行能按构建的规则解析（词语的全拼须是 `'` 分隔的小写字母并能映射到全拼表）；词语和英文的权重在文件现有范围内；不与本次改动、所在文件或比对库重复（比对库是运行时找到的最新 `dict-v` release 的 `msime-pinyin.db` 和 `msime-english.db`，按该 release 的 `msime-SHA256SUMS.txt` 校验）。翻译可以给已有源词换一个译文，完全相同的一行算重复。结果写成 Pull Request 评论 |
+| `check-words.yml` | Pull Request 改动 `custom/words.txt`、`custom/translations.txt`、`custom/english.txt` | 用 msime 固定提交（`MSIME_COMMIT`，必须在 msime `develop` 上，否则检查失败）的 `msime-dict-build check-words`，即构建所用的解析器：只能追加；不能加回 `curation/pinyin-vetoes.txt` 否决的词或读音、`curation/english-vetoes.txt` 和构建器内置的英文蔑称（两张否决表取 Pull Request 基准提交的版本）；同时改了 `custom/` 和 `curation/` 的 Pull Request 直接失败，`curation/` 的改动单独开 Pull Request；每行能按构建的规则解析（词语的全拼须是 `'` 分隔的小写字母并能映射到全拼表）；词语和英文的权重在文件现有范围内；不与本次改动、所在文件或比对库重复（比对库是运行时找到的最新 `dict-v` release 的 `msime-pinyin.db` 和 `msime-english.db`，按该 release 的 `msime-SHA256SUMS.txt` 校验）。翻译可以给已有源词换一个译文，完全相同的一行算重复。结果写成 Pull Request 评论 |
 | `ci.yml` | Pull Request 改动 `packs/`、`custom/translations.txt`、`custom/words.txt`、它对照的 `sources/pinyin/`、`sources/unlicensed/` 文件、脚本或该 workflow | 运行 `python3 scripts/validate_packs.py`，见[专业词库](#专业词库) |
 | `quality.yml` | 推送到 `main`、Pull Request、merge queue、手动 | actionlint 校验 workflow 与其中的 shell；`scripts/check_builder_lock.sh` 检查 `builder.lock.json` 的提交是完整的 40 位提交且在 msime `develop` 上（发布 workflow 构建前也跑同一个脚本）；Pull Request 上另做依赖审查（high 及以上失败） |
 | `codeql.yml` | 每天定时 | CodeQL 分析 GitHub Actions workflow |
+| `check-curation.yml` | Pull Request 改动 `curation/` 或 `builder.lock.json`；手动（可指定未合入的 msime 构建器试跑） | 用 `builder.lock.json` 固定的 msime 构建器把主库完整构建一遍（不发布），`curation/` 的表解析出错、条目过期、否决与覆盖冲突都在合并前失败；再把 `msime-pinyin.db`、`msime-wubi.db`、`msime-english.db` 与最新的 `dict-v` 用 msime 的 `scripts/dict_artifact_diff.py` 逐表比较，报告写进运行摘要和 artifact。应设为 `main` 的 required check |
 | `release-built-dictionaries.yml` | 推送到 `main` 且改动了 `sources/`、`custom/`、`curation/` 或 `builder.lock.json`；手动（可只构建不发布） | 用这次推送的提交和 `builder.lock.json` 固定的 msime 构建器构建 19 个附件，自动加修订号发布 `dict-v*` Release，说明列出源数据变更和每个附件的用途，见[发布](#发布) |
 
 从 fork 发来的 Pull Request 拿到的是只读 token，check-words 不会发评论；同样的结果在该次运行的 job summary 里。维护者在 CI 之外再人工审核内容（包括敏感词）。
@@ -333,7 +334,7 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 | `custom/cantonese-variant-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每个字为什么否决） | 一个字 | 有 |
 | `custom/names.txt` | UTF-8 | LF | 无 | 一个人名 | 无 |
 | `curation/pinyin-vetoes.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | `词` 或 `词<TAB>全拼` | 有 |
-| `curation/pinyin-weight-overrides.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | `词<TAB>全拼<TAB>权重` | 有 |
+| `curation/pinyin-weight-overrides.txt` | UTF-8 | LF | `#` 注释行（规则，以及每一节的来源和审定方式） | `词<TAB>全拼<TAB>权重`，或再加第四列 `wubi` | 有 |
 | `curation/offensive-words.txt` | UTF-8 | LF | `#` 注释行（用途、收词标准、来历） | 一个词，或 `!` 开头的豁免写法 | 有 |
 
 ## 许可

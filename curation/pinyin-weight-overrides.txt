@@ -1,564 +1,564 @@
 # 拼音权重覆盖表（msime 构建器 `crates/dict-builder/src/curation.rs` 读）。维护者审定，不接受投稿，不受只追加限制。
 #
-# 一行 `词<TAB>全拼<TAB>权重`：构建的 `weight-overrides` 阶段（紧接 `word-vetoes`）把这个读音的权重设成这个值，五笔三张表的生成器按覆盖后的权重判断 100 的门槛和同码排序。每一条都必须在全拼表里有那一行，而且不能是 custom/words.txt 从已有的行提了权的行，否则构建失败。
+# 一行 `词<TAB>全拼<TAB>权重`，或者再加第四列 `wubi`：构建的 `weight-overrides` 阶段（紧接 `word-vetoes`）把这个读音的权重设成这个值。第四列 `wubi` 只写在与全拼键无关的频率修正上（本地损坏恢复上游值、占位权重），五笔三张表的生成器按它排同码的补充词组；其余各节是相对同一全拼键上的竞争定的降权，五笔编码上没有这层竞争，只改拼音，五笔不理。五笔补充词组的 100 门槛取覆盖前后较大的权重，所以这张表不会把一个词从五笔里删掉。每一条都必须在全拼表里有那一行，而且不能是 custom/words.txt 从已有的行提了权的行，否则构建失败。
 #
-# 每一行都来自 msime-dict-build cleanse-report（msime 87bb7d3895，对 msime-dictionary 7109e04（dict-v2.0.56），上游 rime-ice 9e66b07 的 cn_dicts，参照表为万象 7ab73ee 的 17 份 dicts，--reference-scale 9.2） 的一份清单，并按 dict-cleanse 方案 2.1 的判定标准审过。一行同时落进几类时只写一次，写在给出最低权重的那一类下面，权重取几类里最低的；值是绝对值，同键别的词的权重变了要重新跑报告核对。审过的取舍和抽检结果见 msime 的 `.agents/notes/implemented/feature/2026-11-04-dictionary-vetoes-and-weight-overrides.md`。
+# 每一行都来自 msime-dict-build cleanse-report（msime 6f8e5cadd8，对 msime-dictionary 7109e04（dict-v2.0.56），上游 rime-ice 9e66b07 的 cn_dicts，参照表为万象 7ab73ee 的 17 份 dicts，--reference-scale 9.2） 的一份清单（各节写明是哪一份），并按 dict-cleanse 方案 2.1 的判定标准逐条审过。一行同时落进几类时只写一次，写在给出最低权重的那一类下面，权重取几类里最低的；本地损坏或占位权重的行因此写在别的类下面的有 7 行，它们不写 `wubi`，五笔按覆盖前的权重排。值是绝对值，同键别的词的权重变了要重新跑报告核对。审过的取舍和抽检结果见 msime 的 `.agents/notes/implemented/feature/2026-11-04-dictionary-vetoes-and-weight-overrides.md`。
 
-# ---- 本地权重损坏，恢复上游值（方案 3.1，546 行）----
+# ---- 本地权重损坏，恢复上游值（方案 3.1，546 行，写 wubi）----
 # 来源：weight-disagreement.tsv 里来源是 sources/pinyin/rime-ice.txt、本地权重是上游 rime-ice 9e66b07 的 base/ext 同词同音权重 5 倍以上的 553 行（#84 的万象对齐没有改写过它们，权重不等于万象乘 9.2），写上游的权重；其中 7 行同时落进下面的类、那一类给的权重更低，写在那一类下面。rime-ice-supplement.txt 的行不在此列：那是从早先的上游提交整理来、经过万象对齐的补充表，与当前上游不同不说明损坏。本地权重比上游低 5 倍以上的 109 行（二〇〇一 82 对上游 9999 这类，多是上游的占位权重被调低了）也不在此列，恢复它们只会把占位值抬回来。
-门的	men'de	4351
-或在	huo'zai	1843
-在中	zai'zhong	1301
-的哇	de'wa	9999
-他指	ta'zhi	2222
-国家旅游局	guo'jia'lv'you'ju	8
-斯基	si'ji	2
-事实的	shi'shi'de	659
-斯坦	si'tan	537
-上都	shang'du	516
-激情电影	ji'qing'dian'ying	489
-胶粘剂	jiao'zhan'ji	456
-献血	xian'xie	437
-为有	wei'you	4253
-国家环保总局	guo'jia'huan'bao'zong'ju	4
-血的	xue'de	4083
-是近	shi'jin	396
-道了	dao'le	356
-人力资源开发	ren'li'zi'yuan'kai'fa	337
-忽地	hu'de	3111
-洛夫	luo'fu	5
-每增加	mei'zeng'jia	272
-是黄	shi'huang	254
-张俊	zhang'jun	2
-之也	zhi'ye	21
-国防科工委	guo'fang'ke'gong'wei	2
-雪冤	xue'yuan	199
-肖子	xiao'zi	934
-国家环境保护总局	guo'jia'huan'jing'bao'hu'zong'ju	1
-适时地	shi'shi'de	177
-亚斯	ya'si	2
-人同	ren'tong	1
-猪血	zhu'xue	1715
-李勇	li'yong	165
-世行	shi'hang	163
-人力资源总监	ren'li'zi'yuan'zong'jian	160
-版区	ban'qu	6
-长时	chang'shi	8
-张静	zhang'jing	2
-月号	yue'hao	1458
-重又	chong'you	2
-游程	you'cheng	14
-胶粘	jiao'zhan	14
-奥林	ao'lin	13
-梦之	meng'zhi	1
-淤血	yu'xie	130
-恩斯	en'si	1210
-按不	an'bu	1
-够为	gou'wei	1
-俶尔	chu'er	1180
-压力山大	ya'li'shan'da	100
-汉姆	han'mu	108
-之念	zhi'nian	103
-广东发展银行	guang'dong'fa'zhan'yin'hang	1
-板鼓	ban'gu	111
-薄待	bo'dai	111
-茨莨	ci'liang	111
-戴巴	dai'ba	2
-的夜	de'ye	1111
-调侃儿	diao'kan'er	111
-𫶇嵲	die'nie	9
-护山	hu'shan	111
-毁证	hui'zheng	1111
-橘柑	ju'gan	9
-了啊	le'a	1
-流势	liu'shi	999
-撸吗	lu'ma	111
-求聘	qiu'pin	1234
-显你	xian'ni	123
-相偕	xiang'xie	99
-蟹青	xie'qing	999
-邪煞	xie'sha	1111
-掌鞭	zhang'bian	1111
-该日	gai'ri	970
-佐夫	zuo'fu	967
-视屏	shi'ping	926
-大张	da'zhang	88
-列斯	lie'si	2
-屌得	diao'de	77
-和差	he'cha	761
-三校	san'jiao	750
-扎成	za'cheng	742
-列文	lie'wen	2
-该过	gai'guo	687
-刑复	xing'fu	44
-忖道	cun'dao	1
-为去	wei'qu	635
-米雪	mi'xue	2
-验血	yan'xue	617
-列维	lie'wei	2
-石勒	shi'le	5
-张明	zhang'ming	2
-楼楼	lou'lou	562
-别夹	bie'jia	555
-罗易	luo'yi	5
-丈外	zhang'wai	553
-马玉	ma'yu	5
-系了	ji'le	545
-珍奥	zhen'ao	5
-物位	wu'wei	51
-还于	hai'yu	511
-深商	shen'shang	5
-湖北美术学院	hu'bei'mei'shu'xue'yuan	501
-平一	ping'yi	49
-尤金	you'jin	2
-石经	shi'jing	2
-重钢	chong'gang	2
-卫生部部长	wei'sheng'bu'bu'zhang	447
-粤江	yue'jiang	4
-国家环保局	guo'jia'huan'bao'ju	4
-枳壳	zhi'ke	445
-国家计生委	guo'jia'ji'sheng'wei	4
-张铭	zhang'ming	2
-加得	jia'de	429
-底止	di'zhi	4
-斯凯	si'kai	4
-张涛	zhang'tao	2
-年在	nian'zai	2
-国家环境保护局	guo'jia'huan'jing'bao'hu'ju	3
-北方交通大学	bei'fang'jiao'tong'da'xue	3
-日喀则地区	ri'ka'ze'di'qu	369
-吴鹰	wu'ying	3
-码组	ma'zu	337
-勇军	yong'jun	2
-旱魔	han'mo	333
-化妖	hua'yao	333
-蛮净	man'jing	333
-协保	xie'bao	333
-由旬	you'xun	2
-南京审计学院	nan'jing'shen'ji'xue'yuan	3
-刘梅	liu'mei	2
-张哲	zhang'zhe	2
-菱镁	ling'mei	2
-罗南	luo'nan	307
-没有形	mei'you'xing	307
-之量	zhi'liang	1
-香格里拉县	xiang'ge'li'la'xian	301
-送三	song'san	29
-吐鲁番地区	tu'lu'fan'di'qu	289
-文燕	wen'yan	2
-智超	zhi'chao	2
-令史	ling'shi	2
-吴镇	wu'zhen	5
-王薇	wang'wei	2
-玉茎	yu'jing	28
-自思	zi'si	27
-斯波	si'bo	2
-行志	xing'zhi	272
-佐敦	zuo'dun	269
-大外	da'wai	2
-心象	xin'xiang	263
-伞业	san'ye	262
-长多	chang'duo	25
-振梁	zhen'liang	2
-直方	zhi'fang	251
-之哉	zhi'zai	2
-捣固	dao'gu	24
-罗刚	luo'gang	2
-妖妇	yao'fu	2
-中吕	zhong'lv	2
-蛮静	man'jing	222
-世弊	shi'bi	222
-卫药	wei'yao	222
-宣淫	xuan'yin	222
-港监	gang'jian	221
-云窝	yun'wo	2
-马宝	ma'bao	2
-世兄	shi'xiong	214
-英籍	ying'ji	145
-连了	lian'le	213
-玉乳	yu'ru	212
-发排	fa'pai	209
-培新	pei'xin	1
-朱笔	zhu'bi	202
-尼洛	ni'luo	193
-罗绮	luo'qi	2
-政道	zheng'dao	2
-国家地震局	guo'jia'di'zhen'ju	8
-桥梓	qiao'zi	1
-道文	dao'wen	1
-婢子	bi'zi	181
-七员	qi'yuan	7
-世济	shi'ji	1
-阜成	fu'cheng	5
-其里	qi'li	2
-就里	jiu'li	2
-王谢	wang'xie	160
-附寄	fu'ji	155
-珍娜	zhen'na	149
-九里区	jiu'li'qu	2
-血证	xie'zheng	142
-咿咿	yi'yi	141
-见惑	jian'huo	2
-智将	zhi'jiang	13
-见容	jian'rong	5
-李贞	li'zhen	2
-显属	xian'shu	3
-后步	hou'bu	13
-血狮	xie'shi	3
-伊奈	yi'nai	2
-盗割	dao'ge	119
-鳗鲞	man'xiang	118
-湄公	mei'gong	118
-北渔路	bei'yu'lu	8
-寒梅着花未	han'mei'zhuo'hua'wei	118
-接收啊	jie'shou'a	2
-酒靥	jiu'ye	118
-乐美雅	le'mei'ya	2
-瘫下来	tan'xia'lai	2
-微软雅黑字体	wei'ruan'ya'hei'zi'ti	118
-贺客	he'ke	117
-重言	zhong'yan	115
-阿尔伯特公园赛道	a'er'bo'te'gong'yuan'sai'dao	114
-八番	ba'fan	111
-朝职	chao'zhi	111
-法徽	fa'hui	111
-神乐	shen'le	111
-始而	shi'er	1
-殊誉	shu'yu	111
-睡乡	shui'xiang	111
-打扒	da'pa	1
-悟解	wu'jie	111
-义战	yi'zhan	109
-吴静	wu'jing	1
-郑洁	zheng'jie	104
-吴兰	wu'lan	2
-颔下	han'xia	103
-湖北汽车工业学院	hu'bei'qi'che'gong'ye'xue'yuan	102
-少兵	shao'bing	2
-司书	si'shu	10
-织花	zhi'hua	100
-乖剌	guai'la	2
-嚼用	jiao'yong	111
-指我	zhi'wo	123
-顿数	dun'shu	2
-布里吉	bu'li'ji	2
-张英	zhang'ying	2
-白紫	bai'zi	1
-磬石	qing'shi	9
-聆赏	ling'shang	9
-列科	lie'ke	2
-米夫	mi'fu	2
-警士	jing'shi	9
-轧光	ya'guang	2
-离忧	li'you	2
-漷县	huo'xian	2
-裕如	yu'ru	2
-独擅	du'shan	84
-偶游	ou'you	2
-纷华	fen'hua	8
-第宅	di'zhai	8
-寺规	si'gui	82
-上衫	shang'shan	2
-系狱	xi'yu	2
-疑念	yi'nian	79
-石罅	shi'xia	2
-死报	si'bao	78
-飞眼	fei'yan	2
-平昔	ping'xi	2
-销行	xiao'xing	76
-妒妇	du'fu	73
-象草	xiang'cao	73
-刊授	kan'shou	7
-畋猎	tian'lie	7
-掌珠	zhang'zhu	71
-拱度	gong'du	70
-节徽	jie'hui	69
-龙翅	long'chi	69
-反给	fan'gei	68
-息止	xi'zhi	2
-郴江	chen'jiang	67
-熟妇	shu'fu	1
-姓易	xing'yi	1
-雅惠	ya'hui	1
-爱业	ai'ye	67
-旋影	xuan'ying	1
-诗页	shi'ye	6
-灵棺	ling'guan	3
-猜枚	cai'mei	63
-魅人	mei'ren	2
-兴革	xing'ge	62
-佳趣	jia'qu	2
-晏驾	yan'jia	61
-后夫	hou'fu	65
-原隰	yuan'xi	2
-姓华	xing'hua	2
-豪右	hao'you	5
-冷轧薄	leng'zha'bo	100
-介寿	jie'shou	2
-雪尘	xue'chen	2
-藩司	fan'si	56
-骑劫	qi'jie	56
-台甫	tai'fu	5
-佳评	jia'ping	5
-噜苏	lu'su	5
-阀阅	fa'yue	53
-珍眉	zhen'mei	52
-筹思	chou'si	2
-贞良	zhen'liang	50
-绝音	jue'yin	5
-霍县	huo'xian	2
-完聚	wan'ju	2
-殊相	shu'xiang	4
-元作	yuan'zuo	1
-赏赉	shang'lai	2
-衍文	yan'wen	45
-试针	shi'zhen	4
-教画	jiao'hua	43
-公牍	gong'du	43
-究理	jiu'li	43
-拘限	ju'xian	43
-昆季	kun'ji	4
-腐鼠	fu'shu	2
-卵翼	luan'yi	4
-偎倚	wei'yi	41
-缅想	mian'xiang	4
-凯勒	kai'le	2
-前肩	qian'jian	4
-横事	heng'shi	2
-讪谤	shan'bang	3
-闵庄	min'zhuang	38
-雅驯	ya'xun	38
-弓鞋	gong'xie	38
-刘猛	liu'meng	2
-川资	chuan'zi	3
-异念	yi'nian	37
-姓花	xing'hua	2
-欺敌	qi'di	3
-邦瑞	bang'rui	1
-轻系	qing'xi	35
-吴兰英	wu'lan'ying	1
-石姓	shi'xing	2
-姓葛	xing'ge	2
-雪蛤	xue'ge	1
-母道	mu'dao	3
-嘘气	xu'qi	2
-李燕	li'yan	33
-李艳	li'yan	33
-约一约	yao'yi'yao	3
-豆羹	dou'geng	33
-张莹	zhang'ying	2
-繁丽	fan'li	1
-精甲	jing'jia	2
-宗兄	zong'xiong	3
-徐彬	xu'bin	3
-捋下	luo'xia	32
-雅教	ya'jiao	2
-新灰	xin'hui	2
-习非	xi'fei	1
-伐善	fa'shan	27
-侵晨	qin'chen	2
-罅缝	xia'feng	27
-姓卫	xing'wei	1
-英毅	ying'yi	2
-令誉	ling'yu	2
-螫针	shi'zhen	3
-台鉴	tai'jian	24
-土戏	tu'xi	23
-向暮	xiang'mu	23
-史姓	shi'xing	2
-伊儿汗国	yi'er'han'guo	5
-皂君	zao'jun	2
-丘墓	qiu'mu	4
-许彬	xu'bin	2
-修饬	xiu'chi	2
-徐珊	xu'shan	2
-姓卜	xing'bu	2
-克谐	ke'xie	9
-檑木	lei'mu	19
-糖房	tang'fang	19
-粉糕	fen'gao	2
-秽亵	hui'xie	18
-湔雪	jian'xue	2
-牝户	pin'hu	18
-侍姬	shi'ji	8
-挽力	wan'li	18
-师姓	shi'xing	2
-驻监	zhu'jian	17
-石厦	shi'sha	2
-黄小芸	huang'xiao'yun	2
-杜立德	du'li'de	2
-贵函	gui'han	17
-唐洁	tang'jie	1
-髫龄	tiao'ling	6
-欣愉	xin'yu	2
-故辙	gu'zhe	16
-城市管理学院	cheng'shi'guan'li'xue'yuan	1
-亡妇	wang'fu	15
-丫角	ya'jiao	3
-阿德莱德联	a'de'lai'de'lian	15
-岭峤	ling'qiao	2
-齐姓	qi'xing	2
-易川里	yi'chuan'li	1
-梅德尔	mei'de'er	8
-村妓	cun'ji	4
-小小优趣	xiao'xiao'you'qu	2
-朱家军	zhu'jia'jun	1
-屠伯	tu'bo	4
-文梓	wen'zi	2
-上冢	shang'zhong	13
-萧骚	xiao'sao	2
-玉茭	yu'jiao	2
-许波	xu'bo	1
-疵瑕	ci'xia	2
-衡宇	heng'yu	3
-鳞集	lin'ji	2
-寿幛	shou'zhang	13
-央中	yang'zhong	2
-林龟	lin'gui	2
-殊致	shu'zhi	2
-王钦	wang'qin	7
-伧俗	cang'su	15
-百犬	bai'quan	11
-宠嬖	chong'bi	2
-幻兽机	huan'shou'ji	2
-火剪	huo'jian	2
-纪总	ji'zong	1
-拳联	quan'lian	1
-乌咪	wu'mi	2
-姓单	xing'shan	2
-姓山	xing'shan	2
-优属	you'shu	11
-梅姓	mei'xing	2
-厮熟	si'shu	2
-不当道	bu'dang'dao	2
-布利吉	bu'li'ji	1
-虫电宝	chong'dian'bao	2
-都没药	dou'mei'yao	2
-缚起来	fu'qi'lai	10
-感觉时	gan'jue'shi	1
-何哥哥	he'ge'ge	1
-何姐姐	he'jie'jie	1
-胶地板	jiao'di'ban	2
-杰弗里·乔叟	jie'fu'li'qiao'sou	9
-金度完	jin'du'wan	1
-苦茶籽	ku'cha'zi	10
-萝卜缨	luo'bu'ying	5
-梅氏腺	mei'shi'xian	2
-热剌剌	re'la'la	2
-甜甜萤	tian'tian'ying	2
-瞎不瞎扯	xia'bu'xia'che	2
-小姑丈	xiao'gu'zhang	2
-易货师	yi'huo'shi	2
-遮没了	zhe'mo'le	2
-中挫	zhong'cuo	1
-信边	xin'bian	9
-平妥	ping'tuo	15
-申曲	shen'qu	2
-海鲷	hai'diao	2
-花鸽	hua'ge	9
-绳枢	sheng'shu	9
-蜒蚰	yan'you	9
-杨巍	yang'wei	1
-铵基	an'ji	1
-些须	xie'xu	2
-幸发芬	xing'fa'fen	4
-高坑	gao'keng	2
-肆暴	si'bao	2
-僮奴	tong'nu	8
-雅故	ya'gu	8
-磷源	lin'yuan	7
-姓井	xing'jing	2
-苏昊	su'hao	2
-姓景	xing'jing	2
-邕剧	yong'ju	2
-秦楠	qin'nan	6
-叶鹿	ye'lu	1
-奋袂	fen'mei	6
-失枕	shi'zhen	2
-台览	tai'lan	6
-绾毂	wan'gu	3
-姓荆	xing'jing	2
-莺谷	ying'gu	6
-姚涛	yao'tao	1
-淑懿	shu'yi	2
-儇薄	xuan'bo	6
-歆享	xin'xiang	5
-姓经	xing'jing	2
-张陵	zhang'ling	2
-过万年	guo'wan'nian	2
-李豫	li'yu	4
-刍秣	chu'mo	4
-龙湖香醍漫步	long'hu'xiang'ti'man'bu	1
-姓惠	xing'hui	2
-粤若稽古	yue'ruo'ji'gu	5
-死射	si'she	4
-祁曼	qi'man	2
-俪语	li'yu	4
-平姓	ping'xing	2
-戚谊	qi'yi	2
-屈姓	qu'xing	2
-刘保	liu'bao	2
-曲姓	qu'xing	2
-伊立浦	yi'li'pu	2
-闸北水厂	zha'bei'shui'chang	3
-仲姓	zhong'xing	2
-李邕	li'yong	2
-林岫	lin'xiu	2
-十宣	shi'xuan	1
-苏合	su'he	2
-鹄候	hu'hou	2
-姓戈	xing'ge	2
-雍姓	yong'xing	2
-乐姓	yue'xing	2
-周诗	zhou'shi	1
-田马路	tian'ma'lu	2
-小堰	xiao'yan	2
-桂香村	gui'xiang'cun	2
-坡狗	po'gou	2
-深晦	shen'hui	2
-衰陵	shuai'ling	2
-琬圭	wan'gui	2
-渠犁	qu'li	2
-毕都	bi'dou	2
-龙媒	long'mei	2
-钦迟	qin'chi	2
-璩姓	qu'xing	2
-时姓	shi'xing	2
-血田	xue'tian	2
-鳣鱼	zhan'yu	2
-威明	wei'ming	1
-零阳	ling'yang	2
-响山	xiang'shan	2
-李暄	li'xuan	2
-瞿姓	qu'xing	2
-雅畈	ya'fan	2
-大塱	da'lang	2
-矽尘	xi'chen	2
-四总	si'zong	1
-鸢峰	yuan'feng	2
-张厝	zhang'cuo	2
-莱德	lai'de	2
-下坊	xia'fang	2
-张绍	zhang'shao	2
-朱轼	zhu'shi	1
-辫髻	bian'ji	2
-禀赴	bing'fu	2
-瓜萎镰菌醇	gua'wei'lian'jun'chun	2
-佩恰	pei'qia	2
-戚姓	qi'xing	2
-辛姓	xin'xing	2
-姓步	xing'bu	2
-姓广	xing'guang	2
-姓滑	xing'hua	2
-涌溪	yong'xi	2
-午节	wu'jie	1
+门的	men'de	4351	wubi
+或在	huo'zai	1843	wubi
+在中	zai'zhong	1301	wubi
+的哇	de'wa	9999	wubi
+他指	ta'zhi	2222	wubi
+国家旅游局	guo'jia'lv'you'ju	8	wubi
+斯基	si'ji	2	wubi
+事实的	shi'shi'de	659	wubi
+斯坦	si'tan	537	wubi
+上都	shang'du	516	wubi
+激情电影	ji'qing'dian'ying	489	wubi
+胶粘剂	jiao'zhan'ji	456	wubi
+献血	xian'xie	437	wubi
+为有	wei'you	4253	wubi
+国家环保总局	guo'jia'huan'bao'zong'ju	4	wubi
+血的	xue'de	4083	wubi
+是近	shi'jin	396	wubi
+道了	dao'le	356	wubi
+人力资源开发	ren'li'zi'yuan'kai'fa	337	wubi
+忽地	hu'de	3111	wubi
+洛夫	luo'fu	5	wubi
+每增加	mei'zeng'jia	272	wubi
+是黄	shi'huang	254	wubi
+张俊	zhang'jun	2	wubi
+之也	zhi'ye	21	wubi
+国防科工委	guo'fang'ke'gong'wei	2	wubi
+雪冤	xue'yuan	199	wubi
+肖子	xiao'zi	934	wubi
+国家环境保护总局	guo'jia'huan'jing'bao'hu'zong'ju	1	wubi
+适时地	shi'shi'de	177	wubi
+亚斯	ya'si	2	wubi
+人同	ren'tong	1	wubi
+猪血	zhu'xue	1715	wubi
+李勇	li'yong	165	wubi
+世行	shi'hang	163	wubi
+人力资源总监	ren'li'zi'yuan'zong'jian	160	wubi
+版区	ban'qu	6	wubi
+长时	chang'shi	8	wubi
+张静	zhang'jing	2	wubi
+月号	yue'hao	1458	wubi
+重又	chong'you	2	wubi
+游程	you'cheng	14	wubi
+胶粘	jiao'zhan	14	wubi
+奥林	ao'lin	13	wubi
+梦之	meng'zhi	1	wubi
+淤血	yu'xie	130	wubi
+恩斯	en'si	1210	wubi
+按不	an'bu	1	wubi
+够为	gou'wei	1	wubi
+俶尔	chu'er	1180	wubi
+压力山大	ya'li'shan'da	100	wubi
+汉姆	han'mu	108	wubi
+之念	zhi'nian	103	wubi
+广东发展银行	guang'dong'fa'zhan'yin'hang	1	wubi
+板鼓	ban'gu	111	wubi
+薄待	bo'dai	111	wubi
+茨莨	ci'liang	111	wubi
+戴巴	dai'ba	2	wubi
+的夜	de'ye	1111	wubi
+调侃儿	diao'kan'er	111	wubi
+𫶇嵲	die'nie	9	wubi
+护山	hu'shan	111	wubi
+毁证	hui'zheng	1111	wubi
+橘柑	ju'gan	9	wubi
+了啊	le'a	1	wubi
+流势	liu'shi	999	wubi
+撸吗	lu'ma	111	wubi
+求聘	qiu'pin	1234	wubi
+显你	xian'ni	123	wubi
+相偕	xiang'xie	99	wubi
+蟹青	xie'qing	999	wubi
+邪煞	xie'sha	1111	wubi
+掌鞭	zhang'bian	1111	wubi
+该日	gai'ri	970	wubi
+佐夫	zuo'fu	967	wubi
+视屏	shi'ping	926	wubi
+大张	da'zhang	88	wubi
+列斯	lie'si	2	wubi
+屌得	diao'de	77	wubi
+和差	he'cha	761	wubi
+三校	san'jiao	750	wubi
+扎成	za'cheng	742	wubi
+列文	lie'wen	2	wubi
+该过	gai'guo	687	wubi
+刑复	xing'fu	44	wubi
+忖道	cun'dao	1	wubi
+为去	wei'qu	635	wubi
+米雪	mi'xue	2	wubi
+验血	yan'xue	617	wubi
+列维	lie'wei	2	wubi
+石勒	shi'le	5	wubi
+张明	zhang'ming	2	wubi
+楼楼	lou'lou	562	wubi
+别夹	bie'jia	555	wubi
+罗易	luo'yi	5	wubi
+丈外	zhang'wai	553	wubi
+马玉	ma'yu	5	wubi
+系了	ji'le	545	wubi
+珍奥	zhen'ao	5	wubi
+物位	wu'wei	51	wubi
+还于	hai'yu	511	wubi
+深商	shen'shang	5	wubi
+湖北美术学院	hu'bei'mei'shu'xue'yuan	501	wubi
+平一	ping'yi	49	wubi
+尤金	you'jin	2	wubi
+石经	shi'jing	2	wubi
+重钢	chong'gang	2	wubi
+卫生部部长	wei'sheng'bu'bu'zhang	447	wubi
+粤江	yue'jiang	4	wubi
+国家环保局	guo'jia'huan'bao'ju	4	wubi
+枳壳	zhi'ke	445	wubi
+国家计生委	guo'jia'ji'sheng'wei	4	wubi
+张铭	zhang'ming	2	wubi
+加得	jia'de	429	wubi
+底止	di'zhi	4	wubi
+斯凯	si'kai	4	wubi
+张涛	zhang'tao	2	wubi
+年在	nian'zai	2	wubi
+国家环境保护局	guo'jia'huan'jing'bao'hu'ju	3	wubi
+北方交通大学	bei'fang'jiao'tong'da'xue	3	wubi
+日喀则地区	ri'ka'ze'di'qu	369	wubi
+吴鹰	wu'ying	3	wubi
+码组	ma'zu	337	wubi
+勇军	yong'jun	2	wubi
+旱魔	han'mo	333	wubi
+化妖	hua'yao	333	wubi
+蛮净	man'jing	333	wubi
+协保	xie'bao	333	wubi
+由旬	you'xun	2	wubi
+南京审计学院	nan'jing'shen'ji'xue'yuan	3	wubi
+刘梅	liu'mei	2	wubi
+张哲	zhang'zhe	2	wubi
+菱镁	ling'mei	2	wubi
+罗南	luo'nan	307	wubi
+没有形	mei'you'xing	307	wubi
+之量	zhi'liang	1	wubi
+香格里拉县	xiang'ge'li'la'xian	301	wubi
+送三	song'san	29	wubi
+吐鲁番地区	tu'lu'fan'di'qu	289	wubi
+文燕	wen'yan	2	wubi
+智超	zhi'chao	2	wubi
+令史	ling'shi	2	wubi
+吴镇	wu'zhen	5	wubi
+王薇	wang'wei	2	wubi
+玉茎	yu'jing	28	wubi
+自思	zi'si	27	wubi
+斯波	si'bo	2	wubi
+行志	xing'zhi	272	wubi
+佐敦	zuo'dun	269	wubi
+大外	da'wai	2	wubi
+心象	xin'xiang	263	wubi
+伞业	san'ye	262	wubi
+长多	chang'duo	25	wubi
+振梁	zhen'liang	2	wubi
+直方	zhi'fang	251	wubi
+之哉	zhi'zai	2	wubi
+捣固	dao'gu	24	wubi
+罗刚	luo'gang	2	wubi
+妖妇	yao'fu	2	wubi
+中吕	zhong'lv	2	wubi
+蛮静	man'jing	222	wubi
+世弊	shi'bi	222	wubi
+卫药	wei'yao	222	wubi
+宣淫	xuan'yin	222	wubi
+港监	gang'jian	221	wubi
+云窝	yun'wo	2	wubi
+马宝	ma'bao	2	wubi
+世兄	shi'xiong	214	wubi
+英籍	ying'ji	145	wubi
+连了	lian'le	213	wubi
+玉乳	yu'ru	212	wubi
+发排	fa'pai	209	wubi
+培新	pei'xin	1	wubi
+朱笔	zhu'bi	202	wubi
+尼洛	ni'luo	193	wubi
+罗绮	luo'qi	2	wubi
+政道	zheng'dao	2	wubi
+国家地震局	guo'jia'di'zhen'ju	8	wubi
+桥梓	qiao'zi	1	wubi
+道文	dao'wen	1	wubi
+婢子	bi'zi	181	wubi
+七员	qi'yuan	7	wubi
+世济	shi'ji	1	wubi
+阜成	fu'cheng	5	wubi
+其里	qi'li	2	wubi
+就里	jiu'li	2	wubi
+王谢	wang'xie	160	wubi
+附寄	fu'ji	155	wubi
+珍娜	zhen'na	149	wubi
+九里区	jiu'li'qu	2	wubi
+血证	xie'zheng	142	wubi
+咿咿	yi'yi	141	wubi
+见惑	jian'huo	2	wubi
+智将	zhi'jiang	13	wubi
+见容	jian'rong	5	wubi
+李贞	li'zhen	2	wubi
+显属	xian'shu	3	wubi
+后步	hou'bu	13	wubi
+血狮	xie'shi	3	wubi
+伊奈	yi'nai	2	wubi
+盗割	dao'ge	119	wubi
+鳗鲞	man'xiang	118	wubi
+湄公	mei'gong	118	wubi
+北渔路	bei'yu'lu	8	wubi
+寒梅着花未	han'mei'zhuo'hua'wei	118	wubi
+接收啊	jie'shou'a	2	wubi
+酒靥	jiu'ye	118	wubi
+乐美雅	le'mei'ya	2	wubi
+瘫下来	tan'xia'lai	2	wubi
+微软雅黑字体	wei'ruan'ya'hei'zi'ti	118	wubi
+贺客	he'ke	117	wubi
+重言	zhong'yan	115	wubi
+阿尔伯特公园赛道	a'er'bo'te'gong'yuan'sai'dao	114	wubi
+八番	ba'fan	111	wubi
+朝职	chao'zhi	111	wubi
+法徽	fa'hui	111	wubi
+神乐	shen'le	111	wubi
+始而	shi'er	1	wubi
+殊誉	shu'yu	111	wubi
+睡乡	shui'xiang	111	wubi
+打扒	da'pa	1	wubi
+悟解	wu'jie	111	wubi
+义战	yi'zhan	109	wubi
+吴静	wu'jing	1	wubi
+郑洁	zheng'jie	104	wubi
+吴兰	wu'lan	2	wubi
+颔下	han'xia	103	wubi
+湖北汽车工业学院	hu'bei'qi'che'gong'ye'xue'yuan	102	wubi
+少兵	shao'bing	2	wubi
+司书	si'shu	10	wubi
+织花	zhi'hua	100	wubi
+乖剌	guai'la	2	wubi
+嚼用	jiao'yong	111	wubi
+指我	zhi'wo	123	wubi
+顿数	dun'shu	2	wubi
+布里吉	bu'li'ji	2	wubi
+张英	zhang'ying	2	wubi
+白紫	bai'zi	1	wubi
+磬石	qing'shi	9	wubi
+聆赏	ling'shang	9	wubi
+列科	lie'ke	2	wubi
+米夫	mi'fu	2	wubi
+警士	jing'shi	9	wubi
+轧光	ya'guang	2	wubi
+离忧	li'you	2	wubi
+漷县	huo'xian	2	wubi
+裕如	yu'ru	2	wubi
+独擅	du'shan	84	wubi
+偶游	ou'you	2	wubi
+纷华	fen'hua	8	wubi
+第宅	di'zhai	8	wubi
+寺规	si'gui	82	wubi
+上衫	shang'shan	2	wubi
+系狱	xi'yu	2	wubi
+疑念	yi'nian	79	wubi
+石罅	shi'xia	2	wubi
+死报	si'bao	78	wubi
+飞眼	fei'yan	2	wubi
+平昔	ping'xi	2	wubi
+销行	xiao'xing	76	wubi
+妒妇	du'fu	73	wubi
+象草	xiang'cao	73	wubi
+刊授	kan'shou	7	wubi
+畋猎	tian'lie	7	wubi
+掌珠	zhang'zhu	71	wubi
+拱度	gong'du	70	wubi
+节徽	jie'hui	69	wubi
+龙翅	long'chi	69	wubi
+反给	fan'gei	68	wubi
+息止	xi'zhi	2	wubi
+郴江	chen'jiang	67	wubi
+熟妇	shu'fu	1	wubi
+姓易	xing'yi	1	wubi
+雅惠	ya'hui	1	wubi
+爱业	ai'ye	67	wubi
+旋影	xuan'ying	1	wubi
+诗页	shi'ye	6	wubi
+灵棺	ling'guan	3	wubi
+猜枚	cai'mei	63	wubi
+魅人	mei'ren	2	wubi
+兴革	xing'ge	62	wubi
+佳趣	jia'qu	2	wubi
+晏驾	yan'jia	61	wubi
+后夫	hou'fu	65	wubi
+原隰	yuan'xi	2	wubi
+姓华	xing'hua	2	wubi
+豪右	hao'you	5	wubi
+冷轧薄	leng'zha'bo	100	wubi
+介寿	jie'shou	2	wubi
+雪尘	xue'chen	2	wubi
+藩司	fan'si	56	wubi
+骑劫	qi'jie	56	wubi
+台甫	tai'fu	5	wubi
+佳评	jia'ping	5	wubi
+噜苏	lu'su	5	wubi
+阀阅	fa'yue	53	wubi
+珍眉	zhen'mei	52	wubi
+筹思	chou'si	2	wubi
+贞良	zhen'liang	50	wubi
+绝音	jue'yin	5	wubi
+霍县	huo'xian	2	wubi
+完聚	wan'ju	2	wubi
+殊相	shu'xiang	4	wubi
+元作	yuan'zuo	1	wubi
+赏赉	shang'lai	2	wubi
+衍文	yan'wen	45	wubi
+试针	shi'zhen	4	wubi
+教画	jiao'hua	43	wubi
+公牍	gong'du	43	wubi
+究理	jiu'li	43	wubi
+拘限	ju'xian	43	wubi
+昆季	kun'ji	4	wubi
+腐鼠	fu'shu	2	wubi
+卵翼	luan'yi	4	wubi
+偎倚	wei'yi	41	wubi
+缅想	mian'xiang	4	wubi
+凯勒	kai'le	2	wubi
+前肩	qian'jian	4	wubi
+横事	heng'shi	2	wubi
+讪谤	shan'bang	3	wubi
+闵庄	min'zhuang	38	wubi
+雅驯	ya'xun	38	wubi
+弓鞋	gong'xie	38	wubi
+刘猛	liu'meng	2	wubi
+川资	chuan'zi	3	wubi
+异念	yi'nian	37	wubi
+姓花	xing'hua	2	wubi
+欺敌	qi'di	3	wubi
+邦瑞	bang'rui	1	wubi
+轻系	qing'xi	35	wubi
+吴兰英	wu'lan'ying	1	wubi
+石姓	shi'xing	2	wubi
+姓葛	xing'ge	2	wubi
+雪蛤	xue'ge	1	wubi
+母道	mu'dao	3	wubi
+嘘气	xu'qi	2	wubi
+李燕	li'yan	33	wubi
+李艳	li'yan	33	wubi
+约一约	yao'yi'yao	3	wubi
+豆羹	dou'geng	33	wubi
+张莹	zhang'ying	2	wubi
+繁丽	fan'li	1	wubi
+精甲	jing'jia	2	wubi
+宗兄	zong'xiong	3	wubi
+徐彬	xu'bin	3	wubi
+捋下	luo'xia	32	wubi
+雅教	ya'jiao	2	wubi
+新灰	xin'hui	2	wubi
+习非	xi'fei	1	wubi
+伐善	fa'shan	27	wubi
+侵晨	qin'chen	2	wubi
+罅缝	xia'feng	27	wubi
+姓卫	xing'wei	1	wubi
+英毅	ying'yi	2	wubi
+令誉	ling'yu	2	wubi
+螫针	shi'zhen	3	wubi
+台鉴	tai'jian	24	wubi
+土戏	tu'xi	23	wubi
+向暮	xiang'mu	23	wubi
+史姓	shi'xing	2	wubi
+伊儿汗国	yi'er'han'guo	5	wubi
+皂君	zao'jun	2	wubi
+丘墓	qiu'mu	4	wubi
+许彬	xu'bin	2	wubi
+修饬	xiu'chi	2	wubi
+徐珊	xu'shan	2	wubi
+姓卜	xing'bu	2	wubi
+克谐	ke'xie	9	wubi
+檑木	lei'mu	19	wubi
+糖房	tang'fang	19	wubi
+粉糕	fen'gao	2	wubi
+秽亵	hui'xie	18	wubi
+湔雪	jian'xue	2	wubi
+牝户	pin'hu	18	wubi
+侍姬	shi'ji	8	wubi
+挽力	wan'li	18	wubi
+师姓	shi'xing	2	wubi
+驻监	zhu'jian	17	wubi
+石厦	shi'sha	2	wubi
+黄小芸	huang'xiao'yun	2	wubi
+杜立德	du'li'de	2	wubi
+贵函	gui'han	17	wubi
+唐洁	tang'jie	1	wubi
+髫龄	tiao'ling	6	wubi
+欣愉	xin'yu	2	wubi
+故辙	gu'zhe	16	wubi
+城市管理学院	cheng'shi'guan'li'xue'yuan	1	wubi
+亡妇	wang'fu	15	wubi
+丫角	ya'jiao	3	wubi
+阿德莱德联	a'de'lai'de'lian	15	wubi
+岭峤	ling'qiao	2	wubi
+齐姓	qi'xing	2	wubi
+易川里	yi'chuan'li	1	wubi
+梅德尔	mei'de'er	8	wubi
+村妓	cun'ji	4	wubi
+小小优趣	xiao'xiao'you'qu	2	wubi
+朱家军	zhu'jia'jun	1	wubi
+屠伯	tu'bo	4	wubi
+文梓	wen'zi	2	wubi
+上冢	shang'zhong	13	wubi
+萧骚	xiao'sao	2	wubi
+玉茭	yu'jiao	2	wubi
+许波	xu'bo	1	wubi
+疵瑕	ci'xia	2	wubi
+衡宇	heng'yu	3	wubi
+鳞集	lin'ji	2	wubi
+寿幛	shou'zhang	13	wubi
+央中	yang'zhong	2	wubi
+林龟	lin'gui	2	wubi
+殊致	shu'zhi	2	wubi
+王钦	wang'qin	7	wubi
+伧俗	cang'su	15	wubi
+百犬	bai'quan	11	wubi
+宠嬖	chong'bi	2	wubi
+幻兽机	huan'shou'ji	2	wubi
+火剪	huo'jian	2	wubi
+纪总	ji'zong	1	wubi
+拳联	quan'lian	1	wubi
+乌咪	wu'mi	2	wubi
+姓单	xing'shan	2	wubi
+姓山	xing'shan	2	wubi
+优属	you'shu	11	wubi
+梅姓	mei'xing	2	wubi
+厮熟	si'shu	2	wubi
+不当道	bu'dang'dao	2	wubi
+布利吉	bu'li'ji	1	wubi
+虫电宝	chong'dian'bao	2	wubi
+都没药	dou'mei'yao	2	wubi
+缚起来	fu'qi'lai	10	wubi
+感觉时	gan'jue'shi	1	wubi
+何哥哥	he'ge'ge	1	wubi
+何姐姐	he'jie'jie	1	wubi
+胶地板	jiao'di'ban	2	wubi
+杰弗里·乔叟	jie'fu'li'qiao'sou	9	wubi
+金度完	jin'du'wan	1	wubi
+苦茶籽	ku'cha'zi	10	wubi
+萝卜缨	luo'bu'ying	5	wubi
+梅氏腺	mei'shi'xian	2	wubi
+热剌剌	re'la'la	2	wubi
+甜甜萤	tian'tian'ying	2	wubi
+瞎不瞎扯	xia'bu'xia'che	2	wubi
+小姑丈	xiao'gu'zhang	2	wubi
+易货师	yi'huo'shi	2	wubi
+遮没了	zhe'mo'le	2	wubi
+中挫	zhong'cuo	1	wubi
+信边	xin'bian	9	wubi
+平妥	ping'tuo	15	wubi
+申曲	shen'qu	2	wubi
+海鲷	hai'diao	2	wubi
+花鸽	hua'ge	9	wubi
+绳枢	sheng'shu	9	wubi
+蜒蚰	yan'you	9	wubi
+杨巍	yang'wei	1	wubi
+铵基	an'ji	1	wubi
+些须	xie'xu	2	wubi
+幸发芬	xing'fa'fen	4	wubi
+高坑	gao'keng	2	wubi
+肆暴	si'bao	2	wubi
+僮奴	tong'nu	8	wubi
+雅故	ya'gu	8	wubi
+磷源	lin'yuan	7	wubi
+姓井	xing'jing	2	wubi
+苏昊	su'hao	2	wubi
+姓景	xing'jing	2	wubi
+邕剧	yong'ju	2	wubi
+秦楠	qin'nan	6	wubi
+叶鹿	ye'lu	1	wubi
+奋袂	fen'mei	6	wubi
+失枕	shi'zhen	2	wubi
+台览	tai'lan	6	wubi
+绾毂	wan'gu	3	wubi
+姓荆	xing'jing	2	wubi
+莺谷	ying'gu	6	wubi
+姚涛	yao'tao	1	wubi
+淑懿	shu'yi	2	wubi
+儇薄	xuan'bo	6	wubi
+歆享	xin'xiang	5	wubi
+姓经	xing'jing	2	wubi
+张陵	zhang'ling	2	wubi
+过万年	guo'wan'nian	2	wubi
+李豫	li'yu	4	wubi
+刍秣	chu'mo	4	wubi
+龙湖香醍漫步	long'hu'xiang'ti'man'bu	1	wubi
+姓惠	xing'hui	2	wubi
+粤若稽古	yue'ruo'ji'gu	5	wubi
+死射	si'she	4	wubi
+祁曼	qi'man	2	wubi
+俪语	li'yu	4	wubi
+平姓	ping'xing	2	wubi
+戚谊	qi'yi	2	wubi
+屈姓	qu'xing	2	wubi
+刘保	liu'bao	2	wubi
+曲姓	qu'xing	2	wubi
+伊立浦	yi'li'pu	2	wubi
+闸北水厂	zha'bei'shui'chang	3	wubi
+仲姓	zhong'xing	2	wubi
+李邕	li'yong	2	wubi
+林岫	lin'xiu	2	wubi
+十宣	shi'xuan	1	wubi
+苏合	su'he	2	wubi
+鹄候	hu'hou	2	wubi
+姓戈	xing'ge	2	wubi
+雍姓	yong'xing	2	wubi
+乐姓	yue'xing	2	wubi
+周诗	zhou'shi	1	wubi
+田马路	tian'ma'lu	2	wubi
+小堰	xiao'yan	2	wubi
+桂香村	gui'xiang'cun	2	wubi
+坡狗	po'gou	2	wubi
+深晦	shen'hui	2	wubi
+衰陵	shuai'ling	2	wubi
+琬圭	wan'gui	2	wubi
+渠犁	qu'li	2	wubi
+毕都	bi'dou	2	wubi
+龙媒	long'mei	2	wubi
+钦迟	qin'chi	2	wubi
+璩姓	qu'xing	2	wubi
+时姓	shi'xing	2	wubi
+血田	xue'tian	2	wubi
+鳣鱼	zhan'yu	2	wubi
+威明	wei'ming	1	wubi
+零阳	ling'yang	2	wubi
+响山	xiang'shan	2	wubi
+李暄	li'xuan	2	wubi
+瞿姓	qu'xing	2	wubi
+雅畈	ya'fan	2	wubi
+大塱	da'lang	2	wubi
+矽尘	xi'chen	2	wubi
+四总	si'zong	1	wubi
+鸢峰	yuan'feng	2	wubi
+张厝	zhang'cuo	2	wubi
+莱德	lai'de	2	wubi
+下坊	xia'fang	2	wubi
+张绍	zhang'shao	2	wubi
+朱轼	zhu'shi	1	wubi
+辫髻	bian'ji	2	wubi
+禀赴	bing'fu	2	wubi
+瓜萎镰菌醇	gua'wei'lian'jun'chun	2	wubi
+佩恰	pei'qia	2	wubi
+戚姓	qi'xing	2	wubi
+辛姓	xin'xing	2	wubi
+姓步	xing'bu	2	wubi
+姓广	xing'guang	2	wubi
+姓滑	xing'hua	2	wubi
+涌溪	yong'xi	2	wubi
+午节	wu'jie	1	wubi
 
 # ---- 车件 降到 车检 之下（方案 3.1，1 行）----
 # 来源：维护者反馈的触发样例，msime resources/eval/must-outrank.tsv 的 mo-0001（全拼 chejian）、mo-0002（九键 2435426）。上游 rime-ice 原值就是 车件 压过 车检；写 车检 的权重减 1。车件 同时在 fragment-over-common.tsv 里，建议值相同。
 车件	che'jian	1499
 
 # ---- custom 越位（方案 3.1 与 H11，12 行）----
-# 来源：custom/words.txt 新插入的词（之前的输入没有这一行，所以覆盖表可以改）在自己的全拼键上权重最高、压过一个本地权重 1000 以上的词，15 条（方案写的 13 条是 dict-v2.0.41 上的数），逐条审过：人名和冷僻词 12 条降到被压过的词之下（同键最高的另一个词的最终权重减 1），它们仍是这个键上的第二个候选；吸猫（常用网络词）、古茗（连锁茶饮品牌）、兜帽（常用词，被压的 都冇 是粤语）保留。custom/words.txt 从已有的行提了权的行不在此列，覆盖表不能改它们。
+# 来源：custom-outranking.tsv（custom/words.txt 的行在自己的全拼键上权重最高、压过同键一个本地权重 1000 以上的词），15 行，都是 custom 新插入的词（之前的输入没有这一行，所以覆盖表可以改），方案写的 13 条是 dict-v2.0.41 上的数。逐条审过：人名和冷僻词 12 行写清单的建议值（降到同键权重最高的另一个词之下），它们仍是这个键上的第二个候选；吸猫（常用网络词）、古茗（连锁茶饮品牌）、兜帽（常用词，被压的 都冇 是粤语）保留。只看全拼键，九键码上的越位和以后投稿的上限（方案 H11）不在这里。
 白冰	bai'bing	2446
 伯远	bo'yuan	3845
 鹤秋	he'qiu	1416
@@ -572,240 +572,244 @@
 挽昼	wan'zhou	2455
 字统	zi'tong	973
 
-# ---- 占位权重（方案 3.1，229 行）----
+# ---- 占位权重（方案 3.1，233 行，写 wubi）----
 # 来源：placeholder-weights.tsv（万象不收的多字词，权重不小于 1000 且每位数字相同，或是梗数字 19260817、12345678；custom/words.txt 的行除外），按方案 H5「源里没有的行」的规则：不得高于同键最高的万象收录词。写同键万象收录词里最高的最终权重减 1；同键没有万象收录词、或已经低于它的不改。
-嗷呜	ao'wu	2971
-罢诉	ba'su	146
-板硬	ban'ying	376
-报领	bao'ling	321
-闭校	bi'xiao	349
-贬责	bian'ze	523
-补充几样	bu'chong'ji'yang	174
-插关儿	cha'guan'er	82
-成成	cheng'cheng	735
-呈阅	cheng'yue	376
-吃儿	chi'er	523
-斥卖	chi'mai	54
-宠妹	chong'mei	201
-臭乎乎	chou'hu'hu	3348
-传技	chuan'ji	606
-闯回	chuang'hui	661
-吹腔	chui'qiang	574
-椿庭	chun'ting	908
-打岔儿	da'cha'er	54
-大年儿	da'nian'er	82
-的啦	de'la	551
-典册	dian'ce	349
-东不拉	dong'bu'la	321
-风谣	feng'yao	661
-复谈	fu'tan	634
-甘紫菜	gan'zi'cai	257
-够没	gou'mei	864
-钩拳	gou'quan	6080
-官风	guan'feng	174
-过不	guo'bu	695
-好真	hao'zhen	146
-轰向	hong'xiang	836
-黄波椤	huang'bo'luo	54
-茧绸	jian'chou	201
-可更	ke'geng	579
-里间屋	li'jian'wu	579
-瞒产	man'chan	284
-木波罗	mu'bo'luo	146
-目验	mu'yan	119
-那等	na'deng	431
-能等	neng'deng	836
-嚷叫	rang'jiao	634
-任何街	ren'he'jie	82
-任何街道	ren'he'jie'dao	91
-顺情	shun'qing	146
-太色了	tai'se'le	477
-囤药	tun'yao	606
-齆声齆气	weng'sheng'weng'qi	606
-细溜溜	xi'liu'liu	54
-行嘞	xing'lei	174
-絮棉	xu'mian	574
-要劲儿	yao'jin'er	376
-一倡百和	yi'chang'bai'he	551
-淫巧	yin'qiao	487
-影格儿	ying'ge'er	781
-真问	zhen'wen	676
-治洪	zhi'hong	551
-支着儿	zhi'zhao'er	146
-壮门面	zhuang'men'mian	717
-便需	bian'xu	560
-扣针	kou'zhen	836
-但跑	dan'pao	431
-爱世梦罗	ai'shi'meng'luo	91
-榜二	bang'er	349
-利奥·梅西	li'ao'mei'xi	229
-炉鼎	lu'ding	809
-揉奶	rou'nai	523
-吧啊	ba'a	229
-超暗	chao'an	99
-还他	huan'ta	1471
-抢药	qiang'yao	891
-亲不	qin'bu	119
-纱丽服	sha'li'fu	54
-筛完	shai'wan	809
-酥乳	su'ru	229
-太顶	tai'ding	339
-特闲	te'xian	174
-舔笔	tian'bi	404
-易感冒	yi'gan'mao	781
-盈昃	ying'ze	146
-走嘞	zou'lei	349
-操我	cao'wo	321
-粗语	cu'yu	404
-毒招	du'zhao	487
-黑些	hei'xie	574
-捡啦	jian'la	556
-特糟	te'zao	119
-八盆	ba'pen	661
-必沉	bi'chen	753
-别陪	bie'pei	54
-肏我	cao'wo	321
-侧乳	ce'ru	574
-侧停	ce'ting	146
-插动	cha'dong	404
-查啦	cha'la	321
-打字区	da'zi'qu	99
-冬虫	dong'chong	321
-逢三	feng'san	119
-干得真	gan'de'zhen	92
-各掏	ge'tao	349
-狗系	gou'xi	459
-怪啦	guai'la	259
-含进	han'jin	753
-建啦	jian'la	556
-开哭	kai'ku	201
-可痒	ke'yang	119
-捆儿	kun'er	27
-乱瞧	luan'qiao	661
-悯恤	min'xu	82
-偏选	pian'xuan	82
-凭脸	ping'lian	201
-仆街仔	pu'jie'zai	584
-却站	que'zhan	229
-升吧	sheng'ba	717
-手指捏和	shou'zhi'nie'he	918
-刷掌	shua'zhang	82
-睡喽	shui'lou	174
-躺吧	tang'ba	257
-忒旧	tui'jiu	551
-忒重	tui'zhong	661
-王迪	wang'di	459
-呀啊	ya'a	146
-阴吹	yin'chui	574
-这种鹦鹉	zhe'zhong'ying'wu	8
-直晃	zhi'huang	321
-中啥	zhong'sha	146
-爆插	bao'cha	146
-笔槽	bi'cao	661
-比外	bi'wai	689
-臂助	bi'zhu	753
-成堆儿	cheng'dui'er	174
-叱问	chi'wen	551
-初窥	chu'kui	569
-穿不	chuan'bu	404
-玎玲	ding'ling	864
-短碎	duan'sui	82
-饿她	e'ta	676
-扶她起来	fu'ta'qi'lai	287
-跪好	gui'hao	379
-耗子毛	hao'zi'mao	27
-混斗	hun'dou	551
-就盆儿	jiu'pen'er	413
-来等	lai'deng	634
-猫厂	mao'chang	376
-能富	neng'fu	487
-铺植	pu'zhi	523
-首崩	shou'beng	229
-思摸	si'mo	717
-所拨	suo'bo	231
-他洗	ta'xi	147
-醒了嘛	xing'le'ma	431
-压啊	ya'a	146
-淫趴	yin'pa	753
-挨次	ai'ci	82
-爱港	ai'gang	146
-扮猫	ban'mao	257
-薄袜	bao'wa	781
-必定于	bi'ding'yu	523
-必多	bi'duo	781
-别充	bie'chong	321
-薄袜	bo'wa	431
-不屯	bu'tun	431
-不摇碧莲	bu'yao'bi'lian	201
-菜库	cai'ku	284
-槽儿	cao'er	229
-唱嗨	chang'hai	431
-超污	chao'wu	753
-重叙	chong'xu	376
-传不	chuan'bu	404
-蠢屄	chun'bi	487
-此辆	ci'liang	556
-当干	dang'gan	723
-垫手	dian'shou	201
-冻胀	dong'zhang	574
-都梦	dou'meng	321
-短停	duan'ting	257
-饿它	e'ta	676
-返点儿	fan'dian'er	753
-副秘	fu'mi	321
-狗哨	gou'shao	352
-挂欠	gua'qian	257
-拐啦	guai'la	259
-候虫	hou'chong	790
-后儿个	hou'er'ge	119
-互杠	hu'gang	574
-黄杏	huang'xing	487
-减啦	jian'la	556
-茧中互联网	jian'zhong'hu'lian'wang	91
-巨凶	ju'xiong	120
-岚气	lan'qi	579
-练透	lian'tou	891
-领责	ling'ze	753
-满孝	man'xiao	891
-哪头儿	na'tou'er	54
-奶毛	nai'mao	717
-南瓜糖	nan'gua'tang	321
-能疯	neng'feng	723
-捏出	nie'chu	579
-拍灰	pai'hui	321
-偏衫	pian'shan	809
-求嫁	qiu'jia	459
-褥套	ru'tao	753
-若它不	ruo'ta'bu	119
-射不	she'bu	321
-设或	she'huo	119
-寿盒	shou'he	781
-酥腰	su'yao	259
-她点	ta'dian	855
-太苦啦	tai'ku'la	174
-太疲	tai'pi	717
-天轴	tian'zhou	229
-囤水	tun'shui	120
-蚊虻	wen'meng	376
-宪改	xian'gai	523
-香足	xiang'zu	723
-虚减	xu'jian	404
-要残	yao'can	404
-银趴	yin'pa	753
-营墙	ying'qiang	864
-咋点	za'dian	717
-咱姐	zan'jie	579
-暂止	zan'zhi	321
-葬此	zang'ci	201
-炸服	zha'fu	574
-展摊	zhan'tan	726
-张腿	zhang'tui	257
-真下	zhen'xia	676
-揍她们	zou'ta'men	551
-坐前边	zuo'qian'bian	54
+嗷呜	ao'wu	2971	wubi
+罢诉	ba'su	146	wubi
+板硬	ban'ying	376	wubi
+报领	bao'ling	321	wubi
+闭校	bi'xiao	349	wubi
+贬责	bian'ze	523	wubi
+补充几样	bu'chong'ji'yang	174	wubi
+插关儿	cha'guan'er	82	wubi
+成成	cheng'cheng	735	wubi
+呈阅	cheng'yue	376	wubi
+吃儿	chi'er	523	wubi
+斥卖	chi'mai	54	wubi
+宠妹	chong'mei	201	wubi
+臭乎乎	chou'hu'hu	3348	wubi
+传技	chuan'ji	606	wubi
+闯回	chuang'hui	661	wubi
+吹腔	chui'qiang	574	wubi
+椿庭	chun'ting	908	wubi
+打岔儿	da'cha'er	54	wubi
+大年儿	da'nian'er	82	wubi
+的啦	de'la	551	wubi
+典册	dian'ce	349	wubi
+东不拉	dong'bu'la	321	wubi
+风谣	feng'yao	661	wubi
+复谈	fu'tan	634	wubi
+甘紫菜	gan'zi'cai	257	wubi
+够没	gou'mei	864	wubi
+钩拳	gou'quan	6080	wubi
+官风	guan'feng	174	wubi
+过不	guo'bu	695	wubi
+好真	hao'zhen	146	wubi
+轰向	hong'xiang	836	wubi
+黄波椤	huang'bo'luo	54	wubi
+茧绸	jian'chou	201	wubi
+可更	ke'geng	579	wubi
+里间屋	li'jian'wu	579	wubi
+瞒产	man'chan	284	wubi
+木波罗	mu'bo'luo	146	wubi
+目验	mu'yan	119	wubi
+那等	na'deng	431	wubi
+能等	neng'deng	836	wubi
+嚷叫	rang'jiao	634	wubi
+任何街	ren'he'jie	82	wubi
+任何街道	ren'he'jie'dao	91	wubi
+顺情	shun'qing	146	wubi
+太色了	tai'se'le	477	wubi
+囤药	tun'yao	606	wubi
+齆声齆气	weng'sheng'weng'qi	606	wubi
+细溜溜	xi'liu'liu	54	wubi
+行嘞	xing'lei	174	wubi
+絮棉	xu'mian	574	wubi
+要劲儿	yao'jin'er	376	wubi
+一倡百和	yi'chang'bai'he	551	wubi
+淫巧	yin'qiao	487	wubi
+影格儿	ying'ge'er	781	wubi
+真问	zhen'wen	676	wubi
+治洪	zhi'hong	551	wubi
+支着儿	zhi'zhao'er	146	wubi
+壮门面	zhuang'men'mian	717	wubi
+便需	bian'xu	560	wubi
+扣针	kou'zhen	836	wubi
+但跑	dan'pao	431	wubi
+爱世梦罗	ai'shi'meng'luo	91	wubi
+榜二	bang'er	349	wubi
+利奥·梅西	li'ao'mei'xi	229	wubi
+炉鼎	lu'ding	809	wubi
+揉奶	rou'nai	523	wubi
+中码	zhong'ma	3090	wubi
+吧啊	ba'a	229	wubi
+超暗	chao'an	99	wubi
+还他	huan'ta	1471	wubi
+抢药	qiang'yao	891	wubi
+亲不	qin'bu	119	wubi
+纱丽服	sha'li'fu	54	wubi
+筛完	shai'wan	809	wubi
+酥乳	su'ru	229	wubi
+太顶	tai'ding	339	wubi
+特闲	te'xian	174	wubi
+舔笔	tian'bi	404	wubi
+易感冒	yi'gan'mao	781	wubi
+盈昃	ying'ze	146	wubi
+走嘞	zou'lei	349	wubi
+操我	cao'wo	321	wubi
+粗语	cu'yu	404	wubi
+毒招	du'zhao	487	wubi
+黑些	hei'xie	574	wubi
+捡啦	jian'la	556	wubi
+特糟	te'zao	119	wubi
+八盆	ba'pen	661	wubi
+必沉	bi'chen	753	wubi
+别陪	bie'pei	54	wubi
+肏我	cao'wo	321	wubi
+侧乳	ce'ru	574	wubi
+侧停	ce'ting	146	wubi
+插动	cha'dong	404	wubi
+查啦	cha'la	321	wubi
+打字区	da'zi'qu	99	wubi
+冬虫	dong'chong	321	wubi
+逢三	feng'san	119	wubi
+干得真	gan'de'zhen	92	wubi
+各掏	ge'tao	349	wubi
+狗系	gou'xi	459	wubi
+怪啦	guai'la	259	wubi
+含进	han'jin	753	wubi
+建啦	jian'la	556	wubi
+开哭	kai'ku	201	wubi
+可痒	ke'yang	119	wubi
+捆儿	kun'er	27	wubi
+拉粑粑	la'ba'ba	2171	wubi
+乱瞧	luan'qiao	661	wubi
+悯恤	min'xu	82	wubi
+难猜	nan'cai	1039	wubi
+偏选	pian'xuan	82	wubi
+凭脸	ping'lian	201	wubi
+仆街仔	pu'jie'zai	584	wubi
+却站	que'zhan	229	wubi
+升吧	sheng'ba	717	wubi
+手指捏和	shou'zhi'nie'he	918	wubi
+刷掌	shua'zhang	82	wubi
+睡喽	shui'lou	174	wubi
+躺吧	tang'ba	257	wubi
+忒旧	tui'jiu	551	wubi
+忒重	tui'zhong	661	wubi
+王迪	wang'di	459	wubi
+呀啊	ya'a	146	wubi
+阴吹	yin'chui	574	wubi
+这种鹦鹉	zhe'zhong'ying'wu	8	wubi
+直晃	zhi'huang	321	wubi
+中啥	zhong'sha	146	wubi
+爆插	bao'cha	146	wubi
+笔槽	bi'cao	661	wubi
+比外	bi'wai	689	wubi
+臂助	bi'zhu	753	wubi
+成堆儿	cheng'dui'er	174	wubi
+叱问	chi'wen	551	wubi
+初窥	chu'kui	569	wubi
+穿不	chuan'bu	404	wubi
+玎玲	ding'ling	864	wubi
+短碎	duan'sui	82	wubi
+饿她	e'ta	676	wubi
+扶她起来	fu'ta'qi'lai	287	wubi
+跪好	gui'hao	379	wubi
+耗子毛	hao'zi'mao	27	wubi
+混斗	hun'dou	551	wubi
+就盆儿	jiu'pen'er	413	wubi
+来等	lai'deng	634	wubi
+猫厂	mao'chang	376	wubi
+能富	neng'fu	487	wubi
+铺植	pu'zhi	523	wubi
+首崩	shou'beng	229	wubi
+思摸	si'mo	717	wubi
+所拨	suo'bo	231	wubi
+他洗	ta'xi	147	wubi
+醒了嘛	xing'le'ma	431	wubi
+压啊	ya'a	146	wubi
+淫趴	yin'pa	753	wubi
+挨次	ai'ci	82	wubi
+爱港	ai'gang	146	wubi
+扮猫	ban'mao	257	wubi
+薄袜	bao'wa	781	wubi
+必定于	bi'ding'yu	523	wubi
+必多	bi'duo	781	wubi
+别充	bie'chong	321	wubi
+薄袜	bo'wa	431	wubi
+不屯	bu'tun	431	wubi
+不摇碧莲	bu'yao'bi'lian	201	wubi
+菜库	cai'ku	284	wubi
+彩炮	cai'pao	1066	wubi
+槽儿	cao'er	229	wubi
+唱嗨	chang'hai	431	wubi
+超污	chao'wu	753	wubi
+重叙	chong'xu	376	wubi
+传不	chuan'bu	404	wubi
+蠢屄	chun'bi	487	wubi
+此辆	ci'liang	556	wubi
+当干	dang'gan	723	wubi
+垫手	dian'shou	201	wubi
+冻胀	dong'zhang	574	wubi
+都梦	dou'meng	321	wubi
+短停	duan'ting	257	wubi
+饿它	e'ta	676	wubi
+返点儿	fan'dian'er	753	wubi
+副秘	fu'mi	321	wubi
+狗哨	gou'shao	352	wubi
+挂欠	gua'qian	257	wubi
+拐啦	guai'la	259	wubi
+候虫	hou'chong	790	wubi
+后儿个	hou'er'ge	119	wubi
+互杠	hu'gang	574	wubi
+黄杏	huang'xing	487	wubi
+减啦	jian'la	556	wubi
+茧中互联网	jian'zhong'hu'lian'wang	91	wubi
+巨凶	ju'xiong	120	wubi
+岚气	lan'qi	579	wubi
+练透	lian'tou	891	wubi
+领责	ling'ze	753	wubi
+满孝	man'xiao	891	wubi
+哪头儿	na'tou'er	54	wubi
+奶毛	nai'mao	717	wubi
+南瓜糖	nan'gua'tang	321	wubi
+能疯	neng'feng	723	wubi
+捏出	nie'chu	579	wubi
+拍灰	pai'hui	321	wubi
+偏衫	pian'shan	809	wubi
+求嫁	qiu'jia	459	wubi
+褥套	ru'tao	753	wubi
+若它不	ruo'ta'bu	119	wubi
+射不	she'bu	321	wubi
+设或	she'huo	119	wubi
+寿盒	shou'he	781	wubi
+酥腰	su'yao	259	wubi
+她点	ta'dian	855	wubi
+太苦啦	tai'ku'la	174	wubi
+太疲	tai'pi	717	wubi
+天轴	tian'zhou	229	wubi
+囤水	tun'shui	120	wubi
+蚊虻	wen'meng	376	wubi
+宪改	xian'gai	523	wubi
+香足	xiang'zu	723	wubi
+虚减	xu'jian	404	wubi
+要残	yao'can	404	wubi
+银趴	yin'pa	753	wubi
+营墙	ying'qiang	864	wubi
+咋点	za'dian	717	wubi
+咱姐	zan'jie	579	wubi
+暂止	zan'zhi	321	wubi
+葬此	zang'ci	201	wubi
+炸服	zha'fu	574	wubi
+展摊	zhan'tan	726	wubi
+张腿	zhang'tui	257	wubi
+真下	zhen'xia	676	wubi
+揍她们	zou'ta'men	551	wubi
+坐前边	zuo'qian'bian	54	wubi
 
-# ---- 碎片词压过同键常用词（方案 3.2，1513 行）----
-# 来源：fragment-over-common.tsv（万象 7ab73ee 任何读音都不收的多字词，在同一个全拼键上排在一个万象权重 100 以上的词前面），1663 行，全部逐条审过。误伤（按词义这一行比被压的词更该在前，如 事实的、汉密尔顿、恢宏、顾盼、并道，或者降下去会让粗俗词顶上来，如 即把 让给 鸡巴、绽露 让给 站撸）51 行，占 3.1%，其中 6 行（电传、之三、独得、倚赖、精减、勾通）是逐条审时放过、在 msime resources/eval/quanpin-words-v2.tsv 上与 dict-v2.0.56 配对比较时被弄坏的用例找出来的；随机抽的 120 行（种子 20261104）里误伤 8 行，占 6.7%（95% 区间约 3.4%～12.6%），权重最高的 200 行里 19 行，占 9.5%，误伤集中在高权重的行。误伤的 51 行不按这一类改（其中同时是本地损坏或占位权重的行照那两类的规则写在上面，如 等的 恢复上游权重、嗷呜 的 9999 按占位权重重定），其余 1612 行写建议值（被压过的常用词里最低的权重减 1），其中 99 行同时落进别的类、取了更低的值，写在那一类下面。逐条结论见 msime 的决策笔记。
+# ---- 碎片词压过同键常用词（方案 3.2，1474 行）----
+# 来源：fragment-over-common.tsv（万象 7ab73ee 任何读音都不收的多字词，在同一个全拼键上排在一个万象权重 100 以上的词前面），1663 行。判误伤的标准：按词义这一行比被压的词里最弱的那个更该在前（建议值是降到最弱的那个之下），或者降下去会让粗俗词顶上来。全部行看过两遍：第一遍标出 51 行，其中 6 行（电传、之三、独得、倚赖、精减、勾通）是在 msime resources/eval/quanpin-words-v2.tsv 上与 dict-v2.0.56 配对比较时被弄坏的用例找出来的，所以那份集合上的「弄坏 0」不是独立的验证；审查指出第一遍标的误伤全在前 1187 行、后 476 行一行也没标，前后标准不一，于是第 200 行以后按同一标准全部重看（前 200 行第一遍已逐条看过），压过的常用词只有区划补充行（本地权重 100）的 76 行另外单独看，第二遍补 41 行（如 共渡、中饱、鸭群、扛包、壁扇、砰的、啪的、拉粑粑）。误伤共 92 行，占 5.5%；随机抽的 120 行（种子 20261104）里 11 行，占 9.2%（95% 区间约 5.2%～15.7%），权重最高的 200 行里 19 行，第 1187 行以后的 476 行里 19 行。乌丝（钨丝 更常用）、犷悍（广汉）、脊兽（吉首）、安打（安达）判为不是误伤，照降。误伤的行不按这一类改（其中同时是本地损坏或占位权重的行照那两类的规则写在上面，如 等的 恢复上游权重、嗷呜 的 9999 按占位权重重定），其余 1571 行写建议值（被压过的常用词里最低的权重减 1），其中 97 行同时落进别的类、取了更低的值，写在那一类下面。逐条结论见 msime 的决策笔记。
 得分儿	de'fen'er	9190
 有新	you'xin	1471
 在对	zai'dui	15860
@@ -1019,7 +1023,6 @@
 共印	gong'yin	2078
 想那	xiang'na	10239
 我试	wo'shi	2281
-都不知	dou'bu'zhi	3605
 网网	wang'wang	2391
 一和	yi'he	1195
 又复	you'fu	919
@@ -1028,7 +1031,6 @@
 还到	hai'dao	1581
 苏媚	su'mei	9880
 白洁	bai'jie	3955
-第三级	di'san'ji	1756
 力存	li'cun	7341
 苏眉	su'mei	9880
 之民	zhi'min	1057
@@ -1045,11 +1047,9 @@
 已就	yi'jiu	974
 低陷	di'xian	919
 起至	qi'zhi	1039
-连级	lian'ji	1149
 为做	wei'zuo	1269
 过把	guo'ba	7479
 设得	she'de	1269
-咱的	zan'de	5629
 以得到	yi'de'dao	1867
 把把	ba'ba	2796
 请援	qing'yuan	919
@@ -1068,7 +1068,6 @@
 最感	zui'gan	8813
 同被	tong'bei	8610
 次比	ci'bi	8665
-应时	ying'shi	332
 急须解决	ji'xu'jie'jue	1729
 了之	liao'zhi	3329
 麦格	mai'ge	6375
@@ -1130,7 +1129,6 @@
 克利斯	ke'li'si	1103
 揽上	lan'shang	9714
 了不	le'bu	2603
-卖劲	mai'jin	5491
 没和	mei'he	1949
 眉线	mei'xian	2409
 猛咬	meng'yao	2345
@@ -1189,7 +1187,6 @@
 重议	chong'yi	1039
 亦已	yi'yi	1959
 去其	qu'qi	3109
-暗叹	an'tan	1011
 撤防	che'fang	3872
 制锁	zhi'suo	4093
 为左	wei'zuo	1269
@@ -1234,7 +1231,6 @@
 之短	zhi'duan	4360
 中师	zhong'shi	993
 王霞	wang'xia	3375
-动刑	dong'xing	99
 李雪	li'xue	993
 李欣	li'xin	919
 非其	fei'qi	1121
@@ -1305,7 +1301,6 @@
 生达	sheng'da	6605
 她过	ta'guo	5970
 一收	yi'shou	974
-竞态	jing'tai	1066
 这帖	zhe'tie	2363
 英币	ying'bi	1002
 斯库	si'ku	2621
@@ -1323,7 +1318,6 @@
 乐友	yue'you	2419
 四一	si'yi	1149
 一好	yi'hao	1075
-渔竿	yu'gan	1655
 以还	yi'huan	1186
 赵雅	zhao'ya	947
 子版	zi'ban	2382
@@ -1348,14 +1342,12 @@
 意粉儿	yi'fen'er	4617
 硬吗	ying'ma	1177
 指滑	zhi'hua	1241
-中码	zhong'ma	2501
 逐位	zhu'wei	1158
 上档	shang'dang	5951
 注有	zhu'you	993
 是仙	shi'xian	1094
 应之	ying'zhi	1149
 有当	you'dang	4709
-共渡	gong'du	1354
 自污	zi'wu	1802
 白得	bai'de	1903
 凡因	fan'yin	1351
@@ -1402,7 +1394,6 @@
 安吧	an'ba	4967
 按那	an'na	2161
 摆划	bai'hua	1581
-白帽	bai'mao	1407
 爆栈	bao'zhan	4930
 背气	bei'qi	1140
 财到	cai'dao	1701
@@ -1560,7 +1551,6 @@
 用户登陆	yong'hu'deng'lu	3780
 醉剑	zui'jian	3339
 筑有	zhu'you	993
-婴幼	ying'you	1177
 拟提	ni'ti	919
 服法	fu'fa	2207
 兆辉	zhao'hui	1407
@@ -1583,7 +1573,6 @@
 纳多	na'duo	1149
 凡未	fan'wei	1075
 茁实	zhuo'shi	1305
-右腹	you'fu	919
 阴核	yin'he	1434
 师职	shi'zhi	1204
 预订时间	yu'ding'shi'jian	1103
@@ -1648,7 +1637,6 @@
 蔼蔼	ai'ai	965
 暗补	an'bu	2216
 暗着	an'zhe	3118
-白球	bai'qiu	927
 白写	bai'xie	1701
 必换	bi'huan	3053
 必写	bi'xie	1204
@@ -1663,7 +1651,6 @@
 干她	gan'ta	947
 搞傻	gao'sha	2511
 更闲	geng'xian	1121
-工靴	gong'xue	1324
 狗货	gou'huo	956
 还过	hai'guo	1066
 互害	hu'hai	1839
@@ -1674,7 +1661,6 @@
 拒认	ju'ren	1121
 开哭了	kai'ku'le	1526
 恐孩	kong'hai	2805
-拉粑粑	la'ba'ba	2171
 了够	le'gou	1121
 累屎	lei'shi	1039
 李婶	li'shen	1094
@@ -1684,7 +1670,6 @@
 每有	mei'you	1637
 秒发	miao'fa	1526
 摸遍	mo'bian	1213
-难猜	nan'cai	1039
 起高	qi'gao	2419
 浅明	qian'ming	1471
 跄踉	qiang'liang	1361
@@ -1764,7 +1749,6 @@
 而谁	er'shui	1949
 千升	qian'sheng	1342
 支会	zhi'hui	1701
-反过	fan'guo	919
 缴库	jiao'ku	2547
 刚提	gang'ti	2419
 激打	ji'da	993
@@ -1841,7 +1825,6 @@
 易索	yi'suo	1554
 躺的	tang'de	1517
 朱漆	zhu'qi	1204
-啪的	pa'de	1269
 敲的	qiao'de	2308
 厅属	ting'shu	1351
 雨薇	yu'wei	1471
@@ -1880,10 +1863,8 @@
 赵元	zhao'yuan	1149
 扩印	kuo'yin	1443
 滞港	zhi'gang	1232
-重点服务	zhong'dian'fu'wu	1324
 抵敌	di'di	1600
 点见	dian'jian	947
-瓶胆	ping'dan	1545
 一跨	yi'kua	983
 酒市	jiu'shi	919
 歧山	qi'shan	1121
@@ -1899,7 +1880,6 @@
 踱向	duo'xiang	1489
 丰腻	feng'ni	1039
 惯家	guan'jia	2143
-画叉	hua'cha	2005
 极纯	ji'chun	1591
 将没	jiang'mei	1241
 交击	jiao'ji	983
@@ -1912,7 +1892,6 @@
 摹效	mo'xiao	956
 魔翳	mo'yi	1121
 泥子	ni'zi	919
-秦制	qin'zhi	1094
 三麻	san'ma	0
 商借	shang'jie	1931
 送验	song'yan	1020
@@ -1927,18 +1906,15 @@
 一杀	yi'sha	1066
 淫穴	yin'xue	1039
 忧心事	you'xin'shi	1931
-砰的	peng'de	1379
 屎遁	shi'dun	1903
 苏生	su'sheng	1002
 愿交	yuan'jiao	1324
 凡于	fan'yu	1149
 玉刚	yu'gang	1839
 振祥	zhen'xiang	1287
-轰的	hong'de	1793
 活质	huo'zhi	1397
 凡响	fan'xiang	1903
 兆祥	zhao'xiang	1094
-重轨	zhong'gui	1526
 忆及	yi'ji	947
 张苞	zhang'bao	1637
 真使	zhen'shi	1425
@@ -2005,7 +1981,6 @@
 驰来	chi'lai	1361
 演期	yan'qi	1269
 已想	yi'xiang	1324
-歪招	wai'zhao	1729
 理乱	li'luan	1351
 了愿	liao'yuan	1729
 维高	wei'gao	956
@@ -2017,7 +1992,6 @@
 流泄	liu'xie	1637
 属员	shu'yuan	1121
 思惑	si'huo	1361
-鸭群	ya'qun	956
 双笔	shuang'bi	1149
 委令	wei'ling	947
 霍小玉	huo'xiao'yu	1011
@@ -2030,7 +2004,6 @@
 告谢	gao'xie	1526
 煤管	mei'guan	1075
 近洋	jin'yang	99
-说透	shuo'tou	1526
 冬灌	dong'guan	1158
 纳纳	na'na	1075
 宗宪	zong'xian	1443
@@ -2043,7 +2016,6 @@
 杨锋	yang'feng	919
 销势	xiao'shi	1103
 镇星	zhen'xing	965
-中饱	zhong'bao	947
 红麻	hong'ma	1471
 牵在	qian'zai	1094
 劈得	pi'de	1517
@@ -2099,7 +2071,6 @@
 飞驶	fei'shi	956
 摸乳	mo'ru	1094
 校属	xiao'shu	965
-旱稻	han'dao	1241
 谈家	tan'jia	956
 许宁	xu'ning	1158
 管待	guan'dai	919
@@ -2108,7 +2079,6 @@
 底墒	di'shang	956
 险区	xian'qu	1121
 钱场	qian'chang	1122
-麻脸	ma'lian	1204
 像穿	xiang'chuan	1085
 之皮	zhi'pi	956
 抛的	pao'de	947
@@ -2117,7 +2087,6 @@
 严武	yan'wu	974
 徐兢	xu'jing	1259
 洇湿	yin'shi	1121
-洗把	xi'ba	1335
 道青	dao'qing	1186
 导源	dao'yuan	1002
 秧龄	yang'ling	956
@@ -2133,7 +2102,6 @@
 倒巴	dao'ba	1039
 红于	hong'yu	1066
 忆文	yi'wen	1029
-荒坟	huang'fen	1039
 纸桶	zhi'tong	1204
 只照	zhi'zhao	974
 书钉	shu'ding	1039
@@ -2187,7 +2155,6 @@
 碑头	bei'tou	1029
 备汛	bei'xun	1094
 便了	bian'liao	1066
-彩炮	cai'pao	1066
 蹭它	ceng'ta	1094
 打没	da'mei	947
 丹色	dan'se	1094
@@ -2268,7 +2235,6 @@
 启斌	qi'bin	99
 风封	feng'feng	99
 黄金书	huang'jin'shu	0
-扛包	kang'bao	99
 堵击	du'ji	99
 香州	xiang'zhou	99
 嚅动	ru'dong	99
@@ -2282,7 +2248,6 @@
 振立	zhen'li	0
 驾凌	jia'ling	99
 米冻	mi'dong	99
-壁扇	bi'shan	99
 敬悉	jing'xi	99
 备鞍	bei'an	99
 惰轮	duo'lun	99
@@ -2321,7 +2286,7 @@
 脊兽	ji'shou	99
 
 # ---- 非标准读音压过同键规范读音（方案 3.2，13 行）----
-# 来源：nonstandard-readings.tsv（万象收了这个词却不收这个读音，在自己的键上压过一个读音是万象收了的、本地权重 1000 以上的词），181 行全部逐条审过，误伤 166 行（91.7%：剥皮 bao'pi、调到 diao'dao、长于 chang'yu、顺利地 shun'li'de 这类读音本来就对，或者被压的词是冷僻的技术词、碎片，或者读音是否不规范拿不准，如 行纪 hang'ji），只挑 15 行：读音不规范，而且被压的是常用词（心血 xin'xie 让 新鞋，止血 zhi'xie 让 纸屑，劲舞 jing'wu 让 警务）；其中 2 行同时落进别的类、取了更低的值，写在那一类下面。上调 shang'diao 不写：shàngdiào（调到上级）是规范读音，quanpin-words-v2 里 shangdiao 的金标准就是 上调。
+# 来源：nonstandard-readings.tsv（万象收了这个词却不收这个读音，在自己的键上压过一个读音是万象收了的、本地权重 1000 以上的词），181 行全部逐条审过，误伤 166 行（91.7%：剥皮 bao'pi、调到 diao'dao、长于 chang'yu、顺利地 shun'li'de 这类读音本来就对，或者被压的词是冷僻的技术词、碎片，或者读音是否不规范拿不准，如 行纪 hang'ji），只挑 15 行：读音不规范，而且被压的是常用词（心血 xin'xie 让 新鞋，止血 zhi'xie 让 纸屑，劲舞 jing'wu 让 警务）；其中 2 行同时落进别的类、取了更低的值，写在那一类下面。上调 shang'diao 不写：shàngdiào（调到上级）是规范读音，quanpin-words-v2 里 shangdiao 的金标准就是 上调。方案写的 262 行是一整类的候选，九成误伤，所以只写这 15 行，其余不整批写（这项缩减要维护者确认）。
 心血	xin'xie	3026
 输血	shu'xie	1839
 劲爆	jing'bao	1002

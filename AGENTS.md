@@ -20,14 +20,15 @@
 
 ## 维护者清洗表
 
-上游文件逐字节锁定、`custom/` 只追加，所以删词、改权重和粗俗词表都写在 `curation/` 下的独立表里，由 msime 构建器在读入之后施加（`crates/dict-builder/src/curation.rs`，格式见那边 README 的「Curation tables」和本仓 `README.md`）：`pinyin-vetoes.txt`（`词` 或 `词<TAB>全拼`）、`pinyin-weight-overrides.txt`（`词<TAB>全拼<TAB>权重`）、`offensive-words.txt`（一个词或 `!` 开头的豁免写法）。
+上游文件逐字节锁定、`custom/` 只追加，所以删词、改权重和粗俗词表都写在 `curation/` 下的独立表里，由 msime 构建器在读入之后施加（`crates/dict-builder/src/curation.rs`，格式见那边 README 的「Curation tables」和本仓 `README.md`）：`pinyin-vetoes.txt`（`词` 或 `词<TAB>全拼`）、`pinyin-weight-overrides.txt`（`词<TAB>全拼<TAB>权重`，与全拼键无关的频率修正再加第四列 `wubi`，五笔补充词组的同码排序才跟着变）、`offensive-words.txt`（一个词或 `!` 开头的豁免写法）。
 
 - 只由维护者改，不接受投稿；不受只追加限制，撤销一条就删掉那一行。msime-web、msime-cloud 不读写这个目录。
 - 每一行都要有来源：先用 msime 的 `msime-dict-build cleanse-report` 出候选清单（`--upstream` 给上游 rime-ice 检出，`--reference` 给万象 `7ab73ee` 的全部 17 份 dicts，不用本仓 `sources/pinyin/wanxiang/` 的 aa9947f 副本），逐条审过再抄进表里，在表里那一节的 `#` 注释写明出自哪一份清单、哪个 msime 提交和本仓提交、审定规则和抽检结果。会误伤正常词的写豁免（粗俗词表的 `!` 写法）或不写。
 - 每一条都必须在本次输入里匹配到东西，否则构建失败：输入变了、条目匹配不到时把它删掉，不要留着。同一个读音不能既否决又覆盖；覆盖不能作用于 `custom/words.txt` 从已有的行提了权的行。
 - 覆盖的权重是绝对值：同键别的词的权重变了（上游换了提交、补充表重新生成、万象重加权），要重新跑 `cleanse-report` 核对，碎片和越位的行可能又压过了常用词，或者降得过头。
+- 覆盖表第四列 `wubi` 只写在本地损坏恢复上游值、占位权重这类与全拼键无关的修正上。碎片、非标准读音、人工词条越位是按同一全拼键上的竞争定的，五笔编码上没有这层竞争，不写 `wubi`；方案定了五笔只做定点清洗、不做大删，覆盖表也删不掉五笔里的词（门槛取覆盖前后较大的权重）。五笔里要删的词写进否决表，逐条审过。
 - 改 `curation/` 的 Pull Request 不要同时改 `custom/`：check-words 从基准提交读否决表，两处一起改会让撤销否决、加回词条在同一个 PR 里过检查，所以 workflow 直接拒绝这种 PR。
-- 合入即发版。改了这些表的 PR，在 PR 分支上手动运行 Release built dictionaries（`publish` 关闭）试跑，下载 artifact 用 msime 的 `scripts/dict_artifact_diff.py` 和最新的 `dict-v` 逐表比较，结果写进 PR。`builder.lock.json` 固定的构建器早于 msime #10858 时不读 `curation/`，表合进来也不生效，要等固定提交升上去。
+- 合入即发版。改了 `curation/` 或 `builder.lock.json` 的 PR 由 `check-curation.yml` 用固定的构建器完整构建主库、与最新的 `dict-v` 逐表比较，表有问题在合并前失败；它要设为 `main` 的 required check。另外在 PR 分支上手动运行 Release built dictionaries（`publish` 关闭）试跑，下载 artifact 用 msime 的 `scripts/dict_artifact_diff.py` 和最新的 `dict-v` 逐表比较，结果写进 PR。`builder.lock.json` 固定的构建器早于 msime #10858 时不读 `curation/`，表合进来也不生效，要等固定提交升上去。
 
 ## 基础词库
 

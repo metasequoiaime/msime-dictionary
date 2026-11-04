@@ -3,8 +3,8 @@
 # 一行 `词`（整词否决：这个词的全部读音，连同三张五笔表里的这个词，原表的行和派生的补充行都算）或 `词<TAB>全拼`（只否决这个读音）。构建的 `word-vetoes` 阶段在 `reading-corrections` 之后从全拼表删行；每一条都必须删到东西（整词否决在全拼表里没有时要在五笔原表里有），否则构建失败。输入变了、条目删不到东西时把它删掉。check-words 拒绝往 custom/ 追加这里否决的词。
 #
 # ---- 粗俗碎片短语（dict-cleanse 方案 2.1 第一批，2026-11-04）----
-# 来源：msime-dict-build cleanse-report（msime 87bb7d3895，对 msime-dictionary 7109e04（dict-v2.0.56），上游 rime-ice 9e66b07 的 cn_dicts，参照表为万象 7ab73ee 的 17 份 dicts，--reference-scale 9.2） 的 vulgar-fragments.tsv，按 curation/offensive-words.txt 判断：含表里的粗俗词、比它长、没被豁免写法盖住的词，565 个。逐条审过：564 个整词否决；狗日的粮食（小说篇名）不否决，在 offensive-words.txt 加了豁免写法。按方案 2.1 的三档政策，粗俗词本身（傻逼、鸡巴）不在这里，它们留在词库里，由引擎排出首选和歧义码首屏；流行粗口（牛逼、卧槽）也不在这里。
-# 五笔：wubi-vulgar-fragments.tsv 为 0 行。86 极点表的 17 行、两张 98 表的 23 行含粗俗词的词组都是 offensive-words.txt 里的词本身，按同一政策不否决；五笔派生补充里的粗俗碎片来自拼音行，随这里的整词否决一起去掉。
+# 来源：msime-dict-build cleanse-report（msime 6f8e5cadd8，对 msime-dictionary 7109e04（dict-v2.0.56），上游 rime-ice 9e66b07 的 cn_dicts，参照表为万象 7ab73ee 的 17 份 dicts，--reference-scale 9.2） 的 vulgar-fragments.tsv，按 curation/offensive-words.txt 判断：含表里的粗俗词、比它长、没被豁免写法盖住的词，565 个。逐条审过：564 个整词否决；狗日的粮食（小说篇名）不否决，在 offensive-words.txt 加了豁免写法。按方案 2.1 的三档政策，粗俗词本身（傻逼、鸡巴）不在这里，它们留在词库里，由引擎排出首选和歧义码首屏；流行粗口（牛逼、卧槽）也不在这里。
+# 五笔：wubi-vulgar-fragments.tsv 为 0 行。86 极点表的 17 行、两张 98 表的 23 行含粗俗词的词组都是 offensive-words.txt 里的词本身，按三档政策的第二档保留、不当首选：构建器按 offensive-words.txt 把三张五笔表里含粗俗词的行排到同码其余行之后（同码只有它一行的不动），所以这里不否决它们。五笔派生补充里的粗俗碎片来自拼音行，随这里的整词否决一起去掉。
 # 顺序：按 vulgar-fragments.tsv 的顺序（权重从高到低）。
 个鸡巴
 撸管儿

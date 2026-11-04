@@ -16,6 +16,15 @@ jobs:
         with: {fetch-depth: 0, persist-credentials: false}
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with: {repository: metasequoiaime/msime, ref: "${{ env.MSIME_COMMIT }}", path: msime, persist-credentials: false}
+      # MSIME_COMMIT has to be reviewed builder code on msime develop, as builder.lock.json does (scripts/check_builder_lock.sh): a commit only on a pull request branch disappears when that branch is squash-merged and deleted, and every later submission's check would then fetch a dangling commit. A pull request that moves MSIME_COMMIT to a builder that is not merged yet fails here until it is.
+      - name: Check that MSIME_COMMIT is on msime develop
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          status="$(gh api "repos/metasequoiaime/msime/compare/${MSIME_COMMIT}...develop" --jq .status)" || { echo "::error::cannot compare MSIME_COMMIT $MSIME_COMMIT with msime develop" >&2; exit 1; }
+          case "$status" in
+            ahead|identical) ;;
+            *) echo "::error::MSIME_COMMIT $MSIME_COMMIT is not on msime develop (compare status: $status); move it to the merged commit" >&2; exit 1 ;;
+          esac
       # rustup on the runner installs the toolchain msime's rust-toolchain.toml pins.
       - name: Build msime-dict-build
         working-directory: msime

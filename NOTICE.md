@@ -77,12 +77,12 @@
 
 ### 维护者清洗表
 
-`curation/` 下的三张表由 msime 构建器在读入上面这些文件之后施加，源文件本身不改：`curation/pinyin-vetoes.txt` 从全拼表删掉列出的词或读音（整词否决也从 `wubi86`、`wubi98`、`wubixsj` 三张五笔表删掉这个词），`curation/pinyin-weight-overrides.txt` 把列出的读音的权重改成给定的值，`curation/offensive-words.txt` 写成 `msime-pinyin.db` 的 `sentence_excluded` 表。所以发布的 `msime-pinyin.db`、`msime-wubi.db` 是对 rime-ice（GPL-3.0）以及五笔原表数据的修改版本，修改内容就是这三张表，每一行都可以在本仓的提交历史里查到加入的理由。
+`curation/` 下的三张表由 msime 构建器在读入上面这些文件之后施加，源文件本身不改：`curation/pinyin-vetoes.txt` 从全拼表删掉列出的词或读音（整词否决也从 `wubi86`、`wubi98`、`wubixsj` 三张五笔表删掉这个词），`curation/pinyin-weight-overrides.txt` 把列出的读音的权重改成给定的值，`curation/offensive-words.txt` 写成 `msime-pinyin.db` 的 `sentence_excluded` 表，并让三张五笔表里含这些粗俗词的行排到同码其余行之后。五笔补充词组只取覆盖表里第四列写了 `wubi` 的频率修正来排同码，覆盖表不会让词掉出五笔补充词组的门槛。所以发布的 `msime-pinyin.db`、`msime-wubi.db` 是对 rime-ice（GPL-3.0）以及五笔原表数据的修改版本，修改内容就是这三张表，每一行都可以在本仓的提交历史里查到加入的理由。
 
 2026-11-04 的第一批（dict-cleanse 方案 2.1、3.1、3.2）：
 
-- 否决：564 个含粗俗词的碎片短语（个鸡巴、是傻逼、去他妈的），整词删除。粗俗词本身不删。
-- 权重覆盖 2314 行。其中 553 行（`rime-ice.txt` 里权重是上游 rime-ice `9e66b0729083b37d217312294f6d516c8d7234be` 的 `cn_dicts/base.dict.yaml`、`ext.dict.yaml` 同词同音权重 5 倍以上、万象对齐又没有改写过的行）恢复上游的权重，其中 7 行同时落进下面的规则、取了更低的值；其余的行降到同一全拼下被它压过的词的权重之下（取那个词在本仓的权重减 1），占位权重降到同一全拼下万象收录的词里本仓权重最高的那个之下。新的权重只来自 rime-ice 上游和本仓已有的权重，没有引入新的数据来源，也没有从万象抄权重。
+- 否决：564 个含粗俗词的碎片短语（个鸡巴、是傻逼、去他妈的），整词删除。粗俗词本身不删，五笔里排到同码最后。
+- 权重覆盖 2279 行，其中 779 行（本地损坏恢复上游值和占位权重）写了 `wubi`。其中 553 行（`rime-ice.txt` 里权重是上游 rime-ice `9e66b0729083b37d217312294f6d516c8d7234be` 的 `cn_dicts/base.dict.yaml`、`ext.dict.yaml` 同词同音权重 5 倍以上、万象对齐又没有改写过的行）恢复上游的权重，其中 7 行同时落进下面的规则、取了更低的值；其余的行降到同一全拼下被它压过的词的权重之下（取那个词在本仓的权重减 1），占位权重降到同一全拼下万象收录的词里本仓权重最高的那个之下。新的权重只来自 rime-ice 上游和本仓已有的权重，没有引入新的数据来源，也没有从万象抄权重。
 - 选出这些行时用 rime-wanxiang `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）`dicts/` 下除 `abbrev`、`en`、`t9_abbrev` 以外的 17 份词库作参照：万象不收的词才算碎片、万象不收的读音才算非标准读音、万象收录的词才算被压过的常用词。署名同上一节。
 - `curation/offensive-words.txt` 是本项目自写的词表，从 msime 引擎内嵌的 `crates/engine/src/lattice/offensive_words.txt` 迁来（那一份以 MPL-2.0 随引擎分发），这里与 `curation/` 的其余两张表一样依据 GPL-3.0 提供。
 
