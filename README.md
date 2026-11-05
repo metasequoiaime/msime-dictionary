@@ -367,4 +367,4 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 
 ## 香港街道与地方名称
 
-`sources/hong-kong/` 保存地政总署 CSDI 的街道和地方名称快照，以及用于粤拼和普通话拼音的双方案补充表。来源、许可、生成规则和不支持记录见 [NOTICE.md](NOTICE.md#香港街道与地方名称)、`sources/hong-kong/sources.json` 和 `sources/hong-kong/audit.json`。生成器在 msime 的 `crates/dict-builder/hong_kong_places.py`，本仓不手改派生表。重新生成前先审校 `curation/hong-kong-readings.tsv` 的读音和 `hong-kong-forms.tsv` 的专名字形；本地运行 `python3 scripts/check_hong_kong.py` 核对摘要与覆盖报告，再用同一固定构建器的 `--check` 核对生成结果。
+`sources/hong-kong/` 保存地政总署 CSDI 的街道和地方名称快照，以及用于粤拼和普通话拼音的双方案补充表。来源、许可、生成规则和不支持记录见 [NOTICE.md](NOTICE.md#香港街道与地方名称)、`sources/hong-kong/sources.json` 和 `sources/hong-kong/audit.json`。生成器在 msime 的 `crates/dict-builder/hong_kong_places.py`，本仓不手改派生表。重新生成前先审校 `curation/hong-kong-readings.tsv` 的读音和 `hong-kong-forms.tsv` 的专名字形；`sources.json` 的 `generated.inputs` 绑定生成时全部 14 份输入的摘要；规则、字词表或快照改动后必须重新生成。本地运行 `python3 scripts/check_hong_kong.py` 核对输入、产物摘要与覆盖报告，再用同一固定构建器的 `--check` 核对生成结果。

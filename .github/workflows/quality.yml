@@ -41,6 +41,7 @@ jobs:
       - name: Check upstream copies against upstream.lock.json
         run: |
           python3 scripts/check_upstream.py
+          python3 -m unittest discover -s scripts -p test_hong_kong.py
           python3 scripts/check_hong_kong.py
   builder:
     name: Builder pin

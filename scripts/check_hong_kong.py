@@ -8,6 +8,18 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'sources/hong-kong'
+INPUT_PATHS = {
+    'sources/hong-kong/landsd-place-names.geojson',
+    'sources/hong-kong/landsd-street-names.json',
+    'sources/hong-kong/CSDI-terms.txt',
+    'sources/cantonese/jyut6ping3.chars.dict.yaml',
+    'sources/cantonese/jyut6ping3.words.dict.yaml',
+    'sources/pinyin/single-chars.txt', 'sources/pinyin/rime-ice.txt',
+    'sources/pinyin/rime-ice-supplement.txt', 'sources/pinyin/places.txt',
+    'sources/opencc/TSCharacters.txt', 'sources/opencc/HKVariants.txt',
+    'sources/opencc/TWVariants.txt',
+    'curation/hong-kong-readings.tsv', 'curation/hong-kong-forms.tsv',
+}
 
 
 def measure(path):
@@ -23,6 +35,10 @@ def main():
     for entry in files:
         assert measure(DATA / entry['path']) == (entry['size'], entry['sha256']), entry['path']
     generated = manifest['generated']
+    inputs = generated.get('inputs', [])
+    assert len(inputs) == len(INPUT_PATHS) and {entry['path'] for entry in inputs} == INPUT_PATHS, '生成输入清单不完整'
+    for entry in inputs:
+        assert measure(ROOT / entry['path']) == (entry['size'], entry['sha256']), '生成输入已变化：' + entry['path']
     assert generated['path'] == 'landsd-readings.tsv'
     assert re.fullmatch('[a-f0-9]{40}', generated['msime_commit']), '生成器必须来自已提交工作区'
     table = DATA / generated['path']
@@ -34,6 +50,7 @@ def main():
     for row in rows:
         assert len(row) == 4
         for word, key, delimiter in [(row[0], row[2], ' '), (row[1], row[3], "'")]:
+            assert all('\u3400' <= char <= '\u4dbf' or '\u4e00' <= char <= '\u9fff' or '\U00020000' <= char <= '\U000323af' for char in word), row
             assert len(word) >= 2 and len(word) == len(key.split(delimiter)), row
             assert all(re.fullmatch('[a-z]+', syllable) for syllable in key.split(delimiter)), row
     audit = DATA / 'audit.json'

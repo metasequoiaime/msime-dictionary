@@ -1,4 +1,4 @@
-# msime 仓库提交 d26cc6ae0cd35767ff924f0658ab68b3aec8630e
+# msime 仓库提交 78eb78658714c7dcf1a6eb4d2d00b22f0f93c53d
 # 来源、摘要与使用条款见 sources.json；读音规则见 ../../curation/hong-kong-readings.tsv。
 # 生成：python3 crates/dict-builder/hong_kong_places.py --dictionary <checkout> --audit <audit.json> --write
 # 原始中文名去重；不删除与基础词表重合的行，构建时仅插入不存在的同键同词。
