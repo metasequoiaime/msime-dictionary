@@ -81,7 +81,7 @@
       "path": "sources/cantonese/hkcancor-word-counts.txt",
       "upstream": "hkcancor",
       "size": 55026,
-      "sha256": "8213b3bee7619d32ae416d3d6d00c4d1e489837a2e023f747fd9555f28e594c0"
+      "sha256": "ecc86a77f1aa9a241cce95be513f75dbb368715fd5c34c3cbe8eff8bdc92ccef"
     },
     {
       "path": "sources/cantonese/jyut6ping3.chars.dict.yaml",
