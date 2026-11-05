@@ -6,9 +6,7 @@
 #
 # 来源：msime 构建器（分支 cleanse/languages）对本仓 888cf31（dict-v2.0.56 加 cantonese-word-vetoes.txt）构建时，构建摘要「essay words held below the evidenced words-file words of their key」列出的 254 个词（其中 眼訓、訓低 随后被否决表删掉），2026-11-04 逐条审过。留下的是写法通行、在粤语口语里成词或是固定搭配的词；人名（嘉琪、小熙、詩詩）、跨词边界的片段（歲的、知有、咗張、人講）、错字或非通行写法（己經、以經、依加、宜個、用「架」代「㗎」的 講架、有架，汽球、翻工）、儿语叠字（褲褲、袋袋、凳凳）都不豁免。每行上面的注释是 dict-v2.0.56 里的 essay 分数、不豁免时压到的权重，以及它会排到哪个词之后。
 #
-# ---- 动词带体貌或趋向补语（咗、住、返、到、過、得）。HKCanCor 把补语单独切开，这类词得不到它的佐证 ----
-# 講咗 essay 8809，不豁免时压到 176，排到 講座（177）之后
-講咗	gong zo
+# ---- 动词带体貌或趋向补语（住、返、到、過、得）。HKCanCor 把补语单独切开，这类词得不到它的佐证；「咗」从 msime [#10955](https://github.com/metasequoiaime/msime/pull/10955) 起由 hkcancor-word-counts.txt 拼回前一个词计数，講咗 有了佐证，不再豁免 ----
 # 寫住 essay 7029，不豁免时压到 379，排到 射住（380）之后
 寫住	se zyu
 # 講住 essay 3470，不豁免时压到 443，排到 港豬（444）之后
