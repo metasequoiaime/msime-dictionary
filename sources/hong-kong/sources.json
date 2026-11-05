@@ -1,0 +1,120 @@
+{
+  "retrieved": "2026-11-05",
+  "attribution": "香港特别行政区政府、地政总署，来源：CSDI Portal。数据知识产权归香港特别行政区政府所有。",
+  "terms": "https://portal.csdi.gov.hk/csdi-webpage/doc/TNC",
+  "files": [
+    {
+      "path": "landsd-place-names.geojson",
+      "url": "https://portal.csdi.gov.hk/csdi-webpage/file-api?dataset_id=landsd_rcd_1648571595120_89752&format=geojson&layer_name=PLACE_NAME",
+      "size": 748781,
+      "sha256": "b0419bbf5d904e50b3763f6a9f1378d34c7b5228f1a9cf4dc1005add92caf501"
+    },
+    {
+      "path": "landsd-street-names.json",
+      "url": "https://portal.csdi.gov.hk/server/rest/services/common/landsd_rcd_1637310758814_80061/FeatureServer/0/query",
+      "size": 561340,
+      "sha256": "493325d64c9470d7b931b237b158ab7a7ee3e343247f0cf0951e5a9bad452a9b"
+    },
+    {
+      "path": "CSDI-terms.txt",
+      "url": "https://portal.csdi.gov.hk/csdi-webpage/doc/TNC",
+      "size": 7083,
+      "sha256": "96b8a34f78cb427f1f25879a331dd7b7ec4224a183db45fa92ff7f390a3f6fe2"
+    }
+  ],
+  "street_query": {
+    "where": "1=1",
+    "outFields": "CHINESESTREETNAME,ENGLISHSTREETNAME",
+    "returnGeometry": "false",
+    "returnDistinctValues": "true",
+    "orderByFields": "CHINESESTREETNAME,ENGLISHSTREETNAME",
+    "resultRecordCount": 3000,
+    "f": "json"
+  },
+  "street_serialization": "顺序拼接分页的 features，以 JSON UTF-8、ensure_ascii=False、indent=2 写入；不修改字段。",
+  "generated": {
+    "audit_sha256": "395d7e2c91b3a4fdcf0065345cf2b29b7e5a8f2d62ca2bfd066451a3b13bac9b",
+    "path": "landsd-readings.tsv",
+    "size": 354191,
+    "sha256": "11ddd28f5f6519cda513538790686b64d104198c791de0fd70e7fce27896a44d",
+    "msime_commit": "7b304582e2817b0bd8d956acb8c7b627f494dae1",
+    "rows": 6931,
+    "counts": {
+      "ready": 6931,
+      "pending": 0,
+      "unsupported": 66
+    },
+    "inputs": [
+      {
+        "path": "sources/hong-kong/landsd-place-names.geojson",
+        "size": 748781,
+        "sha256": "b0419bbf5d904e50b3763f6a9f1378d34c7b5228f1a9cf4dc1005add92caf501"
+      },
+      {
+        "path": "sources/hong-kong/landsd-street-names.json",
+        "size": 561340,
+        "sha256": "493325d64c9470d7b931b237b158ab7a7ee3e343247f0cf0951e5a9bad452a9b"
+      },
+      {
+        "path": "sources/hong-kong/CSDI-terms.txt",
+        "size": 7083,
+        "sha256": "96b8a34f78cb427f1f25879a331dd7b7ec4224a183db45fa92ff7f390a3f6fe2"
+      },
+      {
+        "path": "sources/cantonese/jyut6ping3.chars.dict.yaml",
+        "size": 345329,
+        "sha256": "9b053a594c80eae76545bcdd83239884a49b1ba48b89ca0ab9e8daac79f33013"
+      },
+      {
+        "path": "sources/cantonese/jyut6ping3.words.dict.yaml",
+        "size": 2630257,
+        "sha256": "54d174ad2bb997e4a678b7b076b84e4dc5914481b32467cdea3b43e88b7d5474"
+      },
+      {
+        "path": "sources/pinyin/single-chars.txt",
+        "size": 619679,
+        "sha256": "bc70b486619eb8866821937cda4cd1aaa2fc08e5f64543530dcd4d7c2fd225b2"
+      },
+      {
+        "path": "sources/pinyin/rime-ice.txt",
+        "size": 28590541,
+        "sha256": "76252df96ac5e287d81b498f96fe2ec211861caa2f4423b2d30fbe331fc1d264"
+      },
+      {
+        "path": "sources/pinyin/rime-ice-supplement.txt",
+        "size": 1341839,
+        "sha256": "41c50c9b452c89d4accd3abac57a40312a861ad36611850d584fc7d25609ffd3"
+      },
+      {
+        "path": "sources/pinyin/places.txt",
+        "size": 46372,
+        "sha256": "7e9951c9f0222305ff6740cd98e1d5c6826dde93117e77862f4b75f417f82fe2"
+      },
+      {
+        "path": "sources/opencc/TSCharacters.txt",
+        "size": 104516,
+        "sha256": "737c21c66f55a419dd6956cb3089476cdefc5a36877452631617696df1e5d925"
+      },
+      {
+        "path": "sources/opencc/HKVariants.txt",
+        "size": 1001,
+        "sha256": "e5cd4345303224587102f2c9e4d2b67d2b7e349c6ce9152e4a118f4656cf7302"
+      },
+      {
+        "path": "sources/opencc/TWVariants.txt",
+        "size": 986,
+        "sha256": "e187278e119c427ca561180ac5da5b20e9f8681190458f35c327ce499e95a6a5"
+      },
+      {
+        "path": "curation/hong-kong-readings.tsv",
+        "size": 8551,
+        "sha256": "13db3c2a037ac3049dd1b4c9033e27683d5f396b8dd3e6ca87fc568b782ddb46"
+      },
+      {
+        "path": "curation/hong-kong-forms.tsv",
+        "size": 99,
+        "sha256": "d2a1db656ab249d4b726cd554dc0bb45cc52387240a92e0b40a93469520fdc8f"
+      }
+    ]
+  }
+}

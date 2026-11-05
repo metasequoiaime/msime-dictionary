@@ -364,3 +364,7 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 ## 历史
 
 本仓库最初名为 MSIME-Dict，保存词库源数据和 Python 构建脚本，自定义词条在独立的 msime-customdict 中；2026-09-05 两者并入 MSIME-Engine。MSIME-Engine 被 msime 的 Rust 引擎和构建器取代后，源数据于 2026-09-30 以复制文件的方式回到这里（当时的 `cn/`、`en/` 取自 msime-engine [`e92a9c7`](https://github.com/metasequoiaime/msime-engine/tree/e92a9c7c64e262f30218ca9aaad5f40d0b18cf89/dictionary)，`custom/`、`packs/`、`scripts/validate_packs.py` 取自 msime-customdict [`b075c8e`](https://github.com/metasequoiaime/msime-customdict/tree/b075c8e3e71ab48b3c048c229289275b0d42b6d0)，早先的历史在这两个仓库中查阅），本仓库成为唯一的词库源数据仓库。
+
+## 香港街道与地方名称
+
+`sources/hong-kong/` 保存地政总署 CSDI 的街道和地方名称快照，以及用于粤拼和普通话拼音的双方案补充表。来源、许可、生成规则和不支持记录见 [NOTICE.md](NOTICE.md#香港街道与地方名称)、`sources/hong-kong/sources.json` 和 `sources/hong-kong/audit.json`。生成器在 msime 的 `crates/dict-builder/hong_kong_places.py`，本仓不手改派生表。重新生成前先审校 `curation/hong-kong-readings.tsv` 的读音和 `hong-kong-forms.tsv` 的专名字形；`sources.json` 的 `generated.inputs` 绑定生成时全部 14 份输入的摘要；规则、字词表或快照改动后必须重新生成。本地运行 `python3 scripts/check_hong_kong.py` 核对输入、产物摘要与覆盖报告，再用同一固定构建器的 `--check` 核对生成结果。
