@@ -1,0 +1,48 @@
+{
+  "retrieved": "2026-11-05",
+  "attribution": "香港特别行政区政府、地政总署，来源：CSDI Portal。数据知识产权归香港特别行政区政府所有。",
+  "terms": "https://portal.csdi.gov.hk/csdi-webpage/doc/TNC",
+  "files": [
+    {
+      "path": "landsd-place-names.geojson",
+      "url": "https://portal.csdi.gov.hk/csdi-webpage/file-api?dataset_id=landsd_rcd_1648571595120_89752&format=geojson&layer_name=PLACE_NAME",
+      "size": 748781,
+      "sha256": "b0419bbf5d904e50b3763f6a9f1378d34c7b5228f1a9cf4dc1005add92caf501"
+    },
+    {
+      "path": "landsd-street-names.json",
+      "url": "https://portal.csdi.gov.hk/server/rest/services/common/landsd_rcd_1637310758814_80061/FeatureServer/0/query",
+      "size": 561340,
+      "sha256": "493325d64c9470d7b931b237b158ab7a7ee3e343247f0cf0951e5a9bad452a9b"
+    },
+    {
+      "path": "CSDI-terms.txt",
+      "url": "https://portal.csdi.gov.hk/csdi-webpage/doc/TNC",
+      "size": 7083,
+      "sha256": "96b8a34f78cb427f1f25879a331dd7b7ec4224a183db45fa92ff7f390a3f6fe2"
+    }
+  ],
+  "street_query": {
+    "where": "1=1",
+    "outFields": "CHINESESTREETNAME,ENGLISHSTREETNAME",
+    "returnGeometry": "false",
+    "returnDistinctValues": "true",
+    "orderByFields": "CHINESESTREETNAME,ENGLISHSTREETNAME",
+    "resultRecordCount": 3000,
+    "f": "json"
+  },
+  "street_serialization": "顺序拼接分页的 features，以 JSON UTF-8、ensure_ascii=False、indent=2 写入；不修改字段。",
+  "generated": {
+    "audit_sha256": "395d7e2c91b3a4fdcf0065345cf2b29b7e5a8f2d62ca2bfd066451a3b13bac9b",
+    "path": "landsd-readings.tsv",
+    "size": 354191,
+    "sha256": "e5e62f206c9295cc8b30877ca3b42038a362f6e54b5a573ac7e93069a7ecaf39",
+    "msime_commit": "d26cc6ae0cd35767ff924f0658ab68b3aec8630e",
+    "rows": 6931,
+    "counts": {
+      "ready": 6931,
+      "pending": 0,
+      "unsupported": 66
+    }
+  }
+}
