@@ -650,3 +650,6 @@
 实体机	shi'ti'ji	5594
 双活	shuang'huo	6992
 瘦客户端	shou'ke'hu'duan	3809
+鹿茸菇	lu'rong'gu	100
+小雀瓜	xiao'que'gua	100
+白柳皮	bai'liu'pi	100
