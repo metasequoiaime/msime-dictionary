@@ -644,3 +644,9 @@
 疫霉菌	yi'mei'jun	100
 香泽兰	xiang'ze'lan	100
 厌蠢症	yan'chun'zheng	100
+物理机	wu'li'ji	6707
+裸金属	luo'jin'shu	2981
+跳板机	tiao'ban'ji	3275
+实体机	shi'ti'ji	5594
+双活	shuang'huo	6992
+瘦客户端	shou'ke'hu'duan	3809
