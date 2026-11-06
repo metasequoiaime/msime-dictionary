@@ -116,7 +116,7 @@
 | 文件 | 上游 | 上游许可 |
 | --- | --- | --- |
 | `sources/cantonese/jyut6ping3.chars.dict.yaml`、`sources/cantonese/jyut6ping3.words.dict.yaml`、`sources/cantonese/essay-cantonese.txt` | [rime/rime-cantonese](https://github.com/rime/rime-cantonese)，默认分支 `main` 提交 `259f0e48bba840c3a2e0d117539e96937f3d89bc`（上游每周发布的 `latest` Release 所在提交）的同名文件 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| `sources/cantonese/hkcancor-word-counts.txt` | [fcbond/hkcancor](https://github.com/fcbond/hkcancor)（香港粤语语料库 HKCanCor），提交 `39aeadf920e0b5ca93d0ad7792c59e740e7bdd65` 的 `data/utf8/` 下 58 个转写文件，由 msime `crates/dict-builder/src/hkcancor.rs` 统计成两字及以上汉字词的词频，只含词与次数 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)（上游 `data/LICENSE`） |
+| `sources/cantonese/hkcancor-word-counts.txt` | [fcbond/hkcancor](https://github.com/fcbond/hkcancor)（香港粤语语料库 HKCanCor），提交 `39aeadf920e0b5ca93d0ad7792c59e740e7bdd65` 的 `data/utf8/` 下 58 个转写文件，由 msime `crates/dict-builder/src/hkcancor.rs` 统计成两字及以上汉字词的词频（语料单独标注的完成体助词「咗」另与前一个标注拼成一个词计数，做 + 咗 计 做咗），只含词与次数 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)（上游 `data/LICENSE`） |
 | `sources/zhuyin/tsi.csv`、`sources/zhuyin/word.csv` | [chewing/libchewing-data](https://github.com/chewing/libchewing-data)，提交 `c44e81aef24b06f1509f19e1be54c99812d0c43f` 的 `dict/chewing/tsi.csv`、`dict/chewing/word.csv` | [LGPL-2.1-or-later](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) |
 | `sources/zhuyin/mcbopomofo-supplement.txt` | [openvanilla/McBopomofo](https://github.com/openvanilla/McBopomofo)，提交 `be6564acad6c4d3265c34a2e1a872d80f9db6068` 的 `Source/Data/BPMFMappings.txt`，转换为本仓 CSV 格式并排除 `tsi.csv` 已有组合 | BSD（上游说明多字词表源自 BSD 授权的 libtabe，并含修改） |
 | `sources/zhuyin/phrase.occ` | [openvanilla/McBopomofo](https://github.com/openvanilla/McBopomofo)，提交 `be6564acad6c4d3265c34a2e1a872d80f9db6068` 的 `Source/Data/phrase.occ` | [MIT](https://github.com/openvanilla/McBopomofo/blob/be6564acad6c4d3265c34a2e1a872d80f9db6068/LICENSE.txt) |
@@ -229,3 +229,13 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 这些表由 msime 构建时校验后内嵌，供 `s2t`、`s2tw`、`s2twp` 转换、粤拼输出简体时的繁转简（`TSPhrases` 与 `TSCharacters`，对应上游 `t2s.json` 去掉 `TSCharactersExt` 的部分）以及开发工具使用，不新增 `dict-v` Release 附件。`TWVariants.txt` 与 `HKVariants.txt` 另由 msime 的 `languages` 构建读取，只用来列出粤拼词库香港字形替换的候选异体对（换不换由 HKCanCor 词频决定，`custom/cantonese-variant-vetoes.txt` 列出的字不换），表的内容不写进 `msime-cantonese.db`；`HKVariants.txt` 不内嵌进客户端，不在 msime 的 `resources/opencc.lock.json` 里。更新时同步 msime 的 `resources/opencc.lock.json` 和许可证说明；保持上游文件名与逐字节锁定。
 
 五笔补充数据（含新世纪五笔的全部词组）在发布构建时从本次固定原表、拼音和人工词条重新派生；本仓三份补充表为审计快照，来源和许可与上表相同。每周 rime-ice 更新预览生成审核候选，不改变本表记录的已固定源提交；候选通过审核并更新源数据时再同步来源、许可证和锁。
+
+## 香港街道与地方名称
+
+`sources/hong-kong/landsd-street-names.json` 和 `landsd-place-names.geojson` 来自香港特别行政区政府地政总署通过 [CSDI Portal](https://portal.csdi.gov.hk/) 发布的 Road Centreline 与 Place Name，2026-11-05 获取。数据知识产权归香港特别行政区政府所有，适用 [CSDI 使用条款](https://portal.csdi.gov.hk/csdi-webpage/doc/TNC)，完整快照在 `sources/hong-kong/CSDI-terms.txt`。各文件的下载地址、查询参数、大小和 SHA-256 在 `sources/hong-kong/sources.json`。这是下载快照而不是 Git 上游，不伪造 Git commit 写进 `upstream.lock.json`；`scripts/check_hong_kong.py` 单独核对这些摘要。
+
+`landsd-readings.tsv` 由 msime 的 `crates/dict-builder/hong_kong_places.py` 生成。原始中文名去重，词条清理排版空白、路段分隔横线、方向括号，并把巷号的全角数字一至五转为汉字；原文不修改，`audit.json` 保留每个名称的归属与规范化映射。带字母的锦绣花园分段街名和带私用区字的名称没有被删字后强行导入。
+
+粤拼读音来自本仓固定的 rime-cantonese 字词表（CC BY 4.0），普通话读音来自固定拼音字词表（许可见上方拼音一节），简体字形转换使用 OpenCC（Apache-2.0）。`curation/hong-kong-readings.tsv` 选择多音字的地名读法，专名规则覆盖通用读法；已有字表没有的「䃟」普通话字音另附字音来源。`curation/hong-kong-forms.tsv` 保留不能逐字简化的乾秀里。名称的 CSDI 条款、粤拼列的 CC BY 4.0、普通话列的原有许可分别保持；不因合在一张表中就把政府名称重新许可为 CC BY 4.0 或 GPL。审校规则由本项目编写，粤拼部分按 CC BY 4.0 提供，普通话部分按 GPL-3.0 提供。
+
+构建后的 `msime-cantonese.db` 增加 `LicenseRef-HK-CSDI` 许可标记，现有的粤拼许可证附件及项目数据来源通知附政府、地政总署、CSDI 署名、改动说明和完整使用条款。该数据须与包含香港地名构建阶段的 msime 构建器配套；先合构建器，再将 `builder.lock.json` 指向已合入提交，最后合本仓数据。
