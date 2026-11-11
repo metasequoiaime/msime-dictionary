@@ -659,3 +659,8 @@
 高亮条	gao'liang'tiao	100
 𲰹	lia	1
 𪀋	lia	1
+奥黛塔	ao'dai'ta	100
+沃雅泥莎	wo'ya'ni'sha	100
+安娜斯塔夏	an'na'si'ta'xia	100
+米提亚	mi'ti'ya	100
+芙宁娜	fu'ning'na	100
