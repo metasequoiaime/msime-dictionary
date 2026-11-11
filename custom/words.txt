@@ -657,3 +657,5 @@
 黄诗扶	huang'shi'fu	100
 许明明	xu'ming'ming	100
 高亮条	gao'liang'tiao	100
+𲰹	lia	1
+𪀋	lia	1
