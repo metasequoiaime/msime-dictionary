@@ -666,3 +666,4 @@
 芙宁娜	fu'ning'na	100
 沸谷	fei'gu	3333
 喜来芝	xi'lai'zhi	100
+互不影响	hu'bu'ying'xiang	100
