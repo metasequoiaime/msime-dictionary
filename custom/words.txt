@@ -670,3 +670,5 @@
 牌运	pai'yun	3333
 连吃带拿	lian'chi'dai'na	100
 陈堃𨱇	chen'kun'qiu	100
+𮔅蝂	fu'ban	3333
+蝜蝂	fu'ban	3333
