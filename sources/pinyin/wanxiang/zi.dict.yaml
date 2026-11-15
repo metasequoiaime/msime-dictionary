@@ -1,6 +1,6 @@
 # Rime dictionary
 # encoding: utf-8
-#https://github.com/amzxyz/RIME-LMDG
+#https://github.com/amzxyz/rime-wanxiang-data
 ---
 name: zi
 version: "LTS"
@@ -6813,31 +6813,30 @@ sort: by_weight
 递	dì	2597
 敌	dí	1702
 弟	dì	811
-的	dì	770
-的	dī	680
 抵	dǐ	666
 帝	dì	657
 滴	dī	650
 蒂	dì	647
+狄	dí	630
 堤	dī	629
 笛	dí	622
 迪	dí	613
-的	dí	591
 缔	dì	549
 涤	dí	546
 提	dī	542
 嘀	dī	522
 嘀	dí	514
 提	dǐ	503
-狄	dí	501
 邸	dǐ	499
 睇	dì	497
 谛	dì	487
 嫡	dí	468
 棣	dì	452
 诋	dǐ	444
+的	dī	430
 砥	dǐ	428
 骶	dǐ	425
+的	dì	420
 荻	dí	411
 坻	dǐ	394
 娣	dì	380
@@ -6857,6 +6856,7 @@ sort: by_weight
 禘	dì	215
 杕	dì	206
 踶	dì	194
+的	dí	191
 媂	dì	174
 蹢	dí	169
 翟	dí	161
@@ -9470,6 +9470,7 @@ sort: by_weight
 锋	fēng	2278
 凤	fèng	2164
 疯	fēng	2055
+冯	féng	1966
 奉	fèng	1952
 逢	féng	800
 缝	fèng	796
@@ -9477,7 +9478,6 @@ sort: by_weight
 讽	fěng	637
 枫	fēng	630
 缝	féng	623
-冯	féng	610
 烽	fēng	474
 俸	fèng	459
 沣	fēng	457
@@ -12490,6 +12490,7 @@ sort: by_weight
 颃	háng	246
 桁	háng	134
 垳	háng	134
+行	hàng	122
 斻	háng	109
 迒	háng	101
 絎	háng	101
@@ -12974,10 +12975,10 @@ sort: by_weight
 䓳	hěn	1
 𦚣	hén	1
 哼	hēng	9137
-衡	héng	2974
-横	héng	2677
+横	héng	2974
+衡	héng	2677
 恒	héng	2409
-亨	hēng	2065
+亨	hēng	1465
 横	hèng	1120
 桁	héng	440
 蘅	héng	370
@@ -13024,6 +13025,7 @@ sort: by_weight
 𩙯	héng	1
 𪏓	héng	1
 𫰟	héng	1
+噷	hm	1
 红	hóng	24527
 洪	hóng	2948
 宏	hóng	2653
@@ -14257,9 +14259,9 @@ sort: by_weight
 挥	huī	2895
 灰	huī	2750
 辉	huī	736
-恢	huī	727
+悔	huǐ	727
 徽	huī	718
-悔	huǐ	715
+恢	huī	703
 慧	huì	690
 绘	huì	655
 毁	huǐ	622
@@ -14927,9 +14929,9 @@ sort: by_weight
 亟	jí	313
 跻	jī	298
 伎	jì	297
-荠	jì	277
+蓟	jì	277
 畿	jī	266
-蓟	jì	255
+荠	jì	255
 笈	jí	241
 骥	jì	237
 稷	jì	229
@@ -16687,10 +16689,11 @@ sort: by_weight
 𪖄	jiào	1
 𪚰	jiāo	1
 𫈇	jiāo	1
-解	jiě	27356
+姐	jiě	27356
+借	jiè	8614
 接	jiē	3776
 结	jié	3398
-姐	jiě	3058
+解	jiě	3058
 节	jié	2748
 界	jiè	1801
 届	jiè	980
@@ -16707,7 +16710,6 @@ sort: by_weight
 阶	jiē	653
 竭	jié	649
 芥	jiè	638
-借	jiè	614
 睫	jié	554
 结	jiē	549
 诫	jiè	537
@@ -20538,6 +20540,7 @@ sort: by_weight
 累	lěi	5143
 泪	lèi	5040
 累	lèi	4939
+嘞	lei	2141
 蕾	lěi	1387
 垒	lěi	894
 磊	lěi	569
@@ -20570,7 +20573,6 @@ sort: by_weight
 蕌	lěi	150
 勒	lēi	148
 擂	léi	142
-嘞	lei	141
 鑸	lěi	136
 纇	lèi	134
 櫑	léi	134
@@ -20816,6 +20818,7 @@ sort: by_weight
 枥	lì	234
 鲡	lí	226
 猁	lì	216
+郦	lì	206
 逦	lǐ	204
 粝	lì	202
 疠	lì	194
@@ -22373,13 +22376,13 @@ sort: by_weight
 𫟀	líng	1
 𫟑	líng	1
 六	liù	27707
-陆	liù	5322
 刘	liú	5215
 留	liú	5110
 流	liú	5100
 柳	liǔ	2843
 浏	liú	691
 瘤	liú	656
+陆	liù	646
 溜	liū	623
 硫	liú	590
 琉	liú	583
@@ -29948,12 +29951,12 @@ sort: by_weight
 擒	qín	527
 芹	qín	509
 禽	qín	458
-嗪	qín	445
+噙	qín	445
 芩	qín	426
 檎	qín	408
 溱	qín	408
 衾	qīn	393
-噙	qín	380
+嗪	qín	380
 揿	qìn	374
 骎	qīn	309
 吣	qìn	302
@@ -38845,7 +38848,7 @@ sort: by_weight
 惜	xī	873
 析	xī	842
 细	xì	799
-嘻	xī	771
+吸	xī	771
 袭	xí	753
 晰	xī	713
 稀	xī	707
@@ -38855,7 +38858,7 @@ sort: by_weight
 夕	xī	680
 熙	xī	661
 膝	xī	655
-吸	xī	647
+嘻	xī	647
 牺	xī	611
 媳	xí	598
 隙	xì	594
@@ -46264,13 +46267,13 @@ sort: by_weight
 元	yuán	276319
 缘	yuán	5513
 员	yuán	5402
+圆	yuán	4388
 袁	yuán	4286
 院	yuàn	4071
 源	yuán	3867
 远	yuǎn	3673
 园	yuán	3489
 愿	yuàn	3314
-圆	yuán	1188
 媛	yuán	1120
 援	yuán	747
 怨	yuàn	742
@@ -48489,11 +48492,11 @@ sort: by_weight
 诤	zhèng	400
 钲	zhēng	379
 烝	zhēng	347
-憕	zhèng	321
 證	zhèng	313
 箏	zhēng	308
 爭	zhēng	307
 徴	zhēng	305
+怔	zhèng	303
 鄭	zhèng	291
 証	zhèng	289
 掟	zhěng	267
@@ -48509,7 +48512,7 @@ sort: by_weight
 撜	zhěng	166
 凧	zhēng	160
 氶	zhěng	151
-怔	zhèng	147
+憕	zhèng	147
 錚	zhēng	146
 篜	zhēng	127
 崝	zhēng	124
@@ -48655,11 +48658,11 @@ sort: by_weight
 秩	zhì	625
 稚	zhì	593
 蜘	zhī	555
-挚	zhì	552
+掷	zhì	552
 侄	zhí	532
 帜	zhì	518
+挚	zhì	502
 趾	zhǐ	502
-掷	zhì	502
 窒	zhì	475
 酯	zhǐ	394
 痔	zhì	381

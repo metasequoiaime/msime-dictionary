@@ -41,6 +41,9 @@ jobs:
       - name: Check upstream copies against upstream.lock.json
         run: |
           python3 scripts/check_upstream.py
+          python3 scripts/update_rime_ice_only.py --check
+          python3 -m unittest discover -s scripts -p test_rime_ice_only.py
+          python3 -m unittest discover -s scripts -p test_sync_upstream_dictionaries.py
           python3 -m unittest discover -s scripts -p test_hong_kong.py
           python3 scripts/check_hong_kong.py
   builder:

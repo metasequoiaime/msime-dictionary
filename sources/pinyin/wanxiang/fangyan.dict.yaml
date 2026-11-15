@@ -1,6 +1,6 @@
 # rime dictionary
 # encoding: utf-8
-#https://github.com/amzxyz/RIME-LMDG
+#https://github.com/amzxyz/rime-wanxiang-data
 # ------- 方言-------
 # 词库维护中避免当成烂词删除，独立维护，以明确用途
 ---
@@ -8,6 +8,8 @@ name: fangyan
 version: "LTS"
 sort: by_weight
 ...
+嗍粉克不咯	suō fěn kè bù gē
+嬎蛋	fàn dàn
 #北方方言-晋方言-大包片-大同小片
 红话	hóng huà
 勾留	gōu liú
@@ -63,14 +65,14 @@ sort: by_weight
 结壳子	jié ké zǐ
 个圈儿头	gè quān er tóu
 个生儿	gè shēng ér
-兜儿	dōu ér
+兜儿	dōu er
 不逮子	bú dài zǐ
 不逮儿	bú dài ér
 个闹	gè nào
 家巴巧儿	jiā bā qiǎo ér
-狗娃儿	gǒu wá ér
-猫娃儿	māo wá ér
-鸡娃儿	jī wá ér
+狗娃儿	gǒu wá er
+猫娃儿	māo wá er
+鸡娃儿	jī wá er
 屎介	shǐ jiè
 个督	gè dū
 条出	tiáo chū
@@ -82,7 +84,7 @@ sort: by_weight
 莫坡	mò pō
 眼扎毛	yǎn zhā máo
 个拜	gè bài
-个涝指窝儿	gè lào zhǐ wō ér
+个涝指窝儿	gè lào zhǐ wō er
 溜天	liū tiān
 摆咧	bǎi liě
 爬长	pá cháng

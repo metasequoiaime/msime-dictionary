@@ -8,15 +8,19 @@
 
 本包沿用 CC BY 3.0，不适用本仓自建专业词库的 GPL-3.0 声明。整理时保留原中英鸟名，筛选有简体中文名的 11,041 个鸟种，以 pypinyin 0.55.0 标注并按语境修正读音，对发布拼音输入去重，生成英文输入键、导入权重及中英双向对照。数据摘要、去重集合、多音字规则及审校状态见 [packs/birds/README.md](packs/birds/README.md)。未使用该项目的贴纸、参考照片或图鉴文字，也不将其 MIT 或 PolyForm Shield 许可套用到这些第三方鸟名。
 
+## rime-ice-only 审核差集
+
+`sources/pinyin/rime-ice-only/` 的四份 `*-only-entries.txt` / `*-only-words.txt` 是从本仓 `rime-ice.txt`、`rime-ice-supplement.txt` 筛选的审核资料：以 `sources/pinyin/wanxiang/` 全部词表为排除集合，按词的原始字面排除已收录的词，保留原始读音和权重，按权重排序，附源行号并另生成去重词清单。词条来源为 [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，沿用 GPL-3.0 及原表历史修正和权重改编的来源说明。比较集合来自作者 amzxyz 的万象词库数据仓库 [amzxyz/rime-wanxiang-data](https://github.com/amzxyz/rime-wanxiang-data)（词库数据源自同作者 [RIME-LMDG](https://github.com/amzxyz/RIME-LMDG)），按 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 使用。未改写上游原文件，也不将此差集再次加入发布构建；不代表逐词审定的新增词清单。实际输入的上游提交、逐文件 SHA-256、脚本 SHA-256 与生成文件摘要保存在目录内的 `manifest.json`，生成规则与命令见该目录 `README.md`。此目录属于本项目生成的派生审核数据，不声称是上游原样文件；未新增第三方数据来源。
+
 ## 中文词库
 
 | 文件 | 上游 | 上游许可 |
 | --- | --- | --- |
-| `sources/pinyin/rime-ice.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，对照提交 `9e66b0729083b37d217312294f6d516c8d7234be`（见下）；与万象共有词条的权重取自 [amzxyz/rime-wanxiang](https://github.com/amzxyz/rime-wanxiang) `v18.0.16`（见下方「拼音权重与万象对齐」） | GPL-3.0；共有词条的权重为 CC BY 4.0（rime-wanxiang） |
-| `sources/pinyin/rime-ice-supplement.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，提交 `3aea6d3694fb3d94ec663641f021f788822897ad` 的 `cn_dicts/base.dict.yaml`、`ext.dict.yaml`、`8105.dict.yaml`、`others.dict.yaml`，排除 `rime-ice.txt` 已有的同词同音行；与万象共有词条的权重取自 rime-wanxiang `v18.0.16`（见下方「拼音权重与万象对齐」） | GPL-3.0；共有词条的权重为 CC BY 4.0（rime-wanxiang） |
+| `sources/pinyin/rime-ice.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，对照提交 `9e66b0729083b37d217312294f6d516c8d7234be`（见下）；与万象共有词条的权重改编自万象：文件里存的是按 rime-wanxiang `v18.0.16` 对齐的值，构建时按 `sources/pinyin/wanxiang/`（[amzxyz/rime-wanxiang-data](https://github.com/amzxyz/rime-wanxiang-data)）重算（见下方「拼音权重与万象对齐」） | GPL-3.0；共有词条的权重为 CC BY 4.0（rime-wanxiang） |
+| `sources/pinyin/rime-ice-supplement.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，提交 `927e1cf1d3eeb9bf4be85e3f684dba4dd485b6f6` 的 `cn_dicts/base.dict.yaml`、`ext.dict.yaml`、`8105.dict.yaml`、`others.dict.yaml`，由 msime `dd32caf` 的 `rime-ice-supplement` 生成，去重集合见表头；文件里是生成器输出的权重，与万象共有词条的权重在构建时按 `sources/pinyin/wanxiang/`（rime-wanxiang-data）重算（见下方「拼音权重与万象对齐」） | GPL-3.0；共有词条的权重为 CC BY 4.0（rime-wanxiang） |
 | `sources/pinyin/places.txt` | [modood/Administrative-divisions-of-China](https://github.com/modood/Administrative-divisions-of-China)，提交 `c49d495b40ac73eb1a66f6eeae5f8fd10696f035` 的 `dist/provinces.csv`、`dist/cities.csv`、`dist/areas.csv`（原始数据来自国家统计局的统计用区划代码）。由 msime `crates/dict-builder` 的 `msime-dict-build places-supplement` 生成省、地、县三级区划的全称与去后缀简称，读音须由 `rime-ice.txt`、`rime-ice-supplement.txt` 证实，只收这两份文件没有、或权重不超过 92 且低于分层下限的词，这两份文件已有排名（权重大于 92）的词不抬升（92 是万象的底值 10 按对齐系数 9.2 换算后的值：万象地名词库里八成多的行都是这个未排名的底值，对齐前的未排名尾部 1–10 也随之变成 28–92）；这两份文件里同一全拼的其他词权重超过 `rime-ice.txt` 全部行权重的第 90 百分位（常用线，由生成器从数据算出）时，地名权重降到比该词低 1，不抢常用词的首位，比较时跳过权重为占位值的词（`rime-ice.txt` 里权重超过常用线的行中被超过 1% 的行共用的单个权重值，由生成器从数据算出，当前为 9999）；万象（`sources/pinyin/wanxiang/`，提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）提供权重的 15 份词库收了同一个词和全拼时，再取 round(万象最高权重 × 9.2) 作为下限，只升不降：高于上面得出的权重、也高于这两份文件已有的权重时写这个值，不受常用线封顶限制，已排名的词也按它抬升（湖州 万象 1228，写 11298，排到 胡诌 前面）；规则、对照文件和两张 curation 拼音表的 SHA-256、万象提交写在文件头 | WTFPL（区划名称）；读音的证实与权重下限依据 rime-ice 的 `rime-ice.txt`、`rime-ice-supplement.txt`（GPL-3.0），其中与万象共有的行的权重改编自万象（CC BY 4.0，见「拼音权重与万象对齐」）；万象下限定的权重改编自万象（CC BY 4.0，改动是乘 9.2 后四舍五入） |
 | `sources/unlicensed/custom-pinyin-dictionary-part1.txt`、`sources/unlicensed/custom-pinyin-dictionary-part2.txt` | [wuhgit/CustomPinyinDictionary](https://github.com/wuhgit/CustomPinyinDictionary)（`2023-09-28(No.82)` 版）与 rime-ice 合并去重 | GPL-3.0 与**未声明**的混合 |
-| `sources/pinyin/single-chars.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，读音以 [mozillazg/pinyin-data](https://github.com/mozillazg/pinyin-data) 校正；与万象共有读音的字频取自 rime-wanxiang `v18.0.16`（见下方「拼音权重与万象对齐」） | GPL-3.0 + MIT；共有读音的字频为 CC BY 4.0（rime-wanxiang） |
+| `sources/pinyin/single-chars.txt` | [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，读音以 [mozillazg/pinyin-data](https://github.com/mozillazg/pinyin-data) 校正；与万象共有读音的字频改编自万象：文件里存的是按 rime-wanxiang `v18.0.16` 对齐的值，构建时按 `sources/pinyin/wanxiang/`（rime-wanxiang-data）重算（见下方「拼音权重与万象对齐」） | GPL-3.0 + MIT；共有读音的字频为 CC BY 4.0（rime-wanxiang） |
 | `sources/wubi/wubi86-jidian.txt` | [KyleBing/rime-wubi86-jidian](https://github.com/KyleBing/rime-wubi86-jidian)，提交 `28f19e3affdabb37d11d38f457c7a08a4694b226` 的 `wubi86_jidian.dict.yaml` 数据区，另有本仓的 6 处改动（见下） | Apache-2.0（取用时上游的条款，见下） |
 | `sources/wubi/wubi86-rime-wubi.txt` | [rime/rime-wubi](https://github.com/rime/rime-wubi)，提交 `152a0d3f3efe40cae216d1e3b338242446848d07` 的 `wubi86.dict.yaml` 里极点表没有的行（见下） | LGPL-3.0 |
 | `sources/wubi/wubi86-supplement.txt` | 本项目生成的补充表：由 msime `crates/dict-builder` 的 `wubi86-supplement` 子命令从本仓 `sources/wubi/wubi86-jidian.txt`、`sources/wubi/wubi86-rime-wubi.txt`、`sources/pinyin/single-chars.txt`（只用于读 86 表时比词频）、`sources/wubi/wubi98.txt`、`sources/wubi/wubi98-fcitx.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt` 和 `custom/words.txt` 生成。词条取 86 表没有、而 98 表收录，或 rime-ice 主表与补充表权重不低于 100 的两字及以上词，或区划补充表与人工词条（不限权重；只收构建器支持的基本区汉字），编码按 86 版词组规则由 86 表的单字全码推出 | GPL-3.0（词条依据 GPL-3.0 的 rime-ice 与人工词条、WTFPL 的区划名称、GPL-3.0-or-later 的 Fcitx 表与 Unlicense 的 98 五笔表；编码依据 Apache-2.0 的 jidian 单字码） |
@@ -42,7 +46,7 @@
 
 ### 万象词库原始文件
 
-`sources/pinyin/wanxiang/` 下的以下 17 份文件全部来自 **万象词库 / 万象拼音（rime-wanxiang），作者 amzxyz**，直接来源为 [amzxyz/rime-wanxiang](https://github.com/amzxyz/rime-wanxiang) 标签 `v18.0.16`（提交 [`7ab73ee0c7f80190004233e70f954833df64c80e`](https://github.com/amzxyz/rime-wanxiang/tree/7ab73ee0c7f80190004233e70f954833df64c80e/dicts)）的 `dicts/` 目录，是该目录下除 `abbrev.dict.yaml`、`t9_abbrev.dict.yaml`（简拼与九键简码）和 `en.dict.yaml`（英文）以外的全部词库。上游 README 将词库来源标为同一作者的 [万象词库（amzxyz/RIME-LMDG）](https://github.com/amzxyz/RIME-LMDG)，多份词库的文件头也保留了该链接。
+`sources/pinyin/wanxiang/` 下的以下 15 份文件全部来自 **万象词库 / 万象拼音（rime-wanxiang），作者 amzxyz**，直接来源为万象词库数据仓库 [amzxyz/rime-wanxiang-data](https://github.com/amzxyz/rime-wanxiang-data) 的 `wanxiang` 分支，提交 [`6b317736a8f90bb6dddf1423dbd1f0b83d4bf764`](https://github.com/amzxyz/rime-wanxiang-data/tree/6b317736a8f90bb6dddf1423dbd1f0b83d4bf764/dicts)（2026-11-16）的 `dicts/` 目录，是该目录下除 `abbrev.dict.yaml`、`t9_abbrev.dict.yaml`（简拼与九键简码）和 `en.dict.yaml`（英文）以外的全部词库。上游将词库来源标为同一作者的 [万象词库（amzxyz/RIME-LMDG）](https://github.com/amzxyz/RIME-LMDG)，多份词库的文件头也保留了该链接。
 
 | 本仓文件（均位于 `sources/pinyin/wanxiang/`） | 上游文件（均位于 `dicts/`） | 上游许可 |
 | --- | --- | --- |
@@ -52,10 +56,8 @@
 | `fangyan.dict.yaml` | `fangyan.dict.yaml` | CC BY 4.0 |
 | `huaxue.dict.yaml` | `huaxue.dict.yaml` | CC BY 4.0 |
 | `jichu.dict.yaml` | `jichu.dict.yaml` | CC BY 4.0 |
-| `lianxiang.dict.yaml` | `lianxiang.dict.yaml` | CC BY 4.0 |
 | `mingren.dict.yaml` | `mingren.dict.yaml` | CC BY 4.0 |
 | `mixed.dict.yaml` | `mixed.dict.yaml` | CC BY 4.0 |
-| `renming.dict.yaml` | `renming.dict.yaml` | CC BY 4.0 |
 | `shici.dict.yaml` | `shici.dict.yaml` | CC BY 4.0 |
 | `taifeng.dict.yaml` | `taifeng.dict.yaml` | CC BY 4.0 |
 | `wuzhong.dict.yaml` | `wuzhong.dict.yaml` | CC BY 4.0 |
@@ -64,13 +66,13 @@
 | `yixue.dict.yaml` | `yixue.dict.yaml` | CC BY 4.0 |
 | `zi.dict.yaml` | `zi.dict.yaml` | CC BY 4.0 |
 
-许可依据是该提交仓库根目录的 [LICENSE](https://github.com/amzxyz/rime-wanxiang/blob/7ab73ee0c7f80190004233e70f954833df64c80e/LICENSE) 与 README 的 CC BY 4.0 声明。许可名称为 Creative Commons Attribution 4.0 International（知识共享署名 4.0 国际），[许可链接](https://creativecommons.org/licenses/by/4.0/)，全文亦收在本仓 [sources/symbols/LICENSE](sources/symbols/LICENSE)。
+许可依据是该提交仓库根目录的 [LICENSE](https://github.com/amzxyz/rime-wanxiang-data/blob/6b317736a8f90bb6dddf1423dbd1f0b83d4bf764/LICENSE)（与此前配置仓库 `7ab73ee` 的 `LICENSE` 逐字节相同）及 [LICENSE-SCOPE.md](https://github.com/amzxyz/rime-wanxiang-data/blob/6b317736a8f90bb6dddf1423dbd1f0b83d4bf764/LICENSE-SCOPE.md) 中「词库、拼音数据按根目录 LICENSE 执行」的说明。许可名称为 Creative Commons Attribution 4.0 International（知识共享署名 4.0 国际），[许可链接](https://creativecommons.org/licenses/by/4.0/)，全文亦收在本仓 [sources/symbols/LICENSE](sources/symbols/LICENSE)。
 
-本仓只将上述文件从上游 `dicts/` 复制到 `sources/pinyin/wanxiang/`，保留原文件名及全部字节，未修改文件头、词条、读音、权重、行序、编码或换行；`upstream.lock.json` 以上游名 `rime-wanxiang` 固定每份文件的大小和 SHA-256。这批文件最初收的是提交 `aa9947f3f513ff88a3f7ce4e342fcb519d517025` 的 15 份，构建器不读；下面「拼音权重与万象对齐」用的却是 `7ab73ee` 的 17 份，`aa9947f` 少了 `renming`、`lianxiang` 两份，`jichu` 等也与 `7ab73ee` 不同，拿它判断「万象收不收」会把约 2.5 万行误判为不收（李四、林克、马克 这类人名）。所以换成了 `7ab73ee` 的全套，与权重对齐用的是同一份数据，并登记进 `upstream.lock.json`，msime 构建器从此在构建时读它们（见下节）。再分发原文件或改编数据时，须保留作者 amzxyz 与万象词库的署名、来源链接、许可链接以及上游提供的版权与免责声明；改编时须注明改动并保留已有改动说明。上游按许可中的免责声明以原样提供数据。
+本仓只将上述文件从上游 `dicts/` 复制到 `sources/pinyin/wanxiang/`，保留原文件名及全部字节，未修改文件头、词条、读音、权重、行序、编码或换行；`upstream.lock.json` 以上游名 `rime-wanxiang` 固定每份文件的大小和 SHA-256。这批文件最初收的是提交 `aa9947f3f513ff88a3f7ce4e342fcb519d517025` 的 15 份，构建器不读；下面「拼音权重与万象对齐」用的却是 `7ab73ee` 的 17 份，`aa9947f` 少了 `renming`、`lianxiang` 两份，`jichu` 等也与 `7ab73ee` 不同，拿它判断「万象收不收」会把约 2.5 万行误判为不收（李四、林克、马克 这类人名）。所以换成了 `7ab73ee` 的全套，与权重对齐用的是同一份数据，并登记进 `upstream.lock.json`，msime 构建器从此在构建时读它们（见下节）。`7ab73ee` 是配置仓库 [amzxyz/rime-wanxiang](https://github.com/amzxyz/rime-wanxiang) 标签 `v18.0.16` 的 `dicts/`；2026-11-16 起更新入口改为数据仓库 rime-wanxiang-data，整份换成上面提交的文件。数据仓库的 `dicts/` 已不再收 `lianxiang.dict.yaml`、`renming.dict.yaml`，本仓随之删除这两份，登记的文件从 17 份变为 15 份；msime 构建器 `reweight.rs` 里登记的词库清单须同步去掉这两份才能构建。再分发原文件或改编数据时，须保留作者 amzxyz 与万象词库的署名、来源链接、许可链接以及上游提供的版权与免责声明；改编时须注明改动并保留已有改动说明。上游按许可中的免责声明以原样提供数据。
 
 ### 拼音权重与万象对齐
 
-`sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt` 中与万象共有的词条，权重改编自 [amzxyz/rime-wanxiang](https://github.com/amzxyz/rime-wanxiang) 标签 `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）`dicts/` 下的词库。上游仓库以 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 发布（仓库根目录 `LICENSE`，全文也收在本仓 `sources/symbols/LICENSE`），词库文件头注明数据出自同一作者的 [amzxyz/RIME-LMDG](https://github.com/amzxyz/RIME-LMDG)。署名：万象拼音（rime-wanxiang），作者 amzxyz。CC BY 4.0 可以单向并入 GPL-3.0 作品，所以这三份文件仍按 rime-ice 的 GPL-3.0 分发，同时保留这里的署名与改动说明。
+`sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt` 中与万象共有的词条，权重改编自万象词库：#84 一次性对齐时用的是配置仓库 [amzxyz/rime-wanxiang](https://github.com/amzxyz/rime-wanxiang) 标签 `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）`dicts/` 下的词库（下面的规则与系数即那次的记录）；之后每次构建按本仓 `sources/pinyin/wanxiang/` 当前登记的文件重算，这批文件现取自数据仓库 [amzxyz/rime-wanxiang-data](https://github.com/amzxyz/rime-wanxiang-data)（见上一节）。上游仓库以 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 发布（仓库根目录 `LICENSE`，全文也收在本仓 `sources/symbols/LICENSE`），词库文件头注明数据出自同一作者的 [amzxyz/RIME-LMDG](https://github.com/amzxyz/RIME-LMDG)。署名：万象拼音（rime-wanxiang），作者 amzxyz。CC BY 4.0 可以单向并入 GPL-3.0 作品，所以这三份文件仍按 rime-ice 的 GPL-3.0 分发，同时保留这里的署名与改动说明。
 
 改动：只改权重列，词条、读音、行序、注释与换行都保持原样，没有从万象加入新词条。
 
@@ -80,9 +82,9 @@
 - 两边的权重量级不同，所以每份文件各用一个系数，让改写后的权重与该文件未改动的行处在同一量级。系数 = 该文件与万象共有、且两边权重都大于 10 的行上，本仓权重之和 ÷ 万象权重之和，保留两位小数。本次 `single-chars.txt` 为 9.42（共有 45175 行），`rime-ice.txt` 为 9.2（共有 521669 行），`rime-ice-supplement.txt` 为 9.28（共有 30499 行）。三份文件的系数相差不到 3%，所以合并后共有词条之间的相对次序基本与万象一致；同一单字读音同时出现在 `single-chars.txt` 与 `rime-ice-supplement.txt` 时，构建取较高的一行。
 - `sources/pinyin/places.txt` 是 msime 生成器产出的地名下限表，不手工改，这次没有动；构建时它按只升不降并入，只会把低于下限的地名调高。`custom/words.txt` 只追加，也没有动。
 
-**构建期重算。** msime 构建器的 `reweight` 阶段（`crates/dict-builder/src/reweight.rs`，排在 `quanpin` 之后、`places-supplement` 之前）读 `sources/pinyin/wanxiang/` 里登记的 17 份文件，在每次构建时按上面同一套规则（同样 15 份词库、同样的读音换算和取最高权重、同样的三个系数、四舍五入）重算三份文件里与万象共有的行。三份文件现在的权重就是这样算出来的（共有的 597343 行逐行吻合），所以这一步不改变产物；它保证以后在原路径重新生成补充表、或者换新的上游提交时，对齐结果不会被冲掉。只认写了非负整数权重的万象行：没写权重（`fangyan` 的 闹热）或写 `-1`（`diming` 的 柏香镇）的行不换算，#84 当时也没有换算它们。
+**构建期重算。** msime 构建器的 `reweight` 阶段（`crates/dict-builder/src/reweight.rs`，排在 `quanpin` 之后、`places-supplement` 之前）读 `sources/pinyin/wanxiang/` 里登记的文件，在每次构建时按上面同一套规则（`wanxiang.dict.yaml` 导入的、除 `cuoyin` 外提供权重的词库，同样的读音换算和取最高权重、同样的三个系数、四舍五入）重算三份文件里与万象共有的行。按 `7ab73ee` 的 17 份数据时，三份文件的权重就是这样算出来的（当时共有的 597343 行逐行吻合），这一步不改变产物；换成 rime-wanxiang-data 的 15 份（无 `lianxiang`、`renming`）以后，提供权重的词库是其中除 `cuoyin`、`mixed` 外的 13 份，共有行的权重随新数据变化，须由构建器同步更新词库清单后按新数据重算。它保证以后在原路径重新生成补充表、或者换新的上游提交时，对齐结果不会被冲掉。只认写了非负整数权重的万象行：没写权重（`fangyan` 的 闹热）或写 `-1`（`diming` 的 柏香镇）的行不换算，#84 当时也没有换算它们。
 
-`curation/pinyin-reweight.txt` 存在时，`reweight` 阶段另做第二步（格式见 msime `crates/dict-builder/README.md`「Curation tables」）：`renming`（人名，正则抽取、未经筛选）和 `duoyin`（多音兼容读音）两份词库的权重先乘一个缩放比例再换算；`unattested-cap` 让万象全套 17 份词库在任何读音下都不收的多字词，不再排在同一全拼键上万象原始权重达到门槛（默认 100）的词前面（门的 不再压过 闷的）；`curation/pinyin-reweight-exempt.txt` 列出的行不做第二步。这一步改的仍然只是权重，用的仍然只是万象的权重和收录与否，不加入任何万象的词条。文件不在时不做第二步。
+`curation/pinyin-reweight.txt` 存在时，`reweight` 阶段另做第二步（格式见 msime `crates/dict-builder/README.md`「Curation tables」）：`renming`（人名，正则抽取、未经筛选）和 `duoyin`（多音兼容读音）两份词库的权重先乘一个缩放比例再换算；`unattested-cap` 让本仓登记的全套万象词库在任何读音下都不收的多字词，不再排在同一全拼键上万象原始权重达到门槛（默认 100）的词前面（门的 不再压过 闷的）；`curation/pinyin-reweight-exempt.txt` 列出的行不做第二步。这一步改的仍然只是权重，用的仍然只是万象的权重和收录与否，不加入任何万象的词条。文件不在时不做第二步。
 
 `sources/wubi/wubi86-supplement.txt` 的文件头记录了生成时对照的 `rime-ice.txt`、`rime-ice-supplement.txt` 的 SHA-256。那是生成当时的输入，作为历史陈述保留，与现在的文件不同；`upstream.lock.json` 已按改写后的字节刷新。`sources/pinyin/places.txt` 之后已按改写后的这两份文件重新生成，文件头记的就是现在的 SHA-256：权重下限、常用线（第 90 百分位）和已有排名都按对齐后的权重算，所以地名的权重随之降到与对齐后的同音词同一量级，不再按对齐前的量级压过同音常用词（阜阳 原为 31460，高于 抚养 对齐后的 25245）。地级简称的下限（当前 5115）低于常用线（当前 7204），常用线封顶对它们不起作用，所以仍有少数地级简称排在同全拼、权重不低于 1000 的词前面（丽水 > 溧水，晋中 > 金钟，辽源 > 燎原，迪庆 > 敌情，阜新 > 负心）；对齐时被压到万象底值 92 的地名（乌鲁木齐市 对齐前 45320）按分层下限重新抬起。dict-cleanse 之后又在含 `curation/` 的提交上重新生成：对照集合、常用线（当前 7158）和已有排名按施加否决和覆盖之后的行算，并加了万象下限，地名的权重不再低于万象词频按 9.2 换算后的值（本次 719 行由它定权）。所以 rime-ice 没收、万象词频高于同音词的地名排回同音词前面（湖州 > 胡诌），万象词频低于同音常用词的仍在后面（固原 < 雇员，阜阳 < 抚养）。
 
@@ -239,3 +241,15 @@ msime 用 `msime-dict-build languages` 把它们构建成 `msime-cantonese.db`�
 粤拼读音来自本仓固定的 rime-cantonese 字词表（CC BY 4.0），普通话读音来自固定拼音字词表（许可见上方拼音一节），简体字形转换使用 OpenCC（Apache-2.0）。`curation/hong-kong-readings.tsv` 选择多音字的地名读法，专名规则覆盖通用读法；已有字表没有的「䃟」普通话字音另附字音来源。`curation/hong-kong-forms.tsv` 保留不能逐字简化的乾秀里。名称的 CSDI 条款、粤拼列的 CC BY 4.0、普通话列的原有许可分别保持；不因合在一张表中就把政府名称重新许可为 CC BY 4.0 或 GPL。审校规则由本项目编写，粤拼部分按 CC BY 4.0 提供，普通话部分按 GPL-3.0 提供。
 
 构建后的 `msime-cantonese.db` 增加 `LicenseRef-HK-CSDI` 许可标记，现有的粤拼许可证附件及项目数据来源通知附政府、地政总署、CSDI 署名、改动说明和完整使用条款。该数据须与包含香港地名构建阶段的 msime 构建器配套；先合构建器，再将 `builder.lock.json` 指向已合入提交，最后合本仓数据。
+
+<!-- upstream-sync:begin -->
+## 当前自动同步的上游快照
+
+本节由同步脚本生成，记录当前源文件的上游提交；前文的逐文件说明须在同一次改动中人工核对，不一致时以本节和 `upstream.lock.json` 为准。
+
+- 万象：作者 amzxyz，[rime-wanxiang-data](https://github.com/amzxyz/rime-wanxiang-data/tree/6b317736a8f90bb6dddf1423dbd1f0b83d4bf764/dicts)，提交 `6b317736a8f90bb6dddf1423dbd1f0b83d4bf764`。按 CC BY 4.0 使用，保留 RIME-LMDG 来源署名；本仓已登记的词表逐字节复制，未修改其内容；上游已不收的 `lianxiang.dict.yaml`、`renming.dict.yaml` 已从本仓删除。
+- rime-ice 中英文补充表：[iDvel/rime-ice](https://github.com/iDvel/rime-ice/tree/927e1cf1d3eeb9bf4be85e3f684dba4dd485b6f6)，提交 `927e1cf1d3eeb9bf4be85e3f684dba4dd485b6f6`，GPL-3.0。由干净的 msime 提交 `dd32cafd71458d1b19932496301d369bf1a973a6` 的 `rime-ice-supplement` 生成器生成；输入与完整去重集合见表头。词条取自新上游，权重为生成器输出，万象对齐仍由构建器 reweight 阶段完成。
+- `rime-ice.txt`、`single-chars.txt` 和基础英文表保留原有历史修正及来源提交；此次同步不把它们重建为上游原表，也不自动迁入无注音或不支持的读音。
+- 差集由 `scripts/update_rime_ice_only.py` 重新生成，完整输入摘要见 `sources/pinyin/rime-ice-only/manifest.json`。
+- 万象 LICENSE SHA-256：`9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94`；rime-ice LICENSE SHA-256：`3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986`。两份许可证与此前固定上游提交逐字节相同；完整文本随同步报告保存。
+<!-- upstream-sync:end -->

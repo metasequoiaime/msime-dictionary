@@ -355,7 +355,6 @@
 白尾雷鸟	bai'wei'lei'niao	1000
 苏格兰雷鸟	su'ge'lan'lei'niao	1000
 柳雷鸟	liu'lei'niao	1000
-岩雷鸟	yan'lei'niao	1000
 镰翅鸡	lian'chi'ji	1000
 枞树镰翅鸡	cong'shu'lian'chi'ji	1000
 西方松鸡	xi'fang'song'ji	1000
@@ -7982,7 +7981,6 @@
 棕胁蓝地鸲	zong'xie'lan'di'qu	1000
 白腹蓝地鸲	bai'fu'lan'di'qu	1000
 台湾蓝仙鹟	tai'wan'lan'xian'weng	1000
-大仙鹟	da'xian'weng	1000
 青仙鹟	qing'xian'weng	1000
 布岛林鹟	bu'dao'lin'weng	1000
 岛仙鹟	dao'xian'weng	1000

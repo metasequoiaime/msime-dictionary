@@ -1,8 +1,8 @@
-# rime-ice 英文补充词条，由 msime 仓库提交 2f5de01dcde0e72ba6a2b931d13c8d8474715530 的 crates/dict-builder/src/rime_ice_supplement.rs 以 `msime-dict-build rime-ice-supplement --upstream <rime-ice 该提交的干净检出> --dictionary <msime-dictionary checkout> --out <输出目录>` 生成；不要手工编辑。
-# 上游：https://github.com/iDvel/rime-ice 提交 3aea6d3694fb3d94ec663641f021f788822897ad；许可 GPL-3.0。
+# rime-ice 英文补充词条，由 msime 仓库提交 dd32cafd71458d1b19932496301d369bf1a973a6 的 crates/dict-builder/src/rime_ice_supplement.rs 以 `msime-dict-build rime-ice-supplement --upstream <rime-ice 该提交的干净检出> --dictionary <msime-dictionary checkout> --out <输出目录>` 生成；不要手工编辑。
+# 上游：https://github.com/iDvel/rime-ice 提交 927e1cf1d3eeb9bf4be85e3f684dba4dd485b6f6；许可 GPL-3.0。
 # 去重对照：sources/english/rime-ice-en.txt、sources/english/scowl-words.txt、custom/english.txt；中文按同词同音排除、重复取最大权重，英文按小写词形排除（对照文件里注释掉的 `# 词 编码` 条目也算）、保留纯 ASCII 显示词。
-# 输入：en_dicts/en.dict.yaml SHA-256 d08db21af6c686bfafa4d62926e33ea685319927a374acd99dde84a351b5aa35
-# 输入：en_dicts/en_ext.dict.yaml SHA-256 675bd699cbdcd05409cd9c9fbc8de3f925b3d08a5175806d45d3789ea27c36eb
+# 输入：en_dicts/en.dict.yaml SHA-256 1049164da983c1c5a933d6401df9a8e5f8a378b0c67b102e0f75f0a65226ec44
+# 输入：en_dicts/en_ext.dict.yaml SHA-256 c8648c1dc1ad691c77ef29525244d42482b2e8bcabe08355baec241f563306a2
 # 输入：sources/english/rime-ice-en.txt SHA-256 d8e063481a29d87b762a33d58de7c5098fbabaf0f719e16a2a5a4538a0d7a8cf
 # 输入：sources/english/scowl-words.txt SHA-256 14abbd44db14fe1fc41dae42551a7c089703756e5500b2dea92d944d1ff35728
 # 输入：custom/english.txt SHA-256 ec33dd77fc826808020ec984b5bedbf8b58e6fa978566b4f7d9a53b1f0798b75
@@ -134,7 +134,6 @@ Fremont	fremont
 Frundles	frundles
 GIPHY	giphy
 GPTs	gpts
-GTAVI	gtavi
 GameFi	gamefi
 Gatsby	gatsby
 Ghostty	ghostty
@@ -164,6 +163,7 @@ Hibernate	hibernate
 Hive	hive
 Hokkaido	hokkaido
 HomePod	homepod
+HomeView	homeview
 Hono	hono
 HostUS	hostus
 Huffman	huffman
@@ -186,6 +186,7 @@ KIOXIA	kioxia
 KOOK	kook
 KaTeX	katex
 Kafka	kafka
+Kaspersky	kaspersky
 Kathmandu	kathmandu
 KeepassXC	keepassxc
 Kelivo	kelivo
@@ -197,6 +198,7 @@ KoaJS	koajs
 Koofr	koofr
 Koopa	koopa
 Kubeadm	kubeadm
+LGBTQ	lgbtq
 LGTM	lgtm
 LLDB	lldb
 LLM	llm
@@ -271,6 +273,7 @@ Nuxt	nuxt
 Nvdia	nvdia
 OAuth	oauth
 OCaml	ocaml
+OLED	oled
 OOP	oop
 Oedipus	oedipus
 Ollama	ollama
@@ -313,6 +316,7 @@ Proxyman	proxyman
 PuTTY	putty
 Pulumi	pulumi
 Puppeteer	puppeteer
+PyPI	pypi
 PyTorch	pytorch
 Pyongyang	pyongyang
 QWERT	qwert
@@ -429,6 +433,7 @@ WinSCP	winscp
 Windsurf	windsurf
 WireGuard	wireguard
 Wireshark	wireshark
+WorkBuddy	workbuddy
 Worldcoin	worldcoin
 Writerside	writerside
 Xperia	xperia
@@ -979,6 +984,7 @@ embedding	embedding
 embellish	embellish
 embellishment	embellishment
 emblems	emblems
+emittance	emittance
 encase	encase
 encased	encased
 encases	encases
@@ -1434,6 +1440,7 @@ lowers	lowers
 lozenge	lozenge
 lozenges	lozenges
 lubricant	lubricant
+luminance	luminance
 lunchroom	lunchroom
 lutetium	lutetium
 macaroni	macaroni
@@ -1522,6 +1529,7 @@ mouldy	mouldy
 muck	muck
 muddle	muddle
 mushy	mushy
+musk	musk
 mussel	mussel
 musty	musty
 mutagen	mutagen
@@ -1628,6 +1636,7 @@ osmium	osmium
 ostracism	ostracism
 outgrowth	outgrowth
 outpouring	outpouring
+outsole	outsole
 outwit	outwit
 ovary	ovary
 overfit	overfit
@@ -2289,6 +2298,8 @@ tumbles	tumbles
 tumbling	tumbling
 turnip	turnip
 tweaks	tweaks
+twittered	twittered
+twitters	twitters
 typography	typography
 uglier	uglier
 ugliest	ugliest
