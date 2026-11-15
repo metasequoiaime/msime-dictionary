@@ -3,7 +3,9 @@
 本目录是审核用的字面差集：从 `sources/pinyin/rime-ice.txt` 和
 `sources/pinyin/rime-ice-supplement.txt` 分别取出在
 `sources/pinyin/wanxiang/` 全部 `.dict.yaml` 数据区中没有出现过的词。
-不移动或替换原始输入；目前 msime 构建器不读取本目录，不应再次导入造成重复。
+不移动或替换原始输入。msime 构建器不读取本目录；Windows 端（MSIME-Windows 的本地构建器
+`scripts/dictionary_build/pinyin_db.py`，见 metasequoiaime/MSIME-Windows#1529）会以权重 1
+读取两份 `*-only-entries.txt`，给万象没有的词补缺。不要在别处再次导入这些词造成重复。
 
 ## 文件与比较规则
 
