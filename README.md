@@ -2,7 +2,9 @@
 
 水杉输入法（[msime](https://github.com/metasequoiaime/msime)）词库的源数据仓库：这里只放文本源数据，由 msime 的构建器 `msime-dict-build` 构建成本仓 `dict-v*` Release 中的数据库与模型；构建脚本和生成的数据库都不放在这里。
 
-**万象词库来源声明：`sources/pinyin/wanxiang/` 下的 17 份 `.dict.yaml` 文件全部来自 [万象拼音（amzxyz/rime-wanxiang）](https://github.com/amzxyz/rime-wanxiang) 的 `dicts/` 目录，署名作者 amzxyz，按 [CC BY 4.0（署名 4.0 国际）](https://creativecommons.org/licenses/by/4.0/) 许可分发。** 上游词库数据源自 [万象词库（amzxyz/RIME-LMDG）](https://github.com/amzxyz/RIME-LMDG)。本仓逐字节复制这些文件，保留上游文件名、文件头、词条、读音与权重；来源提交及完整文件清单见 [NOTICE.md「万象词库原始文件」](NOTICE.md#万象词库原始文件)。
+**万象词库更新上游：[amzxyz/rime-wanxiang-data 的 `wanxiang` 分支、`dicts/` 目录](https://github.com/amzxyz/rime-wanxiang-data/tree/wanxiang/dicts)。** Git 地址是 `https://github.com/amzxyz/rime-wanxiang-data.git`，更新时明确检出 `wanxiang` 分支并记录完整提交。`amzxyz/rime-wanxiang` 是配置仓库，不能根据它的词表清单判断数据仓库删了哪些词表。自动同步脚本默认使用这里指定的数据仓库与分支。
+
+**万象词库来源声明：本仓当前锁定的 `sources/pinyin/wanxiang/` 下 15 份 `.dict.yaml` 文件全部来自 [万象词库数据仓库（amzxyz/rime-wanxiang-data）](https://github.com/amzxyz/rime-wanxiang-data) `wanxiang` 分支提交 [`6b317736a8f90bb6dddf1423dbd1f0b83d4bf764`](https://github.com/amzxyz/rime-wanxiang-data/tree/6b317736a8f90bb6dddf1423dbd1f0b83d4bf764/dicts) 的 `dicts/` 目录，署名作者 amzxyz，按 [CC BY 4.0（署名 4.0 国际）](https://creativecommons.org/licenses/by/4.0/) 许可分发。** 上游词库数据源自 [万象词库（amzxyz/RIME-LMDG）](https://github.com/amzxyz/RIME-LMDG)。本仓逐字节复制这些文件，保留上游文件名、文件头、词条、读音与权重；来源提交及完整文件清单见 [NOTICE.md「万象词库原始文件」](NOTICE.md#万象词库原始文件)。此前的 17 份取自配置仓库 amzxyz/rime-wanxiang 的 `v18.0.16`（`7ab73ee`）；数据仓库已不收 `lianxiang`、`renming`，本仓随之删除。
 
 - 想加一个词、一个英文单词或一条候选窗翻译：见[贡献词条](#贡献词条)。
 - 想做一个按需导入的专业词库：见[专业词库](#专业词库)和 [packs/README.md](packs/README.md)。
@@ -17,7 +19,8 @@ sources/                                  msime 构建器经 --dictionary 读取
     rime-ice-supplement.txt               rime-ice 新提交中相对 rime-ice.txt 新增的词条（本项目生成的补充表），与万象共有的词条权重取自万象 -> msime-pinyin.db
     places.txt                            行政区划全称与简称中缺失或权重偏低的词条（本项目生成的补充表）-> msime-pinyin.db
     single-chars.txt                      单字读音与字频，与万象共有的读音字频取自万象 -> msime-pinyin.db；msime-stroke.db 的权重
-    wanxiang/                             万象词库（amzxyz/rime-wanxiang）v18.0.16 dicts/ 下 17 份原样文件，CC BY 4.0，作者 amzxyz；构建时按它重算与万象共有的拼音权重
+    wanxiang/                             万象词库（amzxyz/rime-wanxiang-data，wanxiang 分支）dicts/ 下 15 份原样文件，CC BY 4.0，作者 amzxyz；构建时按它重算与万象共有的拼音权重
+    rime-ice-only/                        rime-ice 主表与补充表相对万象的字面差集和输入摘要；审核资料，不额外进入构建
   wubi/                                   五笔词库 -> msime-wubi.db
     wubi86-jidian.txt                     86 版五笔（rime-wubi86-jidian 的数据区，有 6 处本仓改动，见 NOTICE.md）-> wubi86 表
     wubi86-rime-wubi.txt                  rime-wubi 里极点表没有的 86 行（#36 补进来，后来从 wubi86-jidian.txt 拆出），构建时权重一般按 10（上游的 0 仍是 0），拼音库词频悬殊的排到同码冷僻极点行之前 -> wubi86 表
@@ -112,6 +115,8 @@ CHANGELOG.md                              已冻结，只作历史记录
 发布构建每次在产物目录中重新派生三份五笔词组数据，新增人工词条不必另等一次手动重建。`sources/wubi/` 下的三份补充表（`wubi86-supplement.txt`、`wubi98-supplement.txt`、`wubixsj-supplement.txt`）保留为可复现的源快照；构建使用本次提交的原表、拼音与人工词条生成，不依赖快照是否已跟上。`wubixsj-supplement.txt` 另外是新世纪表的发布开关：msime 构建器不读它的内容，只看它在不在，在就构建并发布 `wubixsj` 表，不在（收入它之前的提交）就不建这张表、`msime-wubi.db` 只有 86 和 98。所以合入收入它的那次改动就会发布第一个带新世纪表的 `dict-v`，不要删掉它。生成器、数据库和中间产物仍留在 msime，不能提交到本仓。
 
 `Preview upstream dictionary updates` 每周检查 rime-ice，并生成中英文补充表的审核候选、增删数量、权重变化数量、输入摘要、上游提交与许可证；也可手动指定 `msime_ref` 和 `upstream_ref` 试跑。它只上传 workflow artifact，不自动合并或发布。生成器是 msime 的 `msime-dict-build rime-ice-supplement --upstream <干净的上游检出> --dictionary <本仓检出> --out <候选目录>`；中文对照主拼音表、单字表、区划表和人工词条按同词同音去重，英文对照基础英文表、SCOWL 和人工英文词按小写词形去重（用构建的解析器取词，基础英文表里被 rime-ice 注释掉的条目也算，不把它们加回来）。没有注音的 `tencent.dict.yaml` 不自动猜音导入；引擎不支持的读音单列到 `unsupported-readings.txt`，未注音行单列到 `unannotated-words.txt`，报告列出两类数量。历史补充表的权重另经万象对齐，上游候选的词频变化也须审核。审核后仍按下文跨仓顺序更新引用、许可证、数据与锁，并试跑完整构建。
+
+本地统一准备万象、rime-ice 和字面差集的更新可运行 `python scripts/update_rime_ice_only.py --sync-upstream`：自动拉取 rime-ice 的远程 HEAD 和 `rime-wanxiang-data` 的 `wanxiang` 分支、编译固定构建器、生成补充表、来源锁、NOTICE 更新、差集和 msime 配套补丁，候选保存在 `tmp/`。配套 msime PR 合并后可用脚本的 `--apply` 应用模式校验并更新本仓。依赖、固定版本、结构不兼容的处理及完整命令见 [差集目录 README](sources/pinyin/rime-ice-only/README.md#从-github-拉取并生成完整候选)。
 
 所有数据文件按字节保存：`upstream.lock.json` 按大小和 SHA-256 固定上游原样文件与派生文件，CI 由 `scripts/check_upstream.py` 检查，msime 构建器读取时再校验一遍，并要求记录的上游提交等于 msime 锁文件和许可证写明的提交；所以不要格式化、转换编码或换行符、排序或去重，仓库的 `.gitattributes`（`* -text`）关闭了换行转换。各文件的上游与许可见 [NOTICE.md](NOTICE.md)，逐文件的格式见[文件格式](#文件格式)。
 
@@ -357,9 +362,9 @@ git merge-base --is-ancestor <改动的提交> "$commit" && echo 已包含
 
 本仓库**不对外提供统一的开源许可**：其中绝大部分词库并非本项目的作品，给整个仓库挂一份 LICENSE 等于替上游作者重新授权。逐项的来源与上游条款见 [NOTICE.md](NOTICE.md)，使用或再分发前请以对应上游的条款为准。本项目自建的部分（`custom/`、`curation/`、`packs/`、`scripts/`）以 GPL-3.0 提供；其中 `packs/birds/` 使用的 IOC 鸟名及其整理词表沿用 CC BY 3.0，具体署名与改动说明见该包 README 和 NOTICE；`custom/cantonese.txt` 以 CC BY 4.0 提供，与它构建进的 `msime-cantonese.db` 的其余来源同一许可，见 NOTICE；`curation/cantonese-word-vetoes.txt`、`curation/cantonese-essay-keep.txt` 列的是 rime-cantonese 的词与读音，同样以 CC BY 4.0 提供。
 
-**`sources/pinyin/wanxiang/` 中的 17 份词库文件来自万象词库，作者为 amzxyz，许可为 CC BY 4.0。** 复制的来源是 [amzxyz/rime-wanxiang 标签 `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）](https://github.com/amzxyz/rime-wanxiang/tree/7ab73ee0c7f80190004233e70f954833df64c80e/dicts)，文件内容未作修改。使用或再分发这些文件及其改编数据时，须保留万象词库与 amzxyz 的署名、来源链接、[CC BY 4.0 许可链接](https://creativecommons.org/licenses/by/4.0/)及上游提供的声明；有改动时须注明改动。许可全文见本仓 [sources/symbols/LICENSE](sources/symbols/LICENSE)，逐项登记见 [NOTICE.md「万象词库原始文件」](NOTICE.md#万象词库原始文件)。
+**`sources/pinyin/wanxiang/` 中的 15 份词库文件来自万象词库，作者为 amzxyz，许可为 CC BY 4.0。** 复制的来源是 [amzxyz/rime-wanxiang-data `wanxiang` 分支（提交 `6b317736a8f90bb6dddf1423dbd1f0b83d4bf764`）](https://github.com/amzxyz/rime-wanxiang-data/tree/6b317736a8f90bb6dddf1423dbd1f0b83d4bf764/dicts)，文件内容未作修改。使用或再分发这些文件及其改编数据时，须保留万象词库与 amzxyz 的署名、来源链接、[CC BY 4.0 许可链接](https://creativecommons.org/licenses/by/4.0/)及上游提供的声明；有改动时须注明改动。许可全文见本仓 [sources/symbols/LICENSE](sources/symbols/LICENSE)，逐项登记见 [NOTICE.md「万象词库原始文件」](NOTICE.md#万象词库原始文件)。
 
-拼音词库（`sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`）中与万象共有的词条，权重改编自 [amzxyz/rime-wanxiang](https://github.com/amzxyz/rime-wanxiang) 标签 `v18.0.16`（提交 `7ab73ee0c7f80190004233e70f954833df64c80e`）的词库（词库数据源自同一作者的 [amzxyz/RIME-LMDG](https://github.com/amzxyz/RIME-LMDG)），按 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 使用：署名 amzxyz 与万象拼音，改动是去掉声调、按文件统一缩放并取整（msime 构建器的 `reweight` 阶段每次构建按 `sources/pinyin/wanxiang/` 重算一遍；`curation/pinyin-reweight.txt` 存在时还给人名、多音两份词库单独定比例，并让万象任何读音都不收的多字词不再排在同键万象权重达到门槛的词前面），词条与读音仍来自 rime-ice，详见 [NOTICE.md](NOTICE.md)「拼音权重与万象对齐」。CC BY 4.0 可以单向并入 GPL-3.0 作品（[FSF 的兼容性列表](https://www.gnu.org/licenses/license-list.html#ccby)），所以这三份文件仍按 rime-ice 的 GPL-3.0 分发，同时保留对万象的署名；再分发由它们构建的 `msime-pinyin.db` 时，也要一并保留这份署名与改动说明。
+拼音词库（`sources/pinyin/single-chars.txt`、`sources/pinyin/rime-ice.txt`、`sources/pinyin/rime-ice-supplement.txt`）中与万象共有的词条，权重改编自万象词库（#84 首次对齐用的是 amzxyz/rime-wanxiang `v18.0.16` 即 `7ab73ee`，构建时按当前取自 [amzxyz/rime-wanxiang-data](https://github.com/amzxyz/rime-wanxiang-data) 的 `sources/pinyin/wanxiang/` 重算；词库数据源自同一作者的 [amzxyz/RIME-LMDG](https://github.com/amzxyz/RIME-LMDG)），按 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 使用：署名 amzxyz 与万象拼音，改动是去掉声调、按文件统一缩放并取整（msime 构建器的 `reweight` 阶段每次构建按 `sources/pinyin/wanxiang/` 重算一遍；`curation/pinyin-reweight.txt` 存在时还给人名、多音两份词库单独定比例，并让万象任何读音都不收的多字词不再排在同键万象权重达到门槛的词前面），词条与读音仍来自 rime-ice，详见 [NOTICE.md](NOTICE.md)「拼音权重与万象对齐」。CC BY 4.0 可以单向并入 GPL-3.0 作品（[FSF 的兼容性列表](https://www.gnu.org/licenses/license-list.html#ccby)），所以这三份文件仍按 rime-ice 的 GPL-3.0 分发，同时保留对万象的署名；再分发由它们构建的 `msime-pinyin.db` 时，也要一并保留这份署名与改动说明。
 
 ## 历史
 
