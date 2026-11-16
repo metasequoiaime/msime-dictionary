@@ -25,7 +25,7 @@
 拼音的否决表和权重覆盖表不只作用于 `msime-pinyin.db`：整词否决也从三张五笔表删词，带 `wubi` 的覆盖行也改五笔补充词组的同码排序，否决和带 `wubi` 的覆盖还会改变 `wubi86-rime-wubi.txt` 的行能不能越过同码极点行；languages 判断粤拼 essay 补词有没有佐证时，读的是去掉否决读音之后的拼音词表（被否决的读音不算佐证），所以改否决表可能改变 `msime-cantonese.db` 的次序，试跑时 languages 的产物也要比较。权重覆盖表不影响粤拼库：覆盖只决定普通话同键上排第几，被压低的词仍然是拼音库的词。
 
 - 只由维护者改，不接受投稿；不受只追加限制，撤销一条就删掉那一行。msime-web、msime-cloud 不读写这个目录。
-- 每一行都要有来源：先用 msime 的 `msime-dict-build cleanse-report` 出候选清单（`--upstream` 给上游 rime-ice 检出，`--reference` 给万象 `7ab73ee` 的全部 17 份 dicts，即本仓 `sources/pinyin/wanxiang/`），逐条审过再抄进表里，在表里那一节的 `#` 注释写明出自哪一份清单、哪个 msime 提交和本仓提交、审定规则和抽检结果。会误伤正常词的写豁免（粗俗词表的 `!` 写法）或不写。
+- 每一行都要有来源：先用 msime 的 `msime-dict-build cleanse-report` 出候选清单（`--upstream` 给上游 rime-ice 检出，`--reference` 给本仓 `sources/pinyin/wanxiang/` 登记的全部万象 dicts，当前是 rime-wanxiang-data `6b31773` 的 15 份；2026-11-16 以前的条目用的是配置仓库 `7ab73ee` 的 17 份，以表里注释为准），逐条审过再抄进表里，在表里那一节的 `#` 注释写明出自哪一份清单、哪个 msime 提交和本仓提交、审定规则和抽检结果。会误伤正常词的写豁免（粗俗词表的 `!` 写法）或不写。
 - 每一条都必须在本次输入里匹配到东西，否则构建失败：输入变了、条目匹配不到时把它删掉，不要留着。同一个读音不能既否决又覆盖；覆盖不能作用于 `custom/words.txt` 从已有的行提了权的行。
 - 覆盖的权重是绝对值：同键别的词的权重变了（上游换了提交、补充表重新生成、万象重加权），要重新跑 `cleanse-report` 核对，碎片和越位的行可能又压过了常用词，或者降得过头。
 - 覆盖表第四列 `wubi` 只写在本地损坏恢复上游值、占位权重这类与全拼键无关的修正上。碎片、非标准读音、人工词条越位是按同一全拼键上的竞争定的，五笔编码上没有这层竞争，不写 `wubi`；方案定了五笔只做定点清洗、不做大删，覆盖表也删不掉五笔里的词（门槛取覆盖前后较大的权重）。五笔里要删的词写进否决表，逐条审过。
@@ -41,6 +41,8 @@
 
 ## 基础词库
 
+**万象词库的更新上游必须明确为 [amzxyz/rime-wanxiang-data](https://github.com/amzxyz/rime-wanxiang-data)，Git 地址 `https://github.com/amzxyz/rime-wanxiang-data.git`，分支 `wanxiang`，词表目录 [`dicts/`](https://github.com/amzxyz/rime-wanxiang-data/tree/wanxiang/dicts)。** `amzxyz/rime-wanxiang` 是配置仓库；不要从配置仓库更新词库，也不要据其词表清单断言数据仓库删除了文件。脚本默认来源和文档必须与这个约定一致。`upstream.lock.json` 里的 `rime-wanxiang` 仍是逻辑上游名，repository 已是数据仓库（2026-11-16 从配置仓库 `7ab73ee` 切到 rime-wanxiang-data `6b31773`），msime 的来源引用和许可说明要同步，仍按跨仓顺序试跑与合并。数据仓库的 `dicts/` 已不收 `lianxiang`、`renming`，本仓随之删除，登记 15 份；msime 构建器 `reweight.rs` 的词库清单须同步去掉这两份。上游再删词表时，审过后用同步脚本的 `--remove-wanxiang` 逐个显式删除，不从别的提交补齐。`curation/` 注释、`places.txt` 文件头里写的万象提交是当时实际用的数据，保持原样，重新生成时再更新。
+
 `sources/pinyin/`、`sources/wubi/`、`sources/english/`、`sources/cantonese/`、`sources/zhuyin/`、`sources/stroke/`、`sources/japanese/`、`sources/korean/`、`sources/unlicensed/` 下的数据来自第三方（见 `NOTICE.md`）。其中一部分是本项目从固定上游提交生成的补充表（`sources/pinyin/rime-ice-supplement.txt`、`sources/pinyin/places.txt`、`sources/english/rime-ice-en-supplement.txt`、`sources/english/scowl-words.txt`、`sources/wubi/wubi86-supplement.txt`、`sources/wubi/wubi98-supplement.txt`、`sources/wubi/wubixsj-supplement.txt`、`sources/zhuyin/mcbopomofo-supplement.txt`、`sources/cantonese/hkcancor-word-counts.txt`），不是上游原样文件。不直接编辑上游原表或在其中加新词；经固定上游提交生成的补充表可以作为独立文件加入（规则见下一节），并且：
 
 - 提交说明写清修了什么、依据是什么（上游提交、对照数据或复现方式）；
@@ -48,6 +50,18 @@
 - 新增的第三方数据先确认再分发许可并写进 `NOTICE.md`，没有明确许可的数据会被 msime 构建器的 `licensing.rs` 挡在发布产物之外，要在那里同步登记。
 
 ## 补充表
+
+**rime-ice-only 审核差集**
+
+`sources/pinyin/rime-ice-only/` 保存 rime-ice 主表与补充表相对万象全部词表的字面差集，是审核资料，目前不作为额外词表进入构建。以后从上游更新 `sources/pinyin/wanxiang/`、`sources/pinyin/rime-ice.txt` 或 `sources/pinyin/rime-ice-supplement.txt` 时，必须在同一次改动中重新生成此目录的四份词条/词语文件及 `manifest.json`，不得手工改差集。即使词条差集未变，输入提交或字节变了也必须刷新 manifest。
+
+此审核差集的 Python 脚本作为「生成器留在 msime」和「不在本仓添加产物」约定的局部例外，保留在 `scripts/update_rime_ice_only.py`；例外仅覆盖此脚本及本目录的审核资料，不扩展到发布构建器或数据库。运行 `python scripts/update_rime_ice_only.py` 从本地已锁定输入重算，`--check` 只校验是否过期。需要一次导入已审核的万象、rime-ice 数据并重算差集时，使用 `--from-reviewed <本仓候选检出>`；它还同步共享 rime-ice 补充表提交的英文补充表、相关锁记录和候选 NOTICE。操作前先审阅候选数据与说明，遵守上文上游提交升级的跨仓顺序，不用上游 YAML 直接覆盖经修正的 rime-ice 主表。详细命令、比较规则与许可见该目录 README。
+
+更新完成必须通过 `python scripts/update_rime_ice_only.py --check`；quality 的 Upstream record 检查也运行它，防止只更新来源而漏掉差集。差集不包含构建器的清洗结果，不作为已审定补录词表。
+
+从 GitHub 自动准备更新使用 `python scripts/update_rime_ice_only.py --sync-upstream`（入口为 `scripts/sync_upstream_dictionaries.py`，同属上述脚本例外）。rime-ice 默认跟随远程 HEAD，万象明确使用 `rime-wanxiang-data` 的 `wanxiang` 分支（来源约定见「基础词库」），固定实际提交，以当前 builder pin 的干净检出生成候选，输出到 `tmp/`；自动维护万象、中英文 rime-ice 补充表、来源锁、NOTICE 自动同步小节和差集，并生成 msime 配套引用/许可补丁。历史 rime-ice 主表不直接覆盖，不猜音。上游许可或万象文件清单不兼容时停止并保存失败报告，不忽略缺失文件、不混用不同上游提交。审核并合并 msime 配套 PR 后，用 `scripts/sync_upstream_dictionaries.py --apply <候选目录> --msime-commit <合并提交>` 校验 develop 可达性、全部上游引用、无夹带的构建器变更及输入未过期，再更新本仓数据和 builder pin；仍遵守跨仓试跑、单独升级中间构建器改动与合入即发布的要求。
+
+**其他补充表规则**
 
 - 新文件命名为 `sources/<方案>/<来源>-<内容>.txt`，全部小写、用连字符分隔，名字说明数据从哪来、是什么，例如 `sources/english/rime-ice-en-supplement.txt`、`sources/zhuyin/mcbopomofo-supplement.txt`；来源就是内容时可以只写一段，如 `sources/pinyin/places.txt`。不带 `V<N>` 之类的版本后缀：内容由本仓 Git 提交固定（上游文件另由 `upstream.lock.json` 固定），文件名不需要表达版本。`sources/cantonese/` 下的三个 rime-cantonese 文件、`sources/zhuyin/tsi.csv`、`sources/zhuyin/word.csv` 与 `sources/zhuyin/phrase.occ`、`sources/stroke/`、`sources/japanese/`、`sources/korean/` 下的上游原样文件保留上游文件名，不套用这条规则；上游原样文件的名字不是 ASCII 或会和别的文件同名时（如 `sources/wubi/wubi98.txt`、`sources/wubi/wubi98-fcitx.txt`；`sources/wubi/wubixsj-byujiang.txt` 也照这个写法改了名，和同目录的五笔原表一致），改用 `<来源>-<内容>` 形式的名字，并在 `NOTICE.md` 里写明上游的原文件名。
 - 文件头用 `#` 注释写明：上游仓库与提交；生成命令及其所在的 msime 提交；去重规则，并写全对照集合（排除了哪些文件里已有的哪种组合）。msime 构建器把拼音词表逐行直接插入，不去重，没写进对照集合的文件里的重复行会原样进入产物。

@@ -1,6 +1,6 @@
 # Rime dictionary
 # encoding: utf-8
-# #https://github.com/amzxyz/RIME-LMDG
+# #https://github.com/amzxyz/rime-wanxiang-data
 ---
 name: mixed
 version: "LTS"
@@ -16,8 +16,7 @@ sort: original  #字典初始排序，可選original或by_weight
 4H	4H
 4X	4X
 5G	5G
-6G	5G
-4A	5G
+6G	6G
 7z	7z
 A班	A'bān
 A杯	A'bēi
@@ -844,7 +843,7 @@ Alt键	Alt'jiàn
 B话真多	B'huà'zhēn'duō
 Be动词	Be'dòng'cí
 Big胆	Big'dǎn
-C#语言	C'jǐng'yǔ'yán
+C#语言	C#'yǔ'yán
 CO气体	CO'qì'tǐ
 CT检查	CT'jiǎn'chá
 CT扫描	CT'sǎo'miáo

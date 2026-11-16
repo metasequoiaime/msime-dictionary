@@ -82,8 +82,8 @@
       },
       {
         "path": "sources/pinyin/rime-ice-supplement.txt",
-        "size": 1341839,
-        "sha256": "41c50c9b452c89d4accd3abac57a40312a861ad36611850d584fc7d25609ffd3"
+        "size": 1042748,
+        "sha256": "dc084b11e8001521d59692fdbbcd0e9b987585747a104fea7dd43ababf7de1b0"
       },
       {
         "path": "sources/pinyin/places.txt",
@@ -107,8 +107,8 @@
       },
       {
         "path": "curation/hong-kong-readings.tsv",
-        "size": 8551,
-        "sha256": "13db3c2a037ac3049dd1b4c9033e27683d5f396b8dd3e6ca87fc568b782ddb46"
+        "size": 8572,
+        "sha256": "0d8bcf4da5efd34592212045eeac5632aa3601e06f52e24849ba55974373d2c0"
       },
       {
         "path": "curation/hong-kong-forms.tsv",

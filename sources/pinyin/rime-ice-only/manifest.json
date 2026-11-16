@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "comparison": "Exact word spelling; no reading, weight, Unicode or script normalization; no curation",
+  "generator": {
+    "path": "scripts/update_rime_ice_only.py",
+    "sha256": "001420e373801759ea45e13731316361974b5cc7c1dee40e6de24ec397c2324e"
+  },
+  "upstreams": {
+    "rime-ice": {
+      "repository": "https://github.com/iDvel/rime-ice.git",
+      "commit": "9e66b0729083b37d217312294f6d516c8d7234be"
+    },
+    "rime-ice-supplement": {
+      "repository": "https://github.com/iDvel/rime-ice.git",
+      "commit": "927e1cf1d3eeb9bf4be85e3f684dba4dd485b6f6"
+    },
+    "rime-wanxiang": {
+      "repository": "https://github.com/amzxyz/rime-wanxiang-data.git",
+      "commit": "6b317736a8f90bb6dddf1423dbd1f0b83d4bf764"
+    }
+  },
+  "inputs": [
+    {
+      "path": "sources/pinyin/rime-ice-supplement.txt",
+      "size": 1042748,
+      "sha256": "dc084b11e8001521d59692fdbbcd0e9b987585747a104fea7dd43ababf7de1b0"
+    },
+    {
+      "path": "sources/pinyin/rime-ice.txt",
+      "size": 28590541,
+      "sha256": "76252df96ac5e287d81b498f96fe2ec211861caa2f4423b2d30fbe331fc1d264"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/cuoyin.dict.yaml",
+      "size": 8148,
+      "sha256": "fdb1bfdf72abcc9f506964582915ee48608de7be60d1d05ac3732161f04d58ac"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/diming.dict.yaml",
+      "size": 3306888,
+      "sha256": "0f4a7ec6e9fd715431b0ecd8531d4ffb527e35aaf6c897fceaaeae6daf34997c"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/duoyin.dict.yaml",
+      "size": 137513,
+      "sha256": "dd41608239d3260655bc0326aefadd131dc1301a7d5231679cf301d9c6f92ffb"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/fangyan.dict.yaml",
+      "size": 8775,
+      "sha256": "2c7abc838556c622ccb7dc7f7fa62cacc3292982b5f116cf18f7d5a634f09a04"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/huaxue.dict.yaml",
+      "size": 1452905,
+      "sha256": "f460c245698c6ab0313806d42320f46a9dee1873e53e602270ce2abf46241c25"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/jichu.dict.yaml",
+      "size": 52603683,
+      "sha256": "cb649690ad841b374df5737e671fddee2e52363039c80a1b5ec2fc15432d1d8d"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/mingren.dict.yaml",
+      "size": 671346,
+      "sha256": "e5bc0651d2f16e5d5d675366f074cfc09069985180970764f1411f09dacd9b5f"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/mixed.dict.yaml",
+      "size": 35708,
+      "sha256": "7985fcbb897da478c0a5836be464a0ec411bc5181ef6858df0876016de6e69cd"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/shici.dict.yaml",
+      "size": 16425026,
+      "sha256": "537a30845b2021a99e92ca88017baf6b597436f9d938801fab538dc57a199b2e"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/taifeng.dict.yaml",
+      "size": 8381,
+      "sha256": "2d90ab6866a54207c1be91c6661cf3fc8355da3464815b46d74488e6e3b9b23b"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/wuzhong.dict.yaml",
+      "size": 2424780,
+      "sha256": "80e525cf9c970c84daef888408543bf5572355f26f6f4ea153e678269f71d552"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/yaopin.dict.yaml",
+      "size": 898636,
+      "sha256": "29cdecad239896a78287275a49e2bef9dc1ff10b6e63f93b4cf98bbea045c6e5"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/yiren.dict.yaml",
+      "size": 423812,
+      "sha256": "877d5c7c143de34c3c09cbd044eb9fa90303bb5ede43cb5ddabdbafda2653e75"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/yixue.dict.yaml",
+      "size": 1107920,
+      "sha256": "4a604c55811cd4f5adbccd6f21034f2fa194ba838e58e4eae7af0323c7d1ef79"
+    },
+    {
+      "path": "sources/pinyin/wanxiang/zi.dict.yaml",
+      "size": 616568,
+      "sha256": "f321215a3aa7eef6317ec3b9e9725bf777480627488f5b6a42febaf7687e4924"
+    }
+  ],
+  "wanxiang": {
+    "files": 15,
+    "rows": 2252164,
+    "unique_words": 2211749
+  },
+  "sources": {
+    "rime-ice": {
+      "input_rows": 861812,
+      "input_unique_words": 860656,
+      "missing_rows": 344324,
+      "missing_unique_words": 343966
+    },
+    "rime-ice-supplement": {
+      "input_rows": 36311,
+      "input_unique_words": 36110,
+      "missing_rows": 12427,
+      "missing_unique_words": 12382
+    }
+  },
+  "combined_missing_unique_words": 355641,
+  "outputs": [
+    {
+      "path": "sources/pinyin/rime-ice-only/rime-ice-only-entries.txt",
+      "size": 14964093,
+      "sha256": "da5eb753c5f462978da0c16adb5424031c147d76be1634e48ee87ffa02763070"
+    },
+    {
+      "path": "sources/pinyin/rime-ice-only/rime-ice-only-words.txt",
+      "size": 5013886,
+      "sha256": "0ee4ea669c2d940fe07813cda9a067bc863bc3d673c7f6d85e185cbf93d1eacd"
+    },
+    {
+      "path": "sources/pinyin/rime-ice-only/rime-ice-supplement-only-entries.txt",
+      "size": 481055,
+      "sha256": "2229dcb1d02cfd6378bad766739e1a18b2d41bdcdac92ec6f76d860ea9c36113"
+    },
+    {
+      "path": "sources/pinyin/rime-ice-only/rime-ice-supplement-only-words.txt",
+      "size": 164112,
+      "sha256": "5a252ca55c6cd9a0c08a4c7ad5d5b3457d5cd78a6dab51d778523704209a5e17"
+    }
+  ]
+}

@@ -33,7 +33,6 @@
 三角洲相	san'jiao'zhou'xiang	10000
 辫状河	bian'zhuang'he	10000
 曲流河	qu'liu'he	10000
-泥岩	ni'yan	10000
 蒸发岩	zheng'fa'yan	10000
 生物礁	sheng'wu'jiao	10000
 砂体	sha'ti	10000

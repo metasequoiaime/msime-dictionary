@@ -60,7 +60,7 @@
 
 读音由三个来源交叉比对，不一致处和上面列出的多音字逐条人工审定：
 
-- 本仓 `sources/pinyin/wanxiang/` 下的万象词库（amzxyz/rime-wanxiang，CC BY 4.0，见 `NOTICE.md`）：1130 个词里有 646 个收在万象词库中，其中 639 个与本包读音一致；不一致的 7 个是“行空间”和 6 个测度类术语，原因见上文多音字一节。其余 484 个词万象词库没有。
+- 本仓 `sources/pinyin/wanxiang/` 下的万象词库（审定时为 amzxyz/rime-wanxiang `7ab73ee` 的 17 份；现已改取 amzxyz/rime-wanxiang-data，CC BY 4.0，见 `NOTICE.md`）：1130 个词里有 646 个收在万象词库中，其中 639 个与本包读音一致；不一致的 7 个是“行空间”和 6 个测度类术语，原因见上文多音字一节。其余 484 个词万象词库没有。
 - 发布拼音词库（`sources/pinyin/rime-ice.txt` 等）：按最长匹配把词切成发布词库已有的词，取这些词的读音，例如“伽罗瓦”“勒贝格”“凯勒”“伽马”。
 - [pypinyin](https://github.com/mozillazg/python-pinyin) 0.55.0 的 `lazy_pinyin`：它把伽罗瓦读成 `ga`、泊松读成 `po`、勒贝格和勒让德读成 `lei`、凯勒读成 `kai'lei`、外测度读成 `ce'duo`、行空间和行秩读成 `xing`、长正合列读成 `zhang`、多重读成 `zhong`，这些都没有采用。
 
