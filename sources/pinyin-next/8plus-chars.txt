@@ -4128,6 +4128,7 @@
 分析原因进行整改	fen'xi'yuan'yin'jin'xing'zheng'gai	1
 汾阳王以副元帅居蒲	fen'yang'wang'yi'fu'yuan'shuai'ju'pu	10
 纷窈窕兮岩倚披以鹏翅	fen'yao'tiao'xi'yan'yi'pi'yi'peng'chi	10
+分子亲核取代反应	fen'zi'qin'he'qu'dai'fan'ying	10
 奉报穷秋寄隐士诗	feng'bao'qiong'qiu'ji'yin'shi'shi	10
 封闭贷款管理暂行办法	feng'bi'dai'kuan'guan'li'zan'xing'ban'fa	1
 风尘澒洞兮豺虎咬人	feng'chen'hong'dong'xi'chai'hu'yao'ren	10
@@ -4740,6 +4741,7 @@
 格罗图斯德雷珀定律	ge'luo'tu'si'de'lei'po'ding'lv	10
 革命传统教育基地	ge'ming'chuan'tong'jiao'yu'ji'di	1
 革命乐观主义精神	ge'ming'le'guan'zhu'yi'jing'shen	1
+革命遗址及革命纪念建筑物	ge'ming'yi'zhi'ji'ge'ming'ji'nian'jian'zhu'wu	10
 个人财产对外转移售付汇管理暂行办法	ge'ren'cai'chan'dui'wai'zhuan'yi'shou'fu'hui'guan'li'zan'xing'ban'fa	1
 个人二手住房贷款	ge'ren'er'shou'zhu'fang'dai'kuan	1
 个人观点仅供参考	ge'ren'guan'dian'jin'gong'can'kao	1
@@ -8956,6 +8958,7 @@
 库约岛荧光裳凤蝶	ku'yue'dao'ying'guang'shang'feng'die	1
 跨国公司地区总部	kua'guo'gong'si'di'qu'zong'bu	1
 跨国银行法律制度研究	kua'guo'yin'hang'fa'lv'zhi'du'yan'jiu	1
+夸克胶子等离子体	kua'ke'jiao'zi'deng'li'zi'ti	10
 快被挤成一团麻花	kuai'bei'ji'cheng'yi'tuan'ma'hua	1
 会计初级职称考试	kuai'ji'chu'ji'zhi'cheng'kao'shi	1
 会计从业资格管理办法	kuai'ji'cong'ye'zi'ge'guan'li'ban'fa	1
@@ -9438,6 +9441,7 @@
 临沂高新技术产业开发区	lin'yi'gao'xin'ji'shu'chan'ye'kai'fa'qu	10
 邻乙氧基苯甲酰肼	lin'yi'yang'ji'ben'jia'xian'jing	12
 临渊羡鱼不如退而结网	lin'yuan'xian'yu'bu'ru'tui'er'jie'wang	1
+林则徐销烟池与虎门炮台旧址	lin'ze'xu'xiao'yan'chi'yu'hu'men'pao'tai'jiu'zhi	10
 林芝市工布江达县	lin'zhi'shi'gong'bu'jiang'da'xian	10
 灵宝无量度人上品妙经	ling'bao'wu'liang'du'ren'shang'pin'miao'jing	1
 灵创智恒终端安全登录系统	ling'chuang'zhi'heng'zhong'duan'an'quan'deng'lu'xi'tong	1
@@ -20430,6 +20434,7 @@
 中国公安部经济犯罪侦察局	zhong'guo'gong'an'bu'jing'ji'fan'zui'zhen'cha'ju	1
 中国共产党党内法规制定程序暂行条例	zhong'guo'gong'chan'dang'dang'nei'fa'gui'zhi'ding'cheng'xu'zan'xing'tiao'li	1
 中国共产党党校工作暂行条例	zhong'guo'gong'chan'dang'dang'xiao'gong'zuo'zan'xing'tiao'li	1
+中国共产党第一次全国代表大会会址	zhong'guo'gong'chan'dang'di'yi'ci'quan'guo'dai'biao'da'hui'hui'zhi	10
 中国共产党军队委员会工作条例	zhong'guo'gong'chan'dang'jun'dui'wei'yuan'hui'gong'zuo'tiao'li	1
 中国共产党普通高等学校基层组织工作条例	zhong'guo'gong'chan'dang'pu'tong'gao'deng'xue'xiao'ji'ceng'zu'zhi'gong'zuo'tiao'li	1
 中国共产党中央委员会	zhong'guo'gong'chan'dang'zhong'yang'wei'yuan'hui	1
@@ -20626,6 +20631,7 @@
 中国少数民族法制史	zhong'guo'shao'shu'min'zu'fa'zhi'shi	1
 中国社会工作者协会	zhong'guo'she'hui'gong'zuo'zhe'xie'hui	1
 中国社会科学院佛教研究中心	zhong'guo'she'hui'ke'xue'yuan'fo'jiao'yan'jiu'zhong'xin	1
+中国社会主义青年团中央机关旧址	zhong'guo'she'hui'zhu'yi'qing'nian'tuan'zhong'yang'ji'guan'jiu'zhi	10
 中国摄影家协会章程	zhong'guo'she'ying'jia'xie'hui'zhang'cheng	1
 中国生物物种名录	zhong'guo'sheng'wu'wu'zhong'ming'lu	1
 中国十大传世名画	zhong'guo'shi'da'chuan'shi'ming'hua	1

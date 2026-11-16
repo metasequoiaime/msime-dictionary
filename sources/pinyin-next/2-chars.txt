@@ -12583,6 +12583,7 @@
 彩凤	cai'feng	366
 踩缝	cai'feng	25
 财富	cai'fu	36276
+蔡福	cai'fu	626
 财赋	cai'fu	533
 财福	cai'fu	476
 彩蝠	cai'fu	94
@@ -12716,6 +12717,7 @@
 才俊	cai'jun	286
 裁军	cai'jun	254
 蔡骏	cai'jun	203
+蔡俊	cai'jun	162
 彩卡	cai'ka	36
 才开	cai'kai	597
 裁开	cai'kai	567
@@ -12769,11 +12771,13 @@
 菜量	cai'liang	1732
 裁量	cai'liang	1645
 才两	cai'liang	950
+蔡亮	cai'liang	242
 财粮	cai'liang	1
 材料	cai'liao	120661
 菜料	cai'liao	770
 猜料	cai'liao	1
 彩林	cai'lin	918
+蔡琳	cai'lin	872
 蔡林	cai'lin	1
 彩铃	cai'ling	374
 彩玲	cai'ling	337
@@ -12809,6 +12813,7 @@
 菜苗	cai'miao	28
 踩灭	cai'mie	63
 彩民	cai'min	192
+蔡敏	cai'min	173
 菜名	cai'ming	443
 蔡明	cai'ming	147
 才名	cai'ming	116
@@ -12977,6 +12982,7 @@
 菜田	cai'tian	35
 彩田	cai'tian	33
 彩条	cai'tiao	110
+蔡挺	cai'ting	486
 财厅	cai'ting	1
 菜亭	cai'ting	1
 财通	cai'tong	1058
@@ -13007,11 +13013,14 @@
 采薇	cai'wei	198
 才为	cai'wei	158
 财委	cai'wei	126
+蔡伟	cai'wei	100
+蔡威	cai'wei	80
 才问	cai'wen	185
 踩稳	cai'wen	62
 猜我	cai'wo	1080
 财务	cai'wu	27170
 财物	cai'wu	5187
+蔡武	cai'wu	424
 彩鹀	cai'wu	99
 菜系	cai'xi	3118
 财喜	cai'xi	518
@@ -13080,6 +13089,8 @@
 裁衣	cai'yi	318
 采邑	cai'yi	254
 彩依	cai'yi	125
+蔡义	cai'yi	95
+蔡毅	cai'yi	86
 彩翼	cai'yi	40
 彩印	cai'yin	273
 彩音	cai'yin	246
@@ -13693,6 +13704,7 @@
 藏拙	cang'zhuo	286
 藏踪	cang'zong	1
 草案	cao'an	1526
+曹安	cao'an	657
 草庵	cao'an	542
 曹庵	cao'an	1
 曹昂	cao'ang	706
@@ -13730,6 +13742,7 @@
 草厂	cao'chang	1
 草巢	cao'chao	31
 槽车	cao'che	6
+曹成	cao'cheng	284
 操持	cao'chi	512
 槽齿	cao'chi	104
 曹冲	cao'chong	1127
@@ -13776,6 +13789,8 @@
 曹方	cao'fang	867
 操房	cao'fang	799
 槽坊	cao'fang	1
+曹飞	cao'fei	139
+曹汾	cao'fen	153
 草粉	cao'fen	118
 操粉	cao'fen	1
 肏粉	cao'fen	1
@@ -13804,6 +13819,7 @@
 曹国	cao'guo	585
 草粿	cao'guo	361
 草海	cao'hai	873
+曹海	cao'hai	502
 草害	cao'hai	42
 糙汉	cao'han	301
 槽焊	cao'han	153
@@ -13829,6 +13845,7 @@
 槽脊	cao'ji	59
 曹家	cao'jia	1388
 草架	cao'jia	118
+曹健	cao'jian	598
 草尖	cao'jian	568
 草碱	cao'jian	456
 草荐	cao'jian	1
@@ -13851,6 +13868,7 @@
 草看	cao'kan	1
 操课	cao'ke	1076
 草科	cao'ke	1022
+曹科	cao'ke	231
 草窠	cao'ke	1
 草坑	cao'keng	31
 槽坑	cao'keng	1
@@ -13878,6 +13896,7 @@
 糙粮	cao'liang	62
 草料	cao'liao	512
 草寮	cao'liao	1
+曹林	cao'lin	139
 曹霖	cao'lin	1
 草岭	cao'ling	657
 草蛉	cao'ling	310
@@ -13906,6 +13925,7 @@
 草棉	cao'mian	57
 草庙	cao'miao	531
 草民	cao'min	455
+曹明	cao'ming	580
 草螟	cao'ming	86
 槽模	cao'mo	562
 曹某	cao'mou	940
@@ -13940,6 +13960,7 @@
 曹仁	cao'ren	2574
 草忍	cao'ren	1
 糙人	cao'ren	1
+曹荣	cao'rong	508
 曹溶	cao'rong	1
 曹叡	cao'rui	828
 曹睿	cao'rui	787
@@ -13995,9 +14016,11 @@
 草屯	cao'tun	842
 草洼	cao'wa	1
 草湾	cao'wan	594
+曹伟	cao'wei	1202
 曹魏	cao'wei	1142
 草味	cao'wei	62
 槽位	cao'wei	62
+曹文	cao'wen	981
 草窝	cao'wo	35
 操我	cao'wo	1
 肏我	cao'wo	1
@@ -14026,18 +14049,23 @@
 曹姓	cao'xing	195
 曹熊	cao'xiong	1
 曹休	cao'xiu	1504
+曹轩	cao'xuan	73
+曹雪	cao'xue	1220
 曹学	cao'xue	490
 草学	cao'xue	62
 槽牙	cao'ya	82
 草芽	cao'ya	74
 操演	cao'yan	110
 草雁	cao'yan	95
+曹阳	cao'yang	873
+曹杨	cao'yang	589
 草样	cao'yang	312
 草药	cao'yao	1843
 草叶	cao'ye	144
 草野	cao'ye	94
 草业	cao'ye	75
 曹邺	cao'ye	60
+曹一	cao'yi	671
 曹姨	cao'yi	1
 曹佾	cao'yi	1
 曹寅	cao'yin	684
@@ -14045,6 +14073,8 @@
 曹营	cao'ying	429
 草婴	cao'ying	407
 草莺	cao'ying	97
+曹勇	cao'yong	747
+曹永	cao'yong	513
 糙鲉	cao'you	77
 草鱼	cao'yu	414
 曹禺	cao'yu	301
@@ -14052,8 +14082,10 @@
 曹遇	cao'yu	55
 草原	cao'yuan	8315
 曹缘	cao'yuan	536
+曹邍	cao'yuan	84
 曹苑	cao'yuan	15
 草约	cao'yue	9
+曹云	cao'yun	1066
 漕运	cao'yun	1013
 嘈杂	cao'za	2889
 曹宰	cao'zai	55
@@ -14069,6 +14101,7 @@
 曹真	cao'zhen	824
 草枕	cao'zhen	1
 曹征	cao'zheng	1133
+曹正	cao'zheng	127
 草纸	cao'zhi	5661
 草薙	cao'zhi	948
 曹植	cao'zhi	643
@@ -17507,11 +17540,16 @@
 陈黯	chen'an	55
 陈昂	chen'ang	1
 陈鳌	chen'ao	1
+陈柏	chen'bai	1066
 衬板	chen'ban	634
 晨报	chen'bao	157
+陈宝	chen'bao	141
 尘暴	chen'bao	1
+陈北	chen'bei	26
 尘坌	chen'ben	1
 趁便	chen'bian	1
+陈彪	chen'biao	225
+陈标	chen'biao	32
 陈斌	chen'bin	686
 沉彬	chen'bin	55
 谌斌	chen'bin	34
@@ -17520,6 +17558,7 @@
 晨勃	chen'bo	166
 陈波	chen'bo	1
 衬布	chen'bu	119
+陈蔡	chen'cai	41
 陈材	chen'cai	40
 陈灿	chen'can	1
 陈粲	chen'can	1
@@ -17528,6 +17567,7 @@
 陈策	chen'ce	580
 衬层	chen'ceng	6
 陈茶	chen'cha	276
+陈畅	chen'chang	70
 晨场	chen'chang	46
 陈超	chen'chao	1
 晨晨	chen'chen	1472
@@ -17550,18 +17590,22 @@
 趻踔	chen'chuo	1
 趁此	chen'ci	320
 陈词	chen'ci	235
+陈聪	chen'cong	243
 陈醋	chen'cu	433
 陈璀	chen'cui	55
 陈村	chen'cun	88
 陈存	chen'cun	55
+陈达	chen'da	317
 尘袋	chen'dai	79
 衬带	chen'dai	64
 陈埭	chen'dai	1
+陈丹	chen'dan	225
 沉到	chen'dao	968
 陈导	chen'dao	920
 陈到	chen'dao	142
 嗔道	chen'dao	1
 沉的	chen'de	672
+陈德	chen'de	471
 衬得	chen'de	125
 沉得	chen'de	100
 陈登	chen'deng	295
@@ -17580,17 +17624,26 @@
 晨读	chen'du	933
 尘毒	chen'du	1
 疢毒	chen'du	1
+陈铎	chen'duo	34
 陈朵	chen'duo	1
+陈二	chen'er	283
+陈法	chen'fa	28
 陈蕃	chen'fan	179
 陈璠	chen'fan	55
+陈帆	chen'fan	35
 尘凡	chen'fan	1
+陈放	chen'fang	949
 陈芳	chen'fang	875
+陈飞	chen'fei	860
 宸妃	chen'fei	817
 尘肺	chen'fei	774
 陈菲	chen'fei	370
+陈芬	chen'fen	120
 尘粉	chen'fen	1
+陈峰	chen'feng	1149
 尘封	chen'feng	558
 晨风	chen'feng	446
+陈凤	chen'feng	356
 陈风	chen'feng	1
 沉浮	chen'fu	1755
 臣服	chen'fu	1290
@@ -17616,14 +17669,17 @@
 晨光	chen'guang	1350
 陈光	chen'guang	1166
 辰光	chen'guang	743
+陈广	chen'guang	669
 陈规	chen'gui	220
 陈珪	chen'gui	58
 陈果	chen'guo	1210
 陈国	chen'guo	1
 忱蛤	chen'ha	84
+陈海	chen'hai	573
 沉海	chen'hai	62
 尘海	chen'hai	1
 沉酣	chen'han	22
+陈航	chen'hang	278
 陈浩	chen'hao	1423
 陈好	chen'hao	212
 陈豪	chen'hao	201
@@ -17632,11 +17688,14 @@
 陈合	chen'he	55
 嗔恨	chen'hen	1
 陈红	chen'hong	433
+陈洪	chen'hong	390
+陈宏	chen'hong	351
 沉厚	chen'hou	85
 陈虎	chen'hu	932
 沉湖	chen'hu	522
 陈湖	chen'hu	338
 陈祜	chen'hu	55
+陈华	chen'hua	1339
 陈化	chen'hua	978
 尘寰	chen'huan	75
 沉缓	chen'huan	71
@@ -17656,9 +17715,14 @@
 陈迹	chen'ji	80
 陈季	chen'ji	55
 疢疾	chen'ji	1
+陈佳	chen'jia	1386
+陈嘉	chen'jia	1317
 陈家	chen'jia	1118
 晨检	chen'jian	1215
 晨间	chen'jian	226
+陈建	chen'jian	180
+陈健	chen'jian	144
+陈剑	chen'jian	115
 沉肩	chen'jian	92
 尘间	chen'jian	73
 沉降	chen'jiang	876
@@ -17666,14 +17730,17 @@
 郴江	chen'jiang	1
 衬胶	chen'jiao	230
 陈矫	chen'jiao	48
+陈杰	chen'jie	849
 陈洁	chen'jie	770
 陈姐	chen'jie	295
 尘芥	chen'jie	1
 沉浸	chen'jin	3887
+陈锦	chen'jin	3693
 陈瑾	chen'jin	1000
 陈金	chen'jin	904
 沉静	chen'jing	1247
 陈静	chen'jing	1242
+陈敬	chen'jing	1180
 沉井	chen'jing	1031
 晨景	chen'jing	807
 陈京	chen'jing	55
@@ -17681,6 +17748,7 @@
 陈酒	chen'jiu	1
 陈菊	chen'ju	783
 陈娟	chen'juan	341
+陈珏	chen'jue	853
 陈俊	chen'jun	106
 陈军	chen'jun	1
 陈凯	chen'kai	235
@@ -17690,6 +17758,7 @@
 陈康	chen'kang	1
 沉珂	chen'ke	796
 沉疴	chen'ke	756
+陈克	chen'ke	574
 陈珂	chen'ke	210
 晨课	chen'ke	53
 沉孔	chen'kong	73
@@ -17697,8 +17766,10 @@
 衬裤	chen'ku	41
 陈宽	chen'kuan	1
 陈贶	chen'kuang	55
+陈奎	chen'kui	30
 陈揆	chen'kui	1
 陈坤	chen'kun	634
+陈岚	chen'lan	1527
 陈兰	chen'lan	1
 陈朗	chen'lang	1
 陈老	chen'lao	198
@@ -17710,15 +17781,20 @@
 陈雷	chen'lei	1
 沉雷	chen'lei	1
 陈粒	chen'li	1356
+陈丽	chen'li	207
+陈力	chen'li	165
+陈立	chen'li	132
 尘粒	chen'li	105
 衬里	chen'li	84
 晨礼	chen'li	1
 晨练	chen'lian	471
 陈亮	chen'liang	837
+陈良	chen'liang	699
 陈粮	chen'liang	42
 臣僚	chen'liao	173
 衬料	chen'liao	43
 陈列	chen'lie	2553
+陈林	chen'lin	918
 陈琳	chen'lin	872
 陈玲	chen'ling	747
 衬领	chen'ling	1
@@ -17726,6 +17802,7 @@
 陈龙	chen'long	878
 谌龙	chen'long	834
 辰龙	chen'long	790
+陈露	chen'lu	697
 晨露	chen'lu	94
 臣虏	chen'lu	1
 趁乱	chen'luan	647
@@ -17736,6 +17813,7 @@
 沉埋	chen'mai	28
 尘螨	chen'man	515
 陈漫	chen'man	489
+陈懋	chen'mao	26
 陈美	chen'mei	994
 沉闷	chen'men	3225
 陈梦	chen'meng	882
@@ -17752,10 +17830,13 @@
 晨鸣	chen'ming	411
 沉默	chen'mo	15936
 沉没	chen'mo	2433
+陈默	chen'mo	1946
 陈某	chen'mou	832
 沉木	chen'mu	702
 瞋目	chen'mu	388
 陈睦	chen'mu	55
+陈楠	chen'nan	760
+陈南	chen'nan	260
 趁你	chen'ni	829
 沉溺	chen'ni	345
 尘泥	chen'ni	276
@@ -17763,6 +17844,7 @@
 龀年	chen'nian	1
 陈酿	chen'niang	1096
 晨尿	chen'niao	724
+陈宁	chen'ning	249
 陈凝	chen'ning	55
 沉凝	chen'ning	1
 嗔怒	chen'nu	91
@@ -17775,27 +17857,43 @@
 陈平	chen'ping	2716
 抻平	chen'ping	55
 臣仆	chen'pu	53
+陈其	chen'qi	1300
+陈启	chen'qi	1235
 晨起	chen'qi	1170
+陈琦	chen'qi	1079
+陈琪	chen'qi	845
 衬砌	chen'qi	624
 陈玘	chen'qi	144
 沉潜	chen'qian	232
 衬铅	chen'qian	50
 晨潜	chen'qian	30
 趁钱	chen'qian	1
+陈强	chen'qiang	1480
 陈桥	chen'qiao	110
 陈峤	chen'qiao	55
 臣妾	chen'qie	3083
+陈勤	chen'qin	103
+陈琴	chen'qin	74
 陈钦	chen'qin	1
 陈情	chen'qing	531
+陈清	chen'qing	329
+陈庆	chen'qing	280
 陈晴	chen'qing	124
 陈请	chen'qing	1
+陈琼	chen'qiong	122
+陈秋	chen'qiu	860
+陈球	chen'qiu	47
 晨曲	chen'qu	25
 尘曲	chen'qu	22
+陈权	chen'quan	270
+陈泉	chen'quan	26
 衬裙	chen'qun	801
 陈群	chen'qun	761
 陈燃	chen'ran	1730
+陈然	chen'ran	231
 趁热	chen're	1017
 趁人	chen'ren	22
+陈荣	chen'rong	891
 陈蓉	chen'rong	473
 沉入	chen'ru	1112
 陈睿	chen'rui	647
@@ -17804,6 +17902,7 @@
 陈嫂	chen'sao	621
 沉色	chen'se	36
 衬色	chen'se	30
+陈森	chen'sen	67
 尘沙	chen'sha	97
 沉沙	chen'sha	92
 辰砂	chen'sha	87
@@ -17837,16 +17936,20 @@
 趁熟	chen'shou	1
 陈述	chen'shu	10076
 陈叔	chen'shu	257
+陈树	chen'shu	205
 陈书	chen'shu	164
 陈数	chen'shu	131
 陈舒	chen'shu	104
 臣属	chen'shu	83
 趁熟	chen'shu	1
+陈帅	chen'shuai	203
+陈爽	chen'shuang	1515
 晨霜	chen'shuang	327
 沉睡	chen'shui	3140
 沉水	chen'shui	2983
 陈顺	chen'shun	1
 陈说	chen'shuo	154
+陈硕	chen'shuo	129
 陈烁	chen'shuo	115
 沉思	chen'si	2650
 辰巳	chen'si	828
@@ -17867,6 +17970,7 @@
 陈陶	chen'tao	55
 陈套	chen'tao	1
 称体	chen'ti	3
+陈天	chen'tian	1058
 衬条	chen'tiao	43
 沉帖	chen'tie	72
 陈铁	chen'tie	1
@@ -17879,6 +17983,7 @@
 抻腿	chen'tui	202
 尘推	chen'tui	79
 衬托	chen'tuo	4924
+陈万	chen'wan	260
 尘网	chen'wang	50
 衬网	chen'wang	45
 陈伟	chen'wei	1305
@@ -17886,6 +17991,7 @@
 谶纬	chen'wei	1174
 陈韡	chen'wei	55
 沉稳	chen'wen	4349
+陈文	chen'wen	1260
 陈稳	chen'wen	12
 趁我	chen'wo	471
 晨雾	chen'wu	261
@@ -17893,6 +17999,8 @@
 晨舞	chen'wu	53
 陈武	chen'wu	1
 晨曦	chen'xi	128
+陈希	chen'xi	102
+陈锡	chen'xi	81
 辰溪	chen'xi	64
 晨夕	chen'xi	51
 陈豨	chen'xi	40
@@ -17914,15 +18022,18 @@
 尘屑	chen'xie	6
 陈欣	chen'xin	560
 称心	chen'xin	305
+陈新	chen'xin	244
 尘心	chen'xin	195
 晨星	chen'xing	1959
 陈姓	chen'xing	175
 辰星	chen'xing	94
 晨兴	chen'xing	75
 沉雄	chen'xiong	47
+陈秀	chen'xiu	940
 陈旭	chen'xu	599
 趁虚	chen'xu	100
 趁圩	chen'xu	1
+陈暄	chen'xuan	148
 陈轩	chen'xuan	1
 陈雪	chen'xue	71
 晨讯	chen'xun	360
@@ -17936,11 +18047,14 @@
 辰阳	chen'yang	57
 尘样	chen'yang	47
 陈瑶	chen'yao	621
+陈耀	chen'yao	496
 趁夜	chen'ye	778
 衬页	chen'ye	94
 晨野	chen'ye	1
 衬衣	chen'yi	2082
 陈毅	chen'yi	612
+陈奕	chen'yi	489
+陈怡	chen'yi	391
 陈仪	chen'yi	312
 陈姨	chen'yi	249
 衬以	chen'yi	145
@@ -17951,35 +18065,45 @@
 沉吟	chen'yin	653
 陈音	chen'yin	77
 陈寅	chen'yin	1
+陈英	chen'ying	918
 陈颖	chen'ying	872
 陈莹	chen'ying	420
 衬映	chen'ying	1
 陈勇	chen'yong	1146
 沉勇	chen'yong	1
+陈有	chen'you	832
 陈友	chen'you	1
 陈宇	chen'yu	1048
+陈玉	chen'yu	222
 沉鱼	chen'yu	177
+陈雨	chen'yu	141
 沉郁	chen'yu	112
 谶语	chen'yu	89
 陈馀	chen'yu	71
 沉于	chen'yu	56
 陈圆	chen'yuan	1131
+陈元	chen'yuan	294
 尘缘	chen'yuan	236
 沉冤	chen'yuan	224
 称愿	chen'yuan	191
 嗔怨	chen'yuan	1
 陈玥	chen'yue	422
+陈越	chen'yue	73
+陈岳	chen'yue	26
 陈悦	chen'yue	1
 晨运	chen'yun	1107
 陈云	chen'yun	1052
 尘杂	chen'za	1
 沉在	chen'zai	918
+陈赞	chen'zan	39
 趁早	chen'zao	3931
 晨早	chen'zao	832
 陈慥	chen'zao	55
 陈泽	chen'ze	18137
 沉渣	chen'zha	41
 陈宅	chen'zhai	432
+陈章	chen'zhang	73
+陈璋	chen'zhang	42
 陈账	chen'zhang	1
 陈朝	chen'zhao	950
 趁着	chen'zhe	11486
@@ -17989,14 +18113,19 @@
 嗔着	chen'zhe	1
 陈真	chen'zhen	1083
 陈震	chen'zhen	200
+陈振	chen'zhen	160
 陈轸	chen'zhen	40
+陈正	chen'zheng	968
 陈铮	chen'zheng	56
+陈志	chen'zhi	769
 称职	chen'zhi	270
 衬纸	chen'zhi	219
 陈至	chen'zhi	55
 陈祗	chen'zhi	31
 沉滞	chen'zhi	1
 沉重	chen'zhong	5595
+陈忠	chen'zhong	990
+陈仲	chen'zhong	802
 晨钟	chen'zhong	684
 陈州	chen'zhou	317
 郴州	chen'zhou	270
@@ -18016,6 +18145,7 @@
 衬字	chen'zi	1
 陈总	chen'zong	257
 陈奏	chen'zou	1
+陈祖	chen'zu	855
 沉醉	chen'zui	1118
 陈最	chen'zui	129
 成安	cheng'an	1336
@@ -18230,6 +18360,7 @@
 乘号	cheng'hao	1030
 撑好	cheng'hao	882
 称好	cheng'hao	716
+程浩	cheng'hao	361
 盛好	cheng'hao	336
 城壕	cheng'hao	156
 城濠	cheng'hao	100
@@ -18363,6 +18494,7 @@
 撑了	cheng'le	307
 乘了	cheng'le	285
 程雷	cheng'lei	3235
+程磊	cheng'lei	252
 丞磊	cheng'lei	12
 成立	cheng'li	45483
 城里	cheng'li	5529
@@ -20486,6 +20618,7 @@
 出车	chu'che	685
 除尘	chu'chen	612
 出尘	chu'chen	251
+楚臣	chu'chen	200
 出城	chu'cheng	1457
 初成	chu'cheng	182
 楚城	chu'cheng	145
@@ -20554,6 +20687,7 @@
 初冬	chu'dong	423
 出洞	chu'dong	172
 初动	chu'dong	137
+楚东	chu'dong	109
 搐动	chu'dong	1
 除痘	chu'dou	13
 初读	chu'du	857
@@ -20915,6 +21049,7 @@
 储钱	chu'qian	64
 褚前	chu'qian	3
 出墙	chu'qiang	104
+楚乔	chu'qiao	549
 出窍	chu'qiao	150
 出鞘	chu'qiao	120
 出勤	chu'qin	848
@@ -24206,6 +24341,7 @@
 翠钿	cui'dian	1
 缞绖	cui'die	1
 催动	cui'dong	449
+崔东	cui'dong	404
 崔峒	cui'dong	193
 脆度	cui'du	706
 淬毒	cui'du	671
@@ -24240,6 +24376,7 @@
 崔瓘	cui'guan	288
 崔珪	cui'gui	252
 翠海	cui'hai	9
+崔海	cui'hai	8
 崔航	cui'hang	230
 崔浩	cui'hao	110
 崔颢	cui'hao	94
@@ -24282,6 +24419,8 @@
 萃聚	cui'ju	1
 翠蕨	cui'jue	85
 崔珏	cui'jue	55
+崔军	cui'jun	102
+崔凯	cui'kai	189
 脆壳	cui'ke	477
 崔克	cui'ke	135
 脆口	cui'kou	954
@@ -24298,6 +24437,7 @@
 淬砺	cui'li	1
 淬炼	cui'lian	512
 翠莲	cui'lian	486
+崔亮	cui'liang	31
 脆亮	cui'liang	1
 脆裂	cui'lie	16
 崔林	cui'lin	72
@@ -24315,10 +24455,13 @@
 崔沔	cui'mian	28
 催苗	cui'miao	62
 淬灭	cui'mie	428
+崔敏	cui'min	66
 催命	cui'ming	245
+崔明	cui'ming	220
 崔某	cui'mou	129
 崔木	cui'mu	55
 崔母	cui'mu	1
+崔娜	cui'na	621
 催奶	cui'nai	41
 脆嫩	cui'nen	367
 催你	cui'ni	575
@@ -24387,6 +24530,7 @@
 催问	cui'wen	88
 催我	cui'wo	1086
 翠西	cui'xi	792
+崔西	cui'xi	752
 翠喜	cui'xi	713
 翠蜥	cui'xi	68
 催下	cui'xia	598
@@ -24407,9 +24551,11 @@
 催芽	cui'ya	72
 翠芽	cui'ya	65
 崔琰	cui'yan	170
+崔岩	cui'yan	78
 崔郾	cui'yan	55
 翠烟	cui'yan	9
 翠岩	cui'yan	8
+崔杨	cui'yang	140
 催要	cui'yao	680
 翠叶	cui'ye	598
 崔液	cui'ye	209
@@ -24433,6 +24579,7 @@
 催账	cui'zhang	100
 催着	cui'zhe	1265
 摧折	cui'zhe	157
+崔镇	cui'zhen	369
 淬针	cui'zhen	1
 粹缜	cui'zhen	1
 崔中	cui'zhong	55
@@ -26518,6 +26665,7 @@
 黛比	dai'bi	143
 代表	dai'biao	111630
 戴表	dai'biao	734
+戴斌	dai'bin	580
 带病	dai'bing	2565
 带兵	dai'bing	477
 待播	dai'bo	69
@@ -26718,6 +26866,7 @@
 殆尽	dai'jin	1774
 带进	dai'jin	876
 代金	dai'jin	700
+戴金	dai'jin	560
 带筋	dai'jin	334
 戴进	dai'jin	139
 贷金	dai'jin	1
@@ -26732,6 +26881,7 @@
 戴军	dai'jun	756
 代郡	dai'jun	718
 带菌	dai'jun	680
+戴君	dai'jun	240
 带卡	dai'ka	873
 代卡	dai'ka	64
 代开	dai'kai	568
@@ -26749,6 +26899,7 @@
 带客	dai'ke	144
 带课	dai'ke	115
 带科	dai'ke	92
+戴科	dai'ke	73
 带孔	dai'kong	684
 代扣	dai'kou	653
 袋口	dai'kou	370
@@ -26776,7 +26927,9 @@
 带离	dai'li	386
 呆立	dai'li	178
 袋里	dai'li	142
+戴利	dai'li	113
 带礼	dai'li	102
+戴礼	dai'li	90
 袋狸	dai'li	82
 傣历	dai'li	72
 带狸	dai'li	54
@@ -26792,6 +26945,7 @@
 戴林	dai'lin	1
 带领	dai'ling	19722
 代领	dai'ling	229
+戴柳	dai'liu	472
 袋龙	dai'long	31
 待漏	dai'lou	1
 带路	dai'lu	1316
@@ -26829,6 +26983,7 @@
 戴某	dai'mou	1
 代目	dai'mu	1138
 代母	dai'mu	551
+戴娜	dai'na	752
 黛娜	dai'na	528
 待那	dai'na	73
 待哪	dai'na	73
@@ -26851,6 +27006,7 @@
 带跑	dai'pao	62
 代庖	dai'pao	13
 代培	dai'pei	25
+戴鹏	dai'peng	504
 带皮	dai'pi	1166
 待批	dai'pi	1108
 带偏	dai'pian	933
@@ -26996,6 +27152,7 @@
 黛西	dai'xi	1022
 带息	dai'xi	631
 带隙	dai'xi	382
+戴西	dai'xi	324
 带戏	dai'xi	53
 怠息	dai'xi	1
 带下	dai'xia	176
@@ -29516,6 +29673,7 @@
 灯表	deng'biao	53
 灯标	deng'biao	1
 登别	deng'bie	684
+邓斌	deng'bin	432
 蹬冰	deng'bing	71
 灯布	deng'bu	968
 登不	deng'bu	429
@@ -29538,6 +29696,7 @@
 蹬车	deng'che	97
 登城	deng'cheng	801
 登程	deng'cheng	761
+邓城	deng'cheng	242
 登乘	deng'cheng	1
 等翅	deng'chi	107
 灯池	deng'chi	28
@@ -29545,6 +29704,7 @@
 等处	deng'chu	345
 等船	deng'chuan	1008
 登船	deng'chuan	958
+邓川	deng'chuan	462
 灯串	deng'chuan	416
 等次	deng'ci	179
 等衰	deng'cui	1
@@ -29639,6 +29799,7 @@
 灯节	deng'jie	78
 邓姐	deng'jie	74
 邓婕	deng'jie	63
+邓杰	deng'jie	57
 邓捷	deng'jie	16
 邓竞	deng'jing	26
 灯具	deng'ju	3090
@@ -29649,6 +29810,7 @@
 等客	deng'ke	1053
 登科	deng'ke	1000
 灯壳	deng'ke	948
+邓科	deng'ke	192
 邓肯	deng'ken	4195
 邓铿	deng'keng	436
 灯控	deng'kong	842
@@ -29669,19 +29831,23 @@
 等量	deng'liang	383
 等料	deng'liao	644
 登临	deng'lin	358
+邓林	deng'lin	322
 瞪羚	deng'ling	75
 灯笼	deng'long	1378
 登龙	deng'long	675
+邓龙	deng'long	491
 登楼	deng'lou	170
 登录	deng'lu	20058
 登陆	deng'lu	18051
 邓伦	deng'lun	603
+邓茂	deng'mao	504
 灯帽	deng'mao	82
 登门	deng'men	499
 灯谜	deng'mi	60
 灯苗	deng'miao	1
 灯灭	deng'mie	126
 灯明	deng'ming	652
+邓明	deng'ming	619
 邓某	deng'mou	50
 灯幕	deng'mu	1
 等内	deng'nei	1
@@ -29743,6 +29909,7 @@
 等势	deng'shi	62
 等数	deng'shu	78
 邓叔	deng'shu	74
+邓帅	deng'shuai	202
 灯衰	deng'shuai	53
 等谁	deng'shui	752
 等死	deng'si	2499
@@ -29762,6 +29929,7 @@
 等台	deng'tai	43
 登坛	deng'tan	567
 登堂	deng'tang	97
+邓涛	deng'tao	472
 登腾	deng'teng	121
 登天	deng'tian	506
 灯条	deng'tiao	103
@@ -29775,7 +29943,10 @@
 灯碗	deng'wan	73
 等位	deng'wei	465
 登位	deng'wei	191
+邓伟	deng'wei	152
 灯位	deng'wei	121
+邓薇	deng'wei	96
+邓尉	deng'wei	76
 邓为	deng'wei	60
 等温	deng'wen	201
 等我	deng'wo	13326
@@ -29784,6 +29955,7 @@
 灯戏	deng'xi	549
 邓嬉	deng'xi	1
 等下	deng'xia	2333
+邓霞	deng'xia	427
 灯下	deng'xia	341
 等闲	deng'xian	264
 等线	deng'xian	138
@@ -29811,12 +29983,14 @@
 登瀛	deng'ying	139
 邓英	deng'ying	117
 登用	deng'yong	590
+邓勇	deng'yong	560
 灯油	deng'you	132
 灯鱿	deng'you	100
 灯诱	deng'you	62
 等于	deng'yu	35818
 灯鱼	deng'yu	702
 邓禹	deng'yu	630
+邓宇	deng'yu	567
 灯语	deng'yu	469
 邓愈	deng'yu	271
 邓煜	deng'yu	1
@@ -32415,6 +32589,7 @@
 定常	ding'chang	1105
 定场	ding'chang	53
 顶场	ding'chang	53
+丁超	ding'chao	688
 订车	ding'che	480
 定车	ding'che	432
 定成	ding'cheng	1472
@@ -32444,6 +32619,7 @@
 丁村	ding'cun	734
 顶村	ding'cun	546
 订错	ding'cuo	688
+丁达	ding'da	634
 锭带	ding'dai	103
 顶戴	ding'dai	72
 订单	ding'dan	27466
@@ -32499,6 +32675,7 @@
 订饭	ding'fan	630
 定番	ding'fan	598
 订房	ding'fang	1325
+丁方	ding'fang	577
 定房	ding'fang	461
 盯防	ding'fang	368
 顶防	ding'fang	30
@@ -32508,6 +32685,7 @@
 定分	ding'fen	1310
 顶峰	ding'feng	5423
 顶风	ding'feng	279
+丁峰	ding'feng	248
 鼎丰	ding'feng	198
 丁奉	ding'feng	158
 鼎峰	ding'feng	126
@@ -32555,6 +32733,7 @@
 订过	ding'guo	226
 顶过	ding'guo	166
 定国	ding'guo	94
+丁国	ding'guo	75
 顶锅	ding'guo	62
 定海	ding'hai	656
 丁亥	ding'hai	623
@@ -32574,6 +32753,7 @@
 定会	ding'hui	2559
 鼎晖	ding'hui	1513
 顶会	ding'hui	125
+丁辉	ding'hui	100
 定慧	ding'hui	80
 鼎辉	ding'hui	64
 订婚	ding'hun	1821
@@ -32609,6 +32789,7 @@
 顶交	ding'jiao	1
 丁姐	ding'jie	1300
 定界	ding'jie	1235
+丁杰	ding'jie	1170
 定结	ding'jie	1079
 定金	ding'jin	3350
 订金	ding'jin	634
@@ -32660,6 +32841,8 @@
 定量	ding'liang	5668
 顶梁	ding'liang	1012
 订料	ding'liao	40
+丁琳	ding'lin	590
+丁林	ding'lin	560
 顶鳞	ding'lin	1
 丁玲	ding'ling	824
 定陵	ding'ling	94
@@ -32739,9 +32922,11 @@
 鼎桥	ding'qiao	578
 定亲	ding'qin	179
 订亲	ding'qin	103
+丁青	ding'qing	344
 定情	ding'qing	289
 顶球	ding'qiu	82
 顶区	ding'qu	67
+丁权	ding'quan	454
 丁醛	ding'quan	431
 定缺	ding'que	26
 丁炔	ding'que	13
@@ -32771,6 +32956,7 @@
 定身	ding'shen	110
 鼎盛	ding'sheng	1190
 顶生	ding'sheng	747
+丁盛	ding'sheng	496
 顶绳	ding'sheng	25
 定时	ding'shi	6136
 定是	ding'shi	2612
@@ -32842,9 +33028,11 @@
 订为	ding'wei	72
 钉位	ding'wei	69
 顶鳚	ding'wei	68
+丁伟	ding'wei	57
 丁位	ding'wei	55
 丁谓	ding'wei	55
 丁薇	ding'wei	36
+丁文	ding'wen	1238
 定温	ding'wen	1176
 叮问	ding'wen	1
 顶我	ding'wo	904
@@ -32892,10 +33080,13 @@
 丁姓	ding'xing	64
 顶凶	ding'xiong	1
 定序	ding'xu	28
+丁璇	ding'xuan	626
 定楦	ding'xuan	81
 顶芽	ding'ya	88
 定压	ding'ya	84
 钉眼	ding'yan	66
+丁燕	ding'yan	63
+丁岩	ding'yan	59
 定谳	ding'yan	1
 丁洋	ding'yang	3535
 丁杨	ding'yang	1
@@ -32907,12 +33098,16 @@
 定业	ding'ye	227
 鼎业	ding'ye	1
 定义	ding'yi	87719
+丁一	ding'yi	756
 丁仪	ding'yi	412
+丁毅	ding'yi	189
 锭翼	ding'yi	103
 定音	ding'yin	239
 丁银	ding'yin	46
+丁颖	ding'ying	99
 定影	ding'ying	97
 顶用	ding'yong	449
+丁勇	ding'yong	404
 定有	ding'you	295
 丁酉	ding'you	188
 订有	ding'you	125
@@ -32921,6 +33116,7 @@
 定语	ding'yu	486
 订于	ding'yu	388
 定域	ding'yu	310
+丁宇	ding'yu	248
 丁于	ding'yu	139
 定员	ding'yuan	251
 定远	ding'yuan	113
@@ -34572,6 +34768,7 @@
 独夫	du'fu	55
 妒妇	du'fu	1
 杜伽	du'ga	96
+杜刚	du'gang	71
 杜羔	du'gao	55
 读稿	du'gao	41
 读个	du'ge	4927
@@ -34710,6 +34907,7 @@
 堵了	du'le	116
 渡了	du'le	92
 独乐	du'le	73
+杜雷	du'lei	60
 杜耒	du'lei	55
 独立	du'li	92674
 肚里	du'li	687
@@ -34745,6 +34943,7 @@
 督脉	du'mai	276
 毒麦	du'mai	53
 杜茂	du'mao	535
+杜梅	du'mei	583
 读没	du'mei	62
 独美	du'mei	1
 堵门	du'men	885
@@ -34756,6 +34955,7 @@
 独眠	du'mian	414
 读秒	du'miao	678
 独苗	du'miao	508
+杜敏	du'min	85
 赌命	du'ming	339
 度命	du'ming	1
 镀膜	du'mo	1806
@@ -35013,6 +35213,7 @@
 杜俨	du'yan	55
 毒烟	du'yan	44
 毒焰	du'yan	1
+杜阳	du'yang	886
 毒药	du'yao	4324
 毒液	du'ye	1884
 赌业	du'ye	544
@@ -35282,6 +35483,7 @@
 断喝	duan'he	57
 短褐	duan'he	1
 短横	duan'heng	626
+段红	duan'hong	774
 断鸿	duan'hong	357
 断后	duan'hou	1017
 断弧	duan'hu	43
@@ -39210,6 +39412,7 @@
 饭卷	fan'juan	359
 反觉	fan'jue	22
 翻掘	fan'jue	1
+范军	fan'jun	567
 饭卡	fan'ka	945
 翻开	fan'kai	5099
 翻看	fan'kan	6682
@@ -39302,6 +39505,7 @@
 繁密	fan'mi	104
 反面	fan'mian	4694
 翻面	fan'mian	1777
+范敏	fan'min	994
 泛民	fan'min	944
 樊敏	fan'min	226
 范明	fan'ming	163
@@ -39322,10 +39526,12 @@
 凡能	fan'neng	85
 烦你	fan'ni	860
 范尼	fan'ni	232
+范妮	fan'ni	185
 烦腻	fan'ni	148
 翻泥	fan'ni	25
 返黏	fan'nian	1
 反鸟	fan'niao	85
+范宁	fan'ning	670
 翻弄	fan'nong	41
 贩奴	fan'nu	536
 反虐	fan'nve	508
@@ -39465,6 +39671,7 @@
 范叔	fan'shu	51
 番数	fan'shu	26
 藩属	fan'shu	1
+范帅	fan'shuai	382
 繁霜	fan'shuang	495
 反水	fan'shui	1306
 泛水	fan'shui	153
@@ -42033,6 +42240,7 @@
 封表	feng'biao	37
 风标	feng'biao	28
 丰滨	feng'bin	389
+冯斌	feng'bin	318
 疯病	feng'bing	138
 蜂病	feng'bing	32
 冯兵	feng'bing	31
@@ -42068,6 +42276,7 @@
 蜂车	feng'che	32
 风尘	feng'chen	882
 丰臣	feng'chen	420
+冯晨	feng'chen	336
 封臣	feng'chen	268
 封城	feng'cheng	1630
 奉承	feng'cheng	982
@@ -42301,6 +42510,7 @@
 风疾	feng'ji	620
 风纪	feng'ji	402
 封基	feng'ji	172
+冯骥	feng'ji	143
 风积	feng'ji	59
 逢集	feng'ji	1
 俸给	feng'ji	1
@@ -42359,6 +42569,7 @@
 封开	feng'kai	760
 冯伉	feng'kang	55
 丰抗	feng'kang	1
+冯克	feng'ke	1076
 冯轲	feng'ke	1022
 蜂科	feng'ke	416
 风控	feng'kong	10613
@@ -42457,6 +42668,7 @@
 封蜜	feng'mi	32
 封面	feng'mian	18862
 锋面	feng'mian	128
+冯敏	feng'min	123
 蜂鸣	feng'ming	1341
 奉命	feng'ming	166
 凤鸣	feng'ming	113
@@ -42660,6 +42872,7 @@
 凤塘	feng'tang	190
 封套	feng'tao	289
 风涛	feng'tao	260
+冯特	feng'te	148
 丰体	feng'ti	526
 丰田	feng'tian	12168
 奉天	feng'tian	753
@@ -42757,6 +42970,7 @@
 疯笑	feng'xiao	1
 风邪	feng'xie	292
 蜂鞋	feng'xie	32
+冯鑫	feng'xin	1377
 封信	feng'xin	405
 风信	feng'xin	364
 奉新	feng'xin	295
@@ -43606,6 +43820,7 @@
 府君	fu'jun	128
 腹菌	fu'jun	102
 抚军	fu'jun	81
+付军	fu'jun	64
 傅军	fu'jun	51
 傅俊	fu'jun	40
 副卡	fu'ka	606
@@ -43709,6 +43924,7 @@
 负链	fu'lian	92
 福联	fu'lian	73
 赋敛	fu'lian	58
+付亮	fu'liang	747
 浮梁	fu'liang	710
 傅亮	fu'liang	291
 伏梁	fu'liang	1
@@ -43912,6 +44128,7 @@
 富强	fu'qiang	1809
 腹腔	fu'qiang	734
 扶墙	fu'qiang	314
+付强	fu'qiang	251
 傅强	fu'qiang	200
 浮桥	fu'qiao	295
 富侨	fu'qiao	266
@@ -44463,6 +44680,7 @@
 附庸	fu'yong	1808
 福永	fu'yong	1446
 敷用	fu'yong	490
+付勇	fu'yong	191
 富有	fu'you	8651
 负有	fu'you	1874
 附有	fu'you	1598
@@ -50344,6 +50562,7 @@
 股海	gu'hai	264
 骨骸	gu'hai	257
 古海	gu'hai	238
+顾海	gu'hai	193
 孤寒	gu'han	44
 顾好	gu'hao	1364
 鼓号	gu'hao	1296
@@ -53754,6 +53973,7 @@
 过肩	guo'jian	1278
 国检	guo'jian	1214
 国健	guo'jian	1150
+郭建	guo'jian	1061
 过简	guo'jian	920
 果剪	guo'jian	129
 果肩	guo'jian	84
@@ -53822,6 +54042,7 @@
 过客	guo'ke	1651
 国科	guo'ke	257
 过课	guo'ke	205
+郭科	guo'ke	164
 过坑	guo'keng	44
 郭坑	guo'keng	1
 过孔	guo'kong	100
@@ -53875,6 +54096,7 @@
 过梁	guo'liang	64
 果料	guo'liao	69
 过料	guo'liao	40
+郭林	guo'lin	73
 果林	guo'lin	31
 过淋	guo'lin	1
 果岭	guo'ling	518
@@ -53926,6 +54148,7 @@
 过敏	guo'min	10220
 过命	guo'ming	1086
 国名	guo'ming	1032
+郭明	guo'ming	769
 国模	guo'mo	41
 郭某	guo'mou	254
 过目	guo'mu	631
@@ -53965,6 +54188,7 @@
 国票	guo'piao	692
 果品	guo'pin	192
 过频	guo'pin	173
+郭平	guo'ping	1518
 国乒	guo'ping	644
 国破	guo'po	936
 郭璞	guo'pu	1
@@ -54235,6 +54459,7 @@
 过硬	guo'ying	4914
 国营	guo'ying	1532
 果蝇	guo'ying	574
+郭英	guo'ying	459
 过盈	guo'ying	62
 过用	guo'yong	1516
 国用	guo'yong	1440
@@ -54329,6 +54554,7 @@
 国字	guo'zi	131
 馃子	guo'zi	104
 果渍	guo'zi	103
+郭子	guo'zi	98
 郭总	guo'zong	693
 国足	guo'zu	7966
 过足	guo'zu	7568
@@ -55146,6 +55372,7 @@
 焓变	han'bian	508
 汉滨	han'bin	734
 寒冰	han'bing	1218
+韩冰	han'bing	1157
 旱冰	han'bing	1096
 汉兵	han'bing	1011
 焊波	han'bo	43
@@ -55205,6 +55432,7 @@
 焊到	han'dao	49
 旱道	han'dao	1
 喊得	han'de	681
+韩德	han'de	647
 憨的	han'de	552
 焊的	han'de	497
 含的	han'de	1
@@ -55227,6 +55455,7 @@
 撼动	han'dong	1956
 涵洞	han'dong	317
 汉东	han'dong	229
+韩东	han'dong	183
 韩栋	han'dong	146
 憨豆	han'dou	192
 韩都	han'dou	173
@@ -55259,6 +55488,7 @@
 汉赋	han'fu	60
 涵盖	han'gai	14658
 含钙	han'gai	194
+韩干	han'gan	101
 邯钢	han'gang	504
 焊膏	han'gao	69
 悍高	han'gao	45
@@ -55306,6 +55536,7 @@
 汉国	han'guo	253
 瀚海	han'hai	377
 翰海	han'hai	358
+韩海	han'hai	305
 寒害	han'hai	274
 函海	han'hai	247
 憨憨	han'han	7715
@@ -55359,6 +55590,7 @@
 汉奸	han'jian	3538
 函件	han'jian	860
 汉剑	han'jian	307
+韩建	han'jian	245
 汉简	han'jian	196
 含碱	han'jian	119
 焊件	han'jian	101
@@ -55380,12 +55612,15 @@
 焊接	han'jie	2327
 汉街	han'jie	828
 韩姐	han'jie	550
+韩杰	han'jie	412
 汉界	han'jie	35
+韩进	han'jin	573
 含金	han'jin	82
 寒噤	han'jin	78
 汉晋	han'jin	74
 汗巾	han'jin	67
 含进	han'jin	1
+韩晶	han'jing	138
 旱井	han'jing	1
 酣酒	han'jiu	1
 韩剧	han'ju	4010
@@ -55429,6 +55664,7 @@
 旱雷	han'lei	1
 寒冷	han'leng	5275
 韩立	han'li	1562
+韩丽	han'li	654
 汉隶	han'li	369
 寒栗	han'li	1
 含锂	han'li	1
@@ -55439,6 +55675,7 @@
 寒凉	han'liang	1447
 韩料	han'liao	914
 焊料	han'liao	868
+韩林	han'lin	1359
 翰林	han'lin	1291
 含磷	han'lin	439
 寒林	han'lin	310
@@ -55450,6 +55687,7 @@
 含硫	han'liu	113
 寒柳	han'liu	90
 焊瘤	han'liu	82
+韩龙	han'long	91
 悍龙	han'long	59
 汉龙	han'long	19
 喊楼	han'lou	549
@@ -55474,6 +55712,7 @@
 汗毛	han'mao	1014
 焊帽	han'mao	43
 寒毛	han'mao	1
+韩梅	han'mei	204
 寒梅	han'mei	122
 韩媒	han'mei	116
 韩美	han'mei	89
@@ -55485,6 +55724,8 @@
 含棉	han'mian	29
 韩庙	han'miao	1
 汉民	han'min	364
+韩民	han'min	328
+韩明	han'ming	904
 汉名	han'ming	859
 汉明	han'ming	1
 翰墨	han'mo	1193
@@ -55513,6 +55754,7 @@
 寒疟	han'nve	297
 汗盘	han'pan	77
 焊盘	han'pan	72
+韩鹏	han'peng	348
 含硼	han'peng	19
 憨批	han'pi	713
 含片	han'pian	151
@@ -55565,6 +55807,7 @@
 含铷	han'ru	1
 旱伞	han'san	1
 寒色	han'se	60
+韩森	han'sen	986
 汉森	han'sen	937
 瀚森	han'sen	35
 憨傻	han'sha	173
@@ -55625,6 +55868,7 @@
 含漱	han'shu	373
 韩束	han'shu	262
 寒树	han'shu	1
+韩帅	han'shuai	44
 寒霜	han'shuang	440
 汗水	han'shui	4302
 含税	han'shui	1381
@@ -55633,6 +55877,7 @@
 含水	han'shui	326
 寒水	han'shui	191
 鼾睡	han'shui	152
+韩硕	han'shuo	770
 韩烁	han'shuo	732
 汉硕	han'shuo	693
 韩朔	han'shuo	98
@@ -55643,7 +55888,9 @@
 汗死	han'si	62
 含锶	han'si	1
 寒松	han'song	742
+韩松	han'song	705
 韩嵩	han'song	1
+韩素	han'su	79
 寒素	han'su	1
 寒酸	han'suan	1181
 含酸	han'suan	670
@@ -55668,6 +55915,7 @@
 旱塘	han'tang	1
 汉塘	han'tang	1
 喊堂	han'tang	1
+韩涛	han'tao	603
 函套	han'tao	68
 喊疼	han'teng	796
 含锑	han'ti	1
@@ -55705,6 +55953,7 @@
 汗味	han'wei	474
 汉魏	han'wei	376
 寒微	han'wei	248
+韩伟	han'wei	116
 汉威	han'wei	92
 汗位	han'wei	73
 罕鳚	han'wei	69
@@ -55740,6 +55989,7 @@
 含笑	han'xiao	622
 憨笑	han'xiao	197
 韩晓	han'xiao	157
+韩笑	han'xiao	125
 汗血	han'xie	553
 寒邪	han'xie	498
 寒心	han'xin	12117
@@ -55806,6 +56056,7 @@
 含银	han'yin	693
 汉印	han'yin	639
 酣饮	han'yin	1
+韩英	han'ying	896
 汉英	han'ying	851
 韩影	han'ying	806
 寒樱	han'ying	62
@@ -55819,8 +56070,10 @@
 汉语	han'yu	21104
 韩语	han'yu	6455
 韩愈	han'yu	2245
+韩玉	han'yu	405
 寒玉	han'yu	324
 韩娱	han'yu	259
+韩宇	han'yu	207
 含于	han'yu	194
 寒雨	han'yu	152
 含玉	han'yu	123
@@ -56897,6 +57150,7 @@
 合并	he'bing	24790
 合兵	he'bing	684
 何冰	he'bing	547
+何兵	he'bing	544
 核拨	he'bo	528
 河伯	he'bo	502
 何不	he'bu	3027
@@ -56923,6 +57177,7 @@
 禾场	he'chang	267
 何常	he'chang	252
 贺昌	he'chang	244
+何超	he'chao	994
 贺朝	he'chao	380
 河车	he'che	792
 合衬	he'chen	576
@@ -56930,6 +57185,7 @@
 合成	he'cheng	24592
 合称	he'cheng	1256
 合乘	he'cheng	1004
+何成	he'cheng	803
 河城	he'cheng	642
 鹤城	he'cheng	356
 贺城	he'cheng	154
@@ -56953,6 +57209,7 @@
 何出	he'chu	1
 合川	he'chuan	330
 河川	he'chuan	138
+何川	he'chuan	110
 河船	he'chuan	88
 合穿	he'chuan	70
 河传	he'chuan	56
@@ -57014,6 +57271,7 @@
 合订	he'ding	886
 鹤顶	he'ding	676
 河东	he'dong	1548
+何东	he'dong	1382
 荷东	he'dong	1
 合度	he'du	119
 河渡	he'du	107
@@ -57053,6 +57311,7 @@
 禾丰	he'feng	177
 鹤峰	he'feng	158
 禾风	he'feng	126
+何峰	he'feng	84
 和服	he'fu	1812
 合服	he'fu	1323
 合福	he'fu	790
@@ -57154,6 +57413,7 @@
 核价	he'jia	554
 荷甲	he'jia	510
 合价	he'jia	400
+何佳	he'jia	295
 何家	he'jia	197
 颌架	he'jia	121
 合架	he'jia	121
@@ -57170,6 +57430,7 @@
 合肩	he'jian	43
 河槛	he'jian	1
 贺柬	he'jian	1
+何江	he'jiang	148
 合江	he'jiang	19
 贺江	he'jiang	17
 合脚	he'jiao	283
@@ -57206,6 +57467,7 @@
 何惧	he'ju	163
 鹤咀	he'ju	130
 何遽	he'ju	1
+何军	he'jun	819
 核菌	he'jun	673
 荷军	he'jun	372
 贺卡	he'ka	521
@@ -57243,6 +57505,7 @@
 河里	he'li	1968
 贺礼	he'li	405
 河狸	he'li	376
+何利	he'li	226
 和利	he'li	128
 和力	he'li	100
 合利	he'li	80
@@ -57254,6 +57517,7 @@
 合练	he'lian	220
 赫连	he'lian	209
 贺联	he'lian	1
+何梁	he'liang	688
 河梁	he'liang	502
 何琳	he'lin	675
 贺麟	he'lin	641
@@ -57305,6 +57569,7 @@
 颌面	he'mian	367
 禾苗	he'miao	135
 赫敏	he'min	1360
+何明	he'ming	1094
 核名	he'ming	138
 和鸣	he'ming	131
 鹤鸣	he'ming	104
@@ -57369,14 +57634,17 @@
 合气	he'qi	102
 呵气	he'qi	81
 合契	he'qi	64
+何琦	he'qi	51
 和洽	he'qia	9
 喝前	he'qian	182
 呵欠	he'qian	91
 核签	he'qian	80
+何强	he'qiang	914
 贺强	he'qiang	868
 贺镪	he'qiang	4
 河桥	he'qiao	63
 和亲	he'qin	2013
+何清	he'qing	438
 合情	he'qing	254
 何晴	he'qing	229
 鹤庆	he'qing	211
@@ -57440,6 +57708,7 @@
 河身	he'shen	1
 和声	he'sheng	14441
 合生	he'sheng	219
+何生	he'sheng	175
 合声	he'sheng	140
 喝声	he'sheng	112
 合盛	he'sheng	89
@@ -57550,6 +57819,7 @@
 合味	he'wei	188
 何畏	he'wei	124
 颌位	he'wei	121
+何文	he'wen	2205
 喝问	he'wen	2095
 和文	he'wen	1011
 贺文	he'wen	374
@@ -57632,10 +57902,12 @@
 河沿	he'yan	56
 盒烟	he'yan	44
 河堰	he'yan	35
+何岩	he'yan	28
 贺岩	he'yan	22
 河阳	he'yang	1197
 和阳	he'yang	1137
 合阳	he'yang	1077
+何洋	he'yang	994
 喝药	he'yao	615
 荷叶	he'ye	1165
 河野	he'ye	433
@@ -57685,12 +57957,14 @@
 鹤羽	he'yu	81
 河峪	he'yu	1
 鹤鹬	he'yu	1
+何元	he'yuan	536
 河源	he'yuan	521
 合院	he'yuan	422
 和院	he'yuan	380
 河原	he'yuan	342
 何园	he'yuan	308
 和源	he'yuan	180
+何远	he'yuan	139
 荷园	he'yuan	125
 禾苑	he'yuan	112
 鹤园	he'yuan	101
@@ -57702,6 +57976,7 @@
 合月	he'yue	137
 合乐	he'yue	109
 荷月	he'yue	87
+何云	he'yun	945
 喝晕	he'yun	898
 河运	he'yun	850
 荷韵	he'yun	296
@@ -57735,12 +58010,14 @@
 赫哲	he'zhe	288
 合辙	he'zhe	230
 河镇	he'zhen	1228
+何震	he'zhen	1167
 鹤鱵	he'zhen	80
 核证	he'zheng	1899
 和政	he'zheng	1804
 何止	he'zhi	2006
 和值	he'zhi	238
 和纸	he'zhi	190
+何志	he'zhi	152
 合志	he'zhi	121
 核质	he'zhi	96
 喝止	he'zhi	1
@@ -58953,6 +59230,7 @@
 红场	hong'chang	251
 宏昌	hong'chang	200
 红裳	hong'chang	160
+洪昌	hong'chang	128
 哄场	hong'chang	1
 红潮	hong'chao	66
 宏超	hong'chao	1
@@ -59007,6 +59285,7 @@
 红得	hong'de	276
 弘德	hong'de	244
 哄得	hong'de	195
+洪德	hong'de	156
 烘得	hong'de	124
 轰得	hong'de	99
 宏德	hong'de	79
@@ -59235,6 +59514,7 @@
 轰烈	hong'lie	1246
 鸿烈	hong'lie	593
 红磷	hong'lin	204
+洪林	hong'lin	194
 红岭	hong'ling	160
 红菱	hong'ling	152
 红绫	hong'ling	144
@@ -59268,6 +59548,7 @@
 鸿毛	hong'mao	392
 虹猫	hong'mao	178
 红梅	hong'mei	502
+洪梅	hong'mei	131
 红莓	hong'mei	104
 红妹	hong'mei	83
 虹梅	hong'mei	66
@@ -59354,6 +59635,7 @@
 红圈	hong'quan	3711
 哄劝	hong'quan	3525
 洪拳	hong'quan	3340
+洪泉	hong'quan	424
 红雀	hong'que	188
 红裙	hong'qun	198
 轰然	hong'ran	722
@@ -59406,6 +59688,7 @@
 洪升	hong'sheng	396
 红生	hong'sheng	356
 鸿盛	hong'sheng	320
+洪生	hong'sheng	288
 弘盛	hong'sheng	259
 宏盛	hong'sheng	139
 宏声	hong'sheng	124
@@ -59483,6 +59766,7 @@
 宏旺	hong'wang	144
 宏伟	hong'wei	1636
 红尾	hong'wei	752
+洪伟	hong'wei	617
 洪炜	hong'wei	504
 洪卫	hong'wei	107
 红温	hong'wen	922
@@ -61234,6 +61518,7 @@
 花斑	hua'ban	648
 花版	hua'ban	94
 花般	hua'ban	1
+华邦	hua'bang	267
 花棒	hua'bang	9
 画报	hua'bao	870
 花苞	hua'bao	593
@@ -61275,6 +61560,7 @@
 画材	hua'cai	341
 花彩	hua'cai	272
 划菜	hua'cai	92
+华灿	hua'can	626
 华藏	hua'cang	621
 花草	hua'cao	1793
 滑草	hua'cao	106
@@ -61291,6 +61577,7 @@
 花铲	hua'chan	129
 花蟾	hua'chan	70
 滑肠	hua'chang	104
+华昌	hua'chang	99
 花场	hua'chang	94
 话长	hua'chang	75
 滑炒	hua'chao	92
@@ -61298,12 +61585,15 @@
 花车	hua'che	214
 滑车	hua'che	188
 华晨	hua'chen	480
+华宸	hua'chen	432
 化成	hua'cheng	2823
 花城	hua'cheng	2358
 画成	hua'cheng	427
+华成	hua'cheng	339
 华城	hua'cheng	271
 化城	hua'cheng	216
 划成	hua'cheng	172
+华诚	hua'cheng	134
 滑撑	hua'cheng	69
 花痴	hua'chi	1118
 花池	hua'chi	1006
@@ -61355,6 +61645,7 @@
 化到	hua'dao	160
 画刀	hua'dao	33
 画的	hua'de	19540
+华德	hua'de	9109
 画得	hua'de	2945
 花的	hua'de	976
 滑的	hua'de	857
@@ -61368,6 +61659,7 @@
 华帝	hua'di	1170
 华地	hua'di	912
 划地	hua'di	601
+华迪	hua'di	502
 花地	hua'di	161
 花底	hua'di	145
 花蒂	hua'di	97
@@ -61389,6 +61681,7 @@
 化蝶	hua'die	182
 花蝶	hua'die	173
 划定	hua'ding	2525
+华鼎	hua'ding	832
 华顶	hua'ding	605
 画钉	hua'ding	33
 滑动	hua'dong	5545
@@ -61422,6 +61715,7 @@
 花犯	hua'fan	247
 花贩	hua'fan	1
 花房	hua'fang	248
+华芳	hua'fang	166
 画舫	hua'fang	132
 话放	hua'fang	105
 花坊	hua'fang	84
@@ -61431,7 +61725,9 @@
 花费	hua'fei	2125
 化肥	hua'fei	1786
 华妃	hua'fei	1428
+华菲	hua'fei	856
 花飞	hua'fei	428
+华飞	hua'fei	190
 花肥	hua'fei	170
 划分	hua'fen	26162
 花粉	hua'fen	2490
@@ -61442,6 +61738,8 @@
 话锋	hua'feng	106
 华丰	hua'feng	84
 华风	hua'feng	67
+华峰	hua'feng	53
+华锋	hua'feng	42
 花蜂	hua'feng	1
 化佛	hua'fo	3
 华府	hua'fu	6958
@@ -61518,6 +61816,7 @@
 滑锅	hua'guo	58
 花海	hua'hai	873
 华海	hua'hai	204
+华汉	hua'han	652
 华航	hua'hang	132
 花好	hua'hao	2283
 画好	hua'hao	182
@@ -61529,6 +61828,8 @@
 划痕	hua'hen	2408
 华恒	hua'heng	1
 花红	hua'hong	129
+华宏	hua'hong	116
+华鸿	hua'hong	104
 华虹	hua'hong	1
 花后	hua'hou	986
 花喉	hua'hou	62
@@ -61584,12 +61885,15 @@
 花价	hua'jia	79
 划价	hua'jia	63
 画夹	hua'jia	50
+华健	hua'jian	1089
 化简	hua'jian	210
 花间	hua'jian	168
+华建	hua'jian	134
 花箭	hua'jian	129
 花剪	hua'jian	129
 花剑	hua'jian	107
 花笺	hua'jian	85
+华坚	hua'jian	68
 滑剪	hua'jian	67
 化茧	hua'jian	54
 铧尖	hua'jian	54
@@ -61613,14 +61917,17 @@
 化解	hua'jie	4421
 花姐	hua'jie	753
 花结	hua'jie	386
+华杰	hua'jie	361
 花街	hua'jie	106
 画界	hua'jie	84
 划界	hua'jie	67
 华姐	hua'jie	53
 华界	hua'jie	42
 滑结	hua'jie	1
+华金	hua'jin	680
 滑进	hua'jin	194
 划进	hua'jin	155
+华锦	hua'jin	124
 花尽	hua'jin	99
 华晋	hua'jin	79
 化劲	hua'jin	63
@@ -61698,6 +62005,7 @@
 华丽	hua'li	14023
 话里	hua'li	825
 花梨	hua'li	706
+华利	hua'li	144
 华理	hua'li	115
 华里	hua'li	92
 华力	hua'li	73
@@ -61729,6 +62037,7 @@
 华菱	hua'ling	773
 花翎	hua'ling	733
 化零	hua'ling	432
+华玲	hua'ling	166
 花铃	hua'ling	147
 花令	hua'ling	132
 华岭	hua'ling	85
@@ -61802,6 +62111,8 @@
 化名	hua'ming	2163
 花名	hua'ming	568
 花明	hua'ming	454
+华铭	hua'ming	363
+华明	hua'ming	290
 画名	hua'ming	241
 滑膜	hua'mo	402
 滑模	hua'mo	362
@@ -61812,6 +62123,7 @@
 化募	hua'mu	1
 华纳	hua'na	6126
 华南	hua'nan	2025
+华楠	hua'nan	810
 花男	hua'nan	571
 桦南	hua'nan	514
 花腩	hua'nan	402
@@ -61840,6 +62152,7 @@
 花炮	hua'pao	126
 滑跑	hua'pao	120
 花盆	hua'pen	2346
+华鹏	hua'peng	171
 花棚	hua'peng	47
 画皮	hua'pi	496
 化皮	hua'pi	446
@@ -61857,6 +62170,7 @@
 花屏	hua'ping	260
 滑屏	hua'ping	97
 华鲆	hua'ping	78
+华平	hua'ping	77
 花鲆	hua'ping	73
 画屏	hua'ping	61
 华坪	hua'ping	48
@@ -61894,6 +62208,7 @@
 画桥	hua'qiao	152
 划清	hua'qing	204
 华擎	hua'qing	153
+华青	hua'qing	122
 华清	hua'qing	97
 花青	hua'qing	77
 花球	hua'qiu	154
@@ -61946,6 +62261,7 @@
 华沙	hua'sha	970
 化煞	hua'sha	122
 滑沙	hua'sha	97
+华莎	hua'sha	77
 花纱	hua'sha	61
 画啥	hua'sha	1
 华山	hua'shan	2418
@@ -63268,12 +63584,14 @@
 黄变	huang'bian	842
 黄标	huang'biao	1076
 黄斌	huang'bin	426
+黄炳	huang'bing	32
 癀病	huang'bing	1
 黄渤	huang'bo	2559
 黄柏	huang'bo	976
 黄檗	huang'bo	567
 黄播	huang'bo	1
 黄布	huang'bu	108
+黄彩	huang'cai	50
 黄菜	huang'cai	1
 黄灿	huang'can	18637
 荒草	huang'cao	283
@@ -63293,6 +63611,7 @@
 谎称	huang'cheng	1281
 皇城	huang'cheng	1105
 荒城	huang'cheng	546
+黄池	huang'chi	82
 蝗虫	huang'chong	1309
 黄翀	huang'chong	4
 皇储	huang'chu	301
@@ -63306,6 +63625,7 @@
 黄村	huang'cun	909
 荒村	huang'cun	864
 黄厝	huang'cuo	603
+黄达	huang'da	345
 黄带	huang'dai	41
 黄疸	huang'dan	6789
 荒诞	huang'dan	1965
@@ -63365,6 +63685,7 @@
 皇父	huang'fu	1105
 黄蝠	huang'fu	72
 黄盖	huang'gai	1730
+黄干	huang'gan	28
 黄冈	huang'gang	421
 皇岗	huang'gang	379
 黄港	huang'gang	377
@@ -63421,6 +63742,7 @@
 黄鹄	huang'hu	1
 黄花	huang'hua	929
 谎话	huang'hua	540
+黄华	huang'hua	432
 黄化	huang'hua	345
 磺化	huang'hua	276
 黄淮	huang'huai	204
@@ -63454,6 +63776,8 @@
 黄甲	huang'jia	389
 黄家	huang'jia	311
 谎价	huang'jia	1
+黄健	huang'jian	530
+黄建	huang'jian	42
 黄酱	huang'jiang	229
 黄姜	huang'jiang	206
 黄江	huang'jiang	1
@@ -63466,6 +63790,7 @@
 黄杰	huang'jie	1
 黄金	huang'jin	45018
 黄巾	huang'jin	665
+黄锦	huang'jin	55
 黄精	huang'jing	619
 黄经	huang'jing	298
 荒井	huang'jing	238
@@ -63523,6 +63848,7 @@
 黄莲	huang'lian	288
 荒凉	huang'liang	1752
 黄粱	huang'liang	131
+黄亮	huang'liang	104
 皇粮	huang'liang	83
 荒料	huang'liao	69
 黄麟	huang'lin	55
@@ -63574,6 +63900,7 @@
 皇庙	huang'miao	684
 皇民	huang'min	773
 黄敏	huang'min	625
+黄明	huang'ming	1015
 皇明	huang'ming	944
 荒谬	huang'miu	3818
 荒漠	huang'mo	2324
@@ -63582,6 +63909,7 @@
 黄某	huang'mou	1620
 黄木	huang'mu	972
 荒木	huang'mu	923
+黄娜	huang'na	65
 蝗蝻	huang'nan	1
 黄南	huang'nan	1
 晃脑	huang'nao	19
@@ -63589,6 +63917,7 @@
 荒年	huang'nian	182
 黄鸟	huang'niao	72
 磺脲	huang'niao	1
+黄宁	huang'ning	2735
 黄牛	huang'niu	4305
 皇女	huang'nv	1012
 黄牌	huang'pai	1086
@@ -63597,6 +63926,7 @@
 荒牌	huang'pai	298
 黄袍	huang'pao	257
 皇袍	huang'pao	231
+黄培	huang'pei	30
 黄鹏	huang'peng	236
 黄朋	huang'peng	135
 黄皮	huang'pi	876
@@ -63621,6 +63951,7 @@
 荒弃	huang'qi	118
 黄杞	huang'qi	64
 黄漆	huang'qi	62
+黄前	huang'qian	30
 荒歉	huang'qian	1
 黄腔	huang'qiang	69
 黄墙	huang'qiang	66
@@ -63630,6 +63961,7 @@
 皇亲	huang'qin	119
 黄沁	huang'qin	77
 黄蜻	huang'qing	58
+黄琼	huang'qiong	183
 黄球	huang'qiu	62
 荒丘	huang'qiu	50
 黄曲	huang'qu	35
@@ -63677,6 +64009,7 @@
 慌神	huang'shen	94
 晃神	huang'shen	89
 荒神	huang'shen	76
+黄生	huang'sheng	1055
 黄石	huang'shi	4242
 皇室	huang'shi	433
 黄氏	huang'shi	163
@@ -63690,6 +64023,7 @@
 黄薯	huang'shu	62
 黄熟	huang'shu	1
 荒数	huang'shu	1
+黄帅	huang'shuai	119
 黄水	huang'shui	154
 湟水	huang'shui	146
 谎说	huang'shuo	25
@@ -63751,6 +64085,7 @@
 黄网	huang'wang	78
 皇位	huang'wei	1201
 黄伟	huang'wei	709
+黄维	huang'wei	542
 皇威	huang'wei	394
 黄尾	huang'wei	186
 黄薇	huang'wei	78
@@ -63771,6 +64106,7 @@
 黄香	huang'xiang	846
 皇象	huang'xiang	350
 黄校	huang'xiao	410
+黄晓	huang'xiao	54
 黄歇	huang'xie	652
 黄心	huang'xin	154
 黄鑫	huang'xin	146
@@ -63850,6 +64186,7 @@
 黄载	huang'zai	55
 荒灾	huang'zai	1
 黄藻	huang'zao	504
+黄泽	huang'ze	40
 黄宅	huang'zhai	432
 荒宅	huang'zhai	1
 黄毡	huang'zhan	82
@@ -63863,6 +64200,8 @@
 晃着	huang'zhe	342
 皇者	huang'zhe	325
 黄镇	huang'zhen	868
+黄震	huang'zhen	523
+黄振	huang'zhen	25
 黄峥	huang'zheng	630
 荒政	huang'zheng	414
 黄征	huang'zheng	404
@@ -63894,6 +64233,7 @@
 黄棕	huang'zong	944
 黄宗	huang'zong	895
 皇族	huang'zu	2361
+黄祖	huang'zu	357
 黄钻	huang'zuan	396
 黄嘴	huang'zui	31
 皇座	huang'zuo	1
@@ -65617,6 +65957,7 @@
 获利	huo'li	7005
 火力	huo'li	6964
 火里	huo'li	408
+霍莉	huo'li	326
 霍里	huo'li	1
 霍利	huo'li	1
 活力28	huo'li'er'ba	10
@@ -65699,6 +66040,7 @@
 获聘	huo'pin	512
 获评	huo'ping	619
 活泼	huo'po	3994
+霍珀	huo'po	549
 火气	huo'qi	3181
 或其	huo'qi	1617
 活期	huo'qi	1246
@@ -68048,6 +68390,7 @@
 集赞	ji'zan	1282
 积攒	ji'zan	1218
 极赞	ji'zan	354
+吉藏	ji'zang	72
 急躁	ji'zao	2207
 及早	ji'zao	1529
 极早	ji'zao	103
@@ -71130,18 +71473,23 @@
 僵边	jiang'bian	77
 将变	jiang'bian	1
 江表	jiang'biao	760
+江彬	jiang'bin	981
 江滨	jiang'bin	129
 蒋斌	jiang'bin	1
 姜饼	jiang'bing	954
 酱饼	jiang'bing	172
 将兵	jiang'bing	137
 降兵	jiang'bing	109
+江波	jiang'bo	896
+蒋波	jiang'bo	851
+姜波	jiang'bo	806
 将播	jiang'bo	654
 奖补	jiang'bu	868
 将不	jiang'bu	1
 礓礤	jiang'ca	207
 礓䃰	jiang'ca	1
 酱菜	jiang'cai	2349
+江财	jiang'cai	370
 将才	jiang'cai	279
 僵蚕	jiang'can	193
 蒋璨	jiang'can	55
@@ -71158,8 +71506,10 @@
 江城	jiang'cheng	615
 奖惩	jiang'cheng	449
 将成	jiang'cheng	213
+姜成	jiang'cheng	207
 降成	jiang'cheng	135
 讲成	jiang'cheng	108
+江成	jiang'cheng	86
 江澄	jiang'cheng	68
 姜承	jiang'cheng	1
 僵持	jiang'chi	1724
@@ -71232,6 +71582,7 @@
 讲法	jiang'fa	970
 奖罚	jiang'fa	922
 将发	jiang'fa	873
+江帆	jiang'fan	684
 蒋凡	jiang'fan	650
 江藩	jiang'fan	286
 姜帆	jiang'fan	58
@@ -71243,7 +71594,10 @@
 降分	jiang'fen	449
 奖分	jiang'fen	404
 姜粉	jiang'fen	84
+江枫	jiang'feng	731
 江风	jiang'feng	662
+江丰	jiang'feng	143
+江峰	jiang'feng	126
 降幅	jiang'fu	1008
 将赴	jiang'fu	868
 降福	jiang'fu	596
@@ -71262,6 +71616,7 @@
 江哥	jiang'ge	262
 江革	jiang'ge	157
 蒋哥	jiang'ge	113
+江阁	jiang'ge	91
 酱鸽	jiang'ge	82
 讲给	jiang'gei	867
 奖给	jiang'gei	502
@@ -71278,21 +71633,27 @@
 讲官	jiang'guan	257
 江关	jiang'guan	231
 讲过	jiang'guo	9473
+江国	jiang'guo	882
 浆果	jiang'guo	705
 僵果	jiang'guo	62
 将过	jiang'guo	1
 姜国	jiang'guo	1
 江海	jiang'hai	524
+江涵	jiang'han	768
 江汉	jiang'han	480
+江瀚	jiang'han	389
 讲好	jiang'hao	1617
 奖号	jiang'hao	430
 降耗	jiang'hao	344
+江浩	jiang'hao	275
 降号	jiang'hao	220
 江河	jiang'he	1542
 讲和	jiang'he	1107
 将和	jiang'he	1
 将黑	jiang'hei	47
+江红	jiang'hong	936
 绛红	jiang'hong	889
+江洪	jiang'hong	842
 姜鸿	jiang'hong	45
 江湖	jiang'hu	13684
 江户	jiang'hu	1491
@@ -71314,6 +71675,8 @@
 江蕙	jiang'hui	153
 将回	jiang'hui	122
 降回	jiang'hui	97
+江晖	jiang'hui	77
+江辉	jiang'hui	61
 降火	jiang'huo	377
 将获	jiang'huo	339
 酱货	jiang'huo	305
@@ -71329,6 +71692,7 @@
 姜家	jiang'jia	113
 蒋家	jiang'jia	90
 桨夹	jiang'jia	38
+姜健	jiang'jian	170
 桨尖	jiang'jian	38
 将建	jiang'jian	1
 讲讲	jiang'jiang	17992
@@ -71364,20 +71728,25 @@
 桨距	jiang'ju	38
 将军	jiang'jun	23286
 蒋军	jiang'jun	657
+江君	jiang'jun	496
 奖卡	jiang'ka	603
 江开	jiang'kai	55
 讲开	jiang'kai	3
 蒋恺	jiang'kai	1
 讲课	jiang'ke	14598
 姜科	jiang'ke	13868
+蒋科	jiang'ke	1073
 鳉科	jiang'ke	716
+江科	jiang'ke	480
 江口	jiang'kou	487
 浆块	jiang'kuai	522
 降髋	jiang'kuan	25
 浆框	jiang'kuang	32
 姜夔	jiang'kui	320
 姜昆	jiang'kun	816
+江阔	jiang'kuo	508
 将来	jiang'lai	33020
+江来	jiang'lai	819
 讲来	jiang'lai	1
 江郎	jiang'lang	19
 江浪	jiang'lang	17
@@ -71400,6 +71769,7 @@
 蒋冽	jiang'lie	55
 降临	jiang'lin	5464
 将临	jiang'lin	945
+蒋林	jiang'lin	487
 将领	jiang'ling	9417
 江陵	jiang'ling	2797
 将令	jiang'ling	128
@@ -71407,6 +71777,7 @@
 江岭	jiang'ling	81
 降灵	jiang'ling	64
 江流	jiang'liu	283
+江龙	jiang'long	936
 蒋龙	jiang'long	120
 桨龙	jiang'long	54
 江楼	jiang'lou	846
@@ -71438,8 +71809,11 @@
 江面	jiang'mian	490
 僵棉	jiang'mian	69
 僵苗	jiang'miao	62
+姜敏	jiang'min	904
 江民	jiang'min	859
 讲明	jiang'ming	678
+江明	jiang'ming	610
+姜明	jiang'ming	549
 姜末	jiang'mo	452
 浆膜	jiang'mo	109
 姜某	jiang'mou	154
@@ -71453,7 +71827,9 @@
 将能	jiang'neng	1
 将你	jiang'ni	2999
 姜泥	jiang'ni	58
+江年	jiang'nian	837
 江宁	jiang'ning	1529
+姜宁	jiang'ning	1529
 江鸥	jiang'ou	310
 奖牌	jiang'pai	3755
 将派	jiang'pai	945
@@ -71463,6 +71839,7 @@
 降盘	jiang'pan	155
 降配	jiang'pei	211
 酱醅	jiang'pei	84
+江鹏	jiang'peng	567
 姜彭	jiang'peng	1
 姜皮	jiang'pi	662
 僵皮	jiang'pi	77
@@ -71500,6 +71877,7 @@
 将去	jiang'qu	1
 降权	jiang'quan	600
 奖券	jiang'quan	100
+江泉	jiang'quan	80
 将让	jiang'rang	1
 降热	jiang're	22
 匠人	jiang'ren	2028
@@ -71517,6 +71895,7 @@
 蒋嫂	jiang'sao	57
 酱色	jiang'se	97
 绛色	jiang'se	87
+江森	jiang'sen	752
 讲啥	jiang'sha	634
 江沙	jiang'sha	602
 浆纱	jiang'sha	103
@@ -71532,10 +71911,12 @@
 江神	jiang'shen	788
 降神	jiang'shen	749
 姜婶	jiang'shen	367
+江深	jiang'shen	168
 江婶	jiang'shen	78
 蒋申	jiang'shen	8
 降生	jiang'sheng	1118
 缰绳	jiang'sheng	540
+蒋胜	jiang'sheng	432
 桨声	jiang'sheng	345
 江声	jiang'sheng	276
 讲声	jiang'sheng	1
@@ -71563,6 +71944,7 @@
 江叔	jiang'shu	643
 讲书	jiang'shu	480
 姜叔	jiang'shu	281
+江树	jiang'shu	133
 蒋叔	jiang'shu	95
 将帅	jiang'shuai	1083
 降水	jiang'shui	3410
@@ -71589,6 +71971,7 @@
 将它	jiang'ta	3724
 江獭	jiang'ta	98
 讲台	jiang'tai	1291
+江泰	jiang'tai	698
 讲坛	jiang'tan	380
 江滩	jiang'tan	163
 降碳	jiang'tan	130
@@ -71630,12 +72013,16 @@
 姜维	jiang'wei	1519
 酱味	jiang'wei	1074
 姜味	jiang'wei	485
+蒋伟	jiang'wei	479
+江伟	jiang'wei	152
 江尾	jiang'wei	120
 江为	jiang'wei	55
 江纬	jiang'wei	55
 将位	jiang'wei	35
 降温	jiang'wen	6437
 姜文	jiang'wen	5667
+江文	jiang'wen	991
+蒋文	jiang'wen	776
 将我	jiang'wo	4349
 僵卧	jiang'wo	4132
 姜武	jiang'wu	283
@@ -71654,6 +72041,7 @@
 降下	jiang'xia	1315
 江夏	jiang'xia	659
 江厦	jiang'xia	520
+江霞	jiang'xia	413
 江下	jiang'xia	1
 江鲜	jiang'xian	1246
 绛县	jiang'xian	1244
@@ -71675,12 +72063,15 @@
 降薪	jiang'xin	1224
 蒋欣	jiang'xin	119
 江心	jiang'xin	103
+江新	jiang'xin	94
 将心	jiang'xin	75
+江信	jiang'xin	60
 将星	jiang'xing	487
 姜姓	jiang'xing	408
 将行	jiang'xing	113
 鳉形	jiang'xing	100
 江姓	jiang'xing	90
+江行	jiang'xing	72
 蒋姓	jiang'xing	1
 降序	jiang'xu	323
 降雪	jiang'xue	907
@@ -71691,9 +72082,12 @@
 蒋勋	jiang'xun	900
 降压	jiang'ya	794
 酱鸭	jiang'ya	97
+江亚	jiang'ya	77
 江堰	jiang'yan	1174
 讲演	jiang'yan	1115
+江燕	jiang'yan	1057
 姜堰	jiang'yan	763
+江岩	jiang'yan	564
 姜妍	jiang'yan	191
 江淹	jiang'yan	99
 姜岩	jiang'yan	89
@@ -71710,12 +72104,15 @@
 奖掖	jiang'ye	87
 将以	jiang'yi	11992
 讲义	jiang'yi	2314
+江义	jiang'yi	620
+江毅	jiang'yi	377
 蒋易	jiang'yi	47
 疆埸	jiang'yi	1
 江阴	jiang'yin	4499
 僵硬	jiang'ying	5577
 将用	jiang'yong	1593
 江永	jiang'yong	1513
+蒋勇	jiang'yong	1434
 酱油	jiang'you	12532
 将有	jiang'you	1865
 将由	jiang'you	1736
@@ -71728,6 +72125,7 @@
 疆域	jiang'yu	1456
 江鱼	jiang'yu	417
 降于	jiang'yu	103
+江雨	jiang'yu	82
 将予	jiang'yu	65
 将欲	jiang'yu	52
 鳉鱼	jiang'yu	41
@@ -71736,6 +72134,7 @@
 酱园	jiang'yuan	68
 讲员	jiang'yuan	61
 江月	jiang'yue	201
+江云	jiang'yun	846
 蒋芸	jiang'yun	167
 将在	jiang'zai	9269
 僵在	jiang'zai	169
@@ -71750,6 +72149,7 @@
 江浙	jiang'zhe	1896
 讲者	jiang'zhe	1491
 讲着	jiang'zhe	116
+姜哲	jiang'zhe	92
 僵着	jiang'zhe	73
 犟着	jiang'zhe	59
 降者	jiang'zhe	58
@@ -71793,6 +72193,7 @@
 讲桌	jiang'zhuo	72
 降浊	jiang'zhuo	68
 酱紫	jiang'zi	1259
+江子	jiang'zi	116
 酱渍	jiang'zi	103
 江孜	jiang'zi	92
 绛紫	jiang'zi	73
@@ -74268,6 +74669,7 @@
 锦被	jin'bei	40
 金背	jin'bei	32
 今本	jin'ben	625
+金本	jin'ben	395
 进本	jin'ben	316
 紧绷	jin'beng	2575
 金币	jin'bi	8431
@@ -74291,6 +74693,7 @@
 金兵	jin'bing	119
 筋饼	jin'bing	95
 禁兵	jin'bing	76
+金博	jin'bo	1030
 金箔	jin'bo	373
 金波	jin'bo	298
 禁播	jin'bo	238
@@ -74351,6 +74754,7 @@
 金诚	jin'cheng	119
 锦城	jin'cheng	95
 近程	jin'cheng	76
+金程	jin'cheng	60
 锦程	jin'cheng	48
 今称	jin'cheng	38
 进呈	jin'cheng	30
@@ -74377,6 +74781,8 @@
 金创	jin'chuang	48
 金锤	jin'chui	1
 今春	jin'chun	126
+金纯	jin'chun	113
+金春	jin'chun	102
 锦春	jin'chun	92
 今次	jin'ci	1562
 仅此	jin'ci	125
@@ -74528,6 +74934,7 @@
 进房	jin'fang	1310
 谨防	jin'fang	1244
 金纺	jin'fang	1072
+金方	jin'fang	514
 金房	jin'fang	203
 金防	jin'fang	183
 禁放	jin'fang	155
@@ -74545,6 +74952,7 @@
 进风	jin'feng	80
 晋封	jin'feng	64
 金峰	jin'feng	51
+金锋	jin'feng	40
 金枫	jin'feng	32
 锦丰	jin'feng	8
 锦峰	jin'feng	4
@@ -74616,6 +75024,7 @@
 进馆	jin'guan	53
 金关	jin'guan	42
 金罐	jin'guan	33
+金官	jin'guan	26
 锦官	jin'guan	20
 浸灌	jin'guan	1
 金光	jin'guang	1011
@@ -74648,11 +75057,15 @@
 金焊	jin'han	69
 金航	jin'hang	621
 禁航	jin'hang	64
+金豪	jin'hao	850
+金浩	jin'hao	808
+金昊	jin'hao	765
 金号	jin'hao	706
 进号	jin'hao	447
 金河	jin'he	958
 金荷	jin'he	910
 锦盒	jin'he	768
+金禾	jin'he	437
 津河	jin'he	192
 金盒	jin'he	168
 锦河	jin'he	136
@@ -74691,6 +75104,7 @@
 金煌	jin'huang	590
 禁黄	jin'huang	1
 金辉	jin'hui	1368
+金惠	jin'hui	135
 金汇	jin'hui	108
 尽毁	jin'hui	86
 浸灰	jin'hui	81
@@ -74701,6 +75115,7 @@
 金徽	jin'hui	27
 禁毁	jin'hui	21
 锦辉	jin'hui	16
+金慧	jin'hui	12
 金婚	jin'hun	97
 进货	jin'huo	4195
 仅获	jin'huo	113
@@ -74738,10 +75153,12 @@
 仅见	jin'jian	440
 进件	jin'jian	351
 觐见	jin'jian	204
+金建	jin'jian	163
 进谏	jin'jian	130
 金剑	jin'jian	104
 金检	jin'jian	84
 晋见	jin'jian	83
+金健	jin'jian	66
 金尖	jin'jian	52
 劲健	jin'jian	22
 金箭	jin'jian	11
@@ -74793,6 +75210,7 @@
 进京	jin'jing	1815
 进境	jin'jing	1230
 近景	jin'jing	383
+金晶	jin'jing	306
 今井	jin'jing	244
 金靖	jin'jing	195
 金井	jin'jing	145
@@ -74826,13 +75244,17 @@
 晋爵	jin'jue	240
 进军	jin'jun	6494
 禁军	jin'jun	2194
+金俊	jin'jun	1048
 金军	jin'jun	408
 晋军	jin'jun	326
 金骏	jin'jun	260
 金君	jin'jun	160
 金卡	jin'ka	1561
+金开	jin'kai	1184
+金凯	jin'kai	1125
 近看	jin'kan	766
 仅看	jin'kan	533
+金康	jin'kang	706
 紧靠	jin'kao	3266
 仅靠	jin'kao	442
 禁考	jin'kao	353
@@ -74840,9 +75262,11 @@
 金科	jin'ke	398
 仅可	jin'ke	301
 进可	jin'ke	240
+金克	jin'ke	192
 近渴	jin'ke	153
 劲客	jin'ke	73
 金课	jin'ke	73
+金肯	jin'ken	684
 进坑	jin'keng	828
 金坑	jin'keng	787
 金控	jin'kong	1107
@@ -74860,6 +75284,7 @@
 金矿	jin'kuang	1890
 锦葵	jin'kui	189
 金葵	jin'kui	62
+金坤	jin'kun	477
 劲辣	jin'la	720
 浸蜡	jin'la	69
 进来	jin'lai	27064
@@ -74900,6 +75325,9 @@
 矜怜	jin'lian	1
 尽量	jin'liang	93079
 斤两	jin'liang	357
+金良	jin'liang	285
+金亮	jin'liang	228
+金梁	jin'liang	182
 劲量	jin'liang	145
 金粮	jin'liang	116
 津梁	jin'liang	92
@@ -74912,6 +75340,9 @@
 紧邻	jin'lin	847
 金鳞	jin'lin	100
 紧临	jin'lin	80
+金霖	jin'lin	64
+金林	jin'lin	51
+金麟	jin'lin	40
 禁林	jin'lin	32
 锦鳞	jin'lin	25
 金檩	jin'lin	20
@@ -74964,6 +75395,7 @@
 金麦	jin'mai	203
 金脉	jin'mai	183
 浸满	jin'man	223
+金曼	jin'man	212
 禁漫	jin'man	1
 紧忙	jin'mang	50
 金毛	jin'mao	678
@@ -74989,9 +75421,12 @@
 金面	jin'mian	1015
 进庙	jin'miao	639
 金庙	jin'miao	607
+金敏	jin'min	842
 今敏	jin'min	800
+金民	jin'min	455
 今明	jin'ming	1152
 金铭	jin'ming	1094
+金明	jin'ming	1037
 近名	jin'ming	956
 金鸣	jin'ming	913
 禁鸣	jin'ming	749
@@ -75006,12 +75441,16 @@
 禁牧	jin'mu	170
 金母	jin'mu	161
 妗母	jin'mu	1
+金娜	jin'na	922
+金纳	jin'na	876
 津南	jin'nan	342
 晋南	jin'nan	325
 金南	jin'nan	277
 锦囊	jin'nang	2211
 仅能	jin'neng	2465
 劲能	jin'neng	2342
+金妮	jin'ni	1798
+金尼	jin'ni	703
 金泥	jin'ni	270
 金猊	jin'ni	209
 今年	jin'nian	154698
@@ -75077,12 +75516,14 @@
 进前	jin'qian	270
 尽遣	jin'qian	216
 金枪	jin'qiang	311
+金强	jin'qiang	235
 禁枪	jin'qiang	188
 近墙	jin'qiang	25
 金桥	jin'qiao	474
 紧俏	jin'qiao	270
 津桥	jin'qiao	216
 近亲	jin'qin	1482
+金琴	jin'qin	518
 尽情	jin'qing	3925
 津轻	jin'qing	909
 近情	jin'qing	743
@@ -75118,14 +75559,17 @@
 近人	jin'ren	486
 进人	jin'ren	292
 晋人	jin'ren	233
+金仁	jin'ren	186
 今日	jin'ri	18686
 近日	jin'ri	6568
 金日	jin'ri	1168
 尽日	jin'ri	576
 金融	jin'rong	96966
+金荣	jin'rong	936
 仅容	jin'rong	794
 金茸	jin'rong	715
 锦荣	jin'rong	556
+金容	jin'rong	70
 浸溶	jin'rong	1
 筋肉	jin'rou	352
 进入	jin'ru	209224
@@ -75133,7 +75577,9 @@
 禁入	jin'ru	175
 尽入	jin'ru	140
 浸软	jin'ruan	44
+金瑞	jin'rui	886
 浸润	jin'run	2503
+金润	jin'run	698
 禁赛	jin'sai	1661
 金赛	jin'sai	855
 金三	jin'san	1310
@@ -75153,12 +75599,14 @@
 进山	jin'shan	935
 尽善	jin'shan	928
 近山	jin'shan	835
+金善	jin'shan	707
 津山	jin'shan	366
 锦山	jin'shan	164
 晋陕	jin'shan	143
 进膳	jin'shan	112
 晋商	jin'shang	339
 今上	jin'shang	305
+金尚	jin'shang	274
 金赏	jin'shang	247
 靳尚	jin'shang	225
 浸上	jin'shang	222
@@ -75186,6 +75634,11 @@
 仅剩	jin'sheng	3271
 今生	jin'sheng	1673
 噤声	jin'sheng	398
+金生	jin'sheng	318
+金圣	jin'sheng	254
+金盛	jin'sheng	204
+金胜	jin'sheng	171
+金声	jin'sheng	154
 禁声	jin'sheng	139
 劲升	jin'sheng	125
 金绳	jin'sheng	112
@@ -75202,6 +75655,7 @@
 金市	jin'shi	602
 尽失	jin'shi	599
 金氏	jin'shi	474
+金实	jin'shi	314
 金饰	jin'shi	292
 近时	jin'shi	182
 今世	jin'shi	157
@@ -75240,6 +75694,7 @@
 紧束	jin'shu	102
 锦书	jin'shu	92
 斤数	jin'shu	83
+金淑	jin'shu	75
 近属	jin'shu	1
 劲爽	jin'shuang	598
 进水	jin'shui	2346
@@ -75249,6 +75704,7 @@
 浸水	jin'shui	94
 锦水	jin'shui	75
 禁水	jin'shui	60
+金顺	jin'shun	814
 尽说	jin'shuo	47
 近似	jin'si	11747
 金丝	jin'si	785
@@ -75285,11 +75741,13 @@
 仅谈	jin'tan	62
 金汤	jin'tang	119
 金堂	jin'tang	113
+金唐	jin'tang	96
 锦堂	jin'tang	86
 金塘	jin'tang	77
 进汤	jin'tang	69
 晋唐	jin'tang	62
 斤塘	jin'tang	54
+金涛	jin'tao	1035
 金桃	jin'tao	983
 锦涛	jin'tao	593
 进讨	jin'tao	62
@@ -75334,6 +75792,7 @@
 金丸	jin'wan	65
 金碗	jin'wan	52
 金网	jin'wang	609
+金旺	jin'wang	579
 晋王	jin'wang	548
 进网	jin'wang	444
 禁网	jin'wang	62
@@ -75348,6 +75807,7 @@
 津味	jin'wei	86
 锦鳚	jin'wei	73
 近危	jin'wei	68
+金卫	jin'wei	54
 紧围	jin'wei	1
 金文	jin'wen	2578
 金温	jin'wen	160
@@ -75443,12 +75903,14 @@
 金行	jin'xing	742
 金兴	jin'xing	414
 金姓	jin'xing	165
+金性	jin'xing	148
 尽性	jin'xing	133
 金型	jin'xing	120
 筋性	jin'xing	61
 金杏	jin'xing	1
 近幸	jin'xing	1
 靳姓	jin'xing	1
+金雄	jin'xiong	765
 襟兄	jin'xiong	1
 锦绣	jin'xiu	2678
 进修	jin'xiu	690
@@ -75459,6 +75921,7 @@
 金旋	jin'xuan	486
 瑾轩	jin'xuan	317
 金萱	jin'xuan	276
+金铉	jin'xuan	125
 禁选	jin'xuan	62
 金靴	jin'xue	848
 进学	jin'xue	150
@@ -75477,9 +75940,11 @@
 金鼹	jin'yan	376
 谨言	jin'yan	163
 禁演	jin'yan	157
+金燕	jin'yan	100
 谨严	jin'yan	80
 金焰	jin'yan	64
 金岩	jin'yan	51
+金雁	jin'yan	32
 尽言	jin'yan	25
 金盐	jin'yan	9
 金言	jin'yan	1
@@ -75536,6 +76001,9 @@
 禁用	jin'yong	2757
 金庸	jin'yong	2628
 仅用	jin'yong	989
+金永	jin'yong	792
+金勇	jin'yong	644
+金涌	jin'yong	419
 紧拥	jin'yong	160
 近用	jin'yong	53
 仅有	jin'you	15961
@@ -75549,15 +76017,19 @@
 浸釉	jin'you	37
 金柚	jin'you	1
 金鱼	jin'yu	1225
+金宇	jin'yu	920
 禁欲	jin'yu	593
 锦鱼	jin'yu	390
 近于	jin'yu	285
 仅余	jin'yu	226
 金隅	jin'yu	185
+金裕	jin'yu	148
 仅与	jin'yu	118
+金羽	jin'yu	94
 金毓	jin'yu	75
 禁渔	jin'yu	60
 浸于	jin'yu	48
+金雨	jin'yu	37
 金域	jin'yu	31
 晋语	jin'yu	15
 浸浴	jin'yu	8
@@ -75574,12 +76046,14 @@
 近缘	jin'yuan	32
 禁苑	jin'yuan	25
 近园	jin'yuan	20
+金原	jin'yuan	16
 金园	jin'yuan	12
 进元	jin'yuan	9
 晋元	jin'yuan	4
 金苑	jin'yuan	2
 锦源	jin'yuan	1
 谨愿	jin'yuan	1
+金悦	jin'yue	1026
 近月	jin'yue	975
 金月	jin'yue	504
 仅约	jin'yue	446
@@ -75642,6 +76116,7 @@
 金针	jin'zhen	706
 金镇	jin'zhen	251
 进针	jin'zhen	200
+金振	jin'zhen	160
 近震	jin'zhen	53
 紧针	jin'zhen	42
 金正	jin'zheng	1
@@ -75697,6 +76172,7 @@
 斤装	jin'zhuang	134
 近状	jin'zhuang	62
 紧追	jin'zhui	232
+金准	jin'zhun	792
 靳准	jin'zhun	752
 金镯	jin'zhuo	47
 金子	jin'zi	4993
@@ -82542,6 +83018,7 @@
 空翠	kong'cui	436
 孔村	kong'cun	450
 空大	kong'da	201
+孔达	kong'da	181
 空单	kong'dan	1736
 控氮	kong'dan	68
 空挡	kong'dang	2333
@@ -82666,6 +83143,7 @@
 空姐	kong'jie	2267
 空接	kong'jie	615
 空界	kong'jie	492
+孔杰	kong'jie	476
 空劫	kong'jie	1
 孔径	kong'jing	807
 空镜	kong'jing	767
@@ -82687,6 +83165,7 @@
 空砍	kong'kan	88
 空客	kong'ke	1247
 空壳	kong'ke	1105
+孔科	kong'ke	424
 空空	kong'kong	867
 空口	kong'kou	587
 孔口	kong'kou	40
@@ -87325,6 +87804,7 @@
 耒河	lei'he	137
 泪河	lei'he	53
 泪痕	lei'hen	961
+雷横	lei'heng	411
 雷轰	lei'hong	31
 雷洪	lei'hong	29
 雷虎	lei'hu	634
@@ -87392,6 +87872,7 @@
 雷门	lei'men	918
 雷蒙	lei'meng	477
 雷米	lei'mi	1008
+雷敏	lei'min	87
 雷鸣	lei'ming	876
 类名	lei'ming	477
 雷明	lei'ming	381
@@ -87420,6 +87901,7 @@
 肋排	lei'pai	330
 雷朋	lei'peng	60
 雷劈	lei'pi	392
+雷平	lei'ping	42
 雷普	lei'pu	166
 垒砌	lei'qi	110
 蕾期	lei'qi	1
@@ -87469,6 +87951,7 @@
 类属	lei'shu	109
 泪水	lei'shui	6158
 耒水	lei'shui	1
+雷说	lei'shuo	1364
 类似	lei'si	121477
 蕾丝	lei'si	2477
 累死	lei'si	1620
@@ -87477,11 +87960,13 @@
 垒丝	lei'si	69
 累丝	lei'si	69
 雷斯	lei'si	1
+雷速	lei'su	63
 雷酸	lei'suan	446
 雷笋	lei'sun	84
 擂台	lei'tai	2842
 累瘫	lei'tan	670
 类钽	lei'tan	42
+雷涛	lei'tao	179
 雷特	lei'te	1
 肋条	lei'tiao	141
 雷霆	lei'ting	8418
@@ -87492,6 +87977,7 @@
 类推	lei'tui	864
 雷蛙	lei'wa	54
 雷丸	lei'wan	1
+雷王	lei'wang	87
 雷纹	lei'wen	58
 雷文	lei'wen	1
 诔文	lei'wen	1
@@ -87831,6 +88317,7 @@
 力保	li'bao	568
 力宝	li'bao	454
 丽宝	li'bao	363
+李宝	li'bao	58
 栗暴	li'bao	1
 立碑	li'bei	452
 李北	li'bei	260
@@ -87854,13 +88341,18 @@
 李彬	li'bin	120
 礼兵	li'bing	1125
 黎兵	li'bing	770
+李兵	li'bing	470
 礼饼	li'bing	379
 罹病	li'bing	178
+李炳	li'bing	53
 李冰	li'bing	46
+李秉	li'bing	23
 蛎饼	li'bing	1
 荔波	li'bo	1057
 李伯	li'bo	974
+李波	li'bo	768
 立博	li'bo	763
+李博	li'bo	616
 郦波	li'bo	564
 李搏	li'bo	55
 李播	li'bo	55
@@ -87873,6 +88365,7 @@
 理睬	li'cai	612
 立裁	li'cai	554
 沥菜	li'cai	58
+李灿	li'can	37
 栗蚕	li'can	1
 李沧	li'cang	752
 栗草	li'cao	69
@@ -87891,9 +88384,12 @@
 离场	li'chang	4295
 力场	li'chang	1818
 离厂	li'chang	388
+李昌	li'chang	112
 鳢肠	li'chang	86
+李超	li'chao	3165
 历朝	li'chao	1000
 离巢	li'chao	549
+李朝	li'chao	296
 黎朝	li'chao	192
 离车	li'che	940
 礼车	li'che	893
@@ -87905,6 +88401,7 @@
 历程	li'cheng	7134
 里程	li'cheng	4471
 礼成	li'cheng	188
+李成	li'cheng	97
 离城	li'cheng	77
 丽呈	li'cheng	73
 历城	li'cheng	61
@@ -87926,6 +88423,7 @@
 李赤	li'chi	55
 立尺	li'chi	39
 李冲	li'chong	201
+李崇	li'chong	153
 离愁	li'chou	179
 理出	li'chu	336
 立储	li'chu	310
@@ -87952,6 +88450,7 @@
 詈词	li'ci	38
 俪辞	li'ci	1
 詈辞	li'ci	1
+李聪	li'cong	169
 丽蟌	li'cong	78
 力促	li'cu	75
 李翠	li'cui	1
@@ -87971,6 +88470,7 @@
 丽达	li'da	1173
 理大	li'da	866
 立达	li'da	577
+李达	li'da	436
 利大	li'da	271
 力达	li'da	211
 粒大	li'da	90
@@ -87980,7 +88480,9 @@
 礼袋	li'dai	102
 锂带	li'dai	68
 里袋	li'dai	43
+李旦	li'dan	875
 李诞	li'dan	794
+李丹	li'dan	697
 礼单	li'dan	659
 利胆	li'dan	580
 利淡	li'dan	283
@@ -87994,11 +88496,13 @@
 利刀	li'dao	266
 立刀	li'dao	218
 犁刀	li'dao	42
+李道	li'dao	34
 里的	li'de	163044
 离得	li'de	1679
 立德	li'de	1428
 立的	li'de	1293
 利得	li'de	332
+李德	li'de	222
 李得	li'de	55
 里德	li'de	1
 立等	li'deng	69
@@ -88081,6 +88585,7 @@
 离分	li'fen	900
 沥粉	li'fen	855
 立芬	li'fen	1
+李峰	li'feng	1530
 厉风	li'feng	836
 丽丰	li'feng	449
 利丰	li'feng	188
@@ -88089,6 +88594,7 @@
 里缝	li'feng	103
 丽枫	li'feng	73
 黎逢	li'feng	55
+李凤	li'feng	53
 立缝	li'feng	43
 离缝	li'feng	40
 李丰	li'feng	1
@@ -88148,6 +88654,7 @@
 吏官	li'guan	1
 李广	li'guang	1629
 理光	li'guang	1548
+李光	li'guang	587
 厉鬼	li'gui	1047
 立柜	li'gui	464
 李鬼	li'gui	260
@@ -88169,9 +88676,12 @@
 利害	li'hai	973
 里海	li'hai	540
 离海	li'hai	432
+李海	li'hai	345
+李汉	li'han	479
 立焊	li'han	255
 笠蚶	li'han	100
 李瀚	li'han	55
+李航	li'hang	503
 利好	li'hao	6129
 立好	li'hao	204
 李昊	li'hao	160
@@ -88195,12 +88705,17 @@
 离恨	li'hen	94
 李亨	li'heng	1098
 蛎鸻	li'heng	83
+李珩	li'heng	34
 李恒	li'heng	1
 李宏	li'hong	1391
 李红	li'hong	1023
 力宏	li'hong	998
+李洪	li'hong	721
+李弘	li'hong	229
+李鸿	li'hong	89
 立候	li'hou	16
 立后	li'hou	15
+李虎	li'hu	927
 立户	li'hu	881
 丽湖	li'hu	834
 蠡湖	li'hu	695
@@ -88236,6 +88751,7 @@
 理惠	li'hui	128
 李慧	li'hui	102
 李回	li'hui	55
+李惠	li'hui	55
 立回	li'hui	30
 李恢	li'hui	20
 莅会	li'hui	1
@@ -88258,6 +88774,7 @@
 离机	li'ji	58
 骊姬	li'ji	46
 丽姬	li'ji	36
+李继	li'ji	23
 粒级	li'ji	1
 李𪟝	li'ji	1
 离家	li'jia	2911
@@ -88282,10 +88799,13 @@
 力荐	li'jian	907
 里间	li'jian	891
 离间	li'jian	147
+李建	li'jian	100
 利箭	li'jian	80
+李剑	li'jian	64
 立见	li'jian	51
 丽江	li'jiang	3592
 漓江	li'jiang	329
+李江	li'jiang	263
 丽鳉	li'jiang	73
 李绛	li'jiang	55
 浰江	li'jiang	1
@@ -88310,12 +88830,14 @@
 李节	li'jie	55
 李解	li'jie	52
 李杰	li'jie	1
+李锦	li'jin	734
 礼金	li'jin	486
 离近	li'jin	463
 历尽	li'jin	438
 力尽	li'jin	350
 李进	li'jin	317
 利金	li'jin	234
+李金	li'jin	177
 利津	li'jin	156
 厘金	li'jin	73
 黎锦	li'jin	66
@@ -88330,18 +88852,24 @@
 离京	li'jing	398
 粒径	li'jing	314
 李菁	li'jing	251
+李晶	li'jing	200
+李京	li'jing	160
+李婧	li'jing	128
+李璟	li'jing	102
 礼敬	li'jing	81
 丽景	li'jing	64
 沥净	li'jing	58
 丽晶	li'jing	51
 立警	li'jing	40
 立镜	li'jing	39
+李景	li'jing	32
 荔景	li'jing	25
 离镜	li'jing	20
 利菁	li'jing	16
 立井	li'jing	12
 栎精	li'jing	9
 犁镜	li'jing	1
+李炯	li'jiong	44
 历久	li'jiu	82
 利旧	li'jiu	74
 李玖	li'jiu	55
@@ -88360,13 +88888,16 @@
 李傕	li'jue	728
 栗蕨	li'jue	80
 离绝	li'jue	1
+李俊	li'jun	2294
 丽君	li'jun	263
+李君	li'jun	240
 励骏	li'jun	192
 李军	li'jun	1
 礼卡	li'ka	102
 离开	li'kai	73338
 李凯	li'kai	689
 犁开	li'kai	1
+李侃	li'kan	55
 力抗	li'kang	1084
 利康	li'kang	916
 力扛	li'kang	341
@@ -88376,6 +88907,7 @@
 力克	li'ke	527
 里克	li'ke	474
 鲤科	li'ke	379
+李克	li'ke	242
 里科	li'ke	221
 吏科	li'ke	164
 鳢科	li'ke	148
@@ -88383,6 +88915,7 @@
 藜科	li'ke	104
 栗壳	li'ke	62
 李可	li'ke	1
+李坑	li'keng	135
 利空	li'kong	2412
 力扣	li'kou	964
 利口	li'kou	916
@@ -88390,11 +88923,13 @@
 离苦	li'ku	936
 立库	li'ku	91
 离库	li'ku	43
+李宽	li'kuan	90
 锂矿	li'kuang	675
 李逵	li'kui	1400
 理亏	li'kui	794
 李悝	li'kui	179
 李夔	li'kui	55
+李坤	li'kun	232
 栗坤	li'kun	123
 丽坤	li'kun	3
 李廓	li'kuo	55
@@ -88403,6 +88938,8 @@
 历来	li'lai	4154
 里来	li'lai	1121
 礼来	li'lai	904
+李兰	li'lan	1770
+李岚	li'lan	79
 礼篮	li'lan	1
 力狼	li'lang	118
 利郎	li'lang	82
@@ -88422,6 +88959,7 @@
 粒粒	li'li	335
 李莉	li'li	298
 离离	li'li	169
+李立	li'li	135
 历历	li'li	108
 理理	li'li	86
 黎利	li'li	77
@@ -88436,12 +88974,14 @@
 莉莲	li'lian	954
 历炼	li'lian	517
 力量	li'liang	101953
+李良	li'liang	285
 立梁	li'liang	64
 李谅	li'liang	55
 李亮	li'liang	1
 理疗	li'liao	1482
 里料	li'liao	747
 粒料	li'liao	517
+李烈	li'lie	107
 凓冽	li'lie	1
 莅临	li'lin	257
 李琳	li'lin	205
@@ -88496,11 +89036,13 @@
 里门	li'men	920
 礼门	li'men	871
 李梦	li'meng	949
+李萌	li'meng	609
 力猛	li'meng	434
 利盟	li'meng	281
 李蒙	li'meng	1
 㰀檬	li'meng	1
 厘米	li'mi	14723
+李密	li'mi	1736
 粒米	li'mi	839
 栗米	li'mi	488
 李秘	li'mi	55
@@ -88510,6 +89052,7 @@
 粒面	li'mian	601
 黎苗	li'miao	701
 立庙	li'miao	593
+李淼	li'miao	408
 李敏	li'min	2289
 利民	li'min	285
 力敏	li'min	241
@@ -88519,9 +89062,11 @@
 李明	li'ming	671
 立命	li'ming	279
 理明	li'ming	223
+李鸣	li'ming	142
 立名	li'ming	113
 李溟	li'ming	55
 李铭	li'ming	1
+李墨	li'mo	295
 力魔	li'mo	73
 理抹	li'mo	62
 丽蘑	li'mo	54
@@ -88580,6 +89125,7 @@
 力拼	li'pin	1084
 礼聘	li'pin	584
 李频	li'pin	55
+李平	li'ping	1069
 丽萍	li'ping	1004
 黎平	li'ping	926
 黎坪	li'ping	725
@@ -88598,6 +89144,7 @@
 戾气	li'qi	1519
 理气	li'qi	725
 礼器	li'qi	455
+李琦	li'qi	232
 离弃	li'qi	160
 历奇	li'qi	134
 李颀	li'qi	55
@@ -88615,6 +89162,7 @@
 篱墙	li'qiang	288
 李峤	li'qiao	55
 李桥	li'qiao	49
+李乔	li'qiao	30
 离鞘	li'qiao	1
 蠡桥	li'qiao	1
 李沁	li'qin	141
@@ -88623,6 +89171,8 @@
 理清	li'qing	1548
 厘清	li'qing	876
 离情	li'qing	291
+李清	li'qing	232
+李庆	li'qing	185
 李卿	li'qing	148
 李青	li'qing	1
 李琼	li'qiong	1
@@ -88647,9 +89197,12 @@
 利权	li'quan	80
 里圈	li'quan	70
 粒蜷	li'quan	67
+李群	li'qun	885
 利群	li'qun	106
 离群	li'qun	84
 礼裙	li'qun	67
+李然	li'ran	380
+李冉	li'ran	177
 栗然	li'ran	1
 礼让	li'rang	468
 里热	li're	72
@@ -88660,6 +89213,7 @@
 丽人	li'ren	226
 利人	li'ren	169
 立人	li'ren	135
+李仁	li'ren	108
 里仁	li'ren	77
 立刃	li'ren	71
 栗仁	li'ren	62
@@ -88680,6 +89234,7 @@
 离乳	li'ru	168
 李儒	li'ru	134
 李瑞	li'rui	1048
+李睿	li'rui	301
 利润	li'run	65438
 力弱	li'ruo	151
 丽萨	li'sa	270
@@ -88703,6 +89258,7 @@
 梨山	li'shan	187
 栗山	li'shan	151
 黎山	li'shan	116
+李善	li'shan	94
 礼尚	li'shang	102
 立上	li'shang	69
 郦商	li'shang	62
@@ -88728,8 +89284,10 @@
 利生	li'sheng	150
 离生	li'sheng	120
 立升	li'sheng	96
+李胜	li'sheng	76
 丽笙	li'sheng	60
 立胜	li'sheng	48
+李升	li'sheng	38
 例胜	li'sheng	35
 理绳	li'sheng	25
 厘升	li'sheng	1
@@ -88787,6 +89345,8 @@
 理数	li'shu	3
 黎庶	li'shu	1
 李树	li'shu	1
+李帅	li'shuai	1095
+李双	li'shuang	75
 李爽	li'shuang	1
 丽水	li'shui	1282
 溧水	li'shui	200
@@ -88808,6 +89368,7 @@
 莉丝	li'si	1328
 丽思	li'si	144
 离死	li'si	115
+李思	li'si	92
 离思	li'si	73
 立嗣	li'si	58
 厘司	li'si	11
@@ -88839,6 +89400,7 @@
 离台	li'tai	914
 丽台	li'tai	823
 礼台	li'tai	759
+李泰	li'tai	225
 立泰	li'tai	174
 丽泰	li'tai	1
 里谈	li'tan	104
@@ -88899,6 +89461,7 @@
 厉王	li'wang	872
 力王	li'wang	826
 李旺	li'wang	1
+李威	li'wei	1015
 李伟	li'wei	514
 立威	li'wei	298
 立委	li'wei	166
@@ -88909,6 +89472,7 @@
 骊威	li'wei	64
 丽鳚	li'wei	52
 立为	li'wei	51
+李玮	li'wei	40
 李卫	li'wei	32
 李炜	li'wei	19
 力微	li'wei	9
@@ -88917,6 +89481,7 @@
 历位	li'wei	1
 礼闱	li'wei	1
 李玟	li'wen	1659
+李文	li'wen	489
 例文	li'wen	391
 理问	li'wen	312
 立文	li'wen	249
@@ -88962,6 +89527,7 @@
 澧县	li'xian	48
 礼县	li'xian	38
 离弦	li'xian	30
+李贤	li'xian	24
 立现	li'xian	19
 礼贤	li'xian	15
 力线	li'xian	12
@@ -89029,6 +89595,7 @@
 李续	li'xu	55
 吏胥	li'xu	1
 里胥	li'xu	1
+厉玄	li'xuan	153
 李宣	li'xuan	130
 李玄	li'xuan	1
 李轩	li'xuan	1
@@ -89096,9 +89663,11 @@
 离异	li'yi	1227
 李毅	li'yi	411
 礼义	li'yi	307
+李易	li'yi	185
 李艺	li'yi	148
 李姨	li'yi	118
 丽鮨	li'yi	99
+李一	li'yi	94
 例一	li'yi	75
 丽蚁	li'yi	61
 立异	li'yi	60
@@ -89172,6 +89741,7 @@
 俪语	li'yu	1
 李渊	li'yuan	2895
 梨园	li'yuan	420
+李元	li'yuan	194
 李媛	li'yuan	155
 利苑	li'yuan	124
 力源	li'yuan	99
@@ -89197,6 +89767,7 @@
 立约	li'yue	556
 李玥	li'yue	451
 李月	li'yue	378
+李跃	li'yue	143
 丽云	li'yun	347
 礼运	li'yun	312
 礼韵	li'yun	172
@@ -89216,6 +89787,7 @@
 李灶	li'zao	1
 丽泽	li'ze	1035
 礼则	li'ze	445
+李泽	li'ze	202
 礼赠	li'zeng	41
 篱栅	li'zha	1
 李宅	li'zhai	3
@@ -89239,6 +89811,8 @@
 离辙	li'zhe	1
 离这	li'zhei	450
 利贞	li'zhen	788
+李震	li'zhen	374
+李振	li'zhen	103
 立针	li'zhen	42
 李真	li'zhen	1
 李贞	li'zhen	1
@@ -89252,6 +89826,7 @@
 理正	li'zheng	102
 理证	li'zheng	81
 里正	li'zheng	73
+李正	li'zheng	64
 李拯	li'zheng	55
 李政	li'zheng	1
 厘正	li'zheng	1
@@ -89265,6 +89840,7 @@
 礼制	li'zhi	486
 梨枝	li'zhi	118
 吏治	li'zhi	116
+李智	li'zhi	106
 里纸	li'zhi	94
 利智	li'zhi	84
 理知	li'zhi	67
@@ -89310,6 +89886,8 @@
 力壮	li'zhuang	83
 丽妆	li'zhuang	66
 立桩	li'zhuang	39
+李准	li'zhun	427
+李卓	li'zhuo	195
 例子	li'zi	93101
 栗子	li'zi	20193
 离子	li'zi	6236
@@ -89334,6 +89912,7 @@
 李总	li'zong	2964
 理综	li'zong	1937
 立宗	li'zong	700
+李宗	li'zong	192
 立足	li'zu	4663
 黎族	li'zu	1089
 力阻	li'zu	816
@@ -90497,6 +91076,7 @@
 梁建	liang'jian	288
 两舰	liang'jian	97
 两肩	liang'jian	77
+梁健	liang'jian	61
 两检	liang'jian	48
 两剑	liang'jian	38
 两键	liang'jian	30
@@ -90609,6 +91189,7 @@
 晾晾	liang'liang	73
 晾粮	liang'liang	42
 两列	liang'lie	738
+梁林	liang'lin	31
 梁麟	liang'lin	1
 梁令	liang'ling	55
 两笼	liang'long	796
@@ -90672,6 +91253,7 @@
 量你	liang'ni	1
 两年	liang'nian	50193
 椋鸟	liang'niao	132
+梁宁	liang'ning	227
 靓妞	liang'niu	38
 粮农	liang'nong	22
 靓女	liang'nv	1107
@@ -91637,6 +92219,7 @@
 林斌	lin'bin	670
 林彬	lin'bin	1
 淋病	lin'bing	1058
+林冰	lin'bing	684
 林伯	lin'bo	972
 鳞波	lin'bo	1
 林逋	lin'bu	97
@@ -91693,11 +92276,13 @@
 麟德	lin'de	118
 林德	lin'de	1
 林地	lin'di	732
+林迪	lin'di	659
 临电	lin'dian	82
 林甸	lin'dian	3
 拎点	lin'dian	1
 林雕	lin'diao	71
 林东	lin'dong	986
+林栋	lin'dong	937
 凛冬	lin'dong	887
 林动	lin'dong	818
 林侗	lin'dong	1
@@ -91706,6 +92291,7 @@
 琳恩	lin'en	1026
 林恩	lin'en	1
 麟儿	lin'er	119
+林凡	lin'fan	2040
 林璠	lin'fan	55
 林芳	lin'fang	1843
 磷肥	lin'fei	170
@@ -91714,6 +92300,7 @@
 林峰	lin'feng	1058
 临风	lin'feng	1005
 林枫	lin'feng	952
+林锋	lin'feng	245
 林丰	lin'feng	1
 林父	lin'fu	927
 林府	lin'fu	881
@@ -91724,6 +92311,7 @@
 林皋	lin'gao	141
 林哥	lin'ge	1318
 蔺哥	lin'ge	1186
+林戈	lin'ge	1094
 林革	lin'ge	55
 林格	lin'ge	1
 临工	lin'gong	1598
@@ -91732,6 +92320,7 @@
 临卦	lin'gua	1
 临官	lin'guan	742
 林冠	lin'guan	31
+林光	lin'guang	810
 磷光	lin'guang	770
 临桂	lin'gui	9
 林龟	lin'gui	1
@@ -91741,15 +92330,20 @@
 林果	lin'guo	630
 临海	lin'hai	584
 林海	lin'hai	301
+林涵	lin'han	572
 林瀚	lin'han	1
 林好	lin'hao	1335
 林浩	lin'hao	232
+林昊	lin'hao	146
 淋好	lin'hao	58
 林豪	lin'hao	1
 临河	lin'he	166
 林河	lin'he	149
 林壑	lin'he	134
+林恒	lin'heng	639
 林衡	lin'heng	1
+林红	lin'hong	4211
+林鸿	lin'hong	646
 临湖	lin'hu	72
 林虎	lin'hu	68
 鳞虎	lin'hu	66
@@ -91762,6 +92356,7 @@
 林蝗	lin'huang	1
 林慧	lin'hui	806
 林辉	lin'hui	766
+林惠	lin'hui	619
 拎回	lin'hui	55
 林火	lin'huo	1179
 磷火	lin'huo	1120
@@ -91773,12 +92368,16 @@
 林纪	lin'ji	1
 邻家	lin'jia	1140
 林家	lin'jia	587
+林佳	lin'jia	175
 磷钾	lin'jia	140
 鳞甲	lin'jia	112
 林嘉	lin'jia	1
 林间	lin'jian	776
 临建	lin'jian	737
 临检	lin'jian	698
+林健	lin'jian	644
+林坚	lin'jian	504
+林剑	lin'jian	372
 临键	lin'jian	201
 临槛	lin'jian	12
 临江	lin'jiang	386
@@ -91790,10 +92389,12 @@
 临街	lin'jie	467
 林姐	lin'jie	169
 邻接	lin'jie	135
+林杰	lin'jie	108
 林洁	lin'jie	86
 鳞介	lin'jie	1
 临近	lin'jin	6801
 邻近	lin'jin	1384
+林锦	lin'jin	689
 临晋	lin'jin	516
 林静	lin'jing	936
 鳞茎	lin'jing	889
@@ -91804,9 +92405,12 @@
 林鵙	lin'ju	75
 林娟	lin'juan	500
 林俊	lin'jun	1282
+林军	lin'jun	1218
 淋菌	lin'jun	1154
+林君	lin'jun	1064
 林钧	lin'jun	1
 林凯	lin'kai	702
+林康	lin'kang	666
 临考	lin'kao	408
 临客	lin'ke	3049
 林克	lin'ke	1
@@ -91829,11 +92433,14 @@
 林立	lin'li	1567
 邻里	lin'li	929
 淋漓	lin'li	577
+林丽	lin'li	461
 林里	lin'li	368
 林莉	lin'li	294
 林李	lin'li	158
 临澧	lin'li	142
 林狸	lin'li	66
+林亮	lin'liang	850
+林良	lin'liang	808
 临了	lin'liao	411
 林鹩	lin'liao	86
 凛冽	lin'lie	465
@@ -91858,18 +92465,22 @@
 淋滤	lin'lv	1
 林虑	lin'lv	1
 林莽	lin'mang	28
+林茂	lin'mao	909
 林鹛	lin'mei	92
 林美	lin'mei	19
 林梅	lin'mei	18
 林妹	lin'mei	1
 临门	lin'men	85
+林梦	lin'meng	945
 林蒙	lin'meng	44
 林濛	lin'meng	6
 廪米	lin'mi	1
 林庙	lin'miao	1
 林敏	lin'min	756
+林明	lin'ming	1012
 临摹	lin'mo	7850
 林墨	lin'mo	1407
+林默	lin'mo	639
 林陌	lin'mo	14
 林模	lin'mo	1
 临末	lin'mo	1
@@ -91879,8 +92490,10 @@
 鳞木	lin'mu	65
 临沐	lin'mu	1
 檩木	lin'mu	1
+林娜	lin'na	1354
 琳娜	lin'na	1286
 林奈	lin'nai	832
+林楠	lin'nan	904
 临难	lin'nan	859
 林内	lin'nei	364
 林鸟	lin'niao	662
@@ -91925,6 +92538,7 @@
 凛然	lin'ran	449
 邻人	lin'ren	176
 廪人	lin'ren	1
+林荣	lin'rong	896
 淋溶	lin'rong	62
 临戎	lin'rong	1
 淋入	lin'ru	276
@@ -91932,12 +92546,14 @@
 林瑞	lin'rui	101
 麟瑞	lin'rui	1
 淋洒	lin'sa	1
+林赛	lin'sai	882
 琳赛	lin'sai	838
 鳞伞	lin'san	87
 林嫂	lin'sao	873
 吝啬	lin'se	1438
 吝色	lin'se	1
 林森	lin'sen	122
+林珊	lin'shan	353
 林山	lin'shan	135
 临山	lin'shan	122
 林杉	lin'shan	78
@@ -91955,6 +92571,7 @@
 林生	lin'sheng	170
 邻省	lin'sheng	157
 廪生	lin'sheng	153
+林胜	lin'sheng	124
 临时	lin'shi	20237
 淋湿	lin'shi	370
 林氏	lin'shi	320
@@ -91977,11 +92594,13 @@
 邻水	lin'shui	87
 淋水	lin'shui	69
 临死	lin'si	835
+林松	lin'song	1030
 林嵩	lin'song	55
 林薮	lin'sou	1
 磷素	lin'su	59
 磷酸	lin'suan	1178
 膦酸	lin'suan	1
+林泰	lin'tai	738
 邻摊	lin'tan	34
 临潭	lin'tan	16
 林塘	lin'tang	504
@@ -92008,6 +92627,7 @@
 林外	lin'wai	1251
 林婉	lin'wan	927
 磷烷	lin'wan	217
+林旺	lin'wang	796
 林网	lin'wang	756
 林伟	lin'wei	357
 临危	lin'wei	176
@@ -92017,6 +92637,7 @@
 林猬	lin'wei	72
 林威	lin'wei	1
 林蔚	lin'wei	1
+林文	lin'wen	1174
 临问	lin'wen	1
 鳞纹	lin'wen	1
 林鹟	lin'weng	72
@@ -92048,6 +92669,7 @@
 林乡	lin'xiang	904
 林相	lin'xiang	859
 临湘	lin'xiang	814
+林翔	lin'xiang	750
 临翔	lin'xiang	116
 林晓	lin'xiao	1071
 林萧	lin'xiao	1017
@@ -92065,10 +92687,14 @@
 临行	lin'xing	219
 临幸	lin'xing	175
 临刑	lin'xing	140
+林兴	lin'xing	112
 蔺姓	lin'xing	1
+林雄	lin'xiong	526
+林秀	lin'xiu	918
 林岫	lin'xiu	1
 林旭	lin'xu	144
 林珝	lin'xu	55
+林轩	lin'xuan	1314
 遴选	lin'xuan	1248
 林雪	lin'xue	433
 林学	lin'xue	219
@@ -92077,9 +92703,14 @@
 邻牙	lin'ya	616
 临崖	lin'ya	585
 林艳	lin'yan	316
+林妍	lin'yan	219
 林燕	lin'yan	147
 淋盐	lin'yan	62
+林岩	lin'yan	27
 磷盐	lin'yan	9
+林阳	lin'yang	1705
+林杨	lin'yang	958
+林洋	lin'yang	421
 林仰	lin'yang	55
 蔺瑶	lin'yao	1
 林瑶	lin'yao	1
@@ -92093,6 +92724,7 @@
 林邑	lin'yi	433
 临邑	lin'yi	390
 临猗	lin'yi	331
+林亦	lin'yi	230
 临仪	lin'yi	75
 林㹭	lin'yi	1
 林荫	lin'yin	179
@@ -92113,9 +92745,12 @@
 邻右	lin'you	1
 淋浴	lin'yu	1111
 淋雨	lin'yu	492
+林雨	lin'yu	366
 邻域	lin'yu	172
+林玉	lin'yu	97
 林宇	lin'yu	77
 吝于	lin'yu	61
+林羽	lin'yu	48
 霖雨	lin'yu	38
 林鹬	lin'yu	31
 临渝	lin'yu	1
@@ -92144,9 +92779,11 @@
 拎着	lin'zhe	3598
 淋着	lin'zhe	103
 临着	lin'zhe	82
+林哲	lin'zhe	65
 临阵	lin'zhen	842
 林镇	lin'zhen	758
 临镇	lin'zhen	756
+林珍	lin'zhen	529
 临震	lin'zhen	404
 林针	lin'zhen	1
 临证	lin'zheng	801
@@ -92169,6 +92806,7 @@
 林庄	lin'zhuang	932
 鳞状	lin'zhuang	885
 邻桌	lin'zhuo	289
+林梓	lin'zi	727
 林子	lin'zi	414
 临淄	lin'zi	331
 檩子	lin'zi	264
@@ -92980,6 +93618,7 @@
 流布	liu'bu	224
 六菜	liu'cai	531
 留菜	liu'cai	58
+刘灿	liu'can	129
 刘粲	liu'can	1
 柳蚕	liu'can	1
 溜槽	liu'cao	3
@@ -92997,6 +93636,7 @@
 六场	liu'chang	311
 留长	liu'chang	248
 流场	liu'chang	198
+刘昌	liu'chang	158
 六厂	liu'chang	152
 刘敞	liu'chang	55
 六朝	liu'chao	157
@@ -93009,6 +93649,7 @@
 刘谌	liu'chen	1
 流程	liu'cheng	89992
 六成	liu'cheng	995
+刘成	liu'cheng	166
 柳橙	liu'cheng	100
 柳城	liu'cheng	80
 留成	liu'cheng	64
@@ -93018,6 +93659,7 @@
 刘丞	liu'cheng	1
 六尺	liu'chi	273
 六冲	liu'chong	832
+刘崇	liu'chong	790
 六重	liu'chong	749
 刘宠	liu'chong	1
 六丑	liu'chou	279
@@ -93032,6 +93674,8 @@
 留传	liu'chuan	97
 柳川	liu'chuan	77
 六串	liu'chuan	61
+刘闯	liu'chuang	186
+刘春	liu'chun	1017
 硫醇	liu'chun	966
 留春	liu'chun	294
 瘤蝽	liu'chun	77
@@ -93099,6 +93743,7 @@
 六钉	liu'ding	64
 流动	liu'dong	15568
 六栋	liu'dong	125
+刘东	liu'dong	100
 柳东	liu'dong	80
 刘洞	liu'dong	55
 留洞	liu'dong	51
@@ -93123,9 +93768,11 @@
 瘤蛾	liu'e	56
 刘鹗	liu'e	1
 刘鄂	liu'e	1
+刘恩	liu'en	670
 六二	liu'er	1282
 六耳	liu'er	1218
 柳儿	liu'er	832
+刘二	liu'er	530
 留法	liu'fa	286
 六法	liu'fa	182
 留发	liu'fa	145
@@ -93154,12 +93801,15 @@
 硫粉	liu'fen	69
 硫分	liu'fen	55
 硫份	liu'fen	44
+刘峰	liu'feng	1039
 留缝	liu'feng	981
+刘凤	liu'feng	932
 刘封	liu'feng	830
 流风	liu'feng	468
 溜缝	liu'feng	62
 柳逢	liu'feng	55
 刘锋	liu'feng	1
+刘福	liu'fu	408
 六福	liu'fu	179
 六腑	liu'fu	161
 六幅	liu'fu	149
@@ -93208,6 +93858,8 @@
 流贯	liu'guan	1
 流光	liu'guang	628
 溜光	liu'guang	565
+刘光	liu'guang	508
+刘广	liu'guang	457
 六龟	liu'gui	724
 留归	liu'gui	372
 流过	liu'guo	4233
@@ -93240,6 +93892,7 @@
 流痕	liu'hen	54
 刘恒	liu'heng	879
 刘衡	liu'heng	1
+刘红	liu'hong	927
 流红	liu'hong	62
 刘弘	liu'hong	61
 刘鸿	liu'hong	1
@@ -93247,11 +93900,13 @@
 刘洪	liu'hong	1
 留后	liu'hou	138
 留侯	liu'hou	131
+刘虎	liu'hu	639
 六户	liu'hu	607
 柳湖	liu'hu	575
 刘湖	liu'hu	178
 刘祜	liu'hu	1
 流户	liu'hu	1
+刘华	liu'hua	625
 硫化	liu'hua	367
 六花	liu'hua	330
 榴花	liu'hua	305
@@ -93271,6 +93926,7 @@
 硫黄	liu'huang	426
 刘晃	liu'huang	55
 刘辉	liu'hui	950
+刘惠	liu'hui	442
 溜回	liu'hui	352
 流回	liu'hui	334
 刘慧	liu'hui	229
@@ -93285,6 +93941,7 @@
 刘基	liu'ji	546
 六集	liu'ji	282
 六季	liu'ji	270
+刘吉	liu'ji	178
 刘记	liu'ji	142
 硫基	liu'ji	113
 六忌	liu'ji	90
@@ -93302,6 +93959,9 @@
 刘驾	liu'jia	55
 六价	liu'jia	48
 刘嘉	liu'jia	1
+刘健	liu'jian	961
+刘建	liu'jian	388
+刘剑	liu'jian	113
 六件	liu'jian	94
 六间	liu'jian	89
 六建	liu'jian	85
@@ -93342,12 +94002,14 @@
 流金	liu'jin	84
 刘进	liu'jin	67
 六斤	liu'jin	53
+刘金	liu'jin	42
 镏金	liu'jin	38
 硫堇	liu'jin	19
 流经	liu'jing	1356
 留京	liu'jing	960
 六经	liu'jing	103
 刘静	liu'jing	82
+刘景	liu'jing	65
 溜净	liu'jing	62
 刘泾	liu'jing	55
 六景	liu'jing	52
@@ -93382,6 +94044,7 @@
 溜开	liu'kai	1
 柳开	liu'kai	1
 刘衎	liu'kan	1
+刘康	liu'kang	978
 留考	liu'kao	756
 六颗	liu'ke	615
 留客	liu'ke	235
@@ -93410,6 +94073,7 @@
 六款	liu'kuan	471
 硫矿	liu'kuang	1
 刘暌	liu'kui	55
+刘坤	liu'kun	756
 刘琨	liu'kun	1
 刘廓	liu'kuo	55
 流来	liu'lai	1
@@ -93430,10 +94094,14 @@
 琉璃	liu'li	1544
 流离	liu'li	593
 六里	liu'li	474
+刘丽	liu'li	379
+刘立	liu'li	303
+刘力	liu'li	242
 瑠璃	liu'li	166
 六礼	liu'li	148
 六厘	liu'li	133
 六粒	liu'li	120
+刘理	liu'li	68
 留力	liu'li	62
 留利	liu'li	62
 榴莲	liu'lian	2773
@@ -93447,6 +94115,8 @@
 流量	liu'liang	90212
 六两	liu'liang	128
 六辆	liu'liang	102
+刘亮	liu'liang	81
+刘良	liu'liang	64
 绺裂	liu'lie	77
 六列	liu'lie	9
 刘琳	liu'lin	553
@@ -93466,6 +94136,7 @@
 刘楼	liu'lou	1
 流露	liu'lu	1539
 六路	liu'lu	138
+刘露	liu'lu	110
 刘陆	liu'lu	35
 六乱	liu'luan	62
 刘銮	liu'luan	1
@@ -93499,6 +94170,7 @@
 刘枚	liu'mei	1
 留门	liu'men	936
 六门	liu'men	889
+刘梦	liu'meng	783
 刘猛	liu'meng	1
 六米	liu'mi	796
 硫醚	liu'mi	536
@@ -93564,6 +94236,7 @@
 六品	liu'pin	116
 留聘	liu'pin	1
 留评	liu'ping	832
+刘萍	liu'ping	289
 六瓶	liu'ping	257
 流平	liu'ping	69
 刘平	liu'ping	1
@@ -93577,6 +94250,7 @@
 六期	liu'qi	185
 留起	liu'qi	153
 刘启	liu'qi	138
+刘奇	liu'qi	110
 六气	liu'qi	88
 六旗	liu'qi	70
 流气	liu'qi	56
@@ -93590,6 +94264,7 @@
 刘茜	liu'qian	132
 陆仟	liu'qian	97
 刘潜	liu'qian	55
+刘强	liu'qiang	1914
 六强	liu'qiang	63
 硫羟	liu'qiang	51
 柳腔	liu'qiang	1
@@ -93600,6 +94275,7 @@
 六亲	liu'qin	44
 留情	liu'qing	399
 柳青	liu'qing	310
+刘庆	liu'qing	263
 硫氰	liu'qing	210
 六轻	liu'qing	168
 六卿	liu'qing	134
@@ -93617,15 +94293,18 @@
 流泉	liu'quan	60
 柳泉	liu'quan	1
 刘铨	liu'quan	1
+刘群	liu'qun	52
 刘然	liu'ran	733
 六人	liu'ren	2251
 留任	liu'ren	763
 留人	liu'ren	609
+刘仁	liu'ren	106
 六任	liu'ren	84
 六壬	liu'ren	67
 刘韧	liu'ren	1
 六日	liu'ri	295
 留日	liu'ri	266
+刘荣	liu'rong	828
 六榕	liu'rong	521
 刘容	liu'rong	1
 流入	liu'ru	6575
@@ -93699,16 +94378,20 @@
 留数	liu'shu	266
 刘叔	liu'shu	212
 六书	liu'shu	191
+刘舒	liu'shu	165
 柳叔	liu'shu	130
 刘述	liu'shu	55
 刘恕	liu'shu	1
+刘帅	liu'shuai	286
 六双	liu'shuang	594
 刘爽	liu'shuang	518
 流霜	liu'shuang	384
 流水	liu'shui	13301
+刘顺	liu'shun	196
 刘硕	liu'shuo	3137
 六四	liu'si	100
 柳丝	liu'si	95
+刘松	liu'song	945
 刘宋	liu'song	898
 流送	liu'song	413
 刘颂	liu'song	1
@@ -93764,6 +94447,7 @@
 六条	liu'tiao	251
 留条	liu'tiao	200
 硫条	liu'tiao	4
+刘铁	liu'tie	40
 刘婷	liu'ting	1626
 流亭	liu'ting	8
 柳亭	liu'ting	1
@@ -93814,6 +94498,7 @@
 刘文	liu'wen	1
 留我	liu'wo	352
 留窝	liu'wo	54
+刘武	liu'wu	598
 六五	liu'wu	188
 柳屋	liu'wu	152
 瘤物	liu'wu	137
@@ -93869,6 +94554,7 @@
 流心	liu'xin	2119
 刘鑫	liu'xin	741
 刘欣	liu'xin	592
+刘新	liu'xin	473
 刘忻	liu'xin	378
 刘歆	liu'xin	268
 六新	liu'xin	157
@@ -93878,10 +94564,12 @@
 流形	liu'xing	810
 六星	liu'xing	637
 刘姓	liu'xing	437
+刘兴	liu'xing	233
 流型	liu'xing	154
 流刑	liu'xing	120
 刘星	liu'xing	1
 柳姓	liu'xing	1
+刘雄	liu'xiong	84
 刘秀	liu'xiu	6249
 柳宿	liu'xiu	1
 刘旭	liu'xu	491
@@ -93893,6 +94581,7 @@
 刘璿	liu'xuan	8
 留学	liu'xue	34904
 流血	liu'xue	4295
+刘雪	liu'xue	836
 六学	liu'xue	692
 瘤鳕	liu'xue	99
 六旬	liu'xun	835
@@ -93902,6 +94591,7 @@
 刘恂	liu'xun	1
 刘循	liu'xun	1
 柳芽	liu'ya	963
+刘雅	liu'ya	661
 留芽	liu'ya	129
 瘤蚜	liu'ya	89
 瘤鸭	liu'ya	78
@@ -93910,6 +94600,7 @@
 柳岩	liu'yan	2147
 刘岩	liu'yan	602
 刘艳	liu'yan	481
+刘彦	liu'yan	412
 刘燕	liu'yan	232
 刘琰	liu'yan	144
 六言	liu'yan	116
@@ -93921,7 +94612,9 @@
 刘洋	liu'yang	1125
 浏阳	liu'yang	150
 留洋	liu'yang	120
+刘阳	liu'yang	96
 留样	liu'yang	76
+刘杨	liu'yang	60
 六样	liu'yang	48
 六阳	liu'yang	38
 硫氧	liu'yang	30
@@ -93956,6 +94649,7 @@
 六翼	liu'yi	25
 六义	liu'yi	20
 刘廙	liu'yi	16
+刘揖	liu'yi	7
 六佾	liu'yi	1
 柳阴	liu'yin	914
 六淫	liu'yin	868
@@ -93969,6 +94663,7 @@
 柳隐	liu'yin	1
 刘颖	liu'ying	1291
 留影	liu'ying	511
+刘英	liu'ying	436
 柳莺	liu'ying	370
 刘盈	liu'ying	157
 留英	liu'ying	122
@@ -94016,6 +94711,7 @@
 六元	liu'yuan	879
 六院	liu'yuan	380
 留院	liu'yuan	320
+刘元	liu'yuan	256
 留园	liu'yuan	204
 溜圆	liu'yuan	182
 刘源	liu'yuan	122
@@ -94028,6 +94724,7 @@
 六月	liu'yue	4164
 流月	liu'yue	1071
 刘悦	liu'yue	706
+刘云	liu'yun	1300
 流云	liu'yun	1235
 流韵	liu'yun	455
 刘芸	liu'yun	391
@@ -94043,6 +94740,7 @@
 六灶	liu'zao	12
 刘藻	liu'zao	1
 留早	liu'zao	1
+刘泽	liu'ze	801
 流贼	liu'zei	63
 六贼	liu'zei	57
 六站	liu'zhan	28
@@ -94050,6 +94748,7 @@
 六张	liu'zhang	1353
 六章	liu'zhang	527
 刘璋	liu'zhang	273
+刘章	liu'zhang	218
 六招	liu'zhao	760
 六爪	liu'zhao	69
 刘肇	liu'zhao	1
@@ -94057,6 +94756,7 @@
 六折	liu'zhe	863
 流着	liu'zhe	266
 六者	liu'zhe	212
+刘振	liu'zhen	976
 六镇	liu'zhen	878
 留针	liu'zhen	307
 刘桢	liu'zhen	103
@@ -94064,17 +94764,21 @@
 柳真	liu'zhen	1
 刘榛	liu'zhen	1
 留证	liu'zheng	972
+刘正	liu'zheng	923
 刘郑	liu'zheng	27
 刘铮	liu'zheng	1
 刘征	liu'zheng	1
 六只	liu'zhi	559
 留置	liu'zhi	489
 流质	liu'zhi	439
+刘志	liu'zhi	301
 柳枝	liu'zhi	194
 留枝	liu'zhi	129
 流至	liu'zhi	106
+刘智	liu'zhi	84
 六指	liu'zhi	67
 六支	liu'zhi	53
+刘植	liu'zhi	42
 流汁	liu'zhi	28
 六枝	liu'zhi	14
 留滞	liu'zhi	7
@@ -94083,6 +94787,7 @@
 硫脂	liu'zhi	1
 六种	liu'zhong	2229
 流中	liu'zhong	185
+刘忠	liu'zhong	100
 六中	liu'zhong	80
 刘仲	liu'zhong	64
 留中	liu'zhong	51
@@ -94114,6 +94819,7 @@
 六字	liu'zi	84
 柳子	liu'zi	67
 刘孜	liu'zi	53
+刘子	liu'zi	39
 绺子	liu'zi	1
 镏子	liu'zi	1
 刘总	liu'zong	509
@@ -94943,6 +95649,7 @@
 陆斌	lu'bin	1
 录播	lu'bo	863
 鲁伯	lu'bo	507
+陆波	lu'bo	110
 录波	lu'bo	94
 卢布	lu'bu	1083
 露布	lu'bu	128
@@ -95066,6 +95773,7 @@
 陆风	lu'feng	149
 禄丰	lu'feng	127
 路风	lu'feng	114
+陆峰	lu'feng	97
 露锋	lu'feng	93
 芦蜂	lu'feng	79
 鹿峰	lu'feng	76
@@ -95124,6 +95832,7 @@
 陆航	lu'hang	144
 录好	lu'hao	634
 芦蒿	lu'hao	602
+陆浩	lu'hao	571
 陆昊	lu'hao	526
 路号	lu'hao	83
 陆灏	lu'hao	1
@@ -95217,6 +95926,7 @@
 鹿蕨	lu'jue	75
 陆军	lu'jun	4628
 鲁军	lu'jun	626
+陆俊	lu'jun	430
 卢钧	lu'jun	87
 陆骏	lu'jun	1
 鲁郡	lu'jun	1
@@ -95282,6 +95992,7 @@
 陆琳	lu'lin	3361
 绿林	lu'lin	320
 鹿林	lu'lin	304
+陆林	lu'lin	296
 卢琳	lu'lin	288
 庐陵	lu'ling	695
 陆玲	lu'ling	510
@@ -95323,7 +96034,9 @@
 卤面	lu'mian	188
 陆面	lu'mian	150
 鲁苗	lu'miao	1
+陆敏	lu'min	572
 陆民	lu'min	1
+陆明	lu'ming	545
 路名	lu'ming	188
 路明	lu'ming	150
 鹿鸣	lu'ming	120
@@ -95378,6 +96091,7 @@
 撸起	lu'qi	525
 陆奇	lu'qi	499
 卢奇	lu'qi	472
+陆琪	lu'qi	436
 路奇	lu'qi	341
 卢杞	lu'qi	252
 陆栖	lu'qi	127
@@ -95387,6 +96101,7 @@
 露茜	lu'qian	806
 炉前	lu'qian	646
 路堑	lu'qian	265
+陆倩	lu'qian	238
 卢茜	lu'qian	29
 路前	lu'qian	1
 路签	lu'qian	1
@@ -95397,6 +96112,7 @@
 炉桥	lu'qiao	349
 鲁桥	lu'qiao	1
 泸桥	lu'qiao	1
+陆琴	lu'qin	486
 卢勤	lu'qin	462
 陆禽	lu'qin	1
 路禽	lu'qin	1
@@ -95413,6 +96129,7 @@
 禄劝	lu'quan	370
 卢犬	lu'quan	1
 陆权	lu'quan	1
+陆群	lu'qun	414
 鹿群	lu'qun	151
 卢群	lu'qun	55
 路人	lu'ren	22131
@@ -95504,6 +96221,7 @@
 路摊	lu'tan	437
 卤汤	lu'tang	688
 炉膛	lu'tang	654
+陆涛	lu'tao	567
 陆韬	lu'tao	1
 炉体	lu'ti	63
 露天	lu'tian	2217
@@ -95543,6 +96261,7 @@
 芦苇	lu'wei	813
 路威	lu'wei	532
 禄位	lu'wei	441
+陆伟	lu'wei	281
 鲁鳚	lu'wei	63
 路尾	lu'wei	51
 芦鳚	lu'wei	51
@@ -95575,6 +96294,7 @@
 陆巷	lu'xiang	24
 鲈乡	lu'xiang	15
 鲁巷	lu'xiang	1
+陆肖	lu'xiao	783
 鹿血	lu'xie	322
 卢携	lu'xie	55
 陆蟹	lu'xie	1
@@ -95616,6 +96336,7 @@
 炉岩	lu'yan	1
 庐阳	lu'yang	688
 路阳	lu'yang	654
+陆扬	lu'yang	619
 鲁阳	lu'yang	571
 露养	lu'yang	129
 路遥	lu'yao	2531
@@ -95644,10 +96365,12 @@
 芦莺	lu'ying	68
 陆莹	lu'ying	17
 录用	lu'yong	4619
+陆永	lu'yong	157
 陆勇	lu'yong	1
 路由	lu'you	1501
 陆游	lu'you	1426
 撸友	lu'you	287
+陆幽	lu'you	49
 鲈鱼	lu'yu	885
 鲁豫	lu'yu	675
 陆羽	lu'yu	436
@@ -95659,6 +96382,7 @@
 鹿原	lu'yuan	213
 鹿苑	lu'yuan	170
 鹿园	lu'yuan	136
+陆源	lu'yuan	54
 麓原	lu'yuan	1
 陆原	lu'yuan	1
 陆运	lu'yun	408
@@ -95711,6 +96435,7 @@
 露珠	lu'zhu	496
 绿竹	lu'zhu	396
 芦竹	lu'zhu	316
+陆竹	lu'zhu	252
 路竹	lu'zhu	201
 卢注	lu'zhu	55
 路转	lu'zhuan	1197
@@ -96272,12 +96997,14 @@
 罗定	luo'ding	228
 罗东	luo'dong	954
 罗洞	luo'dong	1
+罗豆	luo'dou	71
 落肚	luo'du	612
 罗顿	luo'dun	716
 罗恩	luo'en	1
 洛尔	luo'er	1
 落发	luo'fa	78
 落帆	luo'fan	432
+罗坊	luo'fang	29
 罗芳	luo'fang	26
 罗非	luo'fei	724
 罗菲	luo'fei	688
@@ -96301,6 +97028,7 @@
 洛夫	luo'fu	1
 骡夫	luo'fu	1
 罗芙	luo'fu	1
+罗盖	luo'gai	103
 螺盖	luo'gai	25
 螺杆	luo'gan	94
 罗干	luo'gan	85
@@ -96404,6 +97132,7 @@
 罗克	luo'ke	232
 螺壳	luo'ke	105
 螺科	luo'ke	66
+罗坑	luo'keng	34
 落空	luo'kong	1265
 螺孔	luo'kong	486
 螺口	luo'kou	598
@@ -96413,6 +97142,7 @@
 落款	luo'kuan	1121
 箩筐	luo'kuang	195
 落葵	luo'kui	88
+罗坤	luo'kun	300
 罗拉	luo'la	414
 萝拉	luo'la	393
 洛拉	luo'la	373
@@ -96533,6 +97263,7 @@
 罗谦	luo'qian	1
 罗强	luo'qiang	670
 罗侨	luo'qiao	1
+罗琴	luo'qin	40
 罗青	luo'qing	657
 裸鳅	luo'qiu	74
 罗虬	luo'qiu	55
@@ -96647,6 +97378,7 @@
 罗田	luo'tian	25
 罗天	luo'tian	24
 裸条	luo'tiao	720
+罗亭	luo'ting	71
 络筒	luo'tong	103
 螺桶	luo'tong	25
 螺头	luo'tou	549
@@ -96776,6 +97508,7 @@
 落着	luo'zhe	756
 落针	luo'zhen	43
 罗正	luo'zheng	7335
+罗政	luo'zheng	39
 罗织	luo'zhi	144
 罗致	luo'zhi	137
 落至	luo'zhi	130
@@ -96835,6 +97568,7 @@
 绿标	lv'biao	783
 律表	lv'biao	50
 吕标	lv'biao	1
+吕斌	lv'bin	587
 绿鬓	lv'bin	140
 吕滨	lv'bin	1
 吕宾	lv'bin	1
@@ -96842,6 +97576,7 @@
 滤波	lv'bo	1458
 铝箔	lv'bo	1385
 绿波	lv'bo	210
+吕波	lv'bo	166
 吕布	lv'bu	1336
 率部	lv'bu	1269
 旅部	lv'bu	410
@@ -96901,6 +97636,7 @@
 绿岛	lv'dao	435
 绿的	lv'de	1768
 旅德	lv'de	609
+吕德	lv'de	389
 铝的	lv'de	246
 氯的	lv'de	143
 绿得	lv'de	129
@@ -96936,6 +97672,7 @@
 吕范	lv'fan	1
 氯仿	lv'fang	752
 吕方	lv'fang	714
+吕芳	lv'fang	677
 旅费	lv'fei	937
 绿肥	lv'fei	890
 绿肺	lv'fei	843
@@ -97013,6 +97750,7 @@
 铝价	lv'jia	1467
 吕嘉	lv'jia	1320
 吕家	lv'jia	1218
+吕佳	lv'jia	954
 绿甲	lv'jia	711
 铝架	lv'jia	64
 吕价	lv'jia	55
@@ -97046,6 +97784,8 @@
 吕据	lv'ju	1
 绿鹃	lv'juan	69
 绿军	lv'jun	909
+吕俊	lv'jun	552
+吕军	lv'jun	267
 滤菌	lv'jun	1
 绿卡	lv'ka	1346
 绿凯	lv'kai	54
@@ -97115,6 +97855,8 @@
 绿米	lv'mi	145
 滤蜜	lv'mi	32
 滤棉	lv'mian	120
+吕敏	lv'min	64
+吕明	lv'ming	96
 滤膜	lv'mo	734
 绿魔	lv'mo	697
 绿膜	lv'mo	53
@@ -97123,6 +97865,7 @@
 吕牧	lv'mu	55
 律母	lv'mu	1
 氯萘	lv'nai	369
+吕楠	lv'nan	75
 绿能	lv'neng	801
 绿泥	lv'ni	778
 滤泥	lv'ni	37
@@ -97146,6 +97889,7 @@
 滤片	lv'pian	568
 氯片	lv'pian	538
 氯漂	lv'piao	103
+吕品	lv'pin	40
 绿瓶	lv'ping	585
 绿屏	lv'ping	554
 绿萍	lv'ping	469
@@ -97157,6 +97901,7 @@
 绿旗	lv'qi	168
 绿漆	lv'qi	103
 吕虔	lv'qian	1
+吕强	lv'qiang	159
 吕钦	lv'qin	1
 滤清	lv'qing	1269
 绿青	lv'qing	1142
@@ -97217,6 +97962,7 @@
 铝丝	lv'si	154
 绿松	lv'song	1125
 吕宋	lv'song	1069
+吕松	lv'song	421
 铝塑	lv'su	160
 旅宿	lv'su	128
 氯酸	lv'suan	1022
@@ -97229,6 +97975,7 @@
 绿痰	lv'tan	1
 绿螳	lv'tang	64
 吕陶	lv'tao	1
+吕田	lv'tian	120
 律条	lv'tiao	20
 绿条	lv'tiao	19
 铝条	lv'tiao	16
@@ -97260,6 +98007,7 @@
 吕薇	lv'wei	718
 吕渭	lv'wei	77
 氯味	lv'wei	46
+吕文	lv'wen	1233
 律文	lv'wen	1110
 吕温	lv'wen	372
 绿屋	lv'wu	418
@@ -97300,6 +98048,7 @@
 绿芽	lv'ya	149
 绿眼	lv'yan	680
 吕燕	lv'yan	612
+吕岩	lv'yan	564
 绿岩	lv'yan	442
 闾阎	lv'yan	326
 绿烟	lv'yan	278
@@ -97353,6 +98102,7 @@
 滤震	lv'zhen	335
 铝针	lv'zhen	42
 吕震	lv'zhen	1
+吕征	lv'zheng	275
 律政	lv'zheng	149
 绿证	lv'zheng	109
 绿植	lv'zhi	1958
@@ -97525,14 +98275,17 @@
 马槽	ma'cao	31
 马草	ma'cao	29
 码差	ma'cha	43
+马叉	ma'cha	27
 马场	ma'chang	625
 码长	ma'chang	562
 马厂	ma'chang	506
 马超	ma'chao	4424
 马车	ma'che	5197
 麻车	ma'che	1
+马辰	ma'chen	28
 马成	ma'cheng	1066
 麻城	ma'cheng	1013
+马程	ma'cheng	959
 马城	ma'cheng	885
 骂成	ma'cheng	693
 马齿	ma'chi	963
@@ -97557,6 +98310,7 @@
 麻带	ma'dai	62
 妈蛋	ma'dan	1627
 麻蛋	ma'dan	1546
+马丹	ma'dan	1464
 码单	ma'dan	887
 马蛋	ma'dan	62
 马当	ma'dang	1116
@@ -97571,6 +98325,7 @@
 妈的	ma'de	5156
 马的	ma'de	3541
 玛德	ma'de	2917
+马德	ma'de	1748
 骂的	ma'de	836
 骂得	ma'de	504
 麻的	ma'de	73
@@ -97578,6 +98333,7 @@
 马镫	ma'deng	427
 马登	ma'deng	404
 马頔	ma'di	1269
+马蒂	ma'di	1206
 玛蒂	ma'di	1142
 马𬱖	ma'di	1
 马店	ma'dian	122
@@ -97598,9 +98354,11 @@
 玛多	ma'duo	22
 马恩	ma'en	198
 马儿	ma'er	967
+马尔	ma'er	870
 马耳	ma'er	783
 玛法	ma'fa	765
 麻烦	ma'fan	42698
+马方	ma'fang	340
 码放	ma'fang	154
 马房	ma'fang	139
 麻纺	ma'fang	128
@@ -97619,6 +98377,7 @@
 马峰	ma'feng	1
 马烽	ma'feng	1
 马夫	ma'fu	700
+马福	ma'fu	630
 马腹	ma'fu	62
 麻杆	ma'gan	706
 麻感	ma'gan	562
@@ -97647,9 +98406,12 @@
 马关	ma'guan	60
 马官	ma'guan	54
 马倌	ma'guan	1
+马贵	ma'gui	24
 骂过	ma'guo	1143
 麻果	ma'guo	1086
+马国	ma'guo	1029
 玛哈	ma'ha	878
+马海	ma'hai	1004
 马汉	ma'han	100
 马翰	ma'han	14
 马航	ma'hang	330
@@ -97661,15 +98423,19 @@
 马赫	ma'he	1834
 马河	ma'he	1012
 麻黑	ma'hei	801
+马洪	ma'hong	860
 马猴	ma'hou	301
 马后	ma'hou	207
 麻后	ma'hou	1
 马虎	ma'hu	1432
 马湖	ma'hu	878
 麻花	ma'hua	1247
+马华	ma'hua	1008
+马欢	ma'huan	69
 麻黄	ma'huang	575
 蚂蟥	ma'huang	433
 马会	ma'hui	97
+马吉	ma'ji	1125
 马记	ma'ji	119
 马季	ma'ji	95
 马鸡	ma'ji	86
@@ -97684,6 +98450,7 @@
 马架	ma'jia	1
 马健	ma'jian	653
 马建	ma'jian	620
+马剑	ma'jian	588
 麻将	ma'jiang	2832
 麻酱	ma'jiang	1535
 马江	ma'jiang	647
@@ -97696,6 +98463,7 @@
 马娇	ma'jiao	24
 骂街	ma'jie	2010
 马街	ma'jie	814
+马杰	ma'jie	643
 马姐	ma'jie	579
 麻姐	ma'jie	217
 麻秸	ma'jie	1
@@ -97711,6 +98479,7 @@
 马具	ma'ju	153
 马圈	ma'juan	135
 马俊	ma'jun	92
+马君	ma'jun	73
 麻骏	ma'jun	1
 马骏	ma'jun	1
 马军	ma'jun	1
@@ -97729,7 +98498,9 @@
 马口	ma'kou	774
 马裤	ma'ku	1
 马快	ma'kuai	1
+马奎	ma'kui	900
 马骙	ma'kui	3
+马昆	ma'kun	31
 麻辣	ma'la	2233
 马拉	ma'la	693
 玛拉	ma'la	554
@@ -97738,12 +98509,14 @@
 马兰	ma'lan	392
 马栏	ma'lan	353
 马蓝	ma'lan	99
+马朗	ma'lang	684
 马廊	ma'lang	1
 蚂螂	ma'lang	1
 马老	ma'lao	1161
 麻了	ma'le	4528
 马勒	ma'le	2408
 骂了	ma'le	2044
+马雷	ma'lei	114
 马累	ma'lei	113
 麻类	ma'lei	92
 马力	ma'li	8274
@@ -97751,6 +98524,7 @@
 麻利	ma'li	1026
 马里	ma'li	731
 马丽	ma'li	580
+马立	ma'li	160
 马莉	ma'li	128
 麻栗	ma'li	102
 麻栎	ma'li	95
@@ -97762,6 +98536,7 @@
 麻鲢	ma'lian	1
 马莲	ma'lian	1
 马良	ma'liang	813
+马亮	ma'liang	732
 麻料	ma'liao	657
 马料	ma'liao	624
 马列	ma'lie	458
@@ -97780,6 +98555,7 @@
 马令	ma'ling	55
 麻岭	ma'ling	1
 麻溜	ma'liu	867
+马六	ma'liu	144
 码流	ma'liu	115
 马留	ma'liu	1
 马骝	ma'liu	1
@@ -97811,6 +98587,7 @@
 马邈	ma'miao	1
 马敏	ma'min	121
 骂名	ma'ming	1648
+马明	ma'ming	963
 马鸣	ma'ming	701
 马某	ma'mou	411
 麻木	ma'mu	5916
@@ -97823,6 +98600,7 @@
 嘛呢	ma'ne	1179
 马内	ma'nei	35
 骂你	ma'ni	3894
+马尼	ma'ni	3699
 玛尼	ma'ni	3505
 马年	ma'nian	88
 骂娘	ma'niang	2204
@@ -97831,6 +98609,7 @@
 马宁	ma'ning	1
 马牛	ma'niu	972
 码农	ma'nong	8522
+马努	ma'nu	1026
 马诺	ma'nuo	986
 马女	ma'nv	760
 孖女	ma'nv	1
@@ -97845,6 +98624,7 @@
 马匹	ma'pi	1234
 马皮	ma'pi	651
 码片	ma'pian	62
+马平	ma'ping	927
 麻婆	ma'po	1332
 麻坡	ma'po	562
 马坡	ma'po	374
@@ -97856,11 +98636,14 @@
 马钱	ma'qian	738
 玛茜	ma'qian	701
 马前	ma'qian	1
+马强	ma'qiang	914
 马枪	ma'qiang	692
 码墙	ma'qiang	26
 马桥	ma'qiao	94
+马乔	ma'qiao	85
 麻巧	ma'qiao	1
 玛沁	ma'qin	6
+马清	ma'qing	783
 麻球	ma'qiu	201
 马球	ma'qiu	191
 马区	ma'qu	864
@@ -97875,18 +98658,23 @@
 麻仁	ma'ren	842
 麻日	ma'ri	1
 马蓉	ma'rong	18709
+马荣	ma'rong	175
 马融	ma'rong	140
 麻蓉	ma'rong	112
 麻绒	ma'rong	1
 马肉	ma'rou	210
 码肉	ma'rou	58
+马乳	ma'ru	25
 马瑞	ma'rui	860
 马睿	ma'rui	603
 摩挲	ma'sa	421
+马萨	ma'sa	395
 马赛	ma'sai	1159
 马桑	ma'sang	770
 马嫂	ma'sao	382
+马森	ma'sen	788
 玛莎	ma'sha	2964
+马莎	ma'sha	729
 麻纱	ma'sha	487
 马山	ma'shan	116
 麻山	ma'shan	104
@@ -97901,6 +98689,7 @@
 麻绳	ma'sheng	697
 麻省	ma'sheng	565
 麻生	ma'sheng	452
+马生	ma'sheng	361
 孖生	ma'sheng	1
 嘛事	ma'shi	371
 马市	ma'shi	352
@@ -97917,12 +98706,14 @@
 马叔	ma'shu	640
 麻叔	ma'shu	424
 麻糬	ma'shu	1
+马帅	ma'shuai	500
 骂谁	ma'shui	289
 妈说	ma'shuo	521
 马说	ma'shuo	495
 骂死	ma'si	581
 麻丝	ma'si	69
 马嘶	ma'si	1
+马松	ma'song	146
 马宋	ma'song	1
 马苏	ma'su	4496
 马谡	ma'su	160
@@ -97935,16 +98726,21 @@
 马踏	ma'ta	623
 马塔	ma'ta	1
 马太	ma'tai	144
+马泰	ma'tai	130
 马台	ma'tai	117
+马滩	ma'tan	56
 马唐	ma'tang	88
 麻糖	ma'tang	9
 马涛	ma'tao	299
+马韬	ma'tao	110
 马特	ma'te	1
 马腾	ma'teng	1
 马蹄	ma'ti	1243
 麻田	ma'tian	3
 马田	ma'tian	2
 马铁	ma'tie	1
+马廷	ma'ting	752
+马汀	ma'ting	714
 马桶	ma'tong	6537
 码头	ma'tou	4694
 马头	ma'tou	543
@@ -97956,6 +98752,7 @@
 玛娃	ma'wa	472
 骂完	ma'wan	873
 妈湾	ma'wan	829
+马万	ma'wan	786
 码完	ma'wan	725
 马湾	ma'wan	567
 麻菀	ma'wan	62
@@ -97963,12 +98760,14 @@
 妈网	ma'wang	1166
 马王	ma'wang	1108
 马尾	ma'wei	1137
+马威	ma'wei	232
 码为	ma'wei	185
 麻味	ma'wei	148
 马伟	ma'wei	118
 马嵬	ma'wei	94
 码味	ma'wei	92
 码位	ma'wei	75
+马维	ma'wei	60
 玛维	ma'wei	48
 麻尾	ma'wei	38
 马位	ma'wei	35
@@ -97985,27 +98784,37 @@
 麻虾	ma'xia	937
 麻线	ma'xian	82
 麻香	ma'xiang	1066
+马相	ma'xiang	1013
 马巷	ma'xiang	959
 马乡	ma'xiang	693
 玛乡	ma'xiang	391
 马湘	ma'xiang	55
 麻巷	ma'xiang	1
 麻小	ma'xiao	1026
+马晓	ma'xiao	975
 麻鞋	ma'xie	513
 马偕	ma'xie	1
 马欣	ma'xin	752
+马辛	ma'xin	714
 马鑫	ma'xin	1
 马信	ma'xin	1
+马星	ma'xing	107
 马姓	ma'xing	66
+马兴	ma'xing	63
 骂醒	ma'xing	62
 马行	ma'xing	48
 麻姓	ma'xing	1
+马熊	ma'xiong	256
+马雄	ma'xiong	138
+马休	ma'xiu	684
 马修	ma'xiu	1
 马旭	ma'xu	52
 马靴	ma'xue	78
+马学	ma'xue	70
 马雪	ma'xue	1
 妈呀	ma'ya	1799
 玛雅	ma'ya	1497
+马雅	ma'ya	844
 麻鸭	ma'ya	640
 马牙	ma'ya	522
 马燕	ma'yan	724
@@ -98029,6 +98838,7 @@
 马印	ma'yin	1
 麻蝇	ma'ying	98
 马营	ma'ying	6
+马应	ma'ying	5
 马瀛	ma'ying	1
 马勇	ma'yong	958
 麻涌	ma'yong	910
@@ -98056,17 +98866,21 @@
 马园	ma'yuan	1
 马圆	ma'yuan	1
 马月	ma'yue	1115
+马悦	ma'yue	156
+马越	ma'yue	128
 马跃	ma'yue	50
 马云	ma'yun	15163
 码云	ma'yun	307
 马仔	ma'zai	829
 孖仔	ma'zai	1
+马赞	ma'zan	662
 抹澡	ma'zao	1
 马贼	ma'zei	182
 蚂蚱	ma'zha	744
 马扎	ma'zha	335
 麻扎	ma'zha	268
 麻渣	ma'zha	1
+马寨	ma'zhai	52
 骂战	ma'zhan	1014
 马战	ma'zhan	263
 马站	ma'zhan	210
@@ -98080,6 +98894,7 @@
 马镇	ma'zhen	403
 骂阵	ma'zhen	1
 马震	ma'zhen	1
+马政	ma'zheng	1080
 麻汁	ma'zhi	756
 麻质	ma'zhi	718
 麻纸	ma'zhi	680
@@ -98119,6 +98934,7 @@
 麻醉	ma'zui	4861
 马嘴	ma'zui	113
 马遵	ma'zun	1
+马佐	ma'zuo	855
 买啊	mai'a	678
 卖啊	mai'a	175
 脉案	mai'an	1
@@ -101311,6 +102127,7 @@
 懵逼	meng'bi	5247
 蒙蔽	meng'bi	2477
 蒙逼	meng'bi	200
+孟兵	meng'bing	562
 孟波	meng'bo	1
 猛踩	meng'cai	828
 蒙餐	meng'can	616
@@ -101321,6 +102138,7 @@
 孟昶	meng'chang	60
 梦长	meng'chang	1
 蒙尘	meng'chen	389
+孟辰	meng'chen	350
 蒙城	meng'cheng	53
 孟城	meng'cheng	1
 猛吃	meng'chi	207
@@ -101406,6 +102224,7 @@
 孟光	meng'guang	38
 猛鬼	meng'gui	801
 盟国	meng'guo	810
+孟海	meng'hai	860
 勐海	meng'hai	817
 梦海	meng'hai	361
 猛汉	meng'han	182
@@ -101456,6 +102275,7 @@
 孟津	meng'jin	150
 猛劲	meng'jin	139
 梦境	meng'jing	9420
+孟静	meng'jing	760
 梦景	meng'jing	403
 梦井	meng'jing	168
 梦旧	meng'jiu	356
@@ -101465,7 +102285,9 @@
 孟康	meng'kang	508
 蒙克	meng'ke	807
 孟轲	meng'ke	131
+孟克	meng'ke	104
 蒙科	meng'ke	83
+孟科	meng'ke	66
 虻科	meng'ke	52
 獴科	meng'ke	41
 鹲科	meng'ke	32
@@ -101628,6 +102450,7 @@
 猛抬	meng'tai	309
 梦态	meng'tai	1
 孟坦	meng'tan	1
+孟涛	meng'tao	472
 蒙特	meng'te	1
 蒙题	meng'ti	320
 蒙恬	meng'tian	2069
@@ -101649,6 +102472,7 @@
 萌娃	meng'wa	217
 萌王	meng'wang	792
 梦网	meng'wang	752
+孟伟	meng'wei	1040
 盟委	meng'wei	988
 蒙鳚	meng'wei	71
 蒙文	meng'wen	239
@@ -101688,7 +102512,9 @@
 萌芽	meng'ya	3134
 梦魇	meng'yan	2612
 蒙眼	meng'yan	439
+孟岩	meng'yan	374
 虻眼	meng'yan	83
+孟阳	meng'yang	630
 蒙养	meng'yang	598
 孟养	meng'yang	567
 孟杨	meng'yang	31
@@ -101723,6 +102549,7 @@
 梦媛	meng'yuan	90
 盟约	meng'yue	785
 梦云	meng'yun	868
+孟云	meng'yun	825
 猛砸	meng'za	214
 蒙在	meng'zai	308
 蒙藏	meng'zang	88
@@ -105099,6 +105926,7 @@
 木荷	mu'he	134
 沐河	mu'he	121
 目黑	mu'hei	990
+穆黑	mu'hei	798
 幕后	mu'hou	4946
 母后	mu'hou	920
 母猴	mu'hou	592
@@ -105203,6 +106031,7 @@
 幕僚	mu'liao	995
 母料	mu'liao	420
 木蓼	mu'liao	71
+穆林	mu'lin	309
 睦邻	mu'lin	25
 木林	mu'lin	22
 木灵	mu'ling	796
@@ -105218,6 +106047,7 @@
 牡鹿	mu'lu	77
 穆鲁	mu'lu	1
 木卵	mu'luan	0
+穆伦	mu'lun	153
 木轮	mu'lun	16
 目论	mu'lun	1
 幕落	mu'luo	9
@@ -105237,6 +106067,7 @@
 木面	mu'mian	40
 木杪	mu'miao	1
 牧民	mu'min	1360
+穆民	mu'min	500
 慕名	mu'ming	675
 目明	mu'ming	608
 姆明	mu'ming	547
@@ -105256,6 +106087,7 @@
 穆尼	mu'ni	1
 暮年	mu'nian	1187
 母娘	mu'niang	1
+穆鸟	mu'niao	284
 木鸟	mu'niao	73
 木茑	mu'niao	63
 母鸟	mu'niao	31
@@ -109221,6 +110053,7 @@
 镍矿	nie'kuang	226
 聂老	nie'lao	594
 捏了	nie'le	2007
+聂磊	nie'lei	536
 捏脸	nie'lian	700
 捏炼	nie'lian	99
 颞鳞	nie'lin	1
@@ -112206,6 +113039,7 @@
 配衬	pei'chen	796
 陪臣	pei'chen	496
 配成	pei'cheng	239
+裴澄	pei'cheng	71
 裴诚	pei'cheng	55
 陪吃	pei'chi	42
 配出	pei'chu	421
@@ -112231,6 +113065,7 @@
 培德	pei'de	414
 配得	pei'de	295
 赔得	pei'de	236
+裴德	pei'de	188
 配灯	pei'deng	53
 裴迪	pei'di	55
 佩蒂	pei'di	53
@@ -112450,6 +113285,7 @@
 裴淑	pei'shu	164
 配书	pei'shu	94
 赔书	pei'shu	68
+裴帅	pei'shuai	513
 佩帅	pei'shuai	487
 陪睡	pei'shui	308
 配水	pei'shui	277
@@ -115774,6 +116610,7 @@
 气表	qi'biao	38
 弃标	qi'biao	34
 泣别	qi'bie	1
+齐彬	qi'bin	549
 淇滨	qi'bin	460
 启斌	qi'bin	1
 骑兵	qi'bing	11084
@@ -116052,6 +116889,7 @@
 启封	qi'feng	94
 起凤	qi'feng	75
 齐风	qi'feng	62
+齐峰	qi'feng	60
 棋风	qi'feng	48
 凄风	qi'feng	38
 栖凤	qi'feng	30
@@ -116268,6 +117106,7 @@
 骐骥	qi'ji	220
 气机	qi'ji	122
 起计	qi'ji	113
+齐骥	qi'ji	106
 齐集	qi'ji	100
 起脊	qi'ji	94
 奇技	qi'ji	92
@@ -116408,6 +117247,7 @@
 奇科	qi'ke	105
 起课	qi'ke	84
 七克	qi'ke	67
+齐科	qi'ke	53
 岂肯	qi'ken	53
 弃坑	qi'keng	2091
 气孔	qi'kong	851
@@ -116858,6 +117698,7 @@
 气声	qi'sheng	238
 其声	qi'sheng	190
 七省	qi'sheng	152
+齐升	qi'sheng	121
 奇胜	qi'sheng	96
 七圣	qi'sheng	76
 旗绳	qi'sheng	64
@@ -116997,6 +117838,7 @@
 七套	qi'tao	1316
 乞讨	qi'tao	1250
 奇特	qi'te	4685
+齐藤	qi'teng	950
 气体	qi'ti	14139
 七题	qi'ti	175
 奇蹄	qi'ti	150
@@ -117140,6 +117982,7 @@
 七县	qi'xian	19
 七线	qi'xian	15
 七弦	qi'xian	12
+齐贤	qi'xian	9
 戚县	qi'xian	1
 气象	qi'xiang	2917
 七项	qi'xiang	433
@@ -117186,6 +118029,7 @@
 起形	qi'xing	24
 其兴	qi'xing	19
 棋形	qi'xing	15
+齐星	qi'xing	12
 棋型	qi'xing	9
 启星	qi'xing	7
 祁姓	qi'xing	5
@@ -117347,6 +118191,7 @@
 契约	qi'yue	4069
 器乐	qi'yue	2961
 期约	qi'yue	971
+齐云	qi'yun	719
 气韵	qi'yun	568
 气晕	qi'yun	135
 气运	qi'yun	108
@@ -119346,6 +120191,7 @@
 强作	qiang'zuo	958
 瞧啊	qiao'a	1
 巧啊	qiao'a	1
+乔安	qiao'an	1452
 乔巴	qiao'ba	1099
 峭拔	qiao'ba	1044
 瞧吧	qiao'ba	873
@@ -119362,6 +120208,7 @@
 侨胞	qiao'bao	50
 侨报	qiao'bao	48
 桥北	qiao'bei	151
+乔备	qiao'bei	136
 桥本	qiao'ben	848
 乔本	qiao'ben	1
 峭壁	qiao'bi	688
@@ -119410,6 +120257,7 @@
 瞧得	qiao'de	251
 敲得	qiao'de	97
 敲的	qiao'de	1
+乔迪	qiao'di	294
 桥底	qiao'di	135
 桥垫	qiao'dian	37
 敲掉	qiao'diao	449
@@ -119434,6 +120282,7 @@
 乔尔	qiao'er	1
 翘发	qiao'fa	67
 巧法	qiao'fa	1
+乔飞	qiao'fei	585
 巧粉	qiao'fen	43
 乔峰	qiao'feng	1441
 侨丰	qiao'feng	279
@@ -119488,6 +120337,7 @@
 翘甲	qiao'jia	74
 锹甲	qiao'jia	61
 瞧见	qiao'jian	1064
+乔健	qiao'jian	513
 桥键	qiao'jian	265
 巧匠	qiao'jiang	116
 翘脚	qiao'jiao	684
@@ -119538,7 +120388,9 @@
 桥联	qiao'lian	49
 桥梁	qiao'liang	5919
 乔良	qiao'liang	513
+乔梁	qiao'liang	361
 敲裂	qiao'lie	436
+乔琳	qiao'lin	94
 乔林	qiao'lin	1
 巧玲	qiao'ling	1120
 侨领	qiao'ling	1064
@@ -119572,6 +120424,7 @@
 乔楠	qiao'nan	1
 桥内	qiao'nei	1
 瞧你	qiao'ni	248
+乔尼	qiao'ni	236
 敲你	qiao'ni	73
 瞧您	qiao'nin	38
 俏女	qiao'nv	1
@@ -119627,6 +120480,7 @@
 侨生	qiao'sheng	302
 侨声	qiao'sheng	272
 巧胜	qiao'sheng	35
+乔什	qiao'shi	963
 乔氏	qiao'shi	915
 桥式	qiao'shi	867
 桥市	qiao'shi	481
@@ -119686,6 +120540,8 @@
 瞧我	qiao'wo	210
 敲我	qiao'wo	73
 侨务	qiao'wu	19
+乔希	qiao'xi	931
+乔西	qiao'xi	848
 桥西	qiao'xi	41
 桥下	qiao'xia	794
 敲下	qiao'xia	631
@@ -119705,6 +120561,7 @@
 乔璇	qiao'xuan	415
 巧学	qiao'xue	22
 巧言	qiao'yan	154
+乔岩	qiao'yan	139
 劁羊	qiao'yang	1
 乔叶	qiao'ye	1
 桥驿	qiao'yi	567
@@ -120061,6 +120918,7 @@
 禽蛋	qin'dan	69
 亲到	qin'dao	107
 琴岛	qin'dao	102
+秦德	qin'de	167
 亲的	qin'de	1
 琴凳	qin'deng	546
 亲等	qin'deng	1
@@ -120076,10 +120934,12 @@
 琴钉	qin'ding	72
 亲丁	qin'ding	1
 揿钉	qin'ding	1
+秦东	qin'dong	43
 亲睹	qin'du	53
 秦都	qin'du	50
 勤读	qin'du	43
 侵夺	qin'duo	173
+秦娥	qin'e	211
 亲儿	qin'er	1098
 亲耳	qin'er	1043
 秦法	qin'fa	1
@@ -120123,6 +120983,7 @@
 亲过	qin'guo	1400
 秦国	qin'guo	1330
 侵害	qin'hai	4245
+秦海	qin'hai	868
 亲海	qin'hai	580
 秦汉	qin'han	2964
 琴行	qin'hang	1017
@@ -120222,6 +121083,7 @@
 侵凌	qin'ling	116
 亲聆	qin'ling	1
 寝陵	qin'ling	1
+秦龙	qin'long	734
 禽龙	qin'long	697
 擒龙	qin'long	661
 秦楼	qin'lou	536
@@ -120450,6 +121312,7 @@
 亲迎	qin'ying	82
 亲英	qin'ying	74
 秦瀛	qin'ying	1
+秦勇	qin'yong	702
 秦俑	qin'yong	667
 勤勇	qin'yong	1
 亲友	qin'you	4296
@@ -125200,6 +126063,7 @@
 认赔	ren'pei	170
 人陪	ren'pei	153
 纫佩	ren'pei	1
+任鹏	ren'peng	113
 人皮	ren'pi	462
 人品	ren'pin	12080
 任凭	ren'ping	2204
@@ -131719,6 +132583,7 @@
 烧杯	shao'bei	669
 少比	shao'bi	1
 哨遍	shao'bian	261
+邵斌	shao'bin	432
 烧饼	shao'bing	2066
 哨兵	shao'bing	2056
 少病	shao'bing	238
@@ -131799,6 +132664,7 @@
 烧坊	shao'fang	1
 烧沸	shao'fei	138
 烧肺	shao'fei	1
+邵峰	shao'feng	648
 少妇	shao'fu	995
 少付	shao'fu	301
 少腹	shao'fu	119
@@ -131971,6 +132837,7 @@
 少棉	shao'mian	77
 烧苗	shao'miao	62
 少民	shao'min	999
+邵明	shao'ming	738
 绍明	shao'ming	524
 邵某	shao'mou	693
 少拿	shao'na	986
@@ -132017,6 +132884,7 @@
 少惹	shao're	535
 少人	shao'ren	311
 烧熔	shao'rong	25
+邵荣	shao'rong	24
 烧肉	shao'rou	568
 少肉	shao'rou	511
 稍弱	shao'ruo	1394
@@ -132058,6 +132926,7 @@
 韶叔	shao'shu	89
 烧书	shao'shu	25
 少刷	shao'shua	760
+邵帅	shao'shuai	1138
 少帅	shao'shuai	1081
 烧水	shao'shui	1702
 少水	shao'shui	232
@@ -132152,6 +133021,7 @@
 烧鸭	shao'ya	214
 少盐	shao'yan	1112
 少言	shao'yan	1056
+邵岩	shao'yan	1001
 少阳	shao'yang	537
 邵阳	shao'yang	232
 芍药	shao'yao	681
@@ -132177,6 +133047,7 @@
 烧鱼	shao'yu	1062
 少雨	shao'yu	806
 少语	shao'yu	725
+邵宇	shao'yu	494
 少羽	shao'yu	301
 少御	shao'yu	73
 稍远	shao'yuan	474
@@ -132856,6 +133727,8 @@
 神鞭	shen'bian	417
 深表	shen'biao	333
 申表	shen'biao	300
+沈斌	shen'bin	117
+沈彬	shen'bin	33
 肾病	shen'bing	1677
 神兵	shen'bing	794
 沈冰	shen'bing	1
@@ -133085,6 +133958,7 @@
 渗过	shen'guo	108
 椹果	shen'guo	1
 深海	shen'hai	4208
+沈海	shen'hai	914
 深寒	shen'han	698
 神汉	shen'han	663
 沈涵	shen'han	1
@@ -133166,6 +134040,7 @@
 身家	shen'jia	6173
 身价	shen'jia	1965
 沈家	shen'jia	232
+沈佳	shen'jia	185
 甚佳	shen'jia	148
 身架	shen'jia	118
 审价	shen'jia	94
@@ -133174,6 +134049,7 @@
 神箭	shen'jian	163
 深涧	shen'jian	130
 深见	shen'jian	104
+沈建	shen'jian	83
 神将	shen'jiang	1206
 申江	shen'jiang	1146
 神降	shen'jiang	828
@@ -133223,10 +134099,12 @@
 神驹	shen'ju	64
 甚巨	shen'ju	51
 甚具	shen'ju	40
+沈娟	shen'juan	178
 审卷	shen'juan	62
 深觉	shen'jue	900
 甚觉	shen'jue	517
 肾蕨	shen'jue	129
+沈俊	shen'jun	367
 神君	shen'jun	220
 神骏	shen'jun	198
 沈军	shen'jun	1
@@ -133245,6 +134123,7 @@
 神课	shen'ke	125
 鲹科	shen'ke	100
 肾科	shen'ke	80
+沈科	shen'ke	64
 深坑	shen'keng	1040
 神坑	shen'keng	988
 渗坑	shen'keng	294
@@ -133332,6 +134211,7 @@
 神妙	shen'miao	147
 甚妙	shen'miao	117
 沈邈	shen'miao	93
+沈敏	shen'min	42
 神明	shen'ming	6082
 申明	shen'ming	2524
 深明	shen'ming	815
@@ -133346,6 +134226,7 @@
 神墓	shen'mu	169
 神牧	shen'mu	152
 婶母	shen'mu	1
+沈娜	shen'na	178
 哂纳	shen'na	1
 深南	shen'nan	50
 沈南	shen'nan	48
@@ -133732,6 +134613,7 @@
 伸延	shen'yan	248
 慎言	shen'yan	144
 神颜	shen'yan	115
+沈岩	shen'yan	92
 神眼	shen'yan	73
 砷盐	shen'yan	62
 甚严	shen'yan	58
@@ -133814,6 +134696,7 @@
 深月	shen'yue	80
 身孕	shen'yun	1221
 神韵	shen'yun	420
+沈云	shen'yun	336
 深蕴	shen'yun	268
 身韵	shen'yun	214
 身在	shen'zai	3972
@@ -133869,6 +134752,7 @@
 慎重	shen'zhong	7750
 深重	shen'zhong	2395
 深中	shen'zhong	1023
+沈重	shen'zhong	462
 身中	shen'zhong	191
 身重	shen'zhong	152
 甚众	shen'zhong	121
@@ -135215,6 +136099,7 @@
 食单	shi'dan	218
 市石	shi'dan	174
 实蛋	shi'dan	158
+施丹	shi'dan	142
 十石	shi'dan	128
 失单	shi'dan	1
 市担	shi'dan	1
@@ -135945,6 +136830,7 @@
 石俊	shi'jun	169
 世军	shi'jun	135
 实卡	shi'ka	151
+施卡	shi'ka	143
 石卡	shi'ka	136
 石凯	shi'kai	51
 试开	shi'kai	22
@@ -143358,6 +144244,7 @@
 送别	song'bie	1837
 送殡	song'bin	35
 松饼	song'bing	477
+宋波	song'bo	100
 送菜	song'cai	458
 松材	song'cai	125
 送财	song'cai	100
@@ -143416,6 +144303,7 @@
 松鲽	song'die	53
 宋鼎	song'ding	55
 松动	song'dong	3030
+宋冬	song'dong	191
 耸动	song'dong	152
 宋都	song'dou	25
 诵读	song'du	732
@@ -143461,8 +144349,11 @@
 松果	song'guo	781
 宋国	song'guo	351
 宋果	song'guo	1
+宋海	song'hai	765
 松蒿	song'hao	87
+宋浩	song'hao	79
 松鹤	song'he	878
+宋河	song'he	834
 松河	song'he	359
 松厚	song'hou	436
 淞沪	song'hu	138
@@ -143488,6 +144379,7 @@
 送检	song'jian	1614
 送件	song'jian	904
 耸肩	song'jian	823
+宋建	song'jian	700
 宋健	song'jian	511
 松间	song'jian	327
 松江	song'jiang	3347
@@ -143498,6 +144390,7 @@
 松解	song'jie	1074
 松节	song'jie	873
 宋姐	song'jie	609
+宋杰	song'jie	488
 松姐	song'jie	210
 送进	song'jin	3291
 松紧	song'jin	891
@@ -143523,6 +144416,7 @@
 宋军	song'jun	1793
 宋君	song'jun	1
 送卡	song'ka	778
+宋卡	song'ka	739
 松开	song'kai	3357
 颂凯	song'kai	1
 松坎	song'kan	392
@@ -143531,6 +144425,7 @@
 宋柯	song'ke	165
 松科	song'ke	132
 送课	song'ke	105
+宋科	song'ke	84
 宋克	song'ke	1
 松坑	song'keng	1
 松口	song'kou	738
@@ -143541,6 +144436,7 @@
 送款	song'kuan	42
 送髋	song'kuan	9
 松旷	song'kuang	135
+宋昆	song'kun	144
 送来	song'lai	5002
 菘蓝	song'lan	91
 松兰	song'lan	79
@@ -143552,6 +144448,7 @@
 松雷	song'lei	576
 送礼	song'li	7348
 耸立	song'li	383
+宋立	song'li	306
 颂莲	song'lian	729
 宋濂	song'lian	693
 送殓	song'lian	1
@@ -143561,11 +144458,13 @@
 松辽	song'liao	522
 宋辽	song'liao	495
 松林	song'lin	427
+宋林	song'lin	406
 松鳞	song'lin	129
 宋霖	song'lin	1
 松陵	song'ling	778
 松岭	song'ling	739
 送灵	song'ling	39
+宋龙	song'long	299
 松露	song'lu	496
 松萝	song'luo	100
 松落	song'luo	90
@@ -143579,6 +144478,7 @@
 松门	song'men	621
 送米	song'mi	792
 送面	song'mian	868
+宋敏	song'min	554
 送命	song'ming	622
 嵩明	song'ming	591
 宋明	song'ming	560
@@ -143598,6 +144498,7 @@
 诵念	song'nian	842
 松年	song'nian	741
 送您	song'nin	336
+宋宁	song'ning	963
 送暖	song'nuan	742
 送女	song'nv	1098
 松潘	song'pan	85
@@ -143626,6 +144527,7 @@
 松桥	song'qiao	3
 宋桥	song'qiao	1
 送亲	song'qin	63
+宋青	song'qing	1174
 送情	song'qing	646
 送穷	song'qiong	13
 送球	song'qiu	626
@@ -143704,6 +144606,7 @@
 送炭	song'tan	31
 颂叹	song'tan	1
 松堂	song'tang	22
+宋涛	song'tao	430
 松涛	song'tao	352
 松桃	song'tao	317
 颂陶	song'tao	1
@@ -143744,6 +144647,7 @@
 宋献	song'xian	1
 宋宪	song'xian	1
 松香	song'xiang	458
+宋晓	song'xiao	855
 松懈	song'xie	2418
 送些	song'xie	248
 松些	song'xie	198
@@ -143762,6 +144666,7 @@
 松蕈	song'xun	1
 松鸦	song'ya	558
 松烟	song'yan	135
+宋岩	song'yan	128
 松岩	song'yan	122
 送烟	song'yan	110
 宋燕	song'yan	1
@@ -143770,6 +144675,7 @@
 松阳	song'yang	317
 宋洋	song'yang	253
 送养	song'yang	202
+宋扬	song'yang	161
 怂样	song'yang	128
 送样	song'yang	102
 嵩阳	song'yang	81
@@ -143789,6 +144695,7 @@
 宋雍	song'yong	332
 送油	song'you	778
 松油	song'you	739
+宋宇	song'yu	1274
 宋玉	song'yu	128
 送与	song'yu	102
 送予	song'yu	81
@@ -143950,6 +144857,8 @@
 俗鄙	su'bi	1
 宿便	su'bian	317
 诉辩	su'bian	285
+苏斌	su'bin	139
+苏彬	su'bin	89
 酥饼	su'bing	251
 素饼	su'bing	226
 苏波	su'bo	770
@@ -143982,6 +144891,7 @@
 速充	su'chong	44
 宿仇	su'chou	1
 宿处	su'chu	19
+苏绰	su'chuo	77
 酥脆	su'cui	2302
 苏村	su'cun	666
 宿存	su'cun	633
@@ -143995,6 +144905,7 @@
 速弹	su'dan	729
 素淡	su'dan	656
 宿丹	su'dan	18
+苏道	su'dao	445
 素的	su'de	1033
 苏德	su'de	744
 俗的	su'de	558
@@ -144084,6 +144995,7 @@
 酥化	su'hua	67
 宿淮	su'huai	436
 苏涣	su'huan	338
+苏黄	su'huang	99
 速回	su'hui	147
 速汇	su'hui	95
 苏惠	su'hui	67
@@ -144139,6 +145051,7 @@
 速决	su'jue	28
 苏军	su'jun	3080
 苏峻	su'jun	716
+苏凯	su'kai	51
 速看	su'kan	141
 苏可	su'ke	5244
 苏克	su'ke	207
@@ -144175,6 +145088,7 @@
 塑料	su'liao	12202
 素髎	su'liao	220
 苏林	su'lin	1
+苏玲	su'ling	360
 苏岭	su'ling	1
 溯流	su'liu	53
 速龙	su'long	85
@@ -144352,6 +145266,7 @@
 酥条	su'tiao	567
 诉调	su'tiao	1
 苏铁	su'tie	129
+苏颋	su'ting	39
 速通	su'tong	615
 苏童	su'tong	423
 苏通	su'tong	338
@@ -144437,6 +145352,7 @@
 苏岩	su'yan	491
 俗艳	su'yan	430
 素艳	su'yan	172
+苏烟	su'yan	118
 素养	su'yang	5156
 苏扬	su'yang	4898
 苏阳	su'yang	4640
@@ -145064,8 +145980,13 @@
 孙膑	sun'bin	1834
 孙斌	sun'bin	415
 孙滨	sun'bin	1
+孙兵	sun'bing	105
+孙波	sun'bo	211
+孙博	sun'bo	189
 榫槽	sun'cao	414
 孙策	sun'ce	3423
+孙超	sun'chao	201
+孙成	sun'cheng	110
 孙淳	sun'chun	3816
 孙纯	sun'chun	1
 孙聪	sun'cong	418
@@ -145080,6 +146001,9 @@
 孙蝶	sun'die	1
 笋丁	sun'ding	806
 孙定	sun'ding	55
+孙冬	sun'dong	129
+孙东	sun'dong	33
+孙渡	sun'du	29
 孙端	sun'duan	1
 孙恩	sun'en	107
 孙儿	sun'er	487
@@ -145111,7 +146035,11 @@
 孙皓	sun'hao	345
 孙浩	sun'hao	276
 孙灏	sun'hao	1
+孙河	sun'he	171
 孙合	sun'he	55
+孙恒	sun'heng	203
+孙红	sun'hong	145
+孙华	sun'hua	217
 损坏	sun'huai	9674
 孙桓	sun'huan	1233
 损毁	sun'hui	1972
@@ -145119,6 +146047,7 @@
 损货	sun'huo	84
 损及	sun'ji	878
 笋鸡	sun'ji	555
+孙佳	sun'jia	1148
 孙家	sun'jia	32
 笋尖	sun'jian	1210
 孙坚	sun'jian	147
@@ -145130,7 +146059,10 @@
 孙皎	sun'jiao	1
 榫接	sun'jie	432
 孙洁	sun'jie	1
+孙晋	sun'jin	39
+孙进	sun'jin	35
 孙静	sun'jing	6222
+孙敬	sun'jing	89
 榫颈	sun'jing	40
 孙据	sun'ju	1
 孙娟	sun'juan	153
@@ -145139,6 +146071,8 @@
 孙凯	sun'kai	154
 孙楷	sun'kai	1
 孙看	sun'kan	1712
+孙康	sun'kang	222
+孙可	sun'ke	1543
 孙科	sun'ke	881
 笋壳	sun'ke	445
 隼科	sun'ke	197
@@ -145155,20 +146089,27 @@
 孙老	sun'lao	1
 损了	sun'le	1215
 孙磊	sun'lei	300
+孙雷	sun'lei	204
 孙俪	sun'li	612
 孙莉	sun'li	581
+孙立	sun'li	551
 孙亮	sun'liang	201
 孙梁	sun'liang	1
 孙林	sun'lin	1
 孙刘	sun'liu	24
+孙龙	sun'long	113
 孙隆	sun'long	1
 孙珑	sun'long	1
 孙露	sun'lu	930
 笋螺	sun'luo	75
 榫卯	sun'mao	2204
+孙眉	sun'mei	70
 孙梅	sun'mei	1
+孙孟	sun'meng	346
 榫面	sun'mian	76
 孙敏	sun'min	240
+孙明	sun'ming	180
+孙铭	sun'ming	29
 孙某	sun'mou	663
 孙娜	sun'na	90
 孙楠	sun'nan	735
@@ -145177,19 +146118,24 @@
 孙女	sun'nv	1606
 孙鹏	sun'peng	303
 笋片	sun'pian	954
+孙平	sun'ping	55
 孙茜	sun'qian	680
 孙千	sun'qian	613
 孙乾	sun'qian	422
 孙谦	sun'qian	1
 孙倩	sun'qian	1
+孙强	sun'qiang	415
 孙桥	sun'qiao	29
+孙勤	sun'qin	54
 孙清	sun'qing	2835
 孙权	sun'quan	15687
 孙佺	sun'quan	55
 孙铨	sun'quan	1
 损人	sun'ren	374
 孙仁	sun'ren	1
+孙荣	sun'rong	25
 笋肉	sun'rou	698
+孙儒	sun'ru	24
 孙芮	sun'rui	918
 孙锐	sun'rui	55
 孙睿	sun'rui	1
@@ -145198,14 +146144,18 @@
 孙山	sun'shan	43
 损伤	sun'shang	21208
 孙韶	sun'shao	1212
+孙绍	sun'shao	49
 榫舌	sun'she	40
 孙婶	sun'shen	194
+孙盛	sun'sheng	90
+孙胜	sun'sheng	68
 损失	sun'shi	48164
 孙氏	sun'shi	1
 孙叔	sun'shu	675
 孙爽	sun'shuang	35
 损水	sun'shui	68
 笋丝	sun'si	1062
+孙松	sun'song	52
 孙孙	sun'sun	891
 孙堂	sun'tang	1
 孙涛	sun'tao	706
@@ -145213,6 +146163,7 @@
 榫头	sun'tou	144
 孙旺	sun'wang	1
 孙伟	sun'wei	970
+孙维	sun'wei	669
 孙纬	sun'wei	55
 孙威	sun'wei	1
 孙卫	sun'wei	1
@@ -145223,15 +146174,18 @@
 孙武	sun'wu	1630
 孙吴	sun'wu	1450
 孙熙	sun'xi	215
+孙喜	sun'xi	81
 孙咸	sun'xian	55
 孙岘	sun'xian	55
 孙祥	sun'xiang	796
 榫销	sun'xiao	40
+孙新	sun'xin	1729
 孙馨	sun'xin	10
 孙兴	sun'xing	940
 孙姓	sun'xing	1
 孙休	sun'xiu	684
 孙婿	sun'xu	1
+孙雪	sun'xue	128
 孙逊	sun'xun	912
 孙雅	sun'ya	6022
 笋芽	sun'ya	129
@@ -145242,8 +146196,10 @@
 孙杨	sun'yang	8839
 孙扬	sun'yang	898
 孙旸	sun'yang	139
+孙尧	sun'yao	135
 孙窑	sun'yao	1
 孙叶	sun'ye	422
+孙晔	sun'ye	31
 孙怡	sun'yi	1521
 损益	sun'yi	1445
 损溢	sun'yi	320
@@ -145252,17 +146208,23 @@
 孙勇	sun'yong	638
 损友	sun'you	446
 孙瑜	sun'yu	60
+孙元	sun'yuan	704
 孙悦	sun'yue	1997
 孙越	sun'yue	160
 孙樾	sun'yue	128
 榫凿	sun'zao	40
 孙贼	sun'zei	1
 损招	sun'zhao	688
+孙哲	sun'zhe	69
+孙震	sun'zhen	48
 孙镇	sun'zhen	10
 孙桢	sun'zhen	1
+孙正	sun'zheng	46
+孙志	sun'zhi	936
 孙仲	sun'zhong	1
 孙周	sun'zhou	2016
 孙庄	sun'zhuang	1
+孙卓	sun'zhuo	128
 孙子	sun'zi	13081
 笋子	sun'zi	860
 孙资	sun'zi	42
@@ -148455,6 +149417,7 @@
 烫嘴	tang'zui	336
 躺坐	tang'zuo	9
 逃啊	tao'a	41
+陶庵	tao'an	106
 洮安	tao'an	1
 淘吧	tao'ba	69
 逃吧	tao'ba	62
@@ -148690,6 +149653,7 @@
 陶林	tao'lin	191
 陶琳	tao'lin	1
 逃笼	tao'long	118
+陶楼	tao'lou	65
 套路	tao'lu	39090
 逃路	tao'lu	1
 讨论	tao'lun	135836
@@ -152573,10 +153537,12 @@
 铜价	tong'jia	354
 通假	tong'jia	210
 童家	tong'jia	168
+佟佳	tong'jia	134
 通家	tong'jia	107
 佟家	tong'jia	85
 通奸	tong'jian	2044
 通鉴	tong'jian	562
+佟健	tong'jian	449
 统建	tong'jian	359
 铜件	tong'jian	287
 通间	tong'jian	229
@@ -153146,6 +154112,7 @@
 铜章	tong'zhang	391
 统招	tong'zhao	2603
 通着	tong'zhe	765
+童哲	tong'zhe	65
 同辙	tong'zhe	1
 童真	tong'zhen	1077
 童贞	tong'zhen	131
@@ -157120,6 +158087,7 @@
 网编	wang'bian	1138
 王表	wang'biao	55
 汪彪	wang'biao	12
+王彬	wang'bin	876
 王斌	wang'bin	1
 王冰	wang'bing	1
 王兵	wang'bing	1
@@ -157155,6 +158123,7 @@
 王谌	wang'chen	55
 王臣	wang'chen	1
 王城	wang'cheng	131
+王承	wang'cheng	104
 望城	wang'cheng	83
 妄称	wang'cheng	66
 网城	wang'cheng	52
@@ -157179,6 +158148,7 @@
 王川	wang'chuan	1
 辋川	wang'chuan	1
 王闯	wang'chuang	1637
+王春	wang'chun	261
 网蝽	wang'chun	104
 望春	wang'chun	38
 王绰	wang'chuo	55
@@ -157186,6 +158156,7 @@
 往次	wang'ci	500
 枉此	wang'ci	1
 汪聪	wang'cong	418
+王聪	wang'cong	304
 王村	wang'cun	904
 汪存	wang'cun	55
 网大	wang'da	1505
@@ -157219,7 +158190,9 @@
 旺店	wang'dian	542
 忘掉	wang'diao	4694
 网调	wang'diao	832
+王鼎	wang'ding	252
 王铤	wang'ding	55
+王栋	wang'dong	905
 往东	wang'dong	401
 王东	wang'dong	163
 妄动	wang'dong	130
@@ -157254,19 +158227,24 @@
 汪昉	wang'fang	1
 王菲	wang'fei	11583
 王妃	wang'fei	1570
+王飞	wang'fei	1497
 网费	wang'fei	1127
 枉费	wang'fei	323
 网飞	wang'fei	258
+王芬	wang'fen	67
 王坟	wang'fen	1
 汪芬	wang'fen	1
 汪峰	wang'feng	10758
 王峰	wang'feng	235
+王锋	wang'feng	188
 望风	wang'feng	150
+王凤	wang'feng	120
 王封	wang'feng	1
 王风	wang'feng	1
 往复	wang'fu	1269
 王府	wang'fu	1001
 旺夫	wang'fu	226
+王福	wang'fu	180
 亡夫	wang'fu	144
 亡父	wang'fu	115
 王父	wang'fu	92
@@ -157299,6 +158277,7 @@
 汪舸	wang'ge	1
 王艮	wang'gen	82
 忘跟	wang'gen	62
+王根	wang'gen	46
 王庚	wang'geng	55
 王工	wang'gong	1566
 王宫	wang'gong	885
@@ -157318,32 +158297,42 @@
 王观	wang'guan	331
 王瓘	wang'guan	1
 忘光	wang'guang	963
+王光	wang'guang	915
+王广	wang'guang	867
 网规	wang'gui	141
 王硅	wang'gui	55
 王贵	wang'gui	1
 王国	wang'guo	11131
 亡国	wang'guo	2543
 往过	wang'guo	1075
+王海	wang'hai	2781
 望海	wang'hai	47
 网海	wang'hai	38
 汪涵	wang'han	1444
 王翰	wang'han	603
+王航	wang'hang	269
 汪沆	wang'hang	1
 网好	wang'hao	1688
 往好	wang'hao	942
 王浩	wang'hao	844
 王皓	wang'hao	235
+王昊	wang'hao	150
 网号	wang'hao	120
 汪浩	wang'hao	1
 汪皓	wang'hao	1
 汪灏	wang'hao	1
+王鹤	wang'he	896
 王龁	wang'he	198
 忘河	wang'he	153
 王河	wang'he	1
 网黑	wang'hei	38
+王珩	wang'heng	49
 王衡	wang'heng	1
 王姮	wang'heng	1
 网红	wang'hong	17421
+王红	wang'hong	16550
+王洪	wang'hong	15679
+王宏	wang'hong	14459
 王弘	wang'hong	1
 王竑	wang'hong	1
 王虹	wang'hong	1
@@ -157357,12 +158346,15 @@
 王祜	wang'hu	1
 汪琥	wang'hu	1
 王瑚	wang'hu	1
+王华	wang'hua	2678
 王化	wang'hua	772
 望花	wang'hua	646
 汪华	wang'hua	351
 忘怀	wang'huai	273
+王欢	wang'huan	1084
 往还	wang'huan	1030
 王涣	wang'huan	55
+王黄	wang'huang	27
 往回	wang'hui	1678
 王辉	wang'hui	1421
 王慧	wang'hui	1240
@@ -157394,10 +158386,12 @@
 汪机	wang'ji	1
 王寂	wang'ji	1
 王家	wang'jia	1385
+王佳	wang'jia	376
 网架	wang'jia	348
 妄加	wang'jia	278
 旺家	wang'jia	222
 往家	wang'jia	177
+王嘉	wang'jia	141
 汪家	wang'jia	112
 枉驾	wang'jia	1
 望见	wang'jian	2025
@@ -157405,10 +158399,12 @@
 王坚	wang'jian	222
 王健	wang'jian	97
 王翦	wang'jian	77
+王剑	wang'jian	61
 王建	wang'jian	55
 网监	wang'jian	38
 网间	wang'jian	30
 汪篯	wang'jian	1
+王江	wang'jiang	1071
 望江	wang'jiang	1017
 王将	wang'jiang	180
 王浆	wang'jiang	32
@@ -157421,6 +158417,8 @@
 王杰	wang'jie	389
 网戒	wang'jie	311
 汪姐	wang'jie	248
+王进	wang'jin	1170
+王金	wang'jin	1112
 网巾	wang'jin	1053
 王缙	wang'jin	55
 王晋	wang'jin	1
@@ -157429,10 +158427,14 @@
 王晶	wang'jing	326
 网警	wang'jing	238
 网景	wang'jing	216
+王京	wang'jing	188
+王景	wang'jing	150
+王敬	wang'jing	120
 王婧	wang'jing	1
 汪静	wang'jing	1
 王经	wang'jing	1
 汪敬	wang'jing	1
+王炯	wang'jiong	158
 王迥	wang'jiong	55
 王鹫	wang'jiu	51
 忘旧	wang'jiu	19
@@ -157448,6 +158450,7 @@
 王珏	wang'jue	1
 王爵	wang'jue	1
 王俊	wang'jun	1264
+王君	wang'jun	1138
 网军	wang'jun	439
 汪俊	wang'jun	140
 王军	wang'jun	1
@@ -157459,17 +158462,21 @@
 王楷	wang'kai	1
 忘看	wang'kan	62
 网刊	wang'kan	9
+王康	wang'kang	168
 王伉	wang'kang	1
 网考	wang'kao	742
 网课	wang'ke	28674
 王珂	wang'ke	27240
+王克	wang'ke	950
 旺客	wang'ke	504
 网孔	wang'kong	210
 网口	wang'kou	1360
 网库	wang'ku	598
+王宽	wang'kuan	37
 王匡	wang'kuang	1
 王揆	wang'kui	55
 望奎	wang'kui	13
+王坤	wang'kun	648
 王昆	wang'kun	1
 忘啦	wang'la	670
 忘拉	wang'la	93
@@ -157483,6 +158490,7 @@
 王老	wang'lao	364
 汪老	wang'lao	328
 忘了	wang'le	29265
+王乐	wang'le	916
 望了	wang'le	348
 亡了	wang'le	278
 王磊	wang'lei	2168
@@ -157491,9 +158499,12 @@
 王累	wang'lei	1
 往里	wang'li	3495
 王力	wang'li	135
+王丽	wang'li	108
 王莉	wang'li	86
+王立	wang'li	68
 王离	wang'li	54
 网里	wang'li	43
+王李	wang'li	33
 往例	wang'li	1
 网恋	wang'lian	813
 网联	wang'lian	414
@@ -157508,16 +158519,20 @@
 网聊	wang'liao	144
 王镣	wang'liao	55
 网裂	wang'lie	396
+王烈	wang'lie	100
+王林	wang'lin	1644
 王琳	wang'lin	107
 亡灵	wang'ling	3002
 王陵	wang'ling	2009
 王玲	wang'ling	138
 网龄	wang'ling	110
+王灵	wang'ling	88
 王凌	wang'ling	70
 王令	wang'ling	55
 王龄	wang'ling	1
 望留	wang'liu	1
 王鎏	wang'liu	1
+王龙	wang'long	1044
 网龙	wang'long	992
 望龙	wang'long	390
 王笼	wang'long	32
@@ -157528,6 +158543,7 @@
 网路	wang'lu	801
 王璐	wang'lu	761
 王鲁	wang'lu	391
+王路	wang'lu	256
 汪璐	wang'lu	1
 望麓	wang'lu	1
 汪伦	wang'lun	405
@@ -157543,11 +158559,14 @@
 忘买	wang'mai	513
 网脉	wang'mai	487
 王买	wang'mai	1
+王曼	wang'man	119
 网慢	wang'man	83
 王莽	wang'mang	2926
 网盲	wang'mang	1
+王茂	wang'mao	882
 网茅	wang'mao	63
 王楙	wang'mao	55
+王梅	wang'mei	1814
 网媒	wang'mei	927
 望梅	wang'mei	452
 亡妹	wang'mei	1
@@ -157555,6 +158574,8 @@
 望门	wang'men	16
 王濛	wang'meng	1579
 王猛	wang'meng	314
+王梦	wang'meng	251
+王萌	wang'meng	200
 网盟	wang'meng	160
 王蒙	wang'meng	1
 网迷	wang'mi	35
@@ -157569,6 +158590,7 @@
 王敏	wang'min	6348
 王岷	wang'min	1
 网名	wang'ming	423
+王明	wang'ming	395
 亡命	wang'ming	172
 王命	wang'ming	137
 王茗	wang'ming	71
@@ -157611,11 +158633,14 @@
 网盘	wang'pan	9473
 王泮	wang'pan	1
 王雱	wang'pang	55
+王袍	wang'pao	35
 网配	wang'pei	806
+王培	wang'pei	766
 王鹏	wang'peng	1208
 网骗	wang'pian	603
 网片	wang'pian	573
 网票	wang'piao	693
+王品	wang'pin	452
 王平	wang'ping	3289
 网评	wang'ping	307
 妄评	wang'ping	245
@@ -157627,6 +158652,7 @@
 王溥	wang'pu	1
 往期	wang'qi	2160
 亡妻	wang'qi	618
+王琪	wang'qi	141
 旺气	wang'qi	80
 望其	wang'qi	64
 王淇	wang'qi	55
@@ -157637,6 +158663,7 @@
 王颀	wang'qi	1
 汪淇	wang'qi	1
 王锜	wang'qi	1
+王洽	wang'qia	39
 往前	wang'qian	8933
 网签	wang'qian	1356
 网前	wang'qian	288
@@ -157654,6 +158681,7 @@
 亡亲	wang'qin	62
 王钦	wang'qin	1
 汪沁	wang'qin	1
+王庆	wang'qing	1190
 忘情	wang'qing	119
 王清	wang'qing	76
 王晴	wang'qing	48
@@ -157689,14 +158717,20 @@
 王仁	wang'ren	1
 往日	wang'ri	3018
 望日	wang'ri	97
+王荣	wang'rong	631
 王蓉	wang'rong	150
 王镕	wang'rong	55
 王融	wang'rong	1
 王戎	wang'rong	1
 汪溶	wang'rong	1
+王柔	wang'rou	140
+王茹	wang'ru	706
 王瑞	wang'rui	976
 汪睿	wang'rui	49
+王润	wang'run	133
+王三	wang'san	466
 王嫂	wang'sao	778
+王森	wang'sen	706
 汪森	wang'sen	1
 网纱	wang'sha	129
 网杀	wang'sha	116
@@ -157711,6 +158745,7 @@
 网尚	wang'shang	190
 王赏	wang'shang	55
 王少	wang'shao	882
+王绍	wang'shao	703
 王邵	wang'shao	55
 王蛇	wang'she	95
 王社	wang'she	1
@@ -157723,6 +158758,7 @@
 王诜	wang'shen	55
 旺盛	wang'sheng	2930
 往生	wang'sheng	420
+王胜	wang'sheng	336
 网盛	wang'sheng	268
 王声	wang'sheng	214
 网绳	wang'sheng	1
@@ -157755,17 +158791,22 @@
 王述	wang'shu	1
 王恕	wang'shu	1
 汪曙	wang'shu	1
+王帅	wang'shuai	792
 旺衰	wang'shuai	752
 王双	wang'shuang	8112
 王霜	wang'shuang	7016
+王爽	wang'shuang	179
 王水	wang'shui	126
 汪顺	wang'shun	500
 忘说	wang'shuo	1048
 王朔	wang'shuo	996
+王硕	wang'shuo	943
 妄说	wang'shuo	278
 王槊	wang'shuo	3
 往死	wang'si	1404
 枉死	wang'si	1264
+王嗣	wang'si	559
+王思	wang'si	212
 王寺	wang'si	178
 忘死	wang'si	135
 忘私	wang'si	113
@@ -157798,11 +158839,14 @@
 汪滔	wang'tao	340
 忘掏	wang'tao	1
 网特	wang'te	88
+王腾	wang'teng	73
 罔替	wang'ti	13
 望天	wang'tian	427
+王天	wang'tian	406
 忘填	wang'tian	62
 网帖	wang'tie	958
 王婷	wang'ting	792
+王廷	wang'ting	713
 网厅	wang'ting	657
 望亭	wang'ting	515
 王汀	wang'ting	43
@@ -157821,6 +158865,7 @@
 望外	wang'wai	1107
 网外	wang'wai	748
 王绾	wang'wan	733
+王湾	wang'wan	86
 汪琬	wang'wan	1
 往往	wang'wang	132860
 汪汪	wang'wang	1133
@@ -157833,14 +158878,18 @@
 王维	wang'wei	579
 王威	wang'wei	414
 妄为	wang'wei	375
+王卫	wang'wei	182
 枉为	wang'wei	135
+王巍	wang'wei	94
 网胃	wang'wei	63
+王玮	wang'wei	60
 网鳚	wang'wei	59
 王洧	wang'wei	55
 王微	wang'wei	48
 汪伪	wang'wei	17
 王薇	wang'wei	1
 网文	wang'wen	11518
+王文	wang'wen	100
 网纹	wang'wen	80
 王鹟	wang'weng	443
 忘我	wang'wo	901
@@ -157853,6 +158902,7 @@
 王吴	wang'wu	1
 往西	wang'xi	1378
 往昔	wang'xi	913
+王希	wang'xi	185
 王喜	wang'xi	148
 王晰	wang'xi	118
 王西	wang'xi	94
@@ -157868,11 +158918,13 @@
 王霞	wang'xia	1
 网线	wang'xian	3693
 王献	wang'xian	832
+王显	wang'xian	680
 网藓	wang'xian	72
 王弦	wang'xian	2
 妄想	wang'xiang	4704
 望向	wang'xiang	2549
 王相	wang'xiang	103
+王翔	wang'xiang	82
 王祥	wang'xiang	65
 望乡	wang'xiang	52
 网箱	wang'xiang	41
@@ -157882,6 +158934,7 @@
 网校	wang'xiao	2044
 网销	wang'xiao	587
 旺销	wang'xiao	469
+王晓	wang'xiao	375
 王骁	wang'xiao	332
 忘写	wang'xie	963
 网协	wang'xie	915
@@ -157889,9 +158942,11 @@
 王燮	wang'xie	1
 王鑫	wang'xin	1050
 王欣	wang'xin	763
+王昕	wang'xin	315
 网信	wang'xin	155
 王新	wang'xin	147
 网新	wang'xin	106
+王信	wang'xin	78
 妄心	wang'xin	24
 汪鑫	wang'xin	8
 王星	wang'xing	15130
@@ -157906,6 +158961,7 @@
 王兄	wang'xiong	107
 王熊	wang'xiong	55
 亡兄	wang'xiong	1
+王秀	wang'xiu	1044
 王脩	wang'xiu	28
 王修	wang'xiu	1
 王旭	wang'xu	976
@@ -157918,6 +158974,8 @@
 王学	wang'xue	1
 网讯	wang'xun	78
 王迅	wang'xun	70
+王亚	wang'ya	1449
+王雅	wang'ya	1377
 网压	wang'ya	302
 王涯	wang'ya	55
 网眼	wang'yan	2128
@@ -157925,7 +158983,9 @@
 王艳	wang'yan	940
 王燕	wang'yan	423
 望眼	wang'yan	281
+王延	wang'yan	64
 王偃	wang'yan	55
+王彦	wang'yan	51
 王衍	wang'yan	32
 汪芫	wang'yan	1
 忘言	wang'yan	1
@@ -157941,6 +159001,7 @@
 汪飏	wang'yang	1
 王洋	wang'yang	1
 王炀	wang'yang	1
+王耀	wang'yao	927
 王瑶	wang'yao	1
 王尧	wang'yao	1
 网页	wang'ye	24439
@@ -157952,12 +159013,15 @@
 王毅	wang'yi	279
 妄议	wang'yi	150
 王奕	wang'yi	119
+王义	wang'yi	95
 网衣	wang'yi	84
+王怡	wang'yi	60
 王沂	wang'yi	55
 亡佚	wang'yi	22
 网银	wang'yin	2412
 网瘾	wang'yin	929
 王垠	wang'yin	323
+王印	wang'yin	258
 网印	wang'yin	103
 王颖	wang'ying	950
 王莹	wang'ying	139
@@ -157973,8 +159037,10 @@
 往右	wang'you	1271
 忘忧	wang'you	175
 网优	wang'you	140
+王友	wang'you	112
 亡友	wang'you	89
 王佑	wang'you	1
+王煜	wang'yu	1518
 王宇	wang'yu	332
 网鱼	wang'yu	182
 王羽	wang'yu	113
@@ -157982,6 +159048,7 @@
 妄语	wang'yu	72
 亡于	wang'yu	57
 王雨	wang'yu	36
+王郁	wang'yu	22
 亡语	wang'yu	17
 汪雨	wang'yu	1
 王玉	wang'yu	1
@@ -157994,19 +159061,24 @@
 王元	wang'yuan	1
 网约	wang'yue	524
 望月	wang'yue	498
+王月	wang'yue	472
 王玥	wang'yue	450
+王悦	wang'yue	435
 望岳	wang'yue	341
 王约	wang'yue	55
 汪粤	wang'yue	52
+王云	wang'yun	1076
 王允	wang'yun	1022
 望云	wang'yun	421
 王恽	wang'yun	1
 旺仔	wang'zai	446
 忘在	wang'zai	204
+王赞	wang'zan	115
 王瓒	wang'zan	55
 网葬	wang'zang	1
 汪藻	wang'zao	378
 王藻	wang'zao	1
+王泽	wang'ze	900
 王则	wang'ze	1
 王炸	wang'zha	1328
 网摘	wang'zhai	25
@@ -158014,8 +159086,10 @@
 尪瘵	wang'zhai	1
 网站	wang'zhan	147156
 网战	wang'zhan	932
+王章	wang'zhang	61
 王彰	wang'zhang	1
 网罩	wang'zhao	229
+王兆	wang'zhao	206
 王钊	wang'zhao	1
 汪昭	wang'zhao	1
 王诏	wang'zhao	1
@@ -158023,7 +159097,10 @@
 望着	wang'zhe	6923
 亡者	wang'zhe	847
 往这	wang'zhe	677
+王哲	wang'zhe	541
 往者	wang'zhe	356
+王镇	wang'zhen	1053
+王振	wang'zhen	1000
 望诊	wang'zhen	948
 望镇	wang'zhen	62
 王禛	wang'zhen	20
@@ -158031,6 +159108,7 @@
 王真	wang'zhen	1
 王祯	wang'zhen	1
 汪震	wang'zhen	1
+王正	wang'zheng	1030
 王铮	wang'zheng	859
 亡征	wang'zheng	62
 王征	wang'zheng	1
@@ -158047,6 +159125,7 @@
 王禔	wang'zhi	1
 网中	wang'zhong	106
 王中	wang'zhong	84
+王仲	wang'zhong	67
 王重	wang'zhong	55
 王忠	wang'zhong	1
 王胄	wang'zhou	55
@@ -158074,6 +159153,7 @@
 王梓	wang'zi	1
 王总	wang'zong	656
 网综	wang'zong	194
+王宗	wang'zong	155
 王棕	wang'zong	72
 望族	wang'zu	1755
 王族	wang'zu	332
@@ -158349,6 +159429,7 @@
 为定	wei'ding	178
 韦鼎	wei'ding	142
 桅顶	wei'ding	1
+卫东	wei'dong	1206
 微动	wei'dong	436
 魏东	wei'dong	348
 未动	wei'dong	278
@@ -158529,6 +159610,7 @@
 威海	wei'hai	1102
 为害	wei'hai	204
 围海	wei'hai	163
+卫海	wei'hai	130
 危海	wei'hai	104
 威骇	wei'hai	1
 畏寒	wei'han	371
@@ -159061,6 +160143,7 @@
 唯品	wei'pin	1179
 伪品	wei'pin	562
 委聘	wei'pin	299
+卫平	wei'ping	1112
 微评	wei'ping	1056
 未平	wei'ping	844
 为凭	wei'ping	523
@@ -159327,6 +160410,7 @@
 维斯	wei'si	1
 威斯	wei'si	1
 维泗	wei'si	1
+魏松	wei'song	129
 未送	wei'song	62
 味素	wei'su	22
 胃酸	wei'suan	2123
@@ -159972,6 +161056,7 @@
 文达	wen'da	1022
 稳打	wen'da	920
 温大	wen'da	828
+温达	wen'da	704
 闻达	wen'da	331
 温带	wen'dai	942
 纹带	wen'dai	77
@@ -160214,6 +161299,7 @@
 文里	wen'li	571
 文立	wen'li	456
 文礼	wen'li	364
+温莉	wen'li	274
 文联	wen'lian	242
 稳练	wen'lian	1
 温良	wen'liang	349
@@ -160268,6 +161354,7 @@
 文明	wen'ming	47270
 闻名	wen'ming	3733
 问明	wen'ming	119
+温明	wen'ming	95
 问名	wen'ming	76
 文末	wen'mo	7021
 文墨	wen'mo	116
@@ -160279,6 +161366,7 @@
 文内	wen'nei	1328
 文能	wen'neng	1134
 问你	wen'ni	12984
+温妮	wen'ni	257
 吻你	wen'ni	205
 闻腻	wen'ni	84
 问年	wen'nian	1035
@@ -161390,6 +162478,7 @@
 无柄	wu'bing	537
 无兵	wu'bing	508
 五饼	wu'bing	469
+吴波	wu'bo	1053
 无波	wu'bo	840
 物博	wu'bo	439
 乌波	wu'bo	367
@@ -161565,6 +162654,7 @@
 五帝	wu'di	1240
 五弟	wu'di	651
 无底	wu'di	420
+吴迪	wu'di	150
 伍迪	wu'di	96
 无地	wu'di	76
 吴地	wu'di	60
@@ -161593,6 +162683,7 @@
 舞动	wu'dong	703
 乌冬	wu'dong	226
 乌东	wu'dong	180
+吴东	wu'dong	144
 武东	wu'dong	115
 武动	wu'dong	92
 五栋	wu'dong	73
@@ -161799,6 +162890,7 @@
 五果	wu'guo	148
 乌蛤	wu'ha	54
 无害	wu'hai	3586
+吴海	wu'hai	207
 无孩	wu'hai	165
 乌海	wu'hai	132
 雾海	wu'hai	105
@@ -162025,6 +163117,7 @@
 吴景	wu'jing	1
 吴静	wu'jing	1
 吴泾	wu'jing	1
+吴炯	wu'jiong	118
 五九	wu'jiu	185
 无酒	wu'jiu	131
 无咎	wu'jiu	104
@@ -162048,6 +163141,7 @@
 五绝	wu'jue	1517
 无觉	wu'jue	752
 乌蕨	wu'jue	86
+吴军	wu'jun	1342
 无菌	wu'jun	712
 乌军	wu'jun	116
 五军	wu'jun	92
@@ -162069,6 +163163,7 @@
 无靠	wu'kao	13
 无考	wu'kao	12
 无可	wu'ke	2710
+吴克	wu'ke	379
 五颗	wu'ke	257
 五棵	wu'ke	205
 五科	wu'ke	164
@@ -162101,6 +163196,7 @@
 吴匡	wu'kuang	1
 无愧	wu'kui	955
 五魁	wu'kui	526
+吴坤	wu'kun	67
 吴昆	wu'kun	1
 乌拉	wu'la	518
 无辣	wu'la	73
@@ -162199,6 +163295,7 @@
 武隆	wu'long	150
 舞龙	wu'long	100
 五龙	wu'long	80
+吴龙	wu'long	64
 兀龙	wu'long	1
 五楼	wu'lou	1297
 屋漏	wu'lou	824
@@ -162288,6 +163385,7 @@
 五名	wu'ming	904
 无明	wu'ming	518
 污名	wu'ming	232
+吴明	wu'ming	185
 五明	wu'ming	148
 武鸣	wu'ming	118
 伍明	wu'ming	1
@@ -162313,6 +163411,7 @@
 吾乃	wu'nai	160
 无乃	wu'nai	128
 舞男	wu'nan	788
+吴楠	wu'nan	749
 吴南	wu'nan	1
 无脑	wu'nao	14102
 吴讷	wu'ne	1
@@ -162353,6 +163452,7 @@
 五盘	wu'pan	100
 无盘	wu'pan	80
 武盘	wu'pan	77
+吴沛	wu'pei	37
 勿喷	wu'pen	1512
 误喷	wu'pen	42
 五盆	wu'pen	1
@@ -162427,9 +163527,11 @@
 午寝	wu'qin	62
 吴芹	wu'qin	1
 无情	wu'qing	5325
+吴清	wu'qing	229
 武清	wu'qing	183
 乌青	wu'qing	146
 务请	wu'qing	116
+吴庆	wu'qing	92
 物情	wu'qing	73
 悟清	wu'qing	58
 无穷	wu'qiong	3956
@@ -162660,6 +163762,7 @@
 武松	wu'song	5131
 雾凇	wu'song	361
 吴淞	wu'song	219
+吴松	wu'song	175
 无讼	wu'song	140
 五艘	wu'sou	72
 乌苏	wu'su	597
@@ -162719,6 +163822,7 @@
 五天	wu'tian	4069
 雾天	wu'tian	492
 武田	wu'tian	486
+吴天	wu'tian	216
 无天	wu'tian	172
 悟天	wu'tian	137
 误填	wu'tian	124
@@ -162735,6 +163839,7 @@
 梧桐	wu'tong	963
 五筒	wu'tong	94
 五通	wu'tong	75
+吴彤	wu'tong	60
 巫统	wu'tong	48
 武统	wu'tong	38
 戊酮	wu'tong	30
@@ -162810,6 +163915,7 @@
 吴渭	wu'wei	1
 无问	wu'wen	1220
 五问	wu'wen	1159
+吴文	wu'wen	1098
 武文	wu'wen	618
 无闻	wu'wen	365
 无纹	wu'wen	179
@@ -162879,6 +163985,7 @@
 五相	wu'xiang	7
 五向	wu'xiang	3
 无效	wu'xiao	18677
+吴晓	wu'xiao	772
 五小	wu'xiao	659
 武校	wu'xiao	401
 五校	wu'xiao	320
@@ -162911,6 +164018,7 @@
 无性	wu'xing	367
 物性	wu'xing	285
 五型	wu'xing	228
+吴兴	wu'xing	182
 无行	wu'xing	157
 五刑	wu'xing	141
 无姓	wu'xing	127
@@ -163053,6 +164161,7 @@
 吴隐	wu'yin	1
 无影	wu'ying	798
 乌蝇	wu'ying	758
+吴英	wu'ying	718
 五营	wu'ying	662
 五影	wu'ying	519
 武英	wu'ying	383
@@ -163177,6 +164286,7 @@
 五者	wu'zhe	164
 焐着	wu'zhe	55
 误诊	wu'zhen	1545
+吴振	wu'zhen	590
 乌镇	wu'zhen	472
 武镇	wu'zhen	377
 五针	wu'zhen	301
@@ -163197,6 +164307,7 @@
 武直	wu'zhi	320
 无止	wu'zhi	160
 五支	wu'zhi	103
+吴志	wu'zhi	82
 武职	wu'zhi	65
 无纸	wu'zhi	52
 无脂	wu'zhi	41
@@ -163797,6 +164908,7 @@
 西甲	xi'jia	4019
 西家	xi'jia	972
 席家	xi'jia	773
+奚贾	xi'jia	40
 膝夹	xi'jia	25
 席间	xi'jian	1077
 溪涧	xi'jian	950
@@ -165197,6 +166309,7 @@
 黠猾	xia'hua	1
 吓坏	xia'huai	364
 下怀	xia'huai	332
+夏欢	xia'huan	35
 瞎晃	xia'huang	78
 虾皇	xia'huang	74
 虾黄	xia'huang	25
@@ -168724,11 +169837,13 @@
 小冰	xiao'bing	995
 笑柄	xiao'bing	835
 小饼	xiao'bing	508
+肖冰	xiao'bing	188
 哮病	xiao'bing	1
 小波	xiao'bo	1510
 小檗	xiao'bo	183
 小博	xiao'bo	128
 晓波	xiao'bo	102
+肖波	xiao'bo	81
 小蘗	xiao'bo	62
 小钵	xiao'bo	51
 小钹	xiao'bo	1
@@ -168997,8 +170112,10 @@
 校风	xiao'feng	144
 小冯	xiao'feng	115
 小枫	xiao'feng	73
+肖风	xiao'feng	58
 晓风	xiao'feng	46
 小缝	xiao'feng	36
+肖锋	xiao'feng	28
 晓枫	xiao'feng	22
 孝丰	xiao'feng	17
 小蜂	xiao'feng	16
@@ -169236,6 +170353,7 @@
 小间	xiao'jian	55
 萧建	xiao'jian	55
 小建	xiao'jian	44
+肖健	xiao'jian	35
 肖剑	xiao'jian	28
 小尖	xiao'jian	22
 小简	xiao'jian	17
@@ -169307,8 +170425,10 @@
 小君	xiao'jun	364
 萧军	xiao'jun	320
 晓军	xiao'jun	116
+肖军	xiao'jun	92
 小俊	xiao'jun	73
 晓君	xiao'jun	58
+肖俊	xiao'jun	46
 小卡	xiao'ka	1400
 小咖	xiao'ka	238
 销卡	xiao'ka	216
@@ -169382,7 +170502,9 @@
 小磊	xiao'lei	455
 小类	xiao'lei	204
 小蕾	xiao'lei	163
+肖磊	xiao'lei	130
 消蕾	xiao'lei	129
+肖雷	xiao'lei	104
 小累	xiao'lei	1
 小冷	xiao'leng	855
 小李	xiao'li	8356
@@ -169394,6 +170516,7 @@
 小吏	xiao'li	157
 小栗	xiao'li	125
 小黎	xiao'li	100
+肖莉	xiao'li	80
 小礼	xiao'li	64
 晓丽	xiao'li	51
 小力	xiao'li	40
@@ -169428,6 +170551,7 @@
 小琳	xiao'lin	205
 晓林	xiao'lin	164
 晓琳	xiao'lin	131
+肖琳	xiao'lin	104
 小临	xiao'lin	83
 校林	xiao'lin	1
 小鳞	xiao'lin	1
@@ -169537,6 +170661,7 @@
 消灭	xiao'mie	16444
 小敏	xiao'min	747
 小民	xiao'min	317
+肖敏	xiao'min	253
 晓敏	xiao'min	202
 小闵	xiao'min	161
 小旻	xiao'min	128
@@ -169549,6 +170674,7 @@
 小鸣	xiao'ming	204
 效命	xiao'ming	163
 小茗	xiao'ming	130
+肖明	xiao'ming	104
 小铭	xiao'ming	83
 效鸣	xiao'ming	1
 消磨	xiao'mo	2804
@@ -169625,6 +170751,7 @@
 笑喷	xiao'pen	465
 小盆	xiao'pen	332
 小鹏	xiao'peng	2173
+肖鹏	xiao'peng	2064
 小棚	xiao'peng	608
 小蓬	xiao'peng	74
 削皮	xiao'pi	565
@@ -169642,6 +170769,7 @@
 小萍	xiao'ping	86
 晓萍	xiao'ping	68
 萧平	xiao'ping	54
+肖平	xiao'ping	43
 校平	xiao'ping	40
 小破	xiao'po	1084
 小坡	xiao'po	1030
@@ -169955,6 +171083,7 @@
 晓彤	xiao'tong	97
 萧统	xiao'tong	77
 小痛	xiao'tong	61
+肖童	xiao'tong	48
 硝酮	xiao'tong	38
 小偷	xiao'tou	5476
 小头	xiao'tou	1001
@@ -169998,6 +171127,7 @@
 小胃	xiao'wei	89
 校委	xiao'wei	71
 小味	xiao'wei	62
+肖伟	xiao'wei	56
 萧微	xiao'wei	55
 晓伟	xiao'wei	44
 小韦	xiao'wei	12
@@ -170166,6 +171296,7 @@
 小眼	xiao'yan	238
 晓燕	xiao'yan	138
 小言	xiao'yan	125
+肖艳	xiao'yan	116
 萧衍	xiao'yan	109
 小妍	xiao'yan	100
 小严	xiao'yan	68
@@ -170188,6 +171319,7 @@
 小堰	xiao'yan	1
 萧燕	xiao'yan	1
 筱岩	xiao'yan	0
+肖岩	xiao'yan	0
 小杨	xiao'yang	2101
 小样	xiao'yang	1174
 小羊	xiao'yang	763
@@ -170195,6 +171327,7 @@
 肖央	xiao'yang	268
 小洋	xiao'yang	214
 晓阳	xiao'yang	171
+肖洋	xiao'yang	136
 肖羊	xiao'yang	108
 肖扬	xiao'yang	106
 小秧	xiao'yang	87
@@ -170205,6 +171338,7 @@
 小药	xiao'yao	438
 小夭	xiao'yao	350
 小瑶	xiao'yao	280
+肖遥	xiao'yao	224
 萧遥	xiao'yao	179
 小咬	xiao'yao	117
 宵夜	xiao'ye	1736
@@ -170273,6 +171407,7 @@
 小用	xiao'yong	367
 小勇	xiao'yong	293
 晓勇	xiao'yong	234
+肖勇	xiao'yong	187
 啸咏	xiao'yong	118
 小涌	xiao'yong	1
 校友	xiao'you	15483
@@ -170482,6 +171617,7 @@
 协变	xie'bian	109
 鞋边	xie'bian	81
 鞋标	xie'biao	562
+谢斌	xie'bin	706
 谢彬	xie'bin	671
 谢病	xie'bing	47
 谐波	xie'bo	675
@@ -170511,6 +171647,7 @@
 协程	xie'cheng	543
 协成	xie'cheng	434
 鞋城	xie'cheng	347
+谢承	xie'cheng	310
 斜撑	xie'cheng	112
 鞋撑	xie'cheng	81
 挟持	xie'chi	1083
@@ -170679,6 +171816,7 @@
 蟹鸻	xie'heng	61
 协亨	xie'heng	1
 泄洪	xie'hong	904
+谢宏	xie'hong	452
 邂逅	xie'hou	2766
 邪乎	xie'hu	571
 蟹糊	xie'hu	113
@@ -170732,6 +171870,7 @@
 蟹脚	xie'jiao	25
 谢姐	xie'jie	900
 斜街	xie'jie	855
+谢杰	xie'jie	307
 斜接	xie'jie	40
 写进	xie'jin	3953
 解缙	xie'jin	379
@@ -170757,6 +171896,7 @@
 谢娟	xie'juan	1
 懈倦	xie'juan	1
 谢绝	xie'jue	1225
+谢俊	xie'jun	108
 谢军	xie'jun	75
 写卡	xie'ka	62
 斜卡	xie'ka	1
@@ -170815,6 +171955,7 @@
 写鲤	xie'li	62
 卸力	xie'li	61
 泄力	xie'li	52
+谢丽	xie'li	48
 泄痢	xie'li	38
 斜里	xie'li	30
 斜立	xie'li	1
@@ -170874,6 +172015,7 @@
 谢邈	xie'miao	55
 协民	xie'min	1
 写明	xie'ming	3024
+谢明	xie'ming	1030
 邪命	xie'ming	403
 邪魔	xie'mo	452
 鞋模	xie'mo	1
@@ -170902,6 +172044,7 @@
 协拍	xie'pai	184
 鞋襻	xie'pan	81
 斜抛	xie'pao	39
+谢鹏	xie'peng	648
 斜碰	xie'peng	39
 写篇	xie'pian	750
 卸片	xie'pian	23
@@ -170925,6 +172068,7 @@
 懈气	xie'qi	1
 蟹钳	xie'qian	909
 谢迁	xie'qian	864
+谢强	xie'qiang	598
 携枪	xie'qiang	498
 斜墙	xie'qiang	25
 谢桥	xie'qiao	580
@@ -170948,11 +172092,13 @@
 卸任	xie'ren	1344
 写人	xie'ren	317
 斜日	xie'ri	490
+谢荣	xie'rong	603
 蟹肉	xie'rou	3391
 写入	xie'ru	6217
 楔入	xie'ru	500
 携入	xie'ru	83
 鞋乳	xie'ru	81
+谢锐	xie'rui	333
 谢润	xie'run	222
 斜塞	xie'sai	35
 蟹腮	xie'sai	25
@@ -170985,6 +172131,7 @@
 写事	xie'shi	69
 胁侍	xie'shi	55
 谢师	xie'shi	44
+谢石	xie'shi	35
 邪师	xie'shi	28
 楔式	xie'shi	22
 鞋饰	xie'shi	1
@@ -171021,6 +172168,7 @@
 斜躺	xie'tang	9323
 谢堂	xie'tang	1
 鞋套	xie'tao	358
+谢涛	xie'tao	322
 谢陶	xie'tao	55
 谢特	xie'te	752
 斜体	xie'ti	1633
@@ -171040,6 +172188,7 @@
 偕同	xie'tong	5407
 携同	xie'tong	668
 胁痛	xie'tong	600
+谢童	xie'tong	511
 协统	xie'tong	301
 鞋筒	xie'tong	81
 卸桶	xie'tong	34
@@ -171066,6 +172215,7 @@
 楔尾	xie'wei	31
 写文	xie'wen	2280
 斜纹	xie'wen	279
+谢文	xie'wen	223
 谢我	xie'wo	204
 蟹窝	xie'wo	25
 歇窝	xie'wo	1
@@ -171098,6 +172248,7 @@
 泄泻	xie'xie	157
 谢燮	xie'xie	55
 写信	xie'xin	5467
+谢欣	xie'xin	925
 协信	xie'xin	882
 写心	xie'xin	764
 协鑫	xie'xin	550
@@ -171150,6 +172301,7 @@
 渫阳	xie'yang	1
 谢邀	xie'yao	64923
 泻药	xie'yao	11526
+谢瑶	xie'yao	153
 鞋腰	xie'yao	81
 卸窑	xie'yao	37
 蟹鳐	xie'yao	1
@@ -171162,8 +172314,10 @@
 写意	xie'yi	1940
 谢意	xie'yi	354
 谢姨	xie'yi	109
+谢伊	xie'yi	87
 斜倚	xie'yi	69
 斜翼	xie'yi	62
+谢逸	xie'yi	55
 楔翼	xie'yi	7
 亵衣	xie'yi	1
 谢仪	xie'yi	1
@@ -171175,6 +172329,7 @@
 歇阴	xie'yin	1
 谢莹	xie'ying	40
 撷英	xie'ying	38
+谢勇	xie'yong	567
 鞋油	xie'you	776
 写有	xie'you	94
 泄油	xie'you	75
@@ -171182,11 +172337,14 @@
 谢瑜	xie'yu	4454
 蝎鱼	xie'yu	374
 写于	xie'yu	185
+谢玉	xie'yu	94
 谐鱼	xie'yu	93
 泄欲	xie'yu	75
+谢宇	xie'yu	60
 谢园	xie'yuan	436
 挟怨	xie'yuan	1
 协约	xie'yue	553
+谢云	xie'yun	765
 叶韵	xie'yun	727
 血晕	xie'yun	725
 协韵	xie'yun	688
@@ -174408,6 +175566,7 @@
 修纂	xiu'zuan	57
 修嘴	xiu'zui	1
 须按	xu'an	1161
+徐昂	xu'ang	200
 需把	xu'ba	850
 序跋	xu'ba	808
 虚白	xu'bai	590
@@ -174458,6 +175617,7 @@
 续场	xu'chang	53
 续唱	xu'chang	43
 圩场	xu'chang	1
+许超	xu'chao	419
 徐超	xu'chao	1
 许朝	xu'chao	1
 徐晨	xu'chen	742
@@ -174502,12 +175662,14 @@
 需带	xu'dai	209
 须待	xu'dai	188
 需待	xu'dai	169
+徐丹	xu'dan	101
 续当	xu'dang	69
 絮叨	xu'dao	842
 须到	xu'dao	758
 需到	xu'dao	682
 叙道	xu'dao	1
 虚的	xu'de	3027
+许德	xu'de	2876
 须得	xu'de	2724
 需得	xu'de	700
 需等	xu'deng	1026
@@ -174522,6 +175684,7 @@
 续订	xu'ding	509
 许鼎	xu'ding	55
 徐鼎	xu'ding	1
+徐东	xu'dong	1089
 旭东	xu'dong	1035
 许东	xu'dong	1
 许都	xu'dou	1107
@@ -174530,6 +175693,7 @@
 胥渡	xu'du	268
 续断	xu'duan	25
 许多	xu'duo	135180
+徐恩	xu'en	33
 续二	xu'er	1
 续发	xu'fa	2048
 须发	xu'fa	197
@@ -174553,6 +175717,7 @@
 续费	xu'fei	2710
 许飞	xu'fei	216
 徐妃	xu'fei	172
+许峰	xu'feng	608
 绪风	xu'feng	1
 徐枫	xu'feng	1
 需付	xu'fu	954
@@ -174562,6 +175727,7 @@
 许负	xu'fu	174
 徐干	xu'gan	926
 续杆	xu'gan	43
+徐钢	xu'gang	1220
 许港	xu'gang	1
 虚高	xu'gao	2415
 续稿	xu'gao	1
@@ -174589,8 +175755,10 @@
 旭光	xu'guang	9
 虚光	xu'guang	1
 徐广	xu'guang	1
+徐国	xu'guo	293
 许国	xu'guo	1
 絮聒	xu'guo	1
+徐海	xu'hai	976
 许海	xu'hai	1
 虚汗	xu'han	301
 虚寒	xu'han	235
@@ -174638,6 +175806,7 @@
 续集	xu'ji	3975
 蓄积	xu'ji	737
 须记	xu'ji	589
+许继	xu'ji	471
 许稷	xu'ji	91
 徐积	xu'ji	55
 醑剂	xu'ji	1
@@ -174648,6 +175817,7 @@
 徐家	xu'jia	174
 需加	xu'jia	139
 须加	xu'jia	111
+许嘉	xu'jia	88
 续假	xu'jia	70
 虚价	xu'jia	56
 续舰	xu'jian	72
@@ -174655,6 +175825,7 @@
 续建	xu'jian	44
 徐箭	xu'jian	8
 虚减	xu'jian	1
+许江	xu'jiang	845
 需将	xu'jiang	131
 须将	xu'jiang	104
 许将	xu'jiang	83
@@ -174680,8 +175851,10 @@
 徐姐	xu'jie	48
 许姐	xu'jie	43
 吁嗟	xu'jie	1
+徐进	xu'jin	1017
 许进	xu'jin	966
 恤金	xu'jin	1
+许婧	xu'jing	2085
 需经	xu'jing	270
 须经	xu'jing	219
 虚惊	xu'jing	216
@@ -174697,6 +175870,8 @@
 酗酒	xu'jiu	3369
 叙旧	xu'jiu	376
 絮菊	xu'ju	53
+许君	xu'jun	693
+许俊	xu'jun	658
 叙军	xu'jun	624
 徐君	xu'jun	299
 续卡	xu'ka	688
@@ -174716,18 +175891,24 @@
 胥口	xu'kou	500
 虚夸	xu'kua	63
 虚框	xu'kuang	351
+徐坤	xu'kun	855
 徐来	xu'lai	1111
 徐兰	xu'lan	815
+许兰	xu'lan	86
+徐朗	xu'lang	244
 婿郎	xu'lang	1
 虚劳	xu'lao	138
 徐老	xu'lao	1
 续了	xu'le	700
 虚了	xu'le	630
+徐雷	xu'lei	389
 徐磊	xu'lei	277
+许磊	xu'lei	229
 蓄冷	xu'leng	68
 蓄力	xu'li	2251
 徐丽	xu'li	323
 胥吏	xu'li	258
+徐立	xu'li	206
 墟里	xu'li	164
 徐理	xu'li	55
 虚礼	xu'li	1
@@ -174748,6 +175929,7 @@
 徐令	xu'ling	1
 续流	xu'liu	994
 徐柳	xu'liu	1
+徐龙	xu'long	63
 徐隆	xu'long	1
 许楼	xu'lou	1
 徐楼	xu'lou	1
@@ -174764,6 +175946,7 @@
 许玫	xu'mei	55
 徐玫	xu'mei	1
 胥门	xu'men	459
+徐萌	xu'meng	101
 须蠓	xu'meng	88
 徐猛	xu'meng	1
 须弥	xu'mi	518
@@ -174778,6 +175961,7 @@
 续命	xu'ming	3787
 虚名	xu'ming	1331
 徐明	xu'ming	1064
+许明	xu'ming	851
 旭明	xu'ming	592
 蓄墨	xu'mo	29
 许某	xu'mou	440
@@ -174813,6 +175997,7 @@
 虚飘	xu'piao	1
 续聘	xu'pin	220
 虚频	xu'pin	149
+徐萍	xu'ping	276
 徐平	xu'ping	1
 溆浦	xu'pu	720
 浒浦	xu'pu	224
@@ -174828,9 +176013,11 @@
 许前	xu'qian	1
 许强	xu'qiang	1
 徐强	xu'qiang	1
+徐勤	xu'qin	684
 叙亲	xu'qin	1
 许亲	xu'qin	1
 许晴	xu'qing	1225
+徐庆	xu'qing	716
 需求	xu'qiu	215721
 须鳅	xu'qiu	60
 序曲	xu'qu	1846
@@ -174899,6 +176086,7 @@
 许叔	xu'shu	146
 虚树	xu'shu	1
 徐枢	xu'shu	1
+徐帅	xu'shuai	90
 蓄水	xu'shui	1246
 续水	xu'shui	144
 徐水	xu'shui	140
@@ -174906,6 +176094,7 @@
 续说	xu'shuo	270
 叙说	xu'shuo	256
 絮说	xu'shuo	1
+许斯	xu'si	130
 徐四	xu'si	1
 许汜	xu'si	1
 许嵩	xu'song	2283
@@ -174957,7 +176146,9 @@
 须鳂	xu'wei	51
 徐唯	xu'wei	21
 徐玮	xu'wei	1
+许文	xu'wen	994
 序文	xu'wen	204
+徐文	xu'wen	163
 虚文	xu'wen	130
 续文	xu'wen	104
 徐问	xu'wen	1
@@ -174991,6 +176182,7 @@
 许巷	xu'xiang	1
 徐骧	xu'xiang	1
 虚想	xu'xiang	1
+徐晓	xu'xiao	1058
 须鸮	xu'xiao	75
 徐骁	xu'xiao	1
 续写	xu'xie	1473
@@ -175024,10 +176216,13 @@
 虚悬	xu'xuan	22
 徐宣	xu'xuan	20
 魣鳕	xu'xue	66
+徐学	xu'xue	56
+许逊	xu'xun	457
 徐勋	xu'xun	1
 虚言	xu'yan	2160
 序言	xu'yan	345
 虚掩	xu'yan	109
+许岩	xu'yan	87
 胥偃	xu'yan	69
 绪言	xu'yan	1
 徐焰	xu'yan	1
@@ -175055,6 +176250,7 @@
 许用	xu'yong	120
 须用	xu'yong	96
 叙永	xu'yong	76
+徐永	xu'yong	60
 叙用	xu'yong	48
 徐咏	xu'yong	38
 需有	xu'you	1598
@@ -175084,6 +176280,7 @@
 旭仔	xu'zai	675
 须在	xu'zai	540
 需再	xu'zai	432
+许载	xu'zai	343
 须藻	xu'zao	75
 虚造	xu'zao	1
 虚增	xu'zeng	823
@@ -175099,11 +176296,13 @@
 蓄着	xu'zhe	922
 许哲	xu'zhe	876
 虚者	xu'zhe	619
+徐震	xu'zhen	154
 徐峥	xu'zheng	2769
 虚证	xu'zheng	806
 虚症	xu'zheng	710
 须知	xu'zhi	2308
 需知	xu'zhi	301
+徐志	xu'zhi	292
 许之	xu'zhi	257
 蓄枝	xu'zhi	129
 虚职	xu'zhi	103
@@ -175135,6 +176334,7 @@
 许字	xu'zi	1
 徐鼒	xu'zi	1
 徐总	xu'zong	873
+许宗	xu'zong	574
 续租	xu'zu	223
 续作	xu'zuo	5077
 须佐	xu'zuo	4823
@@ -175729,6 +176929,8 @@
 穴鵖	xue'bi	1
 血便	xue'bian	110
 削边	xue'bian	37
+薛斌	xue'bin	387
+薛冰	xue'bing	328
 雪饼	xue'bing	100
 雪冰	xue'bing	90
 学兵	xue'bing	83
@@ -175749,10 +176951,12 @@
 雪场	xue'chang	1991
 学唱	xue'chang	307
 血肠	xue'chang	226
+薛超	xue'chao	801
 学潮	xue'chao	761
 学车	xue'che	2022
 雪车	xue'che	1921
 血沉	xue'chen	198
+薛晨	xue'chen	178
 靴衬	xue'chen	64
 雪尘	xue'chen	1
 学成	xue'cheng	1586
@@ -175832,6 +177036,7 @@
 学费	xue'fei	28178
 学飞	xue'fei	266
 雪飞	xue'fei	212
+薛飞	xue'fei	169
 雪霏	xue'fei	135
 学分	xue'fen	11439
 血粉	xue'fen	1179
@@ -175841,6 +177046,7 @@
 雪峰	xue'feng	417
 雪风	xue'feng	333
 雪枫	xue'feng	266
+薛峰	xue'feng	212
 削峰	xue'feng	169
 薛逢	xue'feng	81
 学佛	xue'fo	305
@@ -175881,6 +177087,7 @@
 学棍	xue'gun	1
 学过	xue'guo	19889
 雪国	xue'guo	3083
+薛国	xue'guo	630
 削过	xue'guo	516
 雪果	xue'guo	41
 雪蛤	xue'ha	94
@@ -176357,6 +177564,7 @@
 雪影	xue'ying	612
 薛莹	xue'ying	564
 薛泳	xue'yong	55
+薛涌	xue'yong	33
 学用	xue'yong	28
 学友	xue'you	465
 雪友	xue'you	71
@@ -177966,10 +179174,12 @@
 盐粉	yan'fen	58
 岩风	yan'feng	86
 延锋	yan'feng	73
+阎峰	yan'feng	48
 岩峰	yan'feng	38
 雁峰	yan'feng	36
 眼风	yan'feng	34
 岩缝	yan'feng	32
+闫峰	yan'feng	30
 言峰	yan'feng	25
 炎风	yan'feng	20
 延风	yan'feng	12
@@ -178288,6 +179498,7 @@
 眼力	yan'li	998
 盐粒	yan'li	163
 妍丽	yan'li	130
+闫莉	yan'li	70
 鰋鲤	yan'li	20
 沿例	yan'li	1
 眼离	yan'li	1
@@ -178458,6 +179669,7 @@
 延平	yan'ping	71
 燕平	yan'ping	68
 沿平	yan'ping	62
+闫平	yan'ping	62
 盐瓶	yan'ping	25
 彦萍	yan'ping	1
 研评	yan'ping	1
@@ -178666,6 +179878,7 @@
 阉寺	yan'si	1
 岩松	yan'song	1102
 严嵩	yan'song	1047
+阎嵩	yan'song	135
 偃松	yan'song	1
 严肃	yan'su	16397
 艳俗	yan'su	270
@@ -178865,6 +180078,7 @@
 掩袖	yan'xiu	1
 延休	yan'xiu	1
 延续	yan'xu	18177
+闫旭	yan'xu	508
 岩须	yan'xu	58
 雁序	yan'xu	1
 严选	yan'xuan	2151
@@ -179117,6 +180331,7 @@
 样版	yang'ban	670
 央版	yang'ban	1
 羊宝	yang'bao	788
+杨宝	yang'bao	749
 羊堡	yang'bao	151
 样报	yang'bao	1
 羊背	yang'bei	1
@@ -179133,11 +180348,14 @@
 样表	yang'biao	34
 杨彪	yang'biao	1
 杨斌	yang'bin	1813
+杨宾	yang'bin	37
 杨彬	yang'bin	1
 养病	yang'bing	669
+杨冰	yang'bing	219
 养兵	yang'bing	175
 阳病	yang'bing	140
 洋兵	yang'bing	1
+杨博	yang'bo	907
 仰脖	yang'bo	114
 扬波	yang'bo	103
 杨波	yang'bo	1
@@ -179156,10 +180374,12 @@
 阳岔	yang'cha	405
 羊柴	yang'chai	99
 羊肠	yang'chang	163
+杨昌	yang'chang	119
 扬长	yang'chang	95
 洋场	yang'chang	76
 羊场	yang'chang	60
 扬场	yang'chang	48
+杨超	yang'chao	882
 杨潮	yang'chao	1
 养车	yang'che	942
 样车	yang'che	895
@@ -179174,6 +180394,8 @@
 扬程	yang'cheng	577
 羊城	yang'cheng	147
 阳城	yang'cheng	117
+杨程	yang'cheng	93
+杨成	yang'cheng	74
 佯称	yang'cheng	59
 杨乘	yang'cheng	55
 仰承	yang'cheng	1
@@ -179192,18 +180414,21 @@
 洋船	yang'chuan	46
 杨川	yang'chuan	1
 阳床	yang'chuang	270
+杨春	yang'chun	1310
 阳春	yang'chun	1244
 洋椿	yang'chun	94
 仰蝽	yang'chun	90
 养词	yang'ci	338
 洋瓷	yang'ci	1
 洋葱	yang'cong	5602
+杨翠	yang'cui	56
 羊村	yang'cun	336
 杨村	yang'cun	319
 洋村	yang'cun	272
 杨厝	yang'cuo	1
 养大	yang'da	1730
 扬大	yang'da	351
+杨达	yang'da	280
 样带	yang'dai	38
 氧代	yang'dai	34
 洋埭	yang'dai	1
@@ -179238,6 +180463,7 @@
 养刁	yang'diao	567
 羊鲷	yang'diao	81
 阳雕	yang'diao	69
+杨东	yang'dong	1008
 佯动	yang'dong	907
 阳东	yang'dong	837
 杨冬	yang'dong	1
@@ -179269,6 +180495,7 @@
 羊坊	yang'fang	304
 样方	yang'fang	31
 洋坊	yang'fang	1
+杨飞	yang'fei	646
 养肺	yang'fei	182
 养肥	yang'fei	145
 杨妃	yang'fei	116
@@ -179278,8 +180505,10 @@
 养份	yang'fen	82
 羊粪	yang'fen	65
 杨玢	yang'fen	55
+杨芬	yang'fen	52
 养蜂	yang'feng	100
 洋风	yang'feng	90
+杨凤	yang'feng	81
 杨锋	yang'feng	1
 杨奉	yang'feng	1
 养父	yang'fu	1090
@@ -179307,18 +180536,21 @@
 秧歌	yang'ge	238
 杨哥	yang'ge	190
 阳哥	yang'ge	152
+杨格	yang'ge	121
 仰哥	yang'ge	96
 扬歌	yang'ge	76
 养鸽	yang'ge	46
 氧割	yang'ge	1
 杨各	yang'ge	1
 样个	yang'ge	0
+杨根	yang'gen	747
 养根	yang'gen	62
 阳根	yang'gen	1
 羊羹	yang'geng	223
 杨庚	yang'geng	1
 杨公	yang'gong	958
 佯攻	yang'gong	910
+杨恭	yang'gong	400
 仰攻	yang'gong	235
 仰拱	yang'gong	74
 羊工	yang'gong	1
@@ -179341,10 +180573,13 @@
 仰光	yang'guang	669
 洋光	yang'guang	181
 养龟	yang'gui	204
+杨贵	yang'gui	194
 样规	yang'gui	1
 杨过	yang'guo	5787
 养过	yang'guo	1017
+杨国	yang'guo	813
 养锅	yang'guo	468
+杨海	yang'hai	1197
 洋海	yang'hai	1137
 扬海	yang'hai	382
 仰焊	yang'han	43
@@ -179368,12 +180603,16 @@
 扬河	yang'he	121
 秧鹤	yang'he	74
 扬合	yang'he	1
+杨恒	yang'heng	594
 杨衡	yang'heng	55
+杨红	yang'hong	922
 洋红	yang'hong	170
+杨宏	yang'hong	136
 杨弘	yang'hong	108
 杨洪	yang'hong	1
 杨厚	yang'hou	55
 养护	yang'hu	3275
+杨虎	yang'hu	580
 羊湖	yang'hu	464
 养壶	yang'hu	371
 羊祜	yang'hu	296
@@ -179383,6 +180622,7 @@
 氧化	yang'hua	7404
 养花	yang'hua	1212
 杨花	yang'hua	119
+杨华	yang'hua	95
 洋画	yang'hua	76
 扬花	yang'hua	60
 烊化	yang'hua	52
@@ -179391,8 +180631,10 @@
 阳化	yang'hua	30
 洋槐	yang'huai	91
 杨怀	yang'huai	1
+杨焕	yang'huan	608
 杨桓	yang'huan	1
 阳黄	yang'huang	6
+杨惠	yang'hui	891
 杨辉	yang'hui	846
 杨慧	yang'hui	802
 洋灰	yang'hui	740
@@ -179413,6 +180655,7 @@
 洋基	yang'ji	364
 殃及	yang'ji	291
 氧基	yang'ji	232
+杨继	yang'ji	217
 杨记	yang'ji	167
 秧鸡	yang'ji	150
 扬基	yang'ji	135
@@ -179423,6 +180666,7 @@
 洋脊	yang'ji	1
 养家	yang'jia	1639
 杨家	yang'jia	1227
+杨佳	yang'jia	832
 阳嘉	yang'jia	476
 羊架	yang'jia	413
 扬嘉	yang'jia	193
@@ -179430,8 +180674,10 @@
 羊价	yang'jia	63
 氧价	yang'jia	40
 杨戬	yang'jian	977
+杨建	yang'jian	785
 阳间	yang'jian	580
 杨坚	yang'jian	106
+杨健	yang'jian	84
 杨谏	yang'jian	55
 样件	yang'jian	53
 羊腱	yang'jian	42
@@ -179449,6 +180695,7 @@
 羊叫	yang'jiao	222
 杨滘	yang'jiao	1
 洋角	yang'jiao	1
+杨杰	yang'jie	967
 杨姐	yang'jie	927
 杨洁	yang'jie	834
 洋节	yang'jie	769
@@ -179461,21 +180708,26 @@
 央金	yang'jin	701
 杨晋	yang'jin	1
 杨静	yang'jing	445
+杨靖	yang'jing	100
 养精	yang'jing	62
 杨景	yang'jing	55
 洋泾	yang'jing	16
+杨敬	yang'jing	12
 杨晶	yang'jing	1
 阳茎	yang'jing	1
 杨炯	yang'jiong	50
 洋酒	yang'jiu	1366
+杨九	yang'jiu	792
 殃咎	yang'jiu	1
 阳具	yang'ju	267
 扬剧	yang'ju	254
 杨娟	yang'juan	256
 羊圈	yang'juan	223
 样卷	yang'juan	201
+杨军	yang'jun	1620
 杨俊	yang'jun	821
 杨骏	yang'jun	778
+杨君	yang'jun	717
 杨浚	yang'jun	102
 养菌	yang'jun	62
 杨均	yang'jun	55
@@ -179507,6 +180759,7 @@
 杨逵	yang'kui	558
 杨夔	yang'kui	137
 杨坤	yang'kun	1143
+杨琨	yang'kun	1086
 杨昆	yang'kun	184
 养鲲	yang'kun	1
 洋蜡	yang'la	1
@@ -179521,6 +180774,7 @@
 杨牢	yang'lao	46
 养了	yang'le	4107
 阳了	yang'le	1042
+杨乐	yang'le	521
 扬了	yang'le	408
 痒了	yang'le	326
 杨玏	yang'le	260
@@ -179529,12 +180783,17 @@
 阳历	yang'li	3401
 样例	yang'li	904
 杨笠	yang'li	452
+杨丽	yang'li	361
+杨力	yang'li	288
+杨利	yang'li	230
+杨立	yang'li	184
 洋李	yang'li	164
 扬厉	yang'li	75
 洋里	yang'li	1
 洋历	yang'li	1
 羊脸	yang'lian	724
 养廉	yang'lian	688
+杨亮	yang'liang	1066
 氧量	yang'liang	1013
 养料	yang'liao	929
 氧疗	yang'liao	883
@@ -179550,9 +180809,11 @@
 洋流	yang'liu	725
 羊柳	yang'liu	1
 养龙	yang'long	639
+杨龙	yang'long	607
 洋楼	yang'lou	257
 杨楼	yang'lou	1
 杨路	yang'lu	1287
+杨璐	yang'lu	1223
 养路	yang'lu	1158
 阳路	yang'lu	764
 养鹿	yang'lu	137
@@ -179572,12 +180833,14 @@
 羊茅	yang'mao	524
 杨梅	yang'mei	4204
 央美	yang'mei	778
+杨美	yang'mei	116
 扬眉	yang'mei	92
 央媒	yang'mei	73
 阳煤	yang'mei	58
 扬美	yang'mei	1
 洋美	yang'mei	1
 杨门	yang'men	724
+杨猛	yang'meng	46
 杨幂	yang'mi	1962
 洋密	yang'mi	333
 仰面	yang'mian	443
@@ -179586,11 +180849,13 @@
 秧苗	yang'miao	151
 杨敏	yang'min	1096
 殃民	yang'min	1
+杨明	yang'ming	1636
 阳明	yang'ming	684
 扬名	yang'ming	244
 养命	yang'ming	195
 杨鸣	yang'ming	156
 洋名	yang'ming	124
+杨铭	yang'ming	99
 佯谬	yang'miu	546
 羊膜	yang'mo	317
 杨默	yang'mo	31
@@ -179613,6 +180878,7 @@
 羊年	yang'nian	185
 养鸟	yang'niao	85
 洋鸟	yang'niao	1
+杨宁	yang'ning	903
 养牛	yang'niu	678
 洋妞	yang'niu	106
 扬农	yang'nong	608
@@ -179654,6 +180920,7 @@
 养起	yang'qi	197
 扬弃	yang'qi	157
 仰起	yang'qi	144
+杨奇	yang'qi	142
 扬旗	yang'qi	1
 阳畦	yang'qi	1
 洋洽	yang'qia	1
@@ -179661,6 +180928,7 @@
 洋钱	yang'qian	504
 样钱	yang'qian	62
 杨谦	yang'qian	1
+杨强	yang'qiang	729
 洋枪	yang'qiang	693
 洋桥	yang'qiao	25
 杨桥	yang'qiao	24
@@ -179669,8 +180937,12 @@
 养亲	yang'qin	554
 养禽	yang'qin	1
 杨琴	yang'qin	1
+杨青	yang'qing	837
+杨庆	yang'qing	795
+杨清	yang'qing	753
 氧氰	yang'qing	82
 央请	yang'qing	1
+杨琼	yang'qiong	57
 央求	yang'qiu	741
 杨秋	yang'qiu	1
 阳去	yang'qu	62
@@ -179701,6 +180973,7 @@
 阳入	yang'ru	1
 杨瑞	yang'rui	62
 杨锐	yang'rui	1
+杨润	yang'run	621
 阳伞	yang'san	157
 洋伞	yang'san	141
 杨嫂	yang'sao	432
@@ -179724,6 +180997,7 @@
 洋商	yang'shang	774
 洋上	yang'shang	1
 阳上	yang'shang	1
+杨绍	yang'shao	878
 仰韶	yang'shao	834
 养蛇	yang'she	116
 羊舍	yang'she	110
@@ -179738,11 +181012,14 @@
 阳神	yang'shen	68
 羊肾	yang'shen	62
 养生	yang'sheng	6729
+杨胜	yang'sheng	226
 扬声	yang'sheng	194
+杨升	yang'sheng	155
 阳升	yang'sheng	124
 阳生	yang'sheng	99
 阳盛	yang'sheng	79
 扬升	yang'sheng	63
+杨盛	yang'sheng	50
 阳声	yang'sheng	1
 样式	yang'shi	16679
 央视	yang'shi	9209
@@ -179779,6 +181056,7 @@
 阳朔	yang'shuo	691
 杨朔	yang'shuo	1
 养死	yang'si	842
+杨思	yang'si	800
 痒死	yang'si	325
 杨斯	yang'si	106
 佯死	yang'si	1
@@ -179805,6 +181083,7 @@
 羊滔	yang'tao	4
 样题	yang'ti	386
 羊蹄	yang'ti	367
+杨天	yang'tian	1120
 仰天	yang'tian	1064
 扬天	yang'tian	502
 秧田	yang'tian	286
@@ -179836,6 +181115,7 @@
 杨伟	yang'wei	128
 羊尾	yang'wei	102
 扬威	yang'wei	81
+杨卫	yang'wei	64
 洋味	yang'wei	40
 羊味	yang'wei	32
 杨维	yang'wei	1
@@ -179851,9 +181131,11 @@
 养窝	yang'wo	54
 阳物	yang'wu	163
 洋务	yang'wu	155
+杨武	yang'wu	147
 阳武	yang'wu	135
 扬武	yang'wu	106
 阳西	yang'xi	82
+杨希	yang'xi	78
 养息	yang'xi	74
 洋溪	yang'xi	68
 杨系	yang'xi	55
@@ -179876,6 +181158,7 @@
 样鞋	yang'xie	684
 养蟹	yang'xie	304
 养心	yang'xin	349
+杨新	yang'xin	314
 阳新	yang'xin	283
 杨欣	yang'xin	255
 阳信	yang'xin	230
@@ -179884,16 +181167,19 @@
 杨辛	yang'xin	1
 阳性	yang'xing	6710
 养性	yang'xing	138
+杨行	yang'xing	110
 杨姓	yang'xing	88
 杨杏	yang'xing	70
 杨雄	yang'xiong	914
 扬雄	yang'xiong	581
 杨修	yang'xiu	958
+杨秀	yang'xiu	837
 杨旭	yang'xu	3888
 阳虚	yang'xu	113
 杨絮	yang'xu	90
 杨续	yang'xu	55
 阳旭	yang'xu	1
+杨漩	yang'xuan	99
 杨璇	yang'xuan	1
 杨宣	yang'xuan	1
 养血	yang'xue	292
@@ -179907,6 +181193,8 @@
 阳炎	yang'yan	253
 杨艳	yang'yan	202
 杨燕	yang'yan	161
+杨岩	yang'yan	102
+杨彦	yang'yan	81
 羊眼	yang'yan	64
 杨颜	yang'yan	55
 氧盐	yang'yan	45
@@ -179939,6 +181227,7 @@
 杨毅	yang'yi	320
 杨姨	yang'yi	100
 样衣	yang'yi	80
+杨益	yang'yi	64
 仰义	yang'yi	40
 杨议	yang'yi	16
 杨一	yang'yi	1
@@ -179950,9 +181239,13 @@
 扬音	yang'yin	185
 样印	yang'yin	52
 杨颖	yang'ying	377
+杨英	yang'ying	339
+杨影	yang'ying	305
+杨应	yang'ying	274
 阳蝇	yang'ying	81
 杨勇	yang'yong	1480
 仰泳	yang'yong	163
+杨永	yang'yong	130
 杨涌	yang'yong	52
 养痈	yang'yong	1
 羊油	yang'you	308
@@ -179962,17 +181255,22 @@
 养育	yang'yu	2374
 洋芋	yang'yu	957
 养鱼	yang'yu	715
+杨玉	yang'yu	572
 杨宇	yang'yu	457
 羊鱼	yang'yu	360
+杨雨	yang'yu	338
 洋鱼	yang'yu	1
 杨昱	yang'yu	1
 杨瑀	yang'yu	1
+杨元	yang'yuan	1035
 阳原	yang'yuan	983
 养元	yang'yuan	932
 杨园	yang'yuan	1
 阳元	yang'yuan	1
+杨月	yang'yue	1098
 阳月	yang'yue	642
 杨玥	yang'yue	72
+杨云	yang'yun	1163
 阳韵	yang'yun	1
 杨韵	yang'yun	1
 羊杂	yang'za	289
@@ -179985,6 +181283,7 @@
 阳宅	yang'zhai	63
 杨宅	yang'zhai	57
 洋宅	yang'zhai	1
+杨展	yang'zhan	99
 羊栈	yang'zhan	62
 样张	yang'zhang	1234
 仰仗	yang'zhang	1212
@@ -180000,6 +181299,7 @@
 杨镇	yang'zhen	128
 阳镇	yang'zhen	102
 痒疹	yang'zhen	81
+杨正	yang'zheng	878
 养正	yang'zheng	834
 杨政	yang'zheng	790
 杨铮	yang'zheng	666
@@ -180013,6 +181313,7 @@
 阳知	yang'zhi	44
 仰止	yang'zhi	35
 养志	yang'zhi	28
+杨忠	yang'zhong	493
 扬中	yang'zhong	305
 羊种	yang'zhong	62
 仰重	yang'zhong	62
@@ -180030,6 +181331,7 @@
 杨庄	yang'zhuang	148
 养桩	yang'zhuang	129
 羊庄	yang'zhuang	118
+杨卓	yang'zhuo	598
 样子	yang'zi	9018
 杨紫	yang'zi	1585
 养子	yang'zi	354
@@ -180088,6 +181390,7 @@
 窑变	yao'bian	427
 要编	yao'bian	404
 咬边	yao'bian	82
+姚斌	yao'bin	544
 姚滨	yao'bin	517
 耀彬	yao'bin	1
 摇柄	yao'bing	53
@@ -180105,6 +181408,7 @@
 要测	yao'ce	1143
 遥测	yao'ce	1086
 腰侧	yao'ce	419
+姚策	yao'ce	245
 要查	yao'cha	791
 药茶	yao'cha	769
 要差	yao'cha	712
@@ -180263,6 +181567,7 @@
 鹞鲼	yao'fen	85
 要疯	yao'feng	1120
 腰封	yao'feng	1064
+姚峰	yao'feng	1008
 妖风	yao'feng	930
 腰缝	yao'feng	103
 要付	yao'fu	2826
@@ -180342,6 +181647,7 @@
 咬痕	yao'hen	100
 窑痕	yao'hen	37
 药衡	yao'heng	1
+姚宏	yao'hong	536
 姚泓	yao'hong	433
 姚弘	yao'hong	1
 要厚	yao'hou	1269
@@ -180359,6 +181665,7 @@
 腰花	yao'hua	169
 耀华	yao'hua	135
 药化	yao'hua	108
+姚华	yao'hua	86
 妖化	yao'hua	68
 瑶花	yao'hua	55
 咬花	yao'hua	54
@@ -180413,6 +181720,7 @@
 药监	yao'jian	109
 要见	yao'jian	87
 遥见	yao'jian	69
+姚坚	yao'jian	54
 要将	yao'jiang	4431
 要讲	yao'jiang	4066
 摇奖	yao'jiang	182
@@ -180433,6 +181741,7 @@
 要借	yao'jie	298
 姚姐	yao'jie	238
 窑姐	yao'jie	190
+姚杰	yao'jie	152
 腰节	yao'jie	43
 要紧	yao'jin	1275
 要进	yao'jin	1108
@@ -180443,6 +181752,7 @@
 腰筋	yao'jin	189
 腰紧	yao'jin	30
 妖精	yao'jing	2704
+姚静	yao'jing	540
 姚敬	yao'jing	1
 药酒	yao'jiu	427
 要就	yao'jiu	1
@@ -180457,6 +181767,8 @@
 咬鹃	yao'juan	508
 要诀	yao'jue	540
 咬嚼	yao'jue	486
+姚军	yao'jun	612
+姚俊	yao'jun	581
 要卡	yao'ka	891
 要开	yao'kai	2236
 咬开	yao'kai	2124
@@ -180469,6 +181781,7 @@
 要客	yao'ke	1274
 药科	yao'ke	1210
 鳐科	yao'ke	302
+姚科	yao'ke	163
 尧科	yao'ke	55
 要啃	yao'ken	720
 窑坑	yao'keng	1
@@ -180511,6 +181824,7 @@
 姚莉	yao'li	65
 窑里	yao'li	52
 药粒	yao'li	52
+姚丽	yao'li	41
 要脸	yao'lian	1086
 要练	yao'lian	977
 腰链	yao'lian	416
@@ -180521,6 +181835,7 @@
 要聊	yao'liao	361
 药疗	yao'liao	343
 药料	yao'liao	325
+姚林	yao'lin	526
 瑶琳	yao'lin	500
 遥林	yao'lin	166
 要领	yao'ling	2185
@@ -180620,6 +181935,7 @@
 腰佩	yao'pei	282
 要配	yao'pei	225
 要陪	yao'pei	180
+姚鹏	yao'peng	446
 药皮	yao'pi	43
 药片	yao'pian	1309
 腰片	yao'pian	103
@@ -180631,6 +181947,7 @@
 要平	yao'ping	82
 要评	yao'ping	65
 摇瓶	yao'ping	62
+姚平	yao'ping	52
 瑶坪	yao'ping	1
 咬破	yao'po	399
 妖婆	yao'po	379
@@ -180653,6 +181970,7 @@
 要强	yao'qiang	5614
 要抢	yao'qiang	772
 遥墙	yao'qiang	517
+姚强	yao'qiang	336
 要瞧	yao'qiao	1
 要切	yao'qie	1287
 瑶琴	yao'qin	97
@@ -180851,6 +182169,7 @@
 要位	yao'wei	310
 摇尾	yao'wei	248
 妖尾	yao'wei	198
+姚伟	yao'wei	119
 咬尾	yao'wei	100
 要问	yao'wen	5900
 要闻	yao'wen	169
@@ -180951,6 +182270,7 @@
 遥遥	yao'yao	436
 夭夭	yao'yao	106
 咬咬	yao'yao	84
+姚瑶	yao'yao	67
 尧尧	yao'yao	53
 药业	yao'ye	1071
 摇曳	yao'ye	383
@@ -180969,6 +182289,7 @@
 姚莹	yao'ying	299
 要用	yao'yong	24187
 药用	yao'yong	775
+姚勇	yao'yong	454
 要有	yao'you	36305
 药油	yao'you	565
 要由	yao'you	452
@@ -180980,6 +182301,7 @@
 咬羽	yao'yu	118
 遥远	yao'yuan	17870
 要员	yao'yuan	596
+姚远	yao'yuan	279
 药园	yao'yuan	223
 幺元	yao'yuan	178
 要远	yao'yuan	1
@@ -181174,6 +182496,7 @@
 夜戴	ye'dai	53
 液氮	ye'dan	936
 耶诞	ye'dan	724
+叶丹	ye'dan	626
 也当	ye'dang	1179
 野档	ye'dang	1
 也到	ye'dao	1332
@@ -181224,6 +182547,7 @@
 叶耳	ye'er	42
 夜饭	ye'fan	1080
 叶凡	ye'fan	1026
+叶帆	ye'fan	972
 夜访	ye'fang	760
 野放	ye'fang	722
 也非	ye'fei	1341
@@ -181235,7 +182559,9 @@
 夜分	ye'fen	1372
 夜风	ye'feng	286
 野风	ye'feng	257
+叶锋	ye'feng	246
 椰风	ye'feng	231
+叶峰	ye'feng	196
 野蜂	ye'feng	168
 叶蜂	ye'feng	138
 液封	ye'feng	100
@@ -181336,12 +182662,14 @@
 夜华	ye'hua	150
 野化	ye'hua	120
 夜花	ye'hua	96
+叶华	ye'hua	76
 也换	ye'huan	217
 叶焕	ye'huan	1
 椰皇	ye'huang	1098
 叶黄	ye'huang	1043
 野蝗	ye'huang	95
 也会	ye'hui	261314
+叶辉	ye'hui	150
 也回	ye'hui	120
 野火	ye'huo	835
 业火	ye'huo	166
@@ -181358,6 +182686,7 @@
 谒见	ye'jian	185
 叶尖	ye'jian	131
 叶剪	ye'jian	129
+叶健	ye'jian	104
 液碱	ye'jian	83
 也将	ye'jiang	12303
 椰浆	ye'jiang	769
@@ -181387,6 +182716,8 @@
 野菊	ye'ju	113
 也绝	ye'jue	807
 野菌	ye'jun	922
+叶俊	ye'jun	830
+叶君	ye'jun	765
 叶军	ye'jun	1
 叶钧	ye'jun	1
 也卡	ye'ka	1
@@ -181441,16 +182772,19 @@
 野良	ye'liang	804
 液量	ye'liang	761
 夜聊	ye'liao	680
+叶琳	ye'lin	629
 椰林	ye'lin	160
 野林	ye'lin	130
 椰琳	ye'lin	1
 也令	ye'ling	452
 谒陵	ye'ling	429
+叶灵	ye'ling	407
 野岭	ye'ling	375
 也留	ye'liu	1125
 液流	ye'liu	1069
 野柳	ye'liu	1012
 叶浏	ye'liu	12
+叶龙	ye'long	626
 也漏	ye'lou	117
 夜路	ye'lu	4110
 耶鲁	ye'lu	320
@@ -181505,6 +182839,7 @@
 液面	ye'mian	907
 叶面	ye'mian	285
 叶苗	ye'miao	396
+叶敏	ye'min	688
 夜明	ye'ming	109
 野螟	ye'ming	89
 叶明	ye'ming	1
@@ -181518,6 +182853,7 @@
 夜奶	ye'nai	758
 爷奶	ye'nai	718
 也难	ye'nan	3313
+叶楠	ye'nan	3147
 业内	ye'nei	16425
 也能	ye'neng	139705
 爷娘	ye'niang	31
@@ -181525,6 +182861,7 @@
 野鸟	ye'niao	141
 夜鸟	ye'niao	120
 冶鸟	ye'niao	1
+叶宁	ye'ning	567
 野牛	ye'niu	1046
 也怕	ye'pa	1605
 夜爬	ye'pa	66
@@ -181537,6 +182874,8 @@
 野炮	ye'pao	638
 也配	ye'pei	1611
 液培	ye'pei	1
+叶鹏	ye'peng	468
+叶蓬	ye'peng	445
 叶片	ye'pian	5197
 椰片	ye'pian	432
 腋片	ye'pian	1
@@ -181570,6 +182909,7 @@
 液氢	ye'qing	140
 叶秋	ye'qiu	1048
 野球	ye'qiu	996
+叶球	ye'qiu	315
 也去	ye'qu	2766
 夜曲	ye'qu	2442
 野区	ye'qu	2339
@@ -181584,6 +182924,7 @@
 噎人	ye'ren	621
 也仍	ye'reng	1
 椰蓉	ye'rong	590
+叶榕	ye'rong	531
 叶荣	ye'rong	1
 叶蓉	ye'rong	1
 冶容	ye'rong	1
@@ -181613,6 +182954,8 @@
 叶鲹	ye'shen	82
 夜审	ye'shen	73
 野生	ye'sheng	5438
+叶生	ye'sheng	909
+叶盛	ye'sheng	634
 腋生	ye'sheng	556
 野乘	ye'sheng	1
 也是	ye'shi	959160
@@ -181671,6 +183014,7 @@
 夜探	ye'tan	138
 椰糖	ye'tang	62
 野塘	ye'tang	54
+叶涛	ye'tao	472
 冶陶	ye'tao	1
 叶洮	ye'tao	1
 也忒	ye'tei	298
@@ -181714,6 +183058,7 @@
 液位	ye'wei	555
 野味	ye'wei	103
 页尾	ye'wei	82
+叶伟	ye'wei	65
 椰味	ye'wei	52
 叶问	ye'wen	9816
 也问	ye'wen	1156
@@ -181756,6 +183101,7 @@
 液相	ye'xiang	396
 椰香	ye'xiang	316
 叶香	ye'xiang	252
+叶翔	ye'xiang	201
 夜香	ye'xiang	160
 夜想	ye'xiang	128
 夜翔	ye'xiang	102
@@ -181766,6 +183112,7 @@
 叶榭	ye'xie	513
 椰蟹	ye'xie	1
 野心	ye'xin	9618
+叶欣	ye'xin	576
 页心	ye'xin	1
 也行	ye'xing	13967
 野性	ye'xing	1579
@@ -181830,9 +183177,11 @@
 夜莺	ye'ying	552
 夜鹰	ye'ying	441
 夜影	ye'ying	352
+叶英	ye'ying	315
 也用	ye'yong	4409
 夜用	ye'yong	100
 野泳	ye'yong	80
+叶勇	ye'yong	64
 叶用	ye'yong	62
 夜泳	ye'yong	46
 也有	ye'you	295003
@@ -181860,8 +183209,10 @@
 冶源	ye'yuan	1
 夜月	ye'yue	82
 叶月	ye'yue	1
+叶云	ye'yun	1184
 也在	ye'zai	69498
 也再	ye'zai	498
+叶藏	ye'zang	711
 椰枣	ye'zao	160
 叶藻	ye'zao	95
 液皂	ye'zao	31
@@ -188573,11 +189924,13 @@
 有辱	you'ru	282
 右乳	you'ru	225
 又软	you'ruan	402
+尤瑞	you'rui	86
 油润	you'run	735
 犹若	you'ruo	69
 幼弱	you'ruo	66
 由弱	you'ruo	62
 有若	you'ruo	1
+尤萨	you'sa	86
 友赛	you'sai	729
 右塞	you'sai	43
 有三	you'san	2349
@@ -189296,6 +190649,7 @@
 预表	yu'biao	184
 鱼鳖	yu'bie	590
 于斌	yu'bin	734
+余斌	yu'bin	697
 俞斌	yu'bin	661
 玉斌	yu'bin	524
 俞彬	yu'bin	4
@@ -189529,6 +190883,7 @@
 御坊	yu'fang	1
 与非	yu'fei	1699
 育肥	yu'fei	135
+余飞	yu'fei	108
 宇飞	yu'fei	86
 羽飞	yu'fei	68
 雨菲	yu'fei	35
@@ -189698,6 +191053,8 @@
 玉衡	yu'heng	176
 宇恒	yu'heng	1
 玉恒	yu'heng	1
+余虹	yu'hong	44
+余红	yu'hong	30
 于洪	yu'hong	16
 雨虹	yu'hong	14
 雨洪	yu'hong	13
@@ -189836,6 +191193,7 @@
 御街	yu'jie	214
 御捷	yu'jie	175
 欲借	yu'jie	156
+余杰	yu'jie	133
 于姐	yu'jie	120
 预借	yu'jie	108
 余姐	yu'jie	97
@@ -189862,6 +191220,7 @@
 俞静	yu'jing	131
 鱼精	yu'jing	121
 余靖	yu'jing	109
+余静	yu'jing	98
 玉镜	yu'jing	88
 雨境	yu'jing	58
 玉茎	yu'jing	1
@@ -189886,7 +191245,9 @@
 与君	yu'jun	612
 俞军	yu'jun	581
 于君	yu'jun	551
+余军	yu'jun	508
 宇峻	yu'jun	378
+余凯	yu'kai	598
 虞堪	yu'kan	1
 预考	yu'kao	19
 预科	yu'ke	1724
@@ -189937,6 +191298,7 @@
 娱乐	yu'le	23158
 育乐	yu'le	770
 鱼乐	yu'le	643
+余乐	yu'le	579
 鱼类	yu'lei	5574
 鱼雷	yu'lei	1491
 育蕾	yu'lei	344
@@ -189970,6 +191332,7 @@
 郁亮	yu'liang	392
 裕量	yu'liang	313
 余粮	yu'liang	250
+俞亮	yu'liang	200
 庾亮	yu'liang	160
 鱼梁	yu'liang	128
 瑜亮	yu'liang	102
@@ -190022,6 +191385,7 @@
 裕隆	yu'long	67
 豫龙	yu'long	56
 遇龙	yu'long	53
+余隆	yu'long	42
 鱼笼	yu'long	33
 育龙	yu'long	1
 余龙	yu'long	1
@@ -190109,6 +191473,7 @@
 于明	yu'ming	572
 玉名	yu'ming	457
 玉明	yu'ming	365
+余明	yu'ming	292
 俞明	yu'ming	135
 聿铭	yu'ming	1
 雨墨	yu'mo	1089
@@ -190609,6 +191974,7 @@
 余为	yu'wei	128
 语尾	yu'wei	102
 语委	yu'wei	81
+余炜	yu'wei	57
 雨薇	yu'wei	1
 羽尾	yu'wei	1
 宇巍	yu'wei	1
@@ -190730,6 +192096,7 @@
 毓秀	yu'xiu	86
 育秀	yu'xiu	74
 语序	yu'xu	1824
+余旭	yu'xu	544
 鱼须	yu'xu	62
 余蓄	yu'xu	1
 纡徐	yu'xu	1
@@ -190770,6 +192137,7 @@
 遇岩	yu'yan	9
 鱼雁	yu'yan	7
 毓岩	yu'yan	5
+余岩	yu'yan	4
 馀岩	yu'yan	3
 于晏	yu'yan	1
 雨烟	yu'yan	1
@@ -190854,6 +192222,7 @@
 欲用	yu'yong	293
 于勇	yu'yong	234
 鱼涌	yu'yong	187
+余勇	yu'yong	149
 愈勇	yu'yong	139
 鱼踊	yu'yong	62
 虞泳	yu'yong	1
@@ -191113,6 +192482,7 @@
 元彪	yuan'biao	122
 元表	yuan'biao	1
 元斌	yuan'bin	662
+袁斌	yuan'bin	629
 元彬	yuan'bin	596
 袁彬	yuan'bin	549
 源斌	yuan'bin	1
@@ -191139,8 +192509,10 @@
 远超	yuan'chao	11762
 元朝	yuan'chao	7247
 援朝	yuan'chao	144
+袁超	yuan'chao	115
 原车	yuan'che	992
 元辰	yuan'chen	860
+袁晨	yuan'chen	236
 元臣	yuan'chen	1
 远程	yuan'cheng	9671
 原称	yuan'cheng	972
@@ -191275,6 +192647,7 @@
 元妃	yuan'fei	213
 猿飞	yuan'fei	170
 远飞	yuan'fei	136
+袁飞	yuan'fei	108
 袁菲	yuan'fei	43
 缘分	yuan'fen	4745
 圆粉	yuan'fen	260
@@ -191284,6 +192657,7 @@
 原封	yuan'feng	336
 元丰	yuan'feng	97
 源丰	yuan'feng	77
+袁峰	yuan'feng	61
 远风	yuan'feng	48
 鸢峰	yuan'feng	1
 愿否	yuan'fou	418
@@ -191350,6 +192724,7 @@
 圆号	yuan'hao	647
 元昊	yuan'hao	615
 原号	yuan'hao	582
+袁浩	yuan'hao	537
 元颢	yuan'hao	421
 袁昊	yuan'hao	57
 缘何	yuan'he	358
@@ -191378,6 +192753,7 @@
 原话	yuan'hua	9860
 圆滑	yuan'hua	7460
 原画	yuan'hua	2251
+袁华	yuan'hua	1800
 元华	yuan'hua	1440
 援华	yuan'hua	1152
 芫花	yuan'hua	921
@@ -191391,6 +192767,7 @@
 袁涣	yuan'huan	7
 圆谎	yuan'huang	214
 袁黄	yuan'huang	1
+袁辉	yuan'hui	125
 院会	yuan'hui	66
 元会	yuan'hui	63
 元徽	yuan'hui	59
@@ -191451,6 +192828,7 @@
 愿交	yuan'jiao	1
 原交	yuan'jiao	1
 元姐	yuan'jie	1062
+袁杰	yuan'jie	1009
 元结	yuan'jie	956
 袁姐	yuan'jie	175
 原结	yuan'jie	62
@@ -191462,6 +192840,7 @@
 园景	yuan'jing	1016
 员警	yuan'jing	808
 圆镜	yuan'jing	486
+袁静	yuan'jing	225
 原精	yuan'jing	84
 原鲸	yuan'jing	76
 元径	yuan'jing	54
@@ -191486,6 +192865,8 @@
 愿君	yuan'jun	254
 元君	yuan'jun	203
 原君	yuan'jun	162
+袁军	yuan'jun	129
+袁俊	yuan'jun	116
 袁峻	yuan'jun	1
 原卡	yuan'ka	64
 渊凯	yuan'kai	1
@@ -191545,9 +192926,12 @@
 原粮	yuan'liang	724
 元良	yuan'liang	605
 元亮	yuan'liang	500
+袁亮	yuan'liang	360
 原料	yuan'liao	16868
 园林	yuan'lin	2914
 员林	yuan'lin	1152
+袁林	yuan'lin	483
+袁琳	yuan'lin	316
 元凛	yuan'lin	77
 远邻	yuan'lin	1
 圆鳞	yuan'lin	1
@@ -191610,6 +192994,7 @@
 袁敏	yuan'min	450
 原名	yuan'ming	3897
 圆明	yuan'ming	332
+袁明	yuan'ming	265
 元明	yuan'ming	212
 渊明	yuan'ming	169
 远明	yuan'ming	135
@@ -191863,6 +193248,7 @@
 圆潭	yuan'tan	1
 原汤	yuan'tang	163
 原糖	yuan'tang	155
+袁涛	yuan'tao	477
 袁綯	yuan'tao	55
 袁绹	yuan'tao	38
 苑陶	yuan'tao	1
@@ -191940,6 +193326,7 @@
 圆舞	yuan'wu	430
 院务	yuan'wu	387
 原武	yuan'wu	348
+袁武	yuan'wu	186
 园务	yuan'wu	49
 袁屋	yuan'wu	1
 院系	yuan'xi	4537
@@ -192002,6 +193389,7 @@
 元凶	yuan'xiong	1470
 远雄	yuan'xiong	702
 元修	yuan'xiu	28
+袁旭	yuan'xu	513
 元诩	yuan'xu	487
 原魣	yuan'xu	62
 原穴	yuan'xue	31
@@ -192083,6 +193471,7 @@
 源源	yuan'yuan	254
 媛媛	yuan'yuan	182
 园园	yuan'yuan	145
+袁媛	yuan'yuan	116
 怨怨	yuan'yuan	92
 远缘	yuan'yuan	73
 袁苑	yuan'yuan	4
@@ -192132,6 +193521,7 @@
 原职	yuan'zhi	81
 院址	yuan'zhi	35
 元直	yuan'zhi	18
+袁志	yuan'zhi	9
 元智	yuan'zhi	4
 原知	yuan'zhi	1
 远支	yuan'zhi	1
@@ -195297,6 +196687,7 @@
 增厚	zeng'hou	1127
 赠花	zeng'hua	41
 增华	zeng'hua	22
+曾辉	zeng'hui	706
 增辉	zeng'hui	671
 增肌	zeng'ji	7213
 增加	zeng'jia	154209
@@ -195310,10 +196701,12 @@
 赠奖	zeng'jiang	1
 增进	zeng'jin	2010
 赠金	zeng'jin	460
+曾静	zeng'jing	774
 赠卡	zeng'ka	508
 增开	zeng'kai	119
 增刊	zeng'kan	358
 赠刊	zeng'kan	68
+曾科	zeng'ke	338
 增快	zeng'kuai	806
 赠款	zeng'kuan	63
 增宽	zeng'kuan	60
@@ -195343,6 +196736,7 @@
 赠品	zeng'pin	2936
 增聘	zeng'pin	603
 增坪	zeng'ping	1
+曾琦	zeng'qi	477
 曾淇	zeng'qi	39
 增强	zeng'qiang	30069
 赠券	zeng'quan	38
@@ -195379,9 +196773,11 @@
 增酸	zeng'suan	58
 曾孙	zeng'sun	738
 增损	zeng'sun	454
+曾涛	zeng'tao	531
 增添	zeng'tian	3711
 增田	zeng'tian	819
 增甜	zeng'tian	58
+曾伟	zeng'wei	828
 增为	zeng'wei	787
 增味	zeng'wei	745
 曾炜	zeng'wei	1
@@ -195392,6 +196788,7 @@
 增鲜	zeng'xian	688
 增项	zeng'xiang	854
 增香	zeng'xiang	637
+曾翔	zeng'xiang	509
 增效	zeng'xiao	257
 增斜	zeng'xie	162
 增信	zeng'xin	732
@@ -195407,6 +196804,7 @@
 曾毅	zeng'yi	657
 赠饮	zeng'yin	774
 增盈	zeng'ying	9
+曾勇	zeng'yong	580
 赠友	zeng'you	500
 赠予	zeng'yu	2170
 赠与	zeng'yu	1667
@@ -195418,6 +196816,7 @@
 增长	zeng'zhang	40236
 增涨	zeng'zhang	684
 增招	zeng'zhao	504
+曾肇	zeng'zhao	441
 曾钊	zeng'zhao	1
 增值	zeng'zhi	6613
 增至	zeng'zhi	2119
@@ -196491,6 +197890,7 @@
 站坐	zhan'zuo	62
 涨啊	zhang'a	882
 障碍	zhang'ai	18422
+张安	zhang'an	936
 张昂	zhang'ang	1
 张敖	zhang'ao	122
 丈八	zhang'ba	778
@@ -196519,6 +197919,7 @@
 张表	zhang'biao	20
 张斌	zhang'bin	4206
 张滨	zhang'bin	1016
+张彬	zhang'bin	387
 张宾	zhang'bin	1
 长兵	zhang'bing	788
 章柄	zhang'bing	52
@@ -196526,12 +197927,15 @@
 张丙	zhang'bing	1
 张炳	zhang'bing	1
 张博	zhang'bo	3461
+张伯	zhang'bo	177
 张波	zhang'bo	1
 账簿	zhang'bu	1410
 帐布	zhang'bu	66
 张布	zhang'bu	1
 长醭	zhang'bu	1
+张彩	zhang'cai	220
 章材	zhang'cai	52
+张才	zhang'cai	35
 樟蚕	zhang'can	91
 长残	zhang'can	75
 张苍	zhang'cang	7935
@@ -196541,6 +197945,7 @@
 账册	zhang'ce	242
 章册	zhang'ce	52
 账差	zhang'cha	91
+张敞	zhang'chang	121
 张超	zhang'chao	4688
 涨潮	zhang'chao	304
 涨超	zhang'chao	243
@@ -196548,18 +197953,23 @@
 掌朝	zhang'chao	1
 张弨	zhang'chao	1
 张辰	zhang'chen	1835
+张琛	zhang'chen	124
 章程	zhang'cheng	3074
 长成	zhang'cheng	2932
+张成	zhang'cheng	1096
 涨成	zhang'cheng	836
+张承	zhang'cheng	686
 张弛	zhang'chi	320
 杖笞	zhang'chi	1
 张翀	zhang'chong	1512
 长虫	zhang'chong	377
+张冲	zhang'chong	276
 长出	zhang'chu	4977
 张楚	zhang'chu	4728
 掌厨	zhang'chu	592
 张川	zhang'chuan	1
 长疮	zhang'chuang	567
+张春	zhang'chun	1130
 张纯	zhang'chun	1074
 张辞	zhang'ci	55
 张丛	zhang'cong	55
@@ -196585,6 +197995,7 @@
 长得	zhang'de	13483
 涨得	zhang'de	1585
 长的	zhang'de	1583
+张德	zhang'de	163
 胀得	zhang'de	130
 彰德	zhang'de	104
 张得	zhang'de	1
@@ -196597,6 +198008,7 @@
 章垫	zhang'dian	52
 涨跌	zhang'die	4817
 张鼎	zhang'ding	1518
+张仃	zhang'ding	80
 张顶	zhang'ding	55
 张定	zhang'ding	1
 章动	zhang'dong	50
@@ -196607,11 +198019,13 @@
 张杜	zhang'du	55
 张度	zhang'du	1
 瘴毒	zhang'du	1
+张端	zhang'duan	51
 张兑	zhang'dui	1
 长对	zhang'dui	1
 掌舵	zhang'duo	750
 张铎	zhang'duo	455
 张谔	zhang'e	55
+张恩	zhang'en	26
 丈二	zhang'er	113
 张耳	zhang'er	107
 章法	zhang'fa	2434
@@ -196630,6 +198044,8 @@
 长肥	zhang'fei	609
 涨粉	zhang'fen	3237
 涨分	zhang'fen	765
+张峰	zhang'feng	1361
+张凤	zhang'feng	257
 涨疯	zhang'feng	91
 掌风	zhang'feng	82
 胀缝	zhang'feng	60
@@ -196642,6 +198058,7 @@
 张嘎	zhang'ga	6
 帐杆	zhang'gan	66
 张淦	zhang'gan	1
+张刚	zhang'gang	504
 张纲	zhang'gang	55
 长高	zhang'gao	1149
 张皋	zhang'gao	1
@@ -196651,6 +198068,7 @@
 张格	zhang'ge	354
 张戈	zhang'ge	1
 掌根	zhang'gen	706
+张耕	zhang'geng	194
 张庚	zhang'geng	1
 张工	zhang'gong	932
 张弓	zhang'gong	885
@@ -196665,6 +198083,8 @@
 长官	zhang'guan	2763
 胀罐	zhang'guan	118
 张观	zhang'guan	55
+张广	zhang'guang	1112
+张光	zhang'guang	1056
 掌柜	zhang'gui	1812
 章柜	zhang'gui	52
 张珪	zhang'gui	1
@@ -196673,14 +198093,17 @@
 涨过	zhang'guo	283
 长过	zhang'guo	178
 掌锅	zhang'guo	1
+张海	zhang'hai	1210
 涨海	zhang'hai	464
 章邯	zhang'han	1224
+张晗	zhang'han	712
 张翰	zhang'han	637
 张涵	zhang'han	1
 张航	zhang'hang	3612
 账号	zhang'hao	50080
 长好	zhang'hao	845
 张浩	zhang'hao	474
+张昊	zhang'hao	276
 章昊	zhang'hao	24
 漳河	zhang'he	3328
 张郃	zhang'he	191
@@ -196695,6 +198118,9 @@
 张恒	zhang'heng	860
 张衡	zhang'heng	817
 张横	zhang'heng	1
+张红	zhang'hong	592
+张宏	zhang'hong	375
+张洪	zhang'hong	262
 张虹	zhang'hong	258
 涨红	zhang'hong	257
 张纮	zhang'hong	62
@@ -196702,6 +198128,7 @@
 张弘	zhang'hong	1
 胀红	zhang'hong	1
 张鸿	zhang'hong	1
+张侯	zhang'hou	66
 账户	zhang'hu	45216
 樟湖	zhang'hu	495
 张祜	zhang'hu	55
@@ -196710,6 +198137,8 @@
 章华	zhang'hua	382
 张画	zhang'hua	1
 张淮	zhang'huai	1
+张欢	zhang'huan	187
+张焕	zhang'huan	137
 胀环	zhang'huan	82
 张寰	zhang'huan	1
 张皇	zhang'huang	1
@@ -196732,8 +198161,11 @@
 张既	zhang'ji	0
 涨价	zhang'jia	10161
 张家	zhang'jia	1064
+张佳	zhang'jia	987
 章家	zhang'jia	752
 张贾	zhang'jia	55
+张剑	zhang'jian	1265
+张建	zhang'jian	116
 张謇	zhang'jian	92
 仗剑	zhang'jian	73
 杖尖	zhang'jian	66
@@ -196758,7 +198190,9 @@
 章碣	zhang'jie	68
 杖节	zhang'jie	66
 长进	zhang'jin	1102
+张金	zhang'jin	587
 张晋	zhang'jin	469
+张进	zhang'jin	375
 涨近	zhang'jin	300
 张紧	zhang'jin	64
 张谨	zhang'jin	1
@@ -196772,12 +198206,15 @@
 张泾	zhang'jing	1
 张井	zhang'jing	1
 樟井	zhang'jing	1
+张炯	zhang'jiong	29
 章句	zhang'ju	251
 张矩	zhang'ju	226
 张莒	zhang'ju	55
 张举	zhang'ju	1
 张娟	zhang'juan	515
+张觉	zhang'jue	54
 张珏	zhang'jue	1
+张君	zhang'jun	1017
 张俊	zhang'jun	1
 张骏	zhang'jun	1
 张峻	zhang'jun	1
@@ -196787,6 +198224,9 @@
 长开	zhang'kai	122
 张凯	zhang'kai	97
 张闿	zhang'kai	20
+张康	zhang'kang	195
+张可	zhang'ke	1215
+张克	zhang'ke	1154
 张珂	zhang'ke	221
 樟坑	zhang'keng	1
 张坑	zhang'keng	1
@@ -196796,9 +198236,13 @@
 账款	zhang'kuan	220
 掌宽	zhang'kuan	198
 张狂	zhang'kuang	788
+张奎	zhang'kui	186
 张葵	zhang'kui	1
 张夔	zhang'kui	1
+张坤	zhang'kun	1116
 张扩	zhang'kuo	55
+张拉	zhang'la	330
+张来	zhang'lai	40
 张兰	zhang'lan	1055
 杖篮	zhang'lan	66
 张澜	zhang'lan	1
@@ -196809,14 +198253,17 @@
 胀了	zhang'le	840
 张乐	zhang'le	612
 张磊	zhang'lei	1184
+张雷	zhang'lei	1125
 张蕾	zhang'lei	1066
 张耒	zhang'lei	55
 张垒	zhang'lei	13
 张力	zhang'li	8004
+张丽	zhang'li	596
 掌力	zhang'li	170
 张俪	zhang'li	136
 张莉	zhang'li	108
 帐里	zhang'li	86
+张李	zhang'li	68
 掌理	zhang'li	54
 长吏	zhang'li	43
 瘴疠	zhang'li	34
@@ -196847,6 +198294,7 @@
 张楼	zhang'lou	1
 涨喽	zhang'lou	1
 张鲁	zhang'lu	898
+张路	zhang'lu	850
 张陆	zhang'lu	172
 张璐	zhang'lu	1
 张录	zhang'lu	1
@@ -196881,10 +198329,14 @@
 账面	zhang'mian	2839
 章面	zhang'mian	52
 张面	zhang'mian	1
+张妙	zhang'miao	80
+张庙	zhang'miao	23
 张邈	zhang'miao	1
 张淼	zhang'miao	1
 张闽	zhang'min	126
+张民	zhang'min	114
 张敏	zhang'min	1
+张鸣	zhang'ming	828
 彰明	zhang'ming	106
 张明	zhang'ming	1
 张铭	zhang'ming	1
@@ -196901,6 +198353,7 @@
 樟木	zhang'mu	130
 帐幕	zhang'mu	104
 障目	zhang'mu	83
+张娜	zhang'na	377
 涨奶	zhang'nai	88
 胀奶	zhang'nai	79
 张鼐	zhang'nai	1
@@ -196909,6 +198362,7 @@
 樟脑	zhang'nao	314
 账内	zhang'nei	157
 帐内	zhang'nei	149
+张念	zhang'nian	26
 张年	zhang'nian	1
 张宁	zhang'ning	223
 张柠	zhang'ning	1
@@ -196916,11 +198370,13 @@
 张牌	zhang'pai	1765
 长盘	zhang'pan	630
 长胖	zhang'pang	2113
+张沛	zhang'pei	58
 章胚	zhang'pei	52
 帐篷	zhang'peng	8443
 张鹏	zhang'peng	8021
 章坯	zhang'pi	52
 张蠙	zhang'pin	55
+张品	zhang'pin	31
 长平	zhang'ping	300
 章评	zhang'ping	68
 漳平	zhang'ping	63
@@ -196938,6 +198394,7 @@
 涨起	zhang'qi	307
 长齐	zhang'qi	245
 胀起	zhang'qi	196
+张其	zhang'qi	156
 掌旗	zhang'qi	124
 张起	zhang'qi	99
 张淇	zhang'qi	64
@@ -196953,10 +198410,12 @@
 张蔷	zhang'qiang	3435
 张强	zhang'qiang	1
 张桥	zhang'qiao	90
+张巧	zhang'qiao	75
 张乔	zhang'qiao	55
 长亲	zhang'qin	6
 张勤	zhang'qin	1
 张青	zhang'qing	1125
+张庆	zhang'qing	1012
 长卿	zhang'qing	934
 张清	zhang'qing	1
 张晴	zhang'qing	1
@@ -196971,12 +198430,16 @@
 张权	zhang'quan	1
 张确	zhang'que	1
 张群	zhang'qun	1
+张冉	zhang'ran	286
+张然	zhang'ran	267
 张让	zhang'rang	16937
 丈人	zhang'ren	254
 张任	zhang'ren	1
+张荣	zhang'rong	900
 张榕	zhang'rong	1
 长肉	zhang'rou	725
 张茹	zhang'ru	933
+张蕊	zhang'rui	2023
 张瑞	zhang'rui	1066
 张睿	zhang'rui	959
 张锐	zhang'rui	1
@@ -196986,6 +198449,7 @@
 张三	zhang'san	14747
 长嫂	zhang'sao	511
 章嫂	zhang'sao	387
+张森	zhang'sen	354
 张沙	zhang'sha	1
 长啥	zhang'sha	1
 张山	zhang'shan	6912
@@ -197006,6 +198470,8 @@
 掌声	zhang'sheng	3294
 涨声	zhang'sheng	2965
 涨升	zhang'sheng	2734
+张胜	zhang'sheng	2141
+张圣	zhang'sheng	372
 杖绳	zhang'sheng	66
 张声	zhang'sheng	1
 张生	zhang'sheng	1
@@ -197025,12 +198491,14 @@
 掌势	zhang'shi	1
 彰示	zhang'shi	1
 仗恃	zhang'shi	1
+张守	zhang'shou	837
 张寿	zhang'shou	1
 张叔	zhang'shu	1008
 樟树	zhang'shu	150
 章叔	zhang'shu	120
 张数	zhang'shu	96
 张姝	zhang'shu	76
+张树	zhang'shu	60
 张署	zhang'shu	55
 张澍	zhang'shu	48
 张恕	zhang'shu	1
@@ -197041,6 +198509,7 @@
 漳水	zhang'shui	149
 张顺	zhang'shun	1
 张说	zhang'shuo	986
+张思	zhang'si	1004
 张松	zhang'song	886
 涨速	zhang'su	801
 张粟	zhang'su	85
@@ -197056,6 +198525,8 @@
 张叹	zhang'tan	137
 张坦	zhang'tan	1
 樟潭	zhang'tan	1
+张汤	zhang'tang	215
+张唐	zhang'tang	27
 账套	zhang'tao	634
 杖套	zhang'tao	66
 胀套	zhang'tao	64
@@ -197070,6 +198541,7 @@
 涨停	zhang'ting	2769
 张婷	zhang'ting	2631
 张庭	zhang'ting	2492
+张廷	zhang'ting	909
 胀痛	zhang'tong	1130
 涨痛	zhang'tong	648
 张桐	zhang'tong	426
@@ -197093,6 +198565,9 @@
 张网	zhang'wang	226
 张伟	zhang'wei	6110
 掌围	zhang'wei	1048
+张维	zhang'wei	785
+张玮	zhang'wei	759
+张巍	zhang'wei	601
 张炜	zhang'wei	542
 张谓	zhang'wei	55
 张雯	zhang'wen	600
@@ -197106,6 +198581,7 @@
 张武	zhang'wu	1
 张屋	zhang'wu	1
 张溪	zhang'xi	1222
+张希	zhang'xi	828
 掌玺	zhang'xi	475
 张昔	zhang'xi	55
 张晞	zhang'xi	1
@@ -197124,6 +198600,7 @@
 张相	zhang'xiang	1
 张祥	zhang'xiang	1
 张象	zhang'xiang	1
+张晓	zhang'xiao	1278
 张骁	zhang'xiao	1
 张协	zhang'xie	55
 张燮	zhang'xie	1
@@ -197134,6 +198611,7 @@
 张忻	zhang'xin	1
 张星	zhang'xing	696
 张姓	zhang'xing	223
+张兴	zhang'xing	212
 杖刑	zhang'xing	181
 掌型	zhang'xing	53
 章姓	zhang'xing	1
@@ -197141,6 +198619,7 @@
 长兄	zhang'xiong	386
 张雄	zhang'xiong	1
 长锈	zhang'xiu	822
+张秀	zhang'xiu	733
 张绣	zhang'xiu	590
 张修	zhang'xiu	1
 张休	zhang'xiu	1
@@ -197154,6 +198633,7 @@
 张宣	zhang'xuan	1
 张铉	zhang'xuan	1
 张萱	zhang'xuan	1
+张雪	zhang'xue	1261
 张勋	zhang'xun	855
 张巡	zhang'xun	812
 张迅	zhang'xun	324
@@ -197166,6 +198646,7 @@
 长眼	zhang'yan	1107
 掌眼	zhang'yan	1052
 障眼	zhang'yan	996
+张彦	zhang'yan	919
 张妍	zhang'yan	415
 章岩	zhang'yan	89
 张演	zhang'yan	55
@@ -197175,8 +198656,11 @@
 张焱	zhang'yan	1
 章琰	zhang'yan	1
 张扬	zhang'yang	18432
+张洋	zhang'yang	896
 张杨	zhang'yang	714
+张阳	zhang'yang	643
 章样	zhang'yang	52
+张耀	zhang'yao	1246
 张瑶	zhang'yao	1184
 张垚	zhang'yao	43
 仗腰	zhang'yao	1
@@ -197190,6 +198674,9 @@
 张毅	zhang'yi	172
 张译	zhang'yi	137
 张仪	zhang'yi	109
+张怡	zhang'yi	87
+张翼	zhang'yi	69
+张义	zhang'yi	55
 张奕	zhang'yi	35
 樟宜	zhang'yi	28
 张裔	zhang'yi	20
@@ -197206,8 +198693,10 @@
 张英	zhang'ying	1
 张莹	zhang'ying	1
 张勇	zhang'yong	4672
+张永	zhang'yong	899
 张优	zhang'you	970
 长有	zhang'you	898
+张友	zhang'you	178
 长幼	zhang'you	142
 樟油	zhang'you	1
 章鱼	zhang'yu	4274
@@ -197215,6 +198704,7 @@
 张宇	zhang'yu	960
 丈育	zhang'yu	264
 丈余	zhang'yu	103
+张育	zhang'yu	65
 张聿	zhang'yu	55
 章宇	zhang'yu	52
 张瑜	zhang'yu	1
@@ -197230,6 +198720,7 @@
 张越	zhang'yue	5459
 张月	zhang'yue	5171
 张约	zhang'yue	1
+张云	zhang'yun	1076
 张韫	zhang'yun	55
 张允	zhang'yun	1
 张昀	zhang'yun	1
@@ -197250,6 +198741,7 @@
 张泽	zhang'ze	1
 涨闸	zhang'zha	1
 张宅	zhang'zhai	1
+张湛	zhang'zhan	83
 张展	zhang'zhan	1
 张张	zhang'zhang	615
 涨涨	zhang'zhang	348
@@ -197266,7 +198758,9 @@
 张哲	zhang'zhe	1
 张震	zhang'zhen	1105
 张镇	zhang'zhen	1103
+张振	zhang'zhen	945
 张轸	zhang'zhen	55
+张正	zhang'zheng	1152
 掌政	zhang'zheng	1094
 章证	zhang'zheng	52
 张政	zhang'zheng	1
@@ -197276,9 +198770,12 @@
 樟芝	zhang'zhi	54
 掌中	zhang'zhong	402
 帐中	zhang'zhong	210
+张中	zhang'zhong	168
+张仲	zhang'zhong	134
 漳州	zhang'zhou	986
 张洲	zhang'zhou	1
 长住	zhang'zhu	330
+张柱	zhang'zhu	67
 掌珠	zhang'zhu	1
 张翥	zhang'zhu	1
 张庄	zhang'zhuang	28
@@ -197318,6 +198815,7 @@
 找伴	zhao'ban	66
 兆邦	zhao'bang	1
 找帮	zhao'bang	1
+赵堡	zhao'bao	58
 找包	zhao'bao	42
 找宝	zhao'bao	1
 罩杯	zhao'bei	408
@@ -197339,6 +198837,8 @@
 找病	zhao'bing	176
 赵昺	zhao'bing	1
 赵丙	zhao'bing	1
+赵波	zhao'bo	385
+赵博	zhao'bo	189
 找补	zhao'bu	716
 找不	zhao'bu	1
 招财	zhao'cai	292
@@ -197346,6 +198846,7 @@
 招采	zhao'cai	237
 赵灿	zhao'can	1
 沼草	zhao'cao	69
+赵策	zhao'ce	29
 赵岑	zhao'cen	1
 找层	zhao'ceng	54
 找碴	zhao'cha	1978
@@ -197354,11 +198855,14 @@
 沼蟾	zhao'chan	70
 照常	zhao'chang	2220
 照抄	zhao'chao	2016
+赵超	zhao'chao	1915
 招潮	zhao'chao	504
 找车	zhao'che	945
 赵晨	zhao'chen	183
 赵琛	zhao'chen	1
 赵陈	zhao'chen	1
+赵成	zhao'cheng	321
+赵城	zhao'cheng	137
 找蛏	zhao'cheng	25
 照吃	zhao'chi	734
 找吃	zhao'chi	1
@@ -197368,6 +198872,7 @@
 赵川	zhao'chuan	782
 赵传	zhao'chuan	254
 找船	zhao'chuan	64
+赵淳	zhao'chun	92
 照此	zhao'ci	509
 找词	zhao'ci	458
 赵聪	zhao'cong	1912
@@ -197375,6 +198880,7 @@
 找错	zhao'cuo	371
 赵达	zhao'da	622
 找打	zhao'da	157
+赵大	zhao'da	149
 招待	zhao'dai	2594
 赵丹	zhao'dan	201
 照蛋	zhao'dan	84
@@ -197405,6 +198911,8 @@
 罩垫	zhao'dian	1
 赵店	zhao'dian	1
 着调	zhao'diao	66
+赵鼎	zhao'ding	87
+赵东	zhao'dong	832
 肇东	zhao'dong	790
 照东	zhao'dong	676
 找洞	zhao'dong	25
@@ -197412,6 +198920,7 @@
 照度	zhao'du	967
 肇端	zhao'duan	1
 找对	zhao'dui	1278
+赵盾	zhao'dun	424
 赵惇	zhao'dun	1
 赵铎	zhao'duo	55
 招儿	zhao'er	204
@@ -197440,6 +198949,7 @@
 罩盖	zhao'gai	16
 招干	zhao'gan	1
 赵干	zhao'gan	1
+赵刚	zhao'gang	756
 赵港	zhao'gang	1
 赵高	zhao'gao	2525
 昭告	zhao'gao	222
@@ -197489,6 +198999,7 @@
 爪痕	zhao'hen	66
 招恨	zhao'hen	62
 赵恒	zhao'heng	788
+赵红	zhao'hong	546
 赵弘	zhao'hong	1
 赵宏	zhao'hong	1
 赵虹	zhao'hong	1
@@ -197593,6 +199104,7 @@
 罩裤	zhao'ku	1
 赵宽	zhao'kuan	1
 找矿	zhao'kuang	711
+赵坤	zhao'kun	206
 赵括	zhao'kuo	4814
 赵扩	zhao'kuo	1
 找来	zhao'lai	5925
@@ -197613,6 +199125,8 @@
 赵磊	zhao'lei	1542
 照例	zhao'li	1849
 照理	zhao'li	401
+赵立	zhao'li	94
+赵丽	zhao'li	75
 笊篱	zhao'li	60
 爪力	zhao'li	49
 招联	zhao'lian	16
@@ -197655,6 +199169,7 @@
 招满	zhao'man	474
 着忙	zhao'mang	1
 找猫	zhao'mao	62
+赵梅	zhao'mei	517
 照门	zhao'men	994
 罩门	zhao'men	944
 赵梦	zhao'meng	1
@@ -197668,6 +199183,7 @@
 赵敏	zhao'min	4412
 兆民	zhao'min	612
 照明	zhao'ming	4468
+赵明	zhao'ming	141
 昭明	zhao'ming	131
 诏命	zhao'ming	104
 着魔	zhao'mo	364
@@ -197679,11 +199195,14 @@
 招纳	zhao'na	138
 找那	zhao'na	1
 找哪	zhao'na	1
+赵楠	zhao'nan	70
+赵南	zhao'nan	59
 着恼	zhao'nao	1
 罩内	zhao'nei	16
 找你	zhao'ni	6610
 爪鲵	zhao'ni	75
 找鸟	zhao'niao	31
+赵宁	zhao'ning	122
 找虐	zhao'nve	752
 兆帕	zhao'pa	621
 招牌	zhao'pai	11018
@@ -197793,6 +199312,7 @@
 赵姝	zhao'shu	1
 赵曙	zhao'shu	1
 赵衰	zhao'shuai	1522
+赵帅	zhao'shuai	226
 赵爽	zhao'shuang	1135
 找谁	zhao'shui	1743
 找水	zhao'shui	178
@@ -197847,6 +199367,7 @@
 招委	zhao'wei	271
 爪位	zhao'wei	69
 兆位	zhao'wei	1
+赵文	zhao'wen	1094
 昭文	zhao'wen	654
 找我	zhao'wo	16633
 找窝	zhao'wo	25
@@ -197949,6 +199470,7 @@
 招诱	zhao'you	62
 钊猷	zhao'you	1
 赵佑	zhao'you	1
+赵玉	zhao'yu	972
 赵宇	zhao'yu	157
 诏狱	zhao'yu	125
 朝雨	zhao'yu	100
@@ -199907,12 +201429,14 @@
 正编	zheng'bian	119
 正变	zheng'bian	35
 正表	zheng'biao	1
+郑彬	zheng'bin	5185
 郑斌	zheng'bin	291
 征兵	zheng'bing	1369
 症病	zheng'bing	106
 整并	zheng'bing	84
 蒸饼	zheng'bing	67
 政柄	zheng'bing	1
+郑波	zheng'bo	83
 正波	zheng'bo	1
 整部	zheng'bu	3046
 正步	zheng'bu	298
@@ -200017,6 +201541,7 @@
 正得	zheng'de	130
 睁得	zheng'de	104
 证得	zheng'de	83
+郑德	zheng'de	66
 政德	zheng'de	52
 正等	zheng'deng	1174
 正蹬	zheng'deng	73
@@ -200042,6 +201567,7 @@
 争顶	zheng'ding	87
 整定	zheng'ding	69
 正丁	zheng'ding	55
+郑东	zheng'dong	306
 正东	zheng'dong	257
 整栋	zheng'dong	237
 征东	zheng'dong	213
@@ -200169,6 +201695,7 @@
 整锅	zheng'guo	102
 争过	zheng'guo	81
 证果	zheng'guo	64
+郑海	zheng'hai	23
 正酣	zheng'han	245
 整行	zheng'hang	154
 正好	zheng'hao	43524
@@ -200295,6 +201822,7 @@
 整卷	zheng'juan	110
 正觉	zheng'jue	38
 郑钧	zheng'jun	619
+郑军	zheng'jun	169
 整军	zheng'jun	135
 郑俊	zheng'jun	108
 政军	zheng'jun	1
@@ -200304,6 +201832,7 @@
 正楷	zheng'kai	292
 郑恺	zheng'kai	263
 挣开	zheng'kai	169
+郑开	zheng'kai	135
 郑凯	zheng'kai	108
 正看	zheng'kan	1224
 正刊	zheng'kan	1163
@@ -200323,6 +201852,7 @@
 整垮	zheng'kua	160
 整块	zheng'kuai	1658
 整款	zheng'kuan	634
+郑矿	zheng'kuang	75
 正拉	zheng'la	52
 挣来	zheng'lai	666
 争来	zheng'lai	633
@@ -200360,11 +201890,13 @@
 整料	zheng'liao	77
 整列	zheng'lie	60
 正林	zheng'lin	688
+郑林	zheng'lin	654
 政令	zheng'ling	914
 正零	zheng'ling	1
 蒸馏	zheng'liu	2619
 整流	zheng'liu	226
 争流	zheng'liu	180
+郑龙	zheng'long	814
 蒸笼	zheng'long	581
 正隆	zheng'long	523
 正路	zheng'lu	528
@@ -200400,6 +201932,7 @@
 正名	zheng'ming	2241
 争鸣	zheng'ming	449
 征名	zheng'ming	359
+郑明	zheng'ming	287
 正命	zheng'ming	229
 争名	zheng'ming	151
 挣命	zheng'ming	107
@@ -200508,6 +202041,7 @@
 整容	zheng'rong	5071
 峥嵘	zheng'rong	329
 正荣	zheng'rong	263
+郑容	zheng'rong	210
 郑榕	zheng'rong	16
 蒸肉	zheng'rou	110
 正如	zheng'ru	38917
@@ -200517,6 +202051,7 @@
 蒸散	zheng'san	536
 郑嫂	zheng'sao	279
 正色	zheng'se	543
+郑森	zheng'sen	51
 整啥	zheng'sha	450
 正山	zheng'shan	860
 征衫	zheng'shan	201
@@ -200633,6 +202168,7 @@
 郑屯	zheng'tun	202
 挣脱	zheng'tuo	2722
 整托	zheng'tuo	1
+郑外	zheng'wai	90
 整晚	zheng'wan	870
 整完	zheng'wan	226
 整碗	zheng'wan	180
@@ -200664,6 +202200,7 @@
 正屋	zheng'wu	414
 正误	zheng'wu	131
 证悟	zheng'wu	104
+郑武	zheng'wu	83
 郑希	zheng'xi	431
 正西	zheng'xi	138
 征西	zheng'xi	131
@@ -200700,6 +202237,7 @@
 整项	zheng'xiang	119
 蒸湘	zheng'xiang	107
 正项	zheng'xiang	1
+郑晓	zheng'xiao	922
 政协	zheng'xie	939
 正邪	zheng'xie	455
 蒸蟹	zheng'xie	364
@@ -200710,6 +202248,7 @@
 正信	zheng'xin	148
 政信	zheng'xin	118
 正新	zheng'xin	94
+郑新	zheng'xin	75
 郑信	zheng'xin	60
 整形	zheng'xing	2264
 整型	zheng'xing	411
@@ -200769,6 +202308,7 @@
 正义	zheng'yi	21204
 正以	zheng'yi	483
 整衣	zheng'yi	191
+郑义	zheng'yi	121
 正谊	zheng'yi	96
 正仪	zheng'yi	76
 整一	zheng'yi	62
@@ -203425,6 +204965,7 @@
 中撑	zhong'cheng	44
 众成	zhong'cheng	40
 重城	zhong'cheng	32
+钟诚	zhong'cheng	25
 重惩	zhong'cheng	1
 中翅	zhong'chi	882
 中齿	zhong'chi	1
@@ -203770,6 +205311,7 @@
 钟姐	zhong'jie	56
 中杰	zhong'jie	44
 重接	zhong'jie	35
+钟杰	zhong'jie	28
 忠节	zhong'jie	22
 中截	zhong'jie	1
 踵接	zhong'jie	1
@@ -203796,12 +205338,14 @@
 忠君	zhong'jun	298
 中骏	zhong'jun	175
 中君	zhong'jun	140
+钟君	zhong'jun	112
 众军	zhong'jun	89
 终军	zhong'jun	71
 重卡	zhong'ka	308
 中开	zhong'kai	1566
 中凯	zhong'kai	1488
 仲恺	zhong'kai	1409
+钟凯	zhong'kai	1300
 中楷	zhong'kai	1018
 中看	zhong'kan	28
 重看	zhong'kan	27
@@ -203880,6 +205424,7 @@
 中髎	zhong'liao	223
 中列	zhong'lie	1188
 忠烈	zhong'lie	1129
+钟林	zhong'lin	70
 中林	zhong'lin	60
 重临	zhong'lin	57
 钟灵	zhong'ling	210
@@ -203891,6 +205436,7 @@
 钟楼	zhong'lou	1237
 中楼	zhong'lou	1
 中路	zhong'lu	10246
+钟路	zhong'lu	874
 中鲁	zhong'lu	756
 钟辂	zhong'lu	55
 中轮	zhong'lun	37
@@ -204068,6 +205614,7 @@
 种人	zhong'ren	301
 中人	zhong'ren	157
 中忍	zhong'ren	125
+钟仁	zhong'ren	100
 种仁	zhong'ren	80
 仲仁	zhong'ren	64
 仲壬	zhong'ren	51
@@ -204260,6 +205807,7 @@
 中桅	zhong'wei	1
 中文	zhong'wen	57525
 中温	zhong'wen	1084
+钟文	zhong'wen	727
 钟鹟	zhong'weng	60
 中午	zhong'wu	25955
 重物	zhong'wu	2395
@@ -204437,6 +205985,7 @@
 中营	zhong'ying	642
 中赢	zhong'ying	513
 中盈	zhong'ying	410
+钟颖	zhong'ying	267
 种蝇	zhong'ying	83
 仲颖	zhong'ying	1
 中用	zhong'yong	4977
@@ -204590,12 +206139,14 @@
 中做	zhong'zuo	1
 中左	zhong'zuo	1
 钟座	zhong'zuo	1
+周昂	zhou'ang	61
 皱巴	zhou'ba	43
 周拔	zhou'ba	1
 周版	zhou'ban	91
 皱瓣	zhou'ban	62
 周榜	zhou'bang	1
 周报	zhou'bao	1994
+周宝	zhou'bao	738
 周邶	zhou'bei	1
 周本	zhou'ben	30
 皱襞	zhou'bi	104
@@ -204612,6 +206163,7 @@
 皱布	zhou'bu	43
 绉布	zhou'bu	1
 周彩	zhou'cai	1
+周灿	zhou'can	40
 周仓	zhou'cang	217
 轴测	zhou'ce	558
 轴侧	zhou'ce	334
@@ -204640,9 +206192,12 @@
 周传	zhou'chuan	778
 舟船	zhou'chuan	739
 皱蝽	zhou'chun	67
+周春	zhou'chun	39
+周聪	zhou'cong	79
 周村	zhou'cun	122
 周存	zhou'cun	55
 洲村	zhou'cun	1
+周达	zhou'da	33
 周代	zhou'dai	1093
 周岱	zhou'dai	1
 周丹	zhou'dan	590
@@ -204655,11 +206210,13 @@
 骤得	zhou'de	96
 周德	zhou'de	1
 粥底	zhou'di	58
+周迪	zhou'di	38
 粥店	zhou'dian	88
 轴垫	zhou'dian	37
 周店	zhou'dian	1
 周鼎	zhou'ding	634
 周董	zhou'dong	3536
+周东	zhou'dong	796
 周度	zhou'du	850
 舟渡	zhou'du	445
 轴端	zhou'duan	64
@@ -204683,6 +206240,7 @@
 轴杆	zhou'gan	96
 周干	zhou'gan	1
 周淦	zhou'gan	1
+周刚	zhou'gang	918
 周镐	zhou'gao	1
 周哥	zhou'ge	590
 周割	zhou'ge	0
@@ -204694,11 +206252,14 @@
 肘拐	zhou'guai	42
 粥馆	zhou'guan	896
 州官	zhou'guan	851
+周光	zhou'guang	824
+周广	zhou'guang	783
 昼光	zhou'guang	159
 周桂	zhou'gui	1
 纣棍	zhou'gun	1
 周果	zhou'guo	56
 舟蛤	zhou'ha	95
+周海	zhou'hai	104
 周浩	zhou'hao	731
 周昊	zhou'hao	1
 周颢	zhou'hao	1
@@ -204707,6 +206268,8 @@
 洲河	zhou'he	1
 周黑	zhou'hei	1098
 皱痕	zhou'hen	9
+周恒	zhou'heng	302
+周鸿	zhou'hong	1179
 周泓	zhou'hong	79
 周后	zhou'hou	1193
 肘后	zhou'hou	639
@@ -204732,8 +206295,11 @@
 舟楫	zhou'ji	97
 州际	zhou'ji	77
 肘肌	zhou'ji	1
+周佳	zhou'jia	1238
 周家	zhou'jia	1176
+周建	zhou'jian	1066
 骤减	zhou'jian	103
+周健	zhou'jian	82
 昼间	zhou'jian	65
 周检	zhou'jian	62
 肘尖	zhou'jian	52
@@ -204752,9 +206318,11 @@
 轴接	zhou'jie	207
 洲界	zhou'jie	1
 周颉	zhou'jie	1
+周进	zhou'jin	1300
 皱紧	zhou'jin	760
 酎金	zhou'jin	1
 周静	zhou'jing	1107
+周景	zhou'jing	901
 州警	zhou'jing	486
 轴颈	zhou'jing	286
 周京	zhou'jing	1
@@ -204764,6 +206332,8 @@
 轴距	zhou'ju	1831
 帚菊	zhou'ju	81
 周矩	zhou'ju	1
+周均	zhou'jun	999
+周军	zhou'jun	949
 周俊	zhou'jun	899
 州郡	zhou'jun	829
 周卡	zhou'ka	192
@@ -204772,13 +206342,17 @@
 周考	zhou'kao	73
 周苛	zhou'ke	230
 轴壳	zhou'ke	96
+周科	zhou'ke	81
 洲克	zhou'ke	46
 周坑	zhou'keng	1
 轴孔	zhou'kong	13
 周口	zhou'kou	163
+周逵	zhou'kui	158
+周奎	zhou'kui	108
 周魁	zhou'kui	1
 周昆	zhou'kun	1
 周鲲	zhou'kun	1
+周兰	zhou'lan	610
 周郎	zhou'lang	301
 周朗	zhou'lang	27
 周老	zhou'lao	44
@@ -204786,12 +206360,14 @@
 周磊	zhou'lei	684
 周雷	zhou'lei	1
 骤冷	zhou'leng	69
+周立	zhou'li	1426
 周礼	zhou'li	693
 周丽	zhou'li	141
 妯娌	zhou'li	116
 州立	zhou'li	92
 周莉	zhou'li	73
 轴藜	zhou'li	58
+周力	zhou'li	58
 州里	zhou'li	46
 周里	zhou'li	36
 轴力	zhou'li	28
@@ -204802,9 +206378,11 @@
 肘髎	zhou'liao	152
 周淋	zhou'lin	437
 周琳	zhou'lin	246
+周林	zhou'lin	218
 周龄	zhou'ling	1
 周六	zhou'liu	6123
 轴流	zhou'liu	644
+周龙	zhou'long	97
 周路	zhou'lu	7426
 周伦	zhou'lun	1
 舟螺	zhou'luo	77
@@ -204823,6 +206401,8 @@
 皱面	zhou'mian	1
 周冕	zhou'mian	1
 骤灭	zhou'mie	1
+周民	zhou'min	166
+周明	zhou'ming	972
 州名	zhou'ming	806
 周末	zhou'mo	29481
 周茉	zhou'mo	3
@@ -204862,6 +206442,8 @@
 周桥	zhou'qiao	1
 昼寝	zhou'qin	495
 周沁	zhou'qin	136
+周庆	zhou'qing	657
+周琼	zhou'qiong	98
 舟曲	zhou'qu	22
 周全	zhou'quan	1966
 州权	zhou'quan	630
@@ -204881,6 +206463,7 @@
 周荣	zhou'rong	1
 周瑞	zhou'rui	7530
 周锐	zhou'rui	1661
+周蕊	zhou'rui	469
 周赛	zhou'sai	521
 周三	zhou'san	2873
 周嫂	zhou'sao	472
@@ -204890,6 +206473,7 @@
 周善	zhou'shan	1
 轴上	zhou'shang	1102
 周尚	zhou'shang	1
+周舍	zhou'she	23
 周深	zhou'shen	14177
 周身	zhou'shen	1560
 周申	zhou'shen	55
@@ -204907,6 +206491,7 @@
 周诗	zhou'shi	1
 周实	zhou'shi	1
 周仕	zhou'shi	1
+周受	zhou'shou	525
 周叔	zhou'shu	1035
 咒术	zhou'shu	496
 周数	zhou'shu	396
@@ -204919,6 +206504,7 @@
 宙斯	zhou'si	455
 轴丝	zhou'si	1
 咒死	zhou'si	1
+周松	zhou'song	73
 周颂	zhou'song	1
 周岁	zhou'sui	6704
 轴榫	zhou'sun	48
@@ -204970,6 +206556,7 @@
 肘窝	zhou'wo	773
 昼卧	zhou'wo	99
 周五	zhou'wu	5643
+周武	zhou'wu	5361
 周吴	zhou'wu	1
 粥稀	zhou'xi	58
 轴系	zhou'xi	38
@@ -204984,18 +206571,22 @@
 周湘	zhou'xiang	147
 周庠	zhou'xiang	55
 周详	zhou'xiang	1
+周晓	zhou'xiao	1300
 轴校	zhou'xiao	50
 轴销	zhou'xiao	49
 皱蟹	zhou'xie	74
 轴心	zhou'xin	580
 周薪	zhou'xin	464
+周新	zhou'xin	117
 轴芯	zhou'xin	96
 周昕	zhou'xin	1
 周信	zhou'xin	1
 周行	zhou'xing	576
+周兴	zhou'xing	125
 周姓	zhou'xing	94
 舟行	zhou'xing	75
 周星	zhou'xing	1
+周雄	zhou'xiong	84
 周休	zhou'xiu	91
 周旭	zhou'xu	528
 周恤	zhou'xu	1
@@ -205019,6 +206610,7 @@
 肘腋	zhou'ye	1
 周一	zhou'yi	5683
 周易	zhou'yi	1912
+周怡	zhou'yi	1529
 皱衣	zhou'yi	76
 胄裔	zhou'yi	1
 咒印	zhou'yin	405
@@ -205033,10 +206625,13 @@
 骤雨	zhou'yu	220
 舟舆	zhou'yu	1
 咒怨	zhou'yuan	2537
+周元	zhou'yuan	778
+周源	zhou'yuan	643
 周韵	zhou'yun	537
 轴载	zhou'zai	6
 洲仔	zhou'zai	1
 周遭	zhou'zao	2418
+周泽	zhou'ze	231
 骤增	zhou'zeng	229
 周宅	zhou'zhai	6
 周占	zhou'zhan	2315
@@ -205053,6 +206648,7 @@
 周祯	zhou'zhen	1
 周正	zhou'zheng	1568
 周知	zhou'zhi	261
+周志	zhou'zhi	175
 周至	zhou'zhi	140
 州直	zhou'zhi	112
 州治	zhou'zhi	89
@@ -205075,6 +206671,7 @@
 周庄	zhou'zhuang	179
 粥状	zhou'zhuang	1
 周准	zhou'zhun	1
+周卓	zhou'zhuo	133
 肘子	zhou'zi	1463
 舟子	zhou'zi	191
 周子	zhou'zi	109
@@ -205087,6 +206684,7 @@
 周佐	zhou'zuo	1
 主啊	zhu'a	236
 祝阿	zhu'a	1
+朱安	zhu'an	824
 主案	zhu'an	418
 朱昂	zhu'ang	1
 驻澳	zhu'ao	22
@@ -205112,6 +206710,7 @@
 朱邦	zhu'bang	1
 珠宝	zhu'bao	3781
 主报	zhu'bao	882
+朱宝	zhu'bao	609
 朱褒	zhu'bao	380
 贮备	zhu'bei	160
 竹北	zhu'bei	144
@@ -205149,6 +206748,7 @@
 煮饼	zhu'bing	138
 珠柄	zhu'bing	1
 主播	zhu'bo	18137
+朱波	zhu'bo	982
 筑波	zhu'bo	760
 驻波	zhu'bo	652
 逐波	zhu'bo	444
@@ -205208,6 +206808,7 @@
 煮成	zhu'cheng	816
 铸成	zhu'cheng	690
 诸城	zhu'cheng	549
+朱成	zhu'cheng	452
 筑城	zhu'cheng	370
 主程	zhu'cheng	207
 著成	zhu'cheng	165
@@ -205324,6 +206925,7 @@
 竹钉	zhu'ding	1
 主动	zhu'dong	84962
 竹东	zhu'dong	868
+朱东	zhu'dong	601
 柱洞	zhu'dong	46
 朱洞	zhu'dong	1
 竹豆	zhu'dou	62
@@ -205374,6 +206976,7 @@
 主峰	zhu'feng	687
 逐风	zhu'feng	626
 朱峰	zhu'feng	563
+朱凤	zhu'feng	500
 朱枫	zhu'feng	310
 竹风	zhu'feng	146
 诸峰	zhu'feng	118
@@ -205425,6 +207028,7 @@
 竹根	zhu'gen	134
 柱根	zhu'gen	114
 诸根	zhu'gen	103
+朱赓	zhu'geng	27
 助耕	zhu'geng	1
 助攻	zhu'gong	17672
 主攻	zhu'gong	5193
@@ -205498,10 +207102,13 @@
 珠核	zhu'he	77
 洙河	zhu'he	50
 朱鹤	zhu'he	1
+朱恒	zhu'heng	90
 朱红	zhu'hong	355
 朱虹	zhu'hong	345
 猪红	zhu'hong	320
+朱洪	zhu'hong	288
 诸侯	zhu'hou	1472
+朱厚	zhu'hou	1003
 注后	zhu'hou	541
 蛛猴	zhu'hou	60
 伫候	zhu'hou	1
@@ -205577,6 +207184,7 @@
 竹简	zhu'jian	543
 铸件	zhu'jian	483
 助检	zhu'jian	122
+朱健	zhu'jian	97
 铸剑	zhu'jian	77
 烛剪	zhu'jian	62
 柱间	zhu'jian	61
@@ -205591,6 +207199,7 @@
 主讲	zhu'jiang	2084
 主将	zhu'jiang	1811
 诸将	zhu'jiang	1296
+朱江	zhu'jiang	588
 注浆	zhu'jiang	313
 竹浆	zhu'jiang	123
 驻疆	zhu'jiang	93
@@ -205639,6 +207248,7 @@
 祝菁	zhu'jing	1
 祝静	zhu'jing	1
 朱璟	zhu'jing	1
+朱炯	zhu'jiong	603
 铸就	zhu'jiu	691
 祝酒	zhu'jiu	622
 主句	zhu'ju	2317
@@ -205735,6 +207345,7 @@
 主理	zhu'li	316
 朱丽	zhu'li	149
 茱莉	zhu'li	92
+朱利	zhu'li	77
 朱里	zhu'li	73
 朱理	zhu'li	58
 主礼	zhu'li	46
@@ -205755,6 +207366,7 @@
 诛连	zhu'lian	36
 主粮	zhu'liang	741
 主梁	zhu'liang	122
+朱良	zhu'liang	97
 贮量	zhu'liang	77
 贮粮	zhu'liang	42
 主料	zhu'liao	1077
@@ -205929,6 +207541,7 @@
 主频	zhu'pin	1143
 助贫	zhu'pin	1012
 主屏	zhu'ping	207
+朱平	zhu'ping	197
 逐瓶	zhu'ping	143
 猪婆	zhu'po	603
 驻泊	zhu'po	573
@@ -205963,7 +207576,9 @@
 朱桥	zhu'qiao	1
 竹琴	zhu'qin	1
 朱钦	zhu'qin	1
+朱青	zhu'qing	756
 竹青	zhu'qing	718
+朱庆	zhu'qing	413
 助情	zhu'qing	346
 竹庆	zhu'qing	1
 主球	zhu'qiu	471
@@ -205996,6 +207611,7 @@
 主日	zhu'ri	374
 朱日	zhu'ri	337
 祝融	zhu'rong	1771
+朱荣	zhu'rong	819
 助溶	zhu'rong	103
 侏狨	zhu'rong	1
 助熔	zhu'rong	1
@@ -206035,6 +207651,7 @@
 主上	zhu'shang	371
 煮上	zhu'shang	296
 注上	zhu'shang	236
+朱绍	zhu'shao	698
 主哨	zhu'shao	1
 注射	zhu'she	7693
 猪舍	zhu'she	3253
@@ -206051,6 +207668,7 @@
 主胜	zhu'sheng	292
 主升	zhu'sheng	277
 祝圣	zhu'sheng	263
+朱生	zhu'sheng	210
 诸生	zhu'sheng	168
 竹笙	zhu'sheng	134
 竹升	zhu'sheng	107
@@ -206153,6 +207771,7 @@
 祝塘	zhu'tang	1
 珠塘	zhu'tang	1
 朱涛	zhu'tao	84
+朱滔	zhu'tao	35
 朱特	zhu'te	61
 竹藤	zhu'teng	630
 竹滕	zhu'teng	1
@@ -206170,6 +207789,7 @@
 主帖	zhu'tie	486
 朱铁	zhu'tie	86
 朱婷	zhu'ting	1233
+朱挺	zhu'ting	927
 助听	zhu'ting	387
 主厅	zhu'ting	338
 竹亭	zhu'ting	143
@@ -206345,10 +207965,12 @@
 主演	zhu'yan	11279
 助研	zhu'yan	392
 助演	zhu'yan	140
+朱彦	zhu'yan	112
 驻颜	zhu'yan	89
 竹盐	zhu'yan	84
 烛焰	zhu'yan	71
 猪眼	zhu'yan	62
+朱岩	zhu'yan	56
 蛀眼	zhu'yan	40
 朱晏	zhu'yan	1
 朱颜	zhu'yan	1
@@ -206389,9 +208011,11 @@
 主因	zhu'yin	1092
 主音	zhu'yin	643
 注引	zhu'yin	514
+朱音	zhu'yin	338
 铸印	zhu'yin	99
 煮饮	zhu'yin	57
 主营	zhu'ying	2515
+朱英	zhu'ying	100
 驻英	zhu'ying	80
 蛛蝇	zhu'ying	73
 竹影	zhu'ying	64
@@ -206419,6 +208043,7 @@
 朱右	zhu'you	1
 主语	zhu'yu	5106
 助于	zhu'yu	357
+朱玉	zhu'yu	304
 珠玉	zhu'yu	295
 茱萸	zhu'yu	236
 住于	zhu'yu	188
@@ -206507,6 +208132,7 @@
 竹针	zhu'zhen	42
 朱真	zhu'zhen	1
 主政	zhu'zheng	842
+朱正	zhu'zheng	706
 主证	zhu'zheng	634
 诸症	zhu'zheng	544
 主症	zhu'zheng	434
@@ -207419,6 +209045,7 @@
 桩考	zhuang'kao	1
 装壳	zhuang'ke	48
 庄客	zhuang'ke	38
+庄科	zhuang'ke	34
 装扣	zhuang'kou	42
 装酷	zhuang'ku	270
 撞库	zhuang'ku	160

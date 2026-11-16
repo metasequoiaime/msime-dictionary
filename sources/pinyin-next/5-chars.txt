@@ -137,6 +137,7 @@
 阿福老鸭煲	a'fu'lao'ya'bao	1
 阿芙乐尔号	a'fu'le'er'hao	1
 阿夫林地区	a'fu'lin'di'qu	1
+阿芙洛狄忒	a'fu'luo'di'te	10
 阿夫石龙子	a'fu'shi'long'zi	1
 阿弗他口疮	a'fu'ta'kou'chuang	10
 阿弗他口炎	a'fu'ta'kou'yan	10
@@ -764,6 +765,7 @@
 爱的罗曼斯	ai'de'luo'man'si	10
 爱德曼公关	ai'de'man'gong'guan	10
 艾德曼金属	ai'de'man'jin'shu	10
+哀的美敦书	ai'de'mei'dun'shu	10
 爱的面包魂	ai'de'mian'bao'hun	10
 爱的木莓寮	ai'de'mu'mei'liao	10
 爱的三部曲	ai'de'san'bu'qu	1
@@ -9439,6 +9441,7 @@
 半解剖式牙	ban'jie'pou'shi'ya	10
 半解析集合	ban'jie'xi'ji'he	10
 斑节杨桃螺	ban'jie'yang'tao'luo	1
+班金八老师	ban'jin'ba'lao'shi	10
 半斤对八两	ban'jin'dui'ba'liang	10
 半斤换八两	ban'jin'huan'ba'liang	10
 搬进了新家	ban'jin'le'xin'jia	1
@@ -9954,6 +9957,7 @@
 斑衣戏亲庭	ban'yi'xi'qin'ting	10
 斑衣在林巷	ban'yi'zai'lin'xiang	10
 半一致空间	ban'yi'zhi'kong'jian	10
+班银八老师	ban'yin'ba'lao'shi	10
 半阴半晴天	ban'yin'ban'qing'tian	10
 半阴的环境	ban'yin'de'huan'jing	10
 半音阶口琴	ban'yin'jie'kou'qin	10
@@ -15540,10 +15544,12 @@
 比赛进行时	bi'sai'jin'xing'shi	1
 比赛进行中	bi'sai'jin'xing'zhong	1
 比赛开始了	bi'sai'kai'shi'le	1
+鼻塞流鼻涕	bi'sai'liu'bi'ti	10
 比赛取消了	bi'sai'qu'xiao'le	1
 堛塞生怐愗	bi'sai'sheng'ju'mao	10
 比赛停止球	bi'sai'ting'zhi'qiu	10
 比赛一结束	bi'sai'yi'jie'shu	10
+鼻塞怎么办	bi'sai'zen'me'ban	10
 比赛中获奖	bi'sai'zhong'huo'jiang	10
 闭塞成冬冰	bi'se'cheng'dong'bing	10
 碧色动柴门	bi'se'dong'chai'men	10
@@ -20709,66 +20715,114 @@
 不独子其子	bu'du'zi'qi'zi	10
 不独资生成	bu'du'zi'sheng'cheng	10
 不断地变化	bu'duan'de'bian'hua	10
+不断的变化	bu'duan'de'bian'hua	10
 不断地尝试	bu'duan'de'chang'shi	10
+不断的尝试	bu'duan'de'chang'shi	10
 不断地超越	bu'duan'de'chao'yue	10
+不断的超越	bu'duan'de'chao'yue	10
 不断地成长	bu'duan'de'cheng'zhang	10
 不断的成长	bu'duan'de'cheng'zhang	1
 不断地重复	bu'duan'de'chong'fu	10
 不断的重复	bu'duan'de'chong'fu	1
 不断地出现	bu'duan'de'chu'xian	10
+不断的出现	bu'duan'de'chu'xian	10
 不断地创新	bu'duan'de'chuang'xin	10
+不断的创新	bu'duan'de'chuang'xin	10
 不断地创造	bu'duan'de'chuang'zao	10
+不断的创造	bu'duan'de'chuang'zao	10
 不断地刺激	bu'duan'de'ci'ji	10
+不断的刺激	bu'duan'de'ci'ji	10
 不断地打磨	bu'duan'de'da'mo	10
+不断的打磨	bu'duan'de'da'mo	10
 不断地发展	bu'duan'de'fa'zhan	10
+不断的发展	bu'duan'de'fa'zhan	10
 不断地反思	bu'duan'de'fan'si	10
 不断地奋斗	bu'duan'de'fen'dou	10
+不断的奋斗	bu'duan'de'fen'dou	10
 不断地丰富	bu'duan'de'feng'fu	10
+不断的丰富	bu'duan'de'feng'fu	10
 不断地付出	bu'duan'de'fu'chu	10
+不断的付出	bu'duan'de'fu'chu	10
 不断地改变	bu'duan'de'gai'bian	10
+不断的改变	bu'duan'de'gai'bian	10
 不断地改进	bu'duan'de'gai'jin	10
+不断的改进	bu'duan'de'gai'jin	10
 不断地革新	bu'duan'de'ge'xin	10
+不断的革新	bu'duan'de'ge'xin	10
 不断地更新	bu'duan'de'geng'xin	10
+不断的更新	bu'duan'de'geng'xin	10
 不断地鼓励	bu'duan'de'gu'li	10
+不断的鼓励	bu'duan'de'gu'li	10
 不断地积累	bu'duan'de'ji'lei	10
+不断的积累	bu'duan'de'ji'lei	10
 不断地加强	bu'duan'de'jia'qiang	10
+不断的加强	bu'duan'de'jia'qiang	10
 不断地坚持	bu'duan'de'jian'chi	10
+不断的坚持	bu'duan'de'jian'chi	10
 不断地搅拌	bu'duan'de'jiao'ban	10
+不断的搅拌	bu'duan'de'jiao'ban	10
 不断地进步	bu'duan'de'jin'bu	10
+不断的进步	bu'duan'de'jin'bu	10
 不断地进化	bu'duan'de'jin'hua	1
 不断地扩大	bu'duan'de'kuo'da	10
+不断的扩大	bu'duan'de'kuo'da	10
 不断地练习	bu'duan'de'lian'xi	10
+不断的练习	bu'duan'de'lian'xi	10
 不断地努力	bu'duan'de'nu'li	10
+不断的努力	bu'duan'de'nu'li	10
 不断地膨胀	bu'duan'de'peng'zhang	1
 不断地前进	bu'duan'de'qian'jin	10
+不断的前进	bu'duan'de'qian'jin	10
 不断地强化	bu'duan'de'qiang'hua	10
+不断的强化	bu'duan'de'qiang'hua	10
 不断地升级	bu'duan'de'sheng'ji	10
+不断的升级	bu'duan'de'sheng'ji	10
 不断地实践	bu'duan'de'shi'jian	12
 不短的时间	bu'duan'de'shi'jian	10
 不断地刷新	bu'duan'de'shua'xin	10
+不断的刷新	bu'duan'de'shua'xin	10
 不断地思考	bu'duan'de'si'kao	10
+不断的思考	bu'duan'de'si'kao	10
 不断地探索	bu'duan'de'tan'suo	10
+不断的探索	bu'duan'de'tan'suo	10
 不断地提高	bu'duan'de'ti'gao	10
+不断的提高	bu'duan'de'ti'gao	10
 不断地提升	bu'duan'de'ti'sheng	10
+不断的提升	bu'duan'de'ti'sheng	10
 不断地挑战	bu'duan'de'tiao'zhan	10
+不断的挑战	bu'duan'de'tiao'zhan	10
 不断地调整	bu'duan'de'tiao'zheng	10
 不断的调整	bu'duan'de'tiao'zheng	1
 不断地突破	bu'duan'de'tu'po	10
+不断的突破	bu'duan'de'tu'po	10
 不断地推出	bu'duan'de'tui'chu	10
+不断的推出	bu'duan'de'tui'chu	10
 不断地推进	bu'duan'de'tui'jin	10
+不断的推进	bu'duan'de'tui'jin	10
 不断地完善	bu'duan'de'wan'shan	10
+不断的完善	bu'duan'de'wan'shan	10
 不断地向前	bu'duan'de'xiang'qian	10
+不断的向前	bu'duan'de'xiang'qian	10
 不断地消耗	bu'duan'de'xiao'hao	10
+不断的消耗	bu'duan'de'xiao'hao	10
 不断地修改	bu'duan'de'xiu'gai	10
+不断的修改	bu'duan'de'xiu'gai	10
 不断地宣传	bu'duan'de'xuan'chuan	1
 不断地学习	bu'duan'de'xue'xi	10
+不断的学习	bu'duan'de'xue'xi	10
 不断地训练	bu'duan'de'xun'lian	1
 不断地寻找	bu'duan'de'xun'zhao	10
+不断的寻找	bu'duan'de'xun'zhao	10
 不断地研究	bu'duan'de'yan'jiu	10
+不断的研究	bu'duan'de'yan'jiu	10
 不断地优化	bu'duan'de'you'hua	10
+不断的优化	bu'duan'de'you'hua	10
 不断地增加	bu'duan'de'zeng'jia	10
+不断的增加	bu'duan'de'zeng'jia	10
 不断地追求	bu'duan'de'zhui'qiu	10
+不断的追求	bu'duan'de'zhui'qiu	10
 不断地总结	bu'duan'de'zong'jie	10
+不断的总结	bu'duan'de'zong'jie	10
 不断电系统	bu'duan'dian'xi'tong	1
 不断革命论	bu'duan'ge'ming'lun	10
 不断若寻环	bu'duan'ruo'xun'huan	10
@@ -23999,6 +24053,7 @@
 不喜欢你了	bu'xi'huan'ni'le	1
 不喜欢什么	bu'xi'huan'shen'me	1
 不喜欢我了	bu'xi'huan'wo'le	1
+不喜欢肖战	bu'xi'huan'xiao'zhan	10
 不喜欢这款	bu'xi'huan'zhe'kuan	10
 不惜斤斧疮	bu'xi'jin'fu'chuang	10
 布希克斯征	bu'xi'ke'si'zheng	10
@@ -25796,6 +25851,7 @@
 采光和通风	cai'guang'he'tong'feng	10
 裁规覆清沼	cai'gui'fu'qing'zhao	10
 材归俯身尽	cai'gui'fu'shen'jin	10
+蔡国庆老师	cai'guo'qing'lao'shi	10
 才过青罗襦	cai'guo'qing'luo'ru	10
 彩蛤攒锦囊	cai'ha'zan'jin'nang	10
 彩翰写冲襟	cai'han'xie'chong'jin	10
@@ -25941,6 +25997,7 @@
 材力竟何施	cai'li'jing'he'shi	10
 采力口服液	cai'li'kou'fu'ye	10
 才力老益神	cai'li'lao'yi'shen	10
+蔡礼旭老师	cai'li'xu'lao'shi	10
 采栗玄猿窟	cai'li'xuan'yuan'ku	10
 才力犹可倚	cai'li'you'ke'yi	10
 采莲从小惯	cai'lian'cong'xiao'guan	10
@@ -27467,6 +27524,7 @@
 藏经阁福利	cang'jing'ge'fu'li	1
 藏经阁影院	cang'jing'ge'ying'yuan	1
 藏经馆社区	cang'jing'guan'she'qu	1
+苍井空老师	cang'jing'kong'lao'shi	10
 苍井玛利亚	cang'jing'ma'li'ya	10
 藏经沾雨烂	cang'jing'zhan'yu'lan	10
 沧口飞机场	cang'kou'fei'ji'chang	10
@@ -30527,6 +30585,7 @@
 长安大润发	chang'an'da'run'fa	10
 长安大戏院	chang'an'da'xi'yuan	10
 长安大学城	chang'an'da'xue'cheng	10
+长安大学的	chang'an'da'xue'de	10
 长安大雪年	chang'an'da'xue'nian	10
 长安带酒别	chang'an'dai'jiu'bie	10
 长安的荔枝	chang'an'de'li'zhi	10
@@ -34905,6 +34964,7 @@
 朝为三室印	chao'wei'san'shi'yin	10
 朝为双蒂花	chao'wei'shuang'di'hua	10
 超威碳酸系	chao'wei'tan'suan'xi	10
+朝为田舍郎	chao'wei'tian'she'lang	10
 超危险驾驶	chao'wei'xian'jia'shi	10
 朝为越溪女	chao'wei'yue'xi'nv	10
 朝为朱门贵	chao'wei'zhu'men'gui	10
@@ -35685,6 +35745,7 @@
 尘暗苑城遥	chen'an'yuan'cheng'yao	10
 陈巴尔虎旗	chen'ba'er'hu'qi	10
 陈宝琛故居	chen'bao'chen'gu'ju	10
+陈宝国老师	chen'bao'guo'lao'shi	10
 沉抱积离忧	chen'bao'ji'li'you	10
 陈宝若鸡鸣	chen'bao'ruo'ji'ming	10
 陈宝生部长	chen'bao'sheng'bu'zhang	1
@@ -35779,6 +35840,8 @@
 陈村镇政府	chen'cun'zhen'zheng'fu	1
 陈大天小虾	chen'da'tian'xiao'xia	10
 臣道不敢专	chen'dao'bu'gan'zhuan	10
+陈道明老师	chen'dao'ming'lao'shi	10
+陈道明饰演	chen'dao'ming'shi'yan	10
 臣道日光辉	chen'dao'ri'guang'hui	10
 沉得住气啊	chen'de'zhu'qi'a	10
 晨登翅头山	chen'deng'chi'tou'shan	10
@@ -35850,6 +35913,7 @@
 嗔怪见官迟	chen'guai'jian'guan'chi	10
 尘冠不肯弹	chen'guan'bu'ken'dan	10
 尘冠挂一枝	chen'guan'gua'yi'zhi	10
+陈冠希老师	chen'guan'xi'lao'shi	10
 尘光分驿道	chen'guang'fen'yi'dao	10
 晨光静水雾	chen'guang'jing'shui'wu	10
 晨光屡挥忽	chen'guang'lv'hui'hu	10
@@ -35877,6 +35941,9 @@
 宸翰陪瞻仰	chen'han'pei'zhan'yang	10
 宸翰三光烛	chen'han'san'guang'zhu	10
 沉酣薰骨髓	chen'han'xun'gu'sui	10
+陈赫的前妻	chen'he'de'qian'qi	10
+陈赫和许婧	chen'he'he'xu'jing	10
+陈赫张子萱	chen'he'zhang'zi'xuan	10
 尘痕废磨砻	chen'hen'fei'mo'long	10
 陈恒弑其君	chen'heng'shi'qi'jun	10
 陈侯大雅姿	chen'hou'da'ya'zi	10
@@ -35919,6 +35986,7 @@
 晨鸡且勿唱	chen'ji'qie'wu'chang	10
 沉积石英岩	chen'ji'shi'ying'yan	10
 陈迹随人事	chen'ji'sui'ren'shi	10
+陈济棠公馆	chen'ji'tang'gong'guan	10
 陈迹唯高台	chen'ji'wei'gao'tai	10
 尘机闻即空	chen'ji'wen'ji'kong	10
 宸极祆星动	chen'ji'xian'xing'dong	10
@@ -35946,6 +36014,7 @@
 陈家太极拳	chen'jia'tai'ji'quan	10
 陈家湾街道	chen'jia'wan'jie'dao	1
 陈家院水库	chen'jia'yuan'shui'ku	10
+陈建斌老师	chen'jian'bin'lao'shi	10
 沉贱如泥沙	chen'jian'ru'ni'sha	10
 臣谏誓不休	chen'jian'shi'bu'xiu	10
 晨间先入耳	chen'jian'xian'ru'er	10
@@ -35991,7 +36060,10 @@
 臣觉筵中听	chen'jue'yan'zhong'ting	10
 沉疴不冠带	chen'ke'bu'guan'dai	10
 沉疴聚药饵	chen'ke'ju'yao'er	10
+陈可辛监制	chen'ke'xin'jian'zhi	10
 臣苦不如死	chen'ku'bu'ru'si	10
+陈坤的儿子	chen'kun'de'er'zi	10
+陈坤和周迅	chen'kun'he'zhou'xun	10
 陈郎浮竹叶	chen'lang'fu'zhu'ye	10
 尘劳败天倪	chen'lao'bai'tian'ni	10
 尘劳付白骨	chen'lao'fu'bai'gu	10
@@ -36114,6 +36186,7 @@
 趁暖泥茶灶	chen'nuan'ni'cha'zao	10
 宸盼俯凝旒	chen'pan'fu'ning'liu	10
 晨攀偃蹇树	chen'pan'yan'jian'shu	10
+陈佩斯老师	chen'pei'si'lao'shi	10
 臣彭亦长年	chen'peng'yi'chang'nian	10
 陈皮爆河虾	chen'pi'bao'he'xia	1
 晨披瘴疠行	chen'pi'zhang'li'xing	10
@@ -60768,6 +60841,7 @@
 地带性分异	di'dai'xing'fen'yi	10
 低弹道抛投	di'dan'dao'pao'tou	10
 低氮燃烧器	di'dan'ran'shao'qi	10
+的当代价值	di'dang'dai'jia'zhi	10
 涤荡千古愁	di'dang'qian'gu'chou	10
 抵挡紫外线	di'dang'zi'wai'xian	10
 地道巴陵北	di'dao'ba'ling'bei	10
@@ -71298,6 +71372,7 @@
 短叶瘤足蕨	duan'ye'liu'zu'jue	1
 短叶罗汉松	duan'ye'luo'han'song	10
 短叶马尾松	duan'ye'ma'wei'song	10
+短叶马尾松	duan'ye'ma'yi'song	10
 短叶秦岭藤	duan'ye'qin'ling'teng	10
 段页式管理	duan'ye'shi'guan'li	1
 段页式内存	duan'ye'shi'nei'cun	1
@@ -86305,6 +86380,7 @@
 丰富和拓展	feng'fu'he'tuo'zhan	10
 丰富了起来	feng'fu'le'qi'lai	1
 丰富了视觉	feng'fu'le'shi'jue	1
+丰富了知识	feng'fu'le'zhi'shi	10
 丰富了知识	feng'fu'liao'zhi'shi	10
 奉父母之命	feng'fu'mu'zhi'ming	10
 讽赋欺相如	feng'fu'qi'xiang'ru	10
@@ -88456,6 +88532,7 @@
 风鸳藏近渚	feng'yuan'cang'jin'zhu	10
 凤苑先吹晚	feng'yuan'xian'chui'wan	10
 峰远行未极	feng'yuan'xing'wei'ji	10
+冯远征老师	feng'yuan'zheng'lao'shi	10
 风月不相闻	feng'yue'bu'xiang'wen	10
 风月长相知	feng'yue'chang'xiang'zhi	10
 风月芳菲节	feng'yue'fang'fei'jie	10
@@ -89006,6 +89083,7 @@
 复仇者集结	fu'chou'zhe'ji'jie	10
 复仇者机炮	fu'chou'zhe'ji'pao	10
 复仇者联盟	fu'chou'zhe'lian'meng	10
+妇仇者联盟	fu'chou'zhe'lian'meng	10
 复仇者斯卡	fu'chou'zhe'si'ka	10
 复仇者系列	fu'chou'zhe'xi'lie	1
 复仇者之盾	fu'chou'zhe'zhi'dun	10
@@ -90392,6 +90470,7 @@
 氟邻苯二酚	fu'lin'ben'er'fen	10
 俯临沧海大	fu'lin'cang'hai'da	10
 弗林蛋白酶	fu'lin'dan'bai'mei	10
+弗林德斯岛	fu'lin'de'si'dao	10
 拂林花乱彩	fu'lin'hua'luan'cai	10
 俯临秦山川	fu'lin'qin'shan'chuan	10
 拂林随雨密	fu'lin'sui'yu'mi	10
@@ -92379,6 +92458,7 @@
 富泽美智惠	fu'ze'mei'zhi'hui	10
 负责任大国	fu'ze'ren'da'guo	10
 负责任地说	fu'ze'ren'de'shuo	10
+负责任地说	fu'ze'ren'di'shuo	10
 负责任态度	fu'ze'ren'tai'du	10
 伏则小便难	fu'ze'xiao'bian'nan	10
 釜甑生鱼蛙	fu'zeng'sheng'yu'wa	10
@@ -96971,6 +97051,7 @@
 高校排行榜	gao'xiao'pai'hang'bang	10
 高校人才网	gao'xiao'ren'cai'wang	10
 高校实验室	gao'xiao'shi'yan'shi	10
+高晓松老师	gao'xiao'song'lao'shi	10
 高校所在地	gao'xiao'suo'zai'di	10
 高校图书馆	gao'xiao'tu'shu'guan	10
 搞笑微电影	gao'xiao'wei'dian'ying	10
@@ -130826,6 +130907,7 @@
 黄柄牛肝菌	huang'bing'niu'gan'jun	1
 黄柄曲菌素	huang'bing'qu'jun'su	10
 黄柏八味散	huang'bo'ba'wei'san	10
+黄渤的演技	huang'bo'de'yan'ji	10
 黄柏黄皮树	huang'bo'huang'pi'shu	10
 黄波罗果油	huang'bo'luo'guo'you	10
 黄波旁日晒	huang'bo'pang'ri'shai	10
@@ -135111,6 +135193,7 @@
 活得还可以	huo'de'hai'ke'yi	1
 获得好成绩	huo'de'hao'cheng'ji	1
 活得好好的	huo'de'hao'hao'de	10
+活的好好的	huo'de'hao'hao'de	10
 获得核武器	huo'de'he'wu'qi	1
 活得很好啊	huo'de'hen'hao'a	1
 活得很好吧	huo'de'hen'hao'ba	1
@@ -135141,6 +135224,7 @@
 获得了自由	huo'de'le'zi'you	1
 获得没获得	huo'de'mei'huo'de	1
 活得明白些	huo'de'ming'bai'xie	10
+活的明白些	huo'de'ming'bai'xie	10
 获得名次的	huo'de'ming'ci'de	10
 获得三等奖	huo'de'san'deng'jiang	1
 火德烧百卉	huo'de'shao'bai'hui	10
@@ -135155,6 +135239,7 @@
 获得一等奖	huo'de'yi'deng'jiang	1
 活得有意义	huo'de'you'yi'yi	10
 活得有滋味	huo'de'you'zi'wei	10
+活的有滋味	huo'de'you'zi'wei	10
 活得有尊严	huo'de'you'zun'yan	10
 活得这么好	huo'de'zhe'me'hao	1
 获得者名单	huo'de'zhe'ming'dan	1
@@ -135163,6 +135248,7 @@
 获得主动权	huo'de'zhu'dong'quan	1
 火德资生人	huo'de'zi'sheng'ren	10
 活得自在点	huo'de'zi'zai'dian	10
+活的自在点	huo'de'zi'zai'dian	10
 获得总冠军	huo'de'zong'guan'jun	1
 或登广武叹	huo'deng'guang'wu'tan	10
 火地岛秧鸡	huo'di'dao'yang'ji	1
@@ -135221,10 +135307,12 @@
 霍尔布鲁克	huo'er'bu'lu'ke	1
 霍尔传感器	huo'er'chuan'gan'qi	10
 霍尔发生器	huo'er'fa'sheng'qi	10
+霍耳发生器	huo'er'fa'sheng'qi	10
 霍尔果斯市	huo'er'guo'si'shi	10
 豁尔开灵院	huo'er'kai'ling'yuan	10
 霍尔木兹岛	huo'er'mu'zi'dao	10
 霍尔探测器	huo'er'tan'ce'qi	10
+霍耳探测器	huo'er'tan'ce'qi	10
 或乏儋石储	huo'fa'dan'shi'chu	10
 火发龙山北	huo'fa'long'shan'bei	10
 火翻红尾旆	huo'fan'hong'wei'pei	10
@@ -136399,6 +136487,7 @@
 几处有新阡	ji'chu'you'xin'qian	10
 基础与临床	ji'chu'yu'lin'chuang	10
 祭船如祭祖	ji'chuan'ru'ji'zu	10
+吉川幸次郎	ji'chuan'xing'ci'lang	32
 鸡窗对雁塔	ji'chuang'dui'yan'ta	10
 机床研究所	ji'chuang'yan'jiu'suo	1
 几吹著枯木	ji'chui'zhu'ku'mu	10
@@ -143973,6 +144062,7 @@
 饯别塞城闉	jian'bie'sai'cheng'yin	10
 简并半导体	jian'bing'ban'dao'ti	10
 煎饼馃子摊	jian'bing'guo'zi'tan	10
+煎饼果子摊	jian'bing'guo'zi'tan	10
 坚冰生绿潭	jian'bing'sheng'lv'tan	10
 简并态物质	jian'bing'tai'wu'zhi	10
 坚冰一时合	jian'bing'yi'shi'he	10
@@ -148523,6 +148613,7 @@
 降血脂药物	jiang'xie'zhi'yao'wu	1
 将新变故易	jiang'xin'bian'gu'yi	10
 江信潮应上	jiang'xin'chao'ying'shang	10
+蒋欣的演技	jiang'xin'de'yan'ji	10
 将心感知己	jiang'xin'gan'zhi'ji	10
 江信久寂寥	jiang'xin'jiu'ji'liao	10
 江心石作洲	jiang'xin'shi'zuo'zhou	10
@@ -151912,6 +152003,7 @@
 节物苦相似	jie'wu'ku'xiang'si	10
 结屋庐山阳	jie'wu'lu'shan'yang	10
 姐无奈地说	jie'wu'nai'de'shuo	10
+姐无奈的说	jie'wu'nai'de'shuo	10
 皆无其本矣	jie'wu'qi'ben'yi	10
 结屋青山下	jie'wu'qing'shan'xia	10
 接武上琼楼	jie'wu'shang'qiong'lou	10
@@ -153491,8 +153583,11 @@
 尽可能多地	jin'ke'neng'duo'de	1
 尽可能降低	jin'ke'neng'jiang'di	1
 尽可能快地	jin'ke'neng'kuai'de	10
+尽可能快地	jin'ke'neng'kuai'di	10
 尽可能少地	jin'ke'neng'shao'de	10
+尽可能少地	jin'ke'neng'shao'di	10
 尽可能早地	jin'ke'neng'zao'de	10
+尽可能早地	jin'ke'neng'zao'di	10
 尽可头团团	jin'ke'tou'tuan'tuan	10
 尽可违之去	jin'ke'wei'zhi'qu	10
 金咳息胶囊	jin'ke'xi'jiao'nang	10
@@ -158340,6 +158435,13 @@
 静宿凉湾月	jing'su'liang'wan'yue	10
 荆俗欺王粲	jing'su'qi'wang'can	10
 憬俗咏来苏	jing'su'yong'lai'su	10
+井宿增十八	jing'su'zeng'shi'ba	10
+井宿增十二	jing'su'zeng'shi'er	10
+井宿增十九	jing'su'zeng'shi'jiu	10
+井宿增十七	jing'su'zeng'shi'qi	10
+井宿增十三	jing'su'zeng'shi'san	10
+井宿增十四	jing'su'zeng'shi'si	10
+井宿增十五	jing'su'zeng'shi'wu	10
 精算师华绫	jing'suan'shi'hua'ling	10
 竟岁何曾闷	jing'sui'he'ceng'men	10
 经岁旅淮源	jing'sui'lv'huai'yuan	10
@@ -160377,6 +160479,7 @@
 九九一六年	jiu'jiu'yi'liu'nian	1
 九九一七年	jiu'jiu'yi'qi'nian	1
 九九一三年	jiu'jiu'yi'san'nian	1
+九九一十八	jiu'jiu'yi'shi'ba	10
 九九一四年	jiu'jiu'yi'si'nian	1
 九九一五年	jiu'jiu'yi'wu'nian	1
 九九一一年	jiu'jiu'yi'yi'nian	1
@@ -179385,6 +179488,7 @@
 冷冷的冰雨	leng'leng'de'bing'yu	10
 愣愣地看着	leng'leng'de'kan'zhe	10
 冷冷地说道	leng'leng'de'shuo'dao	10
+冷冷的说道	leng'leng'de'shuo'dao	10
 冷冷风松林	leng'leng'feng'song'lin	10
 棱棱静疏木	leng'leng'jing'shu'mu	10
 冷冽清心胃	leng'lie'qing'xin'wei	10
@@ -180202,6 +180306,7 @@
 历劫俏佳人	li'jie'qiao'jia'ren	1
 厉揭涉潇濑	li'jie'she'xiao'lai	10
 历届世界杯	li'jie'shi'jie'bei	10
+利洁时品牌	li'jie'shi'pin'pai	10
 理解是什么	li'jie'shi'shen'me	1
 吏接堂上肘	li'jie'tang'shang'zhou	10
 理解为什么	li'jie'wei'shen'me	1
@@ -180230,6 +180335,7 @@
 力晶半导体	li'jing'ban'dao'ti	10
 丽景变重阴	li'jing'bian'zhong'yin	10
 礼经不可逾	li'jing'bu'ke'yu	10
+丽晶大宾馆	li'jing'da'bin'guan	10
 丽晶大酒店	li'jing'da'jiu'dian	10
 李径独来数	li'jing'du'lai'shu	1
 丽景浮丹阙	li'jing'fu'dan'que	10
@@ -192297,6 +192403,7 @@
 路还远着呢	lu'hai'yuan'zhe'ne	10
 鹿晗的粉丝	lu'han'de'fen'si	10
 鹿晗的人气	lu'han'de'ren'qi	10
+鹿晗的演技	lu'han'de'yan'ji	10
 鹿晗关晓彤	lu'han'guan'xiao'tong	1
 露寒潘省夜	lu'han'pan'sheng'ye	10
 露涵松翠湿	lu'han'song'cui'shi	10
@@ -211239,6 +211346,7 @@
 南牧正纷纷	nan'mu'zheng'fen'fen	10
 南亩自甘贱	nan'mu'zi'gan'jian	10
 喃喃地说道	nan'nan'de'shuo'dao	10
+喃喃的说道	nan'nan'de'shuo'dao	10
 喃喃教言语	nan'nan'jiao'yan'yu	10
 男男女女们	nan'nan'nv'nv'men	10
 喃喃送君札	nan'nan'song'jun'zha	10
@@ -213313,6 +213421,7 @@
 你答不答应	ni'da'bu'da'ying	10
 你大吃一惊	ni'da'chi'yi'jing	10
 你打过来吧	ni'da'guo'lai'ba	1
+倪大红老师	ni'da'hong'lao'shi	10
 你大可试试	ni'da'ke'shi'shi	1
 你打算怎么	ni'da'suan'zen'me	1
 你打我电话	ni'da'wo'dian'hua	1
@@ -224319,8 +224428,11 @@
 颇忆严子濑	po'yi'yan'zi'lai	10
 颇亦有意不	po'yi'you'yi'bu	10
 坡印亭定理	po'yin'ting'ding'li	10
+坡印廷定理	po'yin'ting'ding'li	10
 坡印亭矢量	po'yin'ting'shi'liang	12
+坡印廷矢量	po'yin'ting'shi'liang	10
 坡印亭向量	po'yin'ting'xiang'liang	10
+坡印廷向量	po'yin'ting'xiang'liang	10
 颇因忠信全	po'yin'zhong'xin'quan	10
 破影抱空峦	po'ying'bao'kong'luan	10
 颇用文章戏	po'yong'wen'zhang'xi	10
@@ -225932,6 +226044,7 @@
 砌分池水岸	qi'fen'chi'shui'an	10
 气氛的烘托	qi'fen'de'hong'tuo	10
 气愤地说道	qi'fen'de'shuo'dao	10
+气愤的说道	qi'fen'de'shuo'dao	10
 气氛的渲染	qi'fen'de'xuan'ran	10
 气氛的营造	qi'fen'de'ying'zao	10
 碛分黄渺渺	qi'fen'huang'miao'miao	10
@@ -235450,6 +235563,8 @@
 侵蚀基准面	qin'shi'ji'zhun'mian	10
 秦氏金星蕨	qin'shi'jin'xing'jue	1
 秦氏莲座蕨	qin'shi'lian'zuo'jue	1
+秦时明月里	qin'shi'ming'yue'li	10
+秦时明月中	qin'shi'ming'yue'zhong	10
 秦氏内经学	qin'shi'nei'jing'xue	10
 寝食疲朝晡	qin'shi'pi'chao'bu	10
 寝食起居外	qin'shi'qi'ju'wai	10
@@ -242882,6 +242997,7 @@
 取胜的关键	qu'sheng'de'guan'jian	10
 取胜的可能	qu'sheng'de'ke'neng	10
 取胜的秘诀	qu'sheng'de'mi'jue	10
+去省立医院	qu'sheng'li'yi'yuan	10
 区生态环境	qu'sheng'tai'huan'jing	10
 取胜小非用	qu'sheng'xiao'fei'yong	10
 麹生住相近	qu'sheng'zhu'xiang'jin	10
@@ -243995,6 +244111,7 @@
 全排列算法	quan'pai'lie'suan'fa	1
 全盘西化论	quan'pan'xi'hua'lun	10
 泉旁往来客	quan'pang'wang'lai'ke	10
+全抛一片心	quan'pao'yi'pian'xin	10
 泉喷声如玉	quan'pen'sheng'ru'yu	10
 泉喷诸戎血	quan'pen'zhu'rong'xue	10
 全脾切除术	quan'pi'qie'chu'shu	10
@@ -257351,6 +257468,7 @@
 僧还相访来	seng'hai'xiang'fang'lai	10
 僧集讲筵中	seng'ji'jiang'yan'zhong	10
 僧家竟何事	seng'jia'jing'he'shi	10
+僧伽婆尸沙	seng'jia'po'shi'sha	10
 僧家无住著	seng'jia'wu'zhu'zhu	10
 僧腊阶前树	seng'la'jie'qian'shu	10
 僧腊老烟霄	seng'la'lao'yan'xiao	10
@@ -267852,6 +267970,8 @@
 生理盐水中	sheng'li'yan'shui'zhong	10
 生理亦粗足	sheng'li'yi'cu'zu	10
 生理医学奖	sheng'li'yi'xue'jiang	10
+省立医院的	sheng'li'yi'yuan'de	10
+省立医院站	sheng'li'yi'yuan'zhan	10
 生理已自毕	sheng'li'yi'zi'bi	10
 生理有倚伏	sheng'li'you'yi'fu	10
 生理鱼乞水	sheng'li'yu'qi'shui	10
@@ -268749,6 +268869,7 @@
 生心坐有求	sheng'xin'zuo'you'qiu	10
 声形不相吊	sheng'xing'bu'xiang'diao	10
 盛行的当下	sheng'xing'de'dang'xia	10
+盛行的当下	sheng'xing'di'dang'xia	10
 生性苟不夭	sheng'xing'gou'bu'yao	10
 省行政学院	sheng'xing'zheng'xue'yuan	10
 省胸科医院	sheng'xiong'ke'yi'yuan	10
@@ -270184,6 +270305,7 @@
 石鼎引长鸣	shi'ding'yin'chang'ming	10
 石鼎吟方透	shi'ding'yin'fang'tou	10
 石鼎煮山药	shi'ding'zhu'shan'yao	10
+是东北大学	shi'dong'bei'da'xue	10
 是动画电影	shi'dong'hua'dian'ying	10
 石东路街道	shi'dong'lu'jie'dao	10
 石洞实时封	shi'dong'shi'shi'feng	10
@@ -270428,6 +270550,7 @@
 诗发尊祖心	shi'fa'zun'zu'xin	10
 师范毕业后	shi'fan'bi'ye'hou	10
 示范变规范	shi'fan'bian'gui'fan	10
+师范大学校	shi'fan'da'xue'xiao	10
 师范大学站	shi'fan'da'xue'zhan	10
 石帆何峭峣	shi'fan'he'qiao'yao	10
 式反舰导弹	shi'fan'jian'dao'dan	10
@@ -273741,6 +273864,7 @@
 失去了意义	shi'qu'le'yi'yi	1
 失去了丈夫	shi'qu'le'zhang'fu	1
 失去了之后	shi'qu'le'zhi'hou	1
+失去了知觉	shi'qu'le'zhi'jue	10
 失去了中国	shi'qu'le'zhong'guo	1
 失去了自由	shi'qu'le'zi'you	1
 失去了踪迹	shi'qu'le'zong'ji	10
@@ -275689,6 +275813,7 @@
 十五泣春风	shi'wu'qi'chun'feng	10
 食无千户封	shi'wu'qian'hu'feng	10
 史无前例地	shi'wu'qian'li'de	10
+史无前例地	shi'wu'qian'li'di	10
 世务轻摩揣	shi'wu'qing'mo'chuai	10
 时无青松心	shi'wu'qing'song'xin	10
 事勿求人恕	shi'wu'qiu'ren'shu	10
@@ -278219,6 +278344,7 @@
 收获了许多	shou'huo'le'xu'duo	1
 收获了友情	shou'huo'le'you'qing	1
 收获了友谊	shou'huo'le'you'yi	10
+收获了知识	shou'huo'le'zhi'shi	10
 收获了自信	shou'huo'le'zi'xin	1
 收获了知识	shou'huo'liao'zhi'shi	10
 兽火列前楹	shou'huo'lie'qian'ying	10
@@ -282388,7 +282514,9 @@
 双口吸虫症	shuang'kou'xi'chong'zheng	10
 爽快不爽快	shuang'kuai'bu'shuang'kuai	1
 爽快地答应	shuang'kuai'de'da'ying	10
+爽快的答应	shuang'kuai'de'da'ying	10
 爽快地战斗	shuang'kuai'de'zhan'dou	10
+爽快的战斗	shuang'kuai'de'zhan'dou	10
 爽籁赴鸣玉	shuang'lai'fu'ming'yu	10
 霜来玉树繁	shuang'lai'yu'shu'fan	10
 双缆单源法	shuang'lan'dan'yuan'fa	10
@@ -289993,6 +290121,7 @@
 宋代汴洛音	song'dai'bian'luo'yin	10
 松带日馀曛	song'dai'ri'yu'xun	10
 松待岁峥嵘	song'dai'sui'zheng'rong	10
+宋丹丹老师	song'dan'dan'lao'shi	10
 松岛菜菜子	song'dao'cai'cai'zi	1
 松岛花蜜鸟	song'dao'hua'mi'niao	1
 送到了医院	song'dao'le'yi'yuan	1
@@ -290672,6 +290801,7 @@
 松小未含烟	song'xiao'wei'han'yan	10
 松筱行皆傍	song'xiao'xing'jie'bang	10
 宋孝宗赵昚	song'xiao'zong'zhao'shen	10
+宋孝宗赵眘	song'xiao'zong'zhao'shen	10
 松心保贞实	song'xin'bao'zhen'shi	10
 松心契独全	song'xin'qi'du'quan	10
 松新麈尾齐	song'xin'zhu'wei'qi	10
@@ -293515,6 +293645,7 @@
 簨簴雕捷业	sun'ju'diao'jie'ye	10
 孙郎表独立	sun'lang'biao'du'li	10
 孙俪的微博	sun'li'de'wei'bo	10
+孙俪的演技	sun'li'de'yan'ji	10
 孙俪和邓超	sun'li'he'deng'chao	10
 孙莉和黄磊	sun'li'he'huang'lei	10
 孙俪与邓超	sun'li'yu'deng'chao	10
@@ -293697,6 +293828,8 @@
 索菲罗城堡	suo'fei'luo'cheng'bao	10
 索菲亚高地	suo'fei'ya'gao'di	1
 索菲亚公主	suo'fei'ya'gong'zhu	10
+索菲娅公主	suo'fei'ya'gong'zhu	10
+嗦粉克不咯	suo'fen'ke'bu'ge	10
 嗍粉克不咯	suo'fen'ke'bu'ge	0
 所逢非所思	suo'feng'fei'suo'si	10
 所逢苟非义	suo'feng'gou'fei'yi	10
@@ -296574,6 +296707,7 @@
 谭家三展拳	tan'jia'san'zhan'quan	10
 贪贾学垂绅	tan'jia'xue'chui'shen	10
 摊煎饼馃子	tan'jian'bing'guo'zi	10
+摊煎饼果子	tan'jian'bing'guo'zi	10
 叹嗟独不见	tan'jie'du'bu'jian	10
 痰结毒滞证	tan'jie'du'zhi'zheng	10
 叹嗟悬剑陇	tan'jie'xuan'jian'long	10
@@ -297321,6 +297455,7 @@
 糖果大爆险	tang'guo'da'bao'xian	10
 糖果的味道	tang'guo'de'wei'dao	10
 糖果和咖啡	tang'guo'he'ka'fei	10
+唐国强老师	tang'guo'qiang'lao'shi	10
 唐海小泥鳅	tang'hai'xiao'ni'qiu	1
 糖和蛋白质	tang'he'dan'bai'zhi	10
 汤河口社区	tang'he'kou'she'qu	1
@@ -297622,6 +297757,7 @@
 汤逊湖北路	tang'xun'hu'bei'lu	1
 傥寻琪树人	tang'xun'qi'shu'ren	10
 糖芽胞杆菌	tang'ya'bao'gan'jun	1
+唐嫣的演技	tang'yan'de'yan'ji	10
 唐嫣和罗晋	tang'yan'he'luo'jin	10
 唐嫣和杨幂	tang'yan'he'yang'mi	10
 糖烟酒公司	tang'yan'jiu'gong'si	1
@@ -297749,6 +297885,7 @@
 韬奋基金会	tao'fen'ji'jin'hui	10
 韬奋纪念馆	tao'fen'ji'nian'guan	10
 陶夫基尔兴	tao'fu'ji'er'xing	10
+涛哥非流氓	tao'ge'fei'liu'mang	10
 讨个好彩头	tao'ge'hao'cai'tou	10
 韬戈器反农	tao'ge'qi'fan'nong	10
 桃根知酒渴	tao'gen'zhi'jiu'ke	10
@@ -298603,6 +298740,7 @@
 腾飞的巨龙	teng'fei'de'ju'long	10
 腾飞路街道	teng'fei'lu'jie'dao	10
 滕阁丹霄倚	teng'ge'dan'xiao'yi	10
+腾格尔老师	teng'ge'er'lao'shi	10
 腾格里沙漠	teng'ge'li'sha'mo	1
 滕公千载归	teng'gong'qian'zai'gui	10
 藤古不留春	teng'gu'bu'liu'chun	10
@@ -300231,6 +300369,7 @@
 天回到原点	tian'hui'dao'yuan'dian	10
 天回顾盼中	tian'hui'gu'pan'zhong	10
 天恢猎德网	tian'hui'lie'de'wang	10
+天毁灭倒数	tian'hui'mie'dao'shu	10
 天回日西照	tian'hui'ri'xi'zhao	10
 天回兔欲落	tian'hui'tu'yu'luo	10
 天回万象出	tian'hui'wan'xiang'chu	10
@@ -300599,6 +300738,7 @@
 天凉景物清	tian'liang'jing'wu'qing	10
 天亮就出发	tian'liang'jiu'chu'fa	1
 天亮请睁眼	tian'liang'qing'zheng'yan	1
+田亮叶一茜	tian'liang'ye'yi'qian	10
 天凉玉漏迟	tian'liang'yu'lou'chi	10
 畋猎旧非熊	tian'lie'jiu'fei'xiong	10
 忝列岁星臣	tian'lie'sui'xing'chen	10
@@ -300981,6 +301121,7 @@
 天然气贸易	tian'ran'qi'mao'yi	10
 天然气凝液	tian'ran'qi'ning'ye	10
 天然气泄漏	tian'ran'qi'xie'lou	10
+天然气泄露	tian'ran'qi'xie'lou	10
 天然气液化	tian'ran'qi'ye'hua	10
 天然气重卡	tian'ran'qi'zhong'ka	1
 天然气资源	tian'ran'qi'zi'yuan	1
@@ -301154,7 +301295,12 @@
 天声振九围	tian'sheng'zhen'jiu'wei	10
 天生忠与义	tian'sheng'zhong'yu'yi	10
 甜食爱好者	tian'shi'ai'hao'zhe	10
+天使艾美丽	tian'shi'ai'mei'li	10
+天使爱美丽	tian'shi'ai'mei'li	10
+天使爱美纱	tian'shi'ai'mei'sha	10
+天使艾米莉	tian'shi'ai'mi'li	10
 天使报喜节	tian'shi'bao'xi'jie	1
+天使报喜堂	tian'shi'bao'xi'tang	10
 田氏保婴集	tian'shi'bao'ying'ji	10
 天使不在的	tian'shi'bu'zai'de	10
 天使出霜台	tian'shi'chu'shuang'tai	10
@@ -301174,6 +301320,7 @@
 天势围平野	tian'shi'wei'ping'ye	10
 天使下西楼	tian'shi'xia'xi'lou	10
 天使相召匹	tian'shi'xiang'zhao'pi	10
+天使也掉毛	tian'shi'ye'diao'mao	10
 天使亦魔鬼	tian'shi'yi'mo'gui	10
 天市右垣七	tian'shi'you'yuan'qi	10
 天时有早晚	tian'shi'you'zao'wan	10
@@ -304145,6 +304292,7 @@
 同迹不同群	tong'ji'bu'tong'qun	10
 同级车型中	tong'ji'che'xing'zhong	10
 统计大辞典	tong'ji'da'ci'dian	10
+同济大学一	tong'ji'da'xue'yi	10
 同济大学站	tong'ji'da'xue'zhan	10
 同济二附中	tong'ji'er'fu'zhong	10
 统计分析纸	tong'ji'fen'xi'zhi	10
@@ -311151,6 +311299,7 @@
 望尽南飞燕	wang'jin'nan'fei'yan	10
 王今叔父尊	wang'jin'shu'fu'zun	10
 望尽似犹见	wang'jin'si'you'jian	10
+王劲松老师	wang'jin'song'lao'shi	10
 望尽天涯路	wang'jin'tian'ya'lu	10
 忘尽心中情	wang'jin'xin'zhong'qing	10
 望尽烟云生	wang'jin'yan'yun'sheng	10
@@ -312149,6 +312298,7 @@
 网友们质疑	wang'you'men'zhi'yi	10
 网游排行榜	wang'you'pai'hang'bang	10
 网友评论道	wang'you'ping'lun'dao	10
+忘忧清乐集	wang'you'qing'le'ji	10
 忘忧清乐集	wang'you'qing'yue'ji	10
 网友却表示	wang'you'que'biao'shi	10
 网友却觉得	wang'you'que'jue'de	1
@@ -325411,6 +325561,7 @@
 无路基病害	wu'lu'ji'bing'hai	10
 无路继湘妃	wu'lu'ji'xiang'fei	10
 乌鲁鳉脂鲤	wu'lu'jiang'zhi'li	1
+五路居一中	wu'lu'ju'yi'zhong	10
 乌鲁克穆河	wu'lu'ke'mu'he	1
 乌鲁克奈鱼	wu'lu'ke'nai'yu	1
 乌鲁克恰提	wu'lu'ke'qia'ti	1
@@ -325418,9 +325569,11 @@
 乌鲁木齐仓	wu'lu'mu'qi'cang	10
 乌鲁木齐到	wu'lu'mu'qi'dao	10
 乌鲁木齐的	wu'lu'mu'qi'de	10
+乌鲁木齐二	wu'lu'mu'qi'er	10
 乌鲁木齐河	wu'lu'mu'qi'he	10
 乌鲁木齐路	wu'lu'mu'qi'lu	10
 乌鲁木齐南	wu'lu'mu'qi'nan	10
+乌鲁木齐七	wu'lu'mu'qi'qi	10
 乌鲁木齐去	wu'lu'mu'qi'qu	10
 乌鲁木齐人	wu'lu'mu'qi'ren	10
 乌鲁木齐市	wu'lu'mu'qi'shi	10
@@ -325536,6 +325689,7 @@
 雾霾很严重	wu'mai'hen'yan'zhong	1
 五脉斜萼草	wu'mai'xie'e'cao	1
 伍麦叶王朝	wu'mai'ye'wang'chao	10
+伍麦耶王朝	wu'mai'ye'wang'chao	10
 吾麦自不恶	wu'mai'zi'bu'e	10
 芜漫藏书壁	wu'man'cang'shu'bi	10
 吾漫诚难改	wu'man'cheng'nan'gai	10
@@ -325937,6 +326091,7 @@
 五七六四年	wu'qi'liu'si'nian	1
 五七六五年	wu'qi'liu'wu'nian	1
 五七六一年	wu'qi'liu'yi'nian	1
+吴奇隆前妻	wu'qi'long'qian'qi	10
 五七路街道	wu'qi'lu'jie'dao	10
 五七七八年	wu'qi'qi'ba'nian	1
 五七七二年	wu'qi'qi'er'nian	1
@@ -327437,6 +327592,7 @@
 无条件执行	wu'tiao'jian'zhi'xing	1
 五条人乐队	wu'tiao'ren'yue'dui	1
 无调味坚果	wu'tiao'wei'jian'guo	10
+五条悟老师	wu'tiao'wu'lao'shi	10
 五条御誓文	wu'tiao'yu'shi'wen	10
 勿听白头吟	wu'ting'bai'tou'yin	10
 五听辨疑似	wu'ting'bian'yi'si	10
@@ -328138,6 +328294,7 @@
 五相一渔翁	wu'xiang'yi'yu'weng	10
 舞香遗在茵	wu'xiang'yi'zai'yin	10
 物象自清旷	wu'xiang'zi'qing'kuang	10
+吴晓波老师	wu'xiao'bo'lao'shi	10
 勿笑风俗陋	wu'xiao'feng'su'lou	10
 五校连旗色	wu'xiao'lian'qi'se	10
 雾晓起凫雁	wu'xiao'qi'fu'yan	10
@@ -329389,6 +329546,7 @@
 物质格佯谬	wu'zhi'ge'yang'miu	10
 物质和精神	wu'zhi'he'jing'shen	10
 五指虹彩鲷	wu'zhi'hong'cai'diao	1
+武志红老师	wu'zhi'hong'lao'shi	10
 无支护土方	wu'zhi'hu'tu'fang	10
 无纸化办公	wu'zhi'hua'ban'gong	1
 物质基础的	wu'zhi'ji'chu'de	10
@@ -334539,6 +334697,7 @@
 霞美镇政府	xia'mei'zhen'zheng'fu	10
 厦门白姑鱼	xia'men'bai'gu'yu	1
 厦门北站站	xia'men'bei'zhan'zhan	10
+厦门大学渣	xia'men'da'xue'zha	10
 厦门等城市	xia'men'deng'cheng'shi	10
 厦门电视台	xia'men'dian'shi'tai	1
 厦门二手房	xia'men'er'shou'fang	1
@@ -343306,6 +343465,7 @@
 小美洲夜鹰	xiao'mei'zhou'ye'ying	1
 小门鲸鱼洞	xiao'men'jing'yu'dong	10
 晓梦猿呼觉	xiao'meng'yuan'hu'jue	10
+小米虫虫翔	xiao'mi'chong'chong'xiang	10
 小咪大喇叭	xiao'mi'da'la'ba	10
 小米的产品	xiao'mi'de'chan'pin	10
 小米的成功	xiao'mi'de'cheng'gong	10
@@ -343320,6 +343480,7 @@
 小米加步枪	xiao'mi'jia'bu'qiang	10
 小米科技园	xiao'mi'ke'ji'yuan	1
 笑眯眯地说	xiao'mi'mi'de'shuo	10
+笑眯眯地说	xiao'mi'mi'di'shuo	10
 小密苏里河	xiao'mi'su'li'he	10
 小米特尼克	xiao'mi'te'ni'ke	10
 筱密夜窗寒	xiao'mi'ye'chuang'han	10
@@ -343470,6 +343631,7 @@
 小屏爱好者	xiao'ping'ai'hao'zhe	10
 小萍加泛泛	xiao'ping'jia'fan'fan	10
 小屏山色远	xiao'ping'shan'se'yuan	10
+萧平实导师	xiao'ping'shi'dao'shi	10
 小圃傍城郭	xiao'pu'bang'cheng'guo	10
 小普济尔基	xiao'pu'ji'er'ji	10
 肖普朗大学	xiao'pu'lang'da'xue	10
@@ -343539,6 +343701,7 @@
 小清水亚美	xiao'qing'shui'ya'mei	1
 小青蛙呱呱	xiao'qing'wa'gua'gua	10
 小清新系列	xiao'qing'xin'xi'lie	1
+小鲭鱼薇薇	xiao'qing'yu'wei'wei	10
 消球差透镜	xiao'qiu'cha'tou'jing	12
 小球的动能	xiao'qiu'de'dong'neng	10
 小球棘冠螺	xiao'qiu'ji'guan'luo	1
@@ -344586,6 +344749,7 @@
 小小的花园	xiao'xiao'de'hua'yuan	1
 枭啸得黄昏	xiao'xiao'de'huang'hun	10
 小小的快乐	xiao'xiao'de'kuai'le	1
+笑笑的离开	xiao'xiao'de'li'kai	10
 小小的年纪	xiao'xiao'de'nian'ji	1
 小小的人儿	xiao'xiao'de'ren'er	1
 小小的失落	xiao'xiao'de'shi'luo	1
@@ -344713,10 +344877,12 @@
 小叶中国蕨	xiao'xie'zhong'guo'jue	1
 小心地看着	xiao'xin'de'kan'zhe	1
 小心地控制	xiao'xin'de'kong'zhi	1
+小新的蜡笔	xiao'xin'de'la'bi	10
 小心谨慎地	xiao'xin'jin'shen'de	10
 小新开胡同	xiao'xin'kai'hu'tong	1
 小辛码头村	xiao'xin'ma'tou'cun	10
 小心没大错	xiao'xin'mei'da'cuo	10
+小新没蜡笔	xiao'xin'mei'la'bi	10
 小新萌萌哒	xiao'xin'meng'meng'da	10
 小新牌螺丝	xiao'xin'pai'luo'si	10
 小心仍致孝	xiao'xin'reng'zhi'xiao	10
@@ -344909,6 +345075,7 @@
 消炎止痛膏	xiao'yan'zhi'tong'gao	1
 晓岩中警柝	xiao'yan'zhong'jing'tuo	10
 小宴追凉散	xiao'yan'zhui'liang'san	10
+小燕子紫薇	xiao'yan'zi'zi'wei	10
 小羊坊西口	xiao'yang'fang'xi'kou	1
 小杨各庄村	xiao'yang'ge'zhuang'cun	1
 小杨家胡同	xiao'yang'jia'hu'tong	1
@@ -345157,6 +345324,7 @@
 笑语绝平生	xiao'yu'jue'ping'sheng	10
 消瘀康胶囊	xiao'yu'kang'jiao'nang	10
 小鱼冒个泡	xiao'yu'mao'ge'pao	10
+小羽萌萌哒	xiao'yu'meng'meng'da	10
 小玉米粒子	xiao'yu'mi'li'zi	1
 晓雨破轻苹	xiao'yu'po'qing'ping	10
 笑语千山应	xiao'yu'qian'shan'ying	10
@@ -348332,6 +348500,7 @@
 新生的躯体	xin'sheng'de'qu'ti	1
 新生的希望	xin'sheng'de'xi'wang	10
 新生的婴儿	xin'sheng'de'ying'er	10
+新生儿鼻塞	xin'sheng'er'bi'sai	10
 新生儿鼻塞	xin'sheng'er'bi'se	10
 新生儿参保	xin'sheng'er'can'bao	10
 新生儿登记	xin'sheng'er'deng'ji	10
@@ -349656,6 +349825,7 @@
 心逐信陵君	xin'zhu'xin'ling'jun	10
 新竹再移丛	xin'zhu'zai'yi'cong	10
 新传凫氏文	xin'zhuan'fu'shi'wen	10
+新传媒艺人	xin'zhuan'mei'yi'ren	10
 心转身之术	xin'zhuan'shen'zhi'shu	1
 心转心之术	xin'zhuan'xin'zhi'shu	1
 心专眼悁悁	xin'zhuan'yan'yuan'yuan	10
@@ -361958,6 +362128,7 @@
 阳乐寒初变	yang'le'han'chu'bian	10
 养了一只猫	yang'le'yi'zhi'mao	1
 养力方敢前	yang'li'fang'gan'qian	10
+杨丽萍老师	yang'li'ping'lao'shi	10
 阳离子交换	yang'li'zi'jiao'huan	10
 阳离子染料	yang'li'zi'ran'liao	10
 阳离子树脂	yang'li'zi'shu'zhi	10
@@ -362485,6 +362656,7 @@
 养阴清肺丸	yang'yin'qing'fei'wan	10
 杨银叶潜蛾	yang'yin'ye'qian'e	1
 杨尹谪虔州	yang'yin'zhe'qian'zhou	10
+杨颖的演技	yang'ying'de'yan'ji	10
 飏影过伊洛	yang'ying'guo'yi'luo	10
 漾影逐波深	yang'ying'zhu'bo'shen	10
 仰咏嗟无穷	yang'yong'jie'wu'qiong	10
@@ -362596,6 +362768,7 @@
 扬子出其后	yang'zi'chu'qi'hou	10
 养子穿穴内	yang'zi'chuan'xue'nei	10
 扬子单极虫	yang'zi'dan'ji'chong	1
+杨紫的演技	yang'zi'de'yan'ji	10
 养子风尘际	yang'zi'feng'chen'ji	10
 杨子果箪瓢	yang'zi'guo'dan'piao	10
 扬子何年邑	yang'zi'he'nian'yi	10
@@ -369710,6 +369883,7 @@
 异卡波肼片	yi'ka'bo'jing'pian	10
 伊卡兰翼龙	yi'ka'lan'yi'long	1
 伊卡里亚岛	yi'ka'li'ya'dao	10
+伊卡利亚岛	yi'ka'li'ya'dao	10
 一卡通系统	yi'ka'tong'xi'tong	1
 已开第七秩	yi'kai'di'qi'zhi	10
 已开发国家	yi'kai'fa'guo'jia	1
@@ -372117,6 +372291,7 @@
 一生自穷苦	yi'sheng'zi'qiong'ku	10
 一生自疏旷	yi'sheng'zi'shu'kuang	10
 已是安苍黄	yi'shi'an'cang'huang	10
+义士安重根	yi'shi'an'chong'gen	10
 义士安重根	yi'shi'an'zhong'gen	10
 已失巴陵雨	yi'shi'ba'ling'yu	10
 疑是巴王台	yi'shi'ba'wang'tai	10
@@ -382432,6 +382607,7 @@
 犹悲堕泪碣	you'bei'duo'lei'jie	10
 犹被赏时鱼	you'bei'shang'shi'yu	10
 有被震撼到	you'bei'zhen'han'dao	10
+游本昌老师	you'ben'chang'lao'shi	10
 有本事开门	you'ben'shi'kai'men	1
 有本事自己	you'ben'shi'zi'ji	1
 有本者如是	you'ben'zhe'ru'shi	10
@@ -387117,6 +387293,7 @@
 又重故人思	you'zhong'gu'ren'si	10
 有中国特色	you'zhong'guo'te'se	1
 由中国主导	you'zhong'guo'zhu'dao	10
+由中山大学	you'zhong'shan'da'xue	10
 又重田畴辟	you'zhong'tian'chou'pi	10
 幽中未尝摅	you'zhong'wei'chang'shu	10
 有钟纤毛虫	you'zhong'xian'mao'chong	1
@@ -390593,6 +390770,7 @@
 欲听虚空教	yu'ting'xu'kong'jiao	10
 渔艇宜孤棹	yu'ting'yi'gu'zhao	10
 宇通工业园	yu'tong'gong'ye'yuan	10
+与同济大学	yu'tong'ji'da'xue	10
 裕通面粉厂	yu'tong'mian'fen'chang	10
 玉童收夜钥	yu'tong'shou'ye'yao	10
 裕彤体育场	yu'tong'ti'yu'chang	10
@@ -394271,6 +394449,7 @@
 愿闻子之志	yuan'wen'zi'zhi'zhi	10
 愿我比蒲稗	yuan'wo'bi'pu'bai	10
 愿我迟似挛	yuan'wo'chi'si'luan	10
+原武汉大学	yuan'wu'han'da'xue	10
 远雾开群壑	yuan'wu'kai'qun'he	10
 园屋谅非今	yuan'wu'liang'fei'jin	10
 元武宗海山	yuan'wu'zong'hai'shan	1
@@ -394323,6 +394502,7 @@
 愿想悬鹑弊	yuan'xiang'xuan'chun'bi	10
 远想欲回轩	yuan'xiang'yu'hui'xuan	10
 院校毕业生	yuan'xiao'bi'ye'sheng	10
+院校大调整	yuan'xiao'da'diao'zheng	10
 院校大调整	yuan'xiao'da'tiao'zheng	10
 原小单胞菌	yuan'xiao'dan'bao'jun	1
 原小单孢菌	yuan'xiao'dan'bao'jun	1
@@ -398788,6 +398968,7 @@
 再审申请书	zai'shen'shen'qing'shu	10
 再生和修复	zai'sheng'he'xiu'fu	10
 灾生剑忽飞	zai'sheng'jian'hu'fei	10
+在省立医院	zai'sheng'li'yi'yuan	10
 再生期脱发	zai'sheng'qi'tuo'fa	10
 在盛夏等待	zai'sheng'xia'deng'dai	10
 再升纡绣服	zai'sheng'yu'xiu'fu	10
@@ -399483,8 +399664,19 @@
 藏西岩黄耆	zang'xi'yan'huang'qi	10
 脏行气于腑	zang'xing'qi'yu'fu	10
 藏医药浴法	zang'yi'yao'yu'fa	1
+葬于爱丁堡	zang'yu'ai'ding'bao	10
 葬于不毛地	zang'yu'bu'mao'di	10
+葬于多伦多	zang'yu'duo'lun'duo	10
+葬于广州市	zang'yu'guang'zhou'shi	10
+葬于哈尔滨	zang'yu'ha'er'bin	10
+葬于黑龙江	zang'yu'hei'long'jiang	10
+葬于加拿大	zang'yu'jia'na'da	10
+葬于莫斯科	zang'yu'mo'si'ke	10
+葬于纽约州	zang'yu'niu'yue'zhou	10
+葬于清东陵	zang'yu'qing'dong'ling	10
+葬于清西陵	zang'yu'qing'xi'ling	10
 脏俞五十穴	zang'yu'wu'shi'xue	10
+葬于意大利	zang'yu'yi'da'li	10
 脏脏的感觉	zang'zang'de'gan'jue	1
 藏族酥酪糕	zang'zu'su'lao'gao	1
 藏族自治州	zang'zu'zi'zhi'zhou	1
@@ -401016,6 +401208,7 @@
 增长了不少	zeng'zhang'le'bu'shao	1
 增长了多少	zeng'zhang'le'duo'shao	1
 增长了见识	zeng'zhang'le'jian'shi	10
+增长了知识	zeng'zhang'le'zhi'shi	10
 增长了知识	zeng'zhang'liao'zhi'shi	10
 增长驱动力	zeng'zhang'qu'dong'li	1
 增长确定性	zeng'zhang'que'ding'xing	1
@@ -401164,6 +401357,7 @@
 扎实的工作	zha'shi'de'gong'zuo	10
 扎实的技术	zha'shi'de'ji'shu	10
 扎实的剧本	zha'shi'de'ju'ben	10
+扎实的演技	zha'shi'de'yan'ji	10
 扎实的用料	zha'shi'de'yong'liao	10
 扎实的专业	zha'shi'de'zhuan'ye	10
 扎实的作风	zha'shi'de'zuo'feng	10
@@ -402524,6 +402718,7 @@
 张家洼街道	zhang'jia'wa'jie'dao	10
 张家湾街道	zhang'jia'wan'jie'dao	10
 张家岩水库	zhang'jia'yan'shui'ku	10
+张嘉译老师	zhang'jia'yi'lao'shi	10
 张家营子镇	zhang'jia'ying'zi'zhen	10
 张家庄社区	zhang'jia'zhuang'she'qu	10
 张家庄水库	zhang'jia'zhuang'shui'ku	10
@@ -402558,6 +402753,7 @@
 张杰与谢娜	zhang'jie'yu'xie'na	10
 掌节镇非常	zhang'jie'zhen'fei'chang	10
 张晋蔡少芬	zhang'jin'cai'shao'fen	10
+章金莱老师	zhang'jin'lai'lao'shi	10
 长进这么快	zhang'jin'zhe'me'kuai	1
 仗酒祓清愁	zhang'jiu'fu'qing'chou	10
 瘴久药难制	zhang'jiu'yao'nan'zhi	10
@@ -402785,6 +402981,7 @@
 掌上星初满	zhang'shang'xing'chu'man	10
 长上影阳线	zhang'shang'ying'yang'xian	10
 掌上营业厅	zhang'shang'ying'ye'ting	1
+张绍刚老师	zhang'shao'gang'lao'shi	10
 掌深静脉弓	zhang'shen'jing'mai'gong	10
 长什么样子	zhang'shen'me'yang'zi	10
 障深闻道晚	zhang'shen'wen'dao'wan	10
@@ -402860,6 +403057,7 @@
 掌握了方法	zhang'wo'le'fang'fa	1
 掌握了一点	zhang'wo'le'yi'dian	1
 掌握了证据	zhang'wo'le'zheng'ju	1
+掌握了知识	zhang'wo'le'zhi'shi	10
 张我勒个去	zhang'wo'lei'ge'qu	10
 掌握了知识	zhang'wo'liao'zhi'shi	10
 掌握须平执	zhang'wo'xu'ping'zhi	10
@@ -402912,6 +403110,7 @@
 障羞罗袂薄	zhang'xiu'luo'mei'bao	10
 张绪归何暮	zhang'xu'gui'he'mu	10
 张玄墓志铭	zhang'xuan'mu'zhi'ming	1
+张雪峰老师	zhang'xue'feng'lao'shi	10
 张学良公馆	zhang'xue'liang'gong'guan	10
 张学良旧居	zhang'xue'liang'jiu'ju	10
 张巡守睢阳	zhang'xun'shou'sui'yang	1
@@ -403081,6 +403280,7 @@
 赵北赐山川	zhao'bei'ci'shan'chuan	10
 赵北美佳政	zhao'bei'mei'jia'zheng	10
 赵本山范伟	zhao'ben'shan'fan'wei	10
+赵本山老师	zhao'ben'shan'lao'shi	10
 赵本山徒弟	zhao'ben'shan'tu'di	10
 朝比奈七濑	zhao'bi'nai'qi'lai	10
 诏跸上之回	zhao'bi'shang'zhi'hui	10
@@ -404006,6 +404206,7 @@
 诏征神武师	zhao'zheng'shen'wu'shi	10
 诏置海陵仓	zhao'zhi'hai'ling'cang	10
 赵忠祥丑闻	zhao'zhong'xiang'chou'wen	1
+赵忠祥老师	zhao'zhong'xiang'lao'shi	10
 照瞩三光政	zhao'zhu'san'guang'zheng	10
 找专业人士	zhao'zhuan'ye'ren'shi	10
 赵庄村委会	zhao'zhuang'cun'wei'hui	1
@@ -407341,6 +407542,7 @@
 证书作废表	zheng'shu'zuo'fei'biao	10
 郑爽的粉丝	zheng'shuang'de'fen'si	10
 郑爽的性格	zheng'shuang'de'xing'ge	10
+郑爽的演技	zheng'shuang'de'yan'ji	10
 郑爽和张翰	zheng'shuang'he'zhang'han	10
 蒸水会其左	zheng'shui'hui'qi'zuo	10
 征税及渔竿	zheng'shui'ji'yu'gan	10
@@ -412646,6 +412848,7 @@
 中共十七大	zhong'gong'shi'qi'da	10
 中共十五大	zhong'gong'shi'wu'da	10
 仲弓问子氏	zhong'gong'wen'zi'shi	10
+中共湘区委	zhong'gong'xiang'qu'wei	10
 重工业城市	zhong'gong'ye'cheng'shi	1
 重工业基地	zhong'gong'ye'ji'di	1
 重工业企业	zhong'gong'ye'qi'ye	1
@@ -416446,6 +416649,7 @@
 周旋谢起予	zhou'xuan'xie'qi'yu	10
 周旋值狡童	zhou'xuan'zhi'jiao'tong	10
 舟雪洒寒灯	zhou'xue'sa'han'deng	10
+周迅的演技	zhou'xun'de'yan'ji	10
 周迅和陈坤	zhou'xun'he'chen'kun	10
 昼驯识宾客	zhou'xun'shi'bin'ke	10
 昼掩白云扉	zhou'yan'bai'yun'fei	10
@@ -419826,6 +420030,7 @@
 装修管理费	zhuang'xiu'guan'li'fei	10
 装修许可证	zhuang'xiu'xu'ke'zheng	10
 装修验收单	zhuang'xiu'yan'shou'dan	10
+庄雅婷老师	zhuang'ya'ting'lao'shi	10
 壮牙鰕虎鱼	zhuang'ya'xia'hu'yu	1
 庄严的仪式	zhuang'yan'de'yi'shi	10
 庄严佛净土	zhuang'yan'fo'jing'tu	10
@@ -420185,6 +420390,7 @@
 准噶尔苔草	zhun'ga'er'tai'cao	1
 准噶尔翼龙	zhun'ga'er'yi'long	1
 准噶尔之役	zhun'ga'er'zhi'yi	10
+准格尔汗国	zhun'ge'er'han'guo	10
 准格尔盆地	zhun'ge'er'pen'di	1
 准葛尔盆地	zhun'ge'er'pen'di	1
 准格尔旗人	zhun'ge'er'qi'ren	10
@@ -424803,6 +425009,7 @@
 卒践塞前愆	zu'jian'sai'qian'qian	10
 组件制造商	zu'jian'zhi'zao'shang	10
 租界巡捕房	zu'jie'xun'bu'fang	10
+组金八老师	zu'jin'ba'lao'shi	10
 租金的上涨	zu'jin'de'shang'zhang	10
 租金和押金	zu'jin'he'ya'jin	10
 租金回报率	zu'jin'hui'bao'lv	1
@@ -424967,6 +425174,7 @@
 足以慰馀生	zu'yi'wei'yu'sheng	10
 足以正神器	zu'yi'zheng'shen'qi	10
 足以贮妻儿	zu'yi'zhu'qi'er	10
+组银八老师	zu'yin'ba'lao'shi	10
 足音到空谷	zu'yin'dao'kong'gu	10
 祖印平如水	zu'yin'ping'ru'shui	10
 祖余白下亭	zu'yu'bai'xia'ting	10
@@ -425547,6 +425755,8 @@
 最佳分辨率	zui'jia'fen'bian'lv	1
 最佳观赏地	zui'jia'guan'shang'di	1
 最佳俱乐部	zui'jia'ju'le'bu	1
+最佳李纯信	zui'jia'li'chun'xin	10
+最佳李顺新	zui'jia'li'shun'xin	10
 最佳目的地	zui'jia'mu'di'di	1
 最佳男配角	zui'jia'nan'pei'jue	1
 最佳男主角	zui'jia'nan'zhu'jue	1
@@ -426586,6 +426796,7 @@
 作家顾晓军	zuo'jia'gu'xiao'jun	10
 作家和诗人	zuo'jia'he'shi'ren	10
 作家贾平凹	zuo'jia'jia'ping'wa	1
+作家刘信达	zuo'jia'liu'xin'da	10
 座驾抹光机	zuo'jia'mo'guang'ji	1
 左家塘街道	zuo'jia'tang'jie'dao	10
 做家庭主妇	zuo'jia'ting'zhu'fu	10

@@ -64,7 +64,9 @@
 阿伏伽德罗常数	a'fu'jia'de'luo'chang'shu	10
 阿伏加德罗常数	a'fu'jia'de'luo'chang'shu	1
 阿伏伽德罗定律	a'fu'jia'de'luo'ding'lv	10
+阿伏加德罗定律	a'fu'jia'de'luo'ding'lv	10
 阿伏伽德罗假说	a'fu'jia'de'luo'jia'shuo	10
+阿伏加德罗假说	a'fu'jia'de'luo'jia'shuo	10
 阿芙特短腺吸虫	a'fu'te'duan'xian'xi'chong	1
 阿盖尔罗二氏征	a'gai'er'luo'er'shi'zheng	10
 阿格二氏综合征	a'ge'er'shi'zong'he'zheng	10
@@ -2361,6 +2363,8 @@
 百里乘闲向此过	bai'li'cheng'xian'xiang'ci'guo	10
 百里春风酒旆摇	bai'li'chun'feng'jiu'pei'yao	10
 百里杜鹃风景区	bai'li'du'juan'feng'jing'qu	10
+百里杜鹃管理区	bai'li'du'juan'guan'li'qu	10
+百里杜鹃管委会	bai'li'du'juan'guan'wei'hui	10
 柏立基教育学院	bai'li'ji'jiao'yu'xue'yuan	10
 柏立基师范学院	bai'li'ji'shi'fan'xue'yuan	10
 百里僵尸满浕河	bai'li'jiang'shi'man'jin'he	10
@@ -2461,6 +2465,7 @@
 白马皂貂留不住	bai'ma'zao'diao'liu'bu'zhu	10
 白马镇中心小学	bai'ma'zhen'zhong'xin'xiao'xue	10
 白麻重宣不敢当	bai'ma'zhong'xuan'bu'gan'dang	10
+百脉泉公园东门	bai'mai'quan'gong'yuan'dong'men	10
 百蛮九译觇天光	bai'man'jiu'yi'chan'tian'guang	10
 白毛短跗长足虻	bai'mao'duan'fu'chang'zu'meng	1
 白帽还应似管宁	bai'mao'hai'ying'si'guan'ning	10
@@ -2635,6 +2640,8 @@
 白日分明到世间	bai'ri'fen'ming'dao'shi'jian	10
 白日浮云闭不开	bai'ri'fu'yun'bi'bu'kai	10
 百日归期恰及春	bai'ri'gui'qi'qia'ji'chun	10
+百日咳白喉破伤	bai'ri'hai'bai'hou'po'shang	10
+百日咳杆菌培养	bai'ri'hai'gan'jun'pei'yang	10
 白日横空星宿见	bai'ri'heng'kong'xing'xiu'jian	10
 百日红紫薇绒蚧	bai'ri'hong'zi'wei'rong'jie	1
 白日将升第九天	bai'ri'jiang'sheng'di'jiu'tian	10
@@ -2879,7 +2886,14 @@
 败屋数椽青缭绕	bai'wu'shu'chuan'qing'liao'rao	10
 百无一用是书生	bai'wu'yi'yong'shi'shu'sheng	10
 白细胞分类计数	bai'xi'bao'fen'lei'ji'shu	10
+白细胞共同抗原	bai'xi'bao'gong'tong'kang'yuan	10
+白细胞介素疗法	bai'xi'bao'jie'su'liao'fa	10
+白细胞介素受体	bai'xi'bao'jie'su'shou'ti	10
+白细胞抗原配型	bai'xi'bao'kang'yuan'pei'xing	10
 白细胞颗粒异常	bai'xi'bao'ke'li'yi'chang	10
+白细胞粘着反应	bai'xi'bao'nian'zhuo'fan'ying	10
+白细胞抑制因子	bai'xi'bao'yi'zhi'yin'zi	10
+白细胞粘连蛋白	bai'xi'bao'zhan'lian'dan'bai	10
 白皙风流似有须	bai'xi'feng'liu'si'you'xu	10
 败席展转卧看经	bai'xi'zhan'zhuan'wo'kan'jing	10
 白下长干何可见	bai'xia'chang'gan'he'ke'jian	10
@@ -3332,10 +3346,17 @@
 半入江风半入云	ban'ru'jiang'feng'ban'ru'yun	10
 半入清风半入喉	ban'ru'qing'feng'ban'ru'hou	1
 半乳糖表异构酶	ban'ru'tang'biao'yi'gou'mei	10
+半乳糖苷酶缺乏	ban'ru'tang'gan'mei'que'fa	10
+半乳糖苷水解酶	ban'ru'tang'gan'shui'jie'mei	10
+半乳糖苷透性酶	ban'ru'tang'gan'tou'xing'mei	10
+半乳糖活化因子	ban'ru'tang'huo'hua'yin'zi	10
 半乳糖激酶缺乏	ban'ru'tang'ji'mei'que'fa	1
 半乳糖基转移酶	ban'ru'tang'ji'zhuan'yi'mei	10
 半乳糖焦磷酸酶	ban'ru'tang'jiao'lin'suan'mei	10
 半乳糖硫酸化酶	ban'ru'tang'liu'suan'hua'mei	10
+半乳糖耐量试验	ban'ru'tang'nai'liang'shi'yan	10
+半乳糖脑苷脂类	ban'ru'tang'nao'gan'zhi'lei	10
+半乳糖脑苷脂酶	ban'ru'tang'nao'gan'zhi'mei	10
 半乳糖四氢萘胺	ban'ru'tang'si'qing'nai'an	10
 半乳糖脱氢酶类	ban'ru'tang'tuo'qing'mei'lei	10
 半乳糖性白内障	ban'ru'tang'xing'bai'nei'zhang	1
@@ -3398,6 +3419,7 @@
 伴我萧萧惟代马	ban'wo'xiao'xiao'wei'dai'ma	10
 伴我真能老淮海	ban'wo'zhen'neng'lao'huai'hai	10
 半溪山水碧罗新	ban'xi'shan'shui'bi'luo'xin	10
+半夏白木天麻汤	ban'xia'bai'mu'tian'ma'tang	10
 半夏白术天麻汤	ban'xia'bai'zhu'tian'ma'tang	10
 半夏参草大枣姜	ban'xia'can'cao'da'zao'jiang	10
 半夏干姜散主之	ban'xia'gan'jiang'san'zhu'zhi	10
@@ -3695,6 +3717,7 @@
 保护台湾大联盟	bao'hu'tai'wan'da'lian'meng	10
 保护投资者利益	bao'hu'tou'zi'zhe'li'yi	10
 保护投资者权益	bao'hu'tou'zi'zhe'quan'yi	10
+保护胃肠道黏膜	bao'hu'wei'chang'dao'nian'mo	10
 保护我们的爱情	bao'hu'wo'men'de'ai'qing	10
 保护消费者权益	bao'hu'xiao'fei'zhe'quan'yi	1
 保护心血管健康	bao'hu'xin'xue'guan'jian'kang	10
@@ -3847,6 +3870,7 @@
 饱食太官还惜日	bao'shi'tai'guan'hai'xi'ri	10
 饱食未厌山蔬甘	bao'shi'wei'yan'shan'shu'gan	10
 饱食应惭腹如鼓	bao'shi'ying'can'fu'ru'gu	10
+鲍氏志贺菌痢疾	bao'shi'zhi'he'jun'li'ji	10
 保守国家秘密法	bao'shou'guo'jia'mi'mi'fa	10
 鲍叔不以我为贪	bao'shu'bu'yi'wo'wei'tan	10
 鲍叔不以我为愚	bao'shu'bu'yi'wo'wei'yu	10
@@ -4350,6 +4374,9 @@
 北京铁路总医院	bei'jing'tie'lu'zong'yi'yuan	1
 北京团结湖公园	bei'jing'tuan'jie'hu'gong'yuan	1
 北京外国语大学	bei'jing'wai'guo'yu'da'xue	10
+北京外国语学校	bei'jing'wai'guo'yu'xue'xiao	10
+北京外国语学院	bei'jing'wai'guo'yu'xue'yuan	10
+北京未来科技城	bei'jing'wei'lai'ke'ji'cheng	10
 北京未来科学城	bei'jing'wei'lai'ke'xue'cheng	10
 北京文博交流馆	bei'jing'wen'bo'jiao'liu'guan	10
 北京五星啤酒厂	bei'jing'wu'xing'pi'jiu'chang	10
@@ -4395,6 +4422,7 @@
 北看归路隔蛮溪	bei'kan'gui'lu'ge'man'xi	10
 北客初来试新险	bei'ke'chu'lai'shi'xin'xian	10
 贝克二氏综合征	bei'ke'er'shi'zong'he'zheng	10
+贝克肌营养不良	bei'ke'ji'ying'yang'bu'liang	10
 贝壳杉脂丁醇值	bei'ke'shan'zhi'ding'chun'zhi	10
 北客未尝眉自颦	bei'ke'wei'chang'mei'zi'pin	10
 北客相逢疑姓秦	bei'ke'xiang'feng'yi'xing'qin	10
@@ -4739,6 +4767,8 @@
 本次活动的开展	ben'ci'huo'dong'de'kai'zhan	10
 本次新闻发布会	ben'ci'xin'wen'fa'bu'hui	10
 本词云狄戎侵兮	ben'ci'yun'di'rong'qin'xi	10
+笨蛋测试召唤兽	ben'dan'ce'shi'zhao'huan'shou	10
+笨蛋测验召唤兽	ben'dan'ce'yan'zhao'huan'shou	10
 本地多维数据集	ben'di'duo'wei'shu'ju'ji	1
 本地化生活服务	ben'di'hua'sheng'huo'fu'wu	1
 本地连接受限制	ben'di'lian'jie'shou'xian'zhi	1
@@ -4994,6 +5024,7 @@
 吡啶硫醇氧化物	bi'ding'liu'chun'yang'hua'wu	10
 吡啶醛缩氨硫脲	bi'ding'quan'suo'an'liu'niao	10
 吡啶乙醛碘甲烷	bi'ding'yi'quan'dian'jia'wan	10
+臂动脉血栓形成	bi'dong'mai'xue'shuan'xing'cheng	10
 鼻窦病损切除术	bi'dou'bing'sun'qie'chu'shu	10
 鼻窦穿刺冲洗术	bi'dou'chuan'ci'chong'xi'shu	10
 鼻窦对比剂造影	bi'dou'dui'bi'ji'zao'ying	10
@@ -5492,6 +5523,7 @@
 闭眼此心新活计	bi'yan'ci'xin'xin'huo'ji	10
 闭眼丹田夜自存	bi'yan'dan'tian'ye'zi'cun	10
 鼻咽底恶性肿瘤	bi'yan'di'e'xing'zhong'liu	10
+鼻咽淀粉样变性	bi'yan'dian'fen'yang'bian'xing	10
 鼻咽顶恶性肿瘤	bi'yan'ding'e'xing'zhong'liu	10
 鼻咽对比剂造影	bi'yan'dui'bi'ji'zao'ying	10
 闭眼观身如止水	bi'yan'guan'shen'ru'zhi'shui	10
@@ -5894,6 +5926,7 @@
 边星琉璃小灰蝶	bian'xing'liu'li'xiao'hui'die	1
 变性调节混合的	bian'xing'tiao'jie'hun'he'de	12
 变形细胞溶解物	bian'xing'xi'bao'rong'jie'wu	10
+变性性角膜混浊	bian'xing'xing'jiao'mo'hun'zhuo	10
 变性性面肌抽搐	bian'xing'xing'mian'ji'chou'chu	10
 变性型涎腺肿大	bian'xing'xing'xian'xian'zhong'da	10
 便行云都不归来	bian'xing'yun'dou'bu'gui'lai	10
@@ -5971,8 +6004,18 @@
 飙车之车神传说	biao'che'zhi'che'shen'chuan'shuo	10
 表达爱意的方式	biao'da'ai'yi'de'fang'shi	10
 表达得淋漓尽致	biao'da'de'lin'li'jin'zhi	10
+表达感觉性失语	biao'da'gan'jue'xing'shi'yu	10
 表达性语言障碍	biao'da'xing'yu'yan'zhang'ai	10
 膘大宜悬银压銙	biao'da'yi'xuan'yin'ya'kua	10
+表达自己的爱意	biao'da'zi'ji'de'ai'yi	10
+表达自己的不满	biao'da'zi'ji'de'bu'man	10
+表达自己的感受	biao'da'zi'ji'de'gan'shou	10
+表达自己的看法	biao'da'zi'ji'de'kan'fa	10
+表达自己的情感	biao'da'zi'ji'de'qing'gan	10
+表达自己的情绪	biao'da'zi'ji'de'qing'xu	10
+表达自己的喜欢	biao'da'zi'ji'de'xi'huan	10
+表达自己的心意	biao'da'zi'ji'de'xin'yi	10
+表达自己的意见	biao'da'zi'ji'de'yi'jian	10
 标点符号的用法	biao'dian'fu'hao'de'yong'fa	10
 表独立兮山之上	biao'du'li'xi'shan'zhi'shang	10
 飚风起兮海水飞	biao'feng'qi'xi'hai'shui'fei	10
@@ -6316,6 +6359,7 @@
 豳歌七月王风始	bin'ge'qi'yue'wang'feng'shi	10
 髌骨病损切除术	bin'gu'bing'sun'qie'chu'shu	10
 髌骨部分切除术	bin'gu'bu'fen'qie'chu'shu	10
+髌骨哆开性脱位	bin'gu'duo'kai'xing'tuo'wei	10
 髌骨前黏液囊炎	bin'gu'qian'nian'ye'nang'yan	10
 髌骨全部切除术	bin'gu'quan'bu'qie'chu'shu	10
 髌骨软骨软化症	bin'gu'ruan'gu'ruan'hua'zheng	10
@@ -6450,8 +6494,10 @@
 病毒抗体复合物	bing'du'kang'ti'fu'he'wu	10
 病毒培养与鉴定	bing'du'pei'yang'yu'jian'ding	10
 病毒性腹泻病毒	bing'du'xing'fu'xie'bing'du	1
+病毒性角膜溃疡	bing'du'xing'jiao'mo'kui'yang	10
 病毒性脑膜脑炎	bing'du'xing'nao'mo'nao'yan	10
 病毒血清混合物	bing'du'xue'qing'hun'he'wu	10
+病毒血清学试验	bing'du'xue'qing'xue'shi'yan	10
 病对椒花倍自怜	bing'dui'jiao'hua'bei'zi'lian	10
 冰墩墩和雪容融	bing'dun'dun'he'xue'rong'rong	10
 病多体痛无心力	bing'duo'ti'tong'wu'xin'li	10
@@ -9290,6 +9336,7 @@
 布衣空染洛阳尘	bu'yi'kong'ran'luo'yang'chen	10
 布衣空惹洛阳尘	bu'yi'kong're'luo'yang'chen	10
 不依赖空气推进	bu'yi'lai'kong'qi'tui'jin	10
+不依赖贴壁细胞	bu'yi'lai'tie'bi'xi'bao	10
 不疑灵境难闻见	bu'yi'ling'jing'nan'wen'jian	10
 不忆南宫风月天	bu'yi'nan'gong'feng'yue'tian	10
 布宜诺斯艾利斯	bu'yi'nuo'si'ai'li'si	10
@@ -10350,6 +10397,7 @@
 残生伤性老枕书	can'sheng'shang'xing'lao'zhen'shu	10
 蚕市初开处处春	can'shi'chu'kai'chu'chu'chun	10
 蚕市光阴非故国	can'shi'guang'yin'fei'gu'guo	10
+蚕蚀性角膜溃疡	can'shi'xing'jiao'mo'kui'yang	10
 蚕室综合运动场	can'shi'zong'he'yun'dong'chang	10
 参术茯苓甘草比	can'shu'fu'ling'gan'cao'bi	10
 参术健中口服液	can'shu'jian'zhong'kou'fu'ye	10
@@ -10562,6 +10610,7 @@
 苍天不负有心人	cang'tian'bu'fu'you'xin'ren	10
 苍头碧玉尽家生	cang'tou'bi'yu'jin'jia'sheng	10
 藏头不复见时人	cang'tou'bu'fu'jian'shi'ren	10
+舱外高流量吸氧	cang'wai'gao'liu'liang'xi'yang	10
 苍梧独在天一方	cang'wu'du'zai'tian'yi'fang	10
 苍梧旧云岂难召	cang'wu'jiu'yun'qi'nan'zhao	10
 苍梧奇事岂虚传	cang'wu'qi'shi'qi'xu'chuan	10
@@ -12797,6 +12846,7 @@
 超声产科监护仪	chao'sheng'chan'ke'jian'hu'yi	1
 超声骨折治疗机	chao'sheng'gu'zhe'zhi'liao'ji	1
 潮声滚滚风飕飕	chao'sheng'gun'gun'feng'sou'sou	10
+超声间动电疗法	chao'sheng'jian'dong'dian'liao'fa	10
 超声结肠诊断仪	chao'sheng'jie'chang'zhen'duan'yi	1
 潮声空逐暮天回	chao'sheng'kong'zhu'mu'tian'hui	10
 超声立体诊断仪	chao'sheng'li'ti'zhen'duan'yi	1
@@ -13015,9 +13065,13 @@
 掣开流电有辉光	che'kai'liu'dian'you'hui'guang	10
 车库中的喷火龙	che'ku'zhong'de'pen'huo'long	10
 车来嫁作尚书妇	che'lai'jia'zuo'shang'shu'fu	10
+车辆保险与理赔	che'liang'bao'xian'yu'li'pei	10
 车辆的安全性能	che'liang'de'an'quan'xing'neng	10
+车辆首次登记税	che'liang'shou'ci'deng'ji'shui	10
 车辆行驶过程中	che'liang'xing'shi'guo'cheng'zhong	1
 车辆行驶记录仪	che'liang'xing'shi'ji'lu'yi	1
+车辆一致性证书	che'liang'yi'zhi'xing'zheng'shu	10
+车辆逾期未检验	che'liang'yu'qi'wei'jian'yan	10
 车辆在高速公路	che'liang'zai'gao'su'gong'lu	10
 掣铃交通二千石	che'ling'jiao'tong'er'qian'dan	10
 车马不临谁见赏	che'ma'bu'lin'shui'jian'shang	10
@@ -14046,6 +14100,7 @@
 迟发相变态反应	chi'fa'xiang'bian'tai'fan'ying	10
 迟发相哮喘反应	chi'fa'xiang'xiao'chuan'fan'ying	10
 迟发型变态反应	chi'fa'xing'bian'tai'fan'ying	1
+迟发型超敏反应	chi'fa'xing'chao'min'fan'ying	10
 迟发性成骨不全	chi'fa'xing'cheng'gu'bu'quan	10
 迟发性尺神经炎	chi'fa'xing'chi'shen'jing'yan	10
 迟发型皮肤反应	chi'fa'xing'pi'fu'fan'ying	10
@@ -14302,6 +14357,7 @@
 齿胸刺尾花天牛	chi'xiong'ci'wei'hua'tian'niu	1
 赤胸锯齿啄花鸟	chi'xiong'ju'chi'zhuo'hua'niao	1
 赤朽叶家的传说	chi'xiu'ye'jia'de'chuan'shuo	10
+持续低流量氧疗	chi'xu'di'liu'liang'yang'liao	10
 持续关节腔冲洗	chi'xu'guan'jie'qiang'chong'xi	10
 持续了很长时间	chi'xu'le'hen'chang'shi'jian	1
 持续了一段时间	chi'xu'le'yi'duan'shi'jian	1
@@ -16029,6 +16085,7 @@
 垂钓甘成白首翁	chui'diao'gan'cheng'bai'shou'weng	10
 椎动脉瘤夹闭术	chui'dong'mai'liu'jia'bi'shu	10
 椎动脉型颈椎病	chui'dong'mai'xing'jing'zhui'bing	10
+椎动脉血栓形成	chui'dong'mai'xue'shuan'xing'cheng	10
 吹断离愁月正明	chui'duan'li'chou'yue'zheng'ming	10
 吹断檐间积雨声	chui'duan'yan'jian'ji'yu'sheng	10
 吹肥皂泡的少年	chui'fei'zao'pao'de'shao'nian	10
@@ -16945,6 +17002,7 @@
 此辞听者堪愁绝	ci'ci'ting'zhe'kan'chou'jue	10
 此次新闻发布会	ci'ci'xin'wen'fa'bu'hui	10
 赐崔日知往潞州	ci'cui'ri'zhi'wang'lu'zhou	10
+次大面积肺栓塞	ci'da'mian'ji'fei'shuan'se	10
 磁带磁带转换器	ci'dai'ci'dai'zhuan'huan'qi	10
 磁带卡片转换器	ci'dai'ka'pian'zhuan'huan'qi	10
 此带阅人如传舍	ci'dai'yue'ren'ru'chuan'she	10
@@ -18151,7 +18209,10 @@
 促节频催渐繁拨	cu'jie'pin'cui'jian'fan'bo	10
 促节牵繁舞腰懒	cu'jie'qian'fan'wu'yao'lan	10
 促进残疾人就业	cu'jin'can'ji'ren'jiu'ye	10
+促进肠道的蠕动	cu'jin'chang'dao'de'ru'dong	10
+促进肠胃的蠕动	cu'jin'chang'wei'de'ru'dong	10
 促进蛋白质合成	cu'jin'dan'bai'zhi'he'cheng	10
+促进肝细胞再生	cu'jin'gan'xi'bao'zai'sheng	10
 促进高校毕业生	cu'jin'gao'xiao'bi'ye'sheng	1
 促进高质量发展	cu'jin'gao'zhi'liang'fa'zhan	10
 促进剂声学性质	cu'jin'ji'sheng'xue'xing'zhi	10
@@ -19110,6 +19171,7 @@
 大唐御史谢瑶环	da'tang'yu'shi'xie'yao'huan	10
 打铁必须自身硬	da'tie'bi'xu'zi'shen'ying	10
 打铁还得自身硬	da'tie'hai'dei'zi'shen'ying	10
+打铁还需本身硬	da'tie'hai'xu'ben'shen'ying	10
 打铁还需自身硬	da'tie'hai'xu'zi'shen'ying	10
 打铁先得自身硬	da'tie'xian'dei'zi'shen'ying	10
 打通了任督二脉	da'tong'le'ren'du'er'mai	1
@@ -19411,6 +19473,7 @@
 带感觉神经皮瓣	dai'gan'jue'shen'jing'pi'ban	10
 待公三入拂埃尘	dai'gong'san'ru'fu'ai'chen	10
 戴公山下野桃香	dai'gong'shan'xia'ye'tao'xiang	10
+带钩方丝弓托槽	dai'gou'fang'si'gong'tuo'cao	10
 带郭茅亭诗兴饶	dai'guo'mao'ting'shi'xing'rao	10
 带恨眉儿远岫攒	dai'hen'mei'er'yuan'xiu'zan	10
 带蝴蝶结的帽子	dai'hu'die'jie'de'mao'zi	1
@@ -19576,6 +19639,7 @@
 但把君诗阖且开	dan'ba'jun'shi'he'qie'kai	10
 但把清尊断送秋	dan'ba'qing'zun'duan'song'qiu	10
 但把穷愁博长健	dan'ba'qiong'chou'bo'chang'jian	10
+蛋白淀粉样变性	dan'bai'dian'fen'yang'bian'xing	10
 蛋白丢失性肠病	dan'bai'diu'shi'xing'chang'bing	10
 蛋白胨性荨麻疹	dan'bai'dong'xing'xun'ma'zhen	10
 蛋白甲基转移酶	dan'bai'jia'ji'zhuan'yi'mei	10
@@ -19594,7 +19658,12 @@
 蛋白质能量失衡	dan'bai'zhi'neng'liang'shi'heng	10
 蛋白质三级结构	dan'bai'zhi'san'ji'jie'gou	10
 蛋白质摄入不足	dan'bai'zhi'she'ru'bu'zu	10
+蛋白质调节因子	dan'bai'zhi'tiao'jie'yin'zi	10
+蛋白质图型构象	dan'bai'zhi'tu'xing'gou'xiang	10
+蛋白质相互作用	dan'bai'zhi'xiang'hu'zuo'yong	10
+蛋白质序列分析	dan'bai'zhi'xu'lie'fen'xi	10
 蛋白质营养不良	dan'bai'zhi'ying'yang'bu'liang	10
+蛋白质阵列文库	dan'bai'zhi'zhen'lie'wen'ku	10
 单斑半线琴脂鲤	dan'ban'ban'xian'qin'zhi'li	1
 但保红颜莫保恩	dan'bao'hong'yan'mo'bao'en	10
 但悲不见九州同	dan'bei'bu'jian'jiu'zhou'tong	10
@@ -19614,12 +19683,14 @@
 但不是说不努力	dan'bu'shi'shuo'bu'nu'li	10
 淡菜紫菜瘦肉汤	dan'cai'zi'cai'shou'rou'tang	10
 殚残天下之圣法	dan'can'tian'xia'zhi'sheng'fa	10
+单侧腭裂伴唇裂	dan'ce'e'lie'ban'chun'lie	10
 单侧附件切除术	dan'ce'fu'jian'qie'chu'shu	10
 单侧睾丸切除术	dan'ce'gao'wan'qie'chu'shu	10
 单侧股疝修补术	dan'ce'gu'shan'xiu'bu'shu	10
 单侧卵巢切除术	dan'ce'luan'chao'qie'chu'shu	10
 单侧面神经萎缩	dan'ce'mian'shen'jing'wei'suo	10
 单侧乳腺根治术	dan'ce'ru'xian'gen'zhi'shu	10
+单侧肾发育不全	dan'ce'shen'fa'yu'bu'quan	10
 单侧外阴切除术	dan'ce'wai'yin'qie'chu'shu	10
 单侧隐睾切除术	dan'ce'yin'gao'qie'chu'shu	10
 单侧肢体肌萎缩	dan'ce'zhi'ti'ji'wei'suo	10
@@ -19636,6 +19707,7 @@
 丹墀列士主恩同	dan'chi'lie'shi'zhu'en'tong	10
 但愁数罟损鳞鬣	dan'chou'shu'gu'sun'lin'lie	10
 但愁新进笑陈人	dan'chou'xin'jin'xiao'chen'ren	10
+单纯部分性发作	dan'chun'bu'fen'xing'fa'zuo	10
 单纯的朋友关系	dan'chun'de'peng'you'guan'xi	1
 单纯疱疹病毒型	dan'chun'pao'zhen'bing'du'xing	10
 单纯疱疹性脑炎	dan'chun'pao'zhen'xing'nao'yan	10
@@ -19942,10 +20014,12 @@
 胆囊破裂修补术	dan'nang'po'lie'xiu'bu'shu	10
 胆囊切开取石术	dan'nang'qie'kai'qu'shi'shu	10
 胆囊切开引流术	dan'nang'qie'kai'yin'liu'shu	10
+胆囊十二指肠瘘	dan'nang'shi'er'zhi'chang'lou	10
 胆囊收缩素测定	dan'nang'shou'suo'su'ce'ding	10
 胆囊收缩素酰胺	dan'nang'shou'suo'su'xian'an	10
 胆囊息肉样病变	dan'nang'xi'rou'yang'bing'bian	10
 胆囊息肉摘除术	dan'nang'xi'rou'zhai'chu'shu	10
+胆囊腺瘤样息肉	dan'nang'xian'liu'yang'xi'rou	10
 胆囊血管造影术	dan'nang'xue'guan'zao'ying'shu	10
 胆囊与肠吻合术	dan'nang'yu'chang'wen'he'shu	10
 胆囊与胃吻合术	dan'nang'yu'wei'wen'he'shu	10
@@ -21193,6 +21267,7 @@
 导致性功能障碍	dao'zhi'xing'gong'neng'zhang'ai	10
 倒置性内眦赘皮	dao'zhi'xing'nei'zi'zhui'pi	10
 导致严重的后果	dao'zhi'yan'zhong'de'hou'guo	10
+倒置荧光显微镜	dao'zhi'ying'guang'xian'wei'jing	10
 盗跖庄蹻流誉后	dao'zhi'zhuang'jue'liu'yu'hou	10
 导致资金链断裂	dao'zhi'zi'jin'lian'duan'lie	10
 刀州城北剑山东	dao'zhou'cheng'bei'jian'shan'dong	10
@@ -21845,6 +21920,7 @@
 低二氧化碳血症	di'er'yang'hua'tan'xue'zheng	10
 第二腰椎体上缘	di'er'yao'zhui'ti'shang'yuan	10
 第二证券营业部	di'er'zheng'quan'ying'ye'bu	10
+第二酯化反应器	di'er'zhi'hua'fan'ying'qi	10
 第二中标候选人	di'er'zhong'biao'hou'xuan'ren	10
 第二周可吃软食	di'er'zhou'ke'chi'ruan'shi	10
 第二座海潮之池	di'er'zuo'hai'chao'zhi'chi	1
@@ -22755,6 +22831,7 @@
 第一责任人责任	di'yi'ze'ren'ren'ze'ren	10
 第一责任人职责	di'yi'ze'ren'ren'zhi'ze	10
 第一张黑洞照片	di'yi'zhang'hei'dong'zhao'pian	10
+第一酯化反应器	di'yi'zhi'hua'fan'ying'qi	10
 第一中标候选人	di'yi'zhong'biao'hou'xuan'ren	10
 第一种铁道事业	di'yi'zhong'tie'dao'shi'ye	10
 第一最好不相见	di'yi'zui'hao'bu'xiang'jian	10
@@ -22877,6 +22954,7 @@
 点滴空阶独自闻	dian'di'kong'jie'du'zi'wen	10
 电地暖发热电缆	dian'di'nuan'fa're'dian'lan	1
 点滴型副银屑病	dian'di'xing'fu'yin'xie'bing	10
+点滴状扁平苔藓	dian'di'zhuang'bian'ping'tai'xian	10
 点点无声落瓦沟	dian'dian'wu'sheng'luo'wa'gou	10
 点点行行泪痕满	dian'dian'xing'xing'lei'hen'man	10
 奠定了坚实基础	dian'ding'le'jian'shi'ji'chu	1
@@ -23248,6 +23326,7 @@
 钓户竿头乞活鱼	diao'hu'gan'tou'qi'huo'yu	10
 雕虎啸风斤斧去	diao'hu'xiao'feng'jin'fu'qu	10
 调急遥怜玉指寒	diao'ji'yao'lian'yu'zhi'han	10
+钓肩锁关节钢板	diao'jian'suo'guan'jie'gang'ban	10
 雕栏能得几时好	diao'lan'neng'de'ji'shi'hao	10
 雕栏玉砌应犹在	diao'lan'yu'qi'ying'you'zai	10
 雕阑玉砌应犹在	diao'lan'yu'qi'ying'you'zai	10
@@ -24175,6 +24254,7 @@
 洞水山云知浅深	dong'shui'shan'yun'zhi'qian'shen	10
 冻死苍蝇未足奇	dong'si'cang'ying'wei'zu'qi	10
 东随海舶号倭螺	dong'sui'hai'bo'hao'wo'luo	10
+动态肺过度充气	dong'tai'fei'guo'du'chong'qi	10
 动态干扰电疗法	dong'tai'gan'rao'dian'liao'fa	10
 动态哈夫曼编码	dong'tai'ha'fu'man'bian'ma	10
 动态链接库文件	dong'tai'lian'jie'ku'wen'jian	1
@@ -25860,6 +25940,7 @@
 多进行户外活动	duo'jin'xing'hu'wai'huo'dong	1
 多景楼上弹神曲	duo'jing'lou'shang'dan'shen'qu	10
 多聚核糖化作用	duo'ju'he'tang'hua'zuo'yong	10
+多聚核糖聚合酶	duo'ju'he'tang'ju'he'mei	10
 多聚集负介子束	duo'ju'ji'fu'jie'zi'shu	10
 多聚甲醛干髓剂	duo'ju'jia'quan'gan'sui'ji	10
 多聚酶链式反应	duo'ju'mei'lian'shi'fan'ying	10
@@ -26887,6 +26968,7 @@
 二十功成便拜侯	er'shi'gong'cheng'bian'bai'hou	10
 二十几岁的年纪	er'shi'ji'sui'de'nian'ji	10
 二十几岁的人了	er'shi'ji'sui'de'ren'le	1
+二十甲营养不良	er'shi'jia'ying'yang'bu'liang	10
 二十家子满族镇	er'shi'jia'zi'man'zu'zhen	1
 二十届三中全会	er'shi'jie'san'zhong'quan'hui	10
 二十届四中全会	er'shi'jie'si'zhong'quan'hui	10
@@ -26949,10 +27031,12 @@
 二十五味鬼臼丸	er'shi'wu'wei'gui'jiu'wan	10
 二十五味狐肺散	er'shi'wu'wei'hu'fei'san	10
 二十五味鹿角丸	er'shi'wu'wei'lu'jiao'wan	10
+二十五味绿绒蒿	er'shi'wu'wei'lv'rong'hao	10
 二十五味驴血丸	er'shi'wu'wei'lv'xue'wan	10
 二十五味马宝丸	er'shi'wu'wei'ma'bao'wan	10
 二十五味珊瑚丸	er'shi'wu'wei'shan'hu'wan	10
 二十五味松石丸	er'shi'wu'wei'song'shi'wan	10
+二十五味獐牙菜	er'shi'wu'wei'zhang'ya'cai	10
 二十五味珍珠丸	er'shi'wu'wei'zhen'zhu'wan	10
 二十五味竺黄散	er'shi'wu'wei'zhu'huang'san	10
 二十五弦不如五	er'shi'wu'xian'bu'ru'wu	10
@@ -27041,6 +27125,7 @@
 儿童股骨头坏死	er'tong'gu'gu'tou'huai'si	10
 儿童过敏性鼻炎	er'tong'guo'min'xing'bi'yan	10
 儿童过敏性咳嗽	er'tong'guo'min'xing'ke'sou	10
+儿童过敏性紫癜	er'tong'guo'min'xing'zi'dian	10
 儿童横纹肌肉瘤	er'tong'heng'wen'ji'rou'liu	10
 儿童急走追黄蝶	er'tong'ji'zou'zhui'huang'die	10
 儿童节目主持人	er'tong'jie'mu'zhu'chi'ren	10
@@ -27061,6 +27146,7 @@
 儿童青少年心理	er'tong'qing'shao'nian'xin'li	10
 儿童散学归来早	er'tong'san'xue'gui'lai'zao	10
 儿童少年卫生学	er'tong'shao'nian'wei'sheng'xue	1
+儿童失神性癫痫	er'tong'shi'shen'xing'dian'xian	10
 儿童系马黄河曲	er'tong'xi'ma'huang'he'qu	10
 儿童相唤踏春阳	er'tong'xiang'huan'ta'chun'yang	1
 儿童相见不相识	er'tong'xiang'jian'bu'xiang'shi	10
@@ -27448,6 +27534,7 @@
 法人及其他组织	fa'ren'ji'qi'ta'zu'zhi	10
 法人身份证原件	fa'ren'shen'fen'zheng'yuan'jian	10
 法人授权委托书	fa'ren'shou'quan'wei'tuo'shu	10
+发射放射性核素	fa'she'fang'she'xing'he'su	10
 法社会学在中国	fa'she'hui'xue'zai'zhong'guo	1
 发射火焰光度法	fa'she'huo'yan'guang'du'fa	10
 发射器和接收器	fa'she'qi'he'jie'shou'qi	10
@@ -28501,6 +28588,7 @@
 非必要共同诉讼	fei'bi'yao'gong'tong'su'song	1
 飞遍江南雪不寒	fei'bian'jiang'nan'xue'bu'han	10
 非变应性荨麻疹	fei'bian'ying'xing'xun'ma'zhen	10
+肺表面活性物质	fei'biao'mian'huo'xing'wu'zhi	10
 非标准设计大厦	fei'biao'zhun'she'ji'da'sha	10
 非标准审计报告	fei'biao'zhun'shen'ji'bao'gao	1
 非标自动化机械	fei'biao'zi'dong'hua'ji'xie	10
@@ -28531,6 +28619,7 @@
 非常地讨人喜欢	fei'chang'de'tao'ren'xi'huan	1
 非常地性感迷人	fei'chang'de'xing'gan'mi'ren	1
 非常地有女人味	fei'chang'de'you'nv'ren'wei	1
+非常法官李贞珠	fei'chang'fa'guan'li'zhen'zhu	10
 非常尴尬的局面	fei'chang'gan'ga'de'ju'mian	10
 非常关键的时刻	fei'chang'guan'jian'de'shi'ke	10
 非常激烈的竞争	fei'chang'ji'lie'de'jing'zheng	10
@@ -28732,6 +28821,8 @@
 腓骨开放性骨折	fei'gu'kai'fang'xing'gu'zhe	10
 肺孤立性纤维瘤	fei'gu'li'xing'xian'wei'liu	10
 腓骨取骨植骨术	fei'gu'qu'gu'zhi'gu'shu	10
+非骨水泥标准柄	fei'gu'shui'ni'biao'zhun'bing	10
+非骨水泥加长柄	fei'gu'shui'ni'jia'chang'bing	10
 腓骨下端关节盘	fei'gu'xia'duan'guan'jie'pan	10
 非贯穿式潜望镜	fei'guan'chuan'shi'qian'wang'jing	10
 非关春茗搅枯肠	fei'guan'chun'ming'jiao'ku'chang	10
@@ -28795,6 +28886,7 @@
 非机动车和行人	fei'ji'dong'che'he'xing'ren	10
 非机动车及行人	fei'ji'dong'che'ji'xing'ren	1
 肺继发恶性肿瘤	fei'ji'fa'e'xing'zhong'liu	10
+非肌肌球蛋白型	fei'ji'ji'qiu'dan'bai'xing	10
 非及向时之士也	fei'ji'xiang'shi'zhi'shi'ye	10
 非极性相互作用	fei'ji'xing'xiang'hu'zuo'yong	1
 非急诊全面预约	fei'ji'zhen'quan'mian'yu'yue	10
@@ -28819,8 +28911,12 @@
 非金融部门债权	fei'jin'rong'bu'men'zhai'quan	1
 非浸润性粉刺癌	fei'jin'run'xing'fen'ci'ai	10
 非浸润性囊内癌	fei'jin'run'xing'nang'nei'ai	10
+非金属肠道支架	fei'jin'shu'chang'dao'zhi'jia	10
+非金属胆道支架	fei'jin'shu'dan'dao'zhi'jia	10
 非金属矿物制品	fei'jin'shu'kuang'wu'zhi'pin	10
+非金属捆绑支架	fei'jin'shu'kun'bang'zhi'jia	10
 非金属氰化合物	fei'jin'shu'qing'hua'he'wu	10
+非金属食道支架	fei'jin'shu'shi'dao'zhi'jia	10
 非进行性脑损伤	fei'jin'xing'xing'nao'sun'shang	10
 非经典正碳离子	fei'jing'dian'zheng'tan'li'zi	10
 肺静脉畸形引流	fei'jing'mai'ji'xing'yin'liu	10
@@ -29171,6 +29267,7 @@
 肺炎衣原体肺炎	fei'yan'yi'yuan'ti'fei'yan	10
 飞燕又将归信误	fei'yan'you'jiang'gui'xin'wu	10
 肺炎由于吸入油	fei'yan'you'yu'xi'ru'you	10
+非言语心理治疗	fei'yan'yu'xin'li'zhi'liao	10
 飞焰照山栖鸟惊	fei'yan'zhao'shan'qi'niao'jing	10
 飞燕昭阳侍寝回	fei'yan'zhao'yang'shi'qin'hui	10
 肺炎支原体肺炎	fei'yan'zhi'yuan'ti'fei'yan	10
@@ -29425,6 +29522,7 @@
 分离聚合皆前定	fen'li'ju'he'jie'qian'ding	10
 分离性骨软骨炎	fen'li'xing'gu'ruan'gu'yan	10
 分离性焦虑障碍	fen'li'xing'jiao'lv'zhang'ai	10
+分离性身份障碍	fen'li'xing'shen'fen'zhang'ai	10
 分离性眼球震颤	fen'li'xing'yan'qiu'zhen'chan	10
 分裂情感性障碍	fen'lie'qing'gan'xing'zhang'ai	10
 分裂同质异能素	fen'lie'tong'zhi'yi'neng'su	10
@@ -31506,6 +31604,7 @@
 富含多种氨基酸	fu'han'duo'zhong'an'ji'suan	10
 富含多种矿物质	fu'han'duo'zhong'kuang'wu'zhi	10
 富含多种维生素	fu'han'duo'zhong'wei'sheng'su	10
+富含碳水化合物	fu'han'tan'shui'hua'he'wu	10
 复含罔屈于无穷	fu'han'wang'qu'yu'wu'qiong	10
 富含纤维的食物	fu'han'xian'wei'de'shi'wu	10
 富含叶酸的食物	fu'han'ye'suan'de'shi'wu	10
@@ -32024,6 +32123,7 @@
 辐射补偿电离室	fu'she'bu'chang'dian'li'shi	10
 蝮蛇东来水上游	fu'she'dong'lai'shui'shang'you	10
 蝮蛇毒草篁竹中	fu'she'du'cao'huang'zhu'zhong	10
+辐射放射性核素	fu'she'fang'she'xing'he'su	10
 辐射钢铁兄弟会	fu'she'gang'tie'xiong'di'hui	10
 辐射剂量测定法	fu'she'ji'liang'ce'ding'fa	10
 蝮蛇抗风湿胶囊	fu'she'kang'feng'shi'jiao'nang	10
@@ -32077,6 +32177,7 @@
 浮石已干霜后水	fu'shi'yi'gan'shuang'hou'shui	10
 辅世长民莫如德	fu'shi'zhang'min'mo'ru'de	10
 赋诗真可凌鲍谢	fu'shi'zhen'ke'ling'bao'xie	10
+弗氏志贺菌痢疾	fu'shi'zhi'he'jun'li'ji	10
 俯首低眉一老夫	fu'shou'di'mei'yi'lao'fu	10
 俯首甘为孺子牛	fu'shou'gan'wei'ru'zi'niu	10
 俯首江左有梅郎	fu'shou'jiang'zuo'you'mei'lang	10
@@ -32201,6 +32302,7 @@
 阜新市清河门区	fu'xin'shi'qing'he'men'qu	10
 阜新市中心医院	fu'xin'shi'zhong'xin'yi'yuan	1
 扶行半是他人力	fu'xing'ban'shi'ta'ren'li	10
+腹型过敏性紫癜	fu'xing'guo'min'xing'zi'dian	10
 复兴科摩罗大会	fu'xing'ke'mo'luo'da'hui	10
 复兴路上工作室	fu'xing'lu'shang'gong'zuo'shi	10
 阜兴泰高速公路	fu'xing'tai'gao'su'gong'lu	10
@@ -32335,6 +32437,7 @@
 浮云一片是吾身	fu'yun'yi'pian'shi'wu'shen	10
 浮云遮却阳关道	fu'yun'zhe'que'yang'guan'dao	10
 浮云妆额自能卷	fu'yun'zhuang'e'zi'neng'juan	10
+复杂部分性发作	fu'za'bu'fen'xing'fa'zuo	10
 复杂的人际关系	fu'za'de'ren'ji'guan'xi	1
 复杂的人物关系	fu'za'de'ren'wu'guan'xi	1
 复杂的社会关系	fu'za'de'she'hui'guan'xi	1
@@ -32405,6 +32508,7 @@
 腹主动脉成形术	fu'zhu'dong'mai'cheng'xing'shu	10
 腹主动脉动脉瘤	fu'zhu'dong'mai'dong'mai'liu	10
 腹主动脉空肠瘘	fu'zhu'dong'mai'kong'chang'lou	10
+腹主动脉瘤破裂	fu'zhu'dong'mai'liu'po'lie	10
 腹主动脉切开术	fu'zhu'dong'mai'qie'kai'shu	10
 腹主动脉造影术	fu'zhu'dong'mai'zao'ying'shu	10
 复逐胡风过铁关	fu'zhu'hu'feng'guo'tie'guan	10
@@ -32631,6 +32735,7 @@
 感动得一塌糊涂	gan'dong'de'yi'ta'hu'tu	1
 感动了无数网友	gan'dong'le'wu'shu'wang'you	1
 肝动脉发育不良	gan'dong'mai'fa'yu'bu'liang	10
+肝动脉血栓形成	gan'dong'mai'xue'shuan'xing'cheng	10
 感恩观世音菩萨	gan'en'guan'shi'yin'pu'sa	10
 绀发垂缨光髧髧	gan'fa'chui'ying'guang'dan'dan	10
 干法造纸干燥室	gan'fa'zao'zhi'gan'zao'shi	10
@@ -32888,6 +32993,8 @@
 甘肃省委省政府	gan'su'sheng'wei'sheng'zheng'fu	1
 甘肃省委宣传部	gan'su'sheng'wei'xuan'chuan'bu	1
 肝素生物检定法	gan'su'sheng'wu'jian'ding'fa	10
+甘肃政务服务网	gan'su'zheng'wu'fu'wu'wang	10
+甘肃中医药大学	gan'su'zhong'yi'yao'da'xue	10
 甘遂半夏汤主之	gan'sui'ban'xia'tang'zhu'zhi	10
 甘棠密叶成翠幄	gan'tang'mi'ye'cheng'cui'wo	10
 肝糖原贮积症病	gan'tang'yuan'zhu'ji'zheng'bing	10
@@ -33242,6 +33349,7 @@
 高尔基氏型细胞	gao'er'ji'shi'xing'xi'bao	10
 高尔基体蛋白酶	gao'er'ji'ti'dan'bai'mei	1
 高尔基型神经元	gao'er'ji'xing'shen'jing'yuan	10
+高尔肌营养不良	gao'er'ji'ying'yang'bu'liang	10
 高尔尼训练基地	gao'er'ni'xun'lian'ji'di	10
 告尔万世为唐休	gao'er'wan'shi'wei'tang'xiu	10
 高帆驾天冲水花	gao'fan'jia'tian'chong'shui'hua	10
@@ -33301,6 +33409,7 @@
 高怀却有云门兴	gao'huai'que'you'yun'men'xing	10
 高淮夜入忽倒流	gao'huai'ye'ru'hu'dao'liu	10
 高鬟立共桃鬟齐	gao'huan'li'gong'tao'huan'qi	10
+高换气灌注比率	gao'huan'qi'guan'zhu'bi'lv	10
 高皇旧臣多富贵	gao'huang'jiu'chen'duo'fu'gui	10
 高会传觞似洛滨	gao'hui'chuan'shang'si'luo'bin	10
 高会日陪山简醉	gao'hui'ri'pei'shan'jian'zui	10
@@ -33359,6 +33468,10 @@
 高经济开发国家	gao'jing'ji'kai'fa'guo'jia	10
 高居大士是龙象	gao'ju'da'shi'shi'long'xiang	10
 高卷珠帘列红烛	gao'juan'zhu'lian'lie'hong'zhu	10
+高考恋爱一百天	gao'kao'lian'ai'yi'bai'tian	10
+高考填报志愿时	gao'kao'tian'bao'zhi'yuan'shi	10
+高考文化课成绩	gao'kao'wen'hua'ke'cheng'ji	10
+高考最牛钉子户	gao'kao'zui'niu'ding'zi'hu	10
 高科大第一校区	gao'ke'da'di'yi'xiao'qu	10
 高可射兮深可钓	gao'ke'she'xi'shen'ke'diao	10
 高科西路东明路	gao'ke'xi'lu'dong'ming'lu	10
@@ -33710,6 +33823,7 @@
 高效液相色谱法	gao'xiao'ye'xiang'se'pu'fa	10
 高效液相色普法	gao'xiao'ye'xiang'se'pu'fa	10
 高校应届毕业生	gao'xiao'ying'jie'bi'ye'sheng	10
+高校院系大调整	gao'xiao'yuan'xi'da'diao'zheng	10
 高校院系大调整	gao'xiao'yuan'xi'da'tiao'zheng	10
 高谢前王出尘外	gao'xie'qian'wang'chu'chen'wai	10
 高血压的发病率	gao'xie'ya'de'fa'bing'lv	1
@@ -34084,6 +34198,9 @@
 革命英雄纪念碑	ge'ming'ying'xiong'ji'nian'bei	10
 革囊南渡传诗句	ge'nang'nan'du'chuan'shi'ju	10
 隔年诗债几时还	ge'nian'shi'zhai'ji'shi'huan	10
+铬镍康铜热电偶	ge'nie'kang'tong're'dian'ou	10
+铬镍铝镍热电偶	ge'nie'lv'nie're'dian'ou	10
+铬镍铜镍热电偶	ge'nie'tong'nie're'dian'ou	10
 各抛笔砚夸旄钺	ge'pao'bi'yan'kua'mao'yue	10
 隔袍身暖照晴阳	ge'pao'shen'nuan'zhao'qing'yang	10
 葛蒲半夏焦山栀	ge'pu'ban'xia'jiao'shan'zhi	10
@@ -34298,8 +34415,38 @@
 各种飞行器原理	ge'zhong'fei'xing'qi'yuan'li	10
 各种风格的衣服	ge'zhong'feng'ge'de'yi'fu	10
 各种高难度动作	ge'zhong'gao'nan'du'dong'zuo	10
+各种各样的表情	ge'zhong'ge'yang'de'biao'qing	10
+各种各样的车型	ge'zhong'ge'yang'de'che'xing	10
+各种各样的动物	ge'zhong'ge'yang'de'dong'wu	10
+各种各样的东西	ge'zhong'ge'yang'de'dong'xi	10
+各种各样的风格	ge'zhong'ge'yang'de'feng'ge	10
+各种各样的环境	ge'zhong'ge'yang'de'huan'jing	10
+各种各样的活动	ge'zhong'ge'yang'de'huo'dong	10
 各种各样的疾病	ge'zhong'ge'yang'de'ji'bing	10
 各种各样的角色	ge'zhong'ge'yang'de'jue'se	1
+各种各样的款式	ge'zhong'ge'yang'de'kuan'shi	10
+各种各样的美食	ge'zhong'ge'yang'de'mei'shi	10
+各种各样的情绪	ge'zhong'ge'yang'de'qing'xu	10
+各种各样的声音	ge'zhong'ge'yang'de'sheng'yin	10
+各种各样的事情	ge'zhong'ge'yang'de'shi'qing	10
+各种各样的食物	ge'zhong'ge'yang'de'shi'wu	10
+各种各样的蔬菜	ge'zhong'ge'yang'de'shu'cai	10
+各种各样的水果	ge'zhong'ge'yang'de'shui'guo	10
+各种各样的说法	ge'zhong'ge'yang'de'shuo'fa	10
+各种各样的玩具	ge'zhong'ge'yang'de'wan'ju	10
+各种各样的网红	ge'zhong'ge'yang'de'wang'hong	10
+各种各样的文化	ge'zhong'ge'yang'de'wen'hua	10
+各种各样的小吃	ge'zhong'ge'yang'de'xiao'chi	10
+各种各样的信息	ge'zhong'ge'yang'de'xin'xi	10
+各种各样的压力	ge'zhong'ge'yang'de'ya'li	10
+各种各样的颜色	ge'zhong'ge'yang'de'yan'se	10
+各种各样的饮料	ge'zhong'ge'yang'de'yin'liao	10
+各种各样的游戏	ge'zhong'ge'yang'de'you'xi	10
+各种各样的原因	ge'zhong'ge'yang'de'yuan'yin	10
+各种各样的运动	ge'zhong'ge'yang'de'yun'dong	10
+各种各样的造型	ge'zhong'ge'yang'de'zao'xing	10
+各种各样的植物	ge'zhong'ge'yang'de'zhi'wu	10
+各种各样的综艺	ge'zhong'ge'yang'de'zong'yi	10
 各种呼吸道疾病	ge'zhong'hu'xi'dao'ji'bing	10
 歌钟会处独思山	ge'zhong'hui'chu'du'si'shan	10
 个中即是白云乡	ge'zhong'ji'shi'bai'yun'xiang	10
@@ -35153,6 +35300,7 @@
 共道春灯胜百花	gong'dao'chun'deng'sheng'bai'hua	10
 共道繁华不复全	gong'dao'fan'hua'bu'fu'quan	10
 公到江南应削瓜	gong'dao'jiang'nan'ying'xue'gua	10
+共倒金荷家万里	gong'dao'jin'he'jia'wan'li	10
 共道进贤蒙上赏	gong'dao'jin'xian'meng'shang'shang	10
 弓刀陌上望行色	gong'dao'mo'shang'wang'xing'se	10
 弓刀千骑成何事	gong'dao'qian'ji'cheng'he'shi	10
@@ -35557,8 +35705,12 @@
 工人们戴着口罩	gong'ren'men'dai'zhe'kou'zhao	1
 工人磨琢欲何用	gong'ren'mo'zuo'yu'he'yong	10
 宫人手里过茶汤	gong'ren'shou'li'guo'cha'tang	10
+工人体育场北路	gong'ren'ti'yu'chang'bei'lu	10
 工人体育场北门	gong'ren'ti'yu'chang'bei'men	1
+工人体育场东门	gong'ren'ti'yu'chang'dong'men	10
 工人体育场南门	gong'ren'ti'yu'chang'nan'men	1
+工人体育场西门	gong'ren'ti'yu'chang'xi'men	10
+工人体育馆西门	gong'ren'ti'yu'guan'xi'men	10
 宫人斜里红妆墓	gong'ren'xie'li'hong'zhuang'mu	10
 宫人早起笑相呼	gong'ren'zao'qi'xiao'xiang'hu	10
 贡日门巴民族乡	gong'ri'men'ba'min'zu'xiang	10
@@ -35661,6 +35813,7 @@
 共蹋银台一路尘	gong'ta'yin'tai'yi'lu'chen	10
 公摊面积的计算	gong'tan'mian'ji'de'ji'suan	10
 公堂登歌凤将雏	gong'tang'deng'ge'feng'jiang'chu	10
+供体受体复合物	gong'ti'shou'ti'fu'he'wu	10
 公庭日夕罗山翠	gong'ting'ri'xi'luo'shan'cui	10
 公庭退食饱下筋	gong'ting'tui'shi'bao'xia'jin	10
 公庭无事吏人休	gong'ting'wu'shi'li'ren'xiu	10
@@ -35709,11 +35862,20 @@
 公务员调任规定	gong'wu'yuan'diao'ren'gui'ding	1
 公务员回避规定	gong'wu'yuan'hui'bi'gui'ding	1
 公务员回避制度	gong'wu'yuan'hui'bi'zhi'du	1
+公务员教材中心	gong'wu'yuan'jiao'cai'zhong'xin	10
 公务员考核规定	gong'wu'yuan'kao'he'gui'ding	1
+公务员考试常识	gong'wu'yuan'kao'shi'chang'shi	10
+公务员考试辅导	gong'wu'yuan'kao'shi'fu'dao	10
+公务员考试面试	gong'wu'yuan'kao'shi'mian'shi	10
+公务员考试申论	gong'wu'yuan'kao'shi'shen'lun	10
 公务员考试制度	gong'wu'yuan'kao'shi'zhi'du	1
 公务员录用规定	gong'wu'yuan'lu'yong'gui'ding	1
+公务员录用考试	gong'wu'yuan'lu'yong'kao'shi	10
+公务员面试名单	gong'wu'yuan'mian'shi'ming'dan	10
+公务员面试热点	gong'wu'yuan'mian'shi're'dian	10
 公务员年度考核	gong'wu'yuan'nian'du'kao'he	1
 公务员聘任合同	gong'wu'yuan'pin'ren'he'tong	1
+公务员招录考试	gong'wu'yuan'zhao'lu'kao'shi	10
 公务员职务任免	gong'wu'yuan'zhi'wu'ren'mian	1
 公务员职务行为	gong'wu'yuan'zhi'wu'xing'wei	1
 共惜不成金谷妓	gong'xi'bu'cheng'jin'gu'ji	10
@@ -36071,6 +36233,7 @@
 谷氨酰胺水解化	gu'an'xian'an'shui'jie'hua	10
 谷氨酰胺转肽酶	gu'an'xian'an'zhuan'tai'mei	10
 谷氨酰基转肽酶	gu'an'xian'ji'zhuan'tai'mei	10
+谷氨酰基转移酶	gu'an'xian'ji'zhuan'yi'mei	10
 古岸新花开一枝	gu'an'xin'hua'kai'yi'zhi	10
 古奥林匹亚遗址	gu'ao'lin'pi'ya'yi'zhi	10
 古巴瓜维那塘鳢	gu'ba'gua'wei'na'tang'li	1
@@ -36579,6 +36742,7 @@
 谷朗岩开见佛灯	gu'lang'yan'kai'jian'fo'deng	10
 鼓浪屿救世医院	gu'lang'yu'jiu'shi'yi'yuan	10
 古老丹麦向导犬	gu'lao'dan'mai'xiang'dao'quan	10
+古老的八字婚配	gu'lao'de'ba'zi'hun'pei	10
 古老的金属盔甲	gu'lao'de'jin'shu'kui'jia	1
 故老相传白日飞	gu'lao'xiang'chuan'bai'ri'fei	10
 故老相传二百年	gu'lao'xiang'chuan'er'bai'nian	10
@@ -37761,6 +37925,7 @@
 关吏不须迎马笑	guan'li'bu'xu'ying'ma'xiao	10
 管理的经典模式	guan'li'de'jing'dian'mo'shi	10
 管理和监视工具	guan'li'he'jian'shi'gong'ju	1
+官立山东大学堂	guan'li'shan'dong'da'xue'tang	10
 管理书籍排行榜	guan'li'shu'ji'pai'hang'bang	1
 管理水平的提高	guan'li'shui'ping'de'ti'gao	10
 官吏随人往未得	guan'li'sui'ren'wang'wei'de	10
@@ -38242,15 +38407,22 @@
 广西道监察御史	guang'xi'dao'jian'cha'yu'shi	10
 广西法治日报社	guang'xi'fa'zhi'ri'bao'she	10
 广西妇幼保健院	guang'xi'fu'you'bao'jian'yuan	10
+广西公务员考试	guang'xi'gong'wu'yuan'kao'shi	10
+广西国土资源厅	guang'xi'guo'tu'zi'yuan'ting	10
+广西交通一卡通	guang'xi'jiao'tong'yi'ka'tong	10
 广西龙江镉污染	guang'xi'long'jiang'ge'wu'ran	10
 光熙门南里社区	guang'xi'men'nan'li'she'qu	1
 广西民族文物苑	guang'xi'min'zu'wen'wu'yuan	10
+广西农村信用社	guang'xi'nong'cun'xin'yong'she	10
 广西水电工程局	guang'xi'shui'dian'gong'cheng'ju	10
 广西僮族自治区	guang'xi'tong'zu'zi'zhi'qu	10
+广西外国语学院	guang'xi'wai'guo'yu'xue'yuan	10
+广西新媒体中心	guang'xi'xin'mei'ti'zhong'xin	10
 广西沿海诸河流	guang'xi'yan'hai'zhu'he'liu	10
 广西药用植物园	guang'xi'yao'yong'zhi'wu'yuan	10
 广西亿康药业股	guang'xi'yi'kang'yao'ye'gu	10
 广西招生考试院	guang'xi'zhao'sheng'kao'shi'yuan	10
+广西中医药大学	guang'xi'zhong'yi'yao'da'xue	10
 广西壮族自治区	guang'xi'zhuang'zu'zi'zhi'qu	10
 光线充足的地方	guang'xian'chong'zu'de'di'fang	10
 光纤光栅传感器	guang'xian'guang'shan'chuan'gan'qi	1
@@ -39004,6 +39176,7 @@
 国军退除役官兵	guo'jun'tui'chu'yi'guan'bing	1
 过君未起房门掩	guo'jun'wei'qi'fang'men'yan	10
 国开行债券指数	guo'kai'hang'zhai'quan'zhi'shu	10
+国开行债券指数	guo'kai'xing'zhai'quan'zhi'shu	10
 过客不劳询甲子	guo'ke'bu'lao'xun'jia'zi	10
 过客不须频太息	guo'ke'bu'xu'pin'tai'xi	10
 国科大数学学院	guo'ke'da'shu'xue'xue'yuan	10
@@ -42842,23 +43015,39 @@
 后堂罗帐一相亲	hou'tang'luo'zhang'yi'xiang'qin	10
 后天而老凋三光	hou'tian'er'lao'diao'san'guang	10
 后天下之乐而乐	hou'tian'xia'zhi'le'er'le	10
+后天性鼻孔闭锁	hou'tian'xing'bi'kong'bi'suo	10
+后天性鼻孔狭窄	hou'tian'xing'bi'kong'xia'zhai	10
 后天性动静脉瘘	hou'tian'xing'dong'jing'mai'lou	10
 后天性额骨畸形	hou'tian'xing'e'gu'ji'xing	10
 后天性耳廓畸形	hou'tian'xing'er'kuo'ji'xing	10
 后天性腹壁畸形	hou'tian'xing'fu'bi'ji'xing	10
 后天性股骨畸形	hou'tian'xing'gu'gu'ji'xing	10
+后天性骨盆狭窄	hou'tian'xing'gu'pen'xia'zhai	10
 后天性关节畸形	hou'tian'xing'guan'jie'ji'xing	10
 后天性颌骨畸形	hou'tian'xing'he'gu'ji'xing	10
+后天性脊柱变形	hou'tian'xing'ji'zhu'bian'xing	10
+后天性脊柱后凸	hou'tian'xing'ji'zhu'hou'tu	10
+后天性脊柱弯曲	hou'tian'xing'ji'zhu'wan'qu	10
+后天性脊椎滑脱	hou'tian'xing'ji'zhui'hua'tuo	10
 后天性颏骨畸形	hou'tian'xing'ke'gu'ji'xing	10
 后天性颅底畸形	hou'tian'xing'lu'di'ji'xing	10
+后天性卵巢萎缩	hou'tian'xing'luan'chao'wei'suo	10
 后天性面部畸形	hou'tian'xing'mian'bu'ji'xing	10
+后天性拇足内翻	hou'tian'xing'mu'zu'nei'fan	10
+后天性脑膜膨出	hou'tian'xing'nao'mo'peng'chu	10
 后天性内眦畸形	hou'tian'xing'nei'zi'ji'xing	10
+后天性食管憩室	hou'tian'xing'shi'guan'qi'shi	10
+后天性食管狭窄	hou'tian'xing'shi'guan'xia'zhai	10
+后天性胎毛过多	hou'tian'xing'tai'mao'guo'duo	10
 后天性听骨畸形	hou'tian'xing'ting'gu'ji'xing	10
 后天性外耳畸形	hou'tian'xing'wai'er'ji'xing	10
 后天性外眦畸形	hou'tian'xing'wai'zi'ji'xing	10
 后天性下肢畸形	hou'tian'xing'xia'zhi'ji'xing	10
 后天性小口畸形	hou'tian'xing'xiao'kou'ji'xing	10
 后天性胸骨畸形	hou'tian'xing'xiong'gu'ji'xing	10
+后天性牙齿缺失	hou'tian'xing'ya'chi'que'shi	10
+后天性阴道闭锁	hou'tian'xing'yin'dao'bi'suo	10
+后天性阴道狭窄	hou'tian'xing'yin'dao'xia'zhai	10
 后天性坐骨畸形	hou'tian'xing'zuo'gu'ji'xing	10
 后庭歌声更窈窕	hou'ting'ge'sheng'geng'yao'tiao	10
 后庭卷衣三万人	hou'ting'juan'yi'san'wan'ren	10
@@ -44743,6 +44932,7 @@
 环行急蹴皆应节	huan'xing'ji'cu'jie'ying'jie	10
 缓行轻踏破纹波	huan'xing'qing'ta'po'wen'bo	10
 唤醒三影燕支魂	huan'xing'san'ying'yan'zhi'hun	10
+环形性角膜溃疡	huan'xing'xing'jiao'mo'kui'yang	10
 欢宴瑶台镐京集	huan'yan'yao'tai'hao'jing'ji	10
 环氧地坪漆施工	huan'yang'di'ping'qi'shi'gong	1
 环氧防腐地坪漆	huan'yang'fang'fu'di'ping'qi	1
@@ -45739,6 +45929,7 @@
 回取行人斜路心	hui'qu'xing'ren'xie'lu'xin	10
 惠泉山下土如濡	hui'quan'shan'xia'tu'ru'ru	10
 挥刃割情情不断	hui'ren'ge'qing'qing'bu'duan	10
+汇仁琥乙红霉素	hui'ren'hu'yi'hong'mei'su	10
 汇仁乌鸡白凤丸	hui'ren'wu'ji'bai'feng'wan	10
 汇仁氧氟沙星片	hui'ren'yang'fu'sha'xing'pian	10
 回日楼台非甲帐	hui'ri'lou'tai'fei'jia'zhang	10
@@ -46443,6 +46634,7 @@
 记得玉真初见面	ji'de'yu'zhen'chu'jian'mian	10
 记得云间第一歌	ji'de'yun'jian'di'yi'ge	10
 伎等卜祝均倡伶	ji'deng'bo'zhu'jun'chang'ling	10
+极低出生体重儿	ji'di'chu'sheng'ti'zhong'er	10
 及第东归次灞上	ji'di'dong'gui'ci'ba'shang	10
 基底动脉综合征	ji'di'dong'mai'zong'he'zheng	10
 基底鳞状细胞癌	ji'di'lin'zhuang'xi'bao'ai	10
@@ -46850,6 +47042,7 @@
 己卯嘉辰寿阿同	ji'mao'jia'chen'shou'a'tong	10
 己卯六月初一日	ji'mao'liu'yue'chu'yi'ri	10
 鸡毛蒜皮没小事	ji'mao'suan'pi'mei'xiao'shi	10
+激酶激酶激酶类	ji'mei'ji'mei'ji'mei'lei	10
 寄梅应为故人来	ji'mei'ying'wei'gu'ren'lai	10
 蓟门何处尽尧封	ji'men'he'chu'jin'yao'feng	10
 蓟门秋月隐黄云	ji'men'qiu'yue'yin'huang'yun	10
@@ -47384,6 +47577,7 @@
 即向周回岩下看	ji'xiang'zhou'hui'yan'xia'kan	10
 几向缀珠深殿里	ji'xiang'zhui'zhu'shen'dian'li	10
 记小江风月佳时	ji'xiao'jiang'feng'yue'jia'shi	10
+绩效考核委员会	ji'xiao'kao'he'wei'yuan'hui	10
 几宵烟月锁楼台	ji'xiao'yan'yue'suo'lou'tai	10
 极小最小二乘解	ji'xiao'zui'xiao'er'cheng'jie	10
 既协翠泉光宝命	ji'xie'cui'quan'guang'bao'ming	10
@@ -47972,6 +48166,7 @@
 加减活血解毒汤	jia'jian'huo'xue'jie'du'tang	10
 加减六味地黄丸	jia'jian'liu'wei'di'huang'wan	10
 加减麻杏甘石汤	jia'jian'ma'xing'gan'shi'tang	10
+加减普济消毒饮	jia'jian'pu'ji'xiao'du'yin	10
 价贱乞与如糠粃	jia'jian'qi'yu'ru'kang'bi	10
 加减人参泻心汤	jia'jian'ren'shen'xie'xin'tang	10
 加减三黄二香散	jia'jian'san'huang'er'xiang'san	10
@@ -49106,6 +49301,7 @@
 饯行因赋荆门雨	jian'xing'yin'fu'jing'men'yu	10
 奸雄恶少皆封侯	jian'xiong'e'shao'jie'feng'hou	10
 奸雄窃命风尘昏	jian'xiong'qie'ming'feng'chen'hun	10
+肩胸真皮脂肪瓣	jian'xiong'zhen'pi'zhi'fang'ban	10
 睑修复术成形术	jian'xiu'fu'shu'cheng'xing'shu	10
 谏修郊庙开宸虑	jian'xiu'jiao'miao'kai'chen'lv	10
 肩袖破裂修补术	jian'xiu'po'lie'xiu'bu'shu	10
@@ -50432,6 +50628,7 @@
 结肠息肉电烙术	jie'chang'xi'rou'dian'lao'shu	10
 结肠息肉电烧术	jie'chang'xi'rou'dian'shao'shu	10
 结肠息肉切除术	jie'chang'xi'rou'qie'chu'shu	10
+结肠腺瘤样息肉	jie'chang'xian'liu'yang'xi'rou	10
 结肠小袋纤毛虫	jie'chang'xiao'dai'xian'mao'chong	1
 结肠乙状结肠镜	jie'chang'yi'zhuang'jie'chang'jing	10
 结肠造口闭合术	jie'chang'zao'kou'bi'he'shu	10
@@ -50455,6 +50652,7 @@
 解带当风挂薜萝	jie'dai'dang'feng'gua'bi'luo	10
 解道澄江静如练	jie'dao'cheng'jiang'jing'ru'lian	10
 解道澄江净如练	jie'dao'cheng'jiang'jing'ru'lian	10
+介导型超敏反应	jie'dao'xing'chao'min'fan'ying	10
 皆道扬雄才可观	jie'dao'yang'xiong'cai'ke'guan	10
 戒得长天秋月明	jie'de'chang'tian'qiu'yue'ming	10
 皆得成就不可量	jie'de'cheng'jiu'bu'ke'liang	10
@@ -52777,6 +52975,7 @@
 颈动脉动脉硬化	jing'dong'mai'dong'mai'ying'hua	10
 颈动脉瘤夹闭术	jing'dong'mai'liu'jia'bi'shu	10
 静动脉血分流率	jing'dong'mai'xue'fen'liu'lv	10
+颈动脉血栓形成	jing'dong'mai'xue'shuan'xing'cheng	10
 惊动茫茫下界人	jing'dong'mang'mang'xia'jie'ren	10
 经冬野菜青青色	jing'dong'ye'cai'qing'qing'se	10
 景东彝族自治县	jing'dong'yi'zu'zi'zhi'xian	10
@@ -53190,8 +53389,10 @@
 精神别禀凤凰心	jing'shen'bie'bing'feng'huang'xin	10
 精神不损翅翎伤	jing'shen'bu'sun'chi'ling'shang	10
 精神错乱心因性	jing'shen'cuo'luan'xin'yin'xing	10
+精神反射性癫痫	jing'shen'fan'she'xing'dian'xian	10
 精神烦燥综合征	jing'shen'fan'zao'zong'he'zheng	10
 精神分裂样反应	jing'shen'fen'lie'yang'fan'ying	10
+精神分裂样人格	jing'shen'fen'lie'yang'ren'ge	10
 精神高秀非人力	jing'shen'gao'xiu'fei'ren'li	10
 精神流离肝肺绝	jing'shen'liu'li'gan'fei'jue	10
 井深辘轳嗟绠短	jing'shen'lu'lu'jie'geng'duan	10
@@ -53242,6 +53443,7 @@
 精索囊肿切除术	jing'suo'nang'zhong'qie'chu'shu	10
 精索粘连松懈术	jing'suo'zhan'lian'song'xie'shu	10
 精索肿物切除术	jing'suo'zhong'wu'qie'chu'shu	10
+静态肺过度充气	jing'tai'fei'guo'du'chong'qi	10
 晶态非晶态转变	jing'tai'fei'jing'tai'zhuan'bian	10
 静态扭矩传感器	jing'tai'niu'ju'chuan'gan'qi	1
 静态胸廓顺应性	jing'tai'xiong'kuo'shun'ying'xing	10
@@ -54270,6 +54472,7 @@
 聚丙烯酸羟乙酯	ju'bing'xi'suan'qiang'yi'zhi	10
 聚丙烯醯胺凝胶	ju'bing'xi'xi'an'ning'jiao	10
 聚丙烯酰胺凝胶	ju'bing'xi'xian'an'ning'jiao	10
+局部瘢痕性脱发	ju'bu'ban'hen'xing'tuo'fa	10
 局部地区有大雨	ju'bu'di'qu'you'da'yu	1
 局部高碳酸血症	ju'bu'gao'tan'suan'xue'zheng	10
 局部回路神经元	ju'bu'hui'lu'shen'jing'yuan	10
@@ -54321,6 +54524,7 @@
 居高忘下真何益	ju'gao'wang'xia'zhen'he'yi	10
 狙公欺病来分栗	ju'gong'qi'bing'lai'fen'li	10
 狙公七芧富贵天	ju'gong'qi'xu'fu'gui'tian	10
+距骨哆开性脱位	ju'gu'duo'kai'xing'tuo'wei	10
 距骨开放性骨折	ju'gu'kai'fang'xing'gu'zhe	10
 聚观夹道卷红楼	ju'guan'jia'dao'juan'hong'lou	10
 居官死职战死绥	ju'guan'si'zhi'zhan'si'sui	10
@@ -55948,6 +56152,7 @@
 看字昏涩尤宜懒	kan'zi'hun'se'you'yi'lan	10
 抗补体抗体测定	kang'bu'ti'kang'ti'ce'ding	10
 抗辞请刃诛部曲	kang'ci'qing'ren'zhu'bu'qu	10
+抗单纯庖疹病毒	kang'dan'chun'pao'zhen'bing'du	10
 抗胆碱能综合征	kang'dan'jian'neng'zong'he'zheng	10
 康德二氏培养基	kang'de'er'shi'pei'yang'ji	10
 抗登革病毒抗体	kang'deng'ge'bing'du'kang'ti	10
@@ -56010,6 +56215,7 @@
 抗疏辞恩耻横覃	kang'shu'ci'en'chi'heng'tan	10
 糠酸莫米松乳膏	kang'suan'mo'mi'song'ru'gao	10
 康泰克缓释胶囊	kang'tai'ke'huan'shi'jiao'nang	10
+抗体磁珠缀合物	kang'ti'ci'zhu'zhui'he'wu	10
 抗体激素复合物	kang'ti'ji'su'fu'he'wu	10
 抗体检测试剂盒	kang'ti'jian'ce'shi'ji'he	10
 抗体缺陷综合征	kang'ti'que'xian'zong'he'zheng	10
@@ -59287,6 +59493,7 @@
 肋骨横突切除术	lei'gu'heng'tu'qie'chu'shu	10
 肋骨局部切除术	lei'gu'ju'bu'qie'chu'shu	10
 肋骨开放性骨折	lei'gu'kai'fang'xing'gu'zhe	10
+肋骨肋软骨连结	lei'gu'lei'ruan'gu'lian'jie	10
 肋骨劈裂移植术	lei'gu'pi'lie'yi'zhi'shu	10
 肋骨取骨植骨术	lei'gu'qu'gu'zhi'gu'shu	10
 肋骨移植隆鼻术	lei'gu'yi'zhi'long'bi'shu	10
@@ -60444,6 +60651,7 @@
 敛笑凝眸意欲歌	lian'xiao'ning'mou'yi'yu'ge	10
 镰形龟甲猛水蚤	lian'xing'gui'jia'meng'shui'zao	1
 连行接翼往复还	lian'xing'jie'yi'wang'fu'huan	10
+连续横褥式缝合	lian'xu'heng'ru'shi'feng'he	10
 连续浆肌层缝合	lian'xu'jiang'ji'ceng'feng'he	10
 连续流动反应器	lian'xu'liu'dong'fan'ying'qi	1
 连续式投放策略	lian'xu'shi'tou'fang'ce'lve	1
@@ -61187,6 +61395,7 @@
 林彪反革命集团	lin'biao'fan'ge'ming'ji'tuan	1
 临别惟有长嗟咨	lin'bie'wei'you'chang'jie'zi	10
 临别殷勤重寄词	lin'bie'yin'qin'zhong'ji'ci	10
+淋病病原携带者	lin'bing'bing'yuan'xie'dai'zhe	10
 林薄暮兮蝉声远	lin'bo'mu'xi'chan'sheng'yuan	10
 临波似染琅琊草	lin'bo'si'ran'lang'ya'cao	10
 鳞翅目果蛀蛾科	lin'chi'mu'guo'zhu'e'ke	1
@@ -64922,6 +65131,7 @@
 麻醉前病情评估	ma'zui'qian'bing'qing'ping'gu	10
 麻醉咽喉镜灯泡	ma'zui'yan'hou'jing'deng'pao	10
 迈博腺恶性肿瘤	mai'bo'xian'e'xing'zhong'liu	10
+脉搏血氧饱和仪	mai'bo'xue'yang'bao'he'yi	10
 脉搏氧饱和度法	mai'bo'yang'bao'he'du'fa	10
 脉搏氧饱和度仪	mai'bo'yang'bao'he'du'yi	10
 埋藏沟渐乱封圻	mai'cang'gou'jian'luan'feng'qi	10
@@ -65718,6 +65928,7 @@
 茅竹结蟠聊一愒	mao'zhu'jie'pan'liao'yi'kai	10
 猫抓病抗原皮试	mao'zhua'bing'kang'yuan'pi'shi	10
 帽转金铃雪面回	mao'zhuan'jin'ling'xue'mian'hui	10
+锚状骨内种植体	mao'zhuang'gu'nei'zhong'zhi'ti	10
 帽状腱膜下脓肿	mao'zhuang'jian'mo'xia'nong'zhong	10
 梅奥人工心肺机	mei'ao'ren'gong'xin'fei'ji	10
 美宝保湿洁面乳	mei'bao'bao'shi'jie'mian'ru	10
@@ -65765,6 +65976,7 @@
 每登高处长相忆	mei'deng'gao'chu'chang'xiang'yi	10
 每度暗来还暗去	mei'du'an'lai'hai'an'qu	10
 每度报朝愁入阁	mei'du'bao'chao'chou'ru'ge	10
+梅毒病原携带者	mei'du'bing'yuan'xie'dai'zhe	10
 梅毒螺旋体镜检	mei'du'luo'xuan'ti'jing'jian	10
 梅毒试验假阳性	mei'du'shi'yan'jia'yang'xing	10
 梅毒性玻璃体炎	mei'du'xing'bo'li'ti'yan	10
@@ -66937,6 +67149,7 @@
 面部假体太阳穴	mian'bu'jia'ti'tai'yang'xue	10
 面部开放性伤口	mian'bu'kai'fang'xing'shang'kou	10
 面部脓肿引流术	mian'bu'nong'zhong'yin'liu'shu	10
+面部软组织挫伤	mian'bu'ruan'zu'zhi'cuo'shang	10
 面部三等分比例	mian'bu'san'deng'fen'bi'li	10
 面部伤口清创术	mian'bu'shang'kou'qing'chuang'shu	10
 面部粟粒性狼疮	mian'bu'su'li'xing'lang'chuang	10
@@ -68660,6 +68873,7 @@
 沐猴而冠不足言	mu'hou'er'guan'bu'zu'yan	10
 沐猴徒自辱衣冠	mu'hou'tu'zi'ru'yi'guan	10
 母化为鬼妻为孀	mu'hua'wei'gui'qi'wei'shuang	10
+目昏鼻塞风攻上	mu'hun'bi'sai'feng'gong'shang	10
 目昏鼻塞风攻上	mu'hun'bi'se'feng'gong'shang	10
 目昏思寝即安眠	mu'hun'si'qin'ji'an'mian	10
 目极魂断望不见	mu'ji'hun'duan'wang'bu'jian	10
@@ -69770,6 +69984,7 @@
 南行更入山深浅	nan'xing'geng'ru'shan'shen'qian	10
 南行更入深山浅	nan'xing'geng'ru'shen'shan'qian	10
 男性骨质疏松症	nan'xing'gu'zhi'shu'song'zheng	10
+男性继发性不孕	nan'xing'ji'fa'xing'bu'yun	10
 男性假两性畸形	nan'xing'jia'liang'xing'ji'xing	10
 南幸江都恣佚游	nan'xing'jiang'du'zi'yi'you	10
 南行千里成何事	nan'xing'qian'li'cheng'he'shi	10
@@ -69779,6 +69994,7 @@
 南行若到江干侧	nan'xing'ruo'dao'jiang'gan'ce	10
 男性生育力降低	nan'xing'sheng'yu'li'jiang'di	10
 男性生殖器皮疹	nan'xing'sheng'zhi'qi'pi'zhen	10
+男性生殖器骚痒	nan'xing'sheng'zhi'qi'sao'yang	10
 南行市骨何仓卒	nan'xing'shi'gu'he'cang'cu	10
 男性外生殖器官	nan'xing'wai'sheng'zhi'qi'guan	10
 南行万里亦何事	nan'xing'wan'li'yi'he'shi	10
@@ -69903,8 +70119,12 @@
 恼得山僧悔出家	nao'de'shan'seng'hui'chu'jia	10
 闹得是不可开交	nao'de'shi'bu'ke'kai'jiao	1
 脑电图录像监测	nao'dian'tu'lu'xiang'jian'ce	10
+脑动脉供血不足	nao'dong'mai'gong'xue'bu'zu	10
 脑动脉瘤夹闭术	nao'dong'mai'liu'jia'bi'shu	10
+脑动脉血管硬化	nao'dong'mai'xue'guan'ying'hua	10
+脑动脉血栓形成	nao'dong'mai'xue'shuan'xing'cheng	10
 闹非城市静非山	nao'fei'cheng'shi'jing'fei'shan	10
+脑干多发性硬化	nao'gan'duo'fa'xing'ying'hua	10
 脑苷肌肽注射液	nao'gan'ji'tai'zhu'she'ye	10
 脑干占位性病变	nao'gan'zhan'wei'xing'bing'bian	10
 脑干肿瘤切除术	nao'gan'zhong'liu'qie'chu'shu	10
@@ -69942,6 +70162,7 @@
 脑胼胝体切开术	nao'pian'zhi'ti'qie'kai'shu	10
 脑器质性精神病	nao'qi'zhi'xing'jing'shen'bing	10
 脑桥被盖网状核	nao'qiao'bei'gai'wang'zhuang'he	10
+脑桥网状脊髓束	nao'qiao'wang'zhuang'ji'sui'shu	10
 脑桥尾侧网状核	nao'qiao'wei'ce'wang'zhuang'he	10
 脑桥中脑前静脉	nao'qiao'zhong'nao'qian'jing'mai	10
 脑桥嘴侧网状核	nao'qiao'zui'ce'wang'zhuang'he	10
@@ -70078,6 +70299,7 @@
 内中不许相传出	nei'zhong'bu'xu'xiang'chuan'chu	10
 内中人识从来去	nei'zhong'ren'shi'cong'lai'qu	10
 内中数日无呼唤	nei'zhong'shu'ri'wu'hu'huan	10
+内锥体细胞层纹	nei'zhui'ti'xi'bao'ceng'wen	10
 内子闲吟倚瑶瑟	nei'zi'xian'yin'yi'yao'se	10
 内眦肿物切除术	nei'zi'zhong'wu'qie'chu'shu	10
 内眦赘皮矫正术	nei'zi'zhui'pi'jiao'zheng'shu	10
@@ -71413,12 +71635,34 @@
 脓胸引流清除术	nong'xiong'yin'liu'qing'chu'shu	10
 浓艳一枝细看取	nong'yan'yi'zhi'xi'kan'qu	10
 秾艳一枝细看取	nong'yan'yi'zhi'xi'kan'qu	10
+农业标准化生产	nong'ye'biao'zhun'hua'sheng'chan	10
 农业产业化经营	nong'ye'chan'ye'hua'jing'ying	1
+农业产业化企业	nong'ye'chan'ye'hua'qi'ye	10
+农业产业化生产	nong'ye'chan'ye'hua'sheng'chan	10
+农业东路众意路	nong'ye'dong'lu'zhong'yi'lu	10
+农业高质量发展	nong'ye'gao'zhi'liang'fa'zhan	10
 农业供给侧改革	nong'ye'gong'ji'ce'gai'ge	1
+农业和农村经济	nong'ye'he'nong'cun'jing'ji	10
+农业合作化运动	nong'ye'he'zuo'hua'yun'dong	10
 农业技术推广法	nong'ye'ji'shu'tui'guang'fa	1
+农业集体化政策	nong'ye'ji'ti'hua'zheng'ce	10
+农业机械化水平	nong'ye'ji'xie'hua'shui'ping	10
+农业机械化学校	nong'ye'ji'xie'hua'xue'xiao	10
+农业劳动力转移	nong'ye'lao'dong'li'zhuan'yi	10
 农业劳动生产率	nong'ye'lao'dong'sheng'chan'lv	1
+农业南路商鼎路	nong'ye'nan'lu'shang'ding'lu	10
+农业南路永平路	nong'ye'nan'lu'yong'ping'lu	10
+农业农村部公告	nong'ye'nong'cun'bu'gong'gao	10
 农业农村局局长	nong'ye'nong'cun'ju'ju'zhang	1
+农业社会化服务	nong'ye'she'hui'hua'fu'wu	10
 农业生产合作社	nong'ye'sheng'chan'he'zuo'she	1
+农业生物多样性	nong'ye'sheng'wu'duo'yang'xing	10
+农业剩余劳动力	nong'ye'sheng'yu'lao'dong'li	10
+农业特产农业税	nong'ye'te'chan'nong'ye'shui	10
+农业现代化发展	nong'ye'xian'dai'hua'fa'zhan	10
+农业现代化建设	nong'ye'xian'dai'hua'jian'she	10
+农业现代化水平	nong'ye'xian'dai'hua'shui'ping	10
+农业现代化研究	nong'ye'xian'dai'hua'yan'jiu	10
 农业银行信用卡	nong'ye'yin'hang'xin'yong'ka	1
 农业政策性银行	nong'ye'zheng'ce'xing'yin'hang	1
 农业转基因生物	nong'ye'zhuan'ji'yin'sheng'wu	10
@@ -75984,6 +76228,7 @@
 强制性能效标准	qiang'zhi'xing'neng'xiao'biao'zhun	1
 强制性转股条款	qiang'zhi'xing'zhuan'gu'tiao'kuan	1
 强制许可使用费	qiang'zhi'xu'ke'shi'yong'fei	1
+强直阵挛性癫痫	qiang'zhi'zhen'luan'xing'dian'xian	10
 强制执行申请书	qiang'zhi'zhi'xing'shen'qing'shu	1
 强中更有强中手	qiang'zhong'geng'you'qiang'zhong'shou	10
 羌种来窥雁塞耕	qiang'zhong'lai'kui'yan'sai'geng	10
@@ -78307,6 +78552,7 @@
 球面射电望远镜	qiu'mian'she'dian'wang'yuan'jing	10
 球磨级轻巡洋舰	qiu'mo'ji'qing'xun'yang'jian	10
 求牧与刍而不得	qiu'mu'yu'chu'er'bu'de	10
+丘脑腹后外侧核	qiu'nao'fu'hou'wai'ce'he	10
 丘脑红核综合征	qiu'nao'hong'he'zong'he'zheng	10
 丘脑囊虫摘除术	qiu'nao'nang'chong'zhai'chu'shu	10
 丘脑肿瘤切除术	qiu'nao'zhong'liu'qie'chu'shu	10
@@ -79111,6 +79357,7 @@
 全程空调旅游车	quan'cheng'kong'tiao'lv'you'che	1
 犬齿背眼鰕虎鱼	quan'chi'bei'yan'xia'hu'yu	1
 泉出巨鱼长比人	quan'chu'ju'yu'chang'bi'ren	10
+全垂体机能减退	quan'chui'ti'ji'neng'jian'tui	10
 全党全军和全国	quan'dang'quan'jun'he'quan'guo	1
 全地形反馈系统	quan'di'xing'fan'kui'xi'tong	1
 泉底真珠溅客忙	quan'di'zhen'zhu'jian'ke'mang	10
@@ -79364,12 +79611,32 @@
 全钱通啉口服液	quan'qian'tong'lin'kou'fu'ye	10
 泉清石布博棋子	quan'qing'shi'bu'bo'qi'zi	10
 全球大部分地区	quan'qiu'da'bu'fen'di'qu	1
+全球独角兽企业	quan'qiu'du'jiao'shou'qi'ye	10
+全球工会联合会	quan'qiu'gong'hui'lian'he'hui	10
 全球供应链体系	quan'qiu'gong'ying'lian'ti'xi	1
+全球供应链危机	quan'qiu'gong'ying'lian'wei'ji	10
+全球海平面上升	quan'qiu'hai'ping'mian'shang'sheng	10
+全球海平面升降	quan'qiu'hai'ping'mian'sheng'jiang	10
+全球计算机网络	quan'qiu'ji'suan'ji'wang'luo	10
+全球价值链分工	quan'qiu'jia'zhi'lian'fen'gong	10
 全球经济一体化	quan'qiu'jing'ji'yi'ti'hua	1
+全球竞争力报告	quan'qiu'jing'zheng'li'bao'gao	10
+全球开发者大会	quan'qiu'kai'fa'zhe'da'hui	10
 全球宽频互联网	quan'qiu'kuan'pin'hu'lian'wang	1
+全球年度图片奖	quan'qiu'nian'du'tu'pian'jiang	10
+全球升温潜能值	quan'qiu'sheng'wen'qian'neng'zhi	10
+全球生物多样性	quan'qiu'sheng'wu'duo'yang'xing	10
 全球首席执行官	quan'qiu'shou'xi'zhi'xing'guan	1
+全球巡回演唱会	quan'qiu'xun'hui'yan'chang'hui	10
+全球亿万富豪榜	quan'qiu'yi'wan'fu'hao'bang	10
 全球执行副总裁	quan'qiu'zhi'xing'fu'zong'cai	1
+全球总决赛冠军	quan'qiu'zong'jue'sai'guan'jun	10
+全球最昂贵城市	quan'qiu'zui'ang'gui'cheng'shi	10
 全球最长圈养蛇	quan'qiu'zui'chang'juan'yang'she	1
+全球最具竞争力	quan'qiu'zui'ju'jing'zheng'li	10
+全球最具影响力	quan'qiu'zui'ju'ying'xiang'li	10
+全球最宜居城市	quan'qiu'zui'yi'ju'cheng'shi	10
+全球最有影响力	quan'qiu'zui'you'ying'xiang'li	10
 全权代理委托书	quan'quan'dai'li'wei'tuo'shu	1
 犬犬果实胡狼型	quan'quan'guo'shi'hu'lang'xing	1
 全日制高等院校	quan'ri'zhi'gao'deng'yuan'xiao	1
@@ -79389,6 +79656,7 @@
 全身脆性骨硬化	quan'shen'cui'xing'gu'ying'hua	10
 全身的血液循环	quan'shen'de'xue'ye'xun'huan	10
 全身电子线照射	quan'shen'dian'zi'xian'zhao'she	10
+全身动脉压监测	quan'shen'dong'mai'ya'jian'ce	10
 全身惊厥性疾病	quan'shen'jing'jue'xing'ji'bing	10
 全身盔甲的原料	quan'shen'kui'jia'de'yuan'liao	10
 全身上下都是宝	quan'shen'shang'xia'dou'shi'bao	1
@@ -80084,6 +80352,7 @@
 热带季风型岩溶	re'dai'ji'feng'xing'yan'rong	10
 热带季节内振荡	re'dai'ji'jie'nei'zhen'dang	10
 热带痉挛性截瘫	re'dai'jing'luan'xing'jie'tan	10
+热带口炎性腹泻	re'dai'kou'yan'xing'fu'xie	10
 热带利士曼原虫	re'dai'li'shi'man'yuan'chong	10
 热带森林博览园	re'dai'sen'lin'bo'lan'yuan	10
 热带沙漠性气候	re'dai'sha'mo'xing'qi'hou	10
@@ -80316,6 +80585,7 @@
 人工智能与教育	ren'gong'zhi'neng'yu'jiao'yu	10
 人工终止妊娠术	ren'gong'zhong'zhi'ren'shen'shu	10
 人工椎体置换术	ren'gong'zhui'ti'zhi'huan'shu	10
+人工组织和器官	ren'gong'zu'zhi'he'qi'guan	10
 人归极浦寒流广	ren'gui'ji'pu'han'liu'guang	10
 人归里社黄云暮	ren'gui'li'she'huang'yun'mu	10
 人贵有自知之明	ren'gui'you'zi'zhi'zhi'ming	10
@@ -80568,6 +80838,10 @@
 人口红利的消失	ren'kou'hong'li'de'xiao'shi	10
 人口结构的变化	ren'kou'jie'gou'de'bian'hua	10
 人口老龄化程度	ren'kou'lao'ling'hua'cheng'du	1
+人口老龄化加剧	ren'kou'lao'ling'hua'jia'ju	10
+人口老龄化加速	ren'kou'lao'ling'hua'jia'su	10
+人口老龄化进程	ren'kou'lao'ling'hua'jin'cheng	10
+人口老龄化趋势	ren'kou'lao'ling'hua'qu'shi	10
 人口老龄化严重	ren'kou'lao'ling'hua'yan'zhong	1
 人口密集的城市	ren'kou'mi'ji'de'cheng'shi	10
 人口年龄金字塔	ren'kou'nian'ling'jin'zi'ta	10
@@ -80786,6 +81060,7 @@
 人乳头状瘤病毒	ren'ru'tou'zhuang'liu'bing'du	10
 人如旋磨观群蚁	ren'ru'xuan'mo'guan'qun'yi	10
 人若赚得全世界	ren'ruo'zhuan'de'quan'shi'jie	10
+人若赚得全世界	ren'ruo'zuan'de'quan'shi'jie	10
 人散庙门灯火尽	ren'san'miao'men'deng'huo'jin	10
 人山纷赞阵容阔	ren'shan'fen'zan'zhen'rong'kuo	10
 人善人欺天不欺	ren'shan'ren'qi'tian'bu'qi	10
@@ -81130,6 +81405,7 @@
 人行横道信号灯	ren'xing'heng'dao'xin'hao'deng	1
 任性逍遥不学禅	ren'xing'xiao'yao'bu'xue'chan	10
 人血白蛋白注射	ren'xue'bai'dan'bai'zhu'she	10
+人血丙种球蛋白	ren'xue'bing'zhong'qiu'dan'bai	10
 人血免疫球蛋白	ren'xue'mian'yi'qiu'dan'bai	10
 忍寻棠棣鶺鴒诗	ren'xun'tang'di'ji'ling'shi	10
 人言爱竹有何好	ren'yan'ai'zhu'you'he'hao	10
@@ -85010,6 +85286,7 @@
 上下荆淮剑气雄	shang'xia'jing'huai'jian'qi'xiong	10
 上下蹁跹皆著袜	shang'xia'pian'xian'jie'zhu'wa	10
 上下四方有极乎	shang'xia'si'fang'you'ji'hu	10
+上下牙排列不齐	shang'xia'ya'pai'lie'bu'qi	10
 伤岘山云表观主	shang'xian'shan'yun'biao'guan'zhu	10
 尚嫌剃发有诗斑	shang'xian'ti'fa'you'shi'ban	10
 上相抽毫歌帝德	shang'xiang'chou'hao'ge'di'de	10
@@ -85774,6 +86051,7 @@
 深殿门重夜漏严	shen'dian'men'zhong'ye'lou'yan	10
 深洞长松何所有	shen'dong'chang'song'he'suo'you	10
 深冬放火如红霞	shen'dong'fang'huo'ru'hong'xia	10
+肾动脉血栓形成	shen'dong'mai'xue'shuan'xing'cheng	10
 肾动脉支架系统	shen'dong'mai'zhi'jia'xi'tong	10
 蜃斗嘘天楼阁成	shen'dou'xu'tian'lou'ge'cheng	10
 肾窦脂肪瘤样病	shen'dou'zhi'fang'liu'yang'bing	10
@@ -89422,6 +89700,7 @@
 世有高贤践台斗	shi'you'gao'xian'jian'tai'dou	10
 时有归牛浮鼻过	shi'you'gui'niu'fu'bi'guo	10
 时有归云到枕边	shi'you'gui'yun'dao'zhen'bian	10
+石油含氮化合物	shi'you'han'dan'hua'he'wu	10
 石油和化工行业	shi'you'he'hua'gong'hang'ye	1
 石油化工等行业	shi'you'hua'gong'deng'hang'ye	1
 石油化工总公司	shi'you'hua'gong'zong'gong'si	1
@@ -89927,6 +90206,7 @@
 瘦藤七尺走惊蛇	shou'teng'qi'chi'zou'jing'she	10
 瘦藤拄到风烟上	shou'teng'zhu'dao'feng'yan'shang	10
 受体促卵泡激素	shou'ti'cu'luan'pao'ji'su	10
+受体促性腺激素	shou'ti'cu'xing'xian'ji'su	10
 受体过敏综合征	shou'ti'guo'min'zong'he'zheng	10
 受体甲状腺激素	shou'ti'jia'zhuang'xian'ji'su	10
 受体酪氨酸激酶	shou'ti'lao'an'suan'ji'mei	10
@@ -90105,6 +90385,7 @@
 数调持觞兴有无	shu'diao'chi'shang'xing'you'wu	10
 叔丁基对苯二酚	shu'ding'ji'dui'ben'er'fen	10
 叔丁基磷杂乙炔	shu'ding'ji'lin'za'yi'que	10
+叔丁氧基化合物	shu'ding'yang'ji'hua'he'wu	10
 数度登朝何处荣	shu'du'deng'chao'he'chu'rong	10
 叔度千顷醉即休	shu'du'qian'qing'zui'ji'xiu	10
 蜀都褥薄锦花冷	shu'du'ru'bao'jin'hua'leng	10
@@ -90407,6 +90688,7 @@
 蜀山西南千万重	shu'shan'xi'nan'qian'wan'chong	10
 书山有路勤为径	shu'shan'you'lu'qin'wei'jing	10
 树上长短听啼莺	shu'shang'chang'duan'ting'ti'ying	10
+鼠伤寒沙门氏菌	shu'shang'han'sha'men'shi'jun	10
 书上千重万重恨	shu'shang'qian'zhong'wan'chong'hen	10
 树上因依见寒鸟	shu'shang'yin'yi'jian'han'niao	10
 树上有个好地方	shu'shang'you'ge'hao'di'fang	1
@@ -90551,6 +90833,7 @@
 鼠疫菌诊断血清	shu'yi'jun'zhen'duan'xue'qing	10
 暑衣清净鸳鸯喜	shu'yi'qing'jing'yuan'yang'xi	10
 书意诗情不偶然	shu'yi'shi'qing'bu'ou'ran	10
+鼠疫血清学试验	shu'yi'xue'qing'xue'shi'yan	10
 鼠疫耶尔森氏菌	shu'yi'ye'er'sen'shi'jun	10
 树阴离离日色薄	shu'yin'li'li'ri'se'bao	10
 树阴照水爱晴柔	shu'yin'zhao'shui'ai'qing'rou	10
@@ -93164,6 +93447,7 @@
 速度最快的球员	su'du'zui'kuai'de'qiu'yuan	1
 素娥临夜新梳洗	su'e'lin'ye'xin'shu'xi	10
 速发相哮喘反应	su'fa'xiang'xiao'chuan'fan'ying	10
+速发型超敏反应	su'fa'xing'chao'min'fan'ying	10
 粟饭藜羹间养神	su'fan'li'geng'jian'yang'shen	10
 素方成缁面黧黑	su'fang'cheng'zi'mian'li'hei	10
 素房含露玉冠鲜	su'fang'han'lu'yu'guan'xian	10
@@ -93931,9 +94215,11 @@
 笋老兰长花渐稀	sun'lao'lan'chang'hua'jian'xi	10
 笋皮笠子荷叶衣	sun'pi'li'zi'he'ye'yi	10
 笋如玉箸椹如簪	sun'ru'yu'zhu'shen'ru'zan	10
+损伤后足母下垂	sun'shang'hou'zu'mu'xia'chui	10
 损伤痿软麻木病	sun'shang'wei'ruan'ma'mu'bing	10
 孙叔敖执爵而立	sun'shu'ao'zhi'jue'er'li	10
 笋随人意疏处生	sun'sui'ren'yi'shu'chu'sheng	10
+孙悟空三岛求方	sun'wu'kong'san'dao'qiu'fang	10
 孙武已斩吴宫女	sun'wu'yi'zhan'wu'gong'nv	10
 笋牙成竹冒霜雪	sun'ya'cheng'zhu'mao'shuang'xue	10
 笋叶裹茶同趁虚	sun'ye'guo'cha'tong'chen'xu	10
@@ -93956,6 +94242,8 @@
 索多玛与哈摩辣	suo'duo'ma'yu'ha'mo'la	1
 索尔兹伯里平原	suo'er'zi'bo'li'ping'yuan	1
 索尔兹伯里石环	suo'er'zi'bo'li'shi'huan	1
+锁骨钢板不锈钢	suo'gu'gang'ban'bu'xiu'gang	10
+锁骨钢板钛合金	suo'gu'gang'ban'tai'he'jin	10
 锁骨开放性骨折	suo'gu'kai'fang'xing'gu'zhe	10
 锁骨上淋巴结核	suo'gu'shang'lin'ba'jie'he	10
 锁骨上内侧神经	suo'gu'shang'nei'ce'shen'jing	10
@@ -94406,8 +94694,15 @@
 太平桥南里社区	tai'ping'qiao'nan'li'she'qu	1
 太平时节振儒冠	tai'ping'shi'jie'zhen'ru'guan	10
 太平谁致乱者谁	tai'ping'shui'zhi'luan'zhe'shui	10
+太平天国戴王府	tai'ping'tian'guo'dai'wang'fu	10
+太平天国辅王府	tai'ping'tian'guo'fu'wang'fu	10
+太平天国护王府	tai'ping'tian'guo'hu'wang'fu	10
+太平天国烈士墓	tai'ping'tian'guo'lie'shi'mu	10
+太平天国侍王府	tai'ping'tian'guo'shi'wang'fu	10
+太平天国忠王府	tai'ping'tian'guo'zhong'wang'fu	10
 太平天子朝迎日	tai'ping'tian'zi'zhao'ying'ri	10
 太平万岁字当中	tai'ping'wan'sui'zi'dang'zhong	10
+太平无国忠王府	tai'ping'wu'guo'zhong'wang'fu	10
 太平无用经纶者	tai'ping'wu'yong'jing'lun'zhe	10
 太平下直旌旗红	tai'ping'xia'zhi'jing'qi'hong	10
 太平洋鲍曼氏菌	tai'ping'yang'bao'man'shi'jun	10
@@ -95228,6 +95523,8 @@
 提高顾客满意度	ti'gao'gu'ke'man'yi'du	1
 提高关键词排名	ti'gao'guan'jian'ci'pai'ming	10
 提高基础代谢率	ti'gao'ji'chu'dai'xie'lv	1
+提高机体抵抗力	ti'gao'ji'ti'di'kang'li	10
+提高机体免疫力	ti'gao'ji'ti'mian'yi'li	10
 提高街面见警率	ti'gao'jie'mian'jian'jing'lv	1
 提高客户满意度	ti'gao'ke'hu'man'yi'du	1
 提高客户忠诚度	ti'gao'ke'hu'zhong'cheng'du	1
@@ -96386,6 +96683,7 @@
 铁甲长戈死未忘	tie'jia'chang'ge'si'wei'wang	10
 铁甲无敌奖门人	tie'jia'wu'di'jiang'men'ren	10
 铁甲无敌玛利亚	tie'jia'wu'di'ma'li'ya	10
+铁甲无敌玛莉亚	tie'jia'wu'di'ma'li'ya	10
 铁甲雄师突击战	tie'jia'xiong'shi'tu'ji'zhan	10
 铁简有云神永护	tie'jian'you'yun'shen'yong'hu	10
 铁粒幼细胞贫血	tie'li'you'xi'bao'pin'xue	10
@@ -97321,6 +97619,7 @@
 徒想夜泉流客恨	tu'xiang'ye'quan'liu'ke'hen	10
 图象增强显微术	tu'xiang'zeng'qiang'xian'wei'shu	10
 图形使用者介面	tu'xing'shi'yong'zhe'jie'mian	10
+图形视诱发电位	tu'xing'shi'you'fa'dian'wei	10
 徒言凡质千钧重	tu'yan'fan'zhi'qian'jun'zhong	10
 徒言共饮胜公荣	tu'yan'gong'yin'sheng'gong'rong	10
 徒言南国容华晚	tu'yan'nan'guo'rong'hua'wan	10
@@ -97391,6 +97690,8 @@
 推椎主母牵下堂	tui'chui'zhu'mu'qian'xia'tang	10
 推摧主母牵下堂	tui'cui'zhu'mu'qian'xia'tang	10
 推倒了油瓶不扶	tui'dao'le'you'ping'bu'fu	1
+腿动脉血栓形成	tui'dong'mai'xue'shuan'xing'cheng	10
+推动数字化转型	tui'dong'shu'zi'hua'zhuan'xing	10
 颓纲漏网期弥纶	tui'gang'lou'wang'qi'mi'lun	10
 退耕何处有名田	tui'geng'he'chu'you'ming'tian	10
 退公诗酒乐华年	tui'gong'shi'jiu'le'hua'nian	10
@@ -97406,6 +97707,7 @@
 退将复修吾初服	tui'jiang'fu'xiu'wu'chu'fu	1
 褪尽红绡见玉肌	tui'jin'hong'xiao'jian'yu'ji	10
 推进器持续时间	tui'jin'qi'chi'xu'shi'jian	1
+推进数字化转型	tui'jin'shu'zi'hua'zhuan'xing	10
 颓龄舍此事东菑	tui'ling'she'ci'shi'dong'zai	10
 推门入室书纵横	tui'men'ru'shi'shu'zong'heng	10
 推排使至有众力	tui'pai'shi'zhi'you'zhong'li	10
@@ -97639,6 +97941,7 @@
 外耳道乳头状瘤	wai'er'dao'ru'tou'zhuang'liu	10
 外耳道软骨切迹	wai'er'dao'ruan'gu'qie'ji	10
 外耳活组织检查	wai'er'huo'zu'zhi'jian'cha	10
+外耳继发性感染	wai'er'ji'fa'xing'gan'ran	10
 外耳开放性伤口	wai'er'kai'fang'xing'shang'kou	10
 外耳撕裂缝合术	wai'er'si'lie'feng'he'shu	10
 外耳肿瘤切除术	wai'er'zhong'liu'qie'chu'shu	10
@@ -99442,6 +99745,7 @@
 为公置酒临江阁	wei'gong'zhi'jiu'lin'jiang'ge	10
 帷宫直坐凤麟洲	wei'gong'zhi'zuo'feng'lin'zhou	10
 魏公诸子分衣裘	wei'gong'zhu'zi'fen'yi'qiu	10
+尾骨哆开性脱位	wei'gu'duo'kai'xing'tuo'wei	10
 尾骨开放性骨折	wei'gu'kai'fang'xing'gu'zhe	10
 为姑偏忌诸嫂良	wei'gu'pian'ji'zhu'sao'liang	10
 危瓜多尔毛口鲶	wei'gua'duo'er'mao'kou'nian	1
@@ -104909,6 +105213,7 @@
 昔时江水今人家	xi'shi'jiang'shui'jin'ren'jia	10
 洗拭金杯拂玉徽	xi'shi'jin'bei'fu'yu'hui	10
 昔时金阶白玉堂	xi'shi'jin'jie'bai'yu'tang	10
+稀释旧结核菌素	xi'shi'jiu'jie'he'jun'su	10
 希氏锯鳞鰕虎鱼	xi'shi'ju'lin'xia'hu'yu	1
 昔时蹻跖今骞回	xi'shi'jue'zhi'jin'qian'hui	10
 昔时流水至今流	xi'shi'liu'shui'zhi'jin'liu	10
@@ -108522,10 +108827,15 @@
 消旋山莨菪碱片	xiao'xuan'shan'lang'dang'jian'pian	10
 硝旋山莨菪碱片	xiao'xuan'shan'lang'dang'jian'pian	10
 小轩朱槛忆同临	xiao'xuan'zhu'jian'yi'tong'lin	10
+小学二年级数学	xiao'xue'er'nian'ji'shu'xue	10
+小学六年级数学	xiao'xue'liu'nian'ji'shu'xue	10
 销雪欺寒不自由	xiao'xue'qi'han'bu'zi'you	10
 小雪晴沙不作泥	xiao'xue'qing'sha'bu'zuo'ni	10
 小雪晴时不共寒	xiao'xue'qing'shi'bu'gong'han	10
+小学三年级数学	xiao'xue'san'nian'ji'shu'xue	10
 小雪疏烟杂瑞光	xiao'xue'shu'yan'za'rui'guang	10
+小学五年级数学	xiao'xue'wu'nian'ji'shu'xue	10
+小学一年级数学	xiao'xue'yi'nian'ji'shu'xue	10
 小鸭看从笔下生	xiao'ya'kan'cong'bi'xia'sheng	10
 小亚细亚刺拟鲤	xiao'ya'xi'ya'ci'ni'li	1
 小眼长臀鰕虎鱼	xiao'yan'chang'tun'xia'hu'yu	1
@@ -109251,17 +109561,43 @@
 新建业商业中心	xin'jian'ye'shang'ye'zhong'xin	10
 新疆阿克苏地区	xin'jiang'a'ke'su'di'qu	1
 新疆阿勒泰地区	xin'jiang'a'le'tai'di'qu	1
+新疆八一农学院	xin'jiang'ba'yi'nong'xue'yuan	10
 新疆扁吻鱼新强	xin'jiang'bian'wen'yu'xin'qiang	1
 新疆产权交易所	xin'jiang'chan'quan'jiao'yi'suo	1
+新疆达坂城纳欢	xin'jiang'da'ban'cheng'na'huan	10
+新疆第一口油井	xin'jiang'di'yi'kou'you'jing	10
+新疆公务员考试	xin'jiang'gong'wu'yuan'kao'shi	10
+新疆国际大巴扎	xin'jiang'guo'ji'da'ba'zha	10
+新疆和田玉籽料	xin'jiang'he'tian'yu'zi'liao	10
+新疆检验检疫局	xin'jiang'jian'yan'jian'yi'ju	10
+新疆军区休干所	xin'jiang'jun'qu'xiu'gan'suo	10
+新疆喀什古城队	xin'jiang'ka'shi'gu'cheng'dui	10
+新疆考古研究所	xin'jiang'kao'gu'yan'jiu'suo	10
+新疆克拉玛依市	xin'jiang'ke'la'ma'yi'shi	10
+新疆林业科学院	xin'jiang'lin'ye'ke'xue'yuan	10
 心将流水同清净	xin'jiang'liu'shui'tong'qing'jing	10
 新疆马歇尔线虫	xin'jiang'ma'xie'er'xian'chong	1
+新疆煤田地质局	xin'jiang'mei'tian'di'zhi'ju	10
+新疆农垦科学院	xin'jiang'nong'ken'ke'xue'yuan	10
+新疆农业博览园	xin'jiang'nong'ye'bo'lan'yuan	10
+新疆农业科学院	xin'jiang'nong'ye'ke'xue'yuan	10
+新疆沙湾大盘鸡	xin'jiang'sha'wan'da'pan'ji	10
+新疆社会科学院	xin'jiang'she'hui'ke'xue'yuan	10
 心将生灭是浮云	xin'jiang'sheng'mie'shi'fu'yun	10
 新疆是个好地方	xin'jiang'shi'ge'hao'di'fang	1
 新疆石油管理局	xin'jiang'shi'you'guan'li'ju	1
 新疆塔里木盆地	xin'jiang'ta'li'mu'pen'di	1
+新疆维吾尔药业	xin'jiang'wei'wu'er'yao'ye	10
 新疆乌鲁木齐市	xin'jiang'wu'lu'mu'qi'shi	1
 新疆乌鲁木齐县	xin'jiang'wu'lu'mu'qi'xian	1
+新疆新华印刷厂	xin'jiang'xin'hua'yin'shua'chang	10
+新疆新闻出版局	xin'jiang'xin'wen'chu'ban'ju	10
+新疆畜牧科学院	xin'jiang'xu'mu'ke'xue'yuan	10
+新疆亚新煤层气	xin'jiang'ya'xin'mei'ceng'qi	10
 新疆沿天山地区	xin'jiang'yan'tian'shan'di'qu	1
+新疆中国旅行社	xin'jiang'zhong'guo'lv'xing'she	10
+新疆驻京办事处	xin'jiang'zhu'jing'ban'shi'chu	10
+新疆自治区政府	xin'jiang'zi'zhi'qu'zheng'fu	10
 新教内人唯射鸭	xin'jiao'nei'ren'wei'she'ya	10
 新教小玉唱伊州	xin'jiao'xiao'yu'chang'yi'zhou	10
 新戒珠从衣里得	xin'jie'zhu'cong'yi'li'de	10
@@ -110313,6 +110649,7 @@
 杏香兔耳风胶囊	xing'xiang'tu'er'feng'jiao'nang	10
 杏香兔耳风颗粒	xing'xiang'tu'er'feng'ke'li	10
 性心理发育障碍	xing'xin'li'fa'yu'zhang'ai	10
+星形玻璃体变性	xing'xing'bo'li'ti'bian'xing	10
 行星齿轮变速器	xing'xing'chi'lun'bian'su'qi	1
 行星齿轮减速机	xing'xing'chi'lun'jian'su'ji	1
 行星齿轮减速器	xing'xing'chi'lun'jian'su'qi	1
@@ -113062,6 +113399,7 @@
 眼随老减嫌长夜	yan'sui'lao'jian'xian'chang'ye	10
 延髓前方减压术	yan'sui'qian'fang'jian'ya'shu	10
 延髓外侧综合征	yan'sui'wai'ce'zong'he'zheng	10
+延髓网状脊髓束	yan'sui'wang'zhuang'ji'sui'shu	10
 晏岁着脚来东瓯	yan'sui'zhe'jiao'lai'dong'ou	10
 眼损不知都自取	yan'sun'bu'zhi'dou'zi'qu	10
 烟蓑散响惊诗思	yan'suo'san'xiang'jing'shi'si	10
@@ -115974,6 +116312,7 @@
 一过性意识丧失	yi'guo'xing'yi'shi'sang'shi	10
 一国之人皆若狂	yi'guo'zhi'ren'jie'ruo'kuang	10
 乙亥七夕此何夕	yi'hai'qi'xi'ci'he'xi	10
+以汗出入水中浴	yi'han'chu'ru'shui'zhong'yu	10
 衣寒衣湿披短蓑	yi'han'yi'shi'pi'duan'suo	10
 一行白鹭上青天	yi'hang'bai'lu'shang'qing'tian	10
 一行淡水带潮浑	yi'hang'dan'shui'dai'chao'hun	10
@@ -120724,6 +121063,7 @@
 幽门管恶性肿瘤	you'men'guan'e'xing'zhong'liu	10
 幽门环肌切开术	you'men'huan'ji'qie'kai'shu	10
 幽门肌层切开术	you'men'ji'ceng'qie'kai'shu	10
+幽门溃疡伴出血	you'men'kui'yang'ban'chu'xie	10
 幽门溃疡伴穿孔	you'men'kui'yang'ban'chuan'kong	10
 幽门螺杆菌阳性	you'men'luo'gan'jun'yang'xing	10
 幽门前恶性肿瘤	you'men'qian'e'xing'zhong'liu	10
@@ -127157,6 +127497,7 @@
 真诀自从茅氏得	zhen'jue'zi'cong'mao'shi'de	10
 真菌培养及鉴定	zhen'jun'pei'yang'ji'jian'ding	10
 真菌显色培养皿	zhen'jun'xian'se'pei'yang'min	10
+真菌性角膜溃疡	zhen'jun'xing'jiao'mo'kui'yang	10
 真菌性上颌窦炎	zhen'jun'xing'shang'he'dou'yan	10
 真菌性心内膜炎	zhen'jun'xing'xin'nei'mo'yan	10
 真菌性主动脉瘤	zhen'jun'xing'zhu'dong'mai'liu	10
@@ -127180,7 +127521,9 @@
 真能变成石头吗	zhen'neng'bian'cheng'shi'tou'ma	1
 真娘墓头春草碧	zhen'niang'mu'tou'chun'cao'bi	10
 真娘死时犹少年	zhen'niang'si'shi'you'shao'nian	10
+真皮树突状细胞	zhen'pi'shu'tu'zhuang'xi'bao	10
 真皮脂肪移植术	zhen'pi'zhi'fang'yi'zhi'shu	10
+真皮脂肪移植物	zhen'pi'zhi'fang'yi'zhi'wu	10
 枕破斜红未肯匀	zhen'po'xie'hong'wei'ken'yun	10
 珍芪补血口服液	zhen'qi'bu'xue'kou'fu'ye	10
 真契当如磁石铁	zhen'qi'dang'ru'ci'shi'tie	10
@@ -127431,6 +127774,7 @@
 正负电子对效应	zheng'fu'dian'zi'dui'xiao'ying	10
 政府和市场关系	zheng'fu'he'shi'chang'guan'xi	1
 征夫十室几人在	zheng'fu'shi'shi'ji'ren'zai	10
+政府数字化转型	zheng'fu'shu'zi'hua'zhuan'xing	10
 政府统计办公室	zheng'fu'tong'ji'ban'gong'shi	1
 征夫万里戍他乡	zheng'fu'wan'li'shu'ta'xiang	10
 政府与市场关系	zheng'fu'yu'shi'chang'guan'xi	1
@@ -127698,6 +128042,7 @@
 争新游女幡垂鬓	zheng'xin'you'nv'fan'chui'bin	10
 政行豪县众称材	zheng'xing'hao'xian'zhong'cheng'cai	10
 整形科手术器械	zheng'xing'ke'shou'shu'qi'xie	1
+整形美容外科学	zheng'xing'mei'rong'wai'ke'xue	10
 争雄斗死绣颈断	zheng'xiong'dou'si'xiu'jing'duan	10
 郑袖见捐西子浣	zheng'xiu'jian'juan'xi'zi'huan	10
 郑袖娇娆酣似醉	zheng'xiu'jiao'rao'han'si'zui	10
@@ -127775,6 +128120,7 @@
 正中靶心的飞镖	zheng'zhong'ba'xin'de'fei'biao	1
 正中部菱形舍炎	zheng'zhong'bu'ling'xing'she'yan	10
 郑中丞后有人无	zheng'zhong'cheng'hou'you'ren'wu	10
+正中颌关系异常	zheng'zhong'he'guan'xi'yi'chang	10
 正中神经缝合术	zheng'zhong'shen'jing'feng'he'shu	10
 正中神经松解术	zheng'zhong'shen'jing'song'jie'shu	10
 正中神经探查术	zheng'zhong'shen'jing'tan'cha'shu	10
@@ -128543,6 +128889,7 @@
 质量信得过班组	zhi'liang'xin'de'guo'ban'zu	1
 质量信得过产品	zhi'liang'xin'de'guo'chan'pin	1
 质量筑基新动能	zhi'liang'zhu'ji'xin'dong'neng	10
+治疗儿童白癜风	zhi'liao'er'tong'bai'dian'feng	10
 治疗骨质疏松症	zhi'liao'gu'zhi'shu'song'zheng	10
 治疗精神分裂症	zhi'liao'jing'shen'fen'lie'zheng	10
 治疗前列腺疾病	zhi'liao'qian'lie'xian'ji'bing	10
@@ -128958,6 +129305,7 @@
 直须洗尽焦枯意	zhi'xu'xi'jin'jiao'ku'yi	10
 只许腰肢背后看	zhi'xu'yao'zhi'bei'hou'kan	10
 止血复脉口服液	zhi'xue'fu'mai'kou'fu'ye	10
+止血海绵可吸收	zhi'xue'hai'mian'ke'xi'shou	10
 止血祛瘀明目片	zhi'xue'qu'yu'ming'mu'pian	10
 只寻古庙那边行	zhi'xun'gu'miao'na'bian'xing	10
 只寻孤塔认西东	zhi'xun'gu'ta'ren'xi'dong	10
@@ -129180,6 +129528,7 @@
 只缘生在此山中	zhi'yuan'sheng'zai'ci'shan'zhong	1
 只愿四时烟雾少	zhi'yuan'si'shi'yan'wu'shao	10
 支原体性尿道炎	zhi'yuan'ti'xing'niao'dao'yan	10
+支原体药敏试纸	zhi'yuan'ti'yao'min'shi'zhi	10
 知鸢为害何不言	zhi'yuan'wei'hai'he'bu'yan	10
 只愿无事常相见	zhi'yuan'wu'shi'chang'xiang'jian	10
 只缘妖雾又重来	zhi'yuan'yao'wu'you'chong'lai	10
@@ -132179,6 +132528,9 @@
 自动生产流水线	zi'dong'sheng'chan'liu'shui'xian	10
 自动生化分析仪	zi'dong'sheng'hua'fen'xi'yi	10
 自动售检票系统	zi'dong'shou'jian'piao'xi'tong	1
+自动体外除颤器	zi'dong'ti'wai'chu'chan'qi	10
+自动体外除颤仪	zi'dong'ti'wai'chu'chan'yi	10
+自动体外电击器	zi'dong'ti'wai'dian'ji'qi	10
 自东土大唐而来	zi'dong'tu'da'tang'er'lai	1
 自动温度控制器	zi'dong'wen'du'kong'zhi'qi	10
 紫洞香风吹碧桃	zi'dong'xiang'feng'chui'bi'tao	10
@@ -133145,6 +133497,7 @@
 自有莼羹定却人	zi'you'chun'geng'ding'que'ren	10
 自由的百科全书	zi'you'de'bai'ke'quan'shu	1
 子又恶乎求之哉	zi'you'e'hu'qiu'zhi'zai	10
+自有芳烃工艺包	zi'you'fang'ting'gong'yi'bao	10
 自有豪俊相攀追	zi'you'hao'jun'xiang'pan'zhui	10
 兹游何事天不阻	zi'you'he'shi'tian'bu'zu	10
 自有花开久客中	zi'you'hua'kai'jiu'ke'zhong	10
@@ -133814,6 +134167,7 @@
 醉回花舫信风行	zui'hui'hua'fang'xin'feng'xing	10
 醉妓欢声遏管弦	zui'ji'huan'sheng'e'guan'xian	10
 最佳动画长片奖	zui'jia'dong'hua'chang'pian'jiang	1
+最佳呼气末正压	zui'jia'hu'qi'mo'zheng'ya	10
 最佳旅游目的地	zui'jia'lv'you'mu'di'di	1
 最佳男配角提名	zui'jia'nan'pei'jue'ti'ming	1
 最佳男主角提名	zui'jia'nan'zhu'jue'ti'ming	1
