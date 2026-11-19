@@ -101,6 +101,10 @@ python3 scripts/validate_packs.py
 
 `sources/opencc/` 的十份文本与 `LICENSE` 保留上游名字和字节，由 `upstream.lock.json` 校验。来源与派生表的生成方式见 `NOTICE.md`。转换算法、下载与生成工具留在 msime；本仓不放 Rust crate 或生成的数据库。跨仓 PR 互链，先合本仓，再把 msime 的 OpenCC 锁指向合并后的固定提交，不能让下游默认分支引用未合并的 PR 提交。
 
+## 只给 MSIME-Windows 读的英文数据
+
+`sources/english/hallelujahim-ipa.txt`（英文候选的音标）与 `sources/english/ecdict-phrases.txt`（英文候选的短语）只由 MSIME-Windows 的本地构建器读，msime 构建器不读，不进 `dict-v` 发布产物，也不在 `upstream.lock.json` 里。它们和 `sources/symbols/wanxiang-unrenderable.txt` 一样，生成器放在 MSIME-Windows（`scripts/generate-english-extras.py`），这是「生成器放在 msime」的例外：要改规则或换上游提交，在 MSIME-Windows 改生成器、合入后从干净的工作区重新生成整份文件，再开本仓 PR；不手工编辑，文件头带 `-dirty` 的不要合入。来源与许可见 `NOTICE.md`「英文词库」。
+
 ## 符号名称表
 
 `sources/symbols/symbol-names.tsv`（打拼音出符号的名称表）与 `sources/symbols/latex-symbols.tsv`（LaTeX 命令名到码位）是本项目自写的数据，改符号名称、加希腊字母或数学符号都改这里，不在 msime 里改。msime 用 `resources/symbol-tables.lock.json` 固定本仓提交和逐文件摘要，`scripts/sync_symbol_tables.py` 把两份文件逐字节同步成引擎和官方短语表读取的副本（`crates/engine/src/local/symbol_candidates.tsv`、`plugins/phrase_table/latex-symbols/symbols.tsv`），离线检查副本与锁一致；编译不联网。写法规则由 msime 的单元测试检查：`symbol_candidates.rs` 的表检查（单音节白名单、拉丁名称长度、每个名称的符号数）与 `gen_latex_symbols.py --check`。所以先在 msime 开 PR，按改动后的本仓文件跑过这些检查，再开本仓 PR；本仓先合，msime 再把锁指向合并后的提交，不能让下游默认分支引用未合并的 PR 提交。它们不在 `upstream.lock.json` 里：不是上游数据，字节由 msime 的锁固定。MSIME-Windows 的本地构建器也直接读 `symbol-names.tsv`（`scripts/dictionary_build/symbols_db.py`，不经锁），标点、数学符号的拼音读音只在这一张表里加，不另开 `custom/symbols.txt` 之类的第二张表；改列格式时同时改那边的解析。
