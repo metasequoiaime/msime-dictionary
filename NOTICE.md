@@ -8,7 +8,7 @@
 
 本包沿用 CC BY 3.0，不适用本仓自建专业词库的 GPL-3.0 声明。整理时保留原中英鸟名，筛选有简体中文名的 11,041 个鸟种，以 pypinyin 0.55.0 标注并按语境修正读音，对发布拼音输入去重，生成英文输入键、导入权重及中英双向对照。数据摘要、去重集合、多音字规则及审校状态见 [packs/birds/README.md](packs/birds/README.md)。未使用该项目的贴纸、参考照片或图鉴文字，也不将其 MIT 或 PolyForm Shield 许可套用到这些第三方鸟名。
 
-## pinyin-next 细胞词库
+## pinyin-next 种子词库
 
 `sources/pinyin-next/packs/自然科学/数学词汇.txt`、`自然科学/物理词汇.txt`、`生活百科/饮食词汇.txt` 的词条是[中文维基百科](https://zh.wikipedia.org/)的条目标题，及指向这些条目的重定向标题，取自 2026-11-01 的 zhwiki 数据库转储（`page`、`categorylinks`、`linktarget`、`redirect`），按分类「数学」「物理学」及「食品」「饮料」「烹饪」「菜系」「中国菜」「小吃」「調味料」的子树收集（深度 3，本领域核心分支下到深度 5）。维基百科内容以 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 发布，这三份词表沿用 CC BY-SA 4.0，署名为中文维基百科贡献者。条目筛选另外使用了 [Wikidata](https://www.wikidata.org/) 的 P31（是什么）属性，Wikidata 数据为 [CC0](https://creativecommons.org/publicdomain/zero/1.0/)。改动：标题转成简体（OpenCC，见下文「OpenCC 简繁转换表」），去掉消歧义括号，剔除非纯汉字及人物、生物分类、企业、品牌、作品等条目，加注拼音与权重；读音与权重取自 `sources/pinyin-next/base`，base 没有的词按 base 分词与 pypinyin 标注、人工核对，权重为 10。
 

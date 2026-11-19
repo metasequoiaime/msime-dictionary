@@ -1,4 +1,4 @@
-"""Validate the pinyin-next cell dictionaries under sources/pinyin-next/packs/.
+"""Validate the pinyin-next seed dictionaries under sources/pinyin-next/packs/.
 
 Each pack is sources/pinyin-next/packs/<domain>/<name>.txt: UTF-8 without BOM, LF line endings, ending with a newline. It starts with a "#" header whose first line is "# msime pinyin-next pack: <name>", which has a "# source:" line, and whose last line is "# word<TAB>pinyin<TAB>weight"; no comment lines follow the header. Every other line is word<TAB>pinyin<TAB>weight: the word is Han characters only, the pinyin has one lowercase syllable per character separated by "'", and the same (word, pinyin) appears once per file.
 

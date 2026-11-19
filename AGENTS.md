@@ -79,13 +79,13 @@
 - 不在本仓修改这些文件，也不加词；错误报给上游。`sources/zhuyin/mcbopomofo-supplement.txt`、`sources/cantonese/hkcancor-word-counts.txt` 是本项目转换或统计出的补充表，按上一节的规则重新生成，同样不手工改。
 - 更新时把整份文件换成上游新提交的版本，同一次改动更新 `NOTICE.md` 里的提交和 `upstream.lock.json`。升级任一上游提交时按这个顺序：先在 msime 开 PR，改 `resources/dictionary-sources.lock.json` 里对应的上游引用（Mozc 改 `mozc.commit`）和 `resources/licenses/` 下许可证写明的提交；再在本仓开 PR，换文件、更新 `NOTICE.md`，并用 `python3 scripts/check_upstream.py --update <路径>` 刷新 `upstream.lock.json`（提交变了同时改 `upstreams`）；合入前在本仓 PR 分支上手动运行 Release built dictionaries（`msime_ref` 填 msime 的 PR 分支、`publish` 关闭）试跑；先合 msime，再在本仓 PR 里把 `builder.lock.json` 的 `msime_commit` 改成 msime `develop` 上的合并提交，`msime_ref` 留空再试跑一次，然后合入本仓；旧的固定提交到合并提交的父提交之间若还有别的 `crates/dict-builder` 改动，先单独开一个只改提交的 PR 升到那个父提交。数据和构建器在同一次推送里一起换；两次合入之间若有别的推送，它仍用旧的固定提交构建旧数据，记录的提交与那个构建器的引用一致，不会失败。
 
-## pinyin-next 细胞词库
+## pinyin-next 种子词库
 
-`sources/pinyin-next/packs/` 放按领域划分的细胞词库，目前没有构建器读取。规则：
+`sources/pinyin-next/packs/` 放按领域划分的种子词库，目前没有构建器读取。规则：
 
 - 路径是 `sources/pinyin-next/packs/<领域>/<名称>.txt`，只分一层领域目录（如 `自然科学/数学词汇.txt`、`生活百科/饮食词汇.txt`、`教育/大学名称.txt`）。目录名和文件名用中文，不套用上文「补充表」的小写连字符命名规则。
 - UTF-8 无 BOM、LF 换行、结尾有换行。文件头是 `#` 注释：第 1 行 `# msime pinyin-next pack: <名称>`（与文件名一致），接着 `# source:` 行写明数据来源、快照日期或版本和许可，再一行写处理规则（繁转简、过滤、读音标注办法），最后一行 `# word<TAB>pinyin<TAB>weight`；文件头之后不再有注释。
-- 每行 `词<TAB>全拼<TAB>权重`，词只含汉字，音节数等于字数，同一文件内 `(词, 全拼)` 不重复；不和 base 去重，细胞词库要把一个类别收全。
+- 每行 `词<TAB>全拼<TAB>权重`，词只含汉字，音节数等于字数，同一文件内 `(词, 全拼)` 不重复；不和 base 去重，种子词库要把一个类别收全。
 - 读音与权重跟随 `sources/pinyin-next/base`：base 有的 `(词, 全拼)` 沿用 base 的权重，base 没有的权重为 10；不在 base 里的条目，每个字的读音必须在 `sources/pinyin/single-chars.txt`（或 `rime-ice-supplement.txt` 的单字行）里。base 有多个读音时取字表允许的、权重最高的那个。
 - 生成脚本不放本仓；在文件头写清来源和规则，第三方来源同一次改动写进 `NOTICE.md`。
 - 用 `python3 scripts/validate_pinyin_next_packs.py` 检查以上格式、读音与权重规则。
