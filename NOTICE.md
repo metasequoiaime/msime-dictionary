@@ -10,7 +10,7 @@
 
 ## pinyin-next 细胞词库
 
-`sources/pinyin-next/packs/自然科学/数学词汇.txt`、`自然科学/物理词汇.txt`、`生活百科/饮食词汇.txt` 的词条是[中文维基百科](https://zh.wikipedia.org/)的条目标题，取自 2026-11-01 的 zhwiki 数据库转储（`page`、`categorylinks`、`linktarget`），按分类「数学」「物理学」及「食品」「饮料」「烹饪」「菜系」「中国菜」「小吃」「調味料」的子树（深度 3）收集。维基百科内容以 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 发布，这三份词表沿用 CC BY-SA 4.0，署名为中文维基百科贡献者。条目筛选另外使用了 [Wikidata](https://www.wikidata.org/) 的 P31（是什么）属性，Wikidata 数据为 [CC0](https://creativecommons.org/publicdomain/zero/1.0/)。改动：标题转成简体（OpenCC，见下文「OpenCC 简繁转换表」），去掉消歧义括号，剔除非纯汉字及人物、生物分类、企业、品牌、作品等条目，加注拼音与权重；读音与权重取自 `sources/pinyin-next/base`，base 没有的词按 base 分词与 pypinyin 标注、人工核对，权重为 10。
+`sources/pinyin-next/packs/自然科学/数学词汇.txt`、`自然科学/物理词汇.txt`、`生活百科/饮食词汇.txt` 的词条是[中文维基百科](https://zh.wikipedia.org/)的条目标题，及指向这些条目的重定向标题，取自 2026-11-01 的 zhwiki 数据库转储（`page`、`categorylinks`、`linktarget`、`redirect`），按分类「数学」「物理学」及「食品」「饮料」「烹饪」「菜系」「中国菜」「小吃」「調味料」的子树收集（深度 3，本领域核心分支下到深度 5）。维基百科内容以 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 发布，这三份词表沿用 CC BY-SA 4.0，署名为中文维基百科贡献者。条目筛选另外使用了 [Wikidata](https://www.wikidata.org/) 的 P31（是什么）属性，Wikidata 数据为 [CC0](https://creativecommons.org/publicdomain/zero/1.0/)。改动：标题转成简体（OpenCC，见下文「OpenCC 简繁转换表」），去掉消歧义括号，剔除非纯汉字及人物、生物分类、企业、品牌、作品等条目，加注拼音与权重；读音与权重取自 `sources/pinyin-next/base`，base 没有的词按 base 分词与 pypinyin 标注、人工核对，权重为 10。
 
 `sources/pinyin-next/packs/教育/大学名称.txt` 的校名来自教育部《全国普通高等学校名单》（截至 2026-06-17），是政府公开名单。
 
