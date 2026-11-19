@@ -8,6 +8,12 @@
 
 本包沿用 CC BY 3.0，不适用本仓自建专业词库的 GPL-3.0 声明。整理时保留原中英鸟名，筛选有简体中文名的 11,041 个鸟种，以 pypinyin 0.55.0 标注并按语境修正读音，对发布拼音输入去重，生成英文输入键、导入权重及中英双向对照。数据摘要、去重集合、多音字规则及审校状态见 [packs/birds/README.md](packs/birds/README.md)。未使用该项目的贴纸、参考照片或图鉴文字，也不将其 MIT 或 PolyForm Shield 许可套用到这些第三方鸟名。
 
+## pinyin-next 种子词库
+
+`sources/pinyin-next/packs/自然科学/数学词汇.txt`、`自然科学/物理词汇.txt`、`生活百科/饮食词汇.txt` 的词条是[中文维基百科](https://zh.wikipedia.org/)的条目标题，及指向这些条目的重定向标题，取自 2026-11-01 的 zhwiki 数据库转储（`page`、`categorylinks`、`linktarget`、`redirect`），按分类「数学」「物理学」及「食品」「饮料」「烹饪」「菜系」「中国菜」「小吃」「調味料」的子树收集（深度 3，本领域核心分支下到深度 5）。维基百科内容以 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 发布，这三份词表沿用 CC BY-SA 4.0，署名为中文维基百科贡献者。条目筛选另外使用了 [Wikidata](https://www.wikidata.org/) 的 P31（是什么）属性，Wikidata 数据为 [CC0](https://creativecommons.org/publicdomain/zero/1.0/)。改动：标题转成简体（OpenCC，见下文「OpenCC 简繁转换表」），去掉消歧义括号，剔除非纯汉字及人物、生物分类、企业、品牌、作品等条目，加注拼音与权重；读音与权重取自 `sources/pinyin-next/base`，base 没有的词按 base 分词与 pypinyin 标注、人工核对，权重为 10。
+
+`sources/pinyin-next/packs/教育/大学名称.txt` 的校名来自教育部《全国普通高等学校名单》（截至 2026-06-17），是政府公开名单。
+
 ## rime-ice-only 审核差集
 
 `sources/pinyin/rime-ice-only/` 的四份 `*-only-entries.txt` / `*-only-words.txt` 是从本仓 `rime-ice.txt`、`rime-ice-supplement.txt` 筛选的审核资料：以 `sources/pinyin/wanxiang/` 全部词表为排除集合，按词的原始字面排除已收录的词，保留原始读音和权重，按权重排序，附源行号并另生成去重词清单。词条来源为 [iDvel/rime-ice](https://github.com/iDvel/rime-ice)，沿用 GPL-3.0 及原表历史修正和权重改编的来源说明。比较集合来自作者 amzxyz 的万象词库数据仓库 [amzxyz/rime-wanxiang-data](https://github.com/amzxyz/rime-wanxiang-data)（词库数据源自同作者 [RIME-LMDG](https://github.com/amzxyz/RIME-LMDG)），按 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 使用。未改写上游原文件，也不将此差集再次加入发布构建；不代表逐词审定的新增词清单。实际输入的上游提交、逐文件 SHA-256、脚本 SHA-256 与生成文件摘要保存在目录内的 `manifest.json`，生成规则与命令见该目录 `README.md`。此目录属于本项目生成的派生审核数据，不声称是上游原样文件；未新增第三方数据来源。
