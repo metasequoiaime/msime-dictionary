@@ -164,8 +164,8 @@ jobs:
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.cache/sccache
-          key: sccache-${{ runner.os }}-${{ hashFiles('msime/Cargo.lock') }}-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: sccache-${{ runner.os }}-${{ hashFiles('msime/Cargo.lock') }}-
+          key: sccache-${{ github.ref }}-${{ runner.os }}-${{ hashFiles('msime/Cargo.lock') }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: sccache-${{ github.ref }}-${{ runner.os }}-${{ hashFiles('msime/Cargo.lock') }}-
       - name: Install sccache
         id: sccache
         continue-on-error: true
